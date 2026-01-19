@@ -8,7 +8,7 @@ function ll {
 
 function cd.. { Set-Location .. }                    # cd.. 快速回退目录
 function cdd { Set-Location I:\ }               # cdd 快速跳转到工作目录
-function conf { code (Split-Path -Parent $PROFILE) }
+function conf { code (Split-Path -Parent $PSScriptRoot) }
 function util { Invoke-RestMethod "https://christitus.com/win" | Invoke-Expression }
 function myip { curl ifconfig.me }
 function v { $Input | nvim - }                  # Get-Process | v
