@@ -1,6 +1,6 @@
 "https://github.com/JetBrains/ideavim
-set clipboard+=unnamed
-set clipboard+=ideaput
+" set clipboard+=unnamed
+" set clipboard+=ideaput
 let mapleader=","
 set noerrorbells
 set visualbell
@@ -25,6 +25,11 @@ if has('ide')
   set ideajoin
   " set ideastatusicon=gray
   nmap ge <Action>(GotoNextError)
+  nmap gy <Action>(EditorCopy)
+  vmap gy <Action>(EditorCopy)
+  nmap gp <Action>(EditorPaste)
+  vmap gp <Action>(EditorPaste)
+
   
   nmap <leader>r <Action>(Run)
   nmap <leader>d <Action>(Debug)
@@ -34,6 +39,7 @@ if has('ide')
   nmap <leader>z <Action>(ToggleDistractionFreeMode)
   nmap <leader><leader>r <Action>(editRunConfigurations)
   nmap <leader>E <Action>(Refactorings.QuickListPopupAction)
+  
   vmap <leader>E <Action>(Refactorings.QuickListPopupAction)
 
   map <leader>a <Action>(Annotate)
@@ -42,13 +48,15 @@ if has('ide')
   nmap <space>f <Action>(GotoFile)
   nmap <space>a <Action>(GotoAction)
   nmap <space>s <Action>(GotoSymbol)
-  nmap <space>r <Action>(RecentFiles)
+  nmap <space>r <Action>(FindUsages)
   nmap <space>l <Action>(ReformatCode)
   nmap <space>q <Action>(CloseContent)
   nmap <space>t <Action>(ReopenClosedTab)
   nmap <space>l <Action>(ReformatCode)
   nmap <space>x <Action>(SelectInProjectView)
   nmap <space>w <Action>(CloseAllEditorsButActive)
+  nmap <space>p <Action>(PinActiveTabToggle)
+  nmap <space><space> <Action>(ToolWindowsGroup)
 
   sethandler <C-k> n:ide
   sethandler <C-v> i-v:ide
@@ -57,8 +65,12 @@ if has('ide')
   sethandler <C-f> n-v:ide
   sethandler <C-w> i:ide
   sethandler <C-n> n:ide
+  sethandler <C-e> n:ide
   sethandler <C-S-o> n:ide
+  
   imap <C-S-o> <Action>(EditorCompleteStatement)
+  imap ;<space> <Action>(CodeCompletion)
+  imap ;i <Action>(InsertLiveTemplate)
   
   if &ide =~? 'intellij idea'
     if &ide =~? 'community'
@@ -78,6 +90,17 @@ else
   nnoremap <leader>f <cmd>Telescope find_files<cr>
 endif
 
+inoremap ;s -
+inoremap ;a +
+inoremap ;e =
+inoremap ;l _
+inoremap ;f (
+inoremap ;v {
+inoremap ;b [
+
+noremap w [w
+noremap e ]w
+noremap b [b
 
 """ Plugin settings -------------------------
 let g:argtextobj_pairs="[:],(:),<:>"

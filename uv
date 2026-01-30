@@ -3,16 +3,19 @@
 # 对应路径: %APPDATA%\uv\uv.toml
 # ==========================================
 
-# 1. 索引策略直接写在顶层
+# 索引策略直接写在顶层
 index-strategy = "unsafe-best-match"
 
-# 2. 设置主镜像源 (Aliyun)
+[[index]]
+name = "pypi"
+url = "https://pypi.org/simple/"
+default = true
+
+# 设置备选镜像源
 [[index]]
 name = "aliyun"
 url = "https://mirrors.aliyun.com/pypi/simple/"
-default = true
 
-# 3. 设置备选镜像源
 [[index]]
 name = "ustc"
 url = "https://mirrors.ustc.edu.cn/pypi/simple/"

@@ -66,6 +66,8 @@ Get-AppxPackage -Name *terminal*
 (Get-MpPreference).ExclusionPath
 Add-MpPreference -ExclusionPath "C:\MyFolder"
 Remove-MpPreference -ExclusionPath "C:\MyFolder"
+git rm --cached file.txt  ; # 从 Git 索引中移除但保留工作区文件
+git restore --staged file.txt ; # 将暂存区的文件恢复到工作区
 "@
 }
 
