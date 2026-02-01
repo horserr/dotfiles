@@ -22,7 +22,8 @@ optionCreate -folder $cacheFolder
 # LLVM
 # ------------------------
 $systemPathVariable = [Environment]::GetEnvironmentVariable("PATH", "Machine")
-
+$LLVMPath = Resolve-Path -Path "$env:ProgramFiles/LLVM/bin"
+[Environment]::SetEnvironmentVariable("PATH", $systemPathVariable + ";$LLVMPath", "Machine")
 
 # ------------------------
 # python uv
