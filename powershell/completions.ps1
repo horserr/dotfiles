@@ -8,7 +8,7 @@ $Completions = @{
   "tailscale" = @("completion", "powershell")
   "kubectl"   = @("completion", "powershell")
 }
-$modules = @("WSLTabCompletion", "DockerCompletion")
+$modules = @("WSLTabCompletion", "DockerCompletion", "posh-cargo")
 
 $CompletionCacheTtl = [TimeSpan]::FromDays(1)
 
@@ -84,11 +84,8 @@ $PostStartTask = {
     }
   }
 
-  # no need to import posh-git
-  foreach ($m in $modules) {
-    if (!(Get-Module $m)) {
-      Import-Module $m -ErrorAction SilentlyContinue | Out-Null
-    }
+  $modules | ForEach-Object {
+    Import-Module $_
   }
 
   foreach ($c in $Completions.Keys) {
@@ -96,6 +93,10 @@ $PostStartTask = {
       continue
     }
     Import-Completion -CmdName $c -ArgsList $Completions[$c]
+  }
+
+  Get-ChildItem -Path "$PSScriptRoot/scripts/" -Filter "*_completion.ps1" | ForEach-Object {
+    . $_.FullName
   }
 
   # fixme dont know why

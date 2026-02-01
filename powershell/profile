@@ -1,5 +1,6 @@
 Set-StrictMode -Version Latest
-$ErrorActionPreference = "Stop"
+; $ErrorActionPreference = "Stop"
+$ErrorActionPreference = "Continue"
 
 # 1. 定义 dotfiles 路径
 $powershellRoot = "D:/dotfiles/powershell"

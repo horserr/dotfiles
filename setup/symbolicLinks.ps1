@@ -45,6 +45,9 @@ $mappings = @{
 
   # uv config
   "$env:APPDATA/uv/uv.toml" = "$dotRoot/uv"
+
+  # cargo Config
+  "$env:USERPROFILE/.cargo/config.toml" = "$dotRoot/cargo"
 }
 
 Write-Host "`n🔗 正在同步 Dotfiles 配置..." -ForegroundColor Cyan

@@ -33,6 +33,14 @@ $uvToolsDir = "$targetUv/tool"
 [Environment]::SetEnvironmentVariable("UV_TOOL_DIR", $uvToolsDir, "User")
 
 # ------------------------
+# rustup
+# ------------------------
+$rustupServer = "https://rsproxy.cn"
+$rustupRoot = "https://rsproxy.cn/rustup"
+[Environment]::SetEnvironmentVariable("RUSTUP_DIST_SERVER", $rustupServer, "User")
+[Environment]::SetEnvironmentVariable("RUSTUP_UPDATE_ROOT", $rustupRoot, "User")
+
+# ------------------------
 # bun
 # ------------------------
 $targetBun = "$cacheFolder/.bun"
