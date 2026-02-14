@@ -8,6 +8,18 @@
         //   "PackageIdentifier": "Nilesoft.Shell"
         // },
         {
+          "PackageIdentifier": "WinFsp.WinFsp"
+        },
+        {
+          "PackageIdentifier": "Rclone.Rclone"
+        },
+        {
+          "PackageIdentifier": "Microsoft.EventLogExpert"
+        },
+        {
+          "PackageIdentifier": "Microsoft.Edit"
+        },
+        {
           "PackageIdentifier": "RamenSoftware.Windhawk"
         },
         {

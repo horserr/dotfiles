@@ -42,14 +42,65 @@ function ex {
 function env {
   rundll32 sysdm.cpl, EditEnvironmentVariables
 }
+
+function eventvwr {
+  mmc.exe eventvwr.msc
+}
+
 function bios {
   Write-Host "You are going to restart computer and enter BIOS"
   Pause
   shutdown /r /fw /f /t 0
 }
 
+function winre {
+  Write-Host "You are going to restart computer and enter Windows Recovery Environment"
+  Pause
+  shutdown /r /o /f /t 0
+}
+
+function quickshutdown {
+  write-host "You are going to shutdown computer immediately"
+  Pause
+  shutdown /s /t 0
+}
+
+function download {
+  param(
+    [Parameter(Mandatory = $true, Position = 0)]
+    [string]$m3u8link,
+
+    [Parameter(Mandatory = $true, Position = 1)]
+    [string]$output
+  )
+  yt-dlp.exe --downloader aria2c --downloader-args "aria2c: -x 16 -s 16 -k 1M" $m3u8link -o $output
+}
+
 function special {
+  param(
+    [Parameter(Position = 0)]
+    [string]$Name
+  )
   $folders = [Environment+SpecialFolder]::GetValues([Environment+SpecialFolder])
+
+  if (-not [string]::IsNullOrWhiteSpace($Name)) {
+    # 尝试匹配枚举名称（不区分大小写）
+    if ($Name -in $folders) {
+      $path = [Environment]::GetFolderPath($Name)
+      if (-not [string]::IsNullOrWhiteSpace($path)) {
+        Write-Host "正在打开: $path" -ForegroundColor Cyan
+        explorer.exe $path
+      }
+      else {
+        Write-Error "该特殊文件夹路径在当前系统中为空。"
+      }
+    }
+    else {
+      Write-Error "未找到名为 '$Name' 的特殊文件夹。请运行不带参数的 'special' 命令查看可用列表。"
+    }
+    return
+  }
+
   $results = foreach ($folder in $folders) {
     [PSCustomObject]@{
       FolderName = $folder
@@ -60,6 +111,7 @@ function special {
   # 过滤掉路径为空的项（有些文件夹在当前系统环境下可能不存在）并按表格显示
   # $results | Where-Object { $_.Path -ne "" } | Out-GridView -Title "所有特殊文件夹路径" # 如果想要弹窗查看
   $results | Where-Object { $_.Path -ne "" } | Format-Table -AutoSize
+  Write-Host "use `special <FolderName>` to open the folder directly." -ForegroundColor DarkMagenta
 }
 
 function which {
@@ -76,12 +128,17 @@ function up-all {
 
 function memo {
   Write-Host @"
+robocopy C:\Source D:\Destination /MIR /Z /XA:H /W:5 /R:3
+
 Get-AppxPackage -Name *terminal*
 (Get-MpPreference).ExclusionPath
+
 Add-MpPreference -ExclusionPath "C:\MyFolder"
 Remove-MpPreference -ExclusionPath "C:\MyFolder"
+
 git rm --cached file.txt  ; # 从 Git 索引中移除但保留工作区文件
 git restore --staged file.txt ; # 将暂存区的文件恢复到工作区
+
 "@
 }
 

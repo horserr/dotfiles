@@ -9,24 +9,40 @@
   }
   } */
   {
+    // remove origin vim escape function
     "key": "escape",
     "command": "-extension.vim_escape",
     "when": "editorTextFocus && vim.active && !inDebugRepl"
   },
   {
+    // add more precise conditions for escape, dealing with copilot suggestions
     "key": "Escape",
     "command": "extension.vim_escape",
     "when": "editorTextFocus && vim.active && !inDebugRepl && !inlineSuggestionVisible && !inlineEditIsVisible && !testing.isPeekVisible && !testing.isInPeek && !suggestWidgetVisible && !findWidgetVisible && !dirtyDiffVisible && (vim.mode == 'Insert' || !notebookEditorFocused)"
   },
   {
+    // remove origin vim tab function
     "key": "tab",
     "command": "-extension.vim_tab",
     "when": "editorTextFocus && vim.active && !inDebugRepl && vim.mode != 'Insert'"
   },
   {
+    // add more precise conditions for tab, dealing with copilot suggestions
     "key": "tab",
     "command": "extension.vim_tab",
     "when": "editorTextFocus && vim.active && vim.mode != 'Insert' && !inDebugRepl && !inlineEditIsVisible"
+  },
+  {
+    // remove origin markdown next cell
+    "key": "tab",
+    "command": "-markdowntable.nextCell",
+    "when": "editorTextFocus && markdowntable.contextkey.selection.InMarkdownTable && !editorReadonly && !editorTabMovesFocus && !inSnippetMode && !suggestWidgetMultipleSuggestions && !suggestWidgetVisible"
+  },
+  {
+    // support markdown next cell when vim is in insert mode
+    "key": "tab",
+    "command": "markdowntable.nextCell",
+    "when": "editorTextFocus && markdowntable.contextkey.selection.InMarkdownTable && !editorReadonly && !editorTabMovesFocus && !inSnippetMode && !suggestWidgetMultipleSuggestions && !suggestWidgetVisible && vim.mode == 'Insert'"
   },
   // {
   //   "key": "shift + a",
@@ -821,5 +837,40 @@
     "key": "ctrl+alt+/",
     "command": "github.copilot.chat.completions.toggle",
     "when": "github.copilot.activated && github.copilot.extensionUnification.activated"
+  },
+  {
+    "key": "ctrl+i",
+    "command": "-workbench.action.chat.startVoiceChat",
+    "when": "chatIsEnabled && hasSpeechProvider && inChatInput && !editorFocus && !notebookEditorFocused && !scopedVoiceChatGettingReady && !speechToTextInProgress || chatIsEnabled && hasSpeechProvider && inlineChatFocused && !editorFocus && !notebookEditorFocused && !scopedVoiceChatGettingReady && !speechToTextInProgress"
+  },
+  {
+    "key": "ctrl+i",
+    "command": "-workbench.action.chat.stopListeningAndSubmit",
+    "when": "inChatInput && voiceChatInProgress && scopedVoiceChatInProgress == 'editor' || inChatInput && voiceChatInProgress && scopedVoiceChatInProgress == 'inline' || inChatInput && voiceChatInProgress && scopedVoiceChatInProgress == 'quick' || inChatInput && voiceChatInProgress && scopedVoiceChatInProgress == 'view' || inlineChatFocused && voiceChatInProgress && scopedVoiceChatInProgress == 'editor' || inlineChatFocused && voiceChatInProgress && scopedVoiceChatInProgress == 'inline' || inlineChatFocused && voiceChatInProgress && scopedVoiceChatInProgress == 'quick' || inlineChatFocused && voiceChatInProgress && scopedVoiceChatInProgress == 'view'"
+  },
+  {
+    "key": "ctrl+i",
+    "command": "-emojisense.quickEmoji",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "ctrl+i",
+    "command": "-inlineChat.start",
+    "when": "editorFocus && inlineChatHasEditsAgent && inlineChatPossible && !editorReadonly && !editorSimpleInput || editorFocus && inlineChatHasNotebookAgent && inlineChatPossible && !editorReadonly && !editorSimpleInput && activeEditor == 'workbench.editor.notebook' || editorFocus && inlineChatHasNotebookInline && inlineChatPossible && !editorReadonly && !editorSimpleInput && activeEditor == 'workbench.editor.notebook'"
+  },
+  {
+    "key": "ctrl+i",
+    "command": "-markdown.extension.editing.toggleItalic",
+    "when": "editorTextFocus && !editorReadonly && editorLangId =~ /^markdown$|^rmd$|^quarto$/"
+  },
+  {
+    "key": "ctrl+i",
+    "command": "-settings.action.toggleAiSearch",
+    "when": "aiSettingResultsAvailable && inSettingsEditor"
+  },
+  {
+    "key": "ctrl+i",
+    "command": "-search.action.searchWithAI",
+    "when": "hasAIResultProviderKey && searchViewletFocus"
   }
 ]

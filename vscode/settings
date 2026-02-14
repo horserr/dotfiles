@@ -3,6 +3,7 @@
   // vscode built_in icons: https://code.visualstudio.com/api/references/icons-in-labels
   "editor.tabSize": 2,
   "editor.indentSize": "tabSize",
+  "editor.renderWhitespace": "selection",
   "editor.codeActionsOnSave": {
     // refer to https://www.byteplus.com/en/topic/513795?title=vscode-editor-codeactionsonsave-a-complete-guide
     "source.fixAll": "explicit",
@@ -131,7 +132,7 @@
   // "editor.tabCompletion": "onlySnippets",
   // "triggercharac",
   "editor.quickSuggestions": {
-    "comments": true, // disable quick suggestion for comments
+    "comments": true,
     "strings": true,
     "other": true
   },
@@ -191,7 +192,6 @@
   "editor.minimap.showSlider": "always",
   "editor.smoothScrolling": true,
   "editor.suggest.preview": true,
-  "editor.suggest.snippetsPreventQuickSuggestions": true,
   "editor.suggestFontSize": 17,
   "editor.wrappingStrategy": "simple",
   "explorer.confirmPasteNative": false,
@@ -240,12 +240,12 @@
   "github.copilot.chat.languageContext.typescript.enabled": true,
   "github.copilot.chat.scopeSelection": true,
   "github.copilot.enable": {
-    "*": false,
+    "*": true,
     "plaintext": false,
     "markdown": false,
     "scminput": false,
     "ahk2": true,
-    "jsonc": true,
+    "jsonc": false,
     "sql": false,
     "typst": false,
     "go": false,
@@ -557,6 +557,48 @@
   ],
   "vim.visualModeKeyBindingsNonRecursive": [
     {
+      "before": [";", "m"],
+      "commands": [
+        {
+          "command": "editor.action.insertSnippet",
+          "args": {
+            "snippet": "$${TM_SELECTED_TEXT}$"
+          }
+        }
+      ]
+    },
+    {
+      "before": [";", "M"],
+      "commands": [
+        {
+          "command": "editor.action.insertSnippet",
+          "args": {
+            "snippet": "$$${TM_SELECTED_TEXT}$$"
+          }
+        }
+      ]
+    },
+    {
+      "before": [";", "b"],
+      "commands": ["markdown.extension.editing.toggleBold"]
+    },
+    {
+      "before": [";", "i"],
+      "commands": ["markdown.extension.editing.toggleItalic"]
+    },
+    {
+      "before": [";", "c"],
+      "commands": ["markdown.extension.editing.toggleCodeSpan"]
+    },
+    {
+      "before": [";", "C"],
+      "commands": ["markdown.extension.editing.toggleCodeBlock"]
+    },
+    {
+      "before": [";", "t"],
+      "commands": ["markdown.extension.checkTaskList"]
+    },
+    {
       "before": ["g", "y"],
       "commands": ["editor.action.clipboardCopyAction"]
     },
@@ -620,29 +662,33 @@
       "before": ["<space>", "<space>"],
       "commands": ["editor.action.smartSelect.expand"]
     },
-    {
-      "before": [";", "p"],
-      "commands": ["editor.action.transformToPascalcase"]
-    },
+    // {
+    //   "before": [";", "p"],
+    //   "commands": ["editor.action.transformToPascalcase"]
+    // },
     {
       "before": [";", "t"],
       "commands": ["editor.action.transformToTitlecase"]
     },
-    {
-      "before": [";", ";"],
-      "commands": ["editor.action.transformToCamelcase"]
-    },
-    {
-      "before": [";", "s"],
-      "commands": ["editor.action.transformToSnakecase"]
-    },
-    {
-      "before": [";", "k"],
-      "commands": ["editor.action.transformToKebabcase"]
-    },
+    // {
+    //   "before": [";", ";"],
+    //   "commands": ["editor.action.transformToCamelcase"]
+    // },
+    // {
+    //   "before": [";", "s"],
+    //   "commands": ["editor.action.transformToSnakecase"]
+    // },
+    // {
+    //   "before": [";", "k"],
+    //   "commands": ["editor.action.transformToKebabcase"]
+    // },
     {
       "before": ["<space>", "l"],
       "commands": ["editor.action.formatSelection"]
+    },
+    {
+      "before": ["s"],
+      "commands": ["editor.action.surroundWithSnippet"]
     },
     {
       "before": ["<space>"],
@@ -682,6 +728,10 @@
     //   "before": ["<C-i>"],
     //   "commands": ["inlineChat.start"]
     // },
+    {
+      "before": [";", "z"],
+      "after": ["\\"]
+    }, // backslash
     {
       "before": [";", "l"],
       "after": ["_"]
@@ -1244,12 +1294,7 @@
   "explorer.confirmDelete": false,
   "window.autoDetectColorScheme": true,
   "[ahk2]": {
-    "editor.defaultFormatter": "mark-wiemer.vscode-autohotkey-plus-plus",
-    "editor.quickSuggestions": {
-      "other": true,
-      "comments": false,
-      "strings": true
-    }
+    "editor.defaultFormatter": "mark-wiemer.vscode-autohotkey-plus-plus"
   },
   "AHK++.v2.formatter": {
     "arrayStyle": "none",
@@ -1274,11 +1319,14 @@
   },
   "[markdown]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "editor.fontFamily": "LXGW WenKai",
-    "editor.fontSize": 17,
-    "editor.letterSpacing": 0.5,
-    "editor.lineHeight": 1.6,
-    "editor.wrappingStrategy": "advanced"
+    "editor.fontFamily": "LXGW WenKai Mono",
+    "editor.fontSize": 19,
+    "editor.letterSpacing": 0.8,
+    "editor.lineHeight": 1.3,
+    "editor.wrappingStrategy": "advanced",
+    "editor.tabSize": 4,
+    "editor.indentSize": "tabSize",
+    "editor.renderWhitespace": "all"
   },
   "[powershell]": {
     "editor.defaultFormatter": "ms-vscode.powershell"
@@ -1430,5 +1478,13 @@
   "diffEditor.ignoreTrimWhitespace": true,
   "github.copilot.nextEditSuggestions.extendedRange": true,
   "chat.viewSessions.orientation": "stacked",
-  "diffEditor.hideUnchangedRegions.enabled": true
+  "diffEditor.hideUnchangedRegions.enabled": true,
+  "markdown.extension.preview.autoShowPreviewToSide": true,
+  "markdowntable.showMenu.csvToTable": true,
+  "xlsxViewer.md.stickyToolbar": true,
+  "xlsxViewer.md.wordWrap": true,
+  "xlsxViewer.md.syncScroll": true,
+  "xlsxViewer.md.previewPosition": "right",
+  "xlsxViewer.md.showOutline": false,
+  "markdown-preview-enhanced.previewTheme": "github-dark.css"
 }
