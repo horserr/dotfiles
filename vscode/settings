@@ -214,7 +214,6 @@
   "files.autoGuessEncoding": true,
   // File settings
   "files.autoSave": "onFocusChange",
-  "files.dialog.defaultPath": "D:\\\\Workspace",
   "files.exclude": {
     "**/.DS_Store": true,
     "**/.git": true,

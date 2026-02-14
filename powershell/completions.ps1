@@ -2,7 +2,6 @@
 # 配置与缓存
 # ---------------------------------------------------------
 $Completions = @{
-  "gh"        = @("completion", "-s", "powershell")
   "uv"        = @("generate-shell-completion", "powershell")
   "uvx"       = @("--generate-shell-completion", "powershell")
   "tailscale" = @("completion", "powershell")
@@ -84,10 +83,12 @@ $PostStartTask = {
     }
   }
 
+  # 1.
   $modules | ForEach-Object {
     Import-Module $_
   }
 
+  # 2.
   foreach ($c in $Completions.Keys) {
     if (!(Get-Command $c -ErrorAction SilentlyContinue)) {
       continue
@@ -95,13 +96,10 @@ $PostStartTask = {
     Import-Completion -CmdName $c -ArgsList $Completions[$c]
   }
 
+  # 3.
   Get-ChildItem -Path "$PSScriptRoot/scripts/" -Filter "*_completion.ps1" | ForEach-Object {
     . $_.FullName
   }
-
-  # fixme dont know why
-  # Import-Completion -CmdName "gh" -ArgsList $Completions.gh
-  gh completion -s powershell | Out-String | Invoke-Expression
 }
 
 # 注册一个引擎事件：在提示符准备就绪后运行
