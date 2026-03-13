@@ -8,6 +8,25 @@
         //   "PackageIdentifier": "Nilesoft.Shell"
         // },
         {
+          // oh my posh windows store version
+          "PackageIdentifier": "XP8K0HKJFRXGCK"
+        },
+        {
+          "PackageIdentifier": "direnv.direnv"
+        },
+        {
+          "PackageIdentifier": "Python.Launcher"
+        },
+        {
+          "PackageIdentifier": "Python.PythonInstallManager"
+        },
+        {
+          "PackageIdentifier": "sharkdp.fd"
+        },
+        {
+          "PackageIdentifier": "BurntSushi.ripgrep.MSVC"
+        },
+        {
           "PackageIdentifier": "Justsenger.ExHyperV"
         },
         {

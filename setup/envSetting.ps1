@@ -60,6 +60,11 @@ setEnv -name "UV_PYTHON_INSTALL_DIR" -value $uvPythonDir -target "User" -Resolve
 setEnv -name "UV_TOOL_DIR" -value $uvToolsDir -target "User" -ResolvePath
 
 # ------------------------
+# huggingface endpoint
+# ------------------------
+setEnv -name "MODEL_ENDPOINT" -value "https://www.modelscope.cn/" -target "User"
+
+# ------------------------
 # rustup
 # ------------------------
 $rustupServer = "https://rsproxy.cn"
@@ -86,3 +91,9 @@ setEnv -name "BUN_INSTALL_CACHE" -value $targetBunCache -target "User" -ResolveP
 $winget_links = "$env:LOCALAPPDATA/Microsoft/WinGet/Links"
 
 setEnv -name "WINGET_LINKS" -value $winget_links -target "User" -ResolvePath
+
+# ------------------------
+# CMD prompt setting
+# link: https://learn.microsoft.com/en-us/windows/terminal/tutorials/new-tab-same-directory#command-prompt-cmdexe
+# ------------------------
+setEnv -name "PROMPT" -value '$e]9;9;$P$e\$P$G' -target "User"

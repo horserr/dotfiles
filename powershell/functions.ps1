@@ -6,7 +6,7 @@ function ll {
 
 function cd.. { Set-Location .. }                    # cd.. 快速回退目录
 function conf {
-  &code (Split-Path -Parent $PSScriptRoot); exit
+  & code (Split-Path -Parent $PSScriptRoot)
 }
 function util {
   $command = "Invoke-RestMethod https://christitus.com/win | Invoke-Expression"
@@ -24,7 +24,18 @@ function proxy-on {
   $env:HTTPS_PROXY = "http://localhost:7897"
 }
 
-function edit-history{
+function set-title {
+  # set windows terminal tab title
+  param([string]$Title)
+  $host.UI.RawUI.WindowTitle = $Title
+}
+
+function loading{
+  # link: https://learn.microsoft.com/en-us/windows/terminal/tutorials/progress-bar-sequences
+  Write-Host "`e]9;4;3;50`e\"
+}
+
+function edit-history {
   nvim (Get-PSReadLineOption).HistorySavePath
 }
 
@@ -142,6 +153,12 @@ function memo {
   spf: superfile
   trip: trippy
   exhyperv
+
+  git restore --staged file.txt ; # 将暂存区的文件恢复到工作区
+  用于撤销 git add 的操作，如果你不小心把文件添加到暂存区了，可以用这个命令把它移回工作区，保持修改但不提交。
+
+  git rm --cached file.txt  ; # 从 Git 索引中移除但保留工作区文件
+  在编辑gitignore后，如果之前已经被git跟踪的文件现在需要被忽略了，可以用这个命令把它从索引中移除，但保留在磁盘上。这样git就不会再跟踪这个文件了。
 
 robocopy C:\Source D:\Destination /MIR /Z /XA:H /W:5 /R:3
 
