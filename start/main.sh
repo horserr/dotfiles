@@ -97,7 +97,7 @@ chezmoi apply
 
 # install fisher
 echo -e "${GREEN}installing fisher...${NC}"
-ensure_installed 'fisher' "curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher install jorgebucaran/fisher"
+ensure_installed 'fisher' "curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source /dev/stdin && fisher install jorgebucaran/fisher"
 
 echo -e "${GREEN}切换shell为fish...${NC}"
 chsh -s $(which fish)
