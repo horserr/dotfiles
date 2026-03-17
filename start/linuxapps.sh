@@ -1,0 +1,30 @@
+essentials=(
+  "build-essential"
+  "curl"
+  "procps"
+  "file"
+  "git"
+  "fish"
+  # "openssh-server"
+)
+
+userapps=(
+  "neovim"
+  "chezmoi"
+  "gh"
+  "fzf"
+  "bat"
+  "eza"
+  "zoxide"
+  "fd"
+  "ripgrep"
+  "tldr"
+  "btop"
+  "lazygit"
+  "yazi"
+  "ffmpeg"
+  "7zip"
+  "jq"
+  "poppler"
+  "imagemagick"
+)

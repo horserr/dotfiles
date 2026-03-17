@@ -2,6 +2,7 @@
   "recommendations": [
     "ms-vscode.powershell",
     "romantomjak.go-template",
-    "mads-hartmann.bash-ide-vscode"
+    "mads-hartmann.bash-ide-vscode",
+    "bmalehorn.vscode-fish"
   ]
 }

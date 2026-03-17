@@ -1,0 +1,15 @@
+if status is-interactive
+    alias conf 'nvim ~/.config/fish/config.fish'
+    alias reload 'source ~/.config/fish/config.fish'
+    alias ls 'eza --icons --group-directories-first'
+    alias ll 'eza -lbgH --icons --git --group-directories-first'
+    alias lt 'eza --tree --icons'
+    alias cat 'batcat'
+    alias cd 'z'
+    alias y 'yazi'
+    alias top 'btop'
+
+    if command -q fdfind
+        alias fd 'fdfind'
+    end
+end

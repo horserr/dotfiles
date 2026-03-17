@@ -1,48 +1,10 @@
 #!/bin/bash
 set -euo pipefail  # 开启严格模式
+
 SCRIPT_DIR=$(dirname "$(readlink -f "$0")")
+source "$SCRIPT_DIR/linuxapps.sh"
 
-essentials=(
-  "build-essential"
-  "curl"
-  "procps"
-  "file"
-  "git"
-  "gcc"
-  "make"
-  "fish"
-  "openssh"
-)
-
-userapps=(
-  "neovim"
-  "chezmoi"
-  "gh"
-  "fzf"
-  "bat"
-  "eza"
-  "zoxide"
-  "fd"
-  "ripgrep"
-  "tldr"
-  "btop"
-  "lazygit"
-  "yazi"
-  "ffmpeg"
-  "7zip"
-  "jq"
-  "poppler"
-  "imagemagick"
-)
-
-# 检查是否为 root 用户（apt 安装需要 root 权限）
-# if [ "$(id -u)" -ne 0 ]; then
-#   echo "❌错误：该脚本需要以 root 权限运行！"
-#   echo "⚠️请使用 sudo 执行，例如：sudo $0"
-#   exit 1
-# fi
-
-install-apps() {
+install_apps() {
   # 获取第一个参数作为管理器 (例如 apt 或 brew)
   local manager=$1
   # 移除第一个参数，剩下的 $@ 就是软件列表
@@ -56,16 +18,10 @@ install-apps() {
 
       # 根据管理器选择安装命令
       case $manager in
-        apt)  sudo apt install -y "$app" >/dev/null 2>&1 ;;
-        brew) brew install "$app" >/dev/null 2>&1 ;;
+        apt)  sudo apt install -y "$app" >/dev/null 2>&1 && echo "✅ $app 安装成功" || echo "❌ $app 安装失败！" ;;
+        brew) brew install "$app" >/dev/null 2>&1 && echo "✅ $app 安装成功" || echo "❌ $app 安装失败！" ;;
         *)    echo "❌ 不支持的管理器: $manager"; return 1 ;;
       esac
-
-      if [ $? -ne 0 ]; then
-        echo "❌ $app 安装失败！"
-      else
-        echo "✅ $app 安装成功"
-      fi
     fi
   done
 }
@@ -87,7 +43,7 @@ sudo apt update && sudo apt upgrade -y
 # install essential apps
 echo -e "${GREEN}准备安装essential apps...${NC}"
 
-install-apps apt "${essentials[@]}"
+install_apps apt "${essentials[@]}"
 
 # homebrew
 echo -e "${GREEN}正在准备安装 Homebrew...${NC}"
@@ -111,15 +67,20 @@ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
 
 # install uv
 echo -e "${GREEN}准备安装uv...${NC}"
-curl -lsSf https://astral.sh/uv/install.sh | sh
+curl -LsSf https://astral.sh/uv/install.sh | sh
 
 # install user apps
 echo -e "${GREEN}准备安装常用软件...${NC}"
-install-apps brew "${userapps[@]}"
+install_apps brew "${userapps[@]}"
 
 # use chezmoi to update config
 echo -e "${GREEN}deploying chezmoi...${NC}"
 chezmoi init
+chezmoi apply
+
+# install fisher
+curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source
+fisher install jorgebucaran/fisher
 
 echo -e "${GREEN}切换shell为fish...${NC}"
 chsh -s $(which fish)

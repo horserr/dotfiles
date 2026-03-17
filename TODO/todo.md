@@ -1,8 +1,9 @@
 # TODO
 
-## refactor powershell scripts
-
-1. move functions into the independent file
+1. refactor powershell scripts: move functions into the independent file
+2. learn [gitconfig](https://github.com/twpayne/dotfiles/blob/da62cef4e6cc09ab4b11e9d13bc9f3ac2b41f570/home/dot_config/git/config.tmpl#L123)
+3. ubuntu24.04之前的apt换源操作
+4. wsl.conf文件
 
 ## install apps
 
@@ -48,31 +49,20 @@ $NerdFonts | Foreach-Object -ThrottleLimit 5 -Parallel {
 # Get-ChildItem -Recurse | Where-Object { $_.Extension -in '.ttf', '.otf' } | Install-Font
 ```
 
-## reference install script
+## 检查是否为 root 用户（apt 安装需要 root 权限）
 
-[install script](https://github.com/twpayne/dotfiles/blob/master/install.sh)
-```sh
-#!/bin/sh
-
-set -e # -e: exit on error
-
-if [ ! "$(command -v chezmoi)" ]; then
-  bin_dir="$HOME/.local/bin"
-  chezmoi="$bin_dir/chezmoi"
-  if [ "$(command -v curl)" ]; then
-    sh -c "$(curl -fsSL https://git.io/chezmoi)" -- -b "$bin_dir"
-  elif [ "$(command -v wget)" ]; then
-    sh -c "$(wget -qO- https://git.io/chezmoi)" -- -b "$bin_dir"
-  else
-    echo "To install chezmoi, you must have curl or wget installed." >&2
-    exit 1
-  fi
-else
-  chezmoi=chezmoi
+```bash
+if [ "$(id -u)" -ne 0 ]; then
+echo "❌错误：该脚本需要以 root 权限运行！"
+echo "⚠️请使用 sudo 执行，例如：sudo $0"
+exit 1
 fi
+```
 
-# POSIX way to get script's dir: https://stackoverflow.com/a/29834779/12156188
-script_dir="$(cd -P -- "$(dirname -- "$(command -v -- "$0")")" && pwd -P)"
-# exec: replace current process with chezmoi init
-exec "$chezmoi" init --apply "--source=$script_dir"
+## 检查程序是否已安装
+
+```bash
+if command -v "$app" >/dev/null 2>&1; then
+  echo "✅ $app 已安装，跳过"
+fi
 ```
