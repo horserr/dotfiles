@@ -1,3 +1,5 @@
+[core]
+	filemode = true
 [user]
 	name = horserr
 	email = 112157036+horserr@users.noreply.github.com
@@ -8,6 +10,7 @@
 	c = checkout
 	no-edit = commit --amend --no-edit
 	conf = config --global --edit
+	tree = log --graph --oneline --all
 [merge]
     conflictStyle = zdiff3
 [init]

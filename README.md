@@ -35,6 +35,8 @@ This repo is adapted from: [twpayne's dotfiles](https://github.com/twpayne/dotfi
 
    - on windows:
 
+     todo add set-executionpolicy
+
      ```pwsh
      ./main.ps1
      ```
@@ -112,3 +114,16 @@ sudo apt update
 - 查看可用数据：chezmoi data
 - 测试模板渲染：chezmoi execute-template < 文件名.tmpl
 - 查看差异：chezmoi diff
+
+## git
+
+`git checkout --orphan main`
+
+`git update-index --chmod=+x <file>`
+如果你想看看当前 Git 记录里，哪些文件是可执行的，可以运行：
+
+```bash
+git ls-files --stage
+```
+
+在输出列表中，权限位以 100755 开头的文件就是 Git 认为的可执行文件。

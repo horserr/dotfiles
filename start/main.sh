@@ -4,6 +4,18 @@ set -euo pipefail  # 开启严格模式
 SCRIPT_DIR=$(dirname "$(readlink -f "$0")")
 source "$SCRIPT_DIR/linuxapps.sh"
 
+ensure_installed() {
+  local cmd=$1
+  local install_script=$2
+
+  if command -v "$cmd" >/dev/null 2>&1; then
+    echo "✅ $cmd 已安装"
+  else
+    echo "📦 正在安装 $cmd..."
+    eval "$install_script"
+  fi
+}
+
 install_apps() {
   # 获取第一个参数作为管理器 (例如 apt 或 brew)
   local manager=$1
@@ -52,22 +64,24 @@ export HOMEBREW_API_DOMAIN="https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottle
 export HOMEBREW_BREW_GIT_REMOTE="https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/brew.git"
 export HOMEBREW_BOTTLE_DOMAIN="https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles"
 
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+ensure_installed "brew" '/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"'
+
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
 # 更新 brew
 brew update
 
 # install rustup
 echo -e "${GREEN}准备安装rustup...${NC}"
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+ensure_installed 'rustup' "curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh"
 
 # install nvm
-echo -e "${GREEN}准备安装nvm...${NC}"
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
+# echo -e "${GREEN}准备安装nvm...${NC}"
+# ensure_installed 'nvm' "https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash"
 
 # install uv
 echo -e "${GREEN}准备安装uv...${NC}"
-curl -LsSf https://astral.sh/uv/install.sh | sh
+ensure_installed "uv" 'curl -LsSf https://astral.sh/uv/install.sh | sh'
 
 # install user apps
 echo -e "${GREEN}准备安装常用软件...${NC}"
@@ -79,8 +93,8 @@ chezmoi init
 chezmoi apply
 
 # install fisher
-curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source
-fisher install jorgebucaran/fisher
+echo -e "${GREEN}installing fisher...${NC}"
+ensure_installed 'fisher' "curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher install jorgebucaran/fisher"
 
 echo -e "${GREEN}切换shell为fish...${NC}"
 chsh -s $(which fish)
