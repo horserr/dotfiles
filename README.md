@@ -58,6 +58,7 @@ This repo is adapted from: [twpayne's dotfiles](https://github.com/twpayne/dotfi
 7. (recommend) install `fzf-fish` for fish shell
 
    ```bash
+   # ensure_installed 'fisher' "curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher install jorgebucaran/fisher"
    fisher install PatrickF1/fzf.fish
    ```
 

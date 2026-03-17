@@ -9,4 +9,4 @@ set -gx HOMEBREW_CORE_GIT_REMOTE https://mirrors.tuna.tsinghua.edu.cn/git/homebr
 set -gx RUSTUP_DIST_SERVER https://rsproxy.cn
 set -gx RUSTUP_UPDATE_ROOT https://rsproxy.cn/rustup
 
-/opt/homebrew/bin/brew shellenv | source
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv fish)"
