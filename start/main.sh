@@ -73,7 +73,10 @@ brew update
 
 # install rustup
 echo -e "${GREEN}准备安装rustup...${NC}"
-ensure_installed 'rustup' "curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh"
+export RUSTUP_DIST_SERVER="https://rsproxy.cn"
+export RUSTUP_UPDATE_ROOT="https://rsproxy.cn/rustup"
+
+ensure_installed 'rustup' "curl --proto '=https' --tlsv1.2 -sSf https://rsproxy.cn/rustup-init.sh | sh"
 
 # install nvm
 # echo -e "${GREEN}准备安装nvm...${NC}"
@@ -81,7 +84,7 @@ ensure_installed 'rustup' "curl --proto '=https' --tlsv1.2 -sSf https://sh.rustu
 
 # install uv
 echo -e "${GREEN}准备安装uv...${NC}"
-ensure_installed "uv" 'curl -LsSf https://astral.sh/uv/install.sh | sh'
+ensure_installed "uv" "curl -LsSf https://astral.sh/uv/install.sh | sh"
 
 # install user apps
 echo -e "${GREEN}准备安装常用软件...${NC}"
