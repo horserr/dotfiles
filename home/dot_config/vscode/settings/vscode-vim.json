@@ -1,0 +1,527 @@
+ //////////////// Vim Settings ////////////////////////////////////
+  "vim.argumentObjectClosingDelimiters": [")", "]", "}", ">"],
+  "vim.argumentObjectOpeningDelimiters": ["(", "[", "{", "<"],
+  "vim.argumentObjectSeparators": [",", ";"],
+  "vim.autoSwitchInputMethod.defaultIM": "1033",
+  "vim.autoSwitchInputMethod.enable": true,
+  "vim.autoSwitchInputMethod.obtainIMCmd": "D:/path/im-select.exe",
+  "vim.autoSwitchInputMethod.switchIMCmd": "D:/path/im-select.exe {im}",
+  // Vim settings
+  "vim.camelCaseMotion.enable": true,
+  "vim.cursorStylePerMode.insert": "line-thin",
+  "vim.cursorStylePerMode.normal": "block",
+  "vim.cursorStylePerMode.replace": "underline",
+  "vim.cursorStylePerMode.visual": "underline-thin",
+  "vim.cursorStylePerMode.visualblock": "block-outline",
+  "vim.cursorStylePerMode.visualline": "block-outline",
+  "vim.enableNeovim": true,
+  "vim.foldfix": true,
+  "vim.gdefault": true,
+  "vim.handleKeys": {
+    "<C-d>": true,
+    "<C-f>": false,
+    "<C-k>": false
+  },
+  "vim.highlightedyank.enable": true,
+  "vim.highlightedyank.textColor": "#615ea8",
+  "vim.history": 20,
+  "vim.ignorecase": true,
+  "vim.incsearch": true,
+  "vim.leader": ",",
+  "vim.matchpairs": "(:),{:},[:],<:>",
+  "vim.neovimPath": "C:\\Program Files\\Neovim\\bin\\nvim.exe",
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": ["g", "y"],
+      "commands": ["editor.action.clipboardCopyAction"]
+    },
+    {
+      "before": ["g", "p"],
+      "commands": ["editor.action.clipboardPasteAction"]
+    },
+    {
+      "before": ["j"],
+      "after": ["g", "j"]
+    },
+    {
+      "before": ["k"],
+      "after": ["g", "k"]
+    },
+    {
+      "before": ["w"],
+      "after": ["<leader>", "w"]
+    },
+    {
+      "before": ["b"],
+      "after": ["<leader>", "b"]
+    },
+    {
+      "before": ["K"],
+      "commands": ["editor.action.showHover"]
+    },
+    {
+      "before": ["%"],
+      "commands": ["editor.action.jumpToBracket"]
+    },
+    {
+      "before": ["g", "e"],
+      "commands": ["editor.action.marker.nextInFiles"]
+    },
+    {
+      "before": ["f"],
+      "after": ["<leader>", "<leader>", "s"]
+    },
+    {
+      "before": ["<leader>", "r"],
+      "commands": ["workbench.action.tasks.reRunTask"]
+    },
+    {
+      "before": ["<leader>", "e"],
+      "commands": ["editor.action.rename"]
+    },
+    {
+      "before": ["<leader>", "E"],
+      "commands": ["editor.action.refactor"]
+    },
+    {
+      "before": ["<leader>", "F"],
+      "commands": ["workbench.action.findInFiles"]
+    },
+    {
+      "before": ["<leader>", "z", "<leader>"],
+      "commands": ["workbench.action.toggleZenMode"]
+    },
+    {
+      "before": ["<leader>", "c", "<leader>"],
+      "commands": ["workbench.action.toggleCenteredLayout"]
+    },
+    {
+      "before": ["<leader>", "r", "<leader>"],
+      "commands": ["workbench.action.files.toggleActiveEditorReadonlyInSession"]
+    },
+    {
+      "before": ["<leader>", "f", "<leader>"],
+      "commands": ["workbench.action.toggleFullScreen"]
+    },
+    {
+      "before": ["<leader>", "<leader>", "r"],
+      "commands": ["workbench.action.tasks.runTask"]
+    },
+    {
+      "before": ["<leader>", "<leader>", "d"],
+      "commands": ["workbench.action.debug.start"]
+    },
+    {
+      "before": ["<space>", "l"],
+      "commands": [
+        {
+          "command": "notebook.formatCell",
+          "when": "inCompositeEditor"
+        },
+        {
+          "command": "editor.action.formatDocument",
+          "when": "!inCompositeEditor"
+        }
+      ]
+    },
+    {
+      "before": ["<space>", "t"],
+      "commands": ["workbench.action.reopenClosedEditor"]
+    },
+    {
+      "before": ["<space>", "q"],
+      "commands": ["workbench.action.closeActiveEditor"]
+    },
+    {
+      "before": ["<space>", "w"],
+      "commands": ["workbench.action.closeOtherEditors"]
+    },
+    {
+      "before": ["<space>", "x"],
+      "commands": ["revealInExplorer"]
+    },
+    {
+      "before": ["<space>", "f"],
+      "commands": ["workbench.action.quickOpen"]
+    },
+    {
+      "before": ["<space>", "a"],
+      "commands": ["workbench.action.showCommands"]
+    },
+    {
+      "before": ["<space>", "S"],
+      "commands": ["workbench.action.gotoSymbol"]
+    },
+    {
+      "before": ["<space>", "s"],
+      "commands": ["workbench.action.showAllSymbols"]
+    },
+    {
+      "before": ["<space>", "r"],
+      "commands": ["editor.action.goToReferences"]
+    },
+    {
+      "before": ["<space>", "p"],
+      "commands": ["workbench.action.pinEditor"],
+      "when": "!activeEditorIsPinned"
+    },
+    {
+      "before": ["<space>", "P"],
+      "commands": ["workbench.action.unpinEditor"],
+      "when": "activeEditorIsPinned"
+    },
+    {
+      "before": ["<space>", "<space>"],
+      "commands": ["workbench.action.openView"]
+    },
+    {
+      "before": ["<c-w>", ","],
+      "commands": ["workbench.action.copyEditorToNewWindow"]
+    },
+    {
+      "before": ["<c-w>", "."],
+      "commands": ["workbench.action.moveEditorToNewWindow"]
+    },
+    {
+      "before": ["<c-w>", "/"],
+      "commands": ["workbench.action.toggleEditorGroupLayout"]
+    },
+    {
+      "before": ["<space>"],
+      "commands": ["vspacecode.space"]
+    },
+    {
+      "before": [","],
+      "commands": [
+        "vspacecode.space",
+        {
+          "command": "whichkey.triggerKey",
+          "args": "m"
+        }
+      ]
+    }
+  ],
+  "vim.visualModeKeyBindingsNonRecursive": [
+    {
+      "before": [";", "m"],
+      "commands": [
+        {
+          "command": "editor.action.insertSnippet",
+          "args": {
+            "snippet": "$${TM_SELECTED_TEXT}$"
+          }
+        }
+      ]
+    },
+    {
+      "before": [";", "M"],
+      "commands": [
+        {
+          "command": "editor.action.insertSnippet",
+          "args": {
+            "snippet": "$$${TM_SELECTED_TEXT}$$"
+          }
+        }
+      ]
+    },
+    {
+      "before": [";", "b"],
+      "commands": ["markdown.extension.editing.toggleBold"]
+    },
+    {
+      "before": [";", "i"],
+      "commands": ["markdown.extension.editing.toggleItalic"]
+    },
+    {
+      "before": [";", "c"],
+      "commands": ["markdown.extension.editing.toggleCodeSpan"]
+    },
+    {
+      "before": [";", "C"],
+      "commands": ["markdown.extension.editing.toggleCodeBlock"]
+    },
+    {
+      "before": [";", "t"],
+      "commands": ["markdown.extension.checkTaskList"]
+    },
+    {
+      "before": ["g", "y"],
+      "commands": ["editor.action.clipboardCopyAction"]
+    },
+    {
+      "before": ["g", "p"],
+      "commands": ["editor.action.clipboardPasteAction"]
+    },
+    {
+      "before": ["j"],
+      "after": ["g", "j"]
+    },
+    {
+      "before": ["k"],
+      "after": ["g", "k"]
+    },
+    {
+      "before": ["w"],
+      "after": ["<leader>", "w"]
+    },
+    {
+      "before": ["b"],
+      "after": ["<leader>", "b"]
+    },
+    {
+      "before": ["L"],
+      "after": ["$"]
+    },
+    {
+      "before": ["H"],
+      "after": ["^"]
+    },
+    {
+      "before": ["<C-i>"],
+      "commands": ["inlineChat.start"]
+    },
+    {
+      "before": ["<leader>", "E"],
+      "commands": ["editor.action.refactor"]
+    },
+    {
+      "before": ["<leader>", "f"],
+      "commands": ["actions.find"]
+    },
+    {
+      "before": ["<leader>", "F"],
+      "commands": ["workbench.action.findInFiles"]
+    },
+    {
+      "before": ["A"],
+      "commands": ["editor.action.insertCursorAtEndOfEachLineSelected"]
+    },
+    {
+      "before": [">"],
+      "commands": ["editor.action.indentLines"]
+    },
+    {
+      "before": ["<"],
+      "commands": ["editor.action.outdentLines"]
+    },
+    {
+      "before": ["<space>", "<space>"],
+      "commands": ["editor.action.smartSelect.expand"]
+    },
+    // {
+    //   "before": [";", "p"],
+    //   "commands": ["editor.action.transformToPascalcase"]
+    // },
+    {
+      "before": [";", "t"],
+      "commands": ["editor.action.transformToTitlecase"]
+    },
+    // {
+    //   "before": [";", ";"],
+    //   "commands": ["editor.action.transformToCamelcase"]
+    // },
+    // {
+    //   "before": [";", "s"],
+    //   "commands": ["editor.action.transformToSnakecase"]
+    // },
+    // {
+    //   "before": [";", "k"],
+    //   "commands": ["editor.action.transformToKebabcase"]
+    // },
+    {
+      "before": ["<space>", "l"],
+      "commands": ["editor.action.formatSelection"]
+    },
+    {
+      "before": ["s"],
+      "commands": ["editor.action.surroundWithSnippet"]
+    },
+    {
+      "before": ["<space>"],
+      "commands": ["vspacecode.space"]
+    },
+    {
+      "before": [","],
+      "commands": [
+        "vspacecode.space",
+        {
+          "command": "whichkey.triggerKey",
+          "args": "m"
+        }
+      ]
+    }
+  ],
+  "vim.operatorPendingModeKeyBindingsNonRecursive": [
+    {
+      "before": ["L"],
+      "after": ["$"]
+    },
+    {
+      "before": ["H"],
+      "after": ["^"]
+    }
+  ],
+  "vim.insertModeKeyBindingsNonRecursive": [
+    {
+      "after": ["<C-g>", "u", "<C-u>"],
+      "before": ["<C-u>"]
+    },
+    {
+      "after": ["<C-g>", "u", "<C-w>"],
+      "before": ["<C-w>"]
+    },
+    // {
+    //   "before": ["<C-i>"],
+    //   "commands": ["inlineChat.start"]
+    // },
+    {
+      "before": [";", "z"],
+      "after": ["\\"]
+    }, // backslash
+    {
+      "before": [";", "l"],
+      "after": ["_"]
+    },
+    {
+      "before": [";", "e"],
+      "after": ["="]
+    }, //equal
+    {
+      "before": [";", "a"],
+      "after": ["+"]
+    }, //add
+    {
+      "before": [";", "s"],
+      "after": ["-"]
+    }, //subtract
+    {
+      "before": [";", ";", "e"],
+      "after": ["=", "="]
+      // "when": "editorLangId == 'javascript'" no use
+    },
+    {
+      "before": [";", "i"],
+      "commands": ["editor.action.insertSnippet"]
+    }
+  ],
+  "vim.insertModeKeyBindings": [
+    // reference: https://code.visualstudio.com/docs/editing/userdefinedsnippets#_assign-keyboard-shortcuts-to-snippets
+    // can also use "command": "type" https://code.visualstudio.com/docs/configure/keybindings#_command-arguments
+    // { "before": ["j", "k"], "after": ["<esc>"] },
+    {
+      "before": [";", "<Space>"],
+      "commands": ["editor.action.triggerSuggest"]
+    },
+    {
+      "before": [";", ";", "<Space>"],
+      "commands": ["editor.action.triggerParameterHints"]
+    },
+    // suppress auto close brackets
+    {
+      "before": ["\""],
+      "commands": [
+        {
+          "command": "editor.action.insertSnippet",
+          "args": {
+            "snippet": "\"$1\"$0"
+          }
+        }
+      ]
+    },
+    {
+      "before": [";", "f"],
+      "commands": [
+        {
+          "command": "editor.action.insertSnippet",
+          "args": {
+            "snippet": "($1)$0"
+          }
+        }
+      ]
+    },
+    {
+      "before": [";", "v"],
+      "commands": [
+        {
+          "command": "editor.action.insertSnippet",
+          "args": {
+            "snippet": "{$1}$0"
+          }
+        }
+      ]
+    },
+    {
+      "before": [";", "b"],
+      "commands": [
+        {
+          "command": "editor.action.insertSnippet",
+          "args": {
+            "snippet": "[$1]$0"
+          }
+        }
+      ]
+    },
+    {
+      "before": [";", ";", "b"],
+      "commands": [
+        {
+          "command": "editor.action.insertSnippet",
+          "args": {
+            "snippet": "[$1][$2]$0"
+          }
+        }
+      ]
+    }
+    // cannot use when clause here
+    // https://github.com/VSCodeVim/Vim/issues/1372#issuecomment-450553106
+    // {
+    //   "before": [";", ";", "e"],
+    //   "commands": [
+    //     {
+    //       "command": "editor.action.insertSnippet",
+    //       "args": {
+    //         "snippet": "=="
+    //       },
+    //     },
+    //     {
+    //       "command": "editor.action.insertSnippet",
+    //       "args": {
+    //         "snippet": "="
+    //       },
+    //       "when": "editorLangId == 'javascript'"
+    //     },
+    //   ]
+    // }
+  ],
+  "vim.replaceWithRegister": true,
+  // "vim.shell": "wsl.exe",
+  "vim.showMarksInGutter": true,
+  "vim.showmodename": false,
+  "vim.smartcase": true,
+  "vim.easymotion": true,
+  "vim.easymotionKeys": "asdfghjkl;wertyuiocvnm,",
+  // "vim.easymotionDimBackground": true,
+  "vim.easymotionDimColor": "#637A34",
+  "vim.easymotionMarkerBackgroundColor": "#FFD710", // Example: Gold background for markers
+  "vim.easymotionMarkerForegroundColorOneChar": "#35AB7F", // Example: Black text for one-character markers
+  "vim.easymotionMarkerForegroundColorTwoCharFirst": "#28CFE0", // Example: Black text for one-character markers
+  "vim.easymotionMarkerForegroundColorTwoCharSecond": "#3BA1A1", // Example: Black text for one-character markers
+  "vim.easymotionDimBackground": true,
+  "vim.easymotionIncSearchForegroundColor": "#7fbf00",
+  // "vim.easymotionMarkerBackgroundColor": "#0000",
+  /*   "vim.statusBarColorControl": true,
+  "vim.statusBarColors.normal": ["#688A89", "#8C9FC4"],
+  "vim.statusBarColors.insert": "#B35879",
+  "vim.statusBarColors.visual": "#B48EAD",
+  "vim.statusBarColors.visualline": "#94758E",
+  "vim.statusBarColors.visualblock": "#A3BE8C",
+  "vim.statusBarColors.replace": "#D08770",
+  "vim.statusBarColors.commandlineinprogress": "#007ACC",
+  "vim.statusBarColors.searchinprogressmode": "#007ACC",
+  "vim.statusBarColors.easymotionmode": "#007ACC",
+  "vim.statusBarColors.easymotioninputmode": "#007ACC",
+  "vim.statusBarColors.surroundinputmode": "#007ACC", */
+  "vim.targets.enable": true,
+  "vim.useCtrlKeys": true,
+  "vim.visualstar": true,
+  "vim.whichwrap": "b,w,h,l,<,>,[,]",

@@ -1,6 +1,7 @@
 # TODO
 
 1. refactor powershell scripts: move functions into the independent file
+2. 将vscode setting拆分成多个文件
 2. learn [gitconfig](https://github.com/twpayne/dotfiles/blob/da62cef4e6cc09ab4b11e9d13bc9f3ac2b41f570/home/dot_config/git/config.tmpl#L123)
 3. ubuntu24.04之前的apt换源操作
 4. 根据是否在国外进行换源操作
