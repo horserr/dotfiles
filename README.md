@@ -46,8 +46,11 @@ This repo is adapted from: [twpayne's dotfiles](https://github.com/twpayne/dotfi
 5. (recommend) to use `neovim`, install `treesitter` beforehand
 
    ```sh
+   sudo apt update
+   sudo apt install llvm-dev libclang-dev clang
    cargo install tree-sitter-cli
    ```
+   reopen the terminal and then enter `nvim`
 
 6. (recommend) install `nodejs` with `nvm`
 

@@ -5,6 +5,7 @@
 3. ubuntu24.04之前的apt换源操作
 4. 根据是否在国外进行换源操作
 5. wsl.conf文件
+6. 安装ffmpeg, build-essential, poppler, imagemagic
 
 ## install apps
 
