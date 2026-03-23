@@ -9,6 +9,7 @@ function checkAdminAccess() {
     exit
   }
 }
+
 function optionCreate() {
   param([string]$folder)
   if (!(Test-Path $folder)) {

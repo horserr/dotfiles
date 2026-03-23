@@ -347,8 +347,8 @@
   "vim.argumentObjectSeparators": [",", ";"],
   "vim.autoSwitchInputMethod.defaultIM": "1033",
   "vim.autoSwitchInputMethod.enable": true,
-  "vim.autoSwitchInputMethod.obtainIMCmd": "D:/path/im-select.exe",
-  "vim.autoSwitchInputMethod.switchIMCmd": "D:/path/im-select.exe {im}",
+  "vim.autoSwitchInputMethod.obtainIMCmd": "C:/path/im-select.exe",
+  "vim.autoSwitchInputMethod.switchIMCmd": "C:/path/im-select.exe {im}",
   // Vim settings
   "vim.camelCaseMotion.enable": true,
   "vim.cursorStylePerMode.insert": "line-thin",
@@ -1481,5 +1481,7 @@
   "chat.viewSessions.orientation": "stacked",
   "chat.tools.terminal.sandbox.enabled": true,
   "chat.mcp.gallery.enabled": true,
-  "update.enableWindowsBackgroundUpdates": true
+  "update.enableWindowsBackgroundUpdates": true,
+  "github.copilot.chat.copilotMemory.enabled": true,
+  "workbench.settings.showAISearchToggle": false,
 }

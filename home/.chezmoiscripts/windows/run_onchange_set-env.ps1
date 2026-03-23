@@ -19,10 +19,10 @@ function optionCreate() {
 }
 # ------------------------
 
-$devDrive = (Resolve-Path -Path "D:\").Path
-$cacheFolder = "$devDrive\DevCache"
-optionCreate -folder $cacheFolder
-$cacheFolder = (Resolve-Path -Path $cacheFolder).Path
+# $devDrive = (Resolve-Path -Path "D:\").Path
+# $cacheFolder = "$devDrive\DevCache"
+# optionCreate -folder $cacheFolder
+# $cacheFolder = (Resolve-Path -Path $cacheFolder).Path
 
 # ------------------------
 # LLVM
