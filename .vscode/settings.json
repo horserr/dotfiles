@@ -1,0 +1,8 @@
+{
+  "files.associations": {
+    ".chezmoiignore": "gitignore",
+    "dot_gitconfig": "properties",
+    "dot_ideavimrc": "Vimscript",
+    "dot_wslconfig": "properties"
+  }
+}

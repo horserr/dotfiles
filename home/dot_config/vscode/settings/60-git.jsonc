@@ -1,0 +1,32 @@
+{
+  "$schema": "vscode://schemas/settings/user",
+
+  "git.autofetch": true,
+  "git.blame.editorDecoration.disableHover": true,
+  "git.blame.ignoreWhitespace": true,
+  "git.blame.statusBarItem.enabled": true,
+  "git.fetchOnPull": true,
+  "git.inputValidation": true,
+  "git.mergeEditor": true,
+  "git.showPushSuccessNotification": true,
+  "git.supportCancellation": true,
+  "git.terminalGitEditor": true,
+  "git.timeline.showUncommitted": true,
+  "gitlens.ai.gitkraken.model": "gemini:gemini-2.0-flash",
+  "gitlens.ai.model": "gitkraken",
+  "gitlens.currentLine.fontSize": 16,
+  "gitlens.graph.layout": "editor",
+  "gitlens.views.scm.grouped.views": {
+    "branches": false,
+    "commits": false,
+    "contributors": false,
+    "fileHistory": false,
+    "launchpad": false,
+    "remotes": false,
+    "repositories": false,
+    "searchAndCompare": false,
+    "stashes": false,
+    "tags": false,
+    "worktrees": false
+  }
+}
