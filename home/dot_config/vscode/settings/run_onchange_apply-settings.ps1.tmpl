@@ -1,5 +1,5 @@
 {{- /* 1) 源目录：settings 分片目录 */ -}}
-{{- $partsDir := joinPath .chezmoi.sourceDir "home/dot_config/vscode/settings" -}}
+{{- $partsDir := joinPath .chezmoi.sourceDir "dot_config/vscode/settings" -}}
 
 {{- /* 2) 触发哈希：任一分片变化都会触发 run_onchange */ -}}
 {{- $content := "" -}}
@@ -14,7 +14,7 @@ $ErrorActionPreference = "Stop"
 
 $targetFile = Join-Path $env:APPDATA "Code\User\settings.json"
 $partsDir = "{{ $partsDir }}"
-$helperScript = "{{ joinPath .chezmoi.sourceDir \"home/dot_config/vscode/scripts/merge-vscode-jsonc-fragments.ps1\" }}"
+$helperScript = '{{ joinPath .chezmoi.sourceDir "dot_config/vscode/scripts/merge-vscode-jsonc-fragments.ps1" }}'
 
 Write-Host "检测到 VSCode settings 分片变动，正在生成：$targetFile"
 

@@ -1,0 +1,3 @@
+**/*.jsonc
+vscode/**/*.jsonc
+vscode/scripts/

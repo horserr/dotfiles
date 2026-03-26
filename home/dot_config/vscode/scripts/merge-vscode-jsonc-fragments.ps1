@@ -64,7 +64,7 @@ function Merge-VSCodeJsoncFragments {
         $start = $raw.IndexOf($openToken)
         $end = $raw.LastIndexOf($closeToken)
         if ($start -lt 0 -or $end -le $start) {
-            throw "分片文件不是有效$Mode结构: $name"
+            throw "分片文件不是有效 $Mode 结构: $name"
         }
 
         $body = $raw.Substring($start + 1, $end - $start - 1).Trim()

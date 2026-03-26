@@ -78,7 +78,6 @@ function Ensure-Symlink {
     try {
         # 对于文件和目录采用不同的 ItemType
         $targetItem = Get-Item -Path $TargetPath -Force
-        $itemType = if ($targetItem.PSIsContainer) { "Directory" } else { "File" }
 
         New-Item -ItemType SymbolicLink -Path $LinkPath -Target $TargetPath -Force | Out-Null
 
@@ -103,7 +102,6 @@ function Ensure-Symlink {
 
 $dotConfigPath = "$env:USERPROFILE\.config"
 $documentPath = [Environment]::GetFolderPath("MyDocuments")
-$vscodePath = "$env:APPDATA\Code\User"
 
 # 定义映射关系：$映射[链接路径] = 目标路径
 $mappings = @{
@@ -111,24 +109,6 @@ $mappings = @{
   "$documentPath\PowerShell\Microsoft.PowerShell_profile.ps1" = @{
     target = "$env:USERPROFILE\powershell\profile"
     desc   = "PowerShell Profile"
-  }
-
-  # Neovim
-  "$env:LOCALAPPDATA\nvim" = @{
-    target = "$dotConfigPath\nvim"
-    desc   = "Neovim Config"
-  }
-
-  # uv
-  "$env:APPDATA\uv\uv.toml" = @{
-    target = "$dotConfigPath\uv\uv.toml"
-    desc   = "uv Config"
-  }
-
-  # VS Code - snippets
-  "$vscodePath\snippets" = @{
-    target = "$dotConfigPath\vscode\snippets"
-    desc   = "VS Code Snippets"
   }
 
   # Windows Terminal Preview
