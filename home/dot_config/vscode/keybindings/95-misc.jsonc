@@ -1,0 +1,111 @@
+[
+  {
+    "key": "shift+5",
+    "command": "editor.emmet.action.matchTag",
+    "when": "editorTextFocus && !editorReadonly && editorLangId == 'html' && vim.mode=='Normal'"
+  },
+  {
+    "key": "shift+ctrl+f",
+    "command": "filesExplorer.findInFolder",
+    "when": "explorerResourceIsFolder && filesExplorerFocus && foldersViewVisible && !inputFocus"
+  },
+  {
+    "key": "ctrl+shift+c",
+    "command": "workbench.view.extension.containersView"
+  },
+  {
+    "key": "ctrl+h",
+    "command": "file-browser.stepOut",
+    "when": "inFileBrowser"
+  },
+  {
+    "key": "ctrl+l",
+    "command": "file-browser.stepIn",
+    "when": "inFileBrowser"
+  },
+  {
+    "key": "ctrl+j",
+    "command": "workbench.action.quickOpenSelectNext",
+    "when": "inQuickOpen"
+  },
+  {
+    "key": "ctrl+k",
+    "command": "workbench.action.quickOpenSelectPrevious",
+    "when": "inQuickOpen"
+  },
+  {
+    "key": "ctrl+j",
+    "command": "selectNextSuggestion",
+    "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
+  },
+  {
+    "key": "ctrl+k",
+    "command": "selectPrevSuggestion",
+    "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
+  },
+  {
+    "key": "ctrl+l",
+    "command": "acceptSelectedSuggestion",
+    "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
+  },
+  {
+    "key": "ctrl+j",
+    "command": "showNextParameterHint",
+    "when": "editorFocus && parameterHintsMultipleSignatures && parameterHintsVisible"
+  },
+  {
+    "key": "ctrl+k",
+    "command": "showPrevParameterHint",
+    "when": "editorFocus && parameterHintsMultipleSignatures && parameterHintsVisible"
+  },
+  {
+    "key": "ctrl+j",
+    "command": "selectNextCodeAction",
+    "when": "codeActionMenuVisible"
+  },
+  {
+    "key": "ctrl+k",
+    "command": "selectPrevCodeAction",
+    "when": "codeActionMenuVisible"
+  },
+  {
+    "key": "ctrl+l",
+    "command": "acceptSelectedCodeAction",
+    "when": "codeActionMenuVisible"
+  },
+  {
+    "key": "x",
+    "command": "magit.discard-at-point",
+    "when": "editorTextFocus && editorLangId == 'magit' && vim.mode =~ /^(?!SearchInProgressMode|CommandlineInProgress).*$/"
+  },
+  {
+    "key": "-",
+    "command": "magit.reverse-at-point",
+    "when": "editorTextFocus && editorLangId == 'magit' && vim.mode =~ /^(?!SearchInProgressMode|CommandlineInProgress).*$/"
+  },
+  {
+    "key": "shift+-",
+    "command": "magit.reverting",
+    "when": "editorTextFocus && editorLangId == 'magit' && vim.mode =~ /^(?!SearchInProgressMode|CommandlineInProgress).*$/"
+  },
+  {
+    "key": "shift+o",
+    "command": "magit.resetting",
+    "when": "editorTextFocus && editorLangId == 'magit' && vim.mode =~ /^(?!SearchInProgressMode|CommandlineInProgress).*$/"
+  },
+  {
+    "key": "y",
+    "command": "vspacecode.showMagitRefMenu",
+    "when": "editorTextFocus && editorLangId == 'magit' && vim.mode == 'Normal'"
+  },
+  {
+    "key": "g",
+    "command": "vspacecode.showMagitRefreshMenu",
+    "when": "editorTextFocus && editorLangId == 'magit' && vim.mode =~ /^(?!SearchInProgressMode|CommandlineInProgress).*$/"
+  },
+  {
+    "key": "tab",
+    "command": "extension.vim_tab",
+    "when": "editorTextFocus && vim.active && !inDebugRepl && vim.mode != 'Insert' && editorLangId != 'magit'"
+  }
+]

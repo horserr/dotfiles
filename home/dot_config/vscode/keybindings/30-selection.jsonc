@@ -1,0 +1,21 @@
+[
+  {
+    "key": "alt+n",
+    "command": "editor.action.nextSelectionMatchFindAction",
+    "when": "editorFocus"
+  },
+  {
+    "key": "alt+j",
+    "command": "editor.action.addSelectionToNextFindMatch",
+    "when": "editorFocus"
+  },
+  {
+    "key": "alt+v",
+    "command": "editor.action.smartSelect.expand",
+    "when": "editorFocus"
+  },
+  {
+    "key": "shift+alt+j",
+    "command": "editor.action.addSelectionToPreviousFindMatch"
+  }
+]

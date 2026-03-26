@@ -1,0 +1,27 @@
+[
+  {
+    "key": "shift+n",
+    "command": "explorer.newFile",
+    "when": "explorerViewletVisible && filesExplorerFocus && !inputFocus"
+  },
+  {
+    "key": "shift+d",
+    "command": "deleteFile",
+    "when": "explorerViewletVisible && filesExplorerFocus && !inputFocus"
+  },
+  {
+    "key": "shift+e",
+    "command": "renameFile",
+    "when": "explorerViewletVisible && filesExplorerFocus && !inputFocus"
+  },
+  {
+    "key": "shift+r",
+    "command": "revealFileInOS",
+    "when": "filesExplorerFocus && !inputFocus"
+  },
+  {
+    "key": "shift+f",
+    "command": "list.find",
+    "when": "filesExplorerFocus && !inputFocus"
+  }
+]

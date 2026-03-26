@@ -1,0 +1,22 @@
+[
+  {
+    "key": "shift+escape",
+    "command": "workbench.action.terminal.kill",
+    "when": "terminalFocus && terminalProcessSupported"
+  },
+  {
+    "key": "ctrl+j",
+    "command": "workbench.action.terminal.toggleTerminal",
+    "when": "terminal.active"
+  },
+  {
+    "key": "ctrl+shift+j",
+    "command": "workbench.action.terminal.openNativeConsole",
+    "when": "!terminalFocus"
+  },
+  {
+    "key": "ctrl+shift+`",
+    "command": "workbench.action.terminal.new",
+    "when": "terminalFocus&&(terminalProcessSupported || terminalWebExtensionContributedProfile)"
+  }
+]

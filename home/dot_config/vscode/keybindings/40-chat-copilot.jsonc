@@ -1,0 +1,41 @@
+[
+  {
+    "key": "`",
+    "command": "workbench.action.chat.openInNewWindow",
+    "when": "auxiliaryBarFocus && !chatInputHasFocus"
+  },
+  {
+    "key": "escape",
+    "command": "workbench.action.focusactiveeditorgroup",
+    "when": "auxiliarybarfocus"
+  },
+  {
+    "key": "alt+/",
+    "command": "workbench.action.toggleAuxiliaryBar",
+    "when": "auxiliaryBarVisible && chatInputHasFocus"
+  },
+  {
+    "key": "alt+/",
+    "command": "workbench.panel.chat.view.copilot.focus",
+    "when": "!(auxiliaryBarVisible && chatInputHasFocus)"
+  },
+  {
+    "key": "`",
+    "command": "workbench.action.quickchat.openInChatView",
+    "when": "quickChatHasFocus && !chatInputHasFocus"
+  },
+  {
+    "key": "alt+3",
+    "command": "workbench.action.chat.openInSidebar"
+  },
+  {
+    "key": "ctrl+h",
+    "command": "workbench.action.chat.history",
+    "when": "view == 'workbench.panel.chat.view.copilot'"
+  },
+  {
+    "key": "ctrl+alt+/",
+    "command": "github.copilot.chat.completions.toggle",
+    "when": "github.copilot.activated && github.copilot.extensionUnification.activated"
+  }
+]

@@ -57,10 +57,10 @@ setEnv -name "MODEL_ENDPOINT" -value "https://www.modelscope.cn/" -target "User"
 # ------------------------
 # rustup
 # ------------------------
-$rustupServer = "https://rsproxy.cn"
-$rustupRoot = "https://rsproxy.cn/rustup"
-setEnv -name "RUSTUP_DIST_SERVER" -value $rustupServer -target "User"
-setEnv -name "RUSTUP_UPDATE_ROOT" -value $rustupRoot -target "User"
+# $rustupServer = "https://rsproxy.cn"
+# $rustupRoot = "https://rsproxy.cn/rustup"
+# setEnv -name "RUSTUP_DIST_SERVER" -value $rustupServer -target "User"
+# setEnv -name "RUSTUP_UPDATE_ROOT" -value $rustupRoot -target "User"
 
 # ------------------------
 # bun

@@ -3,6 +3,7 @@
     ".chezmoiignore": "gitignore",
     "dot_gitconfig": "properties",
     "dot_ideavimrc": "Vimscript",
-    "dot_wslconfig": "properties"
+    "dot_wslconfig": "properties",
+    ".ps1.tmpl": "powershell"
   }
 }
