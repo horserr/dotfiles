@@ -7,6 +7,9 @@
     "GitHub.copilot-chat",
     "yzhang.markdown-all-in-one"
   ],
+  "dotfiles.installCommand": "install.sh",
+  "dotfiles.repository": "horserr/dotfiles-linux",
+  "dotfiles.targetPath": "~/.config/.dotfiles",
   "explorer.autoOpenDroppedFile": true,
   "explorer.confirmDelete": false,
   "explorer.confirmPasteNative": false,
