@@ -65,6 +65,11 @@ to update staged files
 git add -u
 ```
 
+to remove file from history
+```sh
+uvx git-filter-repo --path <file path> --invert-paths
+```
+
 在输出列表中，权限位以 100755 开头的文件就是 Git 认为的可执行文件。
 
 ## test proxy connection in WSL
