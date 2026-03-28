@@ -4,6 +4,8 @@
     "dot_gitconfig": "properties",
     "dot_ideavimrc": "Vimscript",
     "dot_wslconfig": "properties",
-    ".ps1.tmpl": "powershell"
+    ".ps1.tmpl": "powershell",
+    ".chezmoiattributes": "plaintext",
+    ".gitattributes": "plaintext"
   }
 }
