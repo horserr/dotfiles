@@ -15,9 +15,24 @@ function util {
 function myip { curl ifconfig.me }
 function v { $Input | nvim - }                  # Get-Process | v
 
-function gp {
-  git push origin $(git branch --show-current)
+function Get-BitLockerSummary {
+  <#
+  .SYNOPSIS
+  显示所有驱动器的 BitLocker 状态看板
+  #>
+  $volumes = Get-BitLockerVolume
+  Write-Host "`n[ BitLocker 状态看板 ]" -ForegroundColor Cyan
+  $volumes | Select-Object MountPoint,
+  @{Name = "状态"; Expression = { $_.ProtectionStatus } },
+  @{Name = "加密率"; Expression = { "{0}%" -f $_.EncryptionPercentage } },
+  @{Name = "锁定"; Expression = { $_.LockStatus } } | Format-Table -AutoSize
+
+  $svc = Get-Service BDESVC
+  $color = if ($svc.Status -eq "Running") { "Green" } else { "Red" }
+  Write-Host "服务状态 (BDESVC): " -NoNewline
+  Write-Host $svc.Status -ForegroundColor $color
 }
+
 
 function proxy-on {
   $env:HTTP_PROXY = "http://localhost:7897"
@@ -30,7 +45,7 @@ function set-title {
   $host.UI.RawUI.WindowTitle = $Title
 }
 
-function loading{
+function loading {
   # link: https://learn.microsoft.com/en-us/windows/terminal/tutorials/progress-bar-sequences
   Write-Host "`e]9;4;3;50`e\"
 }
@@ -98,42 +113,63 @@ function download {
   yt-dlp.exe --downloader aria2c --downloader-args "aria2c: -x 16 -s 16 -k 1M" $m3u8link -o $output
 }
 
-function special {
+function Get-AllSpecialPaths {
   param(
     [Parameter(Position = 0)]
     [string]$Name
   )
-  $folders = [Environment+SpecialFolder]::GetValues([Environment+SpecialFolder])
 
-  if (-not [string]::IsNullOrWhiteSpace($Name)) {
-    # 尝试匹配枚举名称（不区分大小写）
-    if ($Name -in $folders) {
-      $path = [Environment]::GetFolderPath($Name)
-      if (-not [string]::IsNullOrWhiteSpace($path)) {
-        Write-Host "正在打开: $path" -ForegroundColor Cyan
-        explorer.exe $path
-      }
-      else {
-        Write-Error "该特殊文件夹路径在当前系统中为空。"
+  # 1. 采集 .NET SpecialFolders (NET_Special)
+  $specialFolders = [Environment+SpecialFolder]::GetValues([Environment+SpecialFolder])
+  $netList = foreach ($folder in $specialFolders) {
+    $path = [Environment]::GetFolderPath($folder)
+    if (-not [string]::IsNullOrWhiteSpace($path)) {
+      [PSCustomObject]@{
+        Name = $folder.ToString()
+        Path = $path
       }
     }
+  }
+
+  # 2. 采集 CMD 风格的环境变量 (Env_Variable)
+  # 过滤掉非路径变量，只保留以盘符或网络路径开头的
+  $envList = Get-ChildItem Env: | Where-Object {
+    $_.Value -match '^[a-zA-Z]:\\' -or $_.Value -like '\\*'
+  } | ForEach-Object {
+    [PSCustomObject]@{
+      Name = $_.Name
+      Path = $_.Value
+    }
+  }
+
+  # 3. 逻辑处理：搜索与打开
+  if (-not [string]::IsNullOrWhiteSpace($Name)) {
+    $cleanName = $Name.Replace("%", "")
+    # 在两个列表里同时查找
+    $target = ($netList + $envList) | Where-Object { $_.Name -ieq $cleanName } | Select-Object -First 1
+
+    if ($target) {
+      Write-Host "正在打开路径: $($target.Path)" -ForegroundColor Cyan
+      explorer.exe $target.Path
+    }
     else {
-      Write-Error "未找到名为 '$Name' 的特殊文件夹。请运行不带参数的 'special' 命令查看可用列表。"
+      Write-Error "未找到名为 '$Name' 的路径。"
     }
     return
   }
 
-  $results = foreach ($folder in $folders) {
-    [PSCustomObject]@{
-      FolderName = $folder
-      Path       = [Environment]::GetFolderPath($folder)
-    }
-  }
+  # 4. 分组美化展示
+  Write-Host "`n==== [1] .NET Special Folders (PowerShell 特有) ====" -ForegroundColor Cyan
+  $netList | Sort-Object Name | Format-Table -AutoSize
 
-  # 过滤掉路径为空的项（有些文件夹在当前系统环境下可能不存在）并按表格显示
-  # $results | Where-Object { $_.Path -ne "" } | Out-GridView -Title "所有特殊文件夹路径" # 如果想要弹窗查看
-  $results | Where-Object { $_.Path -ne "" } | Format-Table -AutoSize
-  Write-Host "use `special <FolderName>` to open the folder directly." -ForegroundColor DarkMagenta
+  Write-Host "==== [2] Environment Variables (CMD/系统环境变量) ====" -ForegroundColor Yellow
+  $envList | Sort-Object Name | Format-Table -AutoSize
+
+  Write-Host "提示: 使用 'special <Name>' 直接打开文件夹 (不区分大小写)。" -ForegroundColor DarkMagenta
+}
+
+function summary{
+  &sudo.exe pwsh -NoExit -Command "& { . $PROFILE; Get-BitLockerSummary }"
 }
 
 function which {
@@ -150,40 +186,28 @@ function up-all {
 
 function memo {
   Write-Host @"
-  spf: superfile
   trip: trippy
   exhyperv
 
-  git restore --staged file.txt ; # 将暂存区的文件恢复到工作区
-  用于撤销 git add 的操作，如果你不小心把文件添加到暂存区了，可以用这个命令把它移回工作区，保持修改但不提交。
+  robocopy C:\Source D:\Destination /MIR /Z /XA:H /W:5 /R:3
+
+  Get-AppxPackage -Name *terminal*
+  (Get-MpPreference).ExclusionPath
+
+  Add-MpPreference -ExclusionPath "C:\MyFolder"
+  Remove-MpPreference -ExclusionPath "C:\MyFolder"
 
   git rm --cached file.txt  ; # 从 Git 索引中移除但保留工作区文件
-  在编辑gitignore后，如果之前已经被git跟踪的文件现在需要被忽略了，可以用这个命令把它从索引中移除，但保留在磁盘上。这样git就不会再跟踪这个文件了。
+  git restore --staged file.txt ; # 将暂存区的文件恢复到工作区
 
-robocopy C:\Source D:\Destination /MIR /Z /XA:H /W:5 /R:3
+  !!! bitlocker
+  manage-bde -status
+  manage-bde -off C:
 
-Get-AppxPackage -Name *terminal*
-(Get-MpPreference).ExclusionPath
-
-Add-MpPreference -ExclusionPath "C:\MyFolder"
-Remove-MpPreference -ExclusionPath "C:\MyFolder"
-
-git rm --cached file.txt  ; # 从 Git 索引中移除但保留工作区文件
-git restore --staged file.txt ; # 将暂存区的文件恢复到工作区
-
-{
-  "builder": {
-    "gc": {
-      "defaultKeepStorage": "20GB",
-      "enabled": true
-    }
-  },
-  "experimental": false,
-  "registry-mirrors": [
-    "https://35rtko0a.mirror.aliyuncs.com",
-    "https://docker.m.daocloud.io"
-  ]
-}
+  Set-Service BDESVC -StartupType Disabled
+  Stop-Service BDESVC -Force
+  Set-Service BDESVC -StartupType Manual
+  Start-Service BDESVC
 "@
 }
 

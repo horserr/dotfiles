@@ -57,9 +57,6 @@ function prompt {
 #   $host.ui.Write($prompt)
 # }
 
-# direnv 初始化
-Invoke-Expression "$(direnv hook pwsh)"
-
 ##########################
 
 $PostStartTask = {

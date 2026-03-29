@@ -14,3 +14,5 @@ Set-Alias -Name c -Value code
 Set-Alias -Name edge -Value msedge.exe
 Set-Alias -Name f -Value Invoke-Fzf
 Set-Alias -Name cat -Value bat
+
+Set-Alias special Get-AllSpecialPaths
