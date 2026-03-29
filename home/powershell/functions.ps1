@@ -168,7 +168,7 @@ function Get-AllSpecialPaths {
   Write-Host "提示: 使用 'special <Name>' 直接打开文件夹 (不区分大小写)。" -ForegroundColor DarkMagenta
 }
 
-function summary{
+function summary {
   &sudo.exe pwsh -NoExit -Command "& { . $PROFILE; Get-BitLockerSummary }"
 }
 

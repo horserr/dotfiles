@@ -18,6 +18,8 @@ function optionCreate() {
   }
 }
 # ------------------------
+$dotFilesPath = "$env:USERPROFILE\.config\.dotfiles"
+setEnv -name "DOTFILES_PATH" -value $dotFilesPath -target "User"
 
 # $devDrive = (Resolve-Path -Path "D:\").Path
 # $cacheFolder = "$devDrive\DevCache"

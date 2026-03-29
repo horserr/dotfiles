@@ -14,8 +14,6 @@
       "jftuga.less",
       //chezmoi
       "twpayne.chezmoi",
-      //direnv
-      "direnv.direnv",
       //Launcher
       "Python.Launcher",
       //PythonInstallManager
