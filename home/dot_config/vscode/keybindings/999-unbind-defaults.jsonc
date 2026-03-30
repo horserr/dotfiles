@@ -1,460 +1,464 @@
 [
   // Unbind default keybindings
   {
-    "key": "ctrl+alt+l",
     "command": "-editor.action.formatDocument",
+    "key": "ctrl+alt+l",
     "when": "editorHasDocumentFormattingProvider && editorTextFocus && !editorReadonly && !inCompositeEditor"
   },
   {
-    "key": "ctrl+y",
-    "command": "-redo"
+    "command": "-redo",
+    "key": "ctrl+y"
   },
   {
-    "key": "shift+alt+up",
     "command": "-editor.action.copyLinesUpAction",
+    "key": "shift+alt+up",
     "when": "editorTextFocus && !editorReadonly"
   },
   {
-    "key": "ctrl+alt+enter",
     "command": "-interactive.acceptChanges",
+    "key": "ctrl+alt+enter",
     "when": "inlineChatHasProvider && inlineChatVisible && interactiveEditorHasProvider && interactiveEditorVisible && !inlineChatDocumentChanged && !interactiveEditorDocumentChanged || inlineChatHasProvider && inlineChatVisible && interactiveEditorHasProvider && interactiveEditorVisible && !inlineChatDocumentChanged && config.interactiveEditor.editMode != 'preview' || inlineChatHasProvider && inlineChatVisible && interactiveEditorHasProvider && interactiveEditorVisible && !interactiveEditorDocumentChanged && config.inlineChat.editMode != 'preview' || inlineChatHasProvider && inlineChatVisible && interactiveEditorHasProvider && interactiveEditorVisible && config.inlineChat.editMode != 'preview' && config.interactiveEditor.editMode != 'preview'"
   },
   {
-    "key": "alt+up",
     "command": "-editor.action.moveLinesUpAction",
+    "key": "alt+up",
     "when": "editorTextFocus && !editorReadonly"
   },
   {
-    "key": "alt+down",
     "command": "-editor.action.moveLinesDownAction",
+    "key": "alt+down",
     "when": "editorTextFocus && !editorReadonly"
   },
   {
-    "key": "alt+right",
     "command": "-workbench.action.navigateForward",
+    "key": "alt+right",
     "when": "canNavigateForward"
   },
   {
-    "key": "alt+left",
     "command": "-workbench.action.navigateBack",
+    "key": "alt+left",
     "when": "canNavigateBack"
   },
   {
-    "key": "ctrl+shift+enter",
     "command": "-editor.action.insertLineBefore",
-    "when": "editorTextFocus && !editorReadonly"
-  },
-  {
-    "key": "ctrl+enter",
-    "command": "-editor.action.insertLineAfter",
-    "when": "editorTextFocus && !editorReadonly"
-  },
-  {
-    "key": "ctrl+shift+s",
-    "command": "-workbench.action.files.saveAs"
-  },
-  {
     "key": "ctrl+shift+enter",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+  {
+    "command": "-editor.action.insertLineAfter",
+    "key": "ctrl+enter",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+  {
+    "command": "-workbench.action.files.saveAs",
+    "key": "ctrl+shift+s"
+  },
+  {
     "command": "-markdown-preview-enhanced.runAllCodeChunks",
+    "key": "ctrl+shift+enter",
     "when": "editorLangId == 'markdown'"
   },
   {
-    "key": "shift+enter",
     "command": "-markdown-preview-enhanced.runCodeChunk",
+    "key": "shift+enter",
     "when": "editorLangId == 'markdown'"
   },
   {
-    "key": "ctrl+b",
     "command": "-extension.vim_ctrl+b",
+    "key": "ctrl+b",
     "when": "editorTextFocus && vim.active && vim.use<C-b> && !inDebugRepl && vim.mode != 'Insert'"
   },
   {
-    "key": "ctrl+b",
     "command": "-markdown.extension.editing.toggleBold",
+    "key": "ctrl+b",
     "when": "editorTextFocus && !editorReadonly && editorLangId =~ /^markdown$|^rmd$|^quarto$/"
   },
   {
-    "key": "ctrl+e",
     "command": "-extension.vim_ctrl+e",
+    "key": "ctrl+e",
     "when": "editorTextFocus && vim.active && vim.use<C-e> && !inDebugRepl"
   },
   {
-    "key": "ctrl+j",
     "command": "-extension.vim_ctrl+j",
+    "key": "ctrl+j",
     "when": "editorTextFocus && vim.active && vim.use<C-j> && !inDebugRepl"
   },
   {
-    "key": "ctrl+h",
     "command": "-extension.vim_ctrl+h",
+    "key": "ctrl+h",
     "when": "editorTextFocus && vim.active && vim.use<C-h> && !inDebugRepl"
   },
   {
-    "key": "ctrl+d",
     "command": "-extension.vim_ctrl+d",
+    "key": "ctrl+d",
     "when": "editorTextFocus && vim.active && vim.use<C-d> && !inDebugRepl"
   },
   {
-    "key": "ctrl+b",
     "command": "-editor.action.goToDeclaration",
+    "key": "ctrl+b",
     "when": "editorTextFocus"
   },
   {
-    "key": "ctrl+alt+l",
     "command": "-editor.action.formatDocument.none",
+    "key": "ctrl+alt+l",
     "when": "editorTextFocus && !editorHasDocumentFormattingProvider && !editorReadonly"
   },
   {
-    "key": "ctrl+alt+l",
     "command": "-notebook.formatCell",
+    "key": "ctrl+alt+l",
     "when": "editorHasDocumentFormattingProvider && editorTextFocus && inCompositeEditor && notebookEditable && !editorReadonly && activeEditor == 'workbench.editor.notebook'"
   },
   {
-    "key": "ctrl+alt+l",
     "command": "-editor.action.formatSelection",
+    "key": "ctrl+alt+l",
     "when": "editorHasDocumentSelectionFormattingProvider && editorHasSelection && editorTextFocus && !editorReadonly"
   },
   {
-    "key": "ctrl+alt+l",
     "command": "-notebook.format",
+    "key": "ctrl+alt+l",
     "when": "notebookEditable && !editorTextFocus && activeEditor == 'workbench.editor.notebook'"
   },
   {
-    "key": "ctrl+-",
     "command": "-editor.fold",
+    "key": "ctrl+-",
     "when": "editorFocus && foldingEnabled"
   },
   {
-    "key": "ctrl+=",
     "command": "-editor.unfold",
+    "key": "ctrl+=",
     "when": "editorFocus && foldingEnabled"
   },
   {
-    "key": "shift+alt+f",
     "command": "-editor.action.formatDocument",
+    "key": "shift+alt+f",
     "when": "editorHasDocumentFormattingProvider && editorTextFocus && !editorReadonly && !inCompositeEditor"
   },
   {
-    "key": "ctrl+r",
     "command": "-editor.action.startFindReplaceAction",
+    "key": "ctrl+r",
     "when": "editorFocus || editorIsOpen"
   },
   {
-    "key": "ctrl+n",
-    "command": "-workbench.action.showAllSymbols"
+    "command": "-workbench.action.showAllSymbols",
+    "key": "ctrl+n"
   },
   {
-    "key": "ctrl+n",
-    "command": "-workbench.action.files.newUntitledFile"
+    "command": "-workbench.action.files.newUntitledFile",
+    "key": "ctrl+n"
   },
   {
-    "key": "ctrl+]",
     "command": "-editor.action.indentLines",
+    "key": "ctrl+]",
     "when": "editorTextFocus && !editorReadonly"
   },
   {
-    "key": "ctrl+]",
     "command": "-extension.vim_ctrl+]",
+    "key": "ctrl+]",
     "when": "editorTextFocus && vim.active && vim.use<C-]> && !inDebugRepl"
   },
   {
+    "command": "-editor.action.jumpToBracket",
     "key": "ctrl+shift+\\",
-    "command": "-editor.action.jumpToBracket",
     "when": "editorTextFocus"
   },
   {
+    "command": "-editor.action.jumpToBracket",
     "key": "ctrl+shift+m",
-    "command": "-editor.action.jumpToBracket",
     "when": "editorTextFocus"
   },
   {
-    "key": "ctrl+p",
-    "command": "-workbench.action.quickOpen"
+    "command": "-workbench.action.quickOpen",
+    "key": "ctrl+p"
   },
   {
-    "key": "ctrl+p",
     "command": "-editor.action.triggerParameterHints",
+    "key": "ctrl+p",
     "when": "editorHasSignatureHelpProvider && editorTextFocus"
   },
   {
-    "key": "ctrl+shift+`",
     "command": "-workbench.action.terminal.new",
+    "key": "ctrl+shift+`",
     "when": "terminalProcessSupported || terminalWebExtensionContributedProfile"
   },
   {
-    "key": "ctrl+q",
     "command": "-extension.vim_winCtrlQ",
+    "key": "ctrl+q",
     "when": "editorTextFocus && vim.active && vim.use<C-q> && !inDebugRepl"
   },
   {
-    "key": "ctrl+alt+b",
     "command": "-editor.action.goToImplementation",
+    "key": "ctrl+alt+b",
     "when": "editorHasImplementationProvider && editorTextFocus && !isInEmbeddedEditor"
   },
   {
-    "key": "ctrl+q",
     "command": "-editor.action.showHover",
+    "key": "ctrl+q",
     "when": "editorTextFocus"
   },
   {
-    "key": "alt+3",
     "command": "-workbench.view.search",
+    "key": "alt+3",
     "when": "workbench.view.search.active && !searchViewletVisible"
   },
   {
-    "key": "alt+3",
     "command": "-workbench.action.toggleSidebarVisibility",
+    "key": "alt+3",
     "when": "searchViewletVisible"
   },
   {
-    "key": "ctrl+enter",
     "command": "-notebook.cell.insertCodeCellBelow",
+    "key": "ctrl+enter",
     "when": "notebookCellListFocused && !inputFocus"
   },
   {
-    "key": "ctrl+alt+enter",
     "command": "-notebook.cell.execute",
+    "key": "ctrl+alt+enter",
     "when": "notebookCellListFocused && notebookMissingKernelExtension && !notebookCellExecuting && notebookCellType == 'code' || notebookCellListFocused && !notebookCellExecuting && notebookCellType == 'code' && notebookKernelCount > 0 || notebookCellListFocused && !notebookCellExecuting && notebookCellType == 'code' && notebookKernelSourceCount > 0"
   },
   {
-    "key": "ctrl+alt+enter",
     "command": "-notebook.cell.execute",
+    "key": "ctrl+alt+enter",
     "when": "notebookCellListFocused && notebookMissingKernelExtension && !notebookCellExecuting && notebookCellType == 'code' || !notebookCellExecuting && notebookCellType == 'code' && notebookCellListFocused || inlineChatFocused && notebookCellChatFocused && notebookKernelCount > 0 || !notebookCellExecuting && notebookCellType == 'code' && notebookCellListFocused || inlineChatFocused && notebookCellChatFocused && notebookKernelSourceCount > 0 || inlineChatFocused && notebookCellChatFocused && notebookMissingKernelExtension && !notebookCellExecuting && notebookCellType == 'code'"
   },
   {
-    "key": "shift+alt+f",
     "command": "-notebook.formatCell",
+    "key": "shift+alt+f",
     "when": "editorHasDocumentFormattingProvider && editorTextFocus && inCompositeEditor && notebookEditable && !editorReadonly && activeEditor == 'workbench.editor.notebook'"
   },
   {
-    "key": "y",
     "command": "-notebook.cell.copy",
+    "key": "y",
     "when": "notebookEditorFocused && !inputFocus && !notebookOutputInputFocused"
   },
   {
+    "command": "-notebook.cell.copy",
     "key": "c",
-    "command": "-notebook.cell.copy",
     "when": "notebookEditorFocused && !inputFocus && !notebookOutputInputFocused"
   },
   {
-    "key": "y",
     "command": "-notebook.cell.changeToCode",
+    "key": "y",
     "when": "notebookEditorFocused && !inputFocus && !notebookOutputFocused && activeEditor == 'workbench.editor.notebook' && notebookCellType == 'markup'"
   },
   {
-    "key": "ctrl+shift+enter",
     "command": "-notebook.cell.insertCodeCellAbove",
+    "key": "ctrl+shift+enter",
     "when": "notebookCellListFocused && !inputFocus"
   },
   {
-    "key": "ctrl+enter",
     "command": "-notebook.cell.insertCodeCellBelow",
+    "key": "ctrl+enter",
     "when": "notebookCellListFocused && !inputFocus && notebookChatOuterFocusPosition == ''"
   },
   {
-    "key": "b",
     "command": "-notebook.cell.insertCodeCellBelowAndFocusContainer",
+    "key": "b",
     "when": "notebookEditorFocused && !inputFocus && !notebookOutputInputFocused"
   },
   {
-    "key": "m",
     "command": "-notebook.cell.changeToMarkdown",
+    "key": "m",
     "when": "notebookEditorFocused && !inputFocus && !notebookOutputFocused && activeEditor == 'workbench.editor.notebook' && notebookCellType == 'code'"
   },
   {
-    "key": "ctrl+f3",
     "command": "-editor.action.nextSelectionMatchFindAction",
+    "key": "ctrl+f3",
     "when": "editorFocus"
   },
   {
-    "key": "ctrl+e",
-    "command": "-workbench.action.quickOpen"
+    "command": "-workbench.action.quickOpen",
+    "key": "ctrl+e"
   },
   {
-    "key": "ctrl+shift+o",
     "command": "-workbench.action.gotoSymbol",
+    "key": "ctrl+shift+o",
     "when": "!accessibilityHelpIsShown && !accessibleViewIsShown"
   },
   {
-    "key": "ctrl+shift+o",
     "command": "-editor.action.accessibleViewGoToSymbol",
+    "key": "ctrl+shift+o",
     "when": "accessibilityHelpIsShown && accessibleViewGoToSymbolSupported || accessibleViewGoToSymbolSupported && accessibleViewIsShown"
   },
   {
-    "key": "f8",
     "command": "-editor.action.marker.nextInFiles",
+    "key": "f8",
     "when": "editorFocus"
   },
   {
-    "key": "a",
     "command": "-notebook.cell.insertCodeCellAboveAndFocusContainer",
+    "key": "a",
     "when": "notebookEditorFocused && !inputFocus && !notebookOutputInputFocused"
   },
   {
-    "key": "ctrl+f4",
-    "command": "-workbench.action.closeActiveEditor"
+    "command": "-workbench.action.closeActiveEditor",
+    "key": "ctrl+f4"
   },
   {
-    "key": "ctrl+e",
     "command": "-editor.action.toggleScreenReaderAccessibilityMode",
+    "key": "ctrl+e",
     "when": "accessibilityHelpIsShown"
   },
   {
-    "key": "ctrl+shift+b",
     "command": "-workbench.action.tasks.build",
+    "key": "ctrl+shift+b",
     "when": "taskCommandsRegistered"
   },
   {
-    "key": "ctrl+alt+b",
-    "command": "-workbench.action.toggleAuxiliaryBar"
+    "command": "-workbench.action.toggleAuxiliaryBar",
+    "key": "ctrl+alt+b"
   },
   {
-    "key": "alt+k",
     "command": "-editor.action.accessibilityHelpConfigureKeybindings",
+    "key": "alt+k",
     "when": "accessibilityHelpIsShown && accessibleViewHasUnassignedKeybindings"
   },
   {
-    "key": "ctrl+g",
-    "command": "-workbench.action.gotoLine"
+    "command": "-workbench.action.gotoLine",
+    "key": "ctrl+g"
   },
   {
-    "key": "ctrl+1",
-    "command": "-workbench.action.focusFirstEditorGroup"
+    "command": "-workbench.action.focusFirstEditorGroup",
+    "key": "ctrl+1"
   },
   {
-    "key": "ctrl+shift+y",
     "command": "-workbench.debug.action.toggleRepl",
+    "key": "ctrl+shift+y",
     "when": "workbench.panel.repl.view.active"
   },
   {
-    "key": "ctrl+shift+/",
     "command": "-workbench.action.chat.attachTools",
+    "key": "ctrl+shift+/",
     "when": "inChatInput && chatMode == 'agent'"
   },
   {
-    "key": "ctrl+b",
-    "command": "-workbench.action.toggleSidebarVisibility"
+    "command": "-workbench.action.toggleSidebarVisibility",
+    "key": "ctrl+b"
   },
   {
-    "key": "ctrl+shift+r",
     "command": "-editor.action.refactor",
+    "key": "ctrl+shift+r",
     "when": "editorHasCodeActionsProvider && textInputFocus && !editorReadonly"
   },
   {
-    "key": "ctrl+shift+f",
-    "command": "-workbench.action.findInFiles"
+    "command": "-workbench.action.findInFiles",
+    "key": "ctrl+shift+f"
   },
   {
-    "key": "shift+alt+f",
     "command": "-filesExplorer.findInFolder",
+    "key": "shift+alt+f",
     "when": "explorerResourceIsFolder && filesExplorerFocus && foldersViewVisible && !inputFocus"
   },
   {
-    "key": "ctrl+alt+o",
-    "command": "-workbench.action.remote.showMenu"
+    "command": "-workbench.action.remote.showMenu",
+    "key": "ctrl+alt+o"
   },
   {
-    "key": "ctrl+alt+j",
     "command": "-editor.action.insertSnippet",
+    "key": "ctrl+alt+j",
     "when": "editorTextFocus && !editorReadonly && editorLangId == 'powershell'"
   },
   {
-    "key": "ctrl+shift+i",
     "command": "-workbench.action.chat.openagent",
+    "key": "ctrl+shift+i",
     "when": "config.chat.agent.enabled && !chatSetupDisabled && !chatSetupHidden"
   },
   {
-    "key": "ctrl+shift+c",
     "command": "-workbench.action.terminal.openNativeConsole",
+    "key": "ctrl+shift+c",
     "when": "!terminalFocus"
   },
   {
-    "key": "ctrl+`",
     "command": "-workbench.action.terminal.toggleTerminal",
+    "key": "ctrl+`",
     "when": "terminal.active"
   },
   {
-    "key": "ctrl+j",
-    "command": "-workbench.action.togglePanel"
+    "command": "-workbench.action.togglePanel",
+    "key": "ctrl+j"
   },
   {
-    "key": "tab",
     "command": "-extension.vim_tab",
+    "key": "tab",
     "when": "editorTextFocus && vim.active && !inDebugRepl && vim.mode != 'Insert'"
   },
   {
-    "key": "shift+alt+f",
-    "command": "-markdown.extension.editing.toggleBold"
+    "command": "-markdown.extension.editing.toggleBold",
+    "key": "shift+alt+f"
   },
   {
-    "key": "x",
-    "command": "-magit.discard-at-point"
+    "command": "-magit.discard-at-point",
+    "key": "x"
   },
   {
-    "key": "v",
-    "command": "-magit.reverse-at-point"
+    "command": "-magit.reverse-at-point",
+    "key": "v"
   },
   {
-    "key": "shift+v",
-    "command": "-magit.reverting"
+    "command": "-magit.reverting",
+    "key": "shift+v"
   },
   {
-    "key": "shift+x",
-    "command": "-magit.resetting"
+    "command": "-magit.resetting",
+    "key": "shift+x"
   },
   {
-    "key": "x",
-    "command": "-magit.reset-mixed"
+    "command": "-magit.reset-mixed",
+    "key": "x"
   },
   {
-    "key": "ctrl+u x",
-    "command": "-magit.reset-hard"
+    "command": "-magit.reset-hard",
+    "key": "ctrl+u x"
   },
   {
-    "key": "y",
-    "command": "-magit.show-refs"
+    "command": "-magit.show-refs",
+    "key": "y"
   },
   {
-    "key": "g",
     "command": "-magit.refresh",
+    "key": "g",
     "when": "editorTextFocus && editorLangId == 'magit' && vim.mode =~ /^(?!SearchInProgressMode|CommandlineInProgress).*$/"
   },
   {
-    "key": "ctrl+i",
     "command": "-workbench.action.chat.startVoiceChat",
+    "key": "ctrl+i",
     "when": "chatIsEnabled && hasSpeechProvider && inChatInput && !editorFocus && !notebookEditorFocused && !scopedVoiceChatGettingReady && !speechToTextInProgress || chatIsEnabled && hasSpeechProvider && inlineChatFocused && !editorFocus && !notebookEditorFocused && !scopedVoiceChatGettingReady && !speechToTextInProgress"
   },
   {
-    "key": "ctrl+i",
     "command": "-workbench.action.chat.stopListeningAndSubmit",
+    "key": "ctrl+i",
     "when": "inChatInput && voiceChatInProgress && scopedVoiceChatInProgress == 'editor' || inChatInput && voiceChatInProgress && scopedVoiceChatInProgress == 'inline' || inChatInput && voiceChatInProgress && scopedVoiceChatInProgress == 'quick' || inChatInput && voiceChatInProgress && scopedVoiceChatInProgress == 'view' || inlineChatFocused && voiceChatInProgress && scopedVoiceChatInProgress == 'editor' || inlineChatFocused && voiceChatInProgress && scopedVoiceChatInProgress == 'inline' || inlineChatFocused && voiceChatInProgress && scopedVoiceChatInProgress == 'quick' || inlineChatFocused && voiceChatInProgress && scopedVoiceChatInProgress == 'view'"
   },
   {
-    "key": "ctrl+i",
     "command": "-emojisense.quickEmoji",
+    "key": "ctrl+i",
     "when": "editorTextFocus"
   },
   {
-    "key": "ctrl+i",
     "command": "-inlineChat.start",
+    "key": "ctrl+i",
     "when": "editorFocus && inlineChatHasEditsAgent && inlineChatPossible && !editorReadonly && !editorSimpleInput || editorFocus && inlineChatHasNotebookAgent && inlineChatPossible && !editorReadonly && !editorSimpleInput && activeEditor == 'workbench.editor.notebook' || editorFocus && inlineChatHasNotebookInline && inlineChatPossible && !editorReadonly && !editorSimpleInput && activeEditor == 'workbench.editor.notebook'"
   },
   {
-    "key": "ctrl+i",
     "command": "-markdown.extension.editing.toggleItalic",
+    "key": "ctrl+i",
     "when": "editorTextFocus && !editorReadonly && editorLangId =~ /^markdown$|^rmd$|^quarto$/"
   },
   {
-    "key": "ctrl+i",
     "command": "-settings.action.toggleAiSearch",
+    "key": "ctrl+i",
     "when": "aiSettingResultsAvailable && inSettingsEditor"
   },
   {
-    "key": "ctrl+i",
     "command": "-search.action.searchWithAI",
+    "key": "ctrl+i",
     "when": "hasAIResultProviderKey && searchViewletFocus"
   },
   {
-    "key": "ctrl+k n",
-    "command": "workbench.action.files.newUntitledFile"
+    "command": "workbench.action.files.newUntitledFile",
+    "key": "ctrl+k n"
+  },
+  {
+    "command": "-workbench.action.showCommands",
+    "key": "ctrl+shift+p"
   }
 ]
