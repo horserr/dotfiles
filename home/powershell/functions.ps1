@@ -200,6 +200,9 @@ function memo {
   git rm --cached file.txt  ; # 从 Git 索引中移除但保留工作区文件
   git restore --staged file.txt ; # 将暂存区的文件恢复到工作区
 
+  ssh-keygen -t ed25519 -f ~\.ssh\id_ed25519_signing
+  ssh-add ~\.ssh\id_ed25519_signing
+
   !!! bitlocker
   manage-bde -status
   manage-bde -off C:
@@ -211,37 +214,106 @@ function memo {
 "@
 }
 
+<#
+.SYNOPSIS
+    将 Windows 上的 SSH 公钥同步到 WSL 或远程 Linux 服务器。
+
+.DESCRIPTION
+    该函数会自动扫描 $HOME\.ssh 目录下的所有 .pub 文件，并弹出 GUI 窗口供用户选择。
+    支持两种模式：
+    1. 远程模式：将公钥追加到远程主机的 ~/.ssh/authorized_keys 中（用于免密登录）。
+    2. WSL 模式：将公钥文件直接复制到 WSL 实例的 ~/.ssh/ 目录下（用于 SSH 签名或标识）。
+
+.PARAMETER Target
+    远程模式：格式为 user@hostname 或 SSH Config 中的别名。
+    WSL 模式：可选，指定特定的 WSL 发行版名称（如 'Ubuntu-22.04'）。若不填则使用默认分发版。
+
+.PARAMETER ToWSL
+    开关参数。若启用，则执行 WSL 同步逻辑而非远程 SSH 发送。
+
+.PARAMETER AdditionalArgs
+    传递给 ssh 命令的额外参数，例如 -p 2222（仅在远程模式下有效）。
+
+.EXAMPLE
+    ssh-copy-id user@192.168.1.10
+    弹出选择框，选择公钥并发送到远程服务器进行授权。
+
+.EXAMPLE
+    ssh-copy-id -ToWSL
+    弹出选择框，将公钥同步到默认 WSL 分发版的 ~/.ssh 目录。
+
+.EXAMPLE
+    ssh-copy-id Ubuntu-22.04 -ToWSL
+    同步公钥到名为 Ubuntu-22.04 的特定实例。
+#>
 function ssh-copy-id {
+  [CmdletBinding()]
   param(
-    [Parameter(Mandatory = $true, Position = 0)]
-    [string]$Target,  # 可以是 user@hostname，也可以是 config 里的别名
+    [Parameter(Mandatory = $false, Position = 0)]
+    [string]$Target,
+
+    [Parameter(Mandatory = $false)]
+    [switch]$ToWSL,
 
     [Parameter(ValueFromRemainingArguments = $true)]
-    $AdditionalArgs   # 捕获所有其他参数，如 -p 2222 或 -i path/to/key
+    $AdditionalArgs
   )
 
-  # 1. 自动定位公钥路径（优先使用 ed25519，通用使用 rsa）
-  $publicKey = "$HOME/.ssh/id_rsa.pub"
-  if (!(Test-Path $publicKey)) {
-    $publicKey = "$HOME/.ssh/id_ed25519.pub"
-  }
-
-  if (!(Test-Path $publicKey)) {
-    Write-Error "错误: 在 $HOME/.ssh/ 下未找到公钥文件 (id_rsa.pub 或 id_ed25519.pub)"
+  # 1. 扫描并选择公钥
+  $sshDir = "$HOME\.ssh"
+  if (-not (Test-Path $sshDir)) {
+    Write-Error "错误: 未找到 $sshDir 目录。"
     return
   }
 
-  Write-Host "正在将密钥 $publicKey 发送到 $Target..." -ForegroundColor Cyan
-
-  # 2. 执行远程写入
-  # 我们直接把 $Target 传给 ssh，ssh 会自动判断它是别名还是 user@host
-  # $AdditionalArgs 允许你临时增加 -p 端口等参数
-  Get-Content $publicKey | ssh $AdditionalArgs $Target "mkdir -p ~/.ssh; chmod 700 ~/.ssh; cat >> ~/.ssh/authorized_keys; chmod 600 ~/.ssh/authorized_keys"
-
-  if ($LASTEXITCODE -eq 0) {
-    Write-Host "成功！现在尝试使用 'ssh $Target' 连接。" -ForegroundColor Green
+  $pubFiles = Get-ChildItem -Path $sshDir -Filter "*.pub" | Select-Object -ExpandProperty Name
+  if ($pubFiles.Count -eq 0) {
+    Write-Error "错误: 在 $sshDir 下未找到任何 .pub 文件。"
+    return
   }
-  else {
-    Write-Error "发送失败，请检查连接或密码。"
+
+  $selectedKeys = $pubFiles | Out-GridView -Title "请选择要发送的公钥 (支持多选)" -OutputMode Multiple
+  if (-not $selectedKeys) { Write-Warning "操作已取消"; return }
+
+  foreach ($keyName in $selectedKeys) {
+    $pubPath = Join-Path $sshDir $keyName
+    $pubContent = Get-Content $pubPath -Raw
+
+    if ($ToWSL) {
+      # --- 分支 A: 复制到 WSL ---
+      Write-Host "正在同步 $keyName 到 WSL..." -ForegroundColor Cyan
+
+      # 构建 WSL 基础命令，修复空 -d 逻辑
+      $wslArgs = @()
+      if (-not [string]::IsNullOrWhiteSpace($Target)) {
+        $wslArgs += "-d"
+        $wslArgs += $Target
+      }
+      $wslArgs += "sh"
+      $wslArgs += "-c"
+      $wslArgs += "mkdir -p ~/.ssh; chmod 700 ~/.ssh; cat >> ~/.ssh/$keyName; chmod 644 ~/.ssh/$keyName"
+
+      # 执行 wsl 调用
+      $pubContent | & wsl.exe $wslArgs
+
+      if ($LASTEXITCODE -eq 0) {
+        Write-Host "成功同步至 WSL: ~/.ssh/$keyName" -ForegroundColor Green
+      }
+    }
+    else {
+      # --- 分支 B: 复制到远程服务器 ---
+      if ([string]::IsNullOrWhiteSpace($Target)) {
+        Write-Error "远程模式下必须提供 Target (user@host 或别名)。"
+        return
+      }
+      Write-Host "正在发送 $keyName 到远程 $Target..." -ForegroundColor Cyan
+      $remoteCmd = "mkdir -p ~/.ssh; chmod 700 ~/.ssh; cat >> ~/.ssh/authorized_keys; chmod 600 ~/.ssh/authorized_keys"
+
+      $pubContent | ssh $AdditionalArgs $Target $remoteCmd
+
+      if ($LASTEXITCODE -eq 0) {
+        Write-Host "成功发送至 $Target 的 authorized_keys。" -ForegroundColor Green
+      }
+    }
   }
 }

@@ -397,7 +397,8 @@
         "tabColor": "#dedf92",
         "tabTitle": "WSL",
         "unfocusedAppearance": {
-          "experimental.pixelShaderPath": "%USERPROFILE%/.config/.dotfiles/assets/pixel-shaders/Hammster/hueshift.hlsl"
+          // "experimental.pixelShaderPath": "%USERPROFILE%/.config/.dotfiles/assets/pixel-shaders/Hammster/hueshift.hlsl"
+          "experimental.retroTerminalEffect": true
         }
       },
       {

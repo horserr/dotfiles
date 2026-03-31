@@ -1,13 +1,11 @@
 # TODO
 
 1. refactor powershell scripts: move functions into the independent file
-2. 将vscode setting拆分成多个文件
-3. learn [gitconfig](https://github.com/twpayne/dotfiles/blob/da62cef4e6cc09ab4b11e9d13bc9f3ac2b41f570/home/dot_config/git/config.tmpl#L123)
 4. ubuntu24.04之前的apt换源操作
 5. 根据是否在国外进行换源操作
 6. wsl.conf文件
 7. 安装ffmpeg, build-essential, poppler, imagemagic
-8. 获取vscode安装插件列表
+8. 同步windows和linux上的git config, vscode tasks配置
 
 ## install apps
 

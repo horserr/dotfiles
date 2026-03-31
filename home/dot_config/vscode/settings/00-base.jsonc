@@ -15,7 +15,7 @@
     "tamasfe.even-better-toml",
     "mutantdino.resourcemonitor",
     "yzhang.markdown-all-in-one",
-    "yoshi389111.markdown-table-rainbow",
+    "yoshi389111.markdown-table-rainbow"
   ],
   "dotfiles.installCommand": "chezmoi init --source ~/.config/.dotfiles && chezmoi apply",
   "dotfiles.repository": "horserr/dotfiles-linux",
@@ -80,13 +80,14 @@
     "GitHub.copilot-chat",
     "Gruntfuggly.todo-tree",
     "esbenp.prettier-vscode",
-    "dakara.dakara-foldplus",
+    "dakara.dakara-foldplus"
   ],
   "remote.SSH.connectTimeout": 300,
   "remote.SSH.defaultExtensions": [
     "esbenp.prettier-vscode",
     "tamasfe.even-better-toml"
   ],
+  "remote.SSH.enableAgentForwarding": true,
   "remote.SSH.lockfilesInTmp": true,
   "remote.SSH.remoteServerListenOnSocket": true,
   // Search

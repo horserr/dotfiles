@@ -42,8 +42,8 @@
       "Microsoft.Edit",
       //Windhawk
       "RamenSoftware.Windhawk",
-      //LLVM
-      "LLVM.LLVM",
+      //npiperelay
+      "albertony.npiperelay",
       //qBittorrent
       "qBittorrent.qBittorrent.Beta",
       //Flow-Launcher

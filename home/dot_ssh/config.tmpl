@@ -1,3 +1,4 @@
+# code: language=ssh_config
 Host *
   StrictHostKeyChecking ask
   HashKnownHosts yes      # 隐藏我去过哪儿，更安全
@@ -23,6 +24,7 @@ Host termux
   HostName samsung
   User u0_a737
   Port 8022
+  ForwardAgent yes
 {{- end }}
 
 {{- if .work }}

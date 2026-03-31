@@ -16,7 +16,7 @@
     "vscodevim.vim": 1
     //Caveats: One issue with using the affinity setting is that each time you update your settings file, the Vim plugin will reload, which can take a few seconds. https://github.com/VSCodeVim/Vim#:~:text=VSCodeVim%20is%20too%20slow
   },
-  "http.useLocalProxyConfiguration": false,
+  "http.useLocalProxyConfiguration": true,
   // live preview
   "livePreview.customExternalBrowser": "Chrome",
   "livePreview.debugOnExternalPreview": true,
