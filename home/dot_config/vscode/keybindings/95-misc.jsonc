@@ -1,5 +1,9 @@
 [
   {
+    "command": "workbench.action.showCommands",
+    "key": "alt+p"
+  },
+  {
     "key": "shift+5",
     "command": "editor.emmet.action.matchTag",
     "when": "editorTextFocus && !editorReadonly && editorLangId == 'html' && vim.mode=='Normal'"
