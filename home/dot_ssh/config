@@ -1,0 +1,6 @@
+# code: language=ssh_config
+Host github.com
+  HostName github.com
+  User git
+  IdentityFile ~/.ssh/id_ed25519_github
+  PreferredAuthentications publickey

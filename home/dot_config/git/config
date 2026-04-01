@@ -20,7 +20,7 @@
 [user]
 	name = horserr
 	email = 112157036+horserr@users.noreply.github.com
-  signingkey = ~/.ssh/id_ed25519.pub
+  signingkey = ~/.ssh/id_ed25519_signing.pub
 [init]
 	defaultBranch = main
 [help]
