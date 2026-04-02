@@ -14,6 +14,10 @@ powershell admin:
 Set-NetFirewallHyperVVMSetting -Name '{40E0AC32-46A5-438A-A0B2-2B479E8F2E90}' -DefaultInboundAction Allow
 ```
 
+## VSpaceCode
+
+those settings is largely adapted from https://gist.github.com/macintacos/d63b7057cee0638e7ccfcdd6d1b7f662
+
 ### error: CreateInstance/CreateVm/ConfigureNetworking/0x8007054f
 
 solution:[link](https://github.com/microsoft/WSL/issues/12351#issuecomment-3938183381)

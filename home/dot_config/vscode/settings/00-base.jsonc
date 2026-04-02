@@ -17,9 +17,10 @@
     "yzhang.markdown-all-in-one",
     "yoshi389111.markdown-table-rainbow"
   ],
-  "dotfiles.installCommand": "chezmoi init --source ~/.config/.dotfiles && chezmoi apply",
-  "dotfiles.repository": "horserr/dotfiles-linux",
-  "dotfiles.targetPath": "~/.config/.dotfiles",
+  // "dotfiles.installCommand": "chezmoi init --source ~/.config/.dotfiles && chezmoi apply",
+  // "dotfiles.installCommand": "install.sh",
+  // "dotfiles.repository": "horserr/dotfiles-linux",
+  // "dotfiles.targetPath": "~/.config/.dotfiles",
   "explorer.autoOpenDroppedFile": true,
   "explorer.confirmDelete": false,
   "explorer.confirmPasteNative": false,
