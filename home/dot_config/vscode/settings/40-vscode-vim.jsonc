@@ -1,15 +1,127 @@
 {
   "$schema": "vscode://schemas/settings/user",
-
+  "files.simpleDialog.enable": true,
+  // from https://gist.github.com/macintacos/d63b7057cee0638e7ccfcdd6d1b7f662
+  // "vspacecode.bindingOverrides": [
+  //   {
+  //     "command": "workbench.action.files.toggleActiveEditorReadonlyInSession",
+  //     "keys": "t.r",
+  //     "name": "Toggle active editor readonly",
+  //     "type": "command"
+  //   },
+  //   {
+  //     "keys": "l", // 对应 Space l
+  //     "name": "Format (Smart)",
+  //     "type": "command",
+  //     "command": "notebook.formatCell",
+  //     "when": "inCompositeEditor"
+  //   },
+  //   {
+  //     "keys": "l",
+  //     "name": "Format (Smart)",
+  //     "type": "command",
+  //     "command": "editor.action.formatDocument",
+  //     "when": "!inCompositeEditor"
+  //   },
+  //   {
+  //     "keys": "b.sp", // 修复你之前的“空格”需求
+  //     "name": "Format Document (Buffer)",
+  //     "type": "command",
+  //     "command": "editor.action.formatDocument",
+  //     "when": "editorTextFocus"
+  //   }
+  // ]
+  "multiCommand.commands": [
+    {
+      "command": "multiCommand.closePanelAndSidebarAndOtherEditors",
+      "sequence": [
+        "workbench.action.closePanel",
+        "workbench.action.closeSidebar",
+        "workbench.action.closeEditorsInOtherGroups"
+      ]
+    },
+    {
+      "command": "multiCommand.copyAndCommentLines",
+      "sequence": [
+        "editor.action.clipboardCopyAction",
+        "editor.action.commentLine"
+      ]
+    },
+    {
+      "command": "multiCommand.copyRelativePathAndPrintIt",
+      "sequence": ["copy-relative-path-and-line-numbers.path-only", "execPaste"]
+    },
+    {
+      "command": "multiCommand.copyRelativePathAndSelectedLinesAndPrintIt",
+      "sequence": ["copy-relative-path-and-line-numbers.both", "execPaste"]
+    },
+    {
+      "command": "multiCommand.moveToNextChangeAndShow",
+      "sequence": [
+        "workbench.action.editor.nextChange",
+        "editor.action.dirtydiff.next"
+      ]
+    },
+    {
+      "command": "multiCommand.moveToPreviousChangeAndShow",
+      "sequence": [
+        "workbench.action.editor.previousChange",
+        "editor.action.dirtydiff.previous"
+      ]
+    },
+    {
+      "command": "multiCommand.splitWindowAboveAndSearchForFile",
+      "sequence": [
+        "workbench.action.newGroupAbove",
+        "workbench.action.quickOpen"
+      ]
+    },
+    {
+      "command": "multiCommand.splitWindowBelowAndSearchForFile",
+      "sequence": [
+        "workbench.action.newGroupBelow",
+        "workbench.action.quickOpen"
+      ]
+    },
+    {
+      "command": "multiCommand.splitWindowLeftAndSearchForFile",
+      "sequence": [
+        "workbench.action.newGroupLeft",
+        "workbench.action.quickOpen"
+      ]
+    },
+    {
+      "command": "multiCommand.splitWindowRightAndSearchForFile",
+      "sequence": [
+        "workbench.action.newGroupRight",
+        "workbench.action.quickOpen"
+      ]
+    },
+    {
+      "command": "multiCommand.unfocusInputByCreatingNewEditorGroup",
+      "sequence": ["workbench.action.newGroupAbove"]
+    }
+  ],
   "vim.argumentObjectClosingDelimiters": [")", "]", "}", ">"],
   "vim.argumentObjectOpeningDelimiters": ["(", "[", "{", "<"],
   "vim.argumentObjectSeparators": [",", ";"],
+  "vim.autoindent": true,
   "vim.autoSwitchInputMethod.defaultIM": "1033",
   "vim.autoSwitchInputMethod.enable": true,
   "vim.autoSwitchInputMethod.obtainIMCmd": "C:/path/im-select.exe",
   "vim.autoSwitchInputMethod.switchIMCmd": "C:/path/im-select.exe {im}",
   // Vim settings
   "vim.camelCaseMotion.enable": true,
+  "vim.commandLineModeKeyBindingsNonRecursive": [
+    {
+      "after": ["<Down>"],
+      "before": ["<C-j>"]
+    },
+    {
+      "after": ["<Up>"],
+      "before": ["<C-k>"]
+    }
+  ],
   "vim.cursorStylePerMode.insert": "line-thin",
   "vim.cursorStylePerMode.normal": "block",
   "vim.cursorStylePerMode.replace": "underline",
@@ -39,6 +151,7 @@
   "vim.highlightedyank.textColor": "#615ea8",
   "vim.history": 20,
   "vim.ignorecase": true,
+  "vim.inccommand": "replace",
   "vim.incsearch": true,
   "vim.insertModeKeyBindings": [
     // reference: https://code.visualstudio.com/docs/editing/userdefinedsnippets#_assign-keyboard-shortcuts-to-snippets
@@ -172,8 +285,11 @@
       "commands": ["editor.action.insertSnippet"]
     }
   ],
-  "vim.leader": ",",
+  // "vim.iskeyword": "a-z,A-Z,0-9,_,-",
+  "vim.langmap": "",
+  "vim.leader": "8",
   "vim.matchpairs": "(:),{:},[:],<:>",
+  "vim.mouseSelectionGoesIntoVisualMode": true,
   "vim.neovimPath": "C:\\Program Files\\Neovim\\bin\\nvim.exe",
   "vim.normalModeKeyBindingsNonRecursive": [
     {
@@ -281,12 +397,22 @@
       "before": ["H"]
     }
   ],
+  "vim.overrideCopy": true,
   "vim.replaceWithRegister": true,
+  "vim.showcmd": true,
   // "vim.shell": "wsl.exe",
   "vim.showMarksInGutter": true,
   "vim.showmodename": false,
   "vim.smartcase": true,
+  "vim.sneak": true,
+  "vim.sneakUseIgnorecaseAndSmartcase": true,
+  "vim.startofline": true,
+  "vim.surround": true,
+  "vim.targets.bracketObjects.enable": true,
   "vim.targets.enable": true,
+  "vim.targets.smartQuotes.aIncludesSurroundingSpaces": true,
+  "vim.targets.smartQuotes.breakThroughLines": true,
+  "vim.targets.smartQuotes.enable": true,
   "vim.useCtrlKeys": true,
   "vim.visualModeKeyBindingsNonRecursive": [
     {
@@ -412,16 +538,36 @@
   ],
   "vim.visualstar": true,
   "vim.whichwrap": "b,w,h,l,<,>,[,]",
-
-  "whichkey.delay": 200,
+  "vim.wrapscan": true,
   "vspacecode.bindingOverrides": [
-    { "keys": "3", "position": -1 },
-    { "keys": "4", "position": -1 },
-    { "keys": "5", "position": -1 },
-    { "keys": "6", "position": -1 },
-    { "keys": "7", "position": -1 },
-    { "keys": "8", "position": -1 },
-    { "keys": ";", "position": -1 },
+    {
+      "keys": "3",
+      "position": -1
+    },
+    {
+      "keys": "4",
+      "position": -1
+    },
+    {
+      "keys": "5",
+      "position": -1
+    },
+    {
+      "keys": "6",
+      "position": -1
+    },
+    {
+      "keys": "7",
+      "position": -1
+    },
+    {
+      "keys": "8",
+      "position": -1
+    },
+    {
+      "keys": ";",
+      "position": -1
+    },
     {
       "bindings": [
         {
@@ -1487,9 +1633,6 @@
       "type": "bindings"
     },
     {
-      "keys": ["w", "f"],
-      "name": "Open file in new group...",
-      "type": "bindings",
       "bindings": [
         {
           "command": "multiCommand.splitWindowRightAndSearchForFile",
@@ -1515,7 +1658,10 @@
           "name": "...to above",
           "type": "command"
         }
-      ]
+      ],
+      "keys": ["w", "f"],
+      "name": "Open file in new group...",
+      "type": "bindings"
     },
     {
       "command": "workbench.action.navigateBack",
@@ -1530,9 +1676,6 @@
       "type": "command"
     },
     {
-      "keys": "o",
-      "name": "Open...",
-      "type": "bindings",
       "bindings": [
         {
           "command": "extension.openWithDefaultBrowser",
@@ -1576,12 +1719,12 @@
           "name": "Extensions Marketplace",
           "type": "command"
         }
-      ]
+      ],
+      "keys": "o",
+      "name": "Open...",
+      "type": "bindings"
     },
     {
-      "keys": ["w", "r"],
-      "name": "Resize...",
-      "type": "transient",
       "bindings": [
         {
           "command": "workbench.action.increaseViewSize",
@@ -1607,110 +1750,11 @@
           "name": "Toggle group sizes",
           "type": "command"
         }
-      ]
+      ],
+      "keys": ["w", "r"],
+      "name": "Resize...",
+      "type": "transient"
     }
   ],
-
-  // "vspacecode.bindingOverrides": [
-  //   {
-  //     "command": "workbench.action.files.toggleActiveEditorReadonlyInSession",
-  //     "keys": "t.r",
-  //     "name": "Toggle active editor readonly",
-  //     "type": "command"
-  //   },
-  //   {
-  //     "keys": "l", // 对应 Space l
-  //     "name": "Format (Smart)",
-  //     "type": "command",
-  //     "command": "notebook.formatCell",
-  //     "when": "inCompositeEditor"
-  //   },
-  //   {
-  //     "keys": "l",
-  //     "name": "Format (Smart)",
-  //     "type": "command",
-  //     "command": "editor.action.formatDocument",
-  //     "when": "!inCompositeEditor"
-  //   },
-  //   {
-  //     "keys": "b.sp", // 修复你之前的“空格”需求
-  //     "name": "Format Document (Buffer)",
-  //     "type": "command",
-  //     "command": "editor.action.formatDocument",
-  //     "when": "editorTextFocus"
-  //   }
-  // ]
-  "multiCommand.commands": [
-    {
-      "command": "multiCommand.closePanelAndSidebarAndOtherEditors",
-      "sequence": [
-        "workbench.action.closePanel",
-        "workbench.action.closeSidebar",
-        "workbench.action.closeEditorsInOtherGroups"
-      ]
-    },
-    {
-      "command": "multiCommand.copyAndCommentLines",
-      "sequence": [
-        "editor.action.clipboardCopyAction",
-        "editor.action.commentLine"
-      ]
-    },
-    {
-      "command": "multiCommand.copyRelativePathAndPrintIt",
-      "sequence": ["copy-relative-path-and-line-numbers.path-only", "execPaste"]
-    },
-    {
-      "command": "multiCommand.copyRelativePathAndSelectedLinesAndPrintIt",
-      "sequence": ["copy-relative-path-and-line-numbers.both", "execPaste"]
-    },
-    {
-      "command": "multiCommand.moveToNextChangeAndShow",
-      "sequence": [
-        "workbench.action.editor.nextChange",
-        "editor.action.dirtydiff.next"
-      ]
-    },
-    {
-      "command": "multiCommand.moveToPreviousChangeAndShow",
-      "sequence": [
-        "workbench.action.editor.previousChange",
-        "editor.action.dirtydiff.previous"
-      ]
-    },
-    {
-      "command": "multiCommand.splitWindowAboveAndSearchForFile",
-      "sequence": [
-        "workbench.action.newGroupAbove",
-        "workbench.action.quickOpen"
-      ]
-    },
-    {
-      "command": "multiCommand.splitWindowBelowAndSearchForFile",
-      "sequence": [
-        "workbench.action.newGroupBelow",
-        "workbench.action.quickOpen"
-      ]
-    },
-    {
-      "command": "multiCommand.splitWindowLeftAndSearchForFile",
-      "sequence": [
-        "workbench.action.newGroupLeft",
-        "workbench.action.quickOpen"
-      ]
-    },
-    {
-      "command": "multiCommand.splitWindowRightAndSearchForFile",
-      "sequence": [
-        "workbench.action.newGroupRight",
-        "workbench.action.quickOpen"
-      ]
-    },
-    {
-      "command": "multiCommand.unfocusInputByCreatingNewEditorGroup",
-      "sequence": ["workbench.action.newGroupAbove"]
-    }
-  ],
-  "files.simpleDialog.enable": true
-  // from https://gist.github.com/macintacos/d63b7057cee0638e7ccfcdd6d1b7f662
+  "whichkey.delay": 200
 }
