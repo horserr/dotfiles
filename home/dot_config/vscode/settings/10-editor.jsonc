@@ -4,7 +4,7 @@
   "diffEditor.hideUnchangedRegions.enabled": true,
   "diffEditor.ignoreTrimWhitespace": true,
   "editor.acceptSuggestionOnEnter": "smart",
-  "editor.accessibilityPageSize": 14,
+  "editor.accessibilityPageSize": 15,
   "editor.accessibilitySupport": "off",
   "editor.allowVariableFontsInAccessibilityMode": true,
   "editor.autoIndentOnPaste": true,
@@ -14,7 +14,11 @@
     "source.fixAll": "explicit",
     "source.organizeImports": "explicit"
   },
-  "editor.codeLensFontSize": 16,
+  "editor.codeLensFontSize": 17,
+  "editor.codeActionWidget.includeNearbyQuickFixes": true,
+  "editor.copyWithSyntaxHighlighting": true,
+  "editor.renderControlCharacters": true,
+  "editor.occurrencesHighlight": "singleFile",
   "editor.cursorBlinking": "smooth",
   "editor.cursorSmoothCaretAnimation": "on",
   "editor.cursorSurroundingLines": 5,
@@ -22,10 +26,11 @@
   "editor.detectIndentation": true,
   "editor.foldingImportsByDefault": true,
   "editor.foldingStrategy": "auto",
-  "editor.fontFamily": "FiraCode Nerd Font, LXGW Neo XiHei, 江西拙楷, 杨任东竹石体 Heavy, Consolas, Microsoft YaHei",
+  "editor.fontFamily": "Cascadia Code, FiraCode Nerd Font, LXGW Neo XiHei, 江西拙楷, 杨任东竹石体 Heavy, Consolas, Microsoft YaHei",
+  // "editor.fontLigatures": "'ss01','ss02','ss03','ss04','ss05','ss06','zero','onum'",
   "editor.fontLigatures": true,
   // Editor settings
-  "editor.fontSize": 16,
+  "editor.fontSize": 17,
   "editor.formatOnPaste": true,
   // "prettier.requireConfig": true,
   "editor.formatOnType": true,
@@ -35,15 +40,15 @@
   "editor.indentSize": "tabSize",
   "editor.inlayHints.enabled": "offUnlessPressed",
   "editor.inlayHints.fontFamily": "Comic Sans MS",
-  "editor.inlayHints.fontSize": 15,
+  "editor.inlayHints.fontSize": 15.5,
   "editor.inlayHints.padding": true,
   "editor.inlineSuggest.edits.showCollapsed": true,
   "editor.inlineSuggest.showToolbar": "always",
-  "editor.lineHeight": 1.55,
+  "editor.lineHeight": 1.5,
   "editor.lineNumbers": "relative",
   "editor.linkedEditing": true,
   "editor.minimap.enabled": true,
-  "editor.minimap.sectionHeaderFontSize": 14,
+  "editor.minimap.sectionHeaderFontSize": 13,
   "editor.minimap.showSlider": "always",
   "editor.occurrencesHighlightDelay": 300,
   "editor.parameterHints.enabled": true,
@@ -56,10 +61,7 @@
   },
   "editor.quickSuggestionsDelay": 100,
   "editor.renderWhitespace": "selection",
-  "editor.rulers": [
-    80,
-    120
-  ],
+  "editor.rulers": [80, 120],
   "editor.smoothScrolling": true,
   "editor.snippetSuggestions": "inline", // the sorting order of snippet within quick suggestions
   "editor.stickyScroll.maxLineCount": 3,
@@ -73,6 +75,38 @@
   "editor.tabCompletion": "on",
   "editor.tabSize": 2,
   "editor.tokenColorCustomizations": {
+    "textMateRules": [
+      {
+        "scope": [
+          "comment",
+          "constant", //String, Number, Boolean…, this, super
+          "keyword", //import, export, return…
+          "markup.italic",
+          "meta.selector",
+          "storage.modifier", //static keyword
+          "storage.type",
+          "storage.type.class.js", //class keyword
+          "variable.language"
+        ],
+        "settings": {
+          "fontStyle": "italic"
+        }
+      },
+      {
+        "scope": [
+          //following will be excluded from italics (VSCode has some defaults for italics which aren't amazingT)
+          "invalid",
+          "keyword.operator",
+          "constant.numeric.css",
+          "keyword.other.unit.px.css",
+          "constant.numeric.decimal.js",
+          "constant.numeric.json"
+        ],
+        "settings": {
+          "fontStyle": ""
+        }
+      }
+    ]
     // "[*Dark*]": {
     //   "textMateRules": [
     //     {

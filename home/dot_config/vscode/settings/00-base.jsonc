@@ -39,6 +39,7 @@
   },
   "files.autoGuessEncoding": true,
   "files.autoSave": "onFocusChange",
+  "files.insertFinalNewline": true,
   "files.exclude": {
     "**/__pycache__": true,
     "**/.DS_Store": true,

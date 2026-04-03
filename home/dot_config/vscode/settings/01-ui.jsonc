@@ -1,0 +1,7 @@
+{
+  "$schema": "vscode://schemas/settings/user",
+  "custom-ui-style.external.loadStrategy": "refetch",
+  "custom-ui-style.external.imports": [
+    "file://${userHome}/.config/vscode/custom-ui.css"
+  ]
+}

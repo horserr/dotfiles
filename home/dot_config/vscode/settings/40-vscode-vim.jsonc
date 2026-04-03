@@ -287,7 +287,7 @@
   ],
   // "vim.iskeyword": "a-z,A-Z,0-9,_,-",
   "vim.langmap": "",
-  "vim.leader": "8",
+  // "vim.leader": ";",
   "vim.matchpairs": "(:),{:},[:],<:>",
   "vim.mouseSelectionGoesIntoVisualMode": true,
   "vim.neovimPath": "C:\\Program Files\\Neovim\\bin\\nvim.exe",
