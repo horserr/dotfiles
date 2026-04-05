@@ -1,5 +1,4 @@
 {
-  "$schema": "vscode://schemas/settings/user",
   "[ahk2]": {
     "editor.defaultFormatter": "mark-wiemer.vscode-autohotkey-plus-plus"
   },
@@ -35,6 +34,10 @@
   },
   "[python]": {
     "diffEditor.ignoreTrimWhitespace": true,
+    "editor.codeActionsOnSave": {
+      "source.fixAll.ruff": "explicit",
+      "source.organizeImports.ruff": "explicit"
+    },
     "editor.defaultFormatter": "charliermarsh.ruff",
     "editor.formatOnSave": true,
     "editor.indentSize": "tabSize",
@@ -54,13 +57,10 @@
     "editor.defaultFormatter": "myriad-dreamin.tinymist",
     "editor.padding.bottom": 0
   },
-  // "markdown.styles": [".vscode/custom-style.css"],
-  "[vue]": {
-    "editor.defaultFormatter": "Vue.volar"
-  },
   "[wsb]": {
     "editor.defaultFormatter": "redhat.vscode-xml"
   },
+  "$schema": "vscode://schemas/settings/user",
   "AHK++.v2.formatter": {
     "arrayStyle": "none",
     "braceStyle": "One True Brace",
@@ -84,12 +84,14 @@
   },
   // css
   "css.validate": true,
-  // javascript
-  "javascript.inlayHints.functionLikeReturnTypes.enabled": true,
-  "javascript.inlayHints.propertyDeclarationTypes.enabled": true,
-  "javascript.inlayHints.variableTypes.enabled": true,
-  "javascript.preferences.importModuleSpecifier": "non-relative",
-  "javascript.updateImportsOnFileMove.enabled": "always",
+  // javascript & typescript
+  "js/ts.inlayHints.enumMemberValues.enabled": true,
+  "js/ts.inlayHints.functionLikeReturnTypes.enabled": true,
+  "js/ts.inlayHints.parameterTypes.enabled": true,
+  "js/ts.inlayHints.propertyDeclarationTypes.enabled": true,
+  "js/ts.inlayHints.variableTypes.enabled": true,
+  "js/ts.preferences.importModuleSpecifier": "non-relative",
+  "js/ts.updateImportsOnFileMove.enabled": "always",
   // jupyter
   "jupyter.interactiveWindow.notebookRepl": true,
   "jupyter.interactiveWindow.textEditor.executeSelection": true,
@@ -131,13 +133,14 @@
   "python.analysis.inlayHints.callArgumentNames": "partial",
   "python.analysis.inlayHints.functionReturnTypes": true,
   "python.analysis.inlayHints.pytestParameters": true,
-  "python.analysis.inlayHints.variableTypes": true,
+  "python.analysis.inlayHints.variableTypes": false,
+  "python.analysis.languageServerMode": "light",
   "python.analysis.logLevel": "Warning",
   "python.analysis.referencesCodeLens": true,
   "python.analysis.showOnlyDirectDependenciesInAutoImport": true,
   "python.analysis.supportAllPythonDocuments": true,
   "python.analysis.supportDocstringTemplate": true,
-  "python.analysis.typeCheckingMode": "light",
+  "python.analysis.typeCheckingMode": "basic",
   "python.analysis.typeEvaluation.deprecateTypingAliases": true,
   "python.analysis.typeEvaluation.disableBytesTypePromotions": true,
   "python.analysis.typeEvaluation.enableExperimentalFeatures": true,
@@ -146,8 +149,14 @@
   "python.analysis.typeEvaluation.strictListInference": true,
   "python.analysis.typeEvaluation.strictSetInference": true,
   "python.analysis.useNearestConfiguration": true,
-  "python.analysis.userFileIndexingLimit": 1000, // 限制索引的文件数量，防止扫描整个硬盘
+  // 限制索引的文件数量，防止扫描整个硬盘
+  "python.analysis.userFileIndexingLimit": 1000,
   "python.languageServer": "Pylance",
+  // ruff formatter and linter
+  "ruff.configurationPreference": "filesystemFirst",
+  "ruff.enable": true,
+  "ruff.nativeServer": true,
+  "ruff.organizeImports": true,
   // rust
   "rust-analyzer.check.command": "clippy",
   "rust-analyzer.showSyntaxTree": true,
@@ -157,13 +166,5 @@
   "tinymist.lint.enabled": true,
   "tinymist.lint.when": "onType",
   "tinymist.preview.cursorIndicator": true,
-  "tinymist.preview.invertColors": "auto",
-  // typescript
-  "typescript.inlayHints.enumMemberValues.enabled": true,
-  "typescript.inlayHints.functionLikeReturnTypes.enabled": true,
-  "typescript.inlayHints.parameterTypes.enabled": true,
-  "typescript.inlayHints.propertyDeclarationTypes.enabled": true,
-  "typescript.inlayHints.variableTypes.enabled": true,
-  "typescript.preferences.importModuleSpecifier": "non-relative",
-  "typescript.updateImportsOnFileMove.enabled": "always"
+  "tinymist.preview.invertColors": "auto"
 }

@@ -1,0 +1,121 @@
+{
+  "$schema": "vscode://schemas/settings/user",
+  "dev.containers.defaultExtensions": [
+    "albert.TabOut",
+    "eamodio.gitlens",
+    "fill-labs.dependi",
+    "GitHub.copilot-chat",
+    "Gruntfuggly.todo-tree",
+    "TakumiI.markdowntable",
+    "esbenp.prettier-vscode",
+    "dakara.dakara-foldplus",
+    "bierner.markdown-mermaid",
+    "tamasfe.even-better-toml",
+    "mutantdino.resourcemonitor",
+    "yzhang.markdown-all-in-one",
+    "chrislajoie.vscode-modelines",
+    "octop162.markdown-table-editor",
+    "yoshi389111.markdown-table-rainbow",
+    "fabiospampinato.vscode-open-in-github",
+    "bierner.markdown-preview-github-styles"
+  ],
+  // 建议：当本机开发时，并且docker网络模式为host，并且WSL网络模式为mirrored，开启，否则需要手动关闭
+  "http.useLocalProxyConfiguration": true,
+  "remote.defaultExtensionsIfInstalledLocally": [
+    "albert.TabOut",
+    "eamodio.gitlens",
+    "fill-labs.dependi",
+    "GitHub.copilot-chat",
+    "Gruntfuggly.todo-tree",
+    "esbenp.prettier-vscode",
+    "dakara.dakara-foldplus"
+  ],
+  // SIGNIFICANT 本地下载并安装
+  "remote.downloadExtensionsLocally": true,
+  // 调整extension的类型
+  "remote.extensionKind": {
+    // "pub.name": ["ui"]
+  },
+  // SIGNIFICANT listen并自动转发port
+  "remote.forwardOnOpen": true,
+  // SIGNIFICANT 只有本机能够访问，避免局域网中的设备访问
+  "remote.localPortHost": "localhost",
+  // 其他port的统一设置
+  "remote.otherPortsAttributes": {},
+  // port的自定义设置
+  "remote.portsAttributes": {
+    "3000": {
+      "label": "Frontend",
+      "onAutoForward": "openPreview"
+    },
+    "5432": {
+      "label": "PostgreSQL",
+      "onAutoForward": "silent"
+    },
+    "8080": {
+      "label": "Backend",
+      "onAutoForward": "notify"
+    }
+  },
+  // 恢复之前 port 分配情况
+  "remote.restoreForwardedPorts": true,
+  // vscode server默认安装路径
+  "remote.serverDownloadFolder": "",
+  // 允许局域网中的其他设备访问
+  "remote.SSH.bindHost": {},
+  "remote.SSH.connectTimeout": 300,
+  "remote.SSH.defaultExtensions": [
+    "esbenp.prettier-vscode",
+    "tamasfe.even-better-toml"
+  ],
+  // agent forwarding
+  "remote.SSH.enableAgentForwarding": true,
+  // 允许本地机器访问远程内网
+  "remote.SSH.enableDynamicForwarding": true,
+  // 避免调用ssh config中定义的命令
+  "remote.SSH.enableRemoteCommand": false,
+  // ssh自动转发X11，Windows上需要配合使用VcXsrv
+  "remote.SSH.enableX11Forwarding": true,
+  // 已经使用了agent forwarding，这个设置基本不用
+  "remote.SSH.externalSSH_ASKPASS": false,
+  "remote.SSH.httpProxy": "",
+  "remote.SSH.httpsProxy": "",
+  // 本地下载，再通过ssh传输到服务器，避免远程服务器无法访问外网
+  "remote.SSH.localServerDownload": "always",
+  "remote.SSH.logLevel": "debug",
+  "remote.SSH.maxReconnectionAttempts": 5,
+  // ？自动开启远程终端
+  "remote.SSH.permitPtyAllocation": true,
+  // SIGNIFICANT 连接前本机运行脚本
+  "remote.SSH.preconnect": "~/preconnect.ps1",
+  // port range 避免 port 冲突
+  "remote.SSH.preferredLocalPortRange": "",
+  "remote.SSH.reconnectionGraceTime": null,
+  // SIGNIFICANT使用socket文件通信
+  "remote.SSH.remoteServerListenOnSocket": true,
+  "remote.SSH.serverPickPortsFromRange": {},
+  // 不使用 .curlrc 和 .wgetrc
+  "remote.SSH.useCurlAndWgetConfigurationFiles": false,
+  // 如遇到问题，开启wsl debug模式
+  "remote.WSL.debug": false,
+  // ？ 在 wsl 中避免通过脚本启动vscode
+  "remote.WSL.experimental.scriptLessStartup": true,
+  // SIGNIFICANT 继承shell中的环境变量
+  "remote.WSL.useShellEnvironment": true,
+  /*********************
+   * GITHUB REPOSITORY *
+   *********************/
+  "remoteHub.commitDirectlyWarning": "auto",
+  "remoteHub.experimental.syncRecentList": true,
+  "remoteHub.experimental.useDiffMatchPatch": true,
+  "remoteHub.gitProtocol": "ssh",
+  "remoteHub.richNavigation.enabled": true,
+  // ?
+  "remoteHub.richNavigation.indexMode": {
+    "branch": "latest"
+  },
+  "remoteHub.staging.enabled": true,
+  "remoteHub.staging.smart": true,
+  "remoteHub.switchToCreatedBranch": "prompt",
+  "remoteHub.uncommittedChangesOnEntry": "promptIfBehind",
+}
