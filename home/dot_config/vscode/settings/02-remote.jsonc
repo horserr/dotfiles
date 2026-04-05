@@ -1,5 +1,13 @@
 {
   "$schema": "vscode://schemas/settings/user",
+  "dev.containers.bootstrapImage": "",
+  "dev.containers.bootstrapImagePull": true,
+  // "dotfiles.installCommand": "chezmoi init --source ~/.config/.dotfiles && chezmoi apply",
+  // "dotfiles.installCommand": "install.sh",
+  // "dotfiles.repository": "horserr/dotfiles-linux",
+  // "dotfiles.targetPath": "~/.config/.dotfiles",
+  "dev.containers.cacheVolume": true,
+  "dev.containers.copyGitConfig": false,
   "dev.containers.defaultExtensions": [
     "albert.TabOut",
     "eamodio.gitlens",
@@ -19,6 +27,32 @@
     "fabiospampinato.vscode-open-in-github",
     "bierner.markdown-preview-github-styles"
   ],
+  "dev.containers.defaultFeatures": {},
+  // UPLIFTING 自动使用 credential 管理器
+  "dev.containers.dockerCredentialHelper": true,
+  // SIGNIFICANT wsl 中与docker desktop (docker daemon) 的 socket 文件路径
+  // 与 docker-in-docker 的配置有关
+  "dev.containers.dockerSocketPath": "/var/run/docker.sock",
+  // UPLIFTING 使用 wsl 中的 docker 命令
+  "dev.containers.executeInWSL": true,
+  // UPLIFTING 使用默认的 wsl distro
+  "dev.containers.executeInWSLDistro": "",
+  // SIGNIFICANT
+  "dev.containers.forwardWSLServices": true,
+  "dev.containers.gitCredentialHelperConfigLocation": "global",
+  // UPLIFTING 关闭 GitHub CLI
+  "dev.containers.githubCLILoginWithToken": false,
+  // SIGNIFICANT 默认使用全部 GPU
+  "dev.containers.gpuAvailability": "all",
+  "dev.containers.logLevel": "debug",
+  // UPLIFTING 自动转发 WayLand
+  "dev.containers.mountWaylandSocket": true,
+  // 如果 docker daemon 没有开启，自动打开
+  "dev.containers.optimisticallyLaunchDocker": true,
+  // link: https://code.visualstudio.com/docs/devcontainers/create-dev-container#_alternative-repository-configuration-folders
+  "dev.containers.repositoryConfigurationPaths": [],
+  // SIGNIFICANT
+  "dev.containers.workspaceMountConsistency": "cached",
   // 建议：当本机开发时，并且docker网络模式为host，并且WSL网络模式为mirrored，开启，否则需要手动关闭
   "http.useLocalProxyConfiguration": true,
   "remote.defaultExtensionsIfInstalledLocally": [
@@ -117,5 +151,5 @@
   "remoteHub.staging.enabled": true,
   "remoteHub.staging.smart": true,
   "remoteHub.switchToCreatedBranch": "prompt",
-  "remoteHub.uncommittedChangesOnEntry": "promptIfBehind",
+  "remoteHub.uncommittedChangesOnEntry": "promptIfBehind"
 }

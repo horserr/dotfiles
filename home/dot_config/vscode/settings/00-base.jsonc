@@ -2,10 +2,6 @@
   "$schema": "vscode://schemas/settings/user",
   // vscode built_in icons: https://code.visualstudio.com/api/references/icons-in-labels
   "debug.showBreakpointsInOverviewRuler": true,
-  // "dotfiles.installCommand": "chezmoi init --source ~/.config/.dotfiles && chezmoi apply",
-  // "dotfiles.installCommand": "install.sh",
-  // "dotfiles.repository": "horserr/dotfiles-linux",
-  // "dotfiles.targetPath": "~/.config/.dotfiles",
   "explorer.autoOpenDroppedFile": true,
   "explorer.confirmDelete": false,
   "explorer.confirmPasteNative": false,
