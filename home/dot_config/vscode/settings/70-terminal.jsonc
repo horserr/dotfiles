@@ -1,19 +1,114 @@
 {
   "$schema": "vscode://schemas/settings/user",
+  "accessibility.signals.terminalBell": {
+    "announcement": "auto",
+    "sound": "on" // 开启声音
+  },
   "debug.console.fontSize": 18,
+  "python.terminal.activateEnvInCurrentTerminal": false,
+  "python.terminal.activateEnvironment": false,
+  "terminal.explorerKind": "external",
   "terminal.external.windowsExec": "wt",
+  // ACCESSIBILITY
+  "terminal.integrated.accessibleViewFocusOnCommandExecution": false,
+  "terminal.integrated.accessibleViewPreserveCursorPosition": true,
+  // SIGNIFICANT 允许 chord 快捷键
+  "terminal.integrated.allowChords": true,
+  // UPLIFTING 自动识别 scheme 并允许点击
+  "terminal.integrated.allowedLinkSchemes": [
+    "file",
+    "http",
+    "https",
+    "mailto",
+    "vscode",
+    "vscode-insiders"
+  ],
+  // SIGNIFICANT 避免开启终端后触发 alt 键的 Mnemoic 功能
+  "terminal.integrated.allowMnemonics": true,
+  // UPLIFTING 按住 alt 并 click 可以移动光标
+  "terminal.integrated.altClickMovesCursor": true,
+  // UPLIFTING automation, 比如 tasks 使用的 profile
+  "terminal.integrated.automationProfile.linux": null,
+  "terminal.integrated.automationProfile.windows": null,
+  // UPLIFTING 自动输入
+  "terminal.integrated.autoReplies": {},
+  "terminal.integrated.bellDuration": 1000,
+  // 即便 sendKeybindingsToShell 开启，其中的 commands 需要由 vscode 处理
+  "terminal.integrated.commandsToSkipShell": [],
   // "terminal.integrated.commandsToSkipShell": ["matlab.interrupt"],
   "terminal.integrated.confirmOnExit": "hasChildProcesses",
+  "terminal.integrated.confirmOnKill": "editor",
   "terminal.integrated.copyOnSelection": true,
   "terminal.integrated.cursorBlinking": true,
-  "terminal.integrated.defaultProfile.windows": "PowerShell",
+  "terminal.integrated.cursorStyle": "line",
+  "terminal.integrated.cursorStyleInactive": "outline",
+  "terminal.integrated.cursorWidth": 6,
+  "terminal.integrated.customGlyphs": true,
+  "terminal.integrated.cwd": "",
+  // UPLIFTING terminal 默认在 pane 而非 editor
+  "terminal.integrated.defaultLocation": "view",
   "terminal.integrated.defaultProfile.linux": "fish",
+  "terminal.integrated.defaultProfile.windows": "PowerShell",
+  // UPLIFTING 自动设置 $LANG
+  "terminal.integrated.detectLocale": "on",
+  // UPLIFTING
+  "terminal.integrated.enableFileLinks": "on",
   "terminal.integrated.enableImages": true,
-  "terminal.integrated.enablePersistentSessions": false,
+  // UPLIFTING 使用 kitty 协议
+  "terminal.integrated.enableKittyKeyboardProtocol": true,
+  // UPLIFTING
+  "terminal.integrated.enableNotifications": true,
+  "terminal.integrated.enablePersistentSessions": true,
+  "terminal.integrated.enableVisualBell": true,
+  "terminal.integrated.enableWin32InputMode": true,
+  // UPLIFTING
+  "terminal.integrated.env.linux": {},
+  "terminal.integrated.env.windows": {},
+  // SIGNIFICANT
+  "terminal.integrated.environmentChangesRelaunch": true,
+  // UPLIFTING alt 并 scroll 可以快速翻页
+  "terminal.integrated.fastScrollSensitivity": 5,
+  // UPLIFTING run selected text in terminal 之后不将 focus 移动到 terminal 中
+  "terminal.integrated.focusAfterRun": "none",
+  "terminal.integrated.fontFamily": "CaskaydiaCove Nerd Font",
   "terminal.integrated.fontLigatures.enabled": true,
+  "terminal.integrated.fontLigatures.featureSettings": "\"calt\" on, \"liga\" on, \"ss01\", \"ss02\"",
   "terminal.integrated.fontSize": 17,
   "terminal.integrated.fontWeight": "normal",
+  // UPLIFTING 当没有需要恢复的 terminal 时自动关闭 terminal pane
+  "terminal.integrated.hideOnStartup": "whenEmpty",
+  "terminal.integrated.ignoreProcessNames": [
+    "starship",
+    "oh-my-posh",
+    "oh-my-fish",
+    "bash",
+    "zsh",
+    "fish",
+    "pwsh",
+    "powershell"
+  ],
+  // ?
+  "terminal.integrated.initialHint": true,
+  "terminal.integrated.lineHeight": 1.2,
   "terminal.integrated.localEchoEnabled": "auto",
+  // UPLIFTING 先显示打出来的字符，而不是先传输再显示，提升响应速度，但是避免复杂 TUI 应用
+  "terminal.integrated.localEchoExcludePrograms": [
+    "vim",
+    "vi",
+    "nano",
+    "neovim",
+    "nvim",
+    "tmux",
+    "zellij"
+  ],
+  "terminal.integrated.middleClickBehavior": "default",
+  // UPLIFTING 自动调整对比度
+  "terminal.integrated.minimumContrastRatio": 4.5,
+  // 不允许使用鼠标滚轮缩放
+  "terminal.integrated.mouseWheelZoom": false,
+  // 恢复 terminal 的时机
+  "terminal.integrated.persistentSessionReviveProcess": "onExitAndWindowClose",
+  "terminal.integrated.persistentSessionScrollback": 30,
   "terminal.integrated.profiles.windows": {
     "Command Prompt": {
       "args": [],
@@ -38,15 +133,55 @@
       "path": "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe"
     }
   },
-  // Terminal settings
+  "terminal.integrated.rightClickBehavior": "default",
+  "terminal.integrated.scrollback": 100,
+  // SIGNIFICANT 优先由 vscode 处理快捷键
+  "terminal.integrated.sendKeybindingsToShell": false,
+  "terminal.integrated.shellIntegration.decorationsEnabled": "both",
+  "terminal.integrated.shellIntegration.environmentReporting": true,
+  "terminal.integrated.shellIntegration.history": 40,
+  "terminal.integrated.showLinkHover": false,
   "terminal.integrated.smoothScrolling": true,
-  "terminal.integrated.stickyScroll.enabled": false,
-  "terminal.integrated.stickyScroll.maxLineCount": 3,
+  "terminal.integrated.splitCwd": "inherited",
+  "terminal.integrated.stickyScroll.enabled": true,
+  "terminal.integrated.stickyScroll.ignoredCommands": [
+    "clear",
+    "cls",
+    "clear-host",
+    "copilot",
+    "claude",
+    "codex",
+    "gemini"
+  ],
+  "terminal.integrated.stickyScroll.maxLineCount": 2,
   "terminal.integrated.suggest.cdPath": "relative",
   "terminal.integrated.suggest.enabled": true,
   "terminal.integrated.suggest.inlineSuggestion": "alwaysOnTopExceptExactMatch",
+  // ?
+  "terminal.integrated.suggest.providers": {
+    "lsp": false,
+    "vscode.terminal-suggest": true
+  },
+  "terminal.integrated.suggest.quickSuggestions": {
+    "arguments": "on",
+    "commands": "on",
+    "unknown": "on"
+  },
+  "terminal.integrated.suggest.suggestOnTriggerCharacters": true,
+  "terminal.integrated.tabs.defaultColor": "terminal.ansiMagenta",
+  "terminal.integrated.tabs.defaultIcon": "azure-devops",
+  "terminal.integrated.tabs.description": "${task}${separator}${local}${separator}${cwdFolder}",
+  "terminal.integrated.tabs.focusMode": "doubleClick",
+  "terminal.integrated.tabs.hideCondition": "singleGroup",
+  "terminal.integrated.tabs.location": "left",
+  "terminal.integrated.tabs.separator": " 🫠 ",
+  "terminal.integrated.tabs.showActions": "always",
+  "terminal.integrated.tabs.showActiveTerminal": "singleTerminalOrNarrow",
+  "terminal.integrated.tabs.title": "${process}",
+  // UPLIFTING tab 默认长度为 2
+  "terminal.integrated.tabStopWidth": 2,
+  "terminal.integrated.textBlinking": true,
+  "terminal.integrated.useWslProfiles": true,
   "terminal.integrated.windowsUseConptyDll": true,
-
-  "python.terminal.activateEnvironment": false,
-  "python.terminal.activateEnvInCurrentTerminal": false
+  "terminal.sourceControlRepositoriesKind": "integrated"
 }
