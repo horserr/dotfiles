@@ -61,6 +61,9 @@
     "editor.defaultFormatter": "redhat.vscode-xml"
   },
   "$schema": "vscode://schemas/settings/user",
+  /*******
+   * AHK *
+   *******/
   "AHK++.v2.formatter": {
     "arrayStyle": "none",
     "braceStyle": "One True Brace",
@@ -82,9 +85,13 @@
     "whitespaceBeforeInlineComment": "",
     "wrapLineLength": 120
   },
-  // css
+  /*******
+   * CSS *
+   *******/
   "css.validate": true,
-  // javascript & typescript
+  /***************************
+   * JAVASCRIPT & TYPESCRIPT *
+   ***************************/
   "js/ts.inlayHints.enumMemberValues.enabled": true,
   "js/ts.inlayHints.functionLikeReturnTypes.enabled": true,
   "js/ts.inlayHints.parameterTypes.enabled": true,
@@ -92,31 +99,43 @@
   "js/ts.inlayHints.variableTypes.enabled": true,
   "js/ts.preferences.importModuleSpecifier": "non-relative",
   "js/ts.updateImportsOnFileMove.enabled": "always",
-  // jupyter
+  /********************
+   * JUPYTER NOTEBOOK *
+   ********************/
   "jupyter.interactiveWindow.notebookRepl": true,
   "jupyter.interactiveWindow.textEditor.executeSelection": true,
   "jupyter.interactiveWindow.textEditor.magicCommandsAsComments": true,
   "jupyter.interactiveWindow.textEditor.normalizeSelection": true,
+  /************
+   * MARKDOWN *
+   ************/
   "markdown.preview.breaks": true,
   "markdown.preview.fontSize": 16,
   "markdown.preview.lineHeight": 1.4,
   "markdown.preview.typographer": true,
   "markdowntable.showMenu.csvToTable": true,
-  // powershell
+  /**************
+   * POWERSHELL *
+   **************/
   "powershell.integratedConsole.showOnStartup": false,
   "powershell.integratedConsole.startInBackground": true,
-  // python
+  /**********
+   * PYTHON *
+   **********/
   "python-envs.terminal.autoActivationType": "shellStartup",
-  "python.analysis.aiHoverSummaries": true,
   "python.analysis.autoFormatStrings": true,
+  // CONSERVATIVE 节省资源
   "python.analysis.autoImportCompletions": false,
   "python.analysis.cacheLSPData": true,
   "python.analysis.completeFunctionParens": true,
+  // CONSERVATIVE
   "python.analysis.diagnosticMode": "openFilesOnly",
+  // UPLIFTING
   "python.analysis.diagnosticSeverityOverrides": {
     "reportUnusedImport": "information"
   },
   "python.analysis.enableAsyncProgram": true,
+  // SIGNIFICANT
   "python.analysis.enableParallelIndexing": true,
   "python.analysis.enableTroubleshootMissingImports": true,
   "python.analysis.exclude": [
@@ -152,17 +171,25 @@
   // 限制索引的文件数量，防止扫描整个硬盘
   "python.analysis.userFileIndexingLimit": 1000,
   "python.languageServer": "Pylance",
-  // ruff formatter and linter
+  /*****************************
+   * RUFF FORMATTER AND LINTER *
+   *****************************/
   "ruff.configurationPreference": "filesystemFirst",
   "ruff.enable": true,
   "ruff.nativeServer": true,
   "ruff.organizeImports": true,
-  // rust
+  /********
+   * RUST *
+   ********/
   "rust-analyzer.check.command": "clippy",
   "rust-analyzer.showSyntaxTree": true,
-  // scss
+  /********
+   * SCSS *
+   ********/
   "scss.validate": true,
-  // typst
+  /*********
+   * TYPST *
+   *********/
   "tinymist.lint.enabled": true,
   "tinymist.lint.when": "onType",
   "tinymist.preview.cursorIndicator": true,

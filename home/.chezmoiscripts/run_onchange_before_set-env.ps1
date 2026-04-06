@@ -88,4 +88,4 @@ setEnv -name "WINGET_LINKS" -value $winget_links -target "User"
 # CMD prompt setting
 # link: https:\\learn.microsoft.com\en-us\windows\terminal\tutorials\new-tab-same-directory#command-prompt-cmdexe
 # ------------------------
-setEnv -name "PROMPT" -value '$e]133;D$e\$e]133;A$e\$e]9;9;$P$e\%PROMPT%$e]133;B$e\' -target "User"
+setEnv -name "PROMPT" -value '$e]133;D$e\$e]133;A$e\$e]9;9;$P$e\$P$G$e]133;B$e\' -target "User"
