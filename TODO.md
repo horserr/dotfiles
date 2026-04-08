@@ -1,11 +1,11 @@
 # TODO
 
 1. refactor powershell scripts: move functions into the independent file
-4. ubuntu24.04之前的apt换源操作
-5. 根据是否在国外进行换源操作
-6. wsl.conf文件
-7. 安装ffmpeg, build-essential, poppler, imagemagic
-8. 同步windows和linux上的git config, vscode tasks配置
+2. ubuntu24.04之前的apt换源操作
+3. 根据是否在国外进行换源操作
+4. 安装ffmpeg, build-essential, poppler, imagemagic
+5. 同步windows和linux上的git config, vscode tasks配置
+6. 设置windows上的gpg key用于 git commit 签名。
 
 ## install apps
 

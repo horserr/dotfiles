@@ -57,8 +57,11 @@
     "editor.defaultFormatter": "myriad-dreamin.tinymist",
     "editor.padding.bottom": 0
   },
-  "[wsb]": {
+  "[xml, wsb]": {
     "editor.defaultFormatter": "redhat.vscode-xml"
+  },
+  "[yaml]": {
+    "editor.defaultFormatter": "redhat.vscode-yaml"
   },
   "$schema": "vscode://schemas/settings/user",
   /*******
