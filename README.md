@@ -18,6 +18,12 @@ Set-NetFirewallHyperVVMSetting -Name '{40E0AC32-46A5-438A-A0B2-2B479E8F2E90}' -D
 
 [Sharing Git credentials with your container](https://code.visualstudio.com/remote/advancedcontainers/sharing-git-credentials)
 
+## 修复 windows sandbox 无法链接 或 其中的 Microsoft Edge 浏览器可以开启但无法显示问题
+
+Open gpedit.msc
+Navigate to Computer Configuration > Administrative Templates > Windows Components > Windows Sandbox
+Disable "Allow vGPU sharing for Windows Sandbox"
+
 ## VSpaceCode
 
 those settings is largely adapted from https://gist.github.com/macintacos/d63b7057cee0638e7ccfcdd6d1b7f662

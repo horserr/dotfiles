@@ -3,11 +3,11 @@
 [wsl2]
 networkingMode=mirrored
 
-memory=8GB
-processors=8
+memory=9GB
+processors=9
 swap=12GB
 
-defaultVhdSize=40GB
+defaultVhdSize=60GB
 
 #**********************
 #* DEFAULT SETTINGS *

@@ -5,15 +5,23 @@ function ll {
 }
 
 function cd.. { Set-Location .. }                    # cd.. 快速回退目录
+
 function conf {
   & code (Split-Path -Parent $PSScriptRoot)
 }
+
+function which {
+  param([string]$Path)
+  Get-Command $Path | Select-Object source
+}
+
 function util {
   $command = "Invoke-RestMethod https://christitus.com/win | Invoke-Expression"
   powershell -NoProfile -Command $command
 }
 function myip { curl ifconfig.me }
-function v { $Input | nvim - }                  # Get-Process | v
+
+function v { $Input | & $env:EDITOR - }                  # Get-Process | v
 
 function Get-BitLockerSummary {
   <#
@@ -33,7 +41,6 @@ function Get-BitLockerSummary {
   Write-Host $svc.Status -ForegroundColor $color
 }
 
-
 function proxy-on {
   $env:HTTP_PROXY = "http://localhost:7897"
   $env:HTTPS_PROXY = "http://localhost:7897"
@@ -51,7 +58,7 @@ function loading {
 }
 
 function edit-history {
-  nvim (Get-PSReadLineOption).HistorySavePath
+  & $env:EDITOR (Get-PSReadLineOption).HistorySavePath
 }
 
 function startRclone {
@@ -62,13 +69,7 @@ function startRclone {
 function e {
   Get-ChildItem . -Recurse -Attributes !Directory | `
     Invoke-Fzf | `
-    ForEach-Object { nvim $_ }
-}
-
-function edit {
-  Get-ChildItem . -Recurse -Attributes !Directory | `
-    Invoke-Fzf | `
-    ForEach-Object { code $_ }
+    ForEach-Object { & $env:EDITOR $_ }
 }
 
 function ex {
@@ -84,13 +85,13 @@ function eventvwr {
   mmc.exe eventvwr.msc
 }
 
-function bios {
+function start-bios {
   Write-Host "You are going to restart computer and enter BIOS"
   Pause
   shutdown /r /fw /f /t 0
 }
 
-function winre {
+function start-winre {
   Write-Host "You are going to restart computer and enter Windows Recovery Environment"
   Pause
   shutdown /r /o /f /t 0
@@ -169,19 +170,7 @@ function Get-AllSpecialPaths {
 }
 
 function summary {
-  &sudo.exe pwsh -NoExit -Command "& { . $PROFILE; Get-BitLockerSummary }"
-}
-
-function which {
-  param([string]$Path)
-  Get-Command $Path | Select-Object source
-}
-
-# Update all ps resource
-function up-all {
-  Write-Host "正在全面更新 PowerShell 模块..." -ForegroundColor Yellow
-  Update-PSResource -Force -AcceptLicense
-  Write-Host "更新完成！" -ForegroundColor Green
+  & sudo.exe pwsh -NoExit -Command "& { . $PROFILE; Get-BitLockerSummary }"
 }
 
 function memo {

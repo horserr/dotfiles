@@ -4,16 +4,18 @@ $global:PS_CACHE_ROOT = Join-Path $env:TEMP "pwsh_cache"
 $env:PS_CACHE_ROOT = $global:PS_CACHE_ROOT # 同时存入环境变量，方便 Job 访问
 if (!(Test-Path $global:PS_CACHE_ROOT)) { New-Item -ItemType Directory -Path $global:PS_CACHE_ROOT | Out-Null }
 
-$env:EDITOR = 'nvim'
+$env:EDITOR = "$env:ProgramFiles\Git\usr\bin\vim"
 
 # 扩展 PATH
-$newPath = @(
+$extendPath = @(
   "C:\path",
-  "C:\Program Files (x86)\Microsoft\Edge\Application",
-  "C:\Program Files\7-Zip",
-  "C:\Program Files\Everything 1.5a"
+  "$env:ProgramFilesX86\Microsoft\Edge\Application",
+  "$env:ProgramFiles\7-Zip",
+  "$env:ProgramFiles\Everything 1.5a"
+  # "$env:ProgramFiles\Git\usr\bin"
+  "$env:ProgramFiles\Git"
 )
-$env:Path = ($newPath + $env:Path.Split(';')) -join ';'
+$env:Path = ($extendPath + $env:Path.Split(';')) -join ';'
 
 # FZF 配置
 $env:FZF_DEFAULT_OPTS = "--height 40% --layout=reverse --border=rounded --preview 'bat --color=always --line-range :500 {}'"

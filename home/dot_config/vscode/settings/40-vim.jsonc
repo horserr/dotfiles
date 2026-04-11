@@ -290,7 +290,7 @@
   // "vim.leader": ";",
   "vim.matchpairs": "(:),{:},[:],<:>",
   "vim.mouseSelectionGoesIntoVisualMode": true,
-  "vim.neovimPath": "C:\\Program Files\\Neovim\\bin\\nvim.exe",
+  // "vim.neovimPath": "C:\\Program Files\\Neovim\\bin\\nvim.exe",
   "vim.normalModeKeyBindingsNonRecursive": [
     {
       "before": ["g", "y"],
