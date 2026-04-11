@@ -70,7 +70,7 @@ function Merge-VSCodeJsoncFragments {
         $body = $raw.Substring($start + 1, $end - $start - 1).Trim()
 
         $lines.Add("")
-        $lines.Add("  // #region [source: $name]")
+        $lines.Add("  //#region [source: $name]")
         $lines.Add("  // MARK: from file -> $name")
 
         if (![string]::IsNullOrWhiteSpace($body)) {
@@ -80,7 +80,7 @@ function Merge-VSCodeJsoncFragments {
             }
         }
 
-        $lines.Add("  // #endregion [source: $name]")
+        $lines.Add("  //#endregion [source: $name]")
 
         if ($i -lt $files.Count - 1) {
             $lines.Add("  ,")
