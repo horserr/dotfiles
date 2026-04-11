@@ -36,6 +36,7 @@
 	whitespace = fix
 [commit]
   gpgsign = true
+	signoff = true
 [tag]
   gpgsign = true
 
@@ -57,8 +58,19 @@
 [push]
 	# https://git-scm.com/docs/git-config#git-config-pushdefault
 	default = simple
-	# Make `git push` push relevant annotated tags when pushing branches out.
-	followTags = true
+	# Keep CLI push behavior aligned with VS Code's sync setting.
+	followTags = false
+[fetch]
+	# Match VS Code's prune-on-fetch behavior.
+	prune = true
+[pull]
+	# Match VS Code's rebase-when-sync behavior.
+	rebase = true
+[rebase]
+	# Keep rebases conservative unless explicitly requested.
+	autoStash = false
+[blame]
+	ignoreWhitespace = true
 #******************
 #* URL SHORTHANDS *
 #******************
