@@ -33,7 +33,6 @@
     "editor.defaultFormatter": "AmauryRabouan.new-vsc-prolog"
   },
   "[python]": {
-    "diffEditor.ignoreTrimWhitespace": true,
     "editor.codeActionsOnSave": {
       "source.fixAll.ruff": "explicit",
       "source.organizeImports.ruff": "explicit"

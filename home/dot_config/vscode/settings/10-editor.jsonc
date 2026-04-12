@@ -1,8 +1,5 @@
 {
   "$schema": "vscode://schemas/settings/user",
-  "diffEditor.experimental.showMoves": true,
-  "diffEditor.hideUnchangedRegions.enabled": true,
-  "diffEditor.ignoreTrimWhitespace": true,
   "editor.acceptSuggestionOnEnter": "smart",
   "editor.accessibilityPageSize": 15,
   "editor.accessibilitySupport": "off",
