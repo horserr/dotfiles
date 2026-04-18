@@ -44,7 +44,8 @@
     "**/.git/subtree-cache/**": true,
     "**/.venv/**": true,
     "**/node_modules/*/**": true,
-    "**/venv/**": true
+    "**/venv/**": true,
+    "**/.pixi/envs/**": true
   },
   "json.schemaDownload.trustedDomains": {
     "https://aka.ms": true,
@@ -62,7 +63,8 @@
     "**/.idea": true,
     "**/.svn": true,
     "**/build": true,
-    "**/tmp": true
+    "**/tmp": true,
+    "**/.pixi/envs": true
   },
   "search.experimental.closedNotebookRichContentResults": true,
   "search.followSymlinks": false,

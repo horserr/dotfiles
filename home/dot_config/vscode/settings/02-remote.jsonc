@@ -10,9 +10,7 @@
   "dev.containers.copyGitConfig": false,
   "dev.containers.defaultExtensions": [
     "albert.TabOut",
-    "eamodio.gitlens",
     "fill-labs.dependi",
-    "GitHub.copilot-chat",
     "Gruntfuggly.todo-tree",
     "TakumiI.markdowntable",
     "esbenp.prettier-vscode",
@@ -56,10 +54,9 @@
   // 建议：当本机开发时，并且docker网络模式为host，并且WSL网络模式为mirrored，开启，否则需要手动关闭
   "http.useLocalProxyConfiguration": true,
   "remote.defaultExtensionsIfInstalledLocally": [
+    "astral-sh.ty",
     "albert.TabOut",
-    "eamodio.gitlens",
     "fill-labs.dependi",
-    "GitHub.copilot-chat",
     "Gruntfuggly.todo-tree",
     "esbenp.prettier-vscode",
     "dakara.dakara-foldplus"

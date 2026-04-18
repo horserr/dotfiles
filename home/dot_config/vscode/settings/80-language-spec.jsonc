@@ -145,7 +145,8 @@
     "**/venv",
     "**/.git/**",
     "**/venv/**",
-    "**/.venv/**"
+    "**/.venv/**",
+    "**/.pixi/**"
   ],
   "python.analysis.findRefsInBackgroundThread": true,
   "python.analysis.generateWithTypeAnnotation": true,
@@ -172,7 +173,7 @@
   "python.analysis.useNearestConfiguration": true,
   // 限制索引的文件数量，防止扫描整个硬盘
   "python.analysis.userFileIndexingLimit": 1000,
-  "python.languageServer": "Pylance",
+  "python.languageServer": "None",
   /*****************************
    * RUFF FORMATTER AND LINTER *
    *****************************/
@@ -195,5 +196,17 @@
   "tinymist.lint.enabled": true,
   "tinymist.lint.when": "onType",
   "tinymist.preview.cursorIndicator": true,
-  "tinymist.preview.invertColors": "auto"
+  "tinymist.preview.invertColors": "auto",
+  /********************************
+   * TY -- PYTHON LANGUAGE SERVER *
+   ********************************/
+  "ty.completions.autoImport": true,
+  "ty.configuration": {
+    "rules": {
+      "unresolved-reference": "warn"
+    }
+  },
+  "ty.diagnosticMode": "openFilesOnly",
+  "ty.inlayHints.callArgumentNames": true,
+  "ty.inlayHints.variableTypes": true
 }
