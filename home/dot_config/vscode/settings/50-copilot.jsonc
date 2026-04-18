@@ -2,6 +2,15 @@
   "$schema": "vscode://schemas/settings/user",
   "chat.agent.maxRequests": 200,
   "chat.agent.thinking.collapsedTools": "withThinking",
+  "chat.agent.thinking.phrases": {
+    "mode": "append",
+    "phrases": [
+      "Bribing the hamster",
+      "Reticulating splines",
+      "Untangling the spaghetti"
+    ]
+  },
+  "chat.disableAIFeatures": false,
   // copilot chat settings
   "chat.editor.fontSize": 17,
   "chat.editor.lineHeight": 1.4,
@@ -16,6 +25,8 @@
     "windsurf": true
   },
   "chat.mcp.gallery.enabled": true,
+  "chat.notifyWindowOnConfirmation": "always",
+  "chat.notifyWindowOnResponseReceived": "always",
   "chat.renderRelatedFiles": true,
   "chat.tools.terminal.sandbox.enabled": false,
   "chat.viewProgressBadge.enabled": true,
@@ -40,6 +51,8 @@
   "github.copilot.nextEditSuggestions.enabled": true,
   "github.copilot.nextEditSuggestions.extendedRange": true,
   "github.copilot.nextEditSuggestions.fixes": true,
+  "inlineChat.affordance": "editor",
   "inlineChat.enableV2": true,
-  "inlineChat.finishOnType": true
+  "inlineChat.finishOnType": true,
+  "inlineChat.renderMode": "hover"
 }
