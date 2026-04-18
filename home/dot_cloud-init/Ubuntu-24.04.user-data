@@ -21,7 +21,7 @@ users:
   - name: dev
     gecos: Developer
     groups: [adm, sudo, docker]
-    sudo: ALL=(ALL) NOPASSWD:ALL  # 免密sudo
+    sudo: ALL=(ALL) NOPASSWD:ALL # 免密sudo
     shell: /bin/bash
     # 注入你的SSH公钥（免密登录）
     ssh_authorized_keys:
@@ -37,11 +37,21 @@ write_files:
 
 # 自动安装软件包
 packages:
-  - git
-  - curl
-  - wget
+  - fish
+  - tldr
+  - mosh
+  - aria2c
+  - 7zip
+  - ffmpeg
+  - jq
+  - fzf
+  - ripgrep
+  - eza
+  - zoxide
+  - bat
+  - fd-find
 
 # 启动后执行的命令
 # runcmd:
-  # - systemctl enable --now docker
-  # - usermod -aG docker dev
+# - systemctl enable --now docker
+# - usermod -aG docker dev
