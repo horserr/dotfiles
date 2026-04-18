@@ -6,8 +6,10 @@
       "XP8K0HKJFRXGCK", // on my posh
       "9NZ3KLHXDJP5", // Ubuntu 24.04LTS
 
-      // Azure CLI
-      "Microsoft.AzureCLI",
+      // alt snap
+      "AltSnap.AltSnap",
+      // remote desktop
+      "Microsoft.WindowsApp",
       // SSHFS
       "SSHFS-Win.SSHFS-Win",
       //WinFsp
@@ -122,8 +124,6 @@
       "FujiApple.Trippy",
       //FFmpeg
       "Gyan.FFmpeg",
-      //Lazydocker
-      "JesseDuffield.Lazydocker",
       //lazygit
       "JesseDuffield.lazygit",
       //zoxide
@@ -132,8 +132,6 @@
       "aloneguid.bt",
       //iPerf3
       "ar51an.iPerf3",
-      //uv
-      "astral-sh.uv",
       //fzf
       "junegunn.fzf",
       //bat
