@@ -11,9 +11,10 @@
   "extensions.autoCheckUpdates": true,
   "extensions.autoUpdate": true,
   "extensions.experimental.affinity": {
-    "asvetliakov.vscode-neovim": 1,
     "GitHub.copilot-chat": 2,
-    "vscodevim.vim": 1
+    "vscodevim.vim": 1,
+    "VSpaceCode.vspacecode": 2,
+    "VSpaceCode.whichkey": 2
     //Caveats: One issue with using the affinity setting is that each time you update your settings file, the Vim plugin will reload, which can take a few seconds. https://github.com/VSCodeVim/Vim#:~:text=VSCodeVim%20is%20too%20slow
   },
   // live preview
@@ -39,9 +40,7 @@
     }
   },
   // setting sync
-  "settingsSync.ignoredExtensions": [
-    "leetcode.vscode-leetcode"
-  ],
+  "settingsSync.ignoredExtensions": ["leetcode.vscode-leetcode"],
   "settingsSync.ignoredSettings": [
     "-vim.autoSwitchInputMethod.defaultIM",
     "-vim.autoSwitchInputMethod.obtainIMCmd",
@@ -56,11 +55,7 @@
   "todo-tree.general.statusBar": "current file",
   "todo-tree.general.statusBarClickBehaviour": "toggle highlights",
   "todo-tree.general.tagGroups": {
-    "FIXME": [
-      "FIXME",
-      "FIXIT",
-      "FIX"
-    ]
+    "FIXME": ["FIXME", "FIXIT", "FIX"]
   },
   "todo-tree.general.tags": [
     "TODO",

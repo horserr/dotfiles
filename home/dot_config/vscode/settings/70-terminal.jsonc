@@ -134,7 +134,7 @@
     }
   },
   "terminal.integrated.rightClickBehavior": "default",
-  "terminal.integrated.scrollback": 100,
+  "terminal.integrated.scrollback": 1000,
   // SIGNIFICANT 优先由 vscode 处理快捷键
   "terminal.integrated.sendKeybindingsToShell": false,
   "terminal.integrated.shellIntegration.decorationsEnabled": "both",
