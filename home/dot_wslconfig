@@ -7,7 +7,7 @@ memory=9GB
 processors=9
 swap=12GB
 
-defaultVhdSize=60GB
+defaultVhdSize=128GB
 
 #**********************
 #* DEFAULT SETTINGS *
@@ -34,12 +34,10 @@ dnsProxy=true
 
 [experimental]
 autoMemoryReclaim=gradual
+sparseVhd=true
 
 # when networkingMode is mirrored
 hostAddressLoopback=true
 
 # when dnsTunneling is true
 bestEffortDnsParsing=true
-
-# default
-sparseVhd=false
