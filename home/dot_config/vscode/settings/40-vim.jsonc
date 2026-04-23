@@ -856,12 +856,6 @@
           "key": "R",
           "name": "...current file with relative path and current line numbers",
           "type": "command"
-        },
-        {
-          "command": "fileutils.copyFileName",
-          "key": "n",
-          "name": "...current file name with extension",
-          "type": "command"
         }
       ],
       "keys": ["f", "y"],
@@ -869,7 +863,7 @@
       "type": "bindings"
     },
     {
-      "command": "fileutils.removeFile",
+      "command": "deleteFile",
       "keys": "f.D",
       "name": "Delete current file",
       "type": "command"
@@ -893,7 +887,7 @@
       "type": "command"
     },
     {
-      "command": "fileutils.move",
+      "command": "renameFile",
       "keys": "f.R",
       "name": "Rename file",
       "type": "command"
@@ -1567,20 +1561,14 @@
           "type": "command"
         },
         {
-          "command": "fileutils.copyFileName",
-          "key": "n",
-          "name": "Copy current file name",
-          "type": "command"
-        },
-        {
           "command": "copyFilePath",
-          "key": "p",
+          "key": "P",
           "name": "Copy current file absolute path",
           "type": "command"
         },
         {
           "command": "copyRelativeFilePath",
-          "key": "P",
+          "key": "p",
           "name": "Copy current file relative path",
           "type": "command"
         }
