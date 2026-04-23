@@ -40,6 +40,7 @@
     "editor.defaultFormatter": "charliermarsh.ruff",
     "editor.formatOnSave": true,
     "editor.indentSize": "tabSize",
+    "editor.insertSpaces": false, // use tab rather than space
     "editor.tabSize": 4,
     "editor.wordWrap": "on"
   },
@@ -101,21 +102,6 @@
   "js/ts.inlayHints.variableTypes.enabled": true,
   "js/ts.preferences.importModuleSpecifier": "non-relative",
   "js/ts.updateImportsOnFileMove.enabled": "always",
-  /********************
-   * JUPYTER NOTEBOOK *
-   ********************/
-  "jupyter.interactiveWindow.notebookRepl": true,
-  "jupyter.interactiveWindow.textEditor.executeSelection": true,
-  "jupyter.interactiveWindow.textEditor.magicCommandsAsComments": true,
-  "jupyter.interactiveWindow.textEditor.normalizeSelection": true,
-  /************
-   * MARKDOWN *
-   ************/
-  "markdown.preview.breaks": true,
-  "markdown.preview.fontSize": 16,
-  "markdown.preview.lineHeight": 1.4,
-  "markdown.preview.typographer": true,
-  "markdowntable.showMenu.csvToTable": true,
   /**************
    * POWERSHELL *
    **************/
