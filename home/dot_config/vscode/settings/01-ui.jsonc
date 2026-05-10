@@ -1,5 +1,6 @@
 {
   "$schema": "vscode://schemas/settings/user",
+  "breadcrumbs.symbolPathSeparator": "~",
   "custom-ui-style.external.imports": [
     "file://${userHome}/.config/vscode/custom-ui.css"
   ],
@@ -14,10 +15,56 @@
       "--vscode-font-size": "16px !important"
     }
   },
-
+  "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
+  // enable semanticHighlighting by default
+  "editor.semanticHighlighting.enabled": true,
+  "editor.tokenColorCustomizations": {
+    // vscode command: editor.action.inspectTMScopes
+    "textMateRules": [
+      {
+        "scope": [
+          "comment",
+          "constant", //String, Number, Boolean…, this, super
+          "keyword", //import, export, return…
+          "markup.italic",
+          "meta.selector",
+          "storage.modifier", //static keyword
+          "storage.type",
+          "storage.type.class.js", //class keyword
+          "variable.language"
+        ],
+        "settings": {
+          "fontStyle": "italic"
+        }
+      },
+      {
+        "scope": [
+          //following will be excluded from italics (VSCode has some defaults for italics which aren't amazingT)
+          "invalid",
+          "keyword.operator",
+          "constant.numeric.css",
+          "keyword.other.unit.px.css",
+          "constant.numeric.decimal.js",
+          "constant.numeric.json"
+        ],
+        "settings": {
+          "fontStyle": "underline"
+        }
+      }
+    ]
+    // "[*Dark*]": {
+    //   "textMateRules": [
+    //     {
+    //       "scope": "ref.matchtext",
+    //       "settings": {
+    //         "foreground": "#fff"
+    //       }
+    //     }
+    //   ]
+    // }
+  },
   "remote-explorer.collapseRecentFolders": false,
   "remote-explorer.foldersSortOrder": "most recently used",
-
   "window.autoDetectColorScheme": true,
   "window.commandCenter": false,
   "window.confirmBeforeClose": "keyboardOnly",
@@ -35,59 +82,14 @@
   "window.zoomLevel": 0.5,
   "workbench.activityBar.location": "bottom",
   "workbench.colorCustomizations": {
-    "[Vira*]": {
-      "activityBar.activeBorder": "#80CBC4",
-      "activityBarBadge.background": "#80CBC4",
-      "activityBarBadge.foreground": "#000000",
-      "activityBarTop.activeBorder": "#80CBC4",
-      "breadcrumb.activeSelectionForeground": "#80CBC4",
-      "button.background": "#80CBC4",
-      "button.foreground": "#000000",
-      "button.hoverBackground": "#80CBC4cc",
-      "chat.avatarForeground": "#80CBC4",
-      "chat.slashCommandForeground": "#80CBC4",
-      "commandCenter.activeBorder": "#80CBC480",
-      "editor.findMatchBorder": "#80CBC4",
-      "editorSuggestWidget.highlightForeground": "#80CBC4",
-      "editorWidget.border": "#80CBC4",
-      "editorWidget.resizeBorder": "#80CBC4",
-      "extensionButton.background": "#80CBC414",
-      "extensionButton.foreground": "#80CBC4",
-      "extensionButton.hoverBackground": "#80CBC433",
-      "extensionButton.prominentBackground": "#80CBC414",
-      "extensionButton.prominentForeground": "#80CBC4",
-      "extensionButton.prominentHoverBackground": "#80CBC433",
-      "extensionButton.separator": "#80CBC433",
-      "list.activeSelectionForeground": "#80CBC4",
-      "list.activeSelectionIconForeground": "#80CBC4",
-      "list.highlightForeground": "#80CBC4",
-      "list.inactiveSelectionForeground": "#80CBC4",
-      "list.inactiveSelectionIconForeground": "#80CBC4",
-      "menu.selectionForeground": "#80CBC4",
-      "menubar.selectionForeground": "#80CBC4",
-      "notebook.inactiveFocusedCellBorder": "#80CBC480",
-      "notificationLink.foreground": "#80CBC4",
-      "panelTitle.activeBorder": "#80CBC4",
-      "pickerGroup.foreground": "#80CBC4",
-      "progressBar.background": "#80CBC4",
-      "sash.hoverBorder": "#80CBC480",
-      "scrollbarSlider.activeBackground": "#80CBC480",
-      "selection.background": "#80CBC440",
-      "settings.modifiedItemIndicator": "#80CBC4",
-      "statusBar.debuggingBackground": "#80CBC433",
-      "statusBar.debuggingForeground": "#80CBC4",
-      "statusBarItem.remoteBackground": "#80CBC414",
-      "statusBarItem.remoteForeground": "#80CBC4",
-      "statusBarItem.remoteHoverBackground": "#80CBC4",
-      "statusBarItem.remoteHoverForeground": "#000000",
-      "tab.activeBorder": "#80CBC4",
-      "tab.activeBorderTop": "#80CBC400",
-      "tab.activeModifiedBorder": "#80CBC400",
-      "tab.unfocusedActiveBorder": "#80CBC4",
-      "tab.unfocusedActiveBorderTop": "#80CBC400",
-      "textLink.foreground": "#80CBC4",
-      "toolbar.activeBackground": "#80CBC426"
-    }
+    // editor bracket color customization
+    // "editorBracketHighlight.foreground1": "#5caeef",
+    // "editorBracketHighlight.foreground2": "#dfb976",
+    // "editorBracketHighlight.foreground3": "#c172d9",
+    // "editorBracketHighlight.foreground4": "#4fb1bc",
+    // "editorBracketHighlight.foreground5": "#97c26c",
+    // "editorBracketHighlight.foreground6": "#abb2c0",
+    // "editorBracketHighlight.unexpectedBracket.foreground": "#db6165"
   },
   "workbench.commandPalette.showAskInChat": false,
   "workbench.iconTheme": "catppuccin-mocha",
@@ -96,6 +98,7 @@
   "workbench.panel.showLabels": false,
   "workbench.preferredDarkColorTheme": "Catppuccin Mocha",
   "workbench.secondarySideBar.showLabels": false,
+  "workbench.startupEditor": "none",
   "workbench.statusBar.visible": true,
   "workbench.tree.stickyScrollMaxItemCount": 4
 }

@@ -10,6 +10,8 @@
   "dev.containers.copyGitConfig": false,
   "dev.containers.defaultExtensions": [
     "albert.TabOut",
+    "astral-sh.ty",
+    "charliermarsh.ruff",
     "fill-labs.dependi",
     "Gruntfuggly.todo-tree",
     "TakumiI.markdowntable",
@@ -118,7 +120,8 @@
   // ？自动开启远程终端
   "remote.SSH.permitPtyAllocation": true,
   // SIGNIFICANT 连接前本机运行脚本
-  "remote.SSH.preconnect": "~/preconnect.ps1",
+  // "remote.SSH.preconnect": "~/preconnect.ps1",
+  "remote.SSH.preconnect": "",
   // port range 避免 port 冲突
   "remote.SSH.preferredLocalPortRange": "",
   "remote.SSH.reconnectionGraceTime": null,

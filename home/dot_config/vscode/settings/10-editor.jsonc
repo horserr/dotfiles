@@ -5,7 +5,6 @@
   "editor.accessibilitySupport": "off",
   "editor.allowVariableFontsInAccessibilityMode": true,
   "editor.autoIndentOnPaste": true,
-  "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
   "editor.codeActionsOnSave": {
     // refer to https://www.byteplus.com/en/topic/513795?title=vscode-editor-codeactionsonsave-a-complete-guide
     "source.fixAll": "explicit",
@@ -21,7 +20,7 @@
   "editor.detectIndentation": true,
   "editor.foldingImportsByDefault": true,
   "editor.foldingStrategy": "auto",
-  "editor.fontFamily": "FiraCode Nerd Font, Cascadia Code, LXGW Neo XiHei, 江西拙楷, 杨任东竹石体 Heavy, Consolas, Microsoft YaHei",
+  "editor.fontFamily": "Cascadia Code, FiraCode Nerd Font, LXGW Neo XiHei, 江西拙楷, 杨任东竹石体 Heavy, Consolas, Microsoft YaHei",
   // "editor.fontLigatures": "'ss01','ss02','ss03','ss04','ss05','ss06','zero','onum'",
   "editor.fontLigatures": true,
   // Editor settings
@@ -59,10 +58,7 @@
   "editor.quickSuggestionsDelay": 100,
   "editor.renderControlCharacters": true,
   "editor.renderWhitespace": "selection",
-  "editor.rulers": [
-    80,
-    120
-  ],
+  "editor.rulers": [80, 120],
   "editor.smoothScrolling": true,
   "editor.snippetSuggestions": "inline", // the sorting order of snippet within quick suggestions
   "editor.stickyScroll.maxLineCount": 3,
@@ -75,50 +71,6 @@
   "editor.suggestSelection": "recentlyUsedByPrefix",
   "editor.tabCompletion": "on",
   "editor.tabSize": 2,
-  "editor.tokenColorCustomizations": {
-    "textMateRules": [
-      {
-        "scope": [
-          "comment",
-          "constant", //String, Number, Boolean…, this, super
-          "keyword", //import, export, return…
-          "markup.italic",
-          "meta.selector",
-          "storage.modifier", //static keyword
-          "storage.type",
-          "storage.type.class.js", //class keyword
-          "variable.language"
-        ],
-        "settings": {
-          "fontStyle": "italic"
-        }
-      },
-      {
-        "scope": [
-          //following will be excluded from italics (VSCode has some defaults for italics which aren't amazingT)
-          "invalid",
-          "keyword.operator",
-          "constant.numeric.css",
-          "keyword.other.unit.px.css",
-          "constant.numeric.decimal.js",
-          "constant.numeric.json"
-        ],
-        "settings": {
-          "fontStyle": ""
-        }
-      }
-    ]
-    // "[*Dark*]": {
-    //   "textMateRules": [
-    //     {
-    //       "scope": "ref.matchtext",
-    //       "settings": {
-    //         "foreground": "#fff"
-    //       }
-    //     }
-    //   ]
-    // }
-  },
   "editor.unicodeHighlight.nonBasicASCII": false,
   "editor.wordBasedSuggestions": "matchingDocuments",
   "editor.wordSeparators": "`~!@#$%^&*()-=+[{]}\\|;:'\",.<>/?，。；“’（）",
