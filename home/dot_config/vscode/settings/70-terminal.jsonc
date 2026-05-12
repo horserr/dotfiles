@@ -151,7 +151,12 @@
     "copilot",
     "claude",
     "codex",
-    "gemini"
+    "gemini",
+    "git",
+    "ssh",
+    "less",
+    "tmux",
+    "ls"
   ],
   "terminal.integrated.stickyScroll.maxLineCount": 2,
   "terminal.integrated.suggest.cdPath": "relative",

@@ -22,6 +22,11 @@
   {
     "key": "ctrl+shift+`",
     "command": "workbench.action.terminal.new",
-    "when": "terminalFocus&&(terminalProcessSupported || terminalWebExtensionContributedProfile)"
+    "when": "terminalFocus && (terminalProcessSupported || terminalWebExtensionContributedProfile)"
+  },
+  {
+    "key": "alt+0",
+    "command": "workbench.action.toggleMaximizedPanel",
+    "when": "terminalFocus && (panelAlignment == 'center' || panelPosition != 'bottom' && panelPosition != 'top')"
   }
 ]
