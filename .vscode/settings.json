@@ -1,28 +1,70 @@
 {
+  // catppuccin-icons list: https://github.com/catppuccin/vscode-icons/tree/main/icons/mocha
+  // Files with the `spec.ts` extension will have the `typescript-test` icon.
+  "catppuccin-icons.associations.extensions": {
+    "extension-list.yaml": "juce",
+    "json.tmpl": "json",
+    "jsonc.tmpl": "jsonc",
+    "ps1.tmpl": "toml",
+    "toml.tmpl": "toml"
+  },
+  // Files with the name `vite.config.ts` will have the `vite` icon.
+  "catppuccin-icons.associations.files": {
+    ".chezmoi.toml.tmpl": "api-blueprint",
+    ".chezmoiignore": "gleam",
+    ".chezmoiroot": "rojo",
+    "alias": "ember",
+    "alias.ps1": "ember",
+    "config": "config",
+    "dot_ideavimrc": "vim",
+    "dot_vimrc": "vim",
+    "fish_plugins": "juce",
+    "Microsoft.PowerShell_profile.ps1": "codeowners",
+    "settings.json": "cucumber",
+    "tasks.json": "midi",
+    "winapps.jsonc": "juce",
+    "windows-terminal.jsonc": "vhs"
+  },
+  // Folders with the name `typings/` will have the `folder_types` icon.
+  "catppuccin-icons.associations.folders": {
+    ".chezmoidata": "folder_database",
+    ".chezmoiexternals": "folder_include",
+    ".chezmoiscripts": "folder_scripts",
+    ".chezmoitemplates": "folder_lib",
+    "bells": "folder_audio",
+    "dot_cargo": "rust-config",
+    "dot_cloud-init": "folder_azure-pipelines",
+    "dot_config": "folder_drizzle-orm",
+    "dot_docker": "folder_docker",
+    "dot_ssh": "folder_security",
+    "dot_vim": "vim",
+    "dot_vscode-server": "folder_vscode",
+    "fish": "folder_roblox",
+    "gh": "folder_github",
+    "git": "folder_git",
+    "home": "folder_admin",
+    "lazydocker": "docker",
+    "pixel-shaders": "shader",
+    "powershell": "folder_admin",
+    "refs": "folder_storybook",
+    "ssh": "esbuild",
+    "start": "folder_utils",
+    "tmux": "vanilla-extract",
+    "uv": "uv",
+    "vscode": "folder_vscode",
+    "yazi": "wally",
+    "zellij": "tauri"
+  },
+  // Files with the language type `typescriptreact` will have the `typescript-react` icon.
+  "catppuccin-icons.associations.languages": {
+    "ssh_config": "wrangler"
+  },
   "files.associations": {
     ".chezmoiignore": "gitignore",
+    ".gitattributes": "plaintext",
+    "*.ps1.tmpl": "powershell",
     "dot_bashrc": "shellscript",
     "dot_vimrc": "Vimscript",
     "dot_inputrc": "shellscript"
-  },
-  "peacock.remoteColor": "#215732",
-  "workbench.colorCustomizations": {
-    "activityBar.activeBackground": "#2f7c47",
-    "activityBar.background": "#2f7c47",
-    "activityBar.foreground": "#e7e7e7",
-    "activityBar.inactiveForeground": "#e7e7e799",
-    "activityBarBadge.background": "#422c74",
-    "activityBarBadge.foreground": "#e7e7e7",
-    "commandCenter.border": "#e7e7e799",
-    "sash.hoverBorder": "#2f7c47",
-    "statusBar.background": "#215732",
-    "statusBar.foreground": "#e7e7e7",
-    "statusBarItem.hoverBackground": "#2f7c47",
-    "statusBarItem.remoteBackground": "#215732",
-    "statusBarItem.remoteForeground": "#e7e7e7",
-    "titleBar.activeBackground": "#215732",
-    "titleBar.activeForeground": "#e7e7e7",
-    "titleBar.inactiveBackground": "#21573299",
-    "titleBar.inactiveForeground": "#e7e7e799"
   }
 }

@@ -4,6 +4,8 @@ set -gx VISUAL vim
 set -gx RUSTUP_DIST_SERVER https://rsproxy.cn
 set -gx RUSTUP_UPDATE_ROOT https://rsproxy.cn/rustup
 
+set -gx PAGER less
+
 # use windows browser tamer to browser webpage inside wsl
 if status is-interactive; and string match -qi "*microsoft*" </proc/sys/kernel/osrelease
     set -gx BROWSER bt.exe

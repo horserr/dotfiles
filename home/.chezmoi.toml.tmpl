@@ -1,19 +1,24 @@
 {{/* code: language=toml */}}
 
-{{- $isWSL := false -}}
-{{- if (contains "microsoft" .chezmoi.kernel.osrelease) -}}
-    {{- $isWSL = true -}}
-{{- end -}}
+{{- $isLinux := eq .chezmoi.os "linux" -}}
 
-{{- $isDocker := false -}}
-{{- if (or (stat "/.dockerenv") (stat "/.dockerinit")) -}}
-    {{- $isDocker = true -}}
-{{- end -}}
+{{- $isWindows := eq .chezmoi.os "windows" -}}
+
+{{- $isWSL := contains "microsoft-standard-WSL" .chezmoi.kernel.osrelease -}}
+
+{{- $isDocker := or (ne (stat "/.dockerenv") nil) (ne (stat "/.dockerinit") nil) -}}
+
+{{- $isSSH := or (ne (env "SSH_CLIENT") "") (ne (env "SSH_TTY") "") (ne (env "SSH_CONNECTION") "") -}}
+{{- $isMOSH := ne (env "MOSH_SSH_CONNECTION") "" -}}
+
+{{- $isCodeSpaces := ne (env "CODESPACES") "" -}}
+{{- $isRemoteContainer := ne (env "REMOTE_CONTAINERS_IPC") "" -}}
 
 sourceDir = "~/.config/.dotfiles"
 
 [data]
     isWSL = {{ $isWSL }}
     isDocker = {{ $isDocker }}
-    # 你也可以顺便定义一个更通用的远程开发标识
-    isRemote = {{ or $isWSL $isDocker }}
+    isEphemeral = {{ or $isDocker $isCodeSpaces $isRemoteContainer }}
+    isPersonal = {{ or $isWSL $isWindows $isDocker }}
+    isRemote = {{ or $isSSH $isMOSH $isCodeSpaces $isRemoteContainer }}

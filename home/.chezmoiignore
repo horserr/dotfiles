@@ -1,4 +1,18 @@
 {{ if not .isWSL }}
 .vscode-server/
-.ssh/
+.pixi/
+
+.inputrc
+.bashrc
+.profile
+.zshrc
+{{ end }}
+
+{{ if not .isWindows }}
+.chezmoiscripts/windows/**
+.cloud-init/
+.docker/
+
+.ideavimrc
+.wslconfig
 {{ end }}
