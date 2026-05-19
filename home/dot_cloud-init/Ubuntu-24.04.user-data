@@ -1,0 +1,79 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/canonical/cloud-init/main/cloudinit/config/schemas/versions.schema.cloud-config.json
+
+# 自动更新、升级系统
+package_update: true
+package_upgrade: true
+
+# 时区、语言
+timezone: Asia/Shanghai
+locale: en_US.UTF-8
+
+apt:
+  primary:
+    - arches: [amd64, i386]
+      # uri: http://mirrors.tuna.tsinghua.edu.cn/ubuntu/
+      uri: http://mirrors.nju.edu.cn/ubuntu/
+  security:
+    - arches: [amd64, i386]
+      # uri: http://mirrors.tuna.tsinghua.edu.cn/ubuntu/
+      uri: http://mirrors.nju.edu.cn/ubuntu/
+
+# 创建默认用户（WSL必须有非root用户）
+users:
+  - name: dev
+    gecos: Developer
+    groups: [adm, sudo, docker]
+    sudo: ALL=(ALL) NOPASSWD:ALL # 免密sudo
+    shell: /bin/bash
+    # 注入你的SSH公钥（免密登录）
+    ssh_authorized_keys:
+      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQD... your-public-key
+
+write_files:
+  - path: /etc/wsl.conf
+    content: |
+      [user]
+      default=dev
+      [boot]
+      systemd=true
+
+# 自动安装软件包
+packages:
+  - fish
+  - tldr
+  - git-delta
+  - mosh
+  - aria2c
+  - eza
+  - fzf
+  # yazi requirements
+  - 7zip
+  - ffmpeg
+  - jq
+  - poppler
+  - ripgrep
+  - zoxide
+  - resvg
+  - imagemagick
+  - bat
+  - fd-find
+
+# 启动后执行的命令
+# runcmd:
+# - systemctl enable --now docker
+# - usermod -aG docker dev
+
+# install fisher
+# curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher install jorgebucaran/fisher
+
+# install chezmoi
+# sh -c "$(curl -fsLS get.chezmoi.io)" -- -b /usr/local/bin
+
+# install nix
+# curl -L https://nixos.org/nix/install | sh -s -- --no-daemon
+
+# install tailscale
+# curl -fsSL https://tailscale.com/install.sh | sh
+
+# fisher:
+  # fisher install wfxr/forgit
