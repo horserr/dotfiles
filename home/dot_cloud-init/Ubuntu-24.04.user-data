@@ -11,10 +11,12 @@ locale: en_US.UTF-8
 apt:
   primary:
     - arches: [amd64, i386]
-      uri: http://mirrors.tuna.tsinghua.edu.cn/ubuntu/
+      # uri: http://mirrors.tuna.tsinghua.edu.cn/ubuntu/
+      uri: http://mirrors.nju.edu.cn/ubuntu/
   security:
     - arches: [amd64, i386]
-      uri: http://mirrors.tuna.tsinghua.edu.cn/ubuntu/
+      # uri: http://mirrors.tuna.tsinghua.edu.cn/ubuntu/
+      uri: http://mirrors.nju.edu.cn/ubuntu/
 
 # 创建默认用户（WSL必须有非root用户）
 users:
@@ -39,15 +41,20 @@ write_files:
 packages:
   - fish
   - tldr
+  - git-delta
   - mosh
   - aria2c
+  - eza
+  - fzf
+  # yazi requirements
   - 7zip
   - ffmpeg
   - jq
-  - fzf
+  - poppler
   - ripgrep
-  - eza
   - zoxide
+  - resvg
+  - imagemagick
   - bat
   - fd-find
 
@@ -55,3 +62,18 @@ packages:
 # runcmd:
 # - systemctl enable --now docker
 # - usermod -aG docker dev
+
+# install fisher
+# curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher install jorgebucaran/fisher
+
+# install chezmoi
+# sh -c "$(curl -fsLS get.chezmoi.io)" -- -b /usr/local/bin
+
+# install nix
+# curl -L https://nixos.org/nix/install | sh -s -- --no-daemon
+
+# install tailscale
+# curl -fsSL https://tailscale.com/install.sh | sh
+
+# fisher:
+  # fisher install wfxr/forgit
