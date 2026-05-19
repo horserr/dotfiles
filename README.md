@@ -8,9 +8,15 @@ This repo is adapted from: [twpayne's dotfiles](https://github.com/twpayne/dotfi
 
 open in administrator terminal:
 
-```pwsh
+```cmd
 dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
 dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all
+```
+
+OR
+
+```pwsh
+Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux,VirtualMachinePlatform
 ```
 
 ## set WSL network mode to `mirrored`

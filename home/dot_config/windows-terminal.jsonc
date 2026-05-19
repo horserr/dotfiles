@@ -319,7 +319,7 @@
         "%USERPROFILE%/.config/.dotfiles/assets/bells/Temple.wav"
       ],
       // "bellStyle": ["audible", "window"]
-      "bellStyle": "all",
+      "bellStyle": ["taskbar", "window"],
       "closeOnExit": "automatic",
       "colorScheme": "One Half Dark",
       "compatibility.input.forceVT": true,
