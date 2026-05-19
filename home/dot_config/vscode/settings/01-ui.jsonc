@@ -79,7 +79,7 @@
   "window.systemColorTheme": "auto",
   "window.title": "${dirty}😉${rootNameShort}${separator}${activeEditorShort}",
   "window.titleSeparator": " 📍 ",
-  "window.zoomLevel": 0.5,
+  "window.zoomLevel": 0.7,
   "workbench.activityBar.location": "bottom",
   "workbench.colorCustomizations": {
     // editor bracket color customization

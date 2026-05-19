@@ -6,7 +6,9 @@
       "XP8K0HKJFRXGCK", // on my posh
       "9NZ3KLHXDJP5", // Ubuntu 24.04LTS
 
-      // alt snap
+      // SumatraPDF
+      "SumatraPDF.SumatraPDF",
+      // calibre ebook
       "calibre.calibre",
       // alt snap
       "AltSnap.AltSnap",
@@ -124,8 +126,6 @@
       "FujiApple.Trippy",
       //FFmpeg
       "Gyan.FFmpeg",
-      //lazygit
-      "JesseDuffield.lazygit",
       //zoxide
       "ajeetdsouza.zoxide",
       //bt
@@ -138,6 +138,8 @@
       "sharkdp.bat",
       //VisualStudioCode
       "Microsoft.VisualStudioCode",
+      // msvc build tools
+      "Microsoft.VisualStudio.BuildTools",
       //Windows Terminal Preview
       "Microsoft.WindowsTerminal.Preview",
       //Ventoy

@@ -8,6 +8,9 @@
     /* cannot set here     "editor.wordWrapColumn": 80,
     "editor.wordWrap": "bounded" // this setting file cannot display this bounded wrap effect */
   },
+  "[ini]": {
+    "editor.defaultFormatter": "tamasfe.even-better-toml"
+  },
   "[json]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },

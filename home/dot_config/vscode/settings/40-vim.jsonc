@@ -846,15 +846,9 @@
           "type": "command"
         },
         {
-          "command": "copy-relative-path-and-line-numbers.path-only",
+          "command": "copyRelativeFilePath",
           "key": "r",
           "name": "...current file with relative path",
-          "type": "command"
-        },
-        {
-          "command": "copy-relative-path-and-line-numbers.both",
-          "key": "R",
-          "name": "...current file with relative path and current line numbers",
           "type": "command"
         }
       ],

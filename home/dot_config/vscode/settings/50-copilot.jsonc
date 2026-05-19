@@ -25,8 +25,8 @@
     "windsurf": true
   },
   "chat.mcp.gallery.enabled": true,
-  "chat.notifyWindowOnConfirmation": "always",
-  "chat.notifyWindowOnResponseReceived": "always",
+  "chat.notifyWindowOnConfirmation": "windowNotFocused",
+  "chat.notifyWindowOnResponseReceived": "windowNotFocused",
   "chat.renderRelatedFiles": true,
   "chat.tools.terminal.sandbox.enabled": false,
   "chat.viewProgressBadge.enabled": true,

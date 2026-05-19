@@ -4,6 +4,15 @@
 
 This repo is adapted from: [twpayne's dotfiles](https://github.com/twpayne/dotfiles)
 
+## start wsl and hyperv platform
+
+open in administrator terminal:
+
+```pwsh
+dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
+dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all
+```
+
 ## set WSL network mode to `mirrored`
 
 link: https://learn.microsoft.com/en-us/windows/wsl/networking#mirrored-mode-networking
@@ -80,6 +89,7 @@ git add -u
 ```
 
 to remove file from history
+
 ```sh
 uvx git-filter-repo --path <file path> --invert-paths
 ```
