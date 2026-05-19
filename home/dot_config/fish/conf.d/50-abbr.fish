@@ -9,6 +9,11 @@ if status is-interactive
     # symbolic link dir
     abbr -a lnd "ln -sfd"
 
+    if command -q ip
+        # ip color display
+        abbr -a ipc ip -4 --color --brief
+    end
+
     if command -q tldr
         abbr -a m tldr
     end

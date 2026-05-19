@@ -60,10 +60,14 @@
     "ssh_config": "wrangler"
   },
   "files.associations": {
+    ".chezmoiattributes": "plaintext",
     ".chezmoiignore": "gitignore",
     ".gitattributes": "plaintext",
     "*.ps1.tmpl": "powershell",
     "dot_bashrc": "shellscript",
+    "dot_gitconfig": "ini",
+    "dot_ideavimrc": "Vimscript",
+    "dot_inputrc": "shellscript",
     "dot_vimrc": "Vimscript",
     "dot_inputrc": "shellscript"
   }

@@ -16,3 +16,9 @@
 .ideavimrc
 .wslconfig
 {{ end }}
+
+{{ if not .isWindows }}
+.chezmoiscripts/windows/
+.cloud-init/
+.docker/
+{{ end }}

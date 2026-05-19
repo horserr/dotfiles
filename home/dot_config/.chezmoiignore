@@ -1,6 +1,12 @@
 {{- if not .isWSL }}
-gh/
+fish/
 btop/
 homebrew/
 nvim/
 {{- end }}
+
+{{- if not .isWindows -}}
+vscode/
+.docker/
+windows-terminal.jsonc
+{{ end -}}

@@ -18,6 +18,8 @@ sourceDir = "~/.config/.dotfiles"
 
 [data]
     isWSL = {{ $isWSL }}
+    isLinux = {{ $isLinux }}
+    isWindows = {{ $isWindows }}
     isDocker = {{ $isDocker }}
     isEphemeral = {{ or $isDocker $isCodeSpaces $isRemoteContainer }}
     isPersonal = {{ or $isWSL $isWindows $isDocker }}
