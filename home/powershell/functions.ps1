@@ -57,6 +57,38 @@ function loading {
   Write-Host "`e]9;4;3;50`e\"
 }
 
+# HKEY_CLASSES_ROOT 是 HKEY_LOCAL_MACHINE\Software\Classes 和 HKEY_CURRENT_USER\Software\Classes 的合并视图。
+# 如果你发现 Remove-Item 在 HKEY_CLASSES_ROOT 下报错，请尝试分别在 HKLM: 或 HKCU: 对应路径下查找并删除。
+
+# 备份到当前目录的 backup.reg 文件中
+# reg export "HKEY_CLASSES_ROOT\mytool" "backup.reg"
+
+# 删除注册表项及其所有子项 (-Recurse)
+# Remove-Item -Path "Registry::HKEY_CLASSES_ROOT\mytool" -Recurse -Force
+
+function url-protocol {
+  # 遍历 HKEY_CLASSES_ROOT 下所有包含 "URL Protocol" 属性的项
+  Get-ChildItem Registry::HKEY_CLASSES_ROOT |
+  Where-Object { $_.GetValue("URL Protocol") -ne $null } |
+  Select-Object Name
+}
+
+function url-protocol-verbose {
+  $protocols = Get-ChildItem Registry::HKEY_CLASSES_ROOT | Where-Object { $_.GetValue("URL Protocol") -ne $null }
+
+  foreach ($p in $protocols) {
+    $name = $p.PSChildName
+    $commandPath = "Registry::HKEY_CLASSES_ROOT\$name\shell\open\command"
+
+    if (Test-Path $commandPath) {
+      $cmd = (Get-ItemProperty $commandPath)."(default)"
+      Write-Host "协议: $name" -ForegroundColor Cyan
+      Write-Host "命令: $cmd"
+      Write-Host "----------------"
+    }
+  }
+}
+
 function edit-history {
   & $env:EDITOR (Get-PSReadLineOption).HistorySavePath
 }
