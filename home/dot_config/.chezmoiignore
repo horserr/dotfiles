@@ -2,7 +2,6 @@
 fish/
 btop/
 homebrew/
-nvim/
 {{- end }}
 
 {{- if not .isWindows -}}
