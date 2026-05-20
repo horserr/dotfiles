@@ -7,7 +7,7 @@ Host *
   ServerAliveInterval 30
   ServerAliveCountMax 3   # 3 次无响应则断开
 
-  {{- if ne .chezmoi.os "windows" }}
+  {{ if not .isWindows }}
   ControlMaster auto    # 自动启用连接复用
   ControlPath ~/.ssh/master_%h_%p_%r  # 复用连接的 socket 文件路径
   ControlPersist 1m
@@ -16,7 +16,7 @@ Host *
 Host local
   HostName localhost
 
-{{ if .personal }}
+{{ if .isPersonal }}
 {{ include "dot_ssh/config.d/platform_config" }}
 
 # need to turn on tailscale
@@ -25,10 +25,6 @@ Host termux
   User u0_a737
   Port 8022
   ForwardAgent yes
-{{- end }}
-
-{{- if .work }}
-{{ include "dot_ssh/config.d/work_config" }}
 {{- end }}
 
 Host Nvidia
