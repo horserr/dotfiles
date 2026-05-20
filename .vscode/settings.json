@@ -67,7 +67,6 @@
     "dot_bashrc": "shellscript",
     "dot_gitconfig": "ini",
     "dot_ideavimrc": "Vimscript",
-    "dot_inputrc": "shellscript",
     "dot_vimrc": "Vimscript",
     "dot_inputrc": "shellscript"
   }
