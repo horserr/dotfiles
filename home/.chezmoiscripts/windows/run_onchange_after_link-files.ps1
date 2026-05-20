@@ -107,7 +107,7 @@ $documentPath = [Environment]::GetFolderPath("MyDocuments")
 $mappings = @{
   # PowerShell Profile
   "$documentPath\PowerShell\Microsoft.PowerShell_profile.ps1" = @{
-    target = "$env:dotConfigPath\powershell\Microsoft.PowerShell_profile.ps1"
+    target = "$dotConfigPath\powershell\Microsoft.PowerShell_profile.ps1"
     desc   = "PowerShell Profile"
   }
 
