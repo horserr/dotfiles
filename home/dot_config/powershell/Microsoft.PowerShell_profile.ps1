@@ -2,7 +2,7 @@ Set-StrictMode -Version Latest
 ; $ErrorActionPreference = "Stop"
 $ErrorActionPreference = "Continue"
 
-$dotConfigPath = $env:USERPROFILE + "\.config\.dotfiles"
+$dotConfigPath = $env:USERPROFILE + "\.config"
 $powershellRoot = "$dotConfigPath\powershell"
 
 # 2. 依次加载所有模块化配置（快速初始化）

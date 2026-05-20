@@ -4,7 +4,7 @@
 
 {{- $isWindows := eq .chezmoi.os "windows" -}}
 
-{{- $isWSL := contains "microsoft-standard-WSL" .chezmoi.kernel.osrelease -}}
+{{- $isWSL := and $isLinux (contains "microsoft-standard-WSL" .chezmoi.kernel.osrelease) -}}
 
 {{- $isDocker := or (ne (stat "/.dockerenv") nil) (ne (stat "/.dockerinit") nil) -}}
 
