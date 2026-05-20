@@ -1,0 +1,201 @@
+{
+  "[ahk2]": {
+    "editor.defaultFormatter": "mark-wiemer.vscode-autohotkey-plus-plus"
+  },
+  "[html, css, json, js, ts, tsx, jsx, http]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "files.autoSave": "onWindowChange"
+    /* cannot set here     "editor.wordWrapColumn": 80,
+    "editor.wordWrap": "bounded" // this setting file cannot display this bounded wrap effect */
+  },
+  "[ini]": {
+    "editor.defaultFormatter": "tamasfe.even-better-toml"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "prettier.trailingComma": "none"
+  },
+  "[markdown]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.fontFamily": "LXGW WenKai Mono",
+    "editor.fontSize": 19,
+    "editor.indentSize": "tabSize",
+    "editor.letterSpacing": 0.8,
+    "editor.lineHeight": 1.3,
+    "editor.renderWhitespace": "all",
+    "editor.tabSize": 4,
+    "editor.wrappingStrategy": "advanced"
+  },
+  "[powershell]": {
+    "editor.defaultFormatter": "ms-vscode.powershell"
+  },
+  "[prolog]": {
+    "editor.defaultFormatter": "AmauryRabouan.new-vsc-prolog"
+  },
+  "[python]": {
+    "editor.codeActionsOnSave": {
+      "source.fixAll.ruff": "explicit",
+      "source.organizeImports.ruff": "explicit"
+    },
+    "editor.defaultFormatter": "charliermarsh.ruff",
+    "editor.formatOnSave": true,
+    "editor.indentSize": "tabSize",
+    "editor.insertSpaces": false, // use tab rather than space
+    "editor.tabSize": 4,
+    "editor.wordWrap": "on"
+  },
+  "[rust]": {
+    "editor.defaultFormatter": "rust-lang.rust-analyzer"
+  },
+  "[snippets]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "[sql]": {
+    "editor.defaultFormatter": "dbcode.dbcode"
+  },
+  "[typst]": {
+    "editor.defaultFormatter": "myriad-dreamin.tinymist",
+    "editor.padding.bottom": 0
+  },
+  "[xml, wsb]": {
+    "editor.defaultFormatter": "redhat.vscode-xml"
+  },
+  "[yaml]": {
+    "editor.defaultFormatter": "redhat.vscode-yaml"
+  },
+  "$schema": "vscode://schemas/settings/user",
+  /*******
+   * AHK *
+   *******/
+  "AHK++.v2.formatter": {
+    "arrayStyle": "none",
+    "braceStyle": "One True Brace",
+    "breakChainedMethods": false,
+    "ignoreComment": false,
+    "indentBetweenHotIfDirectives": false,
+    "indentString": "  ",
+    "keywordStartWithUppercase": true,
+    "maxPreserveNewlines": 2,
+    "objectStyle": "none",
+    "preserveNewlines": true,
+    "spaceAfterDoubleColon": true,
+    "spaceBeforeConditional": true,
+    "spaceInEmptyParen": false,
+    "spaceInOther": true,
+    "spaceInParen": false,
+    "switchCaseAlignment": false,
+    "symbolWithSameCase": false,
+    "whitespaceBeforeInlineComment": "",
+    "wrapLineLength": 120
+  },
+  /*******
+   * CSS *
+   *******/
+  "css.validate": true,
+  /***************************
+   * JAVASCRIPT & TYPESCRIPT *
+   ***************************/
+  "js/ts.inlayHints.enumMemberValues.enabled": true,
+  "js/ts.inlayHints.functionLikeReturnTypes.enabled": true,
+  "js/ts.inlayHints.parameterTypes.enabled": true,
+  "js/ts.inlayHints.propertyDeclarationTypes.enabled": true,
+  "js/ts.inlayHints.variableTypes.enabled": true,
+  "js/ts.preferences.importModuleSpecifier": "non-relative",
+  "js/ts.updateImportsOnFileMove.enabled": "always",
+  /**************
+   * POWERSHELL *
+   **************/
+  "powershell.integratedConsole.showOnStartup": false,
+  "powershell.integratedConsole.startInBackground": true,
+  /**********
+   * PYTHON *
+   **********/
+  "python-envs.terminal.autoActivationType": "shellStartup",
+  "python.analysis.autoFormatStrings": true,
+  // CONSERVATIVE 节省资源
+  "python.analysis.autoImportCompletions": false,
+  "python.analysis.cacheLSPData": true,
+  "python.analysis.completeFunctionParens": true,
+  // CONSERVATIVE
+  "python.analysis.diagnosticMode": "openFilesOnly",
+  // UPLIFTING
+  "python.analysis.diagnosticSeverityOverrides": {
+    "reportUnusedImport": "information"
+  },
+  "python.analysis.enableAsyncProgram": true,
+  // SIGNIFICANT
+  "python.analysis.enableParallelIndexing": true,
+  "python.analysis.enableTroubleshootMissingImports": true,
+  "python.analysis.exclude": [
+    "**/node_modules",
+    "**/venv",
+    "**/.git/**",
+    "**/venv/**",
+    "**/.venv/**",
+    "**/.pixi/**"
+  ],
+  "python.analysis.findRefsInBackgroundThread": true,
+  "python.analysis.generateWithTypeAnnotation": true,
+  "python.analysis.importFormat": "relative",
+  "python.analysis.includeAliasesFromUserFiles": true,
+  "python.analysis.inlayHints.callArgumentNames": "partial",
+  "python.analysis.inlayHints.functionReturnTypes": true,
+  "python.analysis.inlayHints.pytestParameters": true,
+  "python.analysis.inlayHints.variableTypes": false,
+  "python.analysis.languageServerMode": "light",
+  "python.analysis.logLevel": "Warning",
+  "python.analysis.referencesCodeLens": true,
+  "python.analysis.showOnlyDirectDependenciesInAutoImport": true,
+  "python.analysis.supportAllPythonDocuments": true,
+  "python.analysis.supportDocstringTemplate": true,
+  "python.analysis.typeCheckingMode": "basic",
+  "python.analysis.typeEvaluation.deprecateTypingAliases": true,
+  "python.analysis.typeEvaluation.disableBytesTypePromotions": true,
+  "python.analysis.typeEvaluation.enableExperimentalFeatures": true,
+  "python.analysis.typeEvaluation.enableReachabilityAnalysis": true,
+  "python.analysis.typeEvaluation.strictDictionaryInference": true,
+  "python.analysis.typeEvaluation.strictListInference": true,
+  "python.analysis.typeEvaluation.strictSetInference": true,
+  "python.analysis.useNearestConfiguration": true,
+  // 限制索引的文件数量，防止扫描整个硬盘
+  "python.analysis.userFileIndexingLimit": 1000,
+  "python.languageServer": "None",
+  /*****************************
+   * RUFF FORMATTER AND LINTER *
+   *****************************/
+  "ruff.configurationPreference": "filesystemFirst",
+  "ruff.enable": true,
+  "ruff.nativeServer": true,
+  "ruff.organizeImports": true,
+  /********
+   * RUST *
+   ********/
+  "rust-analyzer.check.command": "clippy",
+  "rust-analyzer.showSyntaxTree": true,
+  /********
+   * SCSS *
+   ********/
+  "scss.validate": true,
+  /*********
+   * TYPST *
+   *********/
+  "tinymist.lint.enabled": true,
+  "tinymist.lint.when": "onType",
+  "tinymist.preview.cursorIndicator": true,
+  "tinymist.preview.invertColors": "auto",
+  /********************************
+   * TY -- PYTHON LANGUAGE SERVER *
+   ********************************/
+  "ty.completions.autoImport": true,
+  "ty.configuration": {
+    "rules": {
+      "unresolved-reference": "warn"
+    }
+  },
+  "ty.diagnosticMode": "openFilesOnly",
+  "ty.inlayHints.callArgumentNames": true,
+  "ty.inlayHints.variableTypes": true
+}

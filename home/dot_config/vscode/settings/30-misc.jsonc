@@ -1,0 +1,98 @@
+{
+  "$schema": "vscode://schemas/settings/user",
+  "application.experimental.rendererProfiling": true,
+  "containers.containerClient": "com.microsoft.visualstudio.containers.docker",
+  "containers.orchestratorClient": "com.microsoft.visualstudio.orchestrators.dockercompose",
+  // emmet settings https://code.visualstudio.com/docs/languages/emmet
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact"
+  },
+  "emmet.triggerExpansionOnTab": true,
+  "extensions.autoCheckUpdates": true,
+  "extensions.autoUpdate": true,
+  "extensions.experimental.affinity": {
+    "GitHub.copilot-chat": 2,
+    "vscodevim.vim": 1,
+    "VSpaceCode.vspacecode": 2,
+    "VSpaceCode.whichkey": 2
+    //Caveats: One issue with using the affinity setting is that each time you update your settings file, the Vim plugin will reload, which can take a few seconds. https://github.com/VSCodeVim/Vim#:~:text=VSCodeVim%20is%20too%20slow
+  },
+  // live preview
+  "livePreview.customExternalBrowser": "Chrome",
+  "livePreview.debugOnExternalPreview": true,
+  "livePreview.openPreviewTarget": "External Browser",
+  "livePreview.portNumber": 1111,
+  "livePreview.showServerStatusNotifications": true,
+  "livePreview.tasks.runTaskWithExternalPreview": true,
+  "overleaf-workshop.compileOnSave.enabled": false,
+  "overleaf-workshop.pdfViewer.themes": {
+    "dark": {
+      "bgColor": "#303541",
+      "fontColor": "#c8cee0"
+    },
+    "default": {
+      "bgColor": "#303541",
+      "fontColor": "#c8cee0"
+    },
+    "light": {
+      "bgColor": "#e6e6e6",
+      "fontColor": "#333333"
+    }
+  },
+  // setting sync
+  "settingsSync.ignoredExtensions": ["leetcode.vscode-leetcode"],
+  "settingsSync.ignoredSettings": [
+    "-vim.autoSwitchInputMethod.defaultIM",
+    "-vim.autoSwitchInputMethod.obtainIMCmd",
+    "-vim.autoSwitchInputMethod.switchIMCmd",
+    "-window.zoomLevel",
+    "-files.dialog.defaultPath"
+  ],
+  // todo-tree
+  "todo-tree.filtering.ignoreGitSubmodules": true,
+  "todo-tree.general.showActivityBarBadge": true,
+  "todo-tree.general.showIconsInsteadOfTagsInStatusBar": true,
+  "todo-tree.general.statusBar": "current file",
+  "todo-tree.general.statusBarClickBehaviour": "toggle highlights",
+  "todo-tree.general.tagGroups": {
+    "FIXME": ["FIXME", "FIXIT", "FIX"]
+  },
+  "todo-tree.general.tags": [
+    "TODO",
+    "BUG",
+    "HACK",
+    "FIXME",
+    "FIX",
+    "FIXIT",
+    "XXX"
+    // "[ ]",
+    // "[x]",
+  ],
+  "todo-tree.highlights.customHighlight": {
+    "TODO": {
+      "background": "#8FBCBB",
+      "foreground": "#5c3f12af",
+      "gutterIcon": true,
+      "icon": "zap",
+      "iconColour": "#8FBCBB",
+      "type": "tag-and-comment"
+    }
+  },
+  "todo-tree.highlights.defaultHighlight": {
+    "background": "#163467",
+    "foreground": "#83ADF4",
+    "icon": "alert",
+    "iconColour": "#83ADF4",
+    "type": "text"
+  },
+  "todo-tree.highlights.enabled": true,
+  "todo-tree.highlights.highlightDelay": 300,
+  "todo-tree.highlights.useColourScheme": true,
+  "todo-tree.regex.regexCaseSensitive": false,
+  "todo-tree.tree.buttons.export": true,
+  // vscode update
+  "update.enableWindowsBackgroundUpdates": true,
+  // zen mode
+  "zenMode.fullScreen": false,
+  "zenMode.restore": false
+}

@@ -1,0 +1,17 @@
+[
+  // workbench.action.minimizeOtherEditorsHideSidebar
+  // workbench.action.joinEditorInGroup
+  // workbench.action.joinEditorInGroup
+  // workbench.action.maximizeEditorHideSidebar
+  // workbench.action.lockEditorGroup
+  // workbench.action.joinAllGroups
+  // workbench.action.toggleEditorGroupLayout
+  // workbench.action.toggleEditorGroupLock
+  // workbench.action.toggleEditorWidths
+  // workbench.action.toggleSplitEditorInGroupLayout
+  {
+    "key": "alt+0",
+    "command": "workbench.action.toggleMaximizeEditorGroup",
+    "when": "editorTextFocus && (editorPartMaximizedEditorGroup || editorPartMultipleEditorGroups)"
+  }
+]

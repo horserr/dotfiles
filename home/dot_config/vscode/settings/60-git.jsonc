@@ -1,0 +1,169 @@
+{
+  "[diff]": {
+    "editor.lineNumbers": "off"
+  },
+  // 提交框中的设置
+  "[scminput]": {
+    "editor.fontLigatures": true,
+    "editor.wordWrap": "bounded"
+  },
+  "$schema": "vscode://schemas/settings/user",
+  /**************
+   * DIFFEDITOR *
+   **************/
+  // TOGGLE on to show codeLens
+  "diffEditor.codeLens": false,
+  "diffEditor.experimental.showEmptyDecorations": true,
+  "diffEditor.experimental.showMoves": true,
+  "diffEditor.experimental.useTrueInlineView": true,
+  // 折叠区域上下各显示多少行代码，来提供上下文（背景）信息
+  "diffEditor.hideUnchangedRegions.contextLineCount": 3,
+  "diffEditor.hideUnchangedRegions.enabled": true,
+  // 触发折叠的最少行数
+  "diffEditor.hideUnchangedRegions.minimumLineCount": 5,
+  // 点击 展开更多 时显示的（未更改的）代码行数
+  "diffEditor.hideUnchangedRegions.revealLineCount": 10,
+  "diffEditor.ignoreTrimWhitespace": true,
+  // PERFORMANCE
+  "diffEditor.maxComputationTime": 1000,
+  // PERFORMANCE
+  "diffEditor.maxFileSize": 5, // size in MB
+  // TOGGLE 调整 inline 和 side by side 的最小宽度
+  "diffEditor.renderSideBySideInlineBreakpoint": 700,
+  "diffEditor.wordWrap": "inherit",
+  /*******
+   * GIT *
+   *******/
+  "git.addAIoAuthor": "off",
+  "git.alwaysShowStagedChangesResourceGroup": true,
+  "git.alwaysSignOff": true,
+  // TOGGLE can set 'all'
+  "git.autofetch": true,
+  "git.autofetchPeriod": 180, // every 3mins
+  "git.autoRepositoryDetection": true,
+  // SIGNIFICANT
+  "git.autoStash": false,
+  "git.blame.editorDecoration.disableHover": false,
+  "git.blame.editorDecoration.enabled": true,
+  "git.blame.editorDecoration.template": "${subject}, ${authorName} (${authorDateAgo})",
+  "git.blame.ignoreWhitespace": true,
+  "git.blame.statusBarItem.enabled": true,
+  "git.blame.statusBarItem.template": "${authorName} (${authorDateAgo})",
+  "git.branchPrefix": "",
+  // WORKSPACE
+  "git.branchProtection": [],
+  "git.branchRandomName.dictionary": ["numbers", "colors"],
+  "git.branchRandomName.enable": false,
+  "git.branchValidationRegex": "^(feat|fix|docs|refactor)\/.*",
+  "git.branchWhitespaceChar": "-",
+  // TOGGLE 执行 git 操作时自动关闭 diff editor
+  "git.closeDiffOnOperation": false,
+  // DEBUG 记录 vscode 在后台执行了哪些命令
+  "git.commandsToLog": [],
+  // WORKSPACE
+  "git.commitShortHashLength": 7,
+  "git.countBadge": "tracked",
+  // use git default branch name
+  "git.defaultBranchName": "",
+  "git.defaultCloneDirectory": "~/WorkSpace",
+  "git.detectSubmodulesLimit": 3,
+  "git.detectWorktrees": true,
+  "git.detectWorktreesLimit": 5,
+  "git.diagnosticsCommitHook.enabled": true,
+  // WORKSPACE
+  "git.diagnosticsCommitHook.sources": {
+    "*": "error"
+  },
+  // move to recycle bin rather than permentally delete them
+  "git.discardUntrackedChangesToTrash": true,
+  "git.enableCommitSigning": true,
+  // 不在任务栏上显示 sync
+  "git.enableStatusBarSync": false,
+  // TOGGLE on to push all tags
+  "git.followTagsWhenSync": false,
+  // WORKSPACE PERFORMANCE
+  "git.ignoredRepositories": [],
+  "git.inputValidation": true,
+  "git.inputValidationLength": 72,
+  "git.mergeEditor": true,
+  "git.openAfterClone": "whenNoFolderOpen",
+  // UPLIFTING open diff editor when clicking
+  "git.openDiffOnClick": true,
+  "git.openRepositoryInParentFolders": "prompt",
+  "git.optimisticUpdate": true,
+  // UPLIFTING WORKSPACE
+  "git.postCommitCommand": "none",
+  "git.promptToSaveFilesBeforeCommit": "staged",
+  "git.promptToSaveFilesBeforeStash": "always",
+  // SIGNIFICANT
+  "git.pruneOnFetch": true,
+  "git.pullBeforeCheckout": true,
+  "git.rebaseWhenSync": true,
+  // WORKSPACE PERFORMANCE
+  "git.repositoryScanIgnoredFolders": [
+    "node_modules",
+    ".venv",
+    "venv",
+    "data",
+    "datasets",
+    "dataset",
+    "outputs",
+    "output"
+  ],
+  // PERFORMANCE
+  "git.repositoryScanMaxDepth": 2,
+  // WORKSPACE PERFORMANCE
+  "git.scanRepositories": [],
+  // 隐藏 input 输入框
+  "git.showCommitInput": false,
+  "git.showInlineOpenFileAction": true,
+  "git.showPushSuccessNotification": true,
+  "git.showReferenceDetails": true,
+  // minor PERFORMANCE
+  "git.statusLimit": 15,
+  "git.supportCancellation": true,
+  "git.terminalGitEditor": true,
+  "git.timeline.showUncommitted": true,
+  "git.untrackedChanges": "separate",
+  // UPLIFTING 将 commit message 作为 stash 的 message
+  "git.useCommitInputAsStashMessage": true,
+  // UPLIFTING 无提交时自动打开 editor 来编辑 commit message
+  "git.useEditorAsCommitInput": true,
+  // SIGNIFICANT WORKSPACE 使用 worktree 时自动复制 匹配 glob 规则、且被 .gitignore 忽略的文件 / 文件夹
+  "git.worktreeIncludeFiles": [
+    ".env",
+    ".env.local",
+    "node_modules/**",
+    ".vscode/settings.json"
+  ],
+  /************
+   * SCM PANE *
+   ************/
+  // hide small icons
+  "scm.alwaysShowActions": false,
+  // hide redundant repositories
+  "scm.alwaysShowRepositories": false,
+  "scm.autoReveal": true,
+  "scm.compactFolders": true,
+  "scm.countBadge": "focused",
+  "scm.defaultViewMode": "list",
+  "scm.defaultViewSortKey": "path",
+  "scm.diffDecorationsGutterWidth": 4,
+  "scm.diffDecorationsIgnoreTrimWhitespace": "inherit",
+  "scm.graph.badges": "all",
+  "scm.graph.pageOnScroll": false,
+  "scm.graph.pageSize": 20,
+  "scm.inputFontSize": 15,
+  "scm.providerCountBadge": "auto",
+  "scm.repositories.explorer": true,
+  "scm.repositories.selectionMode": "single",
+  "scm.repositories.sortOrder": "discovery time",
+  "scm.repositories.visible": 3,
+  // hide the giant commit button
+  "scm.showActionButton": false,
+  // TOGGLE off to hide AI-assisted commit message writing
+  "scm.showInputActionButton": true,
+  // UPLIFTING change editor appearance among branches
+  "scm.workingSets.default": "current",
+  "scm.workingSets.enabled": true
+}

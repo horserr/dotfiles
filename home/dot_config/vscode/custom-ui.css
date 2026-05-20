@@ -1,0 +1,23 @@
+/* 修改全局 UI 字体 */
+.windows {
+  font-family: "Cascadia Code", "Segoe UI", sans-serif !important;
+}
+
+/* 针对侧边栏（Primary Sidebar）的内容文字大小 */
+.monaco-workbench .part.sidebar .content {
+  font-size: 16px !important;
+}
+
+/* 针对侧边栏每个面板的标题大小（如“资源管理器”、“搜索”） */
+.monaco-pane-view .pane > .pane-header {
+  font-size: 18px !important;
+  font-weight: bold;
+  /* 增加辨识度 */
+}
+
+/* 针对聊天输入框等特定区域 */
+.chat-input-container .view-lines.monaco-mouse-cursor-text {
+  font-size: 18px !important;
+}
+
+/* copied from: https://github.com/willfore/vscode_operator_mono_lig/blob/master/vscode_style.css */
