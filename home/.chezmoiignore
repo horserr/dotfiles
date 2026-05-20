@@ -1,5 +1,5 @@
 {{ if not .isWSL }}
-.chezmoiscripts/linux/
+.chezmoiscripts/linux/**
 .vscode-server/
 .pixi/
 
@@ -19,7 +19,10 @@
 {{ end }}
 
 {{ if not .isWindows }}
-.chezmoiscripts/windows/
+.chezmoiscripts/windows/**
 .cloud-init/
 .docker/
+
+.ideavimrc
+.wslconfig
 {{ end }}
