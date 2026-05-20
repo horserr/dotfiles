@@ -151,7 +151,12 @@
 	alias = config --get-regexp alias
 
 	lost-found = fsck --lost-found
+	covert = update-index --skip-worktree
+	overt = update-index --no-skip-worktree
+	ls-covert = "!f() { git ls-files -v | grep '^S';}; f"
 	freeze = update-index --assume-unchanged
+	unfreeze = update-index --no-assume-unchanged
+	ls-freeze = "!f() { git ls-files -v | grep '^h';}; f"
 	# todo
 	# git rebase (--continue|--skip|--abort|--quit|--edit-todo|--show-current-patch)
 	#  git rebase --show-current-patch, or its equivalent git show REBASE_HEAD
