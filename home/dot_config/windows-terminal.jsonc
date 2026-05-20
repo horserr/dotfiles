@@ -1,0 +1,593 @@
+// To view the default settings, hold "alt" while clicking on the "Settings" button.
+// For documentation on these settings, see: https://aka.ms/terminal-documentation
+{
+  "$help": "https://aka.ms/terminal-documentation",
+  "$schema": "https://aka.ms/terminal-profiles-schema-preview",
+  "actions": [
+    {
+      "command": { "action": "sendInput", "input": "\u001b[A" },
+      "id": "User.Input"
+    },
+    {
+      "command": { "action": "addMark", "color": "#44dc8d" },
+      "id": "User.AddMark"
+    },
+    {
+      "command": { "action": "scrollToMark", "direction": "previous" },
+      "id": "Terminal.ScrollToMarkPrevious"
+    },
+    {
+      "command": { "action": "scrollToMark", "direction": "first" },
+      "id": "Terminal.ScrollToMarkFirst"
+    },
+    {
+      "command": { "action": "scrollToMark", "direction": "last" },
+      "id": "Terminal.ScrollToMarkLast"
+    },
+    { "command": "clearMark", "id": "Terminal.ClearMark" },
+    { "command": "clearAllMarks", "id": "Terminal.ClearAllMarks" },
+    {
+      "command": { "action": "scrollToMark", "direction": "next" },
+      "id": "Terminal.ScrollToMarkNext"
+    },
+    { "command": "tabSearch", "id": "Terminal.JumpToTab" },
+    { "command": "identifyWindows", "id": "Terminal.Identify" },
+
+    // Summon the most recently used (MRU) window, to the current virtual desktop,
+    // to the monitor the mouse cursor is on, without an animation. If the window is
+    // already in the foreground, then minimize it.
+    { "command": { "action": "globalSummon" }, "id": "User.MyGlobalSummon" },
+
+    // Summon the MRU window, by going to the virtual desktop the window is
+    // currently on. Move the window to the monitor the mouse is on.
+    {
+      "command": { "action": "globalSummon", "desktop": "any" },
+      "id": "User.MyGlobalSummonAnyDesktop"
+    },
+
+    // Summon the MRU window to the current desktop, leaving the position of the window untouched.
+    {
+      "command": { "action": "globalSummon", "monitor": "any" },
+      "id": "User.MyGlobalSummonAnyMonitor"
+    },
+
+    // Summon the MRU window, by going to the virtual desktop the window is
+    // currently on, leaving the position of the window untouched.
+    {
+      "command": {
+        "action": "globalSummon",
+        "desktop": "any",
+        "monitor": "any"
+      },
+      "id": "User.MyGlobalSummonAnywhere"
+    },
+
+    // Summon the MRU window with a dropdown duration of 200ms.
+    {
+      "command": { "action": "globalSummon", "dropdownDuration": 200 },
+      "id": "User.MyGlobalSummonDrop"
+    },
+
+    // Summon the MRU window. If the window is already in the foreground, do nothing.
+    {
+      "command": { "action": "globalSummon", "toggleVisibility": false },
+      "id": "User.MyGlobalSummonIfNotVisible"
+    },
+
+    // Summon the window named "_quake". If no window with that name exists, then create a new window.
+    {
+      "command": { "action": "globalSummon", "name": "_quake" },
+      "id": "User.MyGlobalSummonQuake"
+    },
+
+    {
+      "name": "Create My Layout",
+      "command": {
+        "action": "multipleActions",
+        "actions": [
+          // Create a new tab with 3 panes
+          {
+            "action": "newTab",
+            "tabTitle": "Work",
+            "colorScheme": "One Half Dark"
+          },
+          {
+            "action": "splitPane",
+            "split": "vertical",
+            "profile": "Windows PowerShell",
+            "tabTitle": "Work",
+            "colorScheme": "Campbell Powershell"
+          },
+          {
+            "action": "splitPane",
+            "split": "horizontal",
+            "profile": "Windows PowerShell",
+            "tabTitle": "Work",
+            "colorScheme": "Campbell Powershell"
+          },
+
+          // Create a second tab
+          { "action": "newTab", "tabTitle": "Misc" },
+
+          // Go back to the first tab and zoom the first pane
+          { "action": "prevTab", "tabSwitcherMode": "disabled" },
+          { "action": "moveFocus", "direction": "first" }
+        ]
+      }
+    }
+  ],
+  "alwaysOnTop": false,
+  "alwaysShowNotificationIcon": true,
+  "alwaysShowTabs": false,
+  "autoHideWindow": false,
+  "centerOnLaunch": true,
+  "compatibility.allowHeadless": false, // disable background process when all windows are closed
+  "compatibility.enableUnfocusedAcrylic": true,
+  "copyFormatting": "all",
+  "copyOnSelect": true,
+  "defaultInputScope": "alphanumericHalfWidth",
+  "defaultProfile": "{a3a2e83a-884a-5379-baa8-16f193a13b21}", // powershell preview profile
+  "disableAnimations": false,
+  "disabledProfileSources": [
+    "Windows.Terminal.Azure",
+    "Windows.Terminal.Wsl",
+    "Windows.Terminal.VisualStudio",
+    "Windows.Terminal.",
+    "Windows.Terminal.SSH",
+    "CanonicalGroupLimited.Ubuntu22.04LTS_79rhkp1fndgsc",
+    "CanonicalGroupLimited.Ubuntu24.04LTS_79rhkp1fndgsc"
+    // "Windows.Terminal.PowershellCore"
+  ],
+  "experimental.detectURLs": true,
+  "experimental.enableColorSelection": true,
+  "experimental.scrollToChangeOpacity": true,
+  "experimental.scrollToZoom": true,
+  "firstWindowPreference": "persistedWindowLayout",
+  "focusFollowMouse": false,
+  "initialCols": 100,
+  "initialRows": 23,
+  "keybindings": [
+    //#region: unbound default
+    { "id": "unbound", "keys": "f11" },
+    { "id": "unbound", "keys": "ctrl+," },
+    { "id": "unbound", "keys": "ctrl+c" },
+    { "id": "unbound", "keys": "ctrl+v" },
+    { "id": "unbound", "keys": "ctrl+tab" },
+    { "id": "unbound", "keys": "ctrl+insert" },
+    { "id": "unbound", "keys": "alt+space" },
+    { "id": "unbound", "keys": "alt+enter" },
+    { "id": "unbound", "keys": "alt+insert" },
+    { "id": "unbound", "keys": "ctrl+alt+," },
+    { "id": "unbound", "keys": "ctrl+alt+1" },
+    { "id": "unbound", "keys": "ctrl+alt+2" },
+    { "id": "unbound", "keys": "ctrl+alt+3" },
+    { "id": "unbound", "keys": "ctrl+alt+4" },
+    { "id": "unbound", "keys": "ctrl+alt+5" },
+    { "id": "unbound", "keys": "ctrl+alt+6" },
+    { "id": "unbound", "keys": "ctrl+alt+7" },
+    { "id": "unbound", "keys": "ctrl+alt+8" },
+    { "id": "unbound", "keys": "ctrl+alt+9" },
+    { "id": "unbound", "keys": "ctrl+alt+left" },
+    { "id": "unbound", "keys": "ctrl+shift+," },
+    { "id": "unbound", "keys": "ctrl+shift+d" },
+    { "id": "unbound", "keys": "ctrl+shift+c" },
+    { "id": "unbound", "keys": "ctrl+shift+f" },
+    { "id": "unbound", "keys": "ctrl+shift+m" },
+    { "id": "unbound", "keys": "ctrl+shift+n" },
+    { "id": "unbound", "keys": "ctrl+shift+p" },
+    { "id": "unbound", "keys": "ctrl+shift+t" },
+    { "id": "unbound", "keys": "ctrl+shift+w" },
+    { "id": "unbound", "keys": "ctrl+shift+v" },
+    { "id": "unbound", "keys": "ctrl+shift+1" },
+    { "id": "unbound", "keys": "ctrl+shift+2" },
+    { "id": "unbound", "keys": "ctrl+shift+3" },
+    { "id": "unbound", "keys": "ctrl+shift+4" },
+    { "id": "unbound", "keys": "ctrl+shift+5" },
+    { "id": "unbound", "keys": "ctrl+shift+6" },
+    { "id": "unbound", "keys": "ctrl+shift+7" },
+    { "id": "unbound", "keys": "ctrl+shift+8" },
+    { "id": "unbound", "keys": "ctrl+shift+9" },
+    { "id": "unbound", "keys": "alt+shift+-" },
+    { "id": "unbound", "keys": "alt+shift+plus" },
+    { "id": "unbound", "keys": "ctrl+shift+tab" },
+    { "id": "unbound", "keys": "ctrl+shift+period" },
+    // #endregion
+    ////////////////////
+    { "id": "Terminal.ToggleCommandPalette", "keys": "alt+p" },
+    { "id": "Terminal.FindText", "keys": "alt+f" },
+    { "id": "Terminal.JumpToTab", "keys": "alt+o" },
+    { "id": "Terminal.OpenNewWindow", "keys": "alt+n" },
+    //
+    { "id": "Terminal.DuplicatePaneAuto", "keys": "alt+;" },
+    { "id": "Terminal.ToggleSplitOrientation", "keys": "alt+:" },
+    { "id": "Terminal.ToggleFocusMode", "keys": "alt+'" },
+    { "id": "Terminal.ToggleFullscreen", "keys": "alt+enter" },
+    { "id": "Terminal.TogglePaneZoom", "keys": "alt+\\" },
+
+    //
+    { "id": "Terminal.NextTab", "keys": "alt+>" },
+    { "id": "Terminal.MoveTabBackward", "keys": "alt+ctrl+>" },
+    { "id": "Terminal.PrevTab", "keys": "alt+<" },
+    { "id": "Terminal.MoveTabForward", "keys": "alt+ctrl+<" },
+    { "id": "Terminal.MoveFocusDown", "keys": "alt+ctrl+j" },
+    { "id": "Terminal.MoveFocusLeft", "keys": "alt+ctrl+k" },
+    { "id": "Terminal.MoveFocusRight", "keys": "alt+ctrl+l" },
+    { "id": "Terminal.MoveFocusUp", "keys": "alt+ctrl+h" },
+    { "id": "Terminal.MoveFocusPrevious", "keys": "alt+/" },
+    { "id": "Terminal.SwitchToLastTab", "keys": "alt+shift+/" },
+
+    //
+    { "id": "Terminal.ScrollToMarkPrevious", "keys": "alt+k" },
+    { "id": "Terminal.ScrollToMarkNext", "keys": "alt+j" },
+    { "id": "Terminal.ScrollToMarkFirst", "keys": "alt+h" },
+    { "id": "Terminal.ScrollToMarkLast", "keys": "alt+l" },
+    //
+    { "id": "Terminal.ScrollDown", "keys": "alt+shift+j" },
+    { "id": "Terminal.ScrollDownPage", "keys": "alt+ctrl+shift+j" },
+    { "id": "Terminal.ScrollUp", "keys": "alt+shift+k" },
+    { "id": "Terminal.ScrollUpPage", "keys": "alt+ctrl+shift+k" },
+    { "id": "Terminal.ScrollToTop", "keys": "alt+shift+h" },
+    { "id": "Terminal.ScrollToBottom", "keys": "alt+shift+l" },
+    //
+    { "id": "Terminal.CopyToClipboard", "keys": "enter" },
+    { "id": "Terminal.PasteFromClipboard", "keys": "ctrl+enter" },
+
+    // advanced
+    { "id": "Terminal.ToggleMarkMode", "keys": "alt+m" },
+    { "id": "Terminal.SwitchSelectionEndpoint", "keys": "alt+shift+m" },
+    { "id": "Terminal.ToggleBlockSelection", "keys": "alt+ctrl+shift+m" },
+
+    { "id": "Terminal.ClearBuffer", "keys": "alt+c" },
+
+    { "id": "Terminal.ClosePane", "keys": "alt+q" },
+    { "id": "Terminal.CloseOtherTabs", "keys": "alt+w" },
+    { "id": "Terminal.CloseWindow", "keys": "alt+ctrl+q" },
+    { "id": "Terminal.Quit", "keys": "alt+ctrl+shift+q" },
+
+    { "id": "Terminal.ExpandSelectionToWord", "keys": "alt+plus" },
+
+    { "id": "Terminal.OpenTabRenamer", "keys": "alt+r" },
+    { "id": "Terminal.OpenWindowRenamer", "keys": "alt+shift+r" },
+
+    { "id": "Terminal.IdentifyWindow", "keys": "alt+i" },
+    { "id": "Terminal.Identify", "keys": "alt+shift+i" },
+
+    { "id": "Terminal.OpenTabColorPicker", "keys": "alt+ctrl+shift+p" }, // picker
+    { "id": "Terminal.SearchWeb", "keys": "alt+s" },
+    { "id": "Terminal.ToggleBroadcastInput", "keys": "alt+ctrl+shift+b" }, //broadcast
+    { "id": "Terminal.ToggleReadOnlyMode", "keys": "alt+ctrl+shift+l" }, // lock
+    { "id": "Terminal.RestartConnection", "keys": "alt+ctrl+shift+r" }, // restart
+    ////////////////////////////// default keybindings
+    // { "id": "Terminal.Suggestions", "keys": "ctrl+?" },
+    { "id": "Terminal.ShowContextMenu", "keys": "menu" },
+    {
+      "id": "Terminal.QuakeMode",
+      // the ` (backtick) scan code is 0x029 and 41 in decimal
+      "keys": "win+sc(41)"
+    },
+    { "id": "Terminal.CloseWindow", "keys": "alt+f4" },
+    { "id": "Terminal.SelectAll", "keys": "ctrl+shift+a" },
+    { "id": "Terminal.OpenNewTabDropdown", "keys": "ctrl+shift+space" },
+    { "id": "Terminal.ResizePaneDown", "keys": "alt+shift+down" },
+    { "id": "Terminal.ResizePaneLeft", "keys": "alt+shift+left" },
+    { "id": "Terminal.ResizePaneRight", "keys": "alt+shift+right" },
+    { "id": "Terminal.ResizePaneUp", "keys": "alt+shift+up" },
+    { "id": "Terminal.MoveFocusDown", "keys": "alt+down" },
+    { "id": "Terminal.MoveFocusLeft", "keys": "alt+left" },
+    { "id": "Terminal.MoveFocusRight", "keys": "alt+right" },
+    { "id": "Terminal.MoveFocusUp", "keys": "alt+up" },
+    { "keys": "ctrl+shift+down", "id": "Terminal.ScrollDown" },
+    { "keys": "ctrl+shift+pgdn", "id": "Terminal.ScrollDownPage" },
+    { "keys": "ctrl+shift+up", "id": "Terminal.ScrollUp" },
+    { "keys": "ctrl+shift+pgup", "id": "Terminal.ScrollUpPage" },
+    { "keys": "ctrl+shift+home", "id": "Terminal.ScrollToTop" },
+    { "keys": "ctrl+shift+end", "id": "Terminal.ScrollToBottom" }
+  ],
+  "language": "en-US",
+  "launchMode": "default",
+  "minimizeToNotificationArea": false,
+  "newTabMenu": [
+    {
+      "type": "remainingProfiles"
+    },
+    {
+      "allowEmpty": false,
+      "entries": [
+        {
+          "commandline": null,
+          "name": null,
+          "source": "Windows.Terminal.SSH",
+          "type": "matchProfiles"
+        }
+      ],
+      "icon": "\ue969",
+      "inline": "auto",
+      "name": "SSH",
+      "type": "folder"
+    }
+  ],
+  "newTabPosition": "afterCurrentTab",
+  "profiles": {
+    "defaults": {
+      "adjustIndistinguishableColors": "indexed",
+      "altGrAliasing": false,
+      "antialiasingMode": "cleartype",
+      "autoMarkPrompts": true,
+      "bellSound": [
+        // type "`a" (including doulbe quotes) in pwsh to test bell sound
+        // "%SystemRoot%/Media/Windows Balloon.wav"
+        "%USERPROFILE%/.config/.dotfiles/assets/bells/Temple.wav"
+      ],
+      // "bellStyle": ["audible", "window"]
+      "bellStyle": ["taskbar", "window"],
+      "closeOnExit": "automatic",
+      "colorScheme": "One Half Dark",
+      "compatibility.input.forceVT": true,
+      "cursorColor": "#CBA6F7",
+      "cursorHeight": 62,
+      "cursorShape": "vintage",
+      "experimental.repositionCursorWithMouse": false,
+      "experimental.rightClickContextMenu": false,
+      "font": {
+        "cellHeight": "1.3",
+        "face": "CaskaydiaCove Nerd Font",
+        "features": {
+          // https://learn.microsoft.com/en-us/typography/opentype/spec/featurelist
+          "calt": 1, // 开启上下文替换（连字的基础）
+          "liga": 1, // 开启标准连字
+          "ss01": 1, // 开启特定的样式集 01
+          "ss02": 1, // 开启特定的样式集 02
+          "zero": 1 // 开启带斜杠的数字 0
+        },
+        "size": 13.5,
+        "weight": "normal"
+      },
+      "opacity": 50,
+      "scrollbarState": "visible",
+      "selectionBackground": "#414f60",
+      "showMarksOnScrollbar": true,
+      "snapOnInput": true,
+      "startingDirectory": "%USERPROFILE%",
+      "unfocusedAppearance": {
+        // "cursorColor": "#9a52f1",
+        // "cursorShape": "underscore",
+        // Hammster/torus, grid, onnet, balatro, crt, damask, demonstration, hueshift, neonroad, transparent, twist
+        // "experimental.pixelShaderPath": "%USERPROFILE%/.config/.dotfiles/assets/pixel-shaders/Hammster/grid.hlsl"
+      },
+      "useAcrylic": true
+    },
+    "list": [
+      {
+        "closeOnExit": "graceful",
+        // powershell preview
+        "guid": "{a3a2e83a-884a-5379-baa8-16f193a13b21}",
+        "hidden": false,
+        "name": "PowerShell Preview",
+        "padding": "25",
+        "source": "Windows.Terminal.PowershellCore",
+        "startingDirectory": "%USERPROFILE%/WorkSpace",
+        "tabColor": "#cba1eb",
+        "tabTitle": "Preview"
+      },
+      {
+        "closeOnExit": "never",
+        // powershell admin mode
+        "elevate": true,
+        "guid": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
+        "hidden": false,
+        "name": "PowerShell sudo",
+        "source": "Windows.Terminal.PowershellCore",
+        "startingDirectory": "%USERPROFILE%",
+        "tabColor": "#ee6e6e",
+        "tabTitle": "sudo"
+      },
+      {
+        // wsl default
+        "bellSound": "%USERPROFILE%/.config/.dotfiles/assets/bells/Hero.wav",
+        "closeOnExit": "graceful",
+        "colorScheme": "rose-pine",
+        "commandline": "%SystemRoot%/System32/wsl.exe ~",
+        "font": {
+          "face": "JetBrainsMono Nerd Font"
+        },
+        "guid": "{e9f47c7c-d0f3-4b73-bc51-a28ab7b63047}",
+        "icon": "%USERPROFILE%/.config/.dotfiles/assets/icons/linux.png",
+        "name": "WSL default",
+        "suppressApplicationTitle": true,
+        "tabColor": "#dedf92",
+        "tabTitle": "WSL",
+        "unfocusedAppearance": {
+          // "experimental.pixelShaderPath": "%USERPROFILE%/.config/.dotfiles/assets/pixel-shaders/Hammster/hueshift.hlsl"
+          "experimental.retroTerminalEffect": true
+        }
+      },
+      {
+        // powershell
+        "commandline": "%SystemRoot%/System32/WindowsPowerShell/v1.0/powershell.exe",
+        "compatibility.input.forceVT": false,
+        "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
+        "hidden": false,
+        "name": "Windows PowerShell",
+        "pathTranslationStyle": "wsl",
+        "tabColor": "#3593ce",
+        "tabTitle": "Native"
+      },
+      {
+        // cmd
+        "colorScheme": "rose-pine",
+        "commandline": "%ComSpec%",
+        "compatibility.input.forceVT": false,
+        "experimental.pixelShaderPath": "%USERPROFILE%/.config/.dotfiles/assets/pixel-shaders/Hammster/onnet.hlsl",
+        "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
+        "hidden": false,
+        "icon": "\ue77c",
+        "name": "Command Prompt",
+        "padding": "0",
+        "tabColor": "#418164",
+        "tabTitle": "CMD"
+      },
+      {
+        "commandline": "%ProgramFiles%/git/bin/bash.exe",
+        "guid": "{130f44eb-5af9-49db-94c5-40319671a76a}",
+        "icon": "%USERPROFILE%/.config/.dotfiles/assets/icons/git-bash.ico",
+        "name": "Git Bash",
+        "pathTranslationStyle": "mingw",
+        "tabTitle": "Git Bash"
+      }
+    ]
+  },
+  "schemes": [
+    {
+      // rose-pine
+      "background": "#191724",
+      "black": "#26233A",
+      "blue": "#9CCFD8",
+      "brightBlack": "#6E6A86",
+      "brightBlue": "#9CCFD8",
+      "brightCyan": "#EBBCBA",
+      "brightGreen": "#31748F",
+      "brightPurple": "#C4A7E7",
+      "brightRed": "#EB6F92",
+      "brightWhite": "#E0DEF4",
+      "brightYellow": "#F6C177",
+      "cursorColor": "#555169",
+      "cyan": "#EBBCBA",
+      "foreground": "#E0DEF4",
+      "green": "#31748F",
+      "name": "rose-pine",
+      "purple": "#C4A7E7",
+      "red": "#EB6F92",
+      "selectionBackground": "#2A2837",
+      "white": "#E0DEF4",
+      "yellow": "#F6C177"
+    },
+    {
+      // rose-pine-dawn
+      "background": "#FAF4ED",
+      "black": "#F2E9DE",
+      "blue": "#56949F",
+      "brightBlack": "#6E6A86",
+      "brightBlue": "#56949F",
+      "brightCyan": "#D7827E",
+      "brightGreen": "#286983",
+      "brightPurple": "#907AA9",
+      "brightRed": "#B4637A",
+      "brightWhite": "#575279",
+      "brightYellow": "#EA9D34",
+      "cursorColor": "#9893A5",
+      "cyan": "#D7827E",
+      "foreground": "#575279",
+      "green": "#286983",
+      "name": "rose-pine-dawn",
+      "purple": "#907AA9",
+      "red": "#B4637A",
+      "selectionBackground": "#EEE9E6",
+      "white": "#575279",
+      "yellow": "#EA9D34"
+    },
+    {
+      // rose-pine-moon
+      "background": "#232136",
+      "black": "#393552",
+      "blue": "#9CCFD8",
+      "brightBlack": "#817C9C",
+      "brightBlue": "#9CCFD8",
+      "brightCyan": "#EA9A97",
+      "brightGreen": "#3E8FB0",
+      "brightPurple": "#C4A7E7",
+      "brightRed": "#EB6F92",
+      "brightWhite": "#E0DEF4",
+      "brightYellow": "#F6C177",
+      "cursorColor": "#59546D",
+      "cyan": "#EA9A97",
+      "foreground": "#E0DEF4",
+      "green": "#3E8FB0",
+      "name": "rose-pine-moon",
+      "purple": "#C4A7E7",
+      "red": "#EB6F92",
+      "selectionBackground": "#312F44",
+      "white": "#E0DEF4",
+      "yellow": "#F6C177"
+    }
+  ],
+  "searchWebDefaultQueryUrl": "https://www.duckduckgo.com/search?q=%s",
+  "showAdminShield": true,
+  "showTabsFullscreen": false,
+  "showTabsInTitlebar": true,
+  "showTerminalTitleInTitlebar": true,
+  "snapToGridOnResize": false,
+  "startupActions": "", // SIGNIFICANT
+  "tabSwitcherMode": "inOrder",
+  "tabWidthMode": "compact",
+  "theme": "system",
+  "themes": [
+    {
+      "name": "rose-pine",
+      "tab": {
+        "background": "#191724FF",
+        "iconStyle": "default",
+        "showCloseButton": "always",
+        "unfocusedBackground": null
+      },
+      "tabRow": {
+        "background": "#26233AFF",
+        "unfocusedBackground": "#908CAAFF"
+      },
+      "window": {
+        "applicationTheme": "dark",
+        "experimental.rainbowFrame": false,
+        "frame": null,
+        "unfocusedFrame": null,
+        "useMica": false
+      }
+    },
+    {
+      "name": "rose-pine-dawn",
+      "tab": {
+        "background": "#FAF4EDFF",
+        "iconStyle": "default",
+        "showCloseButton": "always",
+        "unfocusedBackground": null
+      },
+      "tabRow": {
+        "background": "#F2E9E1FF",
+        "unfocusedBackground": "#797593FF"
+      },
+      "window": {
+        "applicationTheme": "light",
+        "experimental.rainbowFrame": false,
+        "frame": null,
+        "unfocusedFrame": null,
+        "useMica": false
+      }
+    },
+    {
+      "name": "rose-pine-moon",
+      "tab": {
+        "background": "#232136FF",
+        "iconStyle": "default",
+        "showCloseButton": "always",
+        "unfocusedBackground": null
+      },
+      "tabRow": {
+        "background": "#393552FF",
+        "unfocusedBackground": "#908CAAFF"
+      },
+      "window": {
+        "applicationTheme": "dark",
+        "experimental.rainbowFrame": false,
+        "frame": null,
+        "unfocusedFrame": null,
+        "useMica": false
+      }
+    }
+  ],
+  "trimBlockSelection": true, // alt-pressed selection
+  "trimPaste": true,
+  "useAcrylicInTabRow": true,
+  "warning.confirmCloseAllTabs": false, // don't show close confirm
+  "warning.largePaste": true,
+  "warning.multiLinePaste": true,
+  "windowingBehavior": "useExisting",
+  "wordDelimiters": " .\\()\"'-:,.;<>~!@#$%^&*|+=[]{}~?│，。？（）【】！“”‘’《》"
+}
