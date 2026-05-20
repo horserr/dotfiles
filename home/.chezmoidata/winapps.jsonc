@@ -1,0 +1,152 @@
+{
+  "winapps": {
+    "admin": ["Nilesoft.Shell"],
+    "normal": [
+      "XP8CBJ40XLBWKX", // docker desktop
+      "XP8K0HKJFRXGCK", // on my posh
+      "9NZ3KLHXDJP5", // Ubuntu 24.04LTS
+      "9PKR34TNCV07", // Kali Linux
+
+      // SumatraPDF
+      "SumatraPDF.SumatraPDF",
+      // calibre ebook
+      "calibre.calibre",
+      // alt snap
+      "AltSnap.AltSnap",
+      // remote desktop
+      "Microsoft.WindowsApp",
+      // SSHFS
+      "SSHFS-Win.SSHFS-Win",
+      //WinFsp
+      "WinFsp.WinFsp",
+      // github copilot
+      "GitHub.Copilot",
+      //LocalSend
+      "LocalSend.LocalSend",
+      //delta
+      "dandavison.delta",
+      //less
+      "jftuga.less",
+      //chezmoi
+      "twpayne.chezmoi",
+      //Launcher
+      "Python.Launcher",
+      //PythonInstallManager
+      "Python.PythonInstallManager",
+      //fd
+      "sharkdp.fd",
+      //MSVC
+      "BurntSushi.ripgrep.MSVC",
+      //ExHyperV
+      "Justsenger.ExHyperV",
+      //NodeJS
+      "OpenJS.NodeJS",
+      //Twilight
+      "Zen-Team.Zen-Browser.Twilight",
+      //superfile
+      "yorukot.superfile",
+      //Servy
+      "aelassas.Servy",
+      //Rclone
+      "Rclone.Rclone",
+      //EventLogExpert
+      "Microsoft.EventLogExpert",
+      //Edit
+      "Microsoft.Edit",
+      //Windhawk
+      "RamenSoftware.Windhawk",
+      //npiperelay
+      "albertony.npiperelay",
+      //qBittorrent
+      "qBittorrent.qBittorrent.Beta",
+      //Flow-Launcher
+      "Flow-Launcher.Flow-Launcher",
+      //WinDbg
+      "Microsoft.WinDbg",
+      //Suite
+      "Microsoft.Sysinternals.Suite",
+      //ClashVergeRev
+      "ClashVergeRev.ClashVergeRev",
+      //LinkShellExtension
+      "HermannSchinagl.LinkShellExtension",
+      //yt-dlp
+      "yt-dlp.yt-dlp",
+      //aria2
+      "aria2.aria2",
+      //TorBrowser
+      "TorProject.TorBrowser",
+      //RevoUninstaller
+      "RevoUninstaller.RevoUninstaller",
+      //WMIExplorer
+      "vinaypamnani.WMIExplorer",
+      //LittleBigMouse
+      "mgth.LittleBigMouse",
+      //UniGetUI
+      "MartiCliment.UniGetUI",
+      //Powershell Preview
+      "Microsoft.PowerShell.Preview",
+      //everything
+      "voidtools.Everything.Alpha",
+      //Git
+      "Git.Git",
+      //PotPlayer
+      "Daum.PotPlayer",
+      //WizTree
+      "AntibodySoftware.WizTree",
+      //Zotero
+      "DigitalScholar.Zotero",
+      //7zip
+      "7zip.7zip",
+      //RaspberryPiImager
+      "RaspberryPiFoundation.RaspberryPiImager",
+      //GHUB
+      "Logitech.GHUB",
+      //Tailscale
+      "Tailscale.Tailscale",
+      //Pandoc
+      "JohnMacFarlane.Pandoc",
+      //QuickLook
+      "QL-Win.QuickLook",
+      //OptionsPlus
+      "Logitech.OptionsPlus",
+      //usbipd-win
+      "dorssel.usbipd-win",
+      //Nmap
+      "Insecure.Nmap",
+      //QQ
+      "Tencent.QQ.NT",
+      //QQMusic
+      "Tencent.QQMusic",
+      //WeChat
+      "Tencent.WeChat.Universal",
+      //Wireshark
+      "WiresharkFoundation.Wireshark",
+      //AutoHotkey
+      "AutoHotkey.AutoHotkey",
+      //Trippy
+      "FujiApple.Trippy",
+      //FFmpeg
+      "Gyan.FFmpeg",
+      //zoxide
+      "ajeetdsouza.zoxide",
+      //bt
+      "aloneguid.bt",
+      //iPerf3
+      "ar51an.iPerf3",
+      //fzf
+      "junegunn.fzf",
+      //bat
+      "sharkdp.bat",
+      //VisualStudioCode
+      "Microsoft.VisualStudioCode",
+      // msvc build tools
+      "Microsoft.VisualStudio.BuildTools",
+      //Windows Terminal Preview
+      "Microsoft.WindowsTerminal.Preview",
+      //Ventoy
+      "Ventoy.Ventoy",
+      //OBSStudio
+      "OBSProject.OBSStudio"
+    ]
+  }
+}

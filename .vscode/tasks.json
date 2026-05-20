@@ -8,15 +8,7 @@
       "type": "shell",
       "command": "chezmoi apply",
       "detail": "apply dotfiles modifications",
-      "problemMatcher": [],
-      "presentation": {
-        "echo": false,
-        "reveal": "always",
-        "focus": true,
-        "panel": "shared",
-        "showReuseMessage": true,
-        "clear": true
-      }
+      "problemMatcher": []
     },
     {
       "label": "init",
@@ -31,6 +23,21 @@
       "command": "chezmoi --refresh-externals apply",
       "detail": "force a refresh download archives",
       "problemMatcher": []
+    },
+    {
+      "label": "extension-list",
+      "type": "shell",
+      "command": "code --list-extensions",
+      "detail": "show extension list",
+      "problemMatcher": []
     }
-  ]
+  ],
+  "presentation": {
+    "echo": false,
+    "reveal": "always",
+    "focus": true,
+    "panel": "shared",
+    "showReuseMessage": true,
+    "clear": true
+  }
 }
