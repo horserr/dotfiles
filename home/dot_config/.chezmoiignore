@@ -1,11 +1,14 @@
 {{- if not .isWSL }}
 fish/
-btop/
 homebrew/
+tmux/
+yazi/
 {{- end }}
 
 {{- if not .isWindows -}}
 vscode/
 .docker/
+powershell/
+
 windows-terminal.jsonc
 {{ end -}}

@@ -1,0 +1,43 @@
+# link: https://learn.microsoft.com/en-us/windows/wsl/wsl-config#configuration-settings-for-wslconfig
+
+[wsl2]
+networkingMode=mirrored
+
+memory=9GB
+processors=9
+swap=12GB
+
+defaultVhdSize=128GB
+
+#**********************
+#* DEFAULT SETTINGS *
+#**********************
+guiApplications=true
+
+# this setting has no effect when using mirrored networking mode
+# localhostForwarding=true
+
+safeMode=false
+
+debugConsole=false
+
+nestedVirtualization=true
+
+firewall=true
+
+dnsTunneling=true
+
+autoProxy=true
+
+# default when networkingmode is NAT
+dnsProxy=true
+
+[experimental]
+autoMemoryReclaim=gradual
+sparseVhd=true
+
+# when networkingMode is mirrored
+hostAddressLoopback=true
+
+# when dnsTunneling is true
+bestEffortDnsParsing=true
