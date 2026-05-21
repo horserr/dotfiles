@@ -5,7 +5,7 @@
     "extension-list.yaml": "juce",
     "json.tmpl": "json",
     "jsonc.tmpl": "jsonc",
-    "ps1.tmpl": "toml",
+    "ps1.tmpl": "powershell",
     "toml.tmpl": "toml"
   },
   // Files with the name `vite.config.ts` will have the `vite` icon.

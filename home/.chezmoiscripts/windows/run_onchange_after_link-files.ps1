@@ -126,6 +126,12 @@ $mappings = @{
     target = "$env:OneDrive\Resource\Other\Office\Word\Normal.dotm"
     desc   = "Word Normal.dotm"
   }
+
+  # SumatraPDF
+  "$env:LOCALAPPDATA\SumatraPDF\SumatraPDF-settings.txt" = @{
+    target = "$dotConfigPath\SumatraPDF.txt"
+    desc   = "SumatraPDF Settings"
+  }
 }
 
 # ============================================================================

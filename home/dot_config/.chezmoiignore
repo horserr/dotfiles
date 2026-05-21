@@ -11,4 +11,5 @@ vscode/
 powershell/
 
 windows-terminal.jsonc
+SumatraPDF.txt
 {{ end -}}
