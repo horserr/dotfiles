@@ -2,8 +2,15 @@ Set-StrictMode -Version Latest
 ; $ErrorActionPreference = "Stop"
 $ErrorActionPreference = "Continue"
 
-$dotConfigPath = $env:USERPROFILE + "\.config"
-$powershellRoot = "$dotConfigPath\powershell"
+# get powershell physical path
+# 获取当前执行脚本的路径（哪怕它是软链接）
+$currentPath = $MyInvocation.MyCommand.Path
+
+# 强制解析出符号链接对应的真实物理文件对象
+$fileInfo = New-Object -TypeName System.IO.FileInfo -ArgumentList $currentPath
+
+# 获取真实的物理目录
+$powershellRoot = $fileInfo.LinkTarget ? (Split-Path $fileInfo.LinkTarget) : $PSScriptRoot
 
 # 2. 依次加载所有模块化配置（快速初始化）
 . "$powershellRoot\env.ps1"         # 加载环境变量
