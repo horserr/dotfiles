@@ -1,43 +1,29 @@
-- vscode server run on change to install extentions from extension list
-- use chezmoi to manage external plugin manager, like fisher and tmux plugin
-
-wsl中需要安装socat来配合windows上的npiperelay
-
-ssh config和windows的同步
-
-ssh 文件夹中的权限需要设置
-```sh
-chmod 700 ~/.ssh
-chmod 644 ~/.ssh/*.pub
-```
-
-git gpg.ssh.allowedSignersFile
-
-git config --global gpg.ssh.allowedSignersFile "~/.config/git/allowed_signers"
+# External download scripts
 
 安装 azure cli
+
 ```sh
 curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
 ```
 
 安装 nix
+
 ```sh
 sh <(curl --proto '=https' --tlsv1.2 -L https://nixos.org/nix/install) --daemon
 ```
 
 安装 pixi
+
 ```sh
 curl -fsSL https://pixi.sh/install.sh | bash
 ```
 
 # TODO
 
-1. refactor powershell scripts: move functions into the independent file
-2. ubuntu24.04之前的apt换源操作
-3. 根据是否在国外进行换源操作
-4. 安装ffmpeg, build-essential, poppler, imagemagic
-5. 同步windows和linux上的git config, vscode tasks配置
-6. 设置windows上的gpg key用于 git commit 签名。
+1. wsl中需要安装socat来配合windows上的npiperelay
+2. 根据是否在国外进行换源操作
+3. 配置 age 来 签名
+4. 设置windows上的gpg key用于 git commit 签名。
 
 ## install apps
 
@@ -83,22 +69,67 @@ $NerdFonts | Foreach-Object -ThrottleLimit 5 -Parallel {
 # Get-ChildItem -Recurse | Where-Object { $_.Extension -in '.ttf', '.otf' } | Install-Font
 ```
 
-## 检查是否为 root 用户（apt 安装需要 root 权限）
+## start wsl and hyperv platform
 
-```bash
-if [ "$(id -u)" -ne 0 ]; then
-echo "❌错误：该脚本需要以 root 权限运行！"
-echo "⚠️请使用 sudo 执行，例如：sudo $0"
-exit 1
-fi
+open in administrator terminal:
+
+```cmd
+dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
+dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all
 ```
 
-## 更新与completion
+OR
 
-```bash
-uv generate-shell-completion fish > ~/.config/fish/completions/uv.fish
+```pwsh
+Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux,VirtualMachinePlatform
 ```
 
-```bash
-uvx generate-shell-completion fish > ~/.config/fish/completions/uvx.fish
+## set WSL network mode to `mirrored`
+
+link: https://learn.microsoft.com/en-us/windows/wsl/networking#mirrored-mode-networking
+
+powershell admin:
+
+```pwsh
+Set-NetFirewallHyperVVMSetting -Name '{40E0AC32-46A5-438A-A0B2-2B479E8F2E90}' -DefaultInboundAction Allow
 ```
+
+## 与wsl共享 ssh/gpg key
+
+[Sharing Git credentials with your container](https://code.visualstudio.com/remote/advancedcontainers/sharing-git-credentials)
+
+## 修复 windows sandbox 无法链接 或 其中的 Microsoft Edge 浏览器可以开启但无法显示问题
+
+Open gpedit.msc
+Navigate to Computer Configuration > Administrative Templates > Windows Components > Windows Sandbox
+Disable "Allow vGPU sharing for Windows Sandbox"
+
+## VSpaceCode
+
+those settings is largely adapted from https://gist.github.com/macintacos/d63b7057cee0638e7ccfcdd6d1b7f662
+
+### error: CreateInstance/CreateVm/ConfigureNetworking/0x8007054f
+
+solution:[link](https://github.com/microsoft/WSL/issues/12351#issuecomment-3938183381)
+
+powershell admin
+
+```pwsh
+wsl --shutdown
+# wait for at least 8 seconds
+
+# restart HNS services
+net stop hns
+net start hns
+
+# reset WSL network configurations
+netsh winsock reset
+netsh int ip reset
+
+# restart Windows machine, and set WSL network to ``mirrored'' mode.
+# can use ip route show to check whether being successful.
+```
+
+## MAC OS sound resource
+
+dowload: [textClassic Mac OS Sounds](https://alxwntr.com/classic-mac-os-sounds/#)
