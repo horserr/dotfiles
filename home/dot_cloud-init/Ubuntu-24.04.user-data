@@ -46,6 +46,7 @@ packages:
   - aria2c
   - eza
   - fzf
+  - git-filter-repo
   # yazi requirements
   - 7zip
   - ffmpeg
