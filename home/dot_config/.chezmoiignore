@@ -9,7 +9,7 @@ yazi/
 vscode/
 .docker/
 powershell/
+sumatrapdf/
 
 windows-terminal.jsonc
-SumatraPDF.txt
 {{ end -}}

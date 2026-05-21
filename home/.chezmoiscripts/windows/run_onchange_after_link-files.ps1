@@ -129,7 +129,7 @@ $mappings = @{
 
   # SumatraPDF
   "$env:LOCALAPPDATA\SumatraPDF\SumatraPDF-settings.txt" = @{
-    target = "$dotConfigPath\SumatraPDF.txt"
+    target = "$dotConfigPath\sumatrapdf\settings.txt"
     desc   = "SumatraPDF Settings"
   }
 }
