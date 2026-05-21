@@ -1,0 +1,174 @@
+{
+  "tmpl if by os": {
+    "prefix": "tmpl-if-os",
+    "body": [
+      "{{ if eq .chezmoi.os \"${1:darwin}\" }}",
+      "  # ${2:This only renders on macOS}",
+      "{{ else }}",
+      "  # ${3:This renders on Linux/Windows}",
+      "{{ end }}",
+      "$0"
+    ],
+    "description": "Conditional block by .chezmoi.os",
+    "include": "**/*.tmpl"
+  },
+  "tmpl range packages": {
+    "prefix": "tmpl-range",
+    "body": [
+      "{{ range .${1:my_favorite_packages} }}",
+      "${2:brew} \"{{ . }}\"",
+      "{{ end }}",
+      "$0"
+    ],
+    "description": "Range over a list variable",
+    "include": "**/*.tmpl"
+  },
+  "tmpl local variable": {
+    "prefix": "tmpl-var",
+    "body": [
+      "{{ \\$${1:osType} := .${2:chezmoi.os} }}",
+      "# ${3:Your OS is}: {{ \\$${1:osType} }}",
+      "$0"
+    ],
+    "description": "Define and reuse a template local variable",
+    "include": "**/*.tmpl"
+  },
+  "tmpl default value": {
+    "prefix": "tmpl-default",
+    "body": [
+      "# Fallback to a default value when key is not set",
+      "${1:email} = \"{{ .${1:email} | default \"${2:user@example.com}\" }}\"",
+      "$0"
+    ],
+    "description": "Use default filter for a value",
+    "include": "**/*.tmpl"
+  },
+  "tmpl has in list": {
+    "prefix": "tmpl-has",
+    "body": [
+      "{{ if has \"${1:fzf}\" (list \"${2:fzf}\" \"${3:rg}\" \"${4:bat}\") }}",
+      "  ${5:# matched}",
+      "{{ end }}",
+      "$0"
+    ],
+    "description": "Check if an item exists in a list",
+    "include": "**/*.tmpl"
+  },
+  "tmpl loop include files": {
+    "prefix": "tmpl-loop-dir",
+    "body": [
+      "{{ range (glob (joinPath .chezmoi.homeDir \"${1:.config/zsh/configs/*.sh}\")) }}",
+      "# Loading: {{ . }}",
+      "{{ include . }}",
+      "{{ end }}",
+      "$0"
+    ],
+    "description": "Loop through files and include each one",
+    "include": "**/*.tmpl"
+  },
+  "tmpl find executable": {
+    "prefix": "tmpl-findexe",
+    "body": [
+      "{{- \\$${1:toolPath} := findExecutable \"${2:mise}\" (list (joinPath .chezmoi.homeDir \"${3:.local/bin}\") (joinPath .chezmoi.homeDir \"${4:.cargo/bin}\")) -}}",
+      "{{- if \\$${1:toolPath} }}",
+      "  # Found executable at: {{ \\$${1:toolPath} }}",
+      "  ${5:# emit config here}",
+      "{{- end }}",
+      "$0"
+    ],
+    "description": "Find executable from candidate paths",
+    "include": "**/*.tmpl"
+  },
+  "tmpl find one executable": {
+    "prefix": "tmpl-findone",
+    "body": [
+      "{{- \\$${1:searchTool} := findOneExecutable (list \"${2:fzf}\" \"${3:peco}\" \"${4:percol}\") (list (joinPath .chezmoi.homeDir \"${5:bin}\")) -}}",
+      "{{- if \\$${1:searchTool} }}",
+      "  alias ${6:search}=\"{{ \\$${1:searchTool} }}\"",
+      "{{- else }}",
+      "  alias ${6:search}=\"${7:grep}\"",
+      "{{- end }}",
+      "$0"
+    ],
+    "description": "Select first available executable",
+    "include": "**/*.tmpl"
+  },
+  "tmpl glob exists": {
+    "prefix": "tmpl-glob-exists",
+    "body": [
+      "{{ if gt (len (glob (joinPath .chezmoi.homeDir \"${1:.config/custom/*.conf}\"))) 0 }}",
+      "  ${2:# found matching files}",
+      "{{ end }}",
+      "$0"
+    ],
+    "description": "Check if glob result is non-empty",
+    "include": "**/*.tmpl"
+  },
+  "tmpl stat path": {
+    "prefix": "tmpl-stat",
+    "body": [
+      "{{- \\$${1:fileInfo} := stat (joinPath .chezmoi.homeDir \"${2:data}\") -}}",
+      "{{- if \\$${1:fileInfo} }}",
+      "  {{- if \\$${1:fileInfo}.isDir }}",
+      "    # \"${2:data}\" is a directory",
+      "  {{- else }}",
+      "    # \"${2:data}\" is a regular file",
+      "  {{- end }}",
+      "{{- end }}",
+      "$0"
+    ],
+    "description": "Use stat and branch by file type",
+    "include": "**/*.tmpl"
+  },
+  "tmpl path exists alias": {
+    "prefix": "tmpl-path-alias",
+    "body": [
+      "{{ if (joinPath .chezmoi.homeDir \"${1:.config/nvim}\" | stat) }}",
+      "  alias ${2:nv}=\"${3:nvim}\"",
+      "{{ end }}",
+      "$0"
+    ],
+    "description": "Set alias when a path exists",
+    "include": "**/*.tmpl"
+  },
+  "tmpl lstat symlink": {
+    "prefix": "tmpl-lstat",
+    "body": [
+      "{{- \\$${1:linkInfo} := lstat (joinPath .chezmoi.homeDir \"${2:.xinitrc}\") -}}",
+      "{{- if and \\$${1:linkInfo} (eq \\$${1:linkInfo}.type \"${3:symlink}\") }}",
+      "  ${4:# target exists and is a symlink}",
+      "{{- end }}",
+      "$0"
+    ],
+    "description": "Check path metadata with lstat",
+    "include": "**/*.tmpl"
+  },
+  "tmpl output list": {
+    "prefix": "tmpl-outputlist",
+    "body": [
+      "{{- \\$${1:args} := list \"${2:ls}\" \"${3:-la}\" (joinPath .chezmoi.homeDir \"${4:.ssh}\") -}}",
+      "# ${5:Directory state}:",
+      "# {{ outputList \\$${1:args} | trimSpace }}",
+      "$0"
+    ],
+    "description": "Build command arguments and print output",
+    "include": "**/*.tmpl"
+  },
+  "tmpl exec checks": {
+    "prefix": "tmpl-exec",
+    "body": [
+      "{{ if exec \"${1:ping}\" \"${2:-c}\" \"${3:1}\" \"${4:https://company.com}\" }}",
+      "  export ${5:PROXY}=\"${6:http://company.com}\"",
+      "{{ end }}",
+      "",
+      "{{ if exec \"${7:git}\" \"${8:rev-parse}\" \"${9:--is-inside-work-tree}\" }}",
+      "  ${10:# only runs in a git repository}",
+      "{{ else }}",
+      "  ${11:# safe fallback when command fails}",
+      "{{ end }}",
+      "$0"
+    ],
+    "description": "Use exec for command-based conditions",
+    "include": "**/*.tmpl"
+  }
+}

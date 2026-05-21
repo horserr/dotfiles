@@ -1,8 +1,46 @@
 {
-  // See https://go.microsoft.com/fwlink/?LinkId=733558
-  // for the documentation about the tasks.json format
   "version": "2.0.0",
+  // cd
+  // dump
+  // list: managed & ignored
+  // execute-template
+  // source-path, target-path
+
+  // purge
+  // diff
+  // forget: remove from both source and target dir
+  // git
+
+  // state
   "tasks": [
+    {
+      "label": "update",
+      "type": "shell",
+      "command": "chezmoi update",
+      "detail": "update source state and then apply the newest change",
+      "problemMatcher": []
+    },
+    {
+      "label": "show-config",
+      "type": "shell",
+      "command": "chezmoi cat-config",
+      "detail": "show chezmoi parsed config file",
+      "problemMatcher": []
+    },
+    {
+      "label": "dump-config",
+      "type": "shell",
+      "command": "chezmoi dump-config",
+      "detail": "show all chezmoi configuration",
+      "problemMatcher": []
+    },
+    {
+      "label": "show-data",
+      "type": "shell",
+      "command": "chezmoi data",
+      "detail": "show chezmoi parsed data",
+      "problemMatcher": []
+    },
     {
       "label": "apply",
       "type": "shell",
@@ -18,10 +56,24 @@
       "problemMatcher": []
     },
     {
-      "label": "refresh",
+      "label": "doctor",
+      "type": "shell",
+      "command": "chezmoi doctor",
+      "detail": "chezmoi doctor, check environment health",
+      "problemMatcher": []
+    },
+    {
+      "label": "refresh-externals",
       "type": "shell",
       "command": "chezmoi --refresh-externals apply",
       "detail": "force a refresh download archives",
+      "problemMatcher": []
+    },
+    {
+      "label": "test-in-docker",
+      "type": "shell",
+      "command": "chezmoi docker run --rm ${input:docker} ${input:github_user}",
+      "detail": "test chezmoi in an ephemeral docker container, you can also use `docker exec` command.\n reference: https://www.chezmoi.io/reference/commands/docker",
       "problemMatcher": []
     },
     {
@@ -39,5 +91,19 @@
     "panel": "shared",
     "showReuseMessage": true,
     "clear": true
-  }
+  },
+  "inputs": [
+    {
+      "id": "docker",
+      "type": "promptString",
+      "description": "please enter docker image or container",
+      "default": "Ubuntu"
+    }
+    ,{
+      "id": "github_user",
+      "type": "promptString",
+      "description": "please enter GitHub username",
+      "default": "horserr"
+    }
+  ]
 }
