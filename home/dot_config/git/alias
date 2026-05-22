@@ -181,6 +181,7 @@
 			fi; \
 		}; f"
 
+  # edit sparse-checkout file, and reapply sparse-checkout after editing
 	conf-sparse = "!f() { \
 			if [ \"$(git config --get core.sparseCheckout)\" != \"true\" ]; then \
 					echo \"Error: Sparse-checkout is not enabled in this repository.\"; \
@@ -189,6 +190,17 @@
 				$(git var GIT_EDITOR) \"$(git rev-parse --git-path info/sparse-checkout)\" && git sparse-checkout reapply; \
 			fi; \
 	}; f"
+
+ # test whether the given files is deemed as executable in git
+	is-x = "!f() { \
+		if [ -z \"$1\" ]; then echo \"Usage: git is-x <file_path>\"; return 1; fi; \
+		res=$(git ls-files -s \"$1\"); \
+		if [ -z \"$res\" ]; then echo \"File not tracked by git.\"; return 1; fi; \
+		if echo \"$res\" | grep -q '^100755'; then echo \"🟢 Executable (100755)\"; \
+		else echo \"🔴 Not Executable (100644)\"; fi; \
+	}; f"
+	# turn a file to executable in git
+	turn-x = update-index --chmod=+x
 
 	whoami = config user.email
 

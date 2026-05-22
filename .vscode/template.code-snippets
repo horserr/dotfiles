@@ -1,4 +1,12 @@
 {
+  "git alias function": {
+    "prefix": "function",
+    "body": [
+      "$TM_SELECTED_TEXT = \"!f() {$0; }; f\"",
+    ],
+    "description": "git function template",
+    "include": "**/home/dot_config/git/alias"
+  },
   "tmpl if by os": {
     "prefix": "tmpl-if-os",
     "body": [
