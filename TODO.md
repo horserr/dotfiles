@@ -1,29 +1,10 @@
-# External download scripts
-
-安装 azure cli
-
-```sh
-curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
-```
-
-安装 nix
-
-```sh
-sh <(curl --proto '=https' --tlsv1.2 -L https://nixos.org/nix/install) --daemon
-```
-
-安装 pixi
-
-```sh
-curl -fsSL https://pixi.sh/install.sh | bash
-```
-
 # TODO
 
 1. wsl中需要安装socat来配合windows上的npiperelay
 2. 根据是否在国外进行换源操作
 3. 配置 age 来 签名
 4. 设置windows上的gpg key用于 git commit 签名。
+5. 使用 pre-commit 配合 chezmoi verify
 
 ## install apps
 
@@ -133,3 +114,23 @@ netsh int ip reset
 ## MAC OS sound resource
 
 dowload: [textClassic Mac OS Sounds](https://alxwntr.com/classic-mac-os-sounds/#)
+
+# External download scripts
+
+安装 azure cli
+
+```sh
+curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
+```
+
+安装 nix
+
+```sh
+sh <(curl --proto '=https' --tlsv1.2 -L https://nixos.org/nix/install) --daemon
+```
+
+安装 pixi
+
+```sh
+curl -fsSL https://pixi.sh/install.sh | bash
+```
