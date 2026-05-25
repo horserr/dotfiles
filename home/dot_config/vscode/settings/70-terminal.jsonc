@@ -47,8 +47,9 @@
   "terminal.integrated.cwd": "",
   // UPLIFTING terminal 默认在 pane 而非 editor
   "terminal.integrated.defaultLocation": "view",
-  "terminal.integrated.defaultProfile.linux": "fish",
-  "terminal.integrated.defaultProfile.windows": "PowerShell",
+  // change from `fish` to `nu`
+  "terminal.integrated.defaultProfile.linux": "nu",
+  "terminal.integrated.defaultProfile.windows": "Nushell",
   // UPLIFTING 自动设置 $LANG
   "terminal.integrated.detectLocale": "on",
   // UPLIFTING
@@ -131,6 +132,10 @@
     },
     "Windows PowerShell": {
       "path": "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe"
+    },
+    "Nushell": {
+      "path": "nu",
+      "icon": "terminal-secure"
     }
   },
   "terminal.integrated.rightClickBehavior": "default",

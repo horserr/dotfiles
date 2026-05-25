@@ -126,13 +126,13 @@
   "copyFormatting": "all",
   "copyOnSelect": true,
   "defaultInputScope": "alphanumericHalfWidth",
-  "defaultProfile": "{a3a2e83a-884a-5379-baa8-16f193a13b21}", // powershell preview profile
+  "defaultProfile": "{47302f9c-1ac4-566c-aa3e-8cf29889d6ab}",
   "disableAnimations": false,
   "disabledProfileSources": [
     "Windows.Terminal.Azure",
     "Windows.Terminal.Wsl",
     "Windows.Terminal.VisualStudio",
-    "Windows.Terminal.",
+    "Windows.Terminal",
     "Windows.Terminal.SSH",
     "CanonicalGroupLimited.Ubuntu22.04LTS_79rhkp1fndgsc",
     "CanonicalGroupLimited.Ubuntu24.04LTS_79rhkp1fndgsc"
@@ -357,6 +357,17 @@
       "useAcrylic": true
     },
     "list": [
+      {
+        // nushell
+        "closeOnExit": "graceful",
+        "guid": "{47302f9c-1ac4-566c-aa3e-8cf29889d6ab}",
+        "hidden": false,
+        "name": "nushell",
+        "padding": "25",
+        "startingDirectory": "%USERPROFILE%/WorkSpace",
+        "tabColor": "#a1ebe0",
+        "source": "nu"
+      },
       {
         "closeOnExit": "graceful",
         // powershell preview

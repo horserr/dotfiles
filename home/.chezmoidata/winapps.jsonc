@@ -7,6 +7,8 @@
       "9NZ3KLHXDJP5", // Ubuntu 24.04LTS
       "9PKR34TNCV07", // Kali Linux
 
+      // Nushell
+      "Nushell.Nushell",
       // SumatraPDF
       "SumatraPDF.SumatraPDF",
       // calibre ebook
@@ -21,8 +23,8 @@
       "WinFsp.WinFsp",
       // github copilot
       "GitHub.Copilot",
-      //LocalSend
-      "LocalSend.LocalSend",
+      // uv
+      "astral-sh.uv",
       //delta
       "dandavison.delta",
       //less
