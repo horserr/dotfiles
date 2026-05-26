@@ -1,14 +1,16 @@
 {
   "winapps": {
-    "admin": ["Nilesoft.Shell"],
+    "admin": ["Nilesoft.Shell", "Nushell.Nushell"],
     "normal": [
       "XP8CBJ40XLBWKX", // docker desktop
       "XP8K0HKJFRXGCK", // on my posh
       "9NZ3KLHXDJP5", // Ubuntu 24.04LTS
       "9PKR34TNCV07", // Kali Linux
 
-      // Nushell
-      "Nushell.Nushell",
+      // tldr
+      "tldr-pages.tlrc",
+      // zellij
+      "Zellij.Zellij",
       // SumatraPDF
       "SumatraPDF.SumatraPDF",
       // calibre ebook

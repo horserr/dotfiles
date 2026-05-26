@@ -1,4 +1,5 @@
 vscode-local:
+  - thenuprojectcontributors.vscode-nushell-lang
   - adamraichu.zip-viewer
   - albert.tabout
   - alefragnani.bookmarks

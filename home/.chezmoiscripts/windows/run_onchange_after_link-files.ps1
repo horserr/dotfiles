@@ -121,6 +121,14 @@ $mappings = @{
     desc   = "Windows Terminal Preview"
   }
 
+  # nushell
+  (
+    "$env:APPDATA\nushell"
+  ) = @{
+    target = "$dotConfigPath\nushell"
+    desc   = "nushell"
+  }
+
   # Microsoft Word Template
   "$env:APPDATA\Microsoft\Templates\normal.dotm" = @{
     target = "$env:OneDrive\Resource\Other\Office\Word\Normal.dotm"
