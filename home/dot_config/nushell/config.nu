@@ -39,12 +39,58 @@ $env.PATH = (
     $env.PATH
     | split row (char env_sep)
     | append "C:/Program Files/Git/usr/bin"
+    | append "C:/Program Files/GitHub CLI"
     | uniq
 )
 
 # 2. Nushell Global Configuration
 $env.config = {
     buffer_editor: "vim" # Moved inside the valid $env.config record
+}
+
+# 定义你要检测的本地代理地址和端口
+let proxy_host = "127.0.0.1"
+let proxy_port = 7897
+let proxy_url = $"http://($proxy_host):($proxy_port)"
+let proxy_endpoint = $"($proxy_host):($proxy_port)"
+
+# 使用 Windows 原生的 netstat 检测本地监听端口
+let port_open = (
+    do -i {
+        (netstat -ano)
+        | lines
+        | any {|line| ($line | str contains $proxy_endpoint) and ($line | str contains "LISTENING") }
+    }
+)
+
+# 如果端口开放，则自动设置代理环境变量
+if $port_open {
+    $env.http_proxy = $proxy_url
+    $env.https_proxy = $proxy_url
+    # 针对部分需要大写环境变量的工具
+    $env.HTTP_PROXY = $proxy_url
+    $env.HTTPS_PROXY = $proxy_url
+
+    print $"[Proxy] 已检测到代理软件，自动启用代理: ($proxy_url)"
+} else {
+    # 确保未开启时不残留旧的代理设置
+    hide-env -i http_proxy https_proxy HTTP_PROXY HTTPS_PROXY
+}
+
+# 一键开启代理
+def --env proxy [] {
+    let url = $"http://($proxy_host):($proxy_port)"
+    $env.http_proxy = $url
+    $env.https_proxy = $url
+    $env.HTTP_PROXY = $url
+    $env.HTTPS_PROXY = $url
+    print $"[Proxy] 代理已开启: ($url)"
+}
+
+# 一键关闭代理
+def --env noproxy [] {
+    hide-env -i http_proxy https_proxy HTTP_PROXY HTTPS_PROXY
+    print "[Proxy] 代理已关闭"
 }
 
 # 仅在执行当前测试时，临时开启 debug 模式
