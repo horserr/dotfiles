@@ -10,6 +10,7 @@ vscode/
 .docker/
 powershell/
 sumatrapdf/
+mousemaster/
 
 windows-terminal.jsonc
 {{ end -}}
