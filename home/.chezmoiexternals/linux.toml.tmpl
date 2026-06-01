@@ -19,11 +19,3 @@
     url = "https://github.com/tmux-plugins/tpm.git"
     refreshPeriod = "168h"
 {{ end -}}
-
-{{ if .isWindows }}
-[".config/mousemaster/mousemaster.exe"]
-    type = "file"
-    url = {{ gitHubLatestReleaseAssetURL "petoncle/mousemaster" "mousemaster.exe" | quote }}
-    executable = true
-    refreshPeriod = "168h"
-{{ end }}

@@ -108,8 +108,8 @@
   "vim.autoindent": true,
   "vim.autoSwitchInputMethod.defaultIM": "1033",
   "vim.autoSwitchInputMethod.enable": true,
-  "vim.autoSwitchInputMethod.obtainIMCmd": "C:/path/im-select.exe",
-  "vim.autoSwitchInputMethod.switchIMCmd": "C:/path/im-select.exe {im}",
+  "vim.autoSwitchInputMethod.obtainIMCmd": "C:\\Users\\ASUSCosmos\\.local\\bin\\im-select.exe",
+  "vim.autoSwitchInputMethod.switchIMCmd": "C:\\Users\\ASUSCosmos\\.local\\bin\\im-select.exe {im}",
   // Vim settings
   "vim.camelCaseMotion.enable": true,
   "vim.commandLineModeKeyBindingsNonRecursive": [

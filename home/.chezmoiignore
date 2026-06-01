@@ -1,5 +1,6 @@
 {{ if not .isWSL }}
 .chezmoiscripts/linux/**
+.chezmoiexternals/linux.toml.tmpl
 .vscode-server/
 .pixi/
 
@@ -10,16 +11,7 @@
 {{ end }}
 
 {{ if not .isWindows }}
-.chezmoiscripts/windows/**
-.cloud-init/
-.docker/
-
-.ideavimrc
-.wslconfig
-{{ end }}
-
-{{ if not .isWindows }}
-.chezmoiscripts/windows/**
+.chezmoiexternals/windows.toml.tmpl
 .cloud-init/
 .docker/
 

@@ -1,0 +1,16 @@
+{{- /* code: language=toml */ -}}
+{{- /* one day (24h), one week (168h), or four weeks (672h) */ -}}
+[".config/mousemaster/mousemaster.exe"]
+    type = "file"
+    executable = true
+    url = {{ gitHubLatestReleaseAssetURL "petoncle/mousemaster" "mousemaster.exe" | quote }}
+    refreshPeriod = "168h"
+
+[".local/bin/im-select.exe"]
+    type = "archive-file"
+    executable = true
+    {{- $repo := "daipeihust/im-select" }}
+    {{- $v := gitHubLatestRelease $repo }}
+    url = "https://github.com/{{ $repo }}/archive/refs/tags/{{ $v.TagName }}.zip"
+    stripComponents = 2
+    path = "out/x64/im-select.exe"
