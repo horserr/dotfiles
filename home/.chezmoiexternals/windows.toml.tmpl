@@ -26,3 +26,11 @@
     executable = true
     url = {{ gitHubLatestReleaseAssetURL "xifangczy/URLProtocol" "URLProtocol.zip" | quote }}
     path = "URLProtocol.exe"
+
+[".local/bin/noMeiryoUI.exe"]
+    type = "archive-file"
+    executable = true
+    {{- $repo := "Tatsu-syo/noMeiryoUI" }}
+    url = {{ gitHubLatestReleaseAssetURL $repo "noMeiryoUI*" | quote }}
+    path = "noMeiryoUI.exe"
+    refreshPeriod = "672h"
