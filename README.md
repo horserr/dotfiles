@@ -29,3 +29,8 @@ There are two ways to initialize:
 sudo cp /etc/apt/sources.list /etc/apt/sources.list.bak
 sudo vim /etc/apt/sources.list
 ```
+
+## use URLProtocol.exe to create url protocol for cat catch
+
+- [link](https://o2bmm.gitbook.io/cat-catch/docs/m3u8dl)
+- protocol name: m3u8dl
