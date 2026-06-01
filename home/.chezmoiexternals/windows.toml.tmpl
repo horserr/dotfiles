@@ -14,3 +14,9 @@
     url = "https://github.com/{{ $repo }}/archive/refs/tags/{{ $v.TagName }}.zip"
     stripComponents = 2
     path = "out/x64/im-select.exe"
+
+[".local/bin/N_m3u8DL-RE.exe"]
+    type = "archive-file"
+    executable = true
+    url = {{ gitHubLatestReleaseAssetURL "nilaoda/N_m3u8DL-RE" "N_m3u8DL-RE_*_win-x64_*.zip" | quote }}
+    path = "N_m3u8DL-RE.exe"
