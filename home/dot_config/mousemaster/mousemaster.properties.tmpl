@@ -1,0 +1,99 @@
+# adapted from neo-mousekeys-ijkl
+# https://github.com/petoncle/mousemaster/blob/main/configuration/neo-mousekeys-ijkl.properties
+
+# MARK: rule of thumb:
+# 在 Mousemaster 或任何键盘固件（如 QMK/VIAL）中：
+# - 只要长按的终点是修饰键（Ctrl/Alt/Shift/Win） ➔ 强烈建议加上 Ignore。
+#     因为修饰键生来就是要与其他键“打架”的。
+# - 只要单点的终点是高频文本控制键（Esc/Backspace/Delete） ➔ 建议加上 Ignore。
+#     防止高速打字时断流。
+# - 如果是自定义的特殊层（比如长按无名指的 S 键切换到数字层） ➔ 不要加 Ignore。
+#      因为这种层切换通常需要严格的物理先后顺序，加上 Ignore 反而会导致层按键产生粘连。
+
+# Moves without an explicit duration suffix use the default: 0 (minimum 0ms, no maximum). This means the next event can arrive at any time.
+# This applies to all moves that don't have an explicit duration suffix.
+# default-combo-move-duration-millis=0-250
+
+idle-mode.push-mode-to-history-stack=true
+
+idle-mode.to.normal-mode=+enablekey
+
+normal-mode.push-mode-to-history-stack=true
+normal-mode.to.idle-mode=+exit | -clickthendisable | +enablekey \
+  | _{leftctrl} #f | _{leftctrl} #l | _{leftctrl} #e | #f2 | #f3 | #/
+
+# Eat the fast and superslow key presses to prevent them from reaching apps.
+# Eat the slow key press (leftshift) only when scrolling vertically to prevent horizontal scroll behavior in certain apps.
+normal-mode.noop.eatspeedmods=_{wheelup | wheeldown} +slow | +fast | +superslow
+
+# Snap to screen edges.
+normal-mode.to.edge-mode=#edge
+edge-mode.noop.eatspeedmods=+slow | +fast | +superslow
+edge-mode.to.normal-mode=-edge
+
+# Grid is enabled with g, disabled with g or esc.
+# Press direction keys to shrink the grid in one direction.
+normal-mode.to.grid-mode=^{windowmod} +grid
+grid-mode.to.normal-mode=+grid | +esc
+grid-mode.to.idle-mode=+exit
+
+# Window mode is enabled by holding windowmod and pressing the grid key (g).
+# It is exited as soon as windowmod is released.
+# Move to the active window's edges with direction keys.
+# Move to the active window's center with the grid key (g).
+normal-mode.noop.eatwindowmod=+windowmod
+normal-mode.to.window-mode=_{windowmod} +grid
+window-mode.to.normal-mode=-windowmod
+
+# Hints are enabled with f, disabled with f or esc.
+# Holding hint2mod while selecting the hint will trigger a second hint pass with a smaller hint grid
+# centered around the mouse to refine the position.
+normal-mode.to.hint1-mode=^{uihintmod} +hint
+# Go back to normal-mode when esc, backspace, or the last letter of the hint is pressed.
+hint1-mode.to.normal-mode=+esc | +backspace | ^{hint2mod} +extendedhint1key
+# Prevent final hint key press from executing commands in next mode (e.g. n -> toggle left click)
+hint1-mode.break-combo-preparation=+extendedhint1key
+
+# Switch to hint2-mode (showing the second hint grid) when the last letter of the hint
+# is pressed while holding hint2mod.
+hint1-mode.noop.eathintmod=+hint2mod
+hint1-mode.to.hint2-mode=_{hint2mod} +extendedhint1key
+
+hint2-mode.to.idle-mode=+exit
+hint2-mode.to.hint1-mode=_{none | hint2mod} +backspace
+hint2-mode.to.normal-mode=+esc | _{none | hint2mod} +extendedhint1key
+hint2-mode.break-combo-preparation=_{none | hint2mod} +extendedhint1key
+
+# Screen selection is enabled with c, disabled with c or esc.
+normal-mode.to.screen-selection-mode=+screenselection
+screen-selection-mode.to.normal-mode=+screenselection | +esc | +backspace | +hintscreenselectionkey
+screen-selection-mode.break-combo-preparation=+hintscreenselectionkey
+screen-selection-mode.to.idle-mode=+exit
+
+# UI hints are enabled by pressing f while holding uihintmod.
+normal-mode.to.ui-hint-mode=+uihintmod +hint | _{uihintmod} +hint
+ui-hint-mode.to.normal-mode=+esc | +backspace | +hint1key
+ui-hint-mode.break-combo-preparation=+hint1key
+
+{{ $configDir := joinPath .chezmoi.sourceDir "dot_config/mousemaster/config.d" }}
+
+{{- range (glob (joinPath $configDir "**/*.properties")) -}}
+  {{ include . }}
+{{- end -}}
+
+idle-mode.to.begin-alt-tab-mode=_{leftalt} #tab
+normal-mode.to.begin-alt-tab-mode=_{leftalt} #tab
+# The Alt Tab menu process name is Explorer.EXE.
+# We want to center the mouse on the active window as soon as the Alt Tab menu is not
+# the active window anymore.
+# 1. Wait for the release of leftalt.
+begin-alt-tab-mode.to.end-alt-tab-mode=-leftalt
+# 2.a Wait for Explorer.EXE to lose focus.
+end-alt-tab-mode.to.center-on-active-window-mode=^{Explorer.EXE}
+# 2.b Fallback: if Explorer.EXE is still active 200ms after leftalt release, go back.
+end-alt-tab-mode.to.previous-mode-from-history-stack=#{*}-2000
+# 3. Center the mouse on the (newly) active window, then switch back.
+center-on-active-window-mode.grid.area=active-window
+center-on-active-window-mode.grid.synchronization=mouse-follows-grid-center
+# Immediately switch back to previous mode after centering the mouse.
+center-on-active-window-mode.to.previous-mode-from-history-stack=wait-0

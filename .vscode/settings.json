@@ -5,6 +5,7 @@
     "extension-list.yaml": "juce",
     "json.tmpl": "json",
     "jsonc.tmpl": "jsonc",
+    "properties.tmpl": "properties",
     "ps1.tmpl": "powershell",
     "toml.tmpl": "toml"
   },
@@ -44,6 +45,7 @@
     "git": "folder_git",
     "home": "folder_admin",
     "lazydocker": "docker",
+    "mousemaster": "folder_workflows",
     "pixel-shaders": "shader",
     "powershell": "folder_admin",
     "refs": "folder_storybook",
@@ -67,7 +69,7 @@
     "dot_bashrc": "shellscript",
     "dot_gitconfig": "ini",
     "dot_ideavimrc": "Vimscript",
-    "dot_vimrc": "Vimscript",
-    "dot_inputrc": "shellscript"
+    "dot_inputrc": "shellscript",
+    "dot_vimrc": "Vimscript"
   }
 }
