@@ -7,10 +7,14 @@
       "9NZ3KLHXDJP5", // Ubuntu 24.04LTS
       "9PKR34TNCV07", // Kali Linux
 
+      // Carapace
+      "rsteube.Carapace",
       // tldr
       "tldr-pages.tlrc",
       // zellij
-      "Zellij.Zellij",
+      // "Zellij.Zellij",
+      // adobe creative cloud
+      "Adobe.CreativeCloud",
       // SumatraPDF
       "SumatraPDF.SumatraPDF",
       // calibre ebook
@@ -23,6 +27,8 @@
       "SSHFS-Win.SSHFS-Win",
       //WinFsp
       "WinFsp.WinFsp",
+      // github cli
+      "GitHub.cli",
       // github copilot
       "GitHub.Copilot",
       // uv
