@@ -21,6 +21,27 @@ There are two ways to initialize:
 > Inside container or other ephemeral environment
 > Add `--one-shot` to remove cloned repo and chezmoi itself without leaving trace.
 
+### install scoop on Windows
+
+in powershell:
+
+```pwsh
+irm get.scoop.sh | iex
+```
+
+after installing
+
+- add github token
+
+  ```pwsh
+  scoop config gh_token ghp_...
+  ```
+
+- add extras bucket
+  ```pwsh
+  scoop bucket add extras
+  ```
+
 ## change apt source
 
 ### Ubuntu 24 之前的方式，直接修改 `/etc/apt/source.list`
