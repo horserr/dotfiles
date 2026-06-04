@@ -20,6 +20,7 @@ There are two ways to initialize:
 > [!NOTE]
 > Inside container or other ephemeral environment
 > Add `--one-shot` to remove cloned repo and chezmoi itself without leaving trace.
+> Add `--data isPersonal=true` to skip interaction.
 
 ### install scoop on Windows
 

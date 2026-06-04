@@ -1,5 +1,7 @@
 {{/* code: language=toml */}}
 
+{{- $isPersonal := promptBoolOnce . "personal" "Is this a personal computer" false -}}
+
 {{- $isLinux := eq .chezmoi.os "linux" -}}
 
 {{- $isWindows := eq .chezmoi.os "windows" -}}
@@ -17,10 +19,11 @@
 sourceDir = "~/.config/.dotfiles"
 
 [data]
+    isPersonal = {{ $isPersonal }}
+
     isWSL = {{ $isWSL }}
     isLinux = {{ $isLinux }}
     isWindows = {{ $isWindows }}
     isDocker = {{ $isDocker }}
     isEphemeral = {{ or $isDocker $isCodeSpaces $isRemoteContainer }}
-    isPersonal = {{ or $isWSL $isWindows $isDocker }}
     isRemote = {{ or $isSSH $isMOSH $isCodeSpaces $isRemoteContainer }}
