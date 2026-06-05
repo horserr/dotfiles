@@ -17,37 +17,47 @@
 
 # idle: default input mode, mouse keys are disabled, except for the key to switch to normal mode.
 # normal: default mouse move mode
+idle-mode.push-mode-to-history-stack=true
+normal-mode.push-mode-to-history-stack=true
 
 # idle mode
 # from:
 # - normal: EXIT key
+# - ui: after pressing selection keys
 idle-mode.to.ui-mode=#!{META}-200 +META -META-200
 idle-mode.to.normal-mode=+META #!{META}-200
-idle-mode.to.manage-mode=#!{META}-200 +META -META-0-200 +META -META-200
-
-# UI mode
-# from:
-# - idle: short tap on META key
-# - normal: short tap on META key
-ui-mode.to.normal-mode=+esc | +backspace | +hint1key
-ui-mode.to.idle-mode=+EXIT
-ui-mode.break-combo-preparation=+hint1key
+idle-mode.to.grid-mode=#!{META}-200 +META -META-0-200 +GRID -GRID-200
+# idle-mode.to.manage-mode=#!{META}-200 +META -META-0-200 +META -META-200
 
 # normal mode
 # from:
-# - idle: long press on META key
+# - idle: long press META
 # - ui: after selecting a hint, or when pressing esc or backspace
+# - grid: press EXIT | GRID
 normal-mode.to.idle-mode=+EXIT | -clickthendisable
-# fix
-# normal.to.ui-mode=#!{META}-200 +META -META-200
-normal.to.ui-mode=f
+normal.to.ui-mode=+UI
+
+# ui mode
+# from:
+# - idle: short tap on META key
+# - normal: short tap on META key
+ui-mode.to.normal-mode=+UI | +EXIT
+ui-mode.to.idle-mode=+uikey
+ui-mode.break-combo-preparation=+uikey
+
+# grid mode
+# from:
+# - normal: press GRID
+normal-mode.to.grid-mode=^{windowmod} +GRID
+grid-mode.to.normal-mode=+GRID | +EXIT
 
 # manage
 # from:
 # - idle: double tap on META key
 # - normal: short tap on META key
-manage-mode.to.idle-mode=-META
-manage-mode.macro.start-explorer=+e -> +leftwin +e -e -leftwin
+# manage-mode.to.idle-mode=+EXIT
+# manage-mode.macro.start-explorer=+e -> +leftwin +e -e -leftwin #EXIT
+# manage-mode.macro.start-terminal=+t -> +leftwin +r -r -leftwin 'wt.exe' -enter +enter #EXIT
 
 # input
 # from:
@@ -57,10 +67,6 @@ manage-mode.macro.start-explorer=+e -> +leftwin +e -e -leftwin
 # edge mode
 normal-mode.to.edge-mode=#edge
 edge-mode.to.normal-mode=-edge
-
-normal-mode.to.grid-mode=^{windowmod} +grid
-grid-mode.to.normal-mode=+grid | +esc
-grid-mode.to.idle-mode=+EXIT
 
 # Eat the fast and superslow key presses to prevent them from reaching apps.
 # Eat the slow key press (leftshift) only when scrolling vertically to prevent horizontal scroll behavior in certain apps.
@@ -73,7 +79,7 @@ edge-mode.noop.eatspeedmods=+slow | +fast | +superslow
 # Move to the active window's edges with direction keys.
 # Move to the active window's center with the grid key (g).
 normal-mode.noop.eatwindowmod=+windowmod
-normal-mode.to.window-mode=_{windowmod} +grid
+normal-mode.to.window-mode=_{windowmod} +GRID
 window-mode.to.normal-mode=-windowmod
 
 # Hints are enabled with f, disabled with f or esc.
@@ -144,5 +150,3 @@ position-hint-mode.hint.selection-keys=a b c d e f g h i j k l m n o p q r s t u
 # Switch to position hint mode
 normal-mode.to.position-hint-mode=+p
 
-idle-mode.push-mode-to-history-stack=true
-normal-mode.push-mode-to-history-stack=true
