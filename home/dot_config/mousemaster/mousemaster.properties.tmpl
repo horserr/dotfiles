@@ -14,6 +14,8 @@
 #***********
 #*  MODES *
 #***********
+# input modes: idle, numpad
+# other modes are control modes
 
 # idle: default input mode, mouse keys are disabled, except for the key to switch to normal mode.
 # normal: default mouse move mode
@@ -27,6 +29,7 @@ normal-mode.push-mode-to-history-stack=true
 idle-mode.to.ui-mode=#!{META}-200 +META -META-200
 idle-mode.to.normal-mode=+META #!{META}-200
 idle-mode.to.grid-mode=#!{META}-200 +META -META-0-200 +GRID -GRID-200
+idle-mode.to.numpad-mode=+space #!{space}-200
 # idle-mode.to.manage-mode=#!{META}-200 +META -META-0-200 +META -META-200
 
 # normal mode
@@ -50,6 +53,11 @@ ui-mode.break-combo-preparation=+uikey
 # - normal: press GRID
 normal-mode.to.grid-mode=^{windowmod} +GRID
 grid-mode.to.normal-mode=+GRID | +EXIT
+
+# numpad mode
+# from:
+# - idle: long press space bar
+numpad-mode.to.idle-mode=+EXIT
 
 # manage
 # from:
