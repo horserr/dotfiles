@@ -14,6 +14,14 @@
   // state
   "tasks": [
     {
+      "label": "test mouse master",
+      "type": "shell",
+      "command": "start mousemaster.exe",
+      "detail": "temporarily test mouse master",
+      "problemMatcher": [],
+      "options": { "cwd": "${env:USERPROFILE}/.config/mousemaster" }
+    },
+    {
       "label": "update",
       "type": "shell",
       "command": "chezmoi update",
@@ -85,7 +93,7 @@
     }
   ],
   "presentation": {
-    "echo": false,
+    "echo": true,
     "reveal": "always",
     "focus": true,
     "panel": "shared",
@@ -98,12 +106,20 @@
       "type": "promptString",
       "description": "please enter docker image or container",
       "default": "Ubuntu"
-    }
-    ,{
+    },
+    {
       "id": "github_user",
       "type": "promptString",
       "description": "please enter GitHub username",
       "default": "horserr"
     }
-  ]
+  ],
+  "windows": {
+    "options": {
+      "shell": {
+        "executable": "pwsh",
+        "args": ["-NoProfile", "-c"]
+      }
+    }
+  }
 }
