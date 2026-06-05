@@ -9,10 +9,10 @@ tmux/
 {{- end }}
 
 {{- if not .isWindows -}}
-vscode/
+vscode/**
+sumatrapdf/**
 .docker/
 powershell/
-sumatrapdf/
 mousemaster/
 
 windows-terminal.jsonc

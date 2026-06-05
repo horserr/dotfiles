@@ -1,4 +1,5 @@
 {{- /* code: language=toml */ -}}
+{{- if .isLinux -}}
 {{ if lookPath "vim" }}
 [".vim/autoload/plug.vim"]
     type = "file"
@@ -19,3 +20,4 @@
     url = "https://github.com/tmux-plugins/tpm.git"
     refreshPeriod = "168h"
 {{ end -}}
+{{- end -}}

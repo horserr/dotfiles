@@ -1,2 +1,5 @@
 **/*.jsonc
 scripts/
+{{ if not .isWindows }}
+**/*.ps1
+{{ end }}

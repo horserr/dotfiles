@@ -12,6 +12,7 @@
 {{ end }}
 
 {{ if not .isWindows -}}
+.chezmoiscripts/windows/**
 .chezmoiexternals/windows.toml.tmpl
 .docker/
 
