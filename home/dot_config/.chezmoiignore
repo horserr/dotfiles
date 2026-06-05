@@ -1,8 +1,11 @@
-{{- if not .isWSL }}
 fish/
+
+{{- if not .isLinux }}
+{{- if .isPersonal }}
 homebrew/
-tmux/
 yazi/
+{{ end }}
+tmux/
 {{- end }}
 
 {{- if not .isWindows -}}

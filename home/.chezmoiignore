@@ -1,5 +1,5 @@
 {{- /* ignore rules are relative to home directory(~) */ -}}
-{{ if not .isWSL }}
+{{ if not .isLinux }}
 .chezmoiscripts/linux/**
 .chezmoiexternals/linux.toml.tmpl
 .vscode-server/
@@ -11,11 +11,13 @@
 .zshrc
 {{ end }}
 
-{{ if not .isWindows }}
+{{ if not .isWindows -}}
 .chezmoiexternals/windows.toml.tmpl
-.cloud-init/
 .docker/
 
+{{ if .isPersonal -}}
+.cloud-init/
 .ideavimrc
 .wslconfig
-{{ end }}
+{{- end }}
+{{- end -}}

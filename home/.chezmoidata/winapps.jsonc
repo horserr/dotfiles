@@ -54,14 +54,15 @@
         "fzf",
         "bat",
         "everything-cli",
-        "edit"
+        "edit",
+        "yazi",
+        "jq",
+        "poppler",
+        "imagemagick"
       ]
     },
     "winget": {
-      "admin": [
-        "Nilesoft.Shell",
-        "Nushell.Nushell"
-      ],
+      "admin": ["Nilesoft.Shell", "Nushell.Nushell"],
       "normal": [
         // adobe creative cloud
         "Adobe.CreativeCloud",
