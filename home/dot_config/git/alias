@@ -45,7 +45,66 @@
 	hh = log --oneline -L
 
 	# show and status
-	s = status --short --branch
+  # enhanced git status
+		# s = status --short --branch
+  # show git status with --short --branch options
+	# but simplify file names
+	# displaying the full path only when having duplicate file names
+	# use less as pager and support color mode
+	s = "!f() { \
+		C_RED=$(tput setaf 1); \
+		C_GRN=$(tput setaf 2); \
+		C_YLW=$(tput setaf 3); \
+		C_B=$(tput bold); \
+		C_RST=$(tput sgr0); \
+		git status -s -b \
+		| awk -v r=\"$C_RED\" -v g=\"$C_GRN\" -v y=\"$C_YLW\" -v b=\"$C_B\" -v rst=\"$C_RST\" '{ \
+			if (/^##/) { \
+				match($0, /^## [^.]+/); \
+				branch_part = substr($0, RSTART, RLENGTH); \
+				rest_part = substr($0, RSTART + RLENGTH); \
+				print b branch_part rst y rest_part rst; \
+				next; \
+			} \
+			\
+			code = substr($0, 1, 2); \
+			full_path = substr($0, 4); \
+			\
+			clean_path = full_path; \
+			sub(/.* -> /, \"\", clean_path); \
+			match(clean_path, /[^/]+$/); \
+			base_name = substr(clean_path, RSTART, RLENGTH); \
+			\
+			c1 = substr(code, 1, 1); \
+			c2 = substr(code, 2, 1); \
+			\
+			color1 = (c1==\"M\"||c1==\"A\"||c1==\"D\"||c1==\"R\"||c1==\"C\") ? g : \"\"; \
+			color2 = (c2==\"M\"||c2==\"D\") ? r : (c2==\"?\"||c1==\"?\") ? r : \"\"; \
+			\
+			fmt_code = color1 c1 rst color2 c2 rst; \
+			\
+			status_code[NR] = fmt_code; \
+			paths[NR] = full_path; \
+			files[NR] = base_name; \
+			count[base_name]++; \
+		} END { \
+			for (i = 1; i <= NR; i++) { \
+				if (!paths[i]) continue; \
+				\
+				if (count[files[i]] > 1) { \
+					display = paths[i]; \
+				} else { \
+					if (paths[i] ~ / -> /) { \
+						split(paths[i], parts, \" -> \"); \
+						display = parts[1] \" -> \" files[i]; \
+					} else { \
+						display = files[i]; \
+					} \
+				} \
+				print status_code[i] \" \" display; \
+			} \
+		}' | less -RFX; }; f"
+
 	sh = show --pretty=oneline --stat
 	sd = diff --stat --ignore-space-change
 	# what to be committed: diff between staged and the repo
@@ -110,8 +169,8 @@
 	xxd = clean -d --force
 
 	# interactive add/stage
-	ia = add --patch
-  iaa = add --interactive
+  ia = add --interactive
+	iaa = add --patch
   # Interactive rebase with the given number of latest commits.
 	ir = rebase --interactive
 	# useful for orphan branch
