@@ -15,11 +15,13 @@
 #*  MODES *
 #***********
 # input modes: idle, numpad
+# special modes: input-backspace-mode
 # other modes are control modes
 
 # idle: default input mode, mouse keys are disabled, except for the key to switch to normal mode.
 # normal: default mouse move mode
 idle-mode.push-mode-to-history-stack=true
+numpad-mode.push-mode-to-history-stack=true
 normal-mode.push-mode-to-history-stack=true
 
 # idle mode
@@ -30,6 +32,7 @@ idle-mode.to.ui-mode=#!{META}-200 +META -META-200
 idle-mode.to.normal-mode=+META #!{META}-200
 idle-mode.to.grid-mode=#!{META}-200 +META -META-0-200 +GRID -GRID-200
 idle-mode.to.numpad-mode=+space #!{space}-200
+idle-mode.to.input-backspace-mode=+INPUT_BACKSPACE
 # idle-mode.to.manage-mode=#!{META}-200 +META -META-0-200 +META -META-200
 
 # normal mode
@@ -58,6 +61,16 @@ grid-mode.to.normal-mode=+GRID | +EXIT
 # from:
 # - idle: long press space bar
 numpad-mode.to.idle-mode=+EXIT
+numpad-mode.to.input-backspace-mode=+INPUT_BACKSPACE
+
+# input backspace mode
+# (special mode) this mode is for remapping INPUT_BACKSPACE to backspace for input
+# from:
+# - idle: holding INPUT_BACKSPACE
+# - numpad: holding INPUT_BACKSPACE
+input-backspace-mode.macro.backspace-press=_{INPUT_BACKSPACE} -> +backspace
+input-backspace-mode.macro.backspace-release=^{INPUT_BACKSPACE} -> -backspace
+input-backspace-mode.to.previous-mode-from-history-stack=-INPUT_BACKSPACE
 
 # manage
 # from:
