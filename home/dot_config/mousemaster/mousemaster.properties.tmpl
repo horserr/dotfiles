@@ -31,9 +31,27 @@ normal-mode.push-mode-to-history-stack=true
 idle-mode.to.ui-mode=#!{META}-200 +META -META-200
 idle-mode.to.normal-mode=+META #!{META}-200
 idle-mode.to.grid-mode=#!{META}-200 +META -META-0-200 +GRID -GRID-200
-idle-mode.to.numpad-mode=+space #!{space}-200
-idle-mode.to.input-backspace-mode=+INPUT_BACKSPACE
+idle-mode.to.backspace-mode=+INPUT_BACKSPACE
 # idle-mode.to.manage-mode=#!{META}-200 +META -META-0-200 +META -META-200
+
+# suppress enter and rightshift for wrist health
+key-alias.inputRedundant=enter rightshift backspace
+idle-mode.noop.ignore-redundant=+inputRedundant
+
+# Toggle isEnter on/off, pressing ; for at least 200ms
+idle-mode.set-variable.isEnter=_{!isEnter} +;-200
+idle-mode.unset-variable.isEnter=_{isEnter} +;-200
+# map enter only when isEnter is on, and suppress the original ; key behavior
+idle-mode.macro.insert-enter=_{!isEnter} ;-0-200 -> +enter -enter
+
+# idle-mode.to.symbol-mode={+leftshift +leftalt}-0-200
+# idle-mode.to.manage-mode={+leftshift +leftalt}-0-200
+
+# Toggle isUppercase on/off, pressing UPPERCASEKEY for at least 200ms
+idle-mode.set-variable.isUppercase=_{!isUppercase} +UPPERCASEKEY-200
+idle-mode.unset-variable.isUppercase=_{isUppercase} +UPPERCASEKEY-200
+# map enter only when isUppercase is on, and suppress the original UPPERCASEKEY key behavior
+idle-mode.macro.toUppercase=_{isUppercase} +ALPHABET -> +leftshift +ALPHABET -ALPHABET -leftshift
 
 # normal mode
 # from:
