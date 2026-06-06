@@ -53,6 +53,8 @@ idle-mode.unset-variable.isUppercase=_{isUppercase} +UPPERCASEKEY-200
 # map enter only when isUppercase is on, and suppress the original UPPERCASEKEY key behavior
 idle-mode.macro.toUppercase=_{isUppercase} +ALPHABET -> +leftshift +ALPHABET -ALPHABET -leftshift
 
+idle-mode.to.numpad-mode=+SYMBOLKEY #!{SYMBOLKEY}-200
+
 # normal mode
 # from:
 # - idle: long press META
@@ -76,19 +78,20 @@ normal-mode.to.grid-mode=^{windowmod} +GRID
 grid-mode.to.normal-mode=+GRID | +EXIT
 
 # numpad mode
+# (input mode) this mode simulates numpad
 # from:
-# - idle: long press space bar
+# - idle: long press NUMPADKEY
 numpad-mode.to.idle-mode=+EXIT
-numpad-mode.to.input-backspace-mode=+INPUT_BACKSPACE
+numpad-mode.to.backspace-mode=+INPUT_BACKSPACE
 
-# input backspace mode
-# (special mode) this mode is for remapping INPUT_BACKSPACE to backspace for input
+# backspace mode
+# (input mode) this mode is for remapping INPUT_BACKSPACE to backspace for input
 # from:
 # - idle: holding INPUT_BACKSPACE
 # - numpad: holding INPUT_BACKSPACE
-input-backspace-mode.macro.backspace-press=_{INPUT_BACKSPACE} -> +backspace
-input-backspace-mode.macro.backspace-release=^{INPUT_BACKSPACE} -> -backspace
-input-backspace-mode.to.previous-mode-from-history-stack=-INPUT_BACKSPACE
+backspace-mode.macro.backspace-press=_{INPUT_BACKSPACE} -> +backspace
+backspace-mode.macro.backspace-release=^{INPUT_BACKSPACE} -> -backspace
+backspace-mode.to.previous-mode-from-history-stack=-INPUT_BACKSPACE
 
 # manage
 # from:
