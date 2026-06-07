@@ -50,7 +50,7 @@ idle-mode.macro.insert-enter=_{!isEnter} ;-0-200 -> +enter -enter
 idle-mode.set-variable.isUppercase=_{!isUppercase} +UPPERCASEKEY-200
 idle-mode.unset-variable.isUppercase=_{isUppercase} +UPPERCASEKEY-200
 # map enter only when isUppercase is on, and suppress the original UPPERCASEKEY key behavior
-idle-mode.macro.toUppercase=_{isUppercase} +ALPHABET -> +leftshift +ALPHABET -ALPHABET -leftshift
+idle-mode.macro.toUppercase=_{isUppercase} ALPHABET-0-200 -> +leftshift +ALPHABET -ALPHABET -leftshift
 
 idle-mode.to.numpad-mode=+SYMBOLKEY #!{SYMBOLKEY}-200
 
