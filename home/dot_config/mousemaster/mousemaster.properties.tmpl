@@ -80,7 +80,10 @@ grid-mode.to.normal-mode=+GRID | +EXIT
 # (input mode) this mode simulates numpad
 # from:
 # - idle: long press NUMPADKEY
+# explicitly press EXIT to return to idle mode
 numpad-mode.to.idle-mode=+EXIT
+# unhandled keys also bring back to idle mode
+numpad-mode.mode-after-unhandled-key-press=idle-mode
 numpad-mode.to.backspace-mode=+INPUT_BACKSPACE
 
 numpad-mode.indicator=idle-mode.indicator
