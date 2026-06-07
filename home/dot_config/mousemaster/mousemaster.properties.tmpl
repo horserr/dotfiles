@@ -53,7 +53,7 @@ idle-mode.macro.toUppercase=_{isUppercase} ALPHABET-0-200 -> +leftshift +ALPHABE
 
 idle-mode.to.numpad-mode=+NUMPADKEY-200
 idle-mode.to.symbol-mode=+SYMBOLKEY-200
-# idle-mode.to.manage-mode={+leftshift +leftalt}-0-200
+idle-mode.to.manage-mode={leftshift leftalt}-0-200
 
 # normal mode
 # from:
@@ -75,6 +75,16 @@ ui-mode.break-combo-preparation=+uikey
 # - normal: press GRID
 normal-mode.to.grid-mode=^{windowmod} +GRID
 grid-mode.to.normal-mode=+GRID | +EXIT
+
+# manage mode:
+# from:
+# - idle: press and release leftshift & leftalt
+manage-mode.stop-commands-from-previous-mode=true
+manage-mode.to.idle-mode=+EXIT
+manage-mode.macro.mapNavikeyPress=+navikey -> navikey=leftarrow downarrow uparrow rightarrow pageup pagedown end home -> +navikey
+manage-mode.macro.mapNavikeyRelease=-navikey -> navikey=leftarrow downarrow uparrow rightarrow pageup pagedown end home -> -navikey
+manage-mode.macro.switchIME=leftalt -> +leftwin +space -space -leftwin
+manage-mode.break-combo-preparation=leftalt
 
 # numpad mode
 # (input mode) this mode simulates numpad
