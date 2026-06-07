@@ -14,15 +14,14 @@
 #***********
 #*  MODES *
 #***********
-# input modes: idle, numpad
-# special modes: input-backspace-mode
+# input modes: idle, numpad, symbol
+# special modes: backspace-mode
 # other modes are control modes
 
 # idle: default input mode, mouse keys are disabled, except for the key to switch to normal mode.
 # normal: default mouse move mode
 idle-mode.push-mode-to-history-stack=true
 numpad-mode.push-mode-to-history-stack=true
-normal-mode.push-mode-to-history-stack=true
 
 # idle mode
 # from:
@@ -34,7 +33,7 @@ idle-mode.to.grid-mode=#!{META}-200 +META -META-0-200 +GRID -GRID-200
 idle-mode.to.backspace-mode=+INPUT_BACKSPACE
 # idle-mode.to.manage-mode=#!{META}-200 +META -META-0-200 +META -META-200
 
-# suppress enter and rightshift for wrist health
+# suppress enter, backspace, and rightshift for wrist health
 key-alias.inputRedundant=enter rightshift backspace
 idle-mode.noop.ignore-redundant=+inputRedundant
 
@@ -67,8 +66,7 @@ normal.to.ui-mode=+UI
 # from:
 # - idle: short tap on META key
 # - normal: short tap on META key
-ui-mode.to.normal-mode=+UI | +EXIT
-ui-mode.to.idle-mode=+uikey
+ui-mode.to.normal-mode=+UI | +EXIT | +uikey
 ui-mode.break-combo-preparation=+uikey
 
 # grid mode
@@ -92,6 +90,8 @@ numpad-mode.to.backspace-mode=+INPUT_BACKSPACE
 backspace-mode.macro.backspace-press=_{INPUT_BACKSPACE} -> +backspace
 backspace-mode.macro.backspace-release=^{INPUT_BACKSPACE} -> -backspace
 backspace-mode.to.previous-mode-from-history-stack=-INPUT_BACKSPACE
+
+backspace-mode.indicator=idle-mode.indicator
 
 # manage
 # from:
