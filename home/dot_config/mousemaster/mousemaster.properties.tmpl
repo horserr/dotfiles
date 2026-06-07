@@ -48,7 +48,8 @@ idle-mode.macro.insert-enter=_{!isEnter} ;-0-200 -> +enter -enter
 
 # Toggle isUppercase on/off, pressing UPPERCASEKEY for at least 200ms
 idle-mode.set-variable.isUppercase=_{!isUppercase} +UPPERCASEKEY-200
-idle-mode.unset-variable.isUppercase=_{isUppercase} +UPPERCASEKEY-200
+# after 2 seconds, return to idle mode
+idle-mode.unset-variable.isUppercase=_{isUppercase} +UPPERCASEKEY-200 | _{isUppercase} wait-2000
 # map enter only when isUppercase is on, and suppress the original UPPERCASEKEY key behavior
 idle-mode.macro.toUppercase=_{isUppercase} ALPHABET-0-200 -> +leftshift +ALPHABET -ALPHABET -leftshift
 
@@ -106,11 +107,6 @@ backspace-mode.indicator=idle-mode.indicator
 # manage-mode.to.idle-mode=+EXIT
 # manage-mode.macro.start-explorer=+e -> +leftwin +e -e -leftwin #EXIT
 # manage-mode.macro.start-terminal=+t -> +leftwin +r -r -leftwin 'wt.exe' -enter +enter #EXIT
-
-# input
-# from:
-# - idle: when in word.exe notepad & long press space bar
-# todo: define hotstring and navigation movement
 
 # edge mode
 normal-mode.to.edge-mode=#edge
