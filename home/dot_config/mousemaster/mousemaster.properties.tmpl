@@ -22,6 +22,7 @@
 # normal: default mouse move mode
 idle-mode.push-mode-to-history-stack=true
 numpad-mode.push-mode-to-history-stack=true
+symbol-mode.push-mode-to-history-stack=true
 
 # idle mode
 # from:
@@ -43,9 +44,6 @@ idle-mode.unset-variable.isEnter=_{isEnter} +;-200
 # map enter only when isEnter is on, and suppress the original ; key behavior
 idle-mode.macro.insert-enter=_{!isEnter} ;-0-200 -> +enter -enter
 
-# idle-mode.to.symbol-mode={+leftshift +leftalt}-0-200
-# idle-mode.to.manage-mode={+leftshift +leftalt}-0-200
-
 # Toggle isUppercase on/off, pressing UPPERCASEKEY for at least 200ms
 idle-mode.set-variable.isUppercase=_{!isUppercase} +UPPERCASEKEY-200
 # after 2 seconds, return to idle mode
@@ -54,6 +52,8 @@ idle-mode.unset-variable.isUppercase=_{isUppercase} +UPPERCASEKEY-200 | _{isUppe
 idle-mode.macro.toUppercase=_{isUppercase} ALPHABET-0-200 -> +leftshift +ALPHABET -ALPHABET -leftshift
 
 idle-mode.to.numpad-mode=+NUMPADKEY-200
+idle-mode.to.symbol-mode=+SYMBOLKEY-200
+# idle-mode.to.manage-mode={+leftshift +leftalt}-0-200
 
 # normal mode
 # from:
@@ -91,6 +91,16 @@ numpad-mode.indicator.idle.inner-outline-color=#00F0F0
 numpad-mode.indicator.idle.edge-count=3
 numpad-mode.indicator.idle.color=#000000
 numpad-mode.indicator.unhandled-key-press.color=#0FFF0F
+
+# symbol mode
+# (input mode) this mode is for bringing symbols closer to the main row
+# from:
+# - idle: holding SYMBOLKEY
+symbol-mode.to.idle-mode=+EXIT
+symbol-mode.to.backspace-mode=+INPUT_BACKSPACE
+
+symbol-mode.indicator=numpad-mode.indicator
+symbol-mode.indicator.idle.inner-outline-color=#F000F0
 
 # backspace mode
 # (input mode) this mode is for remapping INPUT_BACKSPACE to backspace for input
