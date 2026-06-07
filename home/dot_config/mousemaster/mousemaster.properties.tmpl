@@ -52,7 +52,7 @@ idle-mode.unset-variable.isUppercase=_{isUppercase} +UPPERCASEKEY-200
 # map enter only when isUppercase is on, and suppress the original UPPERCASEKEY key behavior
 idle-mode.macro.toUppercase=_{isUppercase} ALPHABET-0-200 -> +leftshift +ALPHABET -ALPHABET -leftshift
 
-idle-mode.to.numpad-mode=+SYMBOLKEY #!{SYMBOLKEY}-200
+idle-mode.to.numpad-mode=+NUMPADKEY-200
 
 # normal mode
 # from:
@@ -81,6 +81,12 @@ grid-mode.to.normal-mode=+GRID | +EXIT
 # - idle: long press NUMPADKEY
 numpad-mode.to.idle-mode=+EXIT
 numpad-mode.to.backspace-mode=+INPUT_BACKSPACE
+
+numpad-mode.indicator=idle-mode.indicator
+numpad-mode.indicator.idle.inner-outline-color=#00F0F0
+numpad-mode.indicator.idle.edge-count=3
+numpad-mode.indicator.idle.color=#000000
+numpad-mode.indicator.unhandled-key-press.color=#0FFF0F
 
 # backspace mode
 # (input mode) this mode is for remapping INPUT_BACKSPACE to backspace for input
