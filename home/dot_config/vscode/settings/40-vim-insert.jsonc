@@ -1,0 +1,135 @@
+{
+  "$schema": "vscode://schemas/settings/user",
+  "vim.insertModeKeyBindings": [
+    // reference: https://code.visualstudio.com/docs/editing/userdefinedsnippets#_assign-keyboard-shortcuts-to-snippets
+    // can also use "command": "type" https://code.visualstudio.com/docs/configure/keybindings#_command-arguments
+    // { "before": ["j", "k"], "after": ["<esc>"] },
+    {
+      "before": [";", "<Space>"],
+      "commands": ["editor.action.triggerSuggest"]
+    },
+    {
+      "before": [";", ";", "<Space>"],
+      "commands": ["editor.action.triggerParameterHints"]
+    },
+    // suppress auto close brackets
+    {
+      "before": ["\""],
+      "commands": [
+        {
+          "args": {
+            "snippet": "\"$1\"$0"
+          },
+          "command": "editor.action.insertSnippet"
+        }
+      ]
+    },
+    {
+      "before": [";", "f"],
+      "commands": [
+        {
+          "args": {
+            "snippet": "($1)$0"
+          },
+          "command": "editor.action.insertSnippet"
+        }
+      ]
+    },
+    {
+      "before": [";", "v"],
+      "commands": [
+        {
+          "args": {
+            "snippet": "{$1}$0"
+          },
+          "command": "editor.action.insertSnippet"
+        }
+      ]
+    },
+    {
+      "before": [";", "b"],
+      "commands": [
+        {
+          "args": {
+            "snippet": "[$1]$0"
+          },
+          "command": "editor.action.insertSnippet"
+        }
+      ]
+    },
+    {
+      "before": [";", ";", "b"],
+      "commands": [
+        {
+          "args": {
+            "snippet": "[$1][$2]$0"
+          },
+          "command": "editor.action.insertSnippet"
+        }
+      ]
+    }
+    // cannot use when clause here
+    // https://github.com/VSCodeVim/Vim/issues/1372#issuecomment-450553106
+    // {
+    //   "before": [";", ";", "e"],
+    //   "commands": [
+    //     {
+    //       "command": "editor.action.insertSnippet",
+    //       "args": {
+    //         "snippet": "=="
+    //       },
+    //     },
+    //     {
+    //       "command": "editor.action.insertSnippet",
+    //       "args": {
+    //         "snippet": "="
+    //       },
+    //       "when": "editorLangId == 'javascript'"
+    //     },
+    //   ]
+    // }
+  ],
+  "vim.insertModeKeyBindingsNonRecursive": [
+    {
+      "after": ["<C-g>", "u", "<C-u>"],
+      "before": ["<C-u>"]
+    },
+    {
+      "after": ["<C-g>", "u", "<C-w>"],
+      "before": ["<C-w>"]
+    },
+    // {
+    //   "before": ["<C-i>"],
+    //   "commands": ["inlineChat.start"]
+    // },
+    {
+      "after": ["\\"],
+      "before": [";", "z"]
+    }, // backslash
+    {
+      "after": ["_"],
+      "before": [";", "l"]
+    },
+    {
+      "after": ["="],
+      "before": [";", "e"]
+    }, //equal
+    {
+      "after": ["+"],
+      "before": [";", "a"]
+    }, //add
+    {
+      "after": ["-"],
+      "before": [";", "s"]
+    }, //subtract
+    {
+      "after": ["=", "="],
+      // "when": "editorLangId == 'javascript'" no use
+      "before": [";", ";", "e"]
+    },
+    {
+      "before": [";", "i"],
+      "commands": ["editor.action.insertSnippet"]
+    }
+  ]
+}

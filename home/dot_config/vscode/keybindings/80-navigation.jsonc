@@ -33,15 +33,5 @@
   {
     "key": "ctrl+shift+alt+o",
     "command": "workbench.action.remote.showMenu"
-  },
-  {
-    "key": "space",
-    "command": "vspacecode.space",
-    "when": "activeEditorGroupEmpty && focusedView == '' && !whichkeyActive && !inputFocus"
-  },
-  {
-    "key": "space",
-    "command": "vspacecode.space",
-    "when": "sideBarFocus && !inputFocus && !whichkeyActive"
   }
 ]

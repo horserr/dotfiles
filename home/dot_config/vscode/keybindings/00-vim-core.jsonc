@@ -8,6 +8,43 @@
     "after": ["YOUR_VIM_ACTION"]
   }
   } */
+  // move inside hover window
+  {
+    "key": "h",
+    "command": "editor.action.scrollLeftHover",
+    "when": "editorHoverFocused"
+  },
+  {
+    "key": "j",
+    "command": "editor.action.scrollDownHover",
+    "when": "editorHoverFocused"
+  },
+  {
+    "key": "k",
+    "command": "editor.action.scrollUpHover",
+    "when": "editorHoverFocused"
+  },
+  {
+    "key": "l",
+    "command": "editor.action.scrollRightHover",
+    "when": "editorHoverFocused"
+  },
+  /**************
+   * VSPACECODE *
+   **************/
+  {
+    // use space in editor
+    "key": "space",
+    "command": "vspacecode.space",
+    "when": "activeEditorGroupEmpty && focusedView == '' && !whichkeyActive && !inputFocus"
+  },
+  {
+    // use shift+space in sidebar
+    "key": "shift+space",
+    "command": "vspacecode.space",
+    "when": "sideBarFocus && !inputFocus && !whichkeyActive"
+  },
+  // fix inline chat
   {
     // remove origin vim escape function
     "key": "escape",

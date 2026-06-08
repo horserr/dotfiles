@@ -1,0 +1,74 @@
+{
+  "$schema": "vscode://schemas/settings/user",
+  "multiCommand.commands": [
+    {
+      "command": "multiCommand.closePanelAndSidebarAndOtherEditors",
+      "sequence": [
+        "workbench.action.closePanel",
+        "workbench.action.closeSidebar",
+        "workbench.action.closeEditorsInOtherGroups"
+      ]
+    },
+    {
+      "command": "multiCommand.copyAndCommentLines",
+      "sequence": [
+        "editor.action.clipboardCopyAction",
+        "editor.action.commentLine"
+      ]
+    },
+    {
+      "command": "multiCommand.copyRelativePathAndPrintIt",
+      "sequence": ["copy-relative-path-and-line-numbers.path-only", "execPaste"]
+    },
+    {
+      "command": "multiCommand.copyRelativePathAndSelectedLinesAndPrintIt",
+      "sequence": ["copy-relative-path-and-line-numbers.both", "execPaste"]
+    },
+    {
+      "command": "multiCommand.moveToNextChangeAndShow",
+      "sequence": [
+        "workbench.action.editor.nextChange",
+        "editor.action.dirtydiff.next"
+      ]
+    },
+    {
+      "command": "multiCommand.moveToPreviousChangeAndShow",
+      "sequence": [
+        "workbench.action.editor.previousChange",
+        "editor.action.dirtydiff.previous"
+      ]
+    },
+    {
+      "command": "multiCommand.splitWindowAboveAndSearchForFile",
+      "sequence": [
+        "workbench.action.newGroupAbove",
+        "workbench.action.quickOpen"
+      ]
+    },
+    {
+      "command": "multiCommand.splitWindowBelowAndSearchForFile",
+      "sequence": [
+        "workbench.action.newGroupBelow",
+        "workbench.action.quickOpen"
+      ]
+    },
+    {
+      "command": "multiCommand.splitWindowLeftAndSearchForFile",
+      "sequence": [
+        "workbench.action.newGroupLeft",
+        "workbench.action.quickOpen"
+      ]
+    },
+    {
+      "command": "multiCommand.splitWindowRightAndSearchForFile",
+      "sequence": [
+        "workbench.action.newGroupRight",
+        "workbench.action.quickOpen"
+      ]
+    },
+    {
+      "command": "multiCommand.unfocusInputByCreatingNewEditorGroup",
+      "sequence": ["workbench.action.newGroupAbove"]
+    }
+  ]
+}

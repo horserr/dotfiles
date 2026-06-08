@@ -1,0 +1,173 @@
+{
+  "$schema": "vscode://schemas/settings/user",
+  "vim.visualModeKeyBindingsNonRecursive": [
+    {
+      // use vscode native select in bracket
+      "before": ["o"],
+      "commands": ["editor.action.selectToBracket"]
+    },
+    {
+      // press v again to enter line selection
+      "before": ["v"],
+      "after": ["V"]
+    },
+    {
+      // multi-cursor add selection
+      // this command is equivalent to the original gb command which add the next occurance to selection
+      "before": ["n"],
+      "commands": ["editor.action.addSelectionToNextFindMatch"]
+    },
+    {
+      // multi-cursor add selection
+      "before": ["N"],
+      "commands": ["editor.action.addSelectionToPreviousFindMatch"]
+    },
+    {
+      // multi-cursor move selection
+      "before": ["m"],
+      "commands": ["editor.action.moveSelectionToNextFindMatch"]
+    },
+    {
+      // multi-cursor move selection
+      "before": ["M"],
+      "commands": ["editor.action.moveSelectionToPreviousFindMatch"]
+    },
+    {
+      // multi-cursor add all selections
+      "before": ["g", "B"],
+      "commands": ["editor.action.selectHighlights"]
+    },
+    {
+      // multi-cursor end of each line
+      "before": ["a"],
+      "commands": ["editor.action.insertCursorAtEndOfEachLineSelected"]
+    },
+    {
+      "before": ["g", "y"],
+      "commands": ["editor.action.clipboardCopyAction"]
+    },
+    {
+      "before": ["g", "p"],
+      "commands": ["editor.action.clipboardPasteAction"]
+    },
+    {
+      // visual line down
+      "before": ["j"],
+      "after": ["g", "j"]
+    },
+    {
+      // visual line down
+      "before": ["k"],
+      "after": ["g", "k"]
+    },
+    {
+      // camel case word
+      "before": ["w"],
+      "after": ["<leader>", "w"]
+    },
+    {
+      // camel case back
+      "before": ["b"],
+      "after": ["<leader>", "b"]
+    },
+    {
+      // visual line end
+      "before": ["L"],
+      "after": ["g", "$"]
+    },
+    {
+      // visual line begin
+      "before": ["H"],
+      "after": ["g", "^"]
+    },
+    {
+      "before": ["<C-i>"],
+      "commands": ["inlineChat.start"]
+    },
+    {
+      "before": ["<leader>", "E"],
+      "commands": ["editor.action.refactor"]
+    },
+    {
+      "before": [">"],
+      "commands": ["editor.action.indentLines"]
+    },
+    {
+      "before": ["<"],
+      "commands": ["editor.action.outdentLines"]
+    },
+    {
+      "before": ["s"],
+      "commands": ["editor.action.surroundWithSnippet"]
+    },
+    {
+      // format selection
+      "before": ["g", "q"],
+      "commands": ["editor.action.formatSelection"]
+    },
+    {
+      "before": [";", "m"],
+      "commands": [
+        {
+          "args": {
+            "snippet": "$${TM_SELECTED_TEXT}$"
+          },
+          "command": "editor.action.insertSnippet"
+        }
+      ]
+    },
+    {
+      "before": [";", "M"],
+      "commands": [
+        {
+          "args": {
+            "snippet": "$$${TM_SELECTED_TEXT}$$"
+          },
+          "command": "editor.action.insertSnippet"
+        }
+      ]
+    },
+    {
+      "before": [";", "b"],
+      "commands": ["markdown.extension.editing.toggleBold"]
+    },
+    {
+      "before": [";", "i"],
+      "commands": ["markdown.extension.editing.toggleItalic"]
+    },
+    {
+      "before": [";", "c"],
+      "commands": ["markdown.extension.editing.toggleCodeSpan"]
+    },
+    {
+      "before": [";", "C"],
+      "commands": ["markdown.extension.editing.toggleCodeBlock"]
+    },
+    {
+      "before": [";", "t"],
+      "commands": ["markdown.extension.checkTaskList"]
+    },
+    {
+      "before": ["<leader>", "f"],
+      "commands": ["actions.find"]
+    },
+    {
+      "before": ["<leader>", "F"],
+      "commands": ["workbench.action.findInFiles"]
+    },
+    {
+      "before": ["<space>"],
+      "commands": ["vspacecode.space"]
+    }
+    // {
+    //   "before": [","],
+    //   "commands": [
+    //     "vspacecode.space",
+    //     {
+    //       "args": "m",
+    //       "command": "whichkey.triggerKey"
+    //     }
+    //   ]
+    // }
+  ]
+}

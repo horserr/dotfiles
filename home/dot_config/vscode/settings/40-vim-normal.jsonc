@@ -1,0 +1,195 @@
+{
+  "$schema": "vscode://schemas/settings/user",
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      // clipboard yank
+      "before": ["g", "y"],
+      "commands": ["editor.action.clipboardCopyAction"]
+    },
+    {
+      // clipboard paste
+      "before": ["g", "p"],
+      "commands": ["editor.action.clipboardPasteAction"]
+    },
+    {
+      // format
+      // original is hardwrap at the given length
+      "before": ["g", "q"],
+      "commands": ["editor.action.formatDocument"]
+    },
+    {
+      // goto previous edit place
+      // originalgi is for goto insert position
+      "before": ["g", "i"],
+      "after": ["g", ";"]
+    },
+    {
+      // goto next edit place
+      "before": ["g", "I"],
+      "after": ["g", ","]
+    },
+    {
+      // goto previous tab
+      "before": ["g", "J"],
+      "after": ["g", "T"]
+    },
+    {
+      // goto next tab
+      "after": ["g", "t"],
+      "before": ["g", "K"]
+    },
+    {
+      // goto previous git change
+      "before": ["g", "k"],
+      "commands": ["workbench.action.editor.previousChange"]
+    },
+    {
+      // goto next git change
+      "before": ["g", "j"],
+      "commands": ["workbench.action.editor.nextChange"]
+    },
+    {
+      // softwrap visual line move down
+      "before": ["j"],
+      "after": ["g", "j"]
+    },
+    {
+      // softwrap visual line move down
+      "before": ["k"],
+      "after": ["g", "k"]
+    },
+    {
+      // softwrap visual line jump to line start
+      // original H is for jump to screen top, which is barely used
+      "before": ["H"],
+      "after": ["g", "^"]
+    },
+    {
+      // after paste, the cursor is at the end of paste content
+      "before": ["P"],
+      "after": ["g", "p"]
+    },
+    {
+      // find the next exact word under cursor
+      // original gf is for goto file, can be replaced with gd (goto definition)
+      "before": ["g", "w"],
+      "after": ["*"]
+    },
+    {
+      // find the next word under cursor
+      "before": ["g", "W"],
+      "after": ["g", "*"]
+    },
+    {
+      // softwrap visual line jump to line middle
+      // original M is for jump to screen middle, which is barely used
+      "before": ["M"],
+      "after": ["g", "m"]
+    },
+    {
+      // softwrap visual line jump to line end
+      // original L is for jump to screen low, which is barely used
+      "before": ["L"],
+      "after": ["g", "$"]
+    },
+    {
+      // camelCaseMotion
+      "before": ["w"],
+      "after": ["<leader>", "w"]
+    },
+    {
+      // camelCaseMotion
+      "before": ["b"],
+      "after": ["<leader>", "b"]
+    },
+    {
+      // use vscode native jump to bracket
+      "before": ["g", "o"],
+      "commands": ["editor.action.jumpToBracket"]
+    },
+    {
+      // jump out of current scop
+      "before": ["g", "O"],
+      "commands": ["editor.gotoParentFold"]
+    },
+    {
+      // jump to next siblings
+      // the original g. is looping through edit history, but the above gi does already cover it.
+      "before": ["g", "."],
+      "commands": ["editor.gotoNextFold"]
+    },
+    {
+      // jump to previous siblings
+      "before": ["g", ","],
+      "commands": ["editor.gotoPreviousFold"]
+    },
+    {
+      // use vscode native jump to bracket
+      "before": ["%"],
+      "commands": ["editor.action.jumpToBracket"]
+    },
+    {
+      // cursor undo
+      // original U is undo the entire line, which is rarely used and can be easily replaced by gU_
+      "before": ["U"],
+      "commands": ["cursorUndo"]
+    },
+    {
+      // goto next error
+      "before": ["g", "e"],
+      "commands": ["editor.action.marker.nextInFiles"]
+    },
+    {
+      // goto previous error
+      "before": ["g", "E"],
+      "commands": ["editor.action.marker.prevInFiles"]
+    },
+    {
+      // shortcuts for easymotion
+      "after": ["<leader>", "<leader>", "s"],
+      "before": ["f"]
+    },
+    {
+      "before": ["<leader>", "e"],
+      "commands": ["editor.action.rename"]
+    },
+    {
+      "before": ["<leader>", "E"],
+      "commands": ["editor.action.refactor"]
+    },
+    // {
+    //   "before": ["<space>", "r"],
+    //   "commands": ["editor.action.goToReferences"]
+    // },
+    // {
+    //   "before": ["<space>", "<space>"],
+    //   "commands": ["workbench.action.openView"]
+    // },
+    {
+      "before": ["<c-w>", ","],
+      "commands": ["workbench.action.copyEditorToNewWindow"]
+    },
+    {
+      "before": ["<c-w>", "."],
+      "commands": ["workbench.action.moveEditorToNewWindow"]
+    },
+    {
+      "before": ["<c-w>", "/"],
+      "commands": ["workbench.action.toggleEditorGroupLayout"]
+    },
+    {
+      "before": ["<space>"],
+      "commands": ["vspacecode.space"]
+    },
+    {
+      "before": [","],
+      "commands": [
+        "vspacecode.space",
+        {
+          "args": "m",
+          "command": "whichkey.triggerKey"
+        }
+      ]
+    }
+  ]
+}

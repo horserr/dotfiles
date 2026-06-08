@@ -73,7 +73,7 @@
   "editor.tabSize": 2,
   "editor.unicodeHighlight.nonBasicASCII": false,
   "editor.wordBasedSuggestions": "matchingDocuments",
-  "editor.wordSeparators": "`~!@#$%^&*()-=+[{]}\\|;:'\",.<>/?，。；“’（）",
+  "editor.wordSeparators": "-`~!@#$%^&*()-=+[{]}\\|;:'\",.<>/?，。；“’（）【】《》",
   "editor.wordWrap": "bounded",
   "editor.wrappingStrategy": "simple",
   "extensions.allowOpenInModalEditor": true,

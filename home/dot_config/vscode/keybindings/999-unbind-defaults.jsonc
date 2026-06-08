@@ -54,44 +54,9 @@
     "key": "ctrl+shift+s"
   },
   {
-    "command": "-markdown-preview-enhanced.runAllCodeChunks",
-    "key": "ctrl+shift+enter",
-    "when": "editorLangId == 'markdown'"
-  },
-  {
-    "command": "-markdown-preview-enhanced.runCodeChunk",
-    "key": "shift+enter",
-    "when": "editorLangId == 'markdown'"
-  },
-  {
-    "command": "-extension.vim_ctrl+b",
-    "key": "ctrl+b",
-    "when": "editorTextFocus && vim.active && vim.use<C-b> && !inDebugRepl && vim.mode != 'Insert'"
-  },
-  {
     "command": "-markdown.extension.editing.toggleBold",
     "key": "ctrl+b",
     "when": "editorTextFocus && !editorReadonly && editorLangId =~ /^markdown$|^rmd$|^quarto$/"
-  },
-  {
-    "command": "-extension.vim_ctrl+e",
-    "key": "ctrl+e",
-    "when": "editorTextFocus && vim.active && vim.use<C-e> && !inDebugRepl"
-  },
-  {
-    "command": "-extension.vim_ctrl+j",
-    "key": "ctrl+j",
-    "when": "editorTextFocus && vim.active && vim.use<C-j> && !inDebugRepl"
-  },
-  {
-    "command": "-extension.vim_ctrl+h",
-    "key": "ctrl+h",
-    "when": "editorTextFocus && vim.active && vim.use<C-h> && !inDebugRepl"
-  },
-  {
-    "command": "-extension.vim_ctrl+d",
-    "key": "ctrl+d",
-    "when": "editorTextFocus && vim.active && vim.use<C-d> && !inDebugRepl"
   },
   {
     "command": "-editor.action.goToDeclaration",
@@ -464,5 +429,15 @@
   {
     "command": "-workbench.action.lastEditorInGroup",
     "key": "alt+0"
+  },
+  {
+    "command": "-editor.action.addSelectionToNextFindMatch",
+    "key": "ctrl+d",
+    "when": "editorFocus"
+  },
+  {
+    "command": "-notebook.addFindMatchToSelection",
+    "key": "ctrl+d",
+    "when": "config.notebook.multiCursor.enabled && notebookCellEditorFocused && activeEditor == 'workbench.editor.notebook'"
   }
 ]

@@ -1,27 +1,88 @@
 [
   {
-    "key": "shift+n",
-    "command": "explorer.newFile",
-    "when": "explorerViewletVisible && filesExplorerFocus && !inputFocus"
-  },
-  {
-    "key": "shift+d",
-    "command": "deleteFile",
-    "when": "explorerViewletVisible && filesExplorerFocus && !inputFocus"
-  },
-  {
-    "key": "shift+e",
-    "command": "renameFile",
-    "when": "explorerViewletVisible && filesExplorerFocus && !inputFocus"
-  },
-  {
-    "key": "shift+r",
-    "command": "revealFileInOS",
+    // folder filter
+    "key": "f",
+    "command": "list.find",
     "when": "filesExplorerFocus && !inputFocus"
   },
   {
+    // toggle filter
     "key": "shift+f",
-    "command": "list.find",
+    "command": "list.toggleFilterOnType",
+    "when": "filesExplorerFocus && inputFocus"
+  },
+  {
+    // open global search
+    "key": "S",
+    // "command": "list.find",
+    "command": "filesExplorer.findInWorkspace",
+    "when": "filesExplorerFocus && !inputFocus"
+  },
+  {
+    // folder search
+    "key": "s",
+    // "command": "list.find",
+    "command": "filesExplorer.findInFolder",
+    "when": "explorerResourceIsFolder && filesExplorerFocus && foldersViewVisible && !inputFocus"
+  },
+  {
+    // new file or folder
+    "key": "a",
+    "command": "explorer.newFile",
+    "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+  },
+  {
+    // delete file
+    "key": "d",
+    "command": "deleteFile",
+    "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+  },
+  {
+    // rename file
+    "key": "r",
+    "command": "renameFile",
+    "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+  },
+  {
+    // cut files
+    "key": "x",
+    "command": "filesExplorer.cut",
+    "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+  },
+  {
+    // show in native file explorer
+    "key": "shift+r",
+    "command": "revealFileInOS",
+    "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+  },
+  {
+    // copy file
+    "key": "y",
+    "command": "filesExplorer.copy",
+    "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !inputFocus"
+  },
+  {
+    // paste file
+    "key": "p",
+    "command": "filesExplorer.paste",
+    "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceReadonly && !inputFocus"
+  },
+  {
+    // select next
+    "key": "shift+j",
+    "command": "list.expandSelectionDown",
+    "when": "listFocus && listHasSelectionOrFocus && !inputFocus"
+  },
+  {
+    // select previous
+    "key": "shift+k",
+    "command": "list.expandSelectionUp",
+    "when": "listFocus && listHasSelectionOrFocus && !inputFocus"
+  },
+  {
+    // toggle selection
+    "key": "space",
+    "command": "list.toggleSelection",
     "when": "filesExplorerFocus && !inputFocus"
   }
 ]

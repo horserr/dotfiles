@@ -63,6 +63,7 @@
     //   ]
     // }
   },
+  "files.simpleDialog.enable": true,
   "remote-explorer.collapseRecentFolders": false,
   "remote-explorer.foldersSortOrder": "most recently used",
   "window.autoDetectColorScheme": true,
