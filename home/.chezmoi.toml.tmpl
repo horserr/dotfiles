@@ -27,3 +27,14 @@ sourceDir = "~/.config/.dotfiles"
     isDocker = {{ $isDocker }}
     isEphemeral = {{ or $isDocker $isCodeSpaces $isRemoteContainer }}
     isRemote = {{ or $isSSH $isMOSH $isCodeSpaces $isRemoteContainer }}
+
+[interpreters.ps1]
+    args = ["-NoProfile"]
+[cd]
+    command = """
+    {{- if lookPath "nu" -}}nu
+    {{- else if lookPath "fish" -}}fish
+    {{- else if lookPath "pwsh" -}}pwsh
+    {{- else if lookPath "powershell.exe" -}}powershell.exe
+    {{- end -}}
+    """
