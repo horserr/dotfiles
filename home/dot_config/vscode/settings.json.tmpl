@@ -1,0 +1,32 @@
+{{- $settingsDir := joinPath .chezmoi.sourceDir "dot_config/vscode/settings" -}}
+
+{{- $mergedDict := dict -}}
+{{- $fileContent := dict -}}
+{{- $cleanedContent := dict -}}
+
+{{- range (glob (joinPath $settingsDir "*.json*")) -}}
+  {{- /* file name */ -}}
+  {{- $fileName := base . -}}
+
+  {{- /* relative path */ -}}
+  {{- $relPath := trimPrefix (joinPath $.chezmoi.sourceDir "/") . -}}
+
+  {{- if hasSuffix "jsonc.tmpl" . -}}
+    {{- /* merge template */ -}}
+    {{- $fileContent = includeTemplate $relPath $ | fromJsonc -}}
+  {{- else if hasSuffix "jsonc" . -}}
+    {{- /* merge normal jsonc file */ -}}
+    {{- $fileContent = include . | fromJsonc -}}
+  {{- else -}}
+    {{- fail (printf "Unknown file type: %s" $fileName) -}}
+  {{- end -}}
+
+  {{- $cleanedContent = omit $fileContent "$schema" -}}
+  {{- $mergedDict = merge $mergedDict $cleanedContent -}}
+{{- end -}}
+
+{{- if eq (len $mergedDict) 0 -}}
+  {{- fail "Abort! The whole settings is empty." -}}
+{{- end -}}
+
+{{ $mergedDict | toPrettyJson "  " }}

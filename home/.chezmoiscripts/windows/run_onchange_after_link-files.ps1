@@ -100,6 +100,8 @@ function Ensure-Symlink {
 
 # ============================================================================
 
+$scoopPath = "$env:USERPROFILE\scoop"
+$scoopPersistPath = "$scoopPath\persist"
 $dotConfigPath = "$env:USERPROFILE\.config"
 $documentPath = [Environment]::GetFolderPath("MyDocuments")
 
@@ -136,9 +138,20 @@ $mappings = @{
   }
 
   # SumatraPDF
-  "$env:LOCALAPPDATA\SumatraPDF\SumatraPDF-settings.txt" = @{
+  "$scoopPersistPath\sumatrapdf\SumatraPDF-settings.txt" = @{
     target = "$dotConfigPath\sumatrapdf\settings.txt"
     desc   = "SumatraPDF Settings"
+  }
+
+  # VSCode Settings
+  "$env:APPDATA\Code\User\settings.json" = @{
+    target = "$dotConfigPath\vscode\settings.json"
+    desc   = "VSCode Settings"
+  }
+  # VSCode Keybindings
+  "$env:APPDATA\Code\User\keybindings.json" = @{
+    target = "$dotConfigPath\vscode\keybindings.json"
+    desc   = "VSCode Keybindings"
   }
 }
 
