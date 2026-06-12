@@ -113,8 +113,6 @@
 	spro = describe --tags --always
 	# show tag: followed by standard shell regex
 	stag = tag -l
-	# show conflict files
-	sconflict = diff --name-only --diff-filter=U
 	# show base
 	sbase  = "!f() { git show --color :1:$1; }; f"
 	# show ours
@@ -206,6 +204,33 @@
 	# all files, including ignored files, such as those files in dist/ node_modules. not recommend to use
 	kkk = stash --all
 
+  # filter
+	# show conflict files
+	f = diff --name-only --diff-filter
+	# filter then interactive add
+	# output the filter list into vim
+	# then edit list and pass it to git add
+	# use :cq to quit vim when things go wrong
+	fi = "!f(){ \
+		git diff --name-only --diff-filter=\"$1\" > /tmp/git-add-list && \
+		vim /tmp/git-add-list && \
+		git add --pathspec-from-file=/tmp/git-add-list; \
+		rm -f /tmp/git-add-list; \
+	}; f \"$1\""
+	# filter modified
+	ffm = diff --name-only --diff-filter=M
+	# filter conflict
+	ffc = diff --name-only --diff-filter=U
+	# filter untracked
+  ffu = ls-files --others --exclude-standard
+	# filter ignored
+	ffignore = check-ignore
+	# filter those files should be ignored but tracked
+	# can be then passed to git restore --cached or filter-repo
+	ffwrong = ls-files --ignored --cached --exclude-standard
+	# use deduplicate to remove conflict files with same name but different numbering, such as 1 2 3
+	ffconflict = ls-file --unmerged --deduplicate
+
 	m = merge -Xignore-space-change
 	# use ours
 	mours = merge -Xours
@@ -274,8 +299,6 @@
 	lstree = ls-tree -r -t -l --abbrev # --name-only
 	# list Index
 	lsfile = ls-files
-	lsignore = ls-files --others --ignored
-	lsconflict = ls-file --unmerged # -u
 	mergefile = merge-file -p # ours common theirs
 
 	# root = "!cd $(git rev-parse --show-toplevel)"
