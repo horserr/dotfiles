@@ -129,6 +129,8 @@
 	sbmerge = branch --merged
 
 	a = add --update
+	# update those files that already staged
+	as = "!git diff --name-only --cached | git add --pathspec-from-file=-"
   au = add --intent-to-add .
 	aa = add .
 	aaa = add --all
@@ -194,11 +196,14 @@
 
   # k for keep, the sysnonym of stash
 	k = stash
+	# only keep staged files
+	ks = stash --staged
+	# create a new branch from stash
 	kb = stash branch
-	# keep index
+	# keep index, equivalent to stash(all untracked files, including staged files) and leave staged files in staged
 	ki = stash --keep-index
 	kk = stash --include-untracked # shortfor -u
-	# all files, including ignored files
+	# all files, including ignored files, such as those files in dist/ node_modules. not recommend to use
 	kkk = stash --all
 
 	m = merge -Xignore-space-change
