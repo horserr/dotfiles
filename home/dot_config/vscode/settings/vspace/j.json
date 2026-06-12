@@ -1,0 +1,96 @@
+[
+  {
+    "key": "j",
+    "name": "+Jump/Join/Split",
+    "icon": "gather",
+    "type": "bindings",
+    "bindings": [
+      {
+        "key": "+",
+        "name": "Format buffer",
+        "icon": "file",
+        "type": "command",
+        "command": "editor.action.formatDocument"
+      },
+      {
+        "key": "=",
+        "name": "Format region or buffer",
+        "icon": "list-flat",
+        "type": "command",
+        "command": "editor.action.format"
+      },
+      {
+        "key": "c",
+        "name": "Jump to previous change",
+        "icon": "arrow-up",
+        "type": "command",
+        "command": "workbench.action.editor.previousChange"
+      },
+      {
+        "key": "i",
+        "name": "Jump to symbol in buffer",
+        "icon": "symbol-class",
+        "type": "command",
+        "command": "workbench.action.gotoSymbol"
+      },
+      {
+        "key": "j",
+        "name": "Jump to character",
+        "icon": "case-sensitive",
+        "type": "command",
+        "command": "vim.remap",
+        "args": {
+          "after": ["leader", "leader", "s"]
+        }
+      },
+      {
+        "key": "l",
+        "name": "Jump to line",
+        "icon": "list-flat",
+        "type": "command",
+        "command": "vim.remap",
+        "args": {
+          "after": ["leader", "leader", "leader", "b", "d", "j", "k"]
+        }
+      },
+      {
+        "key": "n",
+        "name": "Split new line",
+        "icon": "whitespace",
+        "type": "command",
+        "command": "lineBreakInsert"
+      },
+      {
+        "key": "v",
+        "name": "Jump to outline/variables",
+        "icon": "variable",
+        "type": "command",
+        "command": "breadcrumbs.focusAndSelect"
+      },
+      {
+        "key": "w",
+        "name": "Jump to word",
+        "icon": "symbol-keyword",
+        "type": "command",
+        "command": "vim.remap",
+        "args": {
+          "after": ["leader", "leader", "leader", "b", "d", "w"]
+        }
+      },
+      {
+        "key": "C",
+        "name": "Jump to next change",
+        "icon": "arrow-down",
+        "type": "command",
+        "command": "workbench.action.editor.nextChange"
+      },
+      {
+        "key": "I",
+        "name": "Jump to symbol in project",
+        "icon": "project",
+        "type": "command",
+        "command": "workbench.action.showAllSymbols"
+      }
+    ]
+  }
+]

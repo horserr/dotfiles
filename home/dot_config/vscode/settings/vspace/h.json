@@ -1,0 +1,45 @@
+[
+  {
+    "key": "h",
+    "name": "+Help",
+    "icon": "question",
+    "type": "bindings",
+    "bindings": [
+      {
+        "key": "d",
+        "name": "Open VSCode Documentation",
+        "icon": "book",
+        "type": "command",
+        "command": "workbench.action.openDocumentationUrl"
+      },
+      {
+        "key": "k",
+        "name": "Open global key bindings",
+        "icon": "keyboard",
+        "type": "command",
+        "command": "workbench.action.openGlobalKeybindings"
+      },
+      {
+        "key": "D",
+        "name": "Open VSpaceCode Documentation",
+        "icon": "book",
+        "type": "command",
+        "command": "vspacecode.openDocumentationUrl"
+      },
+      {
+        "key": "I",
+        "name": "Report VSCode Issue",
+        "icon": "issues",
+        "type": "command",
+        "command": "workbench.action.openIssueReporter"
+      },
+      {
+        "key": "T",
+        "name": "Open VSCode Tutorial",
+        "icon": "lightbulb",
+        "type": "command",
+        "command": "workbench.action.showInteractivePlayground"
+      }
+    ]
+  }
+]

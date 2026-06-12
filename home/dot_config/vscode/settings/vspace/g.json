@@ -1,0 +1,81 @@
+[
+  {
+    "key": "g",
+    "name": "+Git",
+    "icon": "git-branch",
+    "type": "bindings",
+    "bindings": [
+      {
+        "key": "b",
+        "name": "Blame file",
+        "icon": "file",
+        "type": "command",
+        "command": "magit.blame-file"
+      },
+      {
+        "key": "c",
+        "name": "Clone",
+        "icon": "repo-clone",
+        "type": "command",
+        "command": "git.clone"
+      },
+      {
+        "key": "i",
+        "name": "Initialize repository",
+        "icon": "repo-create",
+        "type": "command",
+        "command": "git.init"
+      },
+      {
+        "key": "m",
+        "name": "Magit dispatch",
+        "icon": "repo",
+        "type": "command",
+        "command": "magit.dispatch"
+      },
+      {
+        "key": "s",
+        "name": "Status",
+        "icon": "preview",
+        "type": "command",
+        "command": "magit.status"
+      },
+      {
+        "key": "S",
+        "name": "Stage file",
+        "icon": "file-add",
+        "type": "command",
+        "command": "magit.stage-file"
+      },
+      {
+        "key": "U",
+        "name": "Unstage file",
+        "icon": "file",
+        "type": "command",
+        "command": "magit.unstage-file"
+      },
+      {
+        "key": "f",
+        "name": "+File",
+        "icon": "file",
+        "type": "bindings",
+        "bindings": [
+          {
+            "key": "d",
+            "name": "Diff",
+            "icon": "diff",
+            "type": "command",
+            "command": "magit.diff-file"
+          },
+          {
+            "key": "l",
+            "name": "Show log/timeline",
+            "icon": "history",
+            "type": "command",
+            "command": "timeline.focus"
+          }
+        ]
+      }
+    ]
+  }
+]

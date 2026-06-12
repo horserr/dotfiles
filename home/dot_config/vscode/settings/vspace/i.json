@@ -1,0 +1,31 @@
+[
+  {
+    "key": "i",
+    "name": "+Insert",
+    "icon": "add",
+    "type": "bindings",
+    "bindings": [
+      {
+        "key": "j",
+        "name": "Insert line below",
+        "icon": "arrow-down",
+        "type": "command",
+        "command": "editor.action.insertLineAfter"
+      },
+      {
+        "key": "k",
+        "name": "Insert line above",
+        "icon": "arrow-up",
+        "type": "command",
+        "command": "editor.action.insertLineBefore"
+      },
+      {
+        "key": "s",
+        "name": "Insert snippet",
+        "icon": "symbol-snippet",
+        "type": "command",
+        "command": "editor.action.insertSnippet"
+      }
+    ]
+  }
+]

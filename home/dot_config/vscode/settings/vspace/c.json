@@ -1,0 +1,38 @@
+[
+  {
+    "key": "c",
+    "name": "+Compile/Comments",
+    "icon": "gear",
+    "type": "bindings",
+    "bindings": [
+      {
+        "key": "l",
+        "name": "Toggle line comment",
+        "icon": "comment",
+        "type": "command",
+        "command": "editor.action.commentLine"
+      },
+      {
+        "key": "n",
+        "name": "Next error",
+        "icon": "arrow-down",
+        "type": "command",
+        "command": "editor.action.marker.nextInFiles"
+      },
+      {
+        "key": "c",
+        "name": "Compile project",
+        "icon": "gear",
+        "type": "command",
+        "command": "workbench.action.tasks.build"
+      },
+      {
+        "key": "N",
+        "name": "Previous error",
+        "icon": "arrow-up",
+        "type": "command",
+        "command": "editor.action.marker.prevInFiles"
+      }
+    ]
+  }
+]

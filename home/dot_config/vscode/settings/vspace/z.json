@@ -1,0 +1,210 @@
+[
+  {
+    "key": "z",
+    "name": "+Zoom/Fold",
+    "icon": "zoom-in",
+    "type": "bindings",
+    "bindings": [
+      {
+        "key": "f",
+        "name": "+Frame",
+        "icon": "window",
+        "type": "transient",
+        "bindings": [
+          {
+            "key": "+",
+            "name": "Zoom in",
+            "icon": "zoom-in",
+            "type": "command",
+            "command": "workbench.action.zoomIn"
+          },
+          {
+            "key": "-",
+            "name": "Zoom out",
+            "icon": "zoom-out",
+            "type": "command",
+            "command": "workbench.action.zoomOut"
+          },
+          {
+            "key": "0",
+            "name": "Reset zoom",
+            "icon": "search",
+            "type": "command",
+            "command": "workbench.action.zoomReset"
+          },
+          {
+            "key": "=",
+            "name": "Zoom in",
+            "icon": "zoom-in",
+            "type": "command",
+            "command": "workbench.action.zoomIn"
+          },
+          {
+            "key": "k",
+            "name": "Zoom in",
+            "icon": "zoom-in",
+            "type": "command",
+            "command": "workbench.action.zoomIn"
+          },
+          {
+            "key": "j",
+            "name": "Zoom out",
+            "icon": "zoom-out",
+            "type": "command",
+            "command": "workbench.action.zoomOut"
+          }
+        ]
+      },
+      {
+        "key": "i",
+        "name": "+Image preview",
+        "icon": "eye",
+        "type": "transient",
+        "bindings": [
+          {
+            "key": "+",
+            "name": "Zoom in",
+            "icon": "zoom-in",
+            "type": "command",
+            "command": "imagePreview.zoomIn"
+          },
+          {
+            "key": "-",
+            "name": "Zoom out",
+            "icon": "zoom-out",
+            "type": "command",
+            "command": "imagePreview.zoomOut"
+          },
+          {
+            "key": "=",
+            "name": "Zoom in",
+            "icon": "zoom-in",
+            "type": "command",
+            "command": "imagePreview.zoomIn"
+          }
+        ]
+      },
+      {
+        "key": "x",
+        "name": "+Font",
+        "icon": "case-sensitive",
+        "type": "transient",
+        "bindings": [
+          {
+            "key": "+",
+            "name": "Zoom in",
+            "icon": "zoom-in",
+            "type": "command",
+            "command": "editor.action.fontZoomIn"
+          },
+          {
+            "key": "-",
+            "name": "Zoom out",
+            "icon": "zoom-out",
+            "type": "command",
+            "command": "editor.action.fontZoomOut"
+          },
+          {
+            "key": "0",
+            "name": "Reset zoom",
+            "icon": "search",
+            "type": "command",
+            "command": "editor.action.fontZoomReset"
+          },
+          {
+            "key": "=",
+            "name": "Zoom in",
+            "icon": "zoom-in",
+            "type": "command",
+            "command": "editor.action.fontZoomIn"
+          },
+          {
+            "key": "j",
+            "name": "Zoom out",
+            "icon": "zoom-out",
+            "type": "command",
+            "command": "editor.action.fontZoomOut"
+          },
+          {
+            "key": "k",
+            "name": "Zoom in",
+            "icon": "zoom-in",
+            "type": "command",
+            "command": "editor.action.fontZoomIn"
+          }
+        ]
+      },
+      {
+        "key": ".",
+        "name": "+Fold",
+        "icon": "fold",
+        "type": "bindings",
+        "bindings": [
+          {
+            "key": "a",
+            "name": "Toggle: around a point",
+            "icon": "selection",
+            "type": "command",
+            "command": "editor.toggleFold"
+          },
+          {
+            "key": "b",
+            "name": "Close: all block comments",
+            "icon": "fold",
+            "type": "command",
+            "command": "editor.foldAllBlockComments"
+          },
+          {
+            "key": "c",
+            "name": "Close: at a point",
+            "icon": "fold",
+            "type": "command",
+            "command": "editor.fold"
+          },
+          {
+            "key": "g",
+            "name": "Close: all regions",
+            "icon": "fold",
+            "type": "command",
+            "command": "editor.foldAllMarkerRegions"
+          },
+          {
+            "key": "m",
+            "name": "Close: all",
+            "icon": "fold",
+            "type": "command",
+            "command": "editor.foldAll"
+          },
+          {
+            "key": "o",
+            "name": "Open: at a point",
+            "icon": "unfold",
+            "type": "command",
+            "command": "editor.unfold"
+          },
+          {
+            "key": "r",
+            "name": "Open: all",
+            "icon": "unfold",
+            "type": "command",
+            "command": "editor.unfoldAll"
+          },
+          {
+            "key": "G",
+            "name": "Open: all regions",
+            "icon": "unfold",
+            "type": "command",
+            "command": "editor.unfoldAllMarkerRegions"
+          },
+          {
+            "key": "O",
+            "name": "Open: recursively",
+            "icon": "unfold",
+            "type": "command",
+            "command": "editor.unfoldRecursively"
+          }
+        ]
+      }
+    ]
+  }
+]

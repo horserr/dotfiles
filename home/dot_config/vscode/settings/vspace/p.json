@@ -1,0 +1,59 @@
+[
+  {
+    "key": "p",
+    "name": "+Project",
+    "icon": "project",
+    "type": "bindings",
+    "bindings": [
+      {
+        "key": "c",
+        "name": "Compile project",
+        "icon": "gear",
+        "type": "command",
+        "command": "workbench.action.tasks.build"
+      },
+      {
+        "key": "f",
+        "name": "+Find file in project",
+        "icon": "file",
+        "type": "command",
+        "command": "workbench.action.quickOpen"
+      },
+      {
+        "key": "l",
+        "name": "+Switch project",
+        "icon": "project",
+        "type": "command",
+        "command": "workbench.action.openRecent"
+      },
+      {
+        "key": "p",
+        "name": "+Switch project",
+        "icon": "project",
+        "type": "command",
+        "command": "workbench.action.openRecent"
+      },
+      {
+        "key": "t",
+        "name": "Show tree/explorer view",
+        "icon": "list-tree",
+        "type": "command",
+        "command": "workbench.view.explorer"
+      },
+      {
+        "key": "R",
+        "name": "+Replace in files",
+        "icon": "find-replace",
+        "type": "command",
+        "command": "workbench.action.replaceInFiles"
+      },
+      {
+        "key": "T",
+        "name": "Test project",
+        "icon": "beaker",
+        "type": "command",
+        "command": "workbench.action.tasks.test"
+      }
+    ]
+  }
+]
