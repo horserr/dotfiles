@@ -1,0 +1,11 @@
+{
+  "$schema": "vscode://schemas/settings/user",
+
+  {{- $vspaceBindings := joinPath .chezmoi.sourceDir "dot_config/vscode/settings/vspace" -}}
+  {{- $mergedList := list -}}
+  {{- range (glob (joinPath $vspaceBindings "*.jsonc")) -}}
+    {{- $fileContent := include . | fromJsonc -}}
+    {{- $mergedList = concat $mergedList $fileContent -}}
+  {{- end -}}
+  "vspacecode.bindings": {{ $mergedList | toPrettyJson "\t" }}
+}
