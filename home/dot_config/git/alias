@@ -57,7 +57,7 @@
 		C_YLW=$(tput setaf 3); \
 		C_B=$(tput bold); \
 		C_RST=$(tput sgr0); \
-		git status -s -b \
+		git status -s -b --porcelain \
 		| awk -v r=\"$C_RED\" -v g=\"$C_GRN\" -v y=\"$C_YLW\" -v b=\"$C_B\" -v rst=\"$C_RST\" '{ \
 			if (/^##/) { \
 				match($0, /^## [^.]+/); \
