@@ -1,40 +1,16 @@
 [
   {
     "key": "v",
-    "name": "Smart select/expand region",
-    "icon": "selection",
-    "type": "transient",
-    "command": "editor.action.smartSelect.grow",
-    "bindings": [
-      {
-        "key": "v",
-        "name": "Grow selection",
-        "icon": "add",
-        "type": "command",
-        "command": "editor.action.smartSelect.grow"
-      },
-      {
-        "key": "V",
-        "name": "Shrink selection",
-        "icon": "remove",
-        "type": "command",
-        "command": "editor.action.smartSelect.shrink"
-      }
-    ]
-  },
-
-  {
-    "key": "S",
-    "name": "+Show",
+    "name": "+view",
     "icon": "info",
     "type": "bindings",
     "bindings": [
       {
-        "key": "d",
-        "name": "Show debug console",
-        "icon": "debug-console",
+        "key": "v",
+        "name": "view",
+        "icon": "unfold",
         "type": "command",
-        "command": "workbench.debug.action.toggleRepl"
+        "command": "workbench.action.openView"
       },
       {
         "key": "e",
@@ -42,6 +18,34 @@
         "icon": "list-tree",
         "type": "command",
         "command": "workbench.view.explorer"
+      },
+      {
+        "key": "j",
+        "name": "Show terminal",
+        "icon": "terminal",
+        "type": "command",
+        "command": "workbench.action.terminal.focus"
+      },
+      {
+        "key": "J",
+        "name": "Open new external terminal",
+        "icon": "chevron-right",
+        "type": "command",
+        "command": "workbench.action.terminal.openNativeConsole"
+      },
+      {
+        "key": "$",
+        "name": "Run Recent Command in Terminal",
+        "icon": "terminal",
+        "type": "command",
+        "command": "workbench.action.terminal.runRecentCommand"
+      },
+      {
+        "key": "d",
+        "name": "Show debug console",
+        "icon": "debug-console",
+        "type": "command",
+        "command": "workbench.debug.action.toggleRepl"
       },
       {
         "key": "g",
@@ -98,6 +102,17 @@
         "icon": "extensions",
         "type": "command",
         "command": "workbench.view.extensions"
+      },
+      {
+        "key": "q",
+        "name": "close all panels",
+        "icon": "files",
+        "type": "commands",
+        "commands": [
+          "workbench.action.closeSidebar",
+          "workbench.action.closePanel",
+          "workbench.action.closeAuxiliaryBar"
+        ]
       }
     ]
   }

@@ -1,33 +1,33 @@
 [
   {
     "key": "j",
-    "name": "+Jump/Join/Split",
+    "name": "+Jump/Join",
     "icon": "gather",
     "type": "bindings",
     "bindings": [
       {
-        "key": "+",
-        "name": "Format buffer",
-        "icon": "file",
+        "key": "r",
+        "name": "+Open recent folders/files",
+        "icon": "clock",
         "type": "command",
-        "command": "editor.action.formatDocument"
+        "command": "workbench.action.openRecent"
       },
       {
-        "key": "=",
-        "name": "Format region or buffer",
-        "icon": "list-flat",
+        "key": "e",
+        "name": "Next error",
+        "icon": "arrow-down",
         "type": "command",
-        "command": "editor.action.format"
+        "command": "editor.action.marker.nextInFiles"
       },
       {
-        "key": "c",
-        "name": "Jump to previous change",
+        "key": "E",
+        "name": "Previous error",
         "icon": "arrow-up",
         "type": "command",
-        "command": "workbench.action.editor.previousChange"
+        "command": "editor.action.marker.prevInFiles"
       },
       {
-        "key": "i",
+        "key": "s",
         "name": "Jump to symbol in buffer",
         "icon": "symbol-class",
         "type": "command",
@@ -76,13 +76,6 @@
         "args": {
           "after": ["leader", "leader", "leader", "b", "d", "w"]
         }
-      },
-      {
-        "key": "C",
-        "name": "Jump to next change",
-        "icon": "arrow-down",
-        "type": "command",
-        "command": "workbench.action.editor.nextChange"
       },
       {
         "key": "I",

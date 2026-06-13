@@ -1,0 +1,41 @@
+[
+  {
+    "key": " ",
+    "name": "Commands",
+    "icon": "rocket",
+    "type": "command",
+    "command": "workbench.action.showCommands"
+  },
+  {
+    "key": "\t",
+    "name": "Last buffer",
+    "icon": "go-to-file",
+    "type": "commands",
+    "commands": [
+      "workbench.action.quickOpenPreviousRecentlyUsedEditorInGroup",
+      "list.select"
+    ]
+  },
+  {
+    "key": "*",
+    "name": "focus editor",
+    "icon": "search",
+    "type": "command",
+    "command": "workbench.action.focusActiveEditorGroup"
+  },
+  {
+    "key": ".",
+    "name": "Repeat most recent action",
+    "icon": "redo",
+    "type": "command",
+    "command": "whichkey.repeatMostRecent",
+    "args": "vspacecode.bindings"
+  },
+  {
+    "key": "?",
+    "name": "Search keybindings",
+    "icon": "keyboard",
+    "type": "command",
+    "command": "whichkey.searchBindings"
+  }
+]

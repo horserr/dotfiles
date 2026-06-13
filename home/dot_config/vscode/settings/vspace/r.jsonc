@@ -1,8 +1,8 @@
 [
   {
-    "key": " ",
-    "name": "+Tasks",
-    "icon": "tasklist",
+    "key": "r",
+    "name": "Refactor/Run",
+    "icon": "clock",
     "type": "bindings",
     "bindings": [
       {

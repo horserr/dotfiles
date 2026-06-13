@@ -6,74 +6,18 @@
     "type": "bindings",
     "bindings": [
       {
-        "key": "0",
+        "key": " ",
+        "name": "Show all buffers in active window",
+        "icon": "files",
+        "type": "command",
+        "command": "workbench.action.showEditorsInActiveGroup"
+      },
+      {
+        "key": "\t",
         "name": "Last buffer in window",
         "icon": "arrow-both",
         "type": "command",
         "command": "workbench.action.lastEditorInGroup"
-      },
-      {
-        "key": "1",
-        "name": "First buffer in window",
-        "icon": "arrow-both",
-        "type": "command",
-        "command": "workbench.action.openEditorAtIndex1"
-      },
-      {
-        "key": "2",
-        "name": "2nd buffer in window",
-        "icon": "arrow-both",
-        "type": "command",
-        "command": "workbench.action.openEditorAtIndex2"
-      },
-      {
-        "key": "3",
-        "name": "3rd buffer in window",
-        "icon": "arrow-both",
-        "type": "command",
-        "command": "workbench.action.openEditorAtIndex3"
-      },
-      {
-        "key": "4",
-        "name": "4th buffer in window",
-        "icon": "arrow-both",
-        "type": "command",
-        "command": "workbench.action.openEditorAtIndex4"
-      },
-      {
-        "key": "5",
-        "name": "5th buffer in window",
-        "icon": "arrow-both",
-        "type": "command",
-        "command": "workbench.action.openEditorAtIndex5"
-      },
-      {
-        "key": "6",
-        "name": "6th buffer in window",
-        "icon": "arrow-both",
-        "type": "command",
-        "command": "workbench.action.openEditorAtIndex6"
-      },
-      {
-        "key": "7",
-        "name": "7th buffer in window",
-        "icon": "arrow-both",
-        "type": "command",
-        "command": "workbench.action.openEditorAtIndex7"
-      },
-      {
-        "key": "8",
-        "name": "8th buffer in window",
-        "icon": "arrow-both",
-        "type": "command",
-        "command": "workbench.action.openEditorAtIndex8"
-      },
-      {
-        "key": "9",
-        "name": "9th buffer in window",
-        "icon": "arrow-both",
-        "type": "command",
-        "command": "workbench.action.openEditorAtIndex9"
       },
       {
         "key": "b",
@@ -84,10 +28,39 @@
       },
       {
         "key": "d",
-        "name": "Close active buffer",
+        "name": "Close buffer",
         "icon": "x",
-        "type": "command",
-        "command": "workbench.action.closeActiveEditor"
+        "type": "bindings",
+        "bindings": [
+          {
+            "key": "d",
+            "name": "Close current active buffer",
+            "icon": "x",
+            "type": "command",
+            "command": "workbench.action.closeActiveEditor"
+          },
+          {
+            "key": " ",
+            "name": "Close other buffers",
+            "icon": "close-all",
+            "type": "command",
+            "command": "workbench.action.closeOtherEditors"
+          }
+          ,{
+            "key": "h",
+            "name": "Close left buffers",
+            "icon": "close-all",
+            "type": "command",
+            "command": "workbench.action.closeEditorsToTheLeft"
+          },
+          {
+            "key": "l",
+            "name": "Close right buffers",
+            "icon": "close-all",
+            "type": "command",
+            "command": "workbench.action.closeEditorsToTheRight"
+          }
+        ]
       },
       {
         "key": "h",
@@ -140,10 +113,17 @@
       },
       {
         "key": "t",
-        "name": "Pin buffer",
+        "name": "toggle Pin buffer",
         "icon": "pin",
         "type": "command",
         "command": "workbench.action.pinEditor"
+      },
+      {
+        "key": "T",
+        "name": "unpin editor",
+        "icon": "pin",
+        "type": "command",
+        "command": "workbench.action.unpinEditor"
       },
       {
         "key": "u",
@@ -151,13 +131,6 @@
         "icon": "history",
         "type": "command",
         "command": "workbench.action.reopenClosedEditor"
-      },
-      {
-        "key": "B",
-        "name": "Show all buffers in active window",
-        "icon": "files",
-        "type": "command",
-        "command": "workbench.action.showEditorsInActiveGroup"
       },
       {
         "key": "H",
@@ -188,13 +161,6 @@
         "command": "workbench.action.moveEditorToRightGroup"
       },
       {
-        "key": "M",
-        "name": "Close other buffers",
-        "icon": "close-all",
-        "type": "command",
-        "command": "workbench.action.closeOtherEditors"
-      },
-      {
         "key": "P",
         "name": "Paste clipboard to buffer",
         "icon": "clippy",
@@ -212,11 +178,11 @@
         "command": "workbench.action.files.revert"
       },
       {
-        "key": "T",
-        "name": "Unpin buffer",
-        "icon": "pinned",
+        "key": "r",
+        "name": "Toggle current buffer read only",
+        "icon": "case-sensitive",
         "type": "command",
-        "command": "workbench.action.unpinEditor"
+        "command": "workbench.action.files.toggleActiveEditorReadonlyInSession"
       },
       {
         "key": "Y",

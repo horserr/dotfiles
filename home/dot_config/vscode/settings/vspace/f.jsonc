@@ -1,16 +1,16 @@
 [
   {
     "key": "f",
-    "name": "+File",
+    "name": "File",
     "icon": "file",
     "type": "bindings",
     "bindings": [
       {
         "key": "f",
-        "name": "Open file/folder",
+        "name": "Quick open file/folder",
         "icon": "folder-opened",
         "type": "command",
-        "command": "file-browser.open"
+        "command": "workbench.action.quickOpen"
       },
       {
         "key": "l",
@@ -35,10 +35,10 @@
       },
       {
         "key": "r",
-        "name": "+Open recent",
-        "icon": "clock",
+        "name": "Recent buffers",
+        "icon": "versions",
         "type": "command",
-        "command": "workbench.action.openRecent"
+        "command": "workbench.action.showAllEditorsByMostRecentlyUsed"
       },
       {
         "key": "s",

@@ -1,0 +1,45 @@
+[
+  {
+    "key": "c",
+    "name": "+Diff/Compare",
+    "icon": "diff",
+    "type": "bindings",
+    "bindings": [
+      {
+        "key": "c",
+        "name": "Compare active file with clipboard",
+        "icon": "clippy",
+        "type": "command",
+        "command": "workbench.files.action.compareWithClipboard"
+      },
+      {
+        "key": "m",
+        "name": "Compare current merge conflict",
+        "icon": "git-merge",
+        "type": "command",
+        "command": "merge-conflict.compare"
+      },
+      {
+        "key": "s",
+        "name": "Compare active file with saved",
+        "icon": "save-as",
+        "type": "command",
+        "command": "workbench.files.action.compareWithSaved"
+      },
+      {
+        "key": "w",
+        "name": "Toggle ignore trim whitespace",
+        "icon": "whitespace",
+        "type": "command",
+        "command": "toggle.diff.ignoreTrimWhitespace"
+      },
+      {
+        "key": "D",
+        "name": "+Compare active file with",
+        "icon": "diff",
+        "type": "command",
+        "command": "workbench.files.action.compareFileWith"
+      }
+    ]
+  }
+]

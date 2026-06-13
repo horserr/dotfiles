@@ -1,10 +1,33 @@
 [
   {
     "key": "e",
-    "name": "+Errors",
+    "name": "+Edit",
     "icon": "error",
     "type": "bindings",
     "bindings": [
+      {
+        "key": "v",
+        "name": "Smart select/expand region",
+        "icon": "selection",
+        "type": "transient",
+        "command": "editor.action.smartSelect.grow",
+        "bindings": [
+          {
+            "key": "v",
+            "name": "Grow selection",
+            "icon": "add",
+            "type": "command",
+            "command": "editor.action.smartSelect.grow"
+          },
+          {
+            "key": "V",
+            "name": "Shrink selection",
+            "icon": "remove",
+            "type": "command",
+            "command": "editor.action.smartSelect.shrink"
+          }
+        ]
+      },
       {
         "key": ".",
         "name": "Error transient",

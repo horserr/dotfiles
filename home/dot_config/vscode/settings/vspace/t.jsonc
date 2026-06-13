@@ -1,0 +1,155 @@
+[
+  {
+    "key": "t",
+    "name": "+Toggles",
+    "icon": "settings",
+    "type": "bindings",
+    "bindings": [
+      {
+        "key": "'",
+        "name": "Toggle editor group layout",
+        "icon": "tools",
+        "type": "command",
+        "command": "workbench.action.toggleEditorGroupLayout"
+      },
+      {
+        "key": "l",
+        "name": "Toggle word wrap",
+        "icon": "word-wrap",
+        "type": "command",
+        "command": "editor.action.toggleWordWrap"
+      },
+      {
+        "key": "c",
+        "name": "Toggle centered layout",
+        "icon": "list-flat",
+        "type": "command",
+        "command": "workbench.action.toggleCenteredLayout"
+      },
+      {
+        "key": "B",
+        "name": "Toggle breadcrumbs",
+        "icon": "tools",
+        "type": "command",
+        "command": "breadcrumbs.toggle"
+      },
+      {
+        "key": "S",
+        "name": "Toggle stickyscrool",
+        "icon": "tools",
+        "type": "commands",
+        "commands": [
+          "editor.action.toggleStickyScroll",
+          "notebook.action.toggleNotebookStickyScroll"
+        ]
+      },
+      {
+        "key": "m",
+        "name": "Toggle maximized panel",
+        "icon": "chevron-up",
+        "type": "command",
+        "command": "workbench.action.toggleMaximizedPanel"
+      },
+      {
+        "key": "z",
+        "name": "Toggle zen mode",
+        "icon": "eye",
+        "type": "command",
+        "command": "workbench.action.toggleZenMode"
+      },
+      {
+        "key": "F",
+        "name": "Toggle full screen",
+        "icon": "screen-full",
+        "type": "command",
+        "command": "workbench.action.toggleFullScreen"
+      },
+      {
+        "key": "M",
+        "name": "Toggle minimap",
+        "icon": "symbol-ruler",
+        "type": "command",
+        "command": "editor.action.toggleMinimap"
+      },
+      {
+        "key": "b",
+        "name": "Toggle side bar visibility",
+        "icon": "split-horizontal",
+        "type": "command",
+        "command": "workbench.action.toggleSidebarVisibility"
+      },
+      {
+        "key": "j",
+        "name": "Toggle panel visibility",
+        "icon": "output",
+        "type": "command",
+        "command": "workbench.action.togglePanel"
+      },
+      {
+        "key": "a",
+        "name": "Toggle secondary bar visibility",
+        "icon": "output",
+        "type": "command",
+        "command": "workbench.action.toggleAuxiliaryBar"
+      },
+      {
+        "key": "T",
+        "name": "Toggle tab visibility",
+        "icon": "files",
+        "type": "conditional",
+        "bindings": [
+          {
+            "key": "",
+            "name": "Show editor tabs",
+            "type": "command",
+            "command": "workbench.action.showMultipleEditorTabs"
+          },
+          {
+            "key": "when:editorTabsVisible",
+            "name": "Hide editor tabs",
+            "type": "command",
+            "command": "workbench.action.hideEditorTabs"
+          }
+        ]
+      },
+      {
+        "key": "*",
+        "name": "misc",
+        "icon": "eye",
+        "type": "bindings",
+        "bindings": [
+          // workbench.action.toggleCommenting
+          // editor.action.toggleTabFocusMode
+          {
+            "key": "a",
+            "name": "Toggle tool/activity bar visibility",
+            "icon": "tools",
+            "type": "command",
+            "command": "workbench.action.toggleActivityBarVisibility"
+          },
+          {
+            "key": "g",
+            "name": "Toggle git blame editor decoration",
+            "icon": "whitespace",
+            "type": "command",
+            "command": "git.blame.toggleEditorDecoration"
+          },
+          {
+            "key": "w",
+            "name": "Toggle render whitespace",
+            "icon": "whitespace",
+            "type": "command",
+            "command": "editor.action.toggleRenderWhitespace"
+          },
+          {
+            "key": "c",
+            "name": "Toggle find case sensitive",
+            "icon": "case-sensitive",
+            "type": "command",
+            "command": "toggleFindCaseSensitive"
+          }
+        ]
+      }
+    ]
+  }
+]

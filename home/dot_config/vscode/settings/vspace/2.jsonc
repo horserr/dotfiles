@@ -1,0 +1,17 @@
+[
+  {
+    "key": "/",
+    "name": "+Integration",
+    "icon": "search",
+    "type": "bindings",
+    "bindings": [
+      {
+        "key": "y",
+        "name": "+Integration",
+        "icon": "search",
+        "type": "command",
+        "command": "yazi-vscode.toggle"
+      }
+    ]
+  }
+]
