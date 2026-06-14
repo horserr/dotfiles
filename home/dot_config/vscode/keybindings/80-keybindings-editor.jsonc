@@ -1,0 +1,87 @@
+[
+  // - keybindings.editor.clearSearchHistory
+  // - keybindings.editor.copyCommandKeybindingEntry
+  // - keybindings.editor.copyCommandTitle
+  // - keybindings.editor.resetKeybinding
+  {
+    "key": "alt+c",
+    "command": "keybindings.editor.showConflicts",
+    "when": "inKeybindings"
+  },
+  {
+    "key": "alt+u",
+    "command": "keybindings.editor.showUserKeybindings",
+    "when": "inKeybindings"
+  },
+  {
+    "key": "alt+s",
+    "command": "keybindings.editor.showDefaultKeybindings",
+    "when": "inKeybindings"
+  },
+  {
+    "key": "alt+x",
+    "command": "keybindings.editor.showExtensionKeybindings",
+    "when": "inKeybindings"
+  },
+  {
+    "key": "y",
+    "command": "keybindings.editor.copyKeybindingEntry",
+    "when": "inKeybindings && keybindingFocus && !whenFocus"
+  },
+  // Below are default keybindings
+  {
+    "key": "enter",
+    "command": "keybindings.editor.acceptWhenExpression",
+    "when": "inKeybindings && whenFocus && !suggestWidgetVisible"
+  },
+  {
+    "key": "ctrl+k ctrl+a",
+    "command": "keybindings.editor.addKeybinding",
+    "when": "inKeybindings && keybindingFocus"
+  },
+  {
+    "key": "escape",
+    "command": "keybindings.editor.clearSearchResults",
+    "when": "inKeybindings && inKeybindingsSearch && keybindingsSearchHasValue"
+  },
+  {
+    "key": "enter",
+    "command": "keybindings.editor.defineKeybinding",
+    "when": "inKeybindings && keybindingFocus && !whenFocus"
+  },
+  {
+    "key": "ctrl+k ctrl+e",
+    "command": "keybindings.editor.defineWhenExpression",
+    "when": "inKeybindings && keybindingFocus"
+  },
+  {
+    "key": "ctrl+down",
+    "command": "keybindings.editor.focusKeybindings",
+    "when": "inKeybindings && inKeybindingsSearch"
+  },
+  {
+    "key": "alt+k",
+    "command": "keybindings.editor.recordSearchKeys",
+    "when": "inKeybindings && inKeybindingsSearch"
+  },
+  {
+    "key": "escape",
+    "command": "keybindings.editor.rejectWhenExpression",
+    "when": "inKeybindings && whenFocus && !suggestWidgetVisible"
+  },
+  {
+    "key": "delete",
+    "command": "keybindings.editor.removeKeybinding",
+    "when": "inKeybindings && keybindingFocus && !inputFocus"
+  },
+  {
+    "key": "ctrl+f",
+    "command": "keybindings.editor.searchKeybindings",
+    "when": "inKeybindings"
+  },
+  {
+    "key": "alt+p",
+    "command": "keybindings.editor.toggleSortByPrecedence",
+    "when": "inKeybindings"
+  }
+]
