@@ -39,46 +39,78 @@
     "when": "activeEditorGroupEmpty && focusedView == '' && !whichkeyActive && !inputFocus"
   },
   {
-    // use shift+space in sidebar
+    // use shift+space in sidebar, regardless of whether input is focused or not
     "key": "shift+space",
     "command": "vspacecode.space",
-    "when": "sideBarFocus && !inputFocus && !whichkeyActive"
-  },
-  // fix inline chat
-  {
-    // remove origin vim escape function
-    "key": "escape",
-    "command": "-extension.vim_escape",
-    "when": "editorTextFocus && vim.active && !inDebugRepl"
+    "when": "!editorFocus && !whichkeyActive"
   },
   {
-    // add more precise conditions for escape, dealing with copilot suggestions
-    "key": "Escape",
-    "command": "extension.vim_escape",
-    "when": "editorTextFocus && vim.active && !inDebugRepl && !inlineSuggestionVisible && !inlineEditIsVisible && !testing.isPeekVisible && !testing.isInPeek && !suggestWidgetVisible && !findWidgetVisible && !dirtyDiffVisible && (vim.mode == 'Insert' || !notebookEditorFocused)"
+    "key": "`",
+    "command": "runCommands",
+    "args": {
+      "commands": [
+        "whichkey.show",
+        { "command": "whichkey.triggerKey", "args": "w" }
+      ]
+    },
+    "when": "!editorFocus && !inputFocus && !whichkeyActive"
   },
   {
-    // remove origin vim tab function
-    "key": "tab",
-    "command": "-extension.vim_tab",
-    "when": "editorTextFocus && vim.active && !inDebugRepl && vim.mode != 'Insert'"
+    // use shift+space in terminal
+    "key": "shift+space",
+    "command": "vspacecode.space",
+    "when": "terminalFocus"
   },
   {
-    // add more precise conditions for tab, dealing with copilot suggestions
-    "key": "tab",
-    "command": "extension.vim_tab",
-    "when": "editorTextFocus && vim.active && vim.mode != 'Insert' && !inDebugRepl && !inlineEditIsVisible"
+    "key": "ctrl+h",
+    "command": "workbench.action.navigateLeft",
+    "when": "!inQuickOpen && !suggestWidgetVisible && !parameterHintsVisible && !isInDiffEditor"
   },
   {
-    // remove origin markdown next cell
-    "key": "tab",
-    "command": "-markdowntable.nextCell",
-    "when": "editorTextFocus && markdowntable.contextkey.selection.InMarkdownTable && !editorReadonly && !editorTabMovesFocus && !inSnippetMode && !suggestWidgetMultipleSuggestions && !suggestWidgetVisible"
+    "key": "ctrl+j",
+    "command": "workbench.action.navigateDown",
+    "when": "!codeActionMenuVisible && !inQuickOpen && !suggestWidgetVisible && !parameterHintsVisible"
   },
   {
-    // support markdown next cell when vim is in insert mode
-    "key": "tab",
-    "command": "markdowntable.nextCell",
-    "when": "editorTextFocus && markdowntable.contextkey.selection.InMarkdownTable && !editorReadonly && !editorTabMovesFocus && !inSnippetMode && !suggestWidgetMultipleSuggestions && !suggestWidgetVisible && vim.mode == 'Insert'"
+    "key": "ctrl+k",
+    "command": "workbench.action.navigateUp",
+    "when": "!codeActionMenuVisible && !inQuickOpen && !suggestWidgetVisible && !parameterHintsVisible"
+  },
+  {
+    "key": "ctrl+l",
+    "command": "workbench.action.navigateRight",
+    "when": "!codeActionMenuVisible && !inQuickOpen && !suggestWidgetVisible && !parameterHintsVisible && !isInDiffEditor"
+  },
+  // Quick Navigation for diff view
+  {
+    "key": "ctrl+h",
+    "command": "workbench.action.compareEditor.focusSecondarySide",
+    "when": "isInDiffEditor && !isInDiffLeftEditor"
+  },
+  {
+    "key": "ctrl+h",
+    "command": "workbench.action.navigateLeft",
+    "when": "isInDiffEditor && isInDiffLeftEditor"
+  },
+  {
+    "key": "ctrl+l",
+    "command": "workbench.action.compareEditor.focusPrimarySide",
+    "when": "isInDiffEditor && isInDiffLeftEditor"
+  },
+  {
+    "key": "ctrl+l",
+    "command": "workbench.action.navigateRight",
+    "when": "isInDiffEditor && !isInDiffLeftEditor"
+  },
+  // quick open
+  {
+    "key": "ctrl+j",
+    "command": "workbench.action.quickOpenSelectNext",
+    "when": "inQuickOpen"
+  },
+  {
+    "key": "ctrl+k",
+    "command": "workbench.action.quickOpenSelectPrevious",
+    "when": "inQuickOpen"
   }
 ]
