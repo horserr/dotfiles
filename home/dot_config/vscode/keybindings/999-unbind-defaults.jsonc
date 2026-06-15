@@ -419,10 +419,6 @@
     "when": "hasAIResultProviderKey && searchViewletFocus"
   },
   {
-    "command": "workbench.action.files.newUntitledFile",
-    "key": "ctrl+k n"
-  },
-  {
     "command": "-workbench.action.showCommands",
     "key": "ctrl+shift+p"
   },
