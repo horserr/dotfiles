@@ -6,7 +6,7 @@
   {
     "key": "alt+c",
     "command": "keybindings.editor.showConflicts",
-    "when": "inKeybindings"
+    "when": "inKeybindings && keybindingFocus"
   },
   {
     "key": "alt+u",
@@ -28,16 +28,31 @@
     "command": "keybindings.editor.copyKeybindingEntry",
     "when": "inKeybindings && keybindingFocus && !whenFocus"
   },
+  {
+    "key": "e",
+    "command": "keybindings.editor.defineWhenExpression",
+    "when": "inKeybindings && keybindingFocus"
+  },
+  {
+    "key": "a",
+    "command": "keybindings.editor.addKeybinding",
+    "when": "inKeybindings && keybindingFocus"
+  },
+  {
+    "key": "d",
+    "command": "keybindings.editor.removeKeybinding",
+    "when": "inKeybindings && keybindingFocus && !inputFocus"
+  },
+  {
+    "key": "f",
+    "command": "keybindings.editor.searchKeybindings",
+    "when": "inKeybindings && !inputFocus"
+  },
   // Below are default keybindings
   {
     "key": "enter",
     "command": "keybindings.editor.acceptWhenExpression",
     "when": "inKeybindings && whenFocus && !suggestWidgetVisible"
-  },
-  {
-    "key": "ctrl+k ctrl+a",
-    "command": "keybindings.editor.addKeybinding",
-    "when": "inKeybindings && keybindingFocus"
   },
   {
     "key": "escape",
@@ -48,11 +63,6 @@
     "key": "enter",
     "command": "keybindings.editor.defineKeybinding",
     "when": "inKeybindings && keybindingFocus && !whenFocus"
-  },
-  {
-    "key": "ctrl+k ctrl+e",
-    "command": "keybindings.editor.defineWhenExpression",
-    "when": "inKeybindings && keybindingFocus"
   },
   {
     "key": "ctrl+down",
@@ -68,16 +78,6 @@
     "key": "escape",
     "command": "keybindings.editor.rejectWhenExpression",
     "when": "inKeybindings && whenFocus && !suggestWidgetVisible"
-  },
-  {
-    "key": "delete",
-    "command": "keybindings.editor.removeKeybinding",
-    "when": "inKeybindings && keybindingFocus && !inputFocus"
-  },
-  {
-    "key": "ctrl+f",
-    "command": "keybindings.editor.searchKeybindings",
-    "when": "inKeybindings"
   },
   {
     "key": "alt+p",
