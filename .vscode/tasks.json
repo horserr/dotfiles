@@ -19,7 +19,8 @@
       "command": "start mousemaster.exe",
       "detail": "temporarily test mouse master",
       "problemMatcher": [],
-      "options": { "cwd": "${env:USERPROFILE}/.config/mousemaster" }
+      "options": { "cwd": "${env:USERPROFILE}/.config/mousemaster" },
+      "dependsOn": ["apply"]
     },
     {
       "label": "update",
@@ -54,6 +55,13 @@
       "type": "shell",
       "command": "chezmoi apply",
       "detail": "apply dotfiles modifications",
+      "problemMatcher": []
+    },
+    {
+      "label": "apply without externals",
+      "type": "shell",
+      "command": "chezmoi apply --exclude=externals",
+      "detail": "apply dotfiles modifications without online check externals",
       "problemMatcher": []
     },
     {
@@ -119,7 +127,18 @@
       "shell": {
         "executable": "pwsh",
         "args": ["-NoProfile", "-c"]
+      },
+      "env": {
+        "http_proxy": "http://localhost:7897",
+        "https_proxy": "http://localhost:7897",
+        "HTTP_PROXY": "http://localhost:7897",
+        "HTTPS_PROXY": "http://localhost:7897"
       }
+    }
+  },
+  "options": {
+    "env": {
+      "GITHUB_ACCESS_TOKEN": "${env:GH_TOKEN}"
     }
   }
 }
