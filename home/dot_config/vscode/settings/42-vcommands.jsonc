@@ -1,74 +1,57 @@
 {
   "$schema": "vscode://schemas/settings/user",
-  "multiCommand.commands": [
-    {
-      "command": "multiCommand.closePanelAndSidebarAndOtherEditors",
-      "sequence": [
-        "workbench.action.closePanel",
-        "workbench.action.closeSidebar",
-        "workbench.action.closeEditorsInOtherGroups"
-      ]
+  // link: https://github.com/usernamehw/vscode-commands
+  // // Command object structure
+  // interface CommandObject {
+  //     command: string;// command id to execute
+  //     args?: unknown;// command arguments to execute
+  //     delay?: number;// delay (ms) BEFORE execution
+  //     repeat?: number;// run this command or sequence this number of times
+  //     icon?: string;// icon id https://code.visualstudio.com/api/references/icons-in-labels#icon-listing
+  //     iconColor?: string;// color id https://code.visualstudio.com/api/references/theme-color
+  //     markdownTooltip?: string;// add custom markdown text to hover tooltip
+  //     disableTooltip?: boolean;// do not show the hover tooltip for this Tree View Item
+  //     hidden?: boolean;// Do not show this in Tree View
+  //     inputs?: {...}[];// Objects for input variable substitution like https://code.visualstudio.com/docs/editor/variables-reference#_input-variables
+  //     activeEditorGlob?: string// only show Tree View item when active editor matches glob pattern
+  //     activeEditorLanguage?: string;// only show Tree View item when active editor language id matches
+
+  //     sequence?: (CommandObject | string)[];// execute multipe commands
+
+  //     nestedItems: {// Transform this into folder: Group items
+  //         [key: string]: CommandObject
+  //     }
+
+  //     // add command or folder to status bar
+  //     statusBar?: {
+  //         alignment: 'left' | 'right';// status bar alignment
+  //         text: string;// status bar item text
+  //         name?: string;// name of the item in status bar context menu
+  //         priority?: number;// item position (can also be a negative number)
+  //         tooltip?: string;// hover text
+  //         markdownTooltip?: string;// hover text (in markdown)
+  //         hidden?: boolean;// do not show this status bar item
+  //         color?: string;// color of status bar item text
+  //         backgroundColor?: 'error' | 'warning';// status bar item background color
+  //         activeEditorGlob?: string// only show status bar item when active editor matches glob pattern
+  //         activeEditorLanguage?: string;// only show status bar item when active editor language id matches
+  //         updateEvents?: {// update status bar text (substitute variables)
+  //             kind: 'onDidConfigurationChange' | 'onDidChangeActiveTextEditor' | 'onDidChangeTextEditorSelection' | 'interval';
+  //         }[];
+  //         replaceVariableValue?: Record<string, Record<string, string>>;// Process variable value and replace with with your own text for Status Bar https://github.com/usernamehw/vscode-commands/issues/50
+  //     };
+  // }
+  "commands.showKeybindings": true,
+
+  "commands.commands": {
+    "Quick Extensions View": {
+      "command": "workbench.extensions.search",
+      "args": "@builtin"
     },
-    {
-      "command": "multiCommand.copyAndCommentLines",
-      "sequence": [
-        "editor.action.clipboardCopyAction",
-        "editor.action.commentLine"
-      ]
-    },
-    {
-      "command": "multiCommand.copyRelativePathAndPrintIt",
-      "sequence": ["copy-relative-path-and-line-numbers.path-only", "execPaste"]
-    },
-    {
-      "command": "multiCommand.copyRelativePathAndSelectedLinesAndPrintIt",
-      "sequence": ["copy-relative-path-and-line-numbers.both", "execPaste"]
-    },
-    {
-      "command": "multiCommand.moveToNextChangeAndShow",
-      "sequence": [
-        "workbench.action.editor.nextChange",
-        "editor.action.dirtydiff.next"
-      ]
-    },
-    {
-      "command": "multiCommand.moveToPreviousChangeAndShow",
-      "sequence": [
-        "workbench.action.editor.previousChange",
-        "editor.action.dirtydiff.previous"
-      ]
-    },
-    {
-      "command": "multiCommand.splitWindowAboveAndSearchForFile",
-      "sequence": [
-        "workbench.action.newGroupAbove",
-        "workbench.action.quickOpen"
-      ]
-    },
-    {
-      "command": "multiCommand.splitWindowBelowAndSearchForFile",
-      "sequence": [
-        "workbench.action.newGroupBelow",
-        "workbench.action.quickOpen"
-      ]
-    },
-    {
-      "command": "multiCommand.splitWindowLeftAndSearchForFile",
-      "sequence": [
-        "workbench.action.newGroupLeft",
-        "workbench.action.quickOpen"
-      ]
-    },
-    {
-      "command": "multiCommand.splitWindowRightAndSearchForFile",
-      "sequence": [
-        "workbench.action.newGroupRight",
-        "workbench.action.quickOpen"
-      ]
-    },
-    {
-      "command": "multiCommand.unfocusInputByCreatingNewEditorGroup",
-      "sequence": ["workbench.action.newGroupAbove"]
+    "Open Dotfile Source Folder": {
+      "command": "commands.openFolder",
+      "args": "${userHome}/.config/.dotfiles/",
+      "hidden": true
     }
-  ]
+  }
 }
