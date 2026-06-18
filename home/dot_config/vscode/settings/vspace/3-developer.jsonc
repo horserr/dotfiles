@@ -1,0 +1,148 @@
+[
+  {
+    "key": ",",
+    "name": "+Developer",
+    "icon": "question",
+    "type": "bindings",
+    "bindings": [
+      // workbench.action.reopenTextEditor
+      {
+        "key": ",",
+        "name": "Open developer tools",
+        "icon": "keyboard",
+        "type": "command",
+        "command": "workbench.action.toggleDevTools"
+      },
+      {
+        "key": "t",
+        "name": "Inspect editor token",
+        "icon": "keyboard",
+        "type": "command",
+        "command": "editor.action.inspectTMScopes"
+      },
+      {
+        "key": "p",
+        "name": "Show process",
+        "icon": "keyboard",
+        "type": "command",
+        "command": "workbench.action.openProcessExplorer"
+      },
+      {
+        "key": "C",
+        "name": "clear recent commands",
+        "icon": "keyboard",
+        "type": "bindings",
+        "bindings": [
+          {
+            "key": "C",
+            "name": "clear recent commands",
+            "icon": "keyboard",
+            "type": "command",
+            "command": "workbench.action.clearCommandHistory"
+          },
+          {
+            "key": "E",
+            "name": "clear recent open & open editor history & reopen editor history",
+            "icon": "keyboard",
+            "type": "command",
+            "command": "workbench.action.clearEditorHistory"
+          },
+          {
+            "key": "R",
+            "name": "clear recent workspace",
+            "icon": "keyboard",
+            "type": "command",
+            "command": "workbench.action.clearRecentFiles"
+          }
+        ]
+      },
+      {
+        "key": "U",
+        "name": "Open User folder",
+        "icon": "keyboard",
+        "type": "command",
+        "command": "workbench.action.revealUserDataFolder"
+      },
+      // log
+      {
+        "key": "l",
+        "name": "+Log",
+        "type": "bindings",
+        "bindings": [
+          {
+            "key": "l",
+            "name": "Set Log level",
+            "icon": "keyboard",
+            "type": "command",
+            "command": "workbench.action.setLogLevel"
+          },
+          {
+            "key": "s",
+            "name": "show logs",
+            "icon": "keyboard",
+            "type": "command",
+            "command": "workbench.action.showLogs"
+          }
+        ]
+      },
+      // key
+      {
+        "key": "k",
+        "name": "+Keyboard",
+        "type": "bindings",
+        "bindings": [
+          {
+            "key": "c",
+            "name": "inspect context key(when clause)",
+            "icon": "keyboard",
+            "type": "command",
+            "command": "workbench.action.inspectContextKeys"
+          },
+          {
+            "key": "m",
+            "name": "inspect keymapping",
+            "icon": "keyboard",
+            "type": "command",
+            "command": "workbench.action.inspectKeyMappings"
+          },
+          {
+            "key": "M",
+            "name": "inspect keymapping json",
+            "icon": "keyboard",
+            "type": "command",
+            "command": "workbench.action.inspectKeyMappingsJSON"
+          },
+          {
+            "key": "k",
+            "name": "toggle keybindings logging",
+            "icon": "keyboard",
+            "type": "command",
+            "command": "workbench.action.toggleKeybindingsLog"
+          }
+        ]
+      },
+      // extensions
+      {
+        "key": "x",
+        "name": "+Extensions",
+        "type": "bindings",
+        "bindings": [
+          {
+            "key": "r",
+            "name": "Restart extension",
+            "icon": "keyboard",
+            "type": "command",
+            "command": "workbench.action.restartExtensionHost"
+          },
+          {
+            "key": "f",
+            "name": "Open extensions folders",
+            "icon": "keyboard",
+            "type": "command",
+            "command": "workbench.extensions.action.openExtensionsFolder"
+          }
+        ]
+      }
+    ]
+  }
+]

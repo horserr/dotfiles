@@ -6,39 +6,134 @@
     "type": "bindings",
     "bindings": [
       {
-        "key": "d",
-        "name": "Open VSCode Documentation",
-        "icon": "book",
+        "key": " ",
+        "name": "(custom)open dotfiles folder in vscode",
         "type": "command",
-        "command": "workbench.action.openDocumentationUrl"
+        "command": "Open Dotfile Source Folder"
+      },
+      {
+        "key": "h",
+        "name": "commands show help",
+        "type": "bindings",
+        "bindings": [
+          {
+            "key": "c",
+            "name": "show aviliable commands",
+            "type": "command",
+            "command": "commands.suggestCommands"
+          },
+          {
+            "key": "s",
+            "name": "show settings",
+            "type": "command",
+            "command": "commands.suggestSettings"
+          },
+          {
+            "key": "v",
+            "name": "show variables",
+            "type": "command",
+            "command": "commands.suggestVariables"
+          },
+          {
+            "key": "i",
+            "name": "show icons",
+            "type": "command",
+            "command": "commands.suggestCodicons"
+          },
+          {
+            "key": "c",
+            "name": "show colors",
+            "type": "command",
+            "command": "commands.suggestColors"
+          }
+        ]
       },
       {
         "key": "k",
-        "name": "Open global key bindings",
+        "name": "Open key bindings editor",
         "icon": "keyboard",
         "type": "command",
         "command": "workbench.action.openGlobalKeybindings"
       },
       {
-        "key": "D",
-        "name": "Open VSpaceCode Documentation",
+        "key": "s",
+        "name": "Open default system settings",
+        "icon": "keyboard",
+        "type": "command",
+        "command": "workbench.action.openRawDefaultSettings"
+      },
+      {
+        "key": "u",
+        "name": "Open user settings",
+        "icon": "keyboard",
+        "type": "command",
+        "command": "workbench.action.openRawDefaultSettings"
+      },
+      {
+        "key": "w",
+        "name": "Open workspace settings",
+        "icon": "keyboard",
+        "type": "command",
+        "command": "workbench.action.openWorkspaceSettingsFile"
+      },
+      {
+        "key": "x",
+        "name": "Configure user snippets",
+        "icon": "symbol-snippet",
+        "type": "command",
+        "command": "workbench.action.openSnippets"
+      },
+      // ui settings
+      {
+        "key": ",",
+        "name": "+Settings alternative interface",
+        "icon": "settings",
+        "type": "bindings",
+        "bindings": [
+          {
+            "key": "u",
+            "name": "Open user settings",
+            "icon": "settings",
+            "type": "command",
+            "command": "workbench.action.openGlobalSettings"
+          },
+          {
+            "key": "k",
+            "name": "Open default key bindings JSON",
+            "icon": "json",
+            "type": "command",
+            "command": "workbench.action.openDefaultKeybindingsFile"
+          },
+          {
+            "key": "K",
+            "name": "Open global key bindings JSON",
+            "icon": "json",
+            "type": "command",
+            "command": "workbench.action.openGlobalKeybindingsFile"
+          }
+        ]
+      },
+      {
+        "key": "d",
+        "name": "+Doc/Manual",
         "icon": "book",
-        "type": "command",
-        "command": "vspacecode.openDocumentationUrl"
-      },
-      {
-        "key": "I",
-        "name": "Report VSCode Issue",
-        "icon": "issues",
-        "type": "command",
-        "command": "workbench.action.openIssueReporter"
-      },
-      {
-        "key": "T",
-        "name": "Open VSCode Tutorial",
-        "icon": "lightbulb",
-        "type": "command",
-        "command": "workbench.action.showInteractivePlayground"
+        "type": "bindings",
+        "bindings": [
+          {
+            "key": "d",
+            "name": "Open VSCode Documentation",
+            "icon": "book",
+            "type": "command",
+            "command": "workbench.action.openDocumentationUrl"
+          },
+          {
+            "key": "D",
+            "name": "Open VSpaceCode Documentation",
+            "icon": "book",
+            "type": "command",
+            "command": "vspacecode.openDocumentationUrl"
+          }
+        ]
       }
     ]
   }

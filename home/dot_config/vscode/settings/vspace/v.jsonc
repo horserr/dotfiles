@@ -113,6 +113,52 @@
           "workbench.action.closePanel",
           "workbench.action.closeAuxiliaryBar"
         ]
+      },
+      {
+        "key": "[",
+        "name": "Shrink window",
+        "icon": "remove",
+        "type": "transient",
+        "command": "workbench.action.decreaseViewSize",
+        "bindings": [
+          {
+            "key": "[",
+            "name": "Shrink window",
+            "icon": "remove",
+            "type": "command",
+            "command": "workbench.action.decreaseViewSize"
+          },
+          {
+            "key": "]",
+            "name": "Enlarge window",
+            "icon": "add",
+            "type": "command",
+            "command": "workbench.action.increaseViewSize"
+          }
+        ]
+      },
+      {
+        "key": "]",
+        "name": "Enlarge window",
+        "icon": "add",
+        "type": "transient",
+        "command": "workbench.action.increaseViewSize",
+        "bindings": [
+          {
+            "key": "[",
+            "name": "Shrink window",
+            "icon": "remove",
+            "type": "command",
+            "command": "workbench.action.decreaseViewSize"
+          },
+          {
+            "key": "]",
+            "name": "Enlarge window",
+            "icon": "add",
+            "type": "command",
+            "command": "workbench.action.increaseViewSize"
+          }
+        ]
       }
     ]
   }

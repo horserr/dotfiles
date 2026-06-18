@@ -83,6 +83,56 @@
         "icon": "project",
         "type": "command",
         "command": "workbench.action.showAllSymbols"
+      },
+      {
+        "key": ".",
+        "name": "Error transient",
+        "icon": "window",
+        "type": "transient",
+        "bindings": [
+          {
+            "key": "f",
+            "name": "Fix error",
+            "icon": "lightbulb-autofix",
+            "type": "command",
+            "command": "editor.action.quickFix"
+          },
+          {
+            "key": "n",
+            "name": "Next error",
+            "icon": "arrow-down",
+            "type": "command",
+            "command": "editor.action.marker.nextInFiles"
+          },
+          {
+            "key": "p",
+            "name": "Previous error",
+            "icon": "arrow-up",
+            "type": "command",
+            "command": "editor.action.marker.prevInFiles"
+          },
+          {
+            "key": "N",
+            "name": "Previous error",
+            "icon": "arrow-up",
+            "type": "command",
+            "command": "editor.action.marker.prevInFiles"
+          }
+        ]
+      },
+      {
+        "key": "e",
+        "name": "Show error",
+        "icon": "error",
+        "type": "command",
+        "command": "editor.action.showHover"
+      },
+      {
+        "key": "f",
+        "name": "Fix error",
+        "icon": "lightbulb-autofix",
+        "type": "command",
+        "command": "editor.action.quickFix"
       }
     ]
   }

@@ -7,175 +7,177 @@
     "bindings": [
       {
         "key": "f",
+        "name": "Last file in editor group",
+        "icon": "arrow-both",
+        "type": "command",
+        "command": "workbench.action.previousEditorInGroup"
+      },
+      {
+        "key": "o",
         "name": "Quick open file/folder",
         "icon": "folder-opened",
         "type": "command",
         "command": "workbench.action.quickOpen"
       },
       {
-        "key": "l",
+        "key": ",",
+        "name": "active files in current editor group",
+        "icon": "versions",
+        "type": "command",
+        "command": "workbench.action.showEditorsInActiveGroup"
+      },
+      {
+        "key": ".",
+        "name": "+History",
+        "icon": "versions",
+        "type": "bindings",
+        "bindings": [
+          {
+            "key": ".",
+            "name": "show most recent editor in current editor group",
+            "icon": "versions",
+            "type": "command",
+            "command": "workbench.action.quickOpenPreviousRecentlyUsedEditorInGroup"
+          }
+        ]
+      },
+      {
+        "key": " ",
+        "name": "quick open edit history",
+        "icon": "versions",
+        "type": "command",
+        "command": "workbench.action.openPreviousEditorFromHistory"
+      },
+      {
+        "key": "r",
+        "name": "show most recent editor in current editor group",
+        "icon": "versions",
+        "type": "command",
+        "command": "workbench.action.quickOpenPreviousRecentlyUsedEditorInGroup"
+      },
+      {
+        "key": "e",
+        "name": "open file explore picker",
+        "icon": "code",
+        "type": "command",
+        "command": "file-browser.open"
+      },
+      {
+        "key": "R",
+        "name": "Toggle current file read only",
+        "icon": "case-sensitive",
+        "type": "command",
+        "command": "workbench.action.files.toggleActiveEditorReadonlyInSession"
+      },
+      {
+        "key": "p",
+        "name": "toggle Pin file",
+        "icon": "pin",
+        "type": "command",
+        "command": "workbench.action.pinEditor"
+      },
+      {
+        "key": "P",
+        "name": "unpin editor",
+        "icon": "pin",
+        "type": "command",
+        "command": "workbench.action.unpinEditor"
+      },
+      {
+        "key": "d",
+        "name": "Close current active buffer",
+        "icon": "x",
+        "type": "command",
+        "command": "workbench.action.closeActiveEditor"
+      },
+      {
+        "key": "u",
+        "name": "Reopen closed file",
+        "icon": "history",
+        "type": "command",
+        "command": "workbench.action.reopenClosedEditor"
+      },
+      {
+        "key": "L",
         "name": "Change file language",
         "icon": "code",
         "type": "command",
         "command": "workbench.action.editor.changeLanguageMode"
       },
       {
+        "key": "q",
+        "name": "quit file without prompt save message",
+        "icon": "code",
+        "type": "command",
+        "command": "workbench.action.editor.revertAndCloseActiveEditor"
+      },
+      // scratch file
+      {
         "key": "n",
-        "name": "New file",
-        "icon": "new-file",
-        "type": "command",
-        "command": "explorer.newFile"
-      },
-      {
-        "key": "o",
-        "name": "+Open with",
-        "icon": "file-code",
-        "type": "command",
-        "command": "explorer.openWith"
-      },
-      {
-        "key": "r",
-        "name": "Recent buffers",
-        "icon": "versions",
-        "type": "command",
-        "command": "workbench.action.showAllEditorsByMostRecentlyUsed"
-      },
-      {
-        "key": "s",
-        "name": "Save file",
-        "icon": "save",
-        "type": "command",
-        "command": "workbench.action.files.save"
-      },
-      {
-        "key": "t",
-        "name": "Toggle tree/explorer view",
-        "icon": "list-tree",
-        "type": "conditional",
-        "bindings": [
-          {
-            "key": "",
-            "name": "Show explorer view",
-            "type": "command",
-            "command": "workbench.view.explorer"
-          },
-          {
-            "key": "when:sideBarVisible && explorerViewletVisible",
-            "name": "Hide side bar",
-            "type": "command",
-            "command": "workbench.action.toggleSidebarVisibility"
-          }
-        ]
-      },
-      {
-        "key": "w",
-        "name": "Open active in new window",
-        "icon": "window",
-        "type": "command",
-        "command": "workbench.action.files.showOpenedFileInNewWindow"
-      },
-      {
-        "key": "D",
-        "name": "Delete current file",
-        "icon": "trash",
-        "type": "commands",
-        "commands": [
-          "workbench.files.action.showActiveFileInExplorer",
-          "deleteFile"
-        ]
-      },
-      {
-        "key": "L",
-        "name": "Locate file",
-        "icon": "file-symlink-directory",
-        "type": "command",
-        "command": "revealFileInOS"
-      },
-      {
-        "key": "R",
-        "name": "Rename file",
-        "icon": "edit",
-        "type": "commands",
-        "commands": ["revealInExplorer", "renameFile"]
-      },
-      {
-        "key": "S",
-        "name": "Save all files",
-        "icon": "save-all",
-        "type": "command",
-        "command": "workbench.action.files.saveAll"
-      },
-      {
-        "key": "T",
-        "name": "Show active file in tree/explorer view",
-        "icon": "list-tree",
-        "type": "command",
-        "command": "workbench.files.action.showActiveFileInExplorer"
-      },
-      {
-        "key": "e",
-        "name": "+Emacs/VSpaceCode",
-        "icon": "settings",
+        "name": "+New Untitle file",
+        "icon": "file-add",
         "type": "bindings",
         "bindings": [
           {
-            "key": "d",
-            "name": "Open settings",
-            "icon": "settings",
+            "key": "n",
+            "name": "New untitled buffer",
+            "icon": "file-add",
             "type": "command",
-            "command": "workbench.action.openGlobalSettings"
+            "command": "workbench.action.files.newUntitledFile"
+          },
+          {
+            "key": "h",
+            "name": "New untitled buffer (split left)",
+            "icon": "arrow-small-left",
+            "type": "commands",
+            "commands": [
+              "workbench.action.newGroupLeft",
+              "workbench.action.files.newUntitledFile"
+            ]
+          },
+          {
+            "key": "j",
+            "name": "New untitled buffer (split down)",
+            "icon": "arrow-small-down",
+            "type": "commands",
+            "commands": [
+              "workbench.action.newGroupBelow",
+              "workbench.action.files.newUntitledFile"
+            ]
           },
           {
             "key": "k",
-            "name": "Open global key bindings",
-            "icon": "keyboard",
-            "type": "command",
-            "command": "workbench.action.openGlobalKeybindings"
+            "name": "New untitled buffer (split up)",
+            "icon": "arrow-small-up",
+            "type": "commands",
+            "commands": [
+              "workbench.action.newGroupAbove",
+              "workbench.action.files.newUntitledFile"
+            ]
           },
           {
             "key": "l",
-            "name": "Open language settings",
-            "icon": "code",
-            "type": "command",
-            "command": "workbench.action.configureLanguageBasedSettings"
-          },
-          {
-            "key": "s",
-            "name": "Configure user snippets",
-            "icon": "symbol-snippet",
-            "type": "command",
-            "command": "workbench.action.openSnippets"
+            "name": "New untitled buffer (split right)",
+            "icon": "arrow-small-right",
+            "type": "commands",
+            "commands": [
+              "workbench.action.newGroupRight",
+              "workbench.action.files.newUntitledFile"
+            ]
           },
           {
             "key": "w",
-            "name": "Open workspace settings",
-            "icon": "settings-edit",
-            "type": "command",
-            "command": "workbench.action.openWorkspaceSettings"
-          },
-          {
-            "key": "D",
-            "name": "Open settings JSON",
-            "icon": "json",
-            "type": "command",
-            "command": "workbench.action.openSettingsJson"
-          },
-          {
-            "key": "K",
-            "name": "Open global key bindings JSON",
-            "icon": "json",
-            "type": "command",
-            "command": "workbench.action.openGlobalKeybindingsFile"
-          },
-          {
-            "key": "W",
-            "name": "Open workspace settings JSON",
-            "icon": "json",
-            "type": "command",
-            "command": "workbench.action.openWorkspaceSettingsFile"
+            "name": "New untitled buffer (into new window)",
+            "icon": "arrow-small-left",
+            "type": "commands",
+            "commands": [
+              "workbench.action.newEmptyEditorWindow",
+              "workbench.action.files.newUntitledFile"
+            ]
           }
         ]
       },
+      // indentation
       {
         "key": "i",
         "name": "+Indentation",
@@ -226,83 +228,121 @@
           }
         ]
       },
+      // copy
       {
-        "key": "y",
-        "name": "+Yank",
-        "icon": "clippy",
+        "key": "c",
+        "name": "+copy active file",
+        "icon": "window",
         "type": "bindings",
         "bindings": [
           {
             "key": "c",
-            "name": "Copy path of active file with line and column",
-            "icon": "list-selection",
-            "type": "command",
-            "command": "vspacecode.copyPathWithLineColumn"
+            "name": "+copy active file to new editor group",
+            "icon": "window",
+            "type": "bindings",
+            "bindings": [
+              {
+                "key": "h",
+                "name": "copy file left",
+                "icon": "split-vertical",
+                "type": "command",
+                "command": "workbench.action.splitEditorLeft"
+              },
+              {
+                "key": "j",
+                "name": "copy file below",
+                "icon": "split-vertical",
+                "type": "command",
+                "command": "workbench.action.splitEditorDown"
+              },
+              {
+                "key": "k",
+                "name": "copy file up",
+                "icon": "split-vertical",
+                "type": "command",
+                "command": "workbench.action.splitEditorUp"
+              },
+              {
+                "key": "l",
+                "name": "copy file right",
+                "icon": "split-horizontal",
+                "type": "command",
+                "command": "workbench.action.splitEditorRight"
+              }
+            ]
           },
           {
-            "key": "d",
-            "name": "Copy directory path of the active file",
-            "icon": "file-directory",
+            "key": "h",
+            "name": "copy file left",
+            "icon": "split-vertical",
             "type": "command",
-            "command": "vspacecode.copyDirectoryPath"
+            "command": "workbench.action.splitEditorToLeftGroup"
+          },
+          {
+            "key": "j",
+            "name": "copy file below",
+            "icon": "split-vertical",
+            "type": "command",
+            "command": "workbench.action.splitEditorToBelowGroup"
+          },
+          {
+            "key": "k",
+            "name": "copy file up",
+            "icon": "split-vertical",
+            "type": "command",
+            "command": "workbench.action.splitEditorToAboveGroup"
           },
           {
             "key": "l",
-            "name": "Copy path of active file with line",
-            "icon": "list-flat",
+            "name": "copy file right",
+            "icon": "split-horizontal",
             "type": "command",
-            "command": "vspacecode.copyPathWithLine"
+            "command": "workbench.action.splitEditorToRightGroup"
           },
           {
-            "key": "n",
-            "name": "Copy filename of active file",
-            "icon": "file",
+            "key": "w",
+            "name": "copy active file in new window",
+            "icon": "window",
             "type": "command",
-            "command": "vspacecode.copyFilename"
-          },
-          {
-            "key": "y",
-            "name": "Copy path of active file",
-            "icon": "go-to-file",
-            "type": "command",
-            "command": "vspacecode.copyPath"
-          },
-          {
-            "key": "C",
-            "name": "Copy relative path of active file with line and column",
-            "icon": "list-selection",
-            "type": "command",
-            "command": "vspacecode.copyRelativePathWithLineColumn"
-          },
-          {
-            "key": "D",
-            "name": "Copy relative directory path of the active file",
-            "icon": "file-directory",
-            "type": "command",
-            "command": "vspacecode.copyRelativeDirectoryPath"
-          },
-          {
-            "key": "L",
-            "name": "Copy relative path of active file with line",
-            "icon": "list-flat",
-            "type": "command",
-            "command": "vspacecode.copyRelativePathWithLine"
-          },
-          {
-            "key": "N",
-            "name": "Copy filename without extension of active file",
-            "icon": "file",
-            "type": "command",
-            "command": "vspacecode.copyFilenameBase"
-          },
-          {
-            "key": "Y",
-            "name": "Copy relative path of active file",
-            "icon": "go-to-file",
-            "type": "command",
-            "command": "vspacecode.copyRelativePath"
+            "command": "workbench.action.copyEditorToNewWindow"
           }
         ]
+      },
+      // move
+      {
+        "key": "h",
+        "name": "Move file into left editor group",
+        "icon": "triangle-left",
+        "type": "command",
+        "command": "workbench.action.moveEditorToLeftGroup"
+      },
+      {
+        "key": "j",
+        "name": "Move file into below editor group",
+        "icon": "triangle-down",
+        "type": "command",
+        "command": "workbench.action.moveEditorToBelowGroup"
+      },
+      {
+        "key": "k",
+        "name": "Move file into above editor group",
+        "icon": "triangle-up",
+        "type": "command",
+        "command": "workbench.action.moveEditorToAboveGroup"
+      },
+      {
+        "key": "l",
+        "name": "Move file into right editor group",
+        "icon": "triangle-right",
+        "type": "command",
+        "command": "workbench.action.moveEditorToRightGroup"
+      },
+      {
+        "key": "w",
+        "name": "Move file into new frame(window)",
+        "icon": "triangle-right",
+        "type": "command",
+        "command": "workbench.action.moveEditorToNewWindow"
       }
     ]
   }

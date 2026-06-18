@@ -13,6 +13,36 @@
         "command": "editor.action.quickFix"
       },
       {
+        "key": "l",
+        "name": "Open language settings",
+        "icon": "code",
+        "type": "command",
+        "command": "workbench.action.configureLanguageBasedSettings"
+      },
+      {
+        "key": "v",
+        "name": "Smart select/expand region",
+        "icon": "selection",
+        "type": "transient",
+        "command": "editor.action.smartSelect.grow",
+        "bindings": [
+          {
+            "key": "v",
+            "name": "Grow selection",
+            "icon": "add",
+            "type": "command",
+            "command": "editor.action.smartSelect.grow"
+          },
+          {
+            "key": "V",
+            "name": "Shrink selection",
+            "icon": "remove",
+            "type": "command",
+            "command": "editor.action.smartSelect.shrink"
+          }
+        ]
+      },
+      {
         "key": "a",
         "name": "Find all references",
         "icon": "references",

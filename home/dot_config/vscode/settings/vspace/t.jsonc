@@ -13,6 +13,26 @@
         "command": "workbench.action.toggleEditorGroupLayout"
       },
       {
+        "key": "e",
+        "name": "Toggle tree/explorer view",
+        "icon": "list-tree",
+        "type": "conditional",
+        "bindings": [
+          {
+            "key": "",
+            "name": "Show explorer view",
+            "type": "command",
+            "command": "workbench.view.explorer"
+          },
+          {
+            "key": "when:sideBarVisible && explorerViewletVisible",
+            "name": "Hide side bar",
+            "type": "command",
+            "command": "workbench.action.toggleSidebarVisibility"
+          }
+        ]
+      },
+      {
         "key": "l",
         "name": "Toggle word wrap",
         "icon": "word-wrap",

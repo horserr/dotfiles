@@ -1,110 +1,265 @@
 [
   {
     "key": "e",
-    "name": "+Edit",
+    "name": "+Editor Group",
     "icon": "error",
     "type": "bindings",
     "bindings": [
       {
-        "key": "v",
-        "name": "Smart select/expand region",
-        "icon": "selection",
-        "type": "transient",
-        "command": "editor.action.smartSelect.grow",
-        "bindings": [
-          {
-            "key": "v",
-            "name": "Grow selection",
-            "icon": "add",
-            "type": "command",
-            "command": "editor.action.smartSelect.grow"
-          },
-          {
-            "key": "V",
-            "name": "Shrink selection",
-            "icon": "remove",
-            "type": "command",
-            "command": "editor.action.smartSelect.shrink"
-          }
-        ]
+        "key": "e",
+        "name": "Focus previous editor group",
+        "icon": "arrow-small-up",
+        "type": "command",
+        "command": "workbench.action.focusPreviousGroup"
       },
       {
-        "key": ".",
-        "name": "Error transient",
-        "icon": "window",
-        "type": "transient",
+        "key": ",",
+        "name": "List Recent files across editor groups",
+        "icon": "versions",
+        "type": "command",
+        "command": "workbench.action.quickOpenPreviousRecentlyUsedEditor"
+      },
+      // editor group size
+      {
+        "key": " ",
+        "name": "+Editor Group Size",
+        "icon": "chrome-maximize",
+        "type": "bindings",
         "bindings": [
+          {
+            "key": ",",
+            "name": "Toggle editor group size",
+            "icon": "chrome-maximize",
+            "type": "command",
+            "command": "workbench.action.toggleEditorWidths"
+          },
+          {
+            "key": "m",
+            "name": "Maximize editor group and hide sidebar",
+            "icon": "chrome-maximize",
+            "type": "command",
+            "command": "workbench.action.maximizeEditorHideSidebar"
+          },
           {
             "key": "f",
-            "name": "Fix error",
-            "icon": "lightbulb-autofix",
+            "name": "Maximize editor group following the focus",
+            "icon": "chrome-maximize",
             "type": "command",
-            "command": "editor.action.quickFix"
+            "command": "workbench.action.minimizeOtherEditorGroupsHideSidebar"
+          }
+        ]
+      },
+      // editor group new
+      {
+        "key": "n",
+        "name": "+Editor Group create",
+        "icon": "attach-compact",
+        "type": "bindings",
+        "bindings": [
+          {
+            "key": "h",
+            "name": "new editor group left",
+            "icon": "close-all",
+            "type": "command",
+            "command": "workbench.action.newGroupLeft"
           },
           {
-            "key": "n",
-            "name": "Next error",
-            "icon": "arrow-down",
+            "key": "l",
+            "name": "new editor group right",
+            "icon": "close-all",
             "type": "command",
-            "command": "editor.action.marker.nextInFiles"
+            "command": "workbench.action.newGroupRight"
           },
           {
-            "key": "p",
-            "name": "Previous error",
-            "icon": "arrow-up",
+            "key": "k",
+            "name": "new editor group above",
+            "icon": "close",
             "type": "command",
-            "command": "editor.action.marker.prevInFiles"
+            "command": "workbench.action.newGroupAbove"
           },
           {
-            "key": "N",
-            "name": "Previous error",
-            "icon": "arrow-up",
+            "key": "j",
+            "name": "new editor group down",
+            "icon": "close-all",
             "type": "command",
-            "command": "editor.action.marker.prevInFiles"
+            "command": "workbench.action.newGroupBelow"
+          },
+          {
+            "key": "w",
+            "name": "new editor group in new window",
+            "icon": "close-all",
+            "type": "command",
+            "command": "workbench.action.newEmptyEditorWindow"
+          }
+        ]
+      },
+      // editor group close
+      {
+        "key": "d",
+        "name": "+Editor Group close",
+        "icon": "x",
+        "type": "bindings",
+        "bindings": [
+          {
+            "key": " ",
+            "name": "Close other tabs in current editor group",
+            "icon": "close-all",
+            "type": "command",
+            "command": "workbench.action.closeOtherEditors"
+          },
+          {
+            "key": "o",
+            "name": "Close editors in other editor group",
+            "icon": "close-all",
+            "type": "command",
+            "command": "workbench.action.closeEditorsInOtherGroups"
+          },
+          {
+            "key": "d",
+            "name": "Close editor groups",
+            "icon": "close",
+            "type": "command",
+            "command": "workbench.action.closeEditorsInGroup"
+          },
+          {
+            "key": "h",
+            "name": "Close left editors",
+            "icon": "close-all",
+            "type": "command",
+            "command": "workbench.action.closeEditorsToTheLeft"
+          },
+          {
+            "key": "l",
+            "name": "Close right editors",
+            "icon": "close-all",
+            "type": "command",
+            "command": "workbench.action.closeEditorsToTheRight"
           }
         ]
       },
       {
-        "key": "e",
-        "name": "Show error",
-        "icon": "error",
+        "key": "L",
+        "name": "Toggle editor group lock",
+        "icon": "chrome-maximize",
         "type": "command",
-        "command": "editor.action.showHover"
+        "command": "workbench.action.toggleEditorGroupLock"
+      },
+      // copy editor group
+      {
+        "key": "c",
+        "name": "+Copy editor group",
+        "icon": "triangle-up",
+        "type": "command",
+        "bindings": [
+          {
+            "key": "h",
+            "name": "Copy editor group left",
+            "icon": "triangle-left",
+            "type": "command",
+            "command": "workbench.action.duplicateActiveGroupLeft"
+          },
+          {
+            "key": "j",
+            "name": "Copy editor group down",
+            "icon": "triangle-down",
+            "type": "command",
+            "command": "workbench.action.duplicateActiveGroupRight"
+          },
+          {
+            "key": "k",
+            "name": "Copy editor group up",
+            "icon": "triangle-up",
+            "type": "command",
+            "command": "workbench.action.duplicateActiveGroupUp"
+          },
+          {
+            "key": "l",
+            "name": "Copy editor group right",
+            "icon": "triangle-right",
+            "type": "command",
+            "command": "workbench.action.duplicateActiveGroupDown"
+          },
+          {
+            "key": "w",
+            "name": "Copy editor group to new window",
+            "icon": "triangle-right",
+            "type": "command",
+            "command": "workbench.action.copyEditorToNewWindow"
+          }
+        ]
+      },
+      // move
+      {
+        "key": "h",
+        "name": "Move editor group left",
+        "icon": "triangle-left",
+        "type": "command",
+        "command": "workbench.action.moveActiveEditorGroupLeft"
       },
       {
-        "key": "f",
-        "name": "Fix error",
-        "icon": "lightbulb-autofix",
+        "key": "j",
+        "name": "Move editor group down",
+        "icon": "triangle-down",
         "type": "command",
-        "command": "editor.action.quickFix"
+        "command": "workbench.action.moveActiveEditorGroupDown"
+      },
+      {
+        "key": "k",
+        "name": "Move editor group up",
+        "icon": "triangle-up",
+        "type": "command",
+        "command": "workbench.action.moveActiveEditorGroupUp"
       },
       {
         "key": "l",
-        "name": "List errors",
-        "icon": "list-flat",
+        "name": "Move editor group right",
+        "icon": "triangle-right",
         "type": "command",
-        "command": "workbench.actions.view.problems"
+        "command": "workbench.action.moveActiveEditorGroupRight"
       },
       {
-        "key": "n",
-        "name": "Next error",
-        "icon": "arrow-down",
+        "key": "w",
+        "name": "Move entire editor group into new window",
+        "icon": "triangle-right",
         "type": "command",
-        "command": "editor.action.marker.nextInFiles"
+        "command": "workbench.action.moveEditorGroupToNewWindow"
       },
       {
-        "key": "p",
-        "name": "Previous error",
-        "icon": "arrow-up",
-        "type": "command",
-        "command": "editor.action.marker.prevInFiles"
-      },
-      {
-        "key": "N",
-        "name": "Previous error",
-        "icon": "arrow-up",
-        "type": "command",
-        "command": "editor.action.marker.prevInFiles"
+        "key": "J",
+        "name": "+Join",
+        "icon": "combine",
+        "type": "bindings",
+        "bindings": [
+          {
+            "key": "J",
+            "name": "Join next editor group",
+            "icon": "combine",
+            "type": "command",
+            "command": "workbench.action.joinTwoGroups"
+          },
+          {
+            "key": " ",
+            "name": "join all editor groups",
+            "icon": "combine",
+            "type": "command",
+            "command": "workbench.action.joinAllGroups"
+          },
+          {
+            "key": "w",
+            "name": "Join to the main window",
+            "icon": "combine",
+            "type": "conditional",
+            "bindings": [
+              {
+                "key": "when:isAuxiliaryWindow || isAuxiliaryWindowFocusedContext",
+                "name": "Join to the main window",
+                "icon": "combine",
+                "type": "command",
+                "command": "workbench.action.restoreEditorsToMainWindow"
+              }
+            ]
+          }
+        ]
       }
     ]
   }

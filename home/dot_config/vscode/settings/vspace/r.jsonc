@@ -13,7 +13,7 @@
         "command": "workbench.action.tasks.reRunTask"
       },
       {
-        "key": ":",
+        "key": " ",
         "name": "Run task",
         "icon": "play",
         "type": "command",
