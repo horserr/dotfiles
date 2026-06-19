@@ -1,17 +1,10 @@
 {
   "$schema": "vscode://schemas/settings/user",
-  "accessibility.signals.terminalBell": {
-    "announcement": "auto",
-    "sound": "on" // 开启声音
-  },
   "debug.console.fontSize": 18,
   "python.terminal.activateEnvInCurrentTerminal": false,
   "python.terminal.activateEnvironment": false,
   "terminal.explorerKind": "external",
   "terminal.external.windowsExec": "wt",
-  // ACCESSIBILITY
-  "terminal.integrated.accessibleViewFocusOnCommandExecution": false,
-  "terminal.integrated.accessibleViewPreserveCursorPosition": true,
   // SIGNIFICANT 允许 chord 快捷键
   "terminal.integrated.allowChords": true,
   // UPLIFTING 自动识别 scheme 并允许点击
@@ -47,9 +40,8 @@
   "terminal.integrated.cwd": "",
   // UPLIFTING terminal 默认在 pane 而非 editor
   "terminal.integrated.defaultLocation": "view",
-  // change from `fish` to `nu`
-  "terminal.integrated.defaultProfile.linux": "nu",
-  "terminal.integrated.defaultProfile.windows": "Nushell",
+  "terminal.integrated.defaultProfile.linux": "bash",
+  "terminal.integrated.defaultProfile.windows": "Git Bash",
   // UPLIFTING 自动设置 $LANG
   "terminal.integrated.detectLocale": "on",
   // UPLIFTING
@@ -132,10 +124,6 @@
     },
     "Windows PowerShell": {
       "path": "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe"
-    },
-    "Nushell": {
-      "path": "nu",
-      "icon": "terminal-secure"
     }
   },
   "terminal.integrated.rightClickBehavior": "default",
