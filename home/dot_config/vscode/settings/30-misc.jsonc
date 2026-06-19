@@ -9,12 +9,12 @@
   },
   "emmet.triggerExpansionOnTab": true,
   "extensions.autoCheckUpdates": true,
-  "extensions.autoUpdate": true,
+  "extensions.autoUpdate": "on",
   "extensions.experimental.affinity": {
-    "GitHub.copilot-chat": 2,
     "vscodevim.vim": 1,
     "VSpaceCode.vspacecode": 2,
-    "VSpaceCode.whichkey": 2
+    "VSpaceCode.whichkey": 2,
+    "usernamehw.commands": 2
     //Caveats: One issue with using the affinity setting is that each time you update your settings file, the Vim plugin will reload, which can take a few seconds. https://github.com/VSCodeVim/Vim#:~:text=VSCodeVim%20is%20too%20slow
   },
   // live preview
