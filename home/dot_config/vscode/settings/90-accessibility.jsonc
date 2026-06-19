@@ -1,0 +1,23 @@
+{
+  "$schema": "vscode://schemas/settings/user",
+
+  "accessibility.signalOptions.volume": 50,
+  "accessibility.signals.lineHasWarning": {
+    "sound": "auto",
+    "announcement": "auto"
+  },
+  "accessibility.signals.lineHasError": {
+    "sound": "on",
+    "announcement": "auto"
+  },
+  "accessibility.signals.terminalBell": {
+    "sound": "on",
+    "announcement": "auto"
+  },
+  "accessibility.signals.lineHasBreakpoint": {
+    "sound": "on",
+    "announcement": "auto"
+  },
+  "terminal.integrated.accessibleViewFocusOnCommandExecution": false,
+  "terminal.integrated.accessibleViewPreserveCursorPosition": true
+}
