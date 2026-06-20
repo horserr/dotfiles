@@ -8,6 +8,24 @@
     "after": ["YOUR_VIM_ACTION"]
   }
   } */
+  {
+    // folder filter
+    "key": "f",
+    "command": "list.find",
+    "when": "listFocus && !inputFocus"
+  },
+  {
+    // toggle filter
+    "key": "shift+f",
+    "command": "list.toggleFilterOnType",
+    "when": "listFocus && inputFocus"
+  },
+  {
+    // folder tree sticky scrool
+    "key": "t",
+    "command": "tree.toggleStickyScroll",
+    "when": "listFocus && !inputFocus"
+  },
   // move inside hover window
   {
     "key": "h",
@@ -28,38 +46,6 @@
     "key": "l",
     "command": "editor.action.scrollRightHover",
     "when": "editorHoverFocused"
-  },
-  /**************
-   * VSPACECODE *
-   **************/
-  {
-    // use space in editor
-    "key": "space",
-    "command": "vspacecode.space",
-    "when": "activeEditorGroupEmpty && focusedView == '' && !whichkeyActive && !inputFocus"
-  },
-  {
-    // use shift+space in sidebar, regardless of whether input is focused or not
-    "key": "shift+space",
-    "command": "vspacecode.space",
-    "when": "!editorFocus && !whichkeyActive"
-  },
-  {
-    "key": "`",
-    "command": "runCommands",
-    "args": {
-      "commands": [
-        "whichkey.show",
-        { "command": "whichkey.triggerKey", "args": "w" }
-      ]
-    },
-    "when": "!editorFocus && !inputFocus && !whichkeyActive"
-  },
-  {
-    // use shift+space in terminal
-    "key": "shift+space",
-    "command": "vspacecode.space",
-    "when": "terminalFocus"
   },
   {
     "key": "ctrl+h",

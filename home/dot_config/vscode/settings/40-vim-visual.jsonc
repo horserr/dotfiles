@@ -3,7 +3,7 @@
   "vim.visualModeKeyBindingsNonRecursive": [
     {
       // use vscode native select in bracket
-      "before": ["o"],
+      "before": ["O"],
       "commands": ["editor.action.selectToBracket"]
     },
     {
@@ -33,14 +33,50 @@
       "commands": ["editor.action.moveSelectionToPreviousFindMatch"]
     },
     {
+      // multi-cursor move focus
+      "before": [","],
+      "commands": ["editor.action.focusNextCursor"]
+    },
+    {
+      // multi-cursor move focus
+      "before": ["."],
+      "commands": ["editor.action.focusPreviousCursor"]
+    },
+    {
       // multi-cursor add all selections
       "before": ["g", "B"],
       "commands": ["editor.action.selectHighlights"]
     },
     {
       // multi-cursor end of each line
-      "before": ["a"],
+      "before": ["A"],
       "commands": ["editor.action.insertCursorAtEndOfEachLineSelected"]
+    },
+    {
+      // same with normal mode
+      // jump to next siblings
+      // the original g. is looping through edit history, but the above gi does already cover it.
+      "before": ["g", "."],
+      "commands": ["editor.gotoNextFold"]
+    },
+    {
+      // same with normal mode
+      // jump to previous siblings
+      "before": ["g", ","],
+      "commands": ["editor.gotoPreviousFold"]
+    },
+    {
+      "before": ["u"],
+      "commands": [
+        { "command": "workbench.action.quickOpen", "args": "> Transform " }
+      ]
+    },
+    {
+      // same with normal mode
+      // cursor undo
+      // original U is to uppercase the entire line, which is rarely used and can be easily replaced by gU
+      "before": ["U"],
+      "commands": ["cursorUndo"]
     },
     {
       "before": ["g", "y"],

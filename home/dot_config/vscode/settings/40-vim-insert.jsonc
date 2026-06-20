@@ -5,60 +5,48 @@
     // can also use "command": "type" https://code.visualstudio.com/docs/configure/keybindings#_command-arguments
     // { "before": ["j", "k"], "after": ["<esc>"] },
     {
-      "before": [";", "<Space>"],
+      "before": [",", "<Space>"],
       "commands": ["editor.action.triggerSuggest"]
     },
     {
-      "before": [";", ";", "<Space>"],
+      "before": [",", ",", "<Space>"],
       "commands": ["editor.action.triggerParameterHints"]
     },
-    // suppress auto close brackets
     {
-      "before": ["\""],
+      "before": [",", "f"],
       "commands": [
         {
+          "command": "type",
           "args": {
-            "snippet": "\"$1\"$0"
-          },
-          "command": "editor.action.insertSnippet"
+            "text": "("
+          }
         }
       ]
     },
     {
-      "before": [";", "f"],
+      "before": [",", "v"],
       "commands": [
         {
+          "command": "type",
           "args": {
-            "snippet": "($1)$0"
-          },
-          "command": "editor.action.insertSnippet"
+            "text": "{"
+          }
         }
       ]
     },
     {
-      "before": [";", "v"],
+      "before": [",", "b"],
       "commands": [
         {
+          "command": "type",
           "args": {
-            "snippet": "{$1}$0"
-          },
-          "command": "editor.action.insertSnippet"
+            "text": "["
+          }
         }
       ]
     },
     {
-      "before": [";", "b"],
-      "commands": [
-        {
-          "args": {
-            "snippet": "[$1]$0"
-          },
-          "command": "editor.action.insertSnippet"
-        }
-      ]
-    },
-    {
-      "before": [";", ";", "b"],
+      "before": [",", ",", "b"],
       "commands": [
         {
           "args": {
@@ -67,7 +55,7 @@
           "command": "editor.action.insertSnippet"
         }
       ]
-    }
+    },
     // cannot use when clause here
     // https://github.com/VSCodeVim/Vim/issues/1372#issuecomment-450553106
     // {
@@ -104,31 +92,31 @@
     // },
     {
       "after": ["\\"],
-      "before": [";", "z"]
+      "before": [",", "z"]
     }, // backslash
     {
       "after": ["_"],
-      "before": [";", "l"]
+      "before": [",", "l"]
     },
     {
       "after": ["="],
-      "before": [";", "e"]
+      "before": [",", "e"]
     }, //equal
     {
       "after": ["+"],
-      "before": [";", "a"]
+      "before": [",", "a"]
     }, //add
     {
       "after": ["-"],
-      "before": [";", "s"]
+      "before": [",", "s"]
     }, //subtract
     {
       "after": ["=", "="],
       // "when": "editorLangId == 'javascript'" no use
-      "before": [";", ";", "e"]
+      "before": [",", ",", "e"]
     },
     {
-      "before": [";", "i"],
+      "before": [",", "i"],
       "commands": ["editor.action.insertSnippet"]
     }
   ]

@@ -35,8 +35,18 @@
     },
     {
       // goto next tab
-      "after": ["g", "t"],
-      "before": ["g", "K"]
+      "before": ["g", "K"],
+      "after": ["g", "t"]
+    },
+    {
+      // goto first tab in editor group
+      "before": ["g", "H"],
+      "after": ["1", "g", "t"]
+    },
+    {
+      // goto last tab in editor group
+      "before": ["g", "L"],
+      "commands": ["workbench.action.lastEditorInGroup"]
     },
     {
       // goto previous git change
@@ -63,11 +73,6 @@
       // original H is for jump to screen top, which is barely used
       "before": ["H"],
       "after": ["g", "^"]
-    },
-    {
-      // after paste, the cursor is at the end of paste content
-      "before": ["P"],
-      "after": ["g", "p"]
     },
     {
       // find the next exact word under cursor
@@ -156,26 +161,6 @@
     {
       "before": ["<leader>", "E"],
       "commands": ["editor.action.refactor"]
-    },
-    // {
-    //   "before": ["<space>", "r"],
-    //   "commands": ["editor.action.goToReferences"]
-    // },
-    // {
-    //   "before": ["<space>", "<space>"],
-    //   "commands": ["workbench.action.openView"]
-    // },
-    {
-      "before": ["<c-w>", ","],
-      "commands": ["workbench.action.copyEditorToNewWindow"]
-    },
-    {
-      "before": ["<c-w>", "."],
-      "commands": ["workbench.action.moveEditorToNewWindow"]
-    },
-    {
-      "before": ["<c-w>", "/"],
-      "commands": ["workbench.action.toggleEditorGroupLayout"]
     },
     {
       "before": ["<space>"],
