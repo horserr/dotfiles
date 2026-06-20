@@ -1,0 +1,31 @@
+[
+  {
+    "key": ",",
+    "name": "+Terminal",
+    "icon": "question",
+    "type": "bindings",
+    "bindings": [
+      {
+        "key": ",",
+        "name": "Open developer tools",
+        "icon": "keyboard",
+        "type": "command",
+        "command": "workbench.action.toggleDevTools"
+      },
+      {
+        "key": "t",
+        "name": "Show terminal",
+        "icon": "terminal",
+        "type": "command",
+        "command": "workbench.action.terminal.focus"
+      },
+      {
+        "key": "T",
+        "name": "Open new external terminal",
+        "icon": "chevron-right",
+        "type": "command",
+        "command": "workbench.action.terminal.openNativeConsole"
+      }
+    ]
+  }
+]

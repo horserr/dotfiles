@@ -5,6 +5,8 @@
     "icon": "symbol-text",
     "type": "bindings",
     "bindings": [
+      // editor.action.transpose
+      // editor.action.transposeLetters
       {
         "key": ".",
         "name": "Quick fix",
@@ -18,6 +20,57 @@
         "icon": "code",
         "type": "command",
         "command": "workbench.action.configureLanguageBasedSettings"
+      },
+      // indentation
+      {
+        "key": "i",
+        "name": "+Indentation",
+        "icon": "arrow-right",
+        "type": "bindings",
+        "bindings": [
+          {
+            "key": "d",
+            "name": "Detect indentation",
+            "icon": "whitespace",
+            "type": "command",
+            "command": "editor.action.detectIndentation"
+          },
+          {
+            "key": "i",
+            "name": "Change indentation",
+            "icon": "edit",
+            "type": "command",
+            "command": "changeEditorIndentation"
+          },
+          {
+            "key": "r",
+            "name": "Reindent",
+            "icon": "list-flat",
+            "type": "command",
+            "command": "editor.action.reindentlines"
+          },
+          {
+            "key": "s",
+            "name": "Convert indentation to spaces",
+            "icon": "arrow-small-right",
+            "type": "command",
+            "command": "editor.action.indentationToSpaces"
+          },
+          {
+            "key": "t",
+            "name": "Convert indentation to tabs",
+            "icon": "export",
+            "type": "command",
+            "command": "editor.action.indentationToTabs"
+          },
+          {
+            "key": "R",
+            "name": "Reindent selected",
+            "icon": "selection",
+            "type": "command",
+            "command": "editor.action.reindentselectedlines"
+          }
+        ]
       },
       {
         "key": "v",
@@ -189,6 +242,7 @@
         ]
       },
       {
+        // when in merge editor
         "key": "m",
         "name": "+Merge conflict",
         "icon": "git-merge",

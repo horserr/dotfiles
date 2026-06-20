@@ -1,10 +1,24 @@
 [
   {
     "key": "s",
-    "name": "+Search/Symbol",
+    "name": "+Search",
     "icon": "search",
     "type": "bindings",
     "bindings": [
+      {
+        "key": "o",
+        "name": "Search online with selection",
+        "icon": "clear-all",
+        "type": "command",
+        "command": "Search For Selected Text"
+      },
+      {
+        "key": "s",
+        "name": "Show search",
+        "icon": "search",
+        "type": "command",
+        "command": "workbench.view.search"
+      },
       {
         "key": "c",
         "name": "Clear highlight",

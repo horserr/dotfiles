@@ -7,10 +7,32 @@
     "bindings": [
       {
         "key": "f",
-        "name": "Last file in editor group",
+        "name": "Open most recent editor",
         "icon": "arrow-both",
+        "type": "conditional",
+        "bindings": [
+          {
+            "key": "when:sideBySideEditorActive",
+            "name": "the other side of split editor",
+            "icon": "arrow-both",
+            "type": "command",
+            "command": "workbench.action.focusOtherSideEditor"
+          },
+          {
+            "key": "",
+            "name": "Last file in editor group",
+            "icon": "arrow-both",
+            "type": "command",
+            "command": "workbench.action.openPreviousRecentlyUsedEditorInGroup"
+          }
+        ]
+      },
+      {
+        "key": "'",
+        "name": "toggle split in editor",
+        "icon": "versions",
         "type": "command",
-        "command": "workbench.action.previousEditorInGroup"
+        "command": "workbench.action.toggleSplitEditorInGroup"
       },
       {
         "key": "o",
@@ -56,11 +78,11 @@
         "command": "workbench.action.quickOpenPreviousRecentlyUsedEditorInGroup"
       },
       {
-        "key": "e",
-        "name": "open file explore picker",
-        "icon": "code",
+        "key": "v",
+        "name": "Show explorer",
+        "icon": "list-tree",
         "type": "command",
-        "command": "file-browser.open"
+        "command": "workbench.view.explorer"
       },
       {
         "key": "R",
@@ -73,15 +95,23 @@
         "key": "p",
         "name": "toggle Pin file",
         "icon": "pin",
-        "type": "command",
-        "command": "workbench.action.pinEditor"
-      },
-      {
-        "key": "P",
-        "name": "unpin editor",
-        "icon": "pin",
-        "type": "command",
-        "command": "workbench.action.unpinEditor"
+        "type": "conditional",
+        "bindings": [
+          {
+            "key": "when:activeEditorIsPinned",
+            "name": "unpin editor",
+            "icon": "pin",
+            "type": "command",
+            "command": "workbench.action.unpinEditor"
+          },
+          {
+            "key": "",
+            "name": "unpin editor",
+            "icon": "pin",
+            "type": "command",
+            "command": "workbench.action.pinEditor"
+          }
+        ]
       },
       {
         "key": "d",
@@ -111,7 +141,7 @@
         "type": "command",
         "command": "workbench.action.editor.revertAndCloseActiveEditor"
       },
-      // scratch file
+      // new untitle file
       {
         "key": "n",
         "name": "+New Untitle file",
@@ -177,54 +207,40 @@
           }
         ]
       },
-      // indentation
+      // copy file path
       {
-        "key": "i",
-        "name": "+Indentation",
-        "icon": "arrow-right",
+        "key": "y",
+        "name": "+Yank",
+        "icon": "clippy",
         "type": "bindings",
         "bindings": [
           {
-            "key": "d",
-            "name": "Detect indentation",
-            "icon": "whitespace",
+            "key": "y",
+            "name": "Copy relative path of active file",
+            "icon": "list-selection",
             "type": "command",
-            "command": "editor.action.detectIndentation"
+            "command": "copyRelativeFilePath"
           },
           {
-            "key": "i",
-            "name": "Change indentation",
-            "icon": "edit",
+            "key": "p",
+            "name": "Copy path of active file",
+            "icon": "list-selection",
             "type": "command",
-            "command": "changeEditorIndentation"
+            "command": "copyFilePath"
           },
           {
-            "key": "r",
-            "name": "Reindent",
-            "icon": "list-flat",
+            "key": "Y",
+            "name": "Copy relative path of active file with line",
+            "icon": "list-selection",
             "type": "command",
-            "command": "editor.action.reindentlines"
+            "command": "vspacecode.copyRelativePathWithLine"
           },
           {
-            "key": "s",
-            "name": "Convert indentation to spaces",
-            "icon": "arrow-small-right",
+            "key": "P",
+            "name": "Copy path of active file with line",
+            "icon": "list-selection",
             "type": "command",
-            "command": "editor.action.indentationToSpaces"
-          },
-          {
-            "key": "t",
-            "name": "Convert indentation to tabs",
-            "icon": "export",
-            "type": "command",
-            "command": "editor.action.indentationToTabs"
-          },
-          {
-            "key": "R",
-            "name": "Reindent selected",
-            "icon": "selection",
-            "type": "command",
-            "command": "editor.action.reindentselectedlines"
+            "command": "vspacecode.copyPathWithLine"
           }
         ]
       },
@@ -235,6 +251,7 @@
         "icon": "window",
         "type": "bindings",
         "bindings": [
+          // into new editor group
           {
             "key": "c",
             "name": "+copy active file to new editor group",
@@ -343,6 +360,99 @@
         "icon": "triangle-right",
         "type": "command",
         "command": "workbench.action.moveEditorToNewWindow"
+      },
+      // move tab
+      {
+        "key": "<",
+        "name": "Move tab left",
+        "icon": "triangle-left",
+        "type": "transient",
+        "command": "workbench.action.moveEditorLeftInGroup",
+        "bindings": [
+          {
+            "key": "<",
+            "name": "Move tab left",
+            "icon": "triangle-left",
+            "type": "command",
+            "command": "workbench.action.moveEditorLeftInGroup"
+          },
+          {
+            "key": ">",
+            "name": "Move tab right",
+            "icon": "triangle-right",
+            "type": "command",
+            "command": "workbench.action.moveEditorRightInGroup"
+          }
+        ]
+      },
+      {
+        "key": ">",
+        "name": "Move tab right",
+        "icon": "triangle-right",
+        "type": "transient",
+        "command": "workbench.action.moveEditorRightInGroup",
+        "bindings": [
+          {
+            "key": "<",
+            "name": "Move tab left",
+            "icon": "triangle-left",
+            "type": "command",
+            "command": "workbench.action.moveEditorLeftInGroup"
+          },
+          {
+            "key": ">",
+            "name": "Move tab right",
+            "icon": "triangle-right",
+            "type": "command",
+            "command": "workbench.action.moveEditorRightInGroup"
+          }
+        ]
+      },
+      // compare
+      {
+        "key": "x",
+        "name": "+Compare",
+        "icon": "window",
+        "type": "bindings",
+        "bindings": [
+          // workbench.files.action.compareWithSaved
+          {
+            "key": "x",
+            "name": "+Compare active file with",
+            "icon": "diff",
+            "type": "command",
+            "command": "workbench.files.action.compareFileWith"
+          },
+          {
+            "key": "m",
+            "name": "select for compare",
+            "icon": "split-vertical",
+            "type": "command",
+            "command": "workbench.action.localHistory.selectForCompare"
+          },
+          {
+            "key": " ",
+            "name": "Compare active file with clipboard",
+            "icon": "clippy",
+            "type": "command",
+            "command": "workbench.files.action.compareWithClipboard"
+          },
+          {
+            "key": "M",
+            "name": "compare with selected",
+            "icon": "split-vertical",
+            "type": "command",
+            "command": "workbench.action.localHistory.compareWithSelected"
+          },
+          {
+            // compare editor
+            "key": "w",
+            "name": "Toggle ignore trim whitespace",
+            "icon": "whitespace",
+            "type": "command",
+            "command": "toggle.diff.ignoreTrimWhitespace"
+          }
+        ]
       }
     ]
   }

@@ -5,103 +5,278 @@
     "icon": "info",
     "type": "bindings",
     "bindings": [
+      //  "workbench.action.toggleWindowAlwaysOnTop"
+      // change view size
       {
         "key": "v",
-        "name": "view",
-        "icon": "unfold",
-        "type": "command",
-        "command": "workbench.action.openView"
+        "name": "Shrink window",
+        "icon": "remove",
+        "type": "transient",
+        "bindings": [
+          {
+            "key": "j",
+            "name": "decrease view height",
+            "icon": "remove",
+            "type": "command",
+            "command": "workbench.action.decreaseViewHeight"
+          },
+          {
+            "key": "k",
+            "name": "increase view height",
+            "icon": "add",
+            "type": "command",
+            "command": "workbench.action.increaseViewHeight"
+          },
+          {
+            "key": "l",
+            "name": "increase view width",
+            "icon": "add",
+            "type": "command",
+            "command": "workbench.action.increaseViewWidth"
+          },
+          {
+            "key": "h",
+            "name": "decrease view width",
+            "icon": "remove",
+            "type": "command",
+            "command": "workbench.action.decreaseViewWidth"
+          },
+          {
+            "key": ",",
+            "name": "decrease view size",
+            "icon": "remove",
+            "type": "command",
+            "command": "workbench.action.decreaseViewSize"
+          },
+          {
+            "key": ".",
+            "name": "increase view size",
+            "icon": "remove",
+            "type": "command",
+            "command": "workbench.action.increaseViewSize"
+          }
+        ]
       },
       {
-        "key": "e",
-        "name": "Show explorer",
-        "icon": "list-tree",
-        "type": "command",
-        "command": "workbench.view.explorer"
+        "key": "'",
+        "name": "Toggle editor group layout",
+        "icon": "tools",
+        "type": "conditional",
+        "bindings": [
+          {
+            "key": "when:sideBySideEditorActive",
+            "name": "the other side of split editor",
+            "icon": "arrow-both",
+            "type": "commands",
+            "commands": [
+              "workbench.action.toggleSplitEditorInGroupLayout",
+              "workbench.action.focusActiveEditorGroup"
+            ]
+          },
+          {
+            "key": "",
+            "name": "Last file in editor group",
+            "icon": "arrow-both",
+            "type": "command",
+            "command": "workbench.action.toggleEditorGroupLayout"
+          }
+        ]
       },
+      // all views
       {
-        "key": "j",
-        "name": "Show terminal",
-        "icon": "terminal",
-        "type": "command",
-        "command": "workbench.action.terminal.focus"
-      },
-      {
-        "key": "J",
-        "name": "Open new external terminal",
-        "icon": "chevron-right",
-        "type": "command",
-        "command": "workbench.action.terminal.openNativeConsole"
-      },
-      {
-        "key": "$",
-        "name": "Run Recent Command in Terminal",
-        "icon": "terminal",
-        "type": "command",
-        "command": "workbench.action.terminal.runRecentCommand"
-      },
-      {
-        "key": "d",
-        "name": "Show debug console",
-        "icon": "debug-console",
-        "type": "command",
-        "command": "workbench.debug.action.toggleRepl"
-      },
-      {
-        "key": "g",
-        "name": "Show source control",
-        "icon": "source-control",
-        "type": "command",
-        "command": "workbench.view.scm"
-      },
-      {
-        "key": "n",
+        "key": " ",
         "name": "Show notification",
         "icon": "comment",
         "type": "command",
-        "command": "notifications.toggleList"
+        "bindings": [
+          {
+            "key": " ",
+            "name": "view",
+            "icon": "unfold",
+            "type": "command",
+            "command": "workbench.action.openView"
+          },
+          {
+            "key": "n",
+            "name": "Show notification",
+            "icon": "comment",
+            "type": "command",
+            "command": "notifications.toggleList"
+          },
+          {
+            "key": "o",
+            "name": "Show output",
+            "icon": "output",
+            "type": "command",
+            "command": "workbench.action.output.toggleOutput"
+          },
+          {
+            "key": "p",
+            "name": "Show problem",
+            "icon": "error",
+            "type": "command",
+            "command": "workbench.actions.view.problems"
+          },
+          {
+            "key": "r",
+            "name": "Show remote explorer",
+            "icon": "remote-explorer",
+            "type": "command",
+            "command": "workbench.view.remote"
+          },
+          {
+            "key": "t",
+            "name": "Show test",
+            "icon": "beaker",
+            "type": "command",
+            "command": "workbench.view.extension.test"
+          },
+          {
+            "key": "x",
+            "name": "Show extensions",
+            "icon": "extensions",
+            "type": "command",
+            "command": "workbench.extensions.action.installedExtensions"
+          }
+        ]
       },
       {
-        "key": "o",
-        "name": "Show output",
+        "key": "c",
+        "name": "Toggle centered layout",
+        "icon": "list-flat",
+        "type": "command",
+        "command": "workbench.action.toggleCenteredLayout"
+      },
+      {
+        "key": "l",
+        "name": "Toggle word wrap",
+        "icon": "word-wrap",
+        "type": "command",
+        "command": "editor.action.toggleWordWrap"
+      },
+      {
+        "key": "B",
+        "name": "Toggle breadcrumbs",
+        "icon": "tools",
+        "type": "command",
+        "command": "breadcrumbs.toggle"
+      },
+      {
+        "key": "S",
+        "name": "Toggle stickyscrool",
+        "icon": "tools",
+        "type": "commands",
+        "commands": [
+          "editor.action.toggleStickyScroll",
+          "notebook.action.toggleNotebookStickyScroll"
+        ]
+      },
+      {
+        "key": "m",
+        "name": "Toggle maximized panel",
+        "icon": "chevron-up",
+        "type": "command",
+        "command": "workbench.action.toggleMaximizedPanel"
+      },
+      {
+        "key": "z",
+        "name": "Toggle zen mode",
+        "icon": "eye",
+        "type": "command",
+        "command": "workbench.action.toggleZenMode"
+      },
+      {
+        "key": "F",
+        "name": "Toggle full screen",
+        "icon": "screen-full",
+        "type": "command",
+        "command": "workbench.action.toggleFullScreen"
+      },
+      {
+        "key": "M",
+        "name": "Toggle minimap",
+        "icon": "symbol-ruler",
+        "type": "command",
+        "command": "editor.action.toggleMinimap"
+      },
+      {
+        "key": "b",
+        "name": "Toggle side bar visibility",
+        "icon": "split-horizontal",
+        "type": "command",
+        "command": "workbench.action.toggleSidebarVisibility"
+      },
+      {
+        "key": "j",
+        "name": "Toggle panel visibility",
         "icon": "output",
         "type": "command",
-        "command": "workbench.action.output.toggleOutput"
+        "command": "workbench.action.togglePanel"
       },
       {
-        "key": "p",
-        "name": "Show problem",
-        "icon": "error",
+        "key": "a",
+        "name": "Toggle secondary bar visibility",
+        "icon": "output",
         "type": "command",
-        "command": "workbench.actions.view.problems"
+        "command": "workbench.action.toggleAuxiliaryBar"
       },
       {
-        "key": "r",
-        "name": "Show remote explorer",
-        "icon": "remote-explorer",
-        "type": "command",
-        "command": "workbench.view.remote"
+        "key": "T",
+        "name": "Toggle tab visibility",
+        "icon": "files",
+        "type": "conditional",
+        "bindings": [
+          {
+            "key": "",
+            "name": "Show editor tabs",
+            "type": "command",
+            "command": "workbench.action.showMultipleEditorTabs"
+          },
+          {
+            "key": "when:editorTabsVisible",
+            "name": "Hide editor tabs",
+            "type": "command",
+            "command": "workbench.action.hideEditorTabs"
+          }
+        ]
       },
       {
-        "key": "s",
-        "name": "Show search",
-        "icon": "search",
-        "type": "command",
-        "command": "workbench.view.search"
-      },
-      {
-        "key": "t",
-        "name": "Show test",
-        "icon": "beaker",
-        "type": "command",
-        "command": "workbench.view.extension.test"
-      },
-      {
-        "key": "x",
-        "name": "Show extensions",
-        "icon": "extensions",
-        "type": "command",
-        "command": "workbench.view.extensions"
+        "key": "*",
+        "name": "misc",
+        "icon": "eye",
+        "type": "bindings",
+        "bindings": [
+          // workbench.action.toggleCommenting
+          // editor.action.toggleTabFocusMode
+          {
+            "key": "a",
+            "name": "Toggle tool/activity bar visibility",
+            "icon": "tools",
+            "type": "command",
+            "command": "workbench.action.toggleActivityBarVisibility"
+          },
+          {
+            "key": "g",
+            "name": "Toggle git blame editor decoration",
+            "icon": "whitespace",
+            "type": "command",
+            "command": "git.blame.toggleEditorDecoration"
+          },
+          {
+            "key": "w",
+            "name": "Toggle render whitespace",
+            "icon": "whitespace",
+            "type": "command",
+            "command": "editor.action.toggleRenderWhitespace"
+          },
+          {
+            "key": "c",
+            "name": "Toggle find case sensitive",
+            "icon": "case-sensitive",
+            "type": "command",
+            "command": "toggleFindCaseSensitive"
+          }
+        ]
       },
       {
         "key": "q",
@@ -112,52 +287,6 @@
           "workbench.action.closeSidebar",
           "workbench.action.closePanel",
           "workbench.action.closeAuxiliaryBar"
-        ]
-      },
-      {
-        "key": "[",
-        "name": "Shrink window",
-        "icon": "remove",
-        "type": "transient",
-        "command": "workbench.action.decreaseViewSize",
-        "bindings": [
-          {
-            "key": "[",
-            "name": "Shrink window",
-            "icon": "remove",
-            "type": "command",
-            "command": "workbench.action.decreaseViewSize"
-          },
-          {
-            "key": "]",
-            "name": "Enlarge window",
-            "icon": "add",
-            "type": "command",
-            "command": "workbench.action.increaseViewSize"
-          }
-        ]
-      },
-      {
-        "key": "]",
-        "name": "Enlarge window",
-        "icon": "add",
-        "type": "transient",
-        "command": "workbench.action.increaseViewSize",
-        "bindings": [
-          {
-            "key": "[",
-            "name": "Shrink window",
-            "icon": "remove",
-            "type": "command",
-            "command": "workbench.action.decreaseViewSize"
-          },
-          {
-            "key": "]",
-            "name": "Enlarge window",
-            "icon": "add",
-            "type": "command",
-            "command": "workbench.action.increaseViewSize"
-          }
         ]
       }
     ]

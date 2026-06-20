@@ -5,6 +5,25 @@
     "icon": "git-branch",
     "type": "bindings",
     "bindings": [
+      // editor.action.diffReview.next
+      {
+        "key": "v",
+        "name": "toggle Show source control",
+        "icon": "source-control",
+        "type": "command",
+        "command": "workbench.view.scm"
+      },
+      {
+        "key": ",",
+        "name": "open quick diff (Next error)",
+        "icon": "arrow-down",
+        "type": "commands",
+        "commands": [
+          "editor.action.dirtydiff.next",
+          "toggleQuickDiffWidgetFocus",
+          "Move Cursor To Bottom Of ViewPort"
+        ]
+      },
       {
         "key": "b",
         "name": "Blame file",

@@ -1,13 +1,14 @@
 [
   {
-    "key": ",",
+    "key": ".",
     "name": "+Developer",
     "icon": "question",
     "type": "bindings",
     "bindings": [
       // workbench.action.reopenTextEditor
+      // createCursor
       {
-        "key": ",",
+        "key": ".",
         "name": "Open developer tools",
         "icon": "keyboard",
         "type": "command",
@@ -142,6 +143,12 @@
             "command": "workbench.extensions.action.openExtensionsFolder"
           }
         ]
+      },
+      {
+        "key": "R",
+        "name": "vscode runtime args setting",
+        "type": "command",
+        "command": "workbench.action.configureRuntimeArguments"
       }
     ]
   }

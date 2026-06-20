@@ -70,11 +70,11 @@
         "command": "workbench.action.navigateRight"
       },
       {
-        "key": "m",
-        "name": "Maximize window",
+        "key": "L",
+        "name": "Toggle scroll lock",
         "icon": "screen-full",
         "type": "command",
-        "command": "workbench.action.toggleMaximizeEditorGroup"
+        "command": "workbench.action.toggleLockedScrolling"
       },
       {
         "key": "n",

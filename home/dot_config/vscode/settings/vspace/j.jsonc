@@ -6,11 +6,18 @@
     "type": "bindings",
     "bindings": [
       {
-        "key": "r",
-        "name": "+Open recent folders/files",
+        "key": "j",
+        "name": "focus editor breadcrumbs",
         "icon": "clock",
         "type": "command",
-        "command": "workbench.action.openRecent"
+        "command": "breadcrumbs.focus"
+      },
+      {
+        "key": "J",
+        "name": "focus editor sticky scroll",
+        "icon": "clock",
+        "type": "command",
+        "command": "editor.action.focusStickyScroll"
       },
       {
         "key": "e",

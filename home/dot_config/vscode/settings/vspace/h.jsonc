@@ -7,9 +7,9 @@
     "bindings": [
       {
         "key": " ",
-        "name": "(custom)open dotfiles folder in vscode",
+        "name": "open custom commands",
         "type": "command",
-        "command": "Open Dotfile Source Folder"
+        "command": "commands.openAsQuickPick"
       },
       {
         "key": "h",
@@ -45,6 +45,12 @@
             "name": "show colors",
             "type": "command",
             "command": "commands.suggestColors"
+          },
+          {
+            "key": "l",
+            "name": "show languages",
+            "type": "command",
+            "command": "workbench.action.configureLanguageBasedSettings"
           }
         ]
       },
@@ -120,18 +126,43 @@
         "type": "bindings",
         "bindings": [
           {
-            "key": "d",
-            "name": "Open VSCode Documentation",
+            "key": "v",
+            "name": "Open VSCode snippet variable Documentation",
             "icon": "book",
             "type": "command",
-            "command": "workbench.action.openDocumentationUrl"
+            "command": "vscode.open",
+            "args": "https://code.visualstudio.com/docs/editing/userdefinedsnippets#_variables"
           },
           {
-            "key": "D",
-            "name": "Open VSpaceCode Documentation",
+            "key": "V",
+            "name": "Open VspaceCode Documentation",
             "icon": "book",
             "type": "command",
             "command": "vspacecode.openDocumentationUrl"
+          },
+          {
+            "key": "w",
+            "name": "Open when clause Documentation",
+            "icon": "book",
+            "type": "command",
+            "command": "vscode.open",
+            "args": "https://code.visualstudio.com/api/references/when-clause-contexts#available-context-keys"
+          },
+          {
+            "key": "c",
+            "name": "Open vscode built-in commands Documentation",
+            "icon": "book",
+            "type": "command",
+            "command": "vscode.open",
+            "args": "https://code.visualstudio.com/api/references/commands#commands"
+          },
+          {
+            "key": "C",
+            "name": "Open commands Documentation",
+            "icon": "book",
+            "type": "command",
+            "command": "vscode.open",
+            "args": "https://github.com/usernamehw/vscode-commands/blob/master/README.md"
           }
         ]
       }

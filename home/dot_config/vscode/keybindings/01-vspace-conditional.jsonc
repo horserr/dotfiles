@@ -44,5 +44,35 @@
       "when": "isAuxiliaryWindow || isAuxiliaryWindowFocusedContext"
     },
     "when": "whichkeyVisible && (isAuxiliaryWindow || isAuxiliaryWindowFocusedContext)"
+  },
+  {
+    // for detecting whether this current editor tab in pinned or not
+    "key": "p",
+    "command": "whichkey.triggerKey",
+    "args": {
+      "key": "p",
+      "when": "activeEditorIsPinned"
+    },
+    "when": "whichkeyVisible && activeEditorIsPinned"
+  },
+  {
+    // for detecting whether split editor in current tab
+    "key": "f",
+    "command": "whichkey.triggerKey",
+    "args": {
+      "key": "f",
+      "when": "sideBySideEditorActive"
+    },
+    "when": "whichkeyVisible && sideBySideEditorActive"
+  },
+  {
+    // for detecting whether split editor in current tab
+    "key": "'",
+    "command": "whichkey.triggerKey",
+    "args": {
+      "key": "'",
+      "when": "sideBySideEditorActive"
+    },
+    "when": "whichkeyVisible && sideBySideEditorActive"
   }
 ]
