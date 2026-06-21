@@ -1,0 +1,17 @@
+[
+  {
+    "key": "l",
+    "command": "editor.action.goToFocusedStickyScrollLine",
+    "when": "stickyScrollFocused"
+  },
+  {
+    "key": "j",
+    "command": "editor.action.selectNextStickyScrollLine",
+    "when": "stickyScrollFocused"
+  },
+  {
+    "key": "k",
+    "command": "editor.action.selectPreviousStickyScrollLine",
+    "when": "stickyScrollFocused"
+  }
+]
