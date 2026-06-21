@@ -7,6 +7,22 @@
     "bindings": [
       // workbench.action.reopenTextEditor
       // createCursor
+      // workbench.action.toggleMultiCursorModifier
+      // workbench.action.webview.openDeveloperTools
+      // workbench.action.webview.reloadWebviewAction
+      // workbench.actions.sync.editMachineName
+      // workbench.actions.sync.loadActivity
+      // workbench.actions.sync.turnOffSyncOnMachine
+      // workbench.actions.sync.workbench.views.sync.localActivity.compareWithLocal
+      // workbench.actions.sync.workbench.views.sync.localActivity.replaceCurrent
+      // workbench.actions.sync.workbench.views.sync.localActivity.resolveResource
+      // workbench.actions.sync.workbench.views.sync.remoteActivity.compareWithLocal
+      // workbench.actions.sync.workbench.views.sync.remoteActivity.replaceCurrent
+      // workbench.actions.sync.workbench.views.sync.remoteActivity.resolveResource
+      // workbench.actions.syncData.reset
+      // workbench.action.setDefaultLogLevel
+      // workbench.action.setLogLevel
+
       {
         "key": ".",
         "name": "Open developer tools",

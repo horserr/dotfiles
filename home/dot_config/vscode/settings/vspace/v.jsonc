@@ -5,8 +5,14 @@
     "icon": "info",
     "type": "bindings",
     "bindings": [
-      //  "workbench.action.toggleWindowAlwaysOnTop"
       // change view size
+      // workbench.action.toggleScreencastMode
+      // workbench.action.zenHideEditorTabs
+      // workbench.action.zenShowEditorTab
+      // workbench.action.zenShowMultipleEditorTabs
+      // workbench.action.toggleSeparatePinnedEditorTabs
+
+      // change view/editor size
       {
         "key": "v",
         "name": "Shrink window",
@@ -57,6 +63,7 @@
           }
         ]
       },
+      // editor in group layout
       {
         "key": "'",
         "name": "Toggle editor group layout",
@@ -82,7 +89,21 @@
           }
         ]
       },
-      // all views
+      {
+        "key": "m",
+        "name": "Toggle maximized panel",
+        "icon": "chevron-up",
+        "type": "command",
+        "command": "workbench.action.toggleMaximizedPanel"
+      },
+      {
+        "key": "a",
+        "name": "Toggle tool/activity bar visibility",
+        "icon": "tools",
+        "type": "command",
+        "command": "workbench.action.toggleActivityBarVisibility"
+      },
+      // all views & view containers
       {
         "key": " ",
         "name": "Show notification",
@@ -140,64 +161,122 @@
           }
         ]
       },
+      // file/editor view
       {
-        "key": "c",
-        "name": "Toggle centered layout",
+        "key": "e",
+        "name": "file/editor interior view",
         "icon": "list-flat",
-        "type": "command",
-        "command": "workbench.action.toggleCenteredLayout"
-      },
-      {
-        "key": "l",
-        "name": "Toggle word wrap",
-        "icon": "word-wrap",
-        "type": "command",
-        "command": "editor.action.toggleWordWrap"
-      },
-      {
-        "key": "B",
-        "name": "Toggle breadcrumbs",
-        "icon": "tools",
-        "type": "command",
-        "command": "breadcrumbs.toggle"
-      },
-      {
-        "key": "S",
-        "name": "Toggle stickyscrool",
-        "icon": "tools",
-        "type": "commands",
-        "commands": [
-          "editor.action.toggleStickyScroll",
-          "notebook.action.toggleNotebookStickyScroll"
+        "type": "bindings",
+        "bindings": [
+          {
+            "key": "g",
+            "name": "Toggle git blame editor decoration",
+            "icon": "whitespace",
+            "type": "command",
+            "command": "git.blame.toggleEditorDecoration"
+          },
+          {
+            "key": "w",
+            "name": "Toggle render whitespace",
+            "icon": "whitespace",
+            "type": "command",
+            "command": "editor.action.toggleRenderWhitespace"
+          },
+          {
+            "key": "c",
+            "name": "Toggle centered layout",
+            "icon": "list-flat",
+            "type": "command",
+            "command": "workbench.action.toggleCenteredLayout"
+          },
+          {
+            "key": "M",
+            "name": "Toggle minimap",
+            "icon": "symbol-ruler",
+            "type": "command",
+            "command": "editor.action.toggleMinimap"
+          },
+          {
+            "key": "l",
+            "name": "Toggle word wrap",
+            "icon": "word-wrap",
+            "type": "command",
+            "command": "editor.action.toggleWordWrap"
+          },
+          {
+            "key": "B",
+            "name": "Toggle breadcrumbs",
+            "icon": "tools",
+            "type": "command",
+            "command": "breadcrumbs.toggle"
+          },
+          {
+            "key": "T",
+            "name": "Toggle tab visibility",
+            "icon": "files",
+            "type": "conditional",
+            "bindings": [
+              {
+                "key": "",
+                "name": "Show editor tabs",
+                "type": "command",
+                "command": "workbench.action.showMultipleEditorTabs"
+              },
+              {
+                "key": "when:editorTabsVisible",
+                "name": "Hide editor tabs",
+                "type": "command",
+                "command": "workbench.action.hideEditorTabs"
+              }
+            ]
+          },
+          {
+            "key": "S",
+            "name": "Toggle stickyscrool",
+            "icon": "tools",
+            "type": "commands",
+            "commands": [
+              "editor.action.toggleStickyScroll",
+              "notebook.action.toggleNotebookStickyScroll"
+            ]
+          }
         ]
       },
       {
-        "key": "m",
-        "name": "Toggle maximized panel",
-        "icon": "chevron-up",
-        "type": "command",
-        "command": "workbench.action.toggleMaximizedPanel"
-      },
-      {
-        "key": "z",
-        "name": "Toggle zen mode",
-        "icon": "eye",
-        "type": "command",
-        "command": "workbench.action.toggleZenMode"
-      },
-      {
-        "key": "F",
-        "name": "Toggle full screen",
+        "key": "w",
+        "name": "+workspace/window layout",
         "icon": "screen-full",
-        "type": "command",
-        "command": "workbench.action.toggleFullScreen"
-      },
-      {
-        "key": "M",
-        "name": "Toggle minimap",
-        "icon": "symbol-ruler",
-        "type": "command",
-        "command": "editor.action.toggleMinimap"
+        "type": "bindings",
+        "bindings": [
+          {
+            "key": "z",
+            "name": "Toggle zen mode",
+            "icon": "eye",
+            "type": "command",
+            "command": "workbench.action.toggleZenMode"
+          },
+          {
+            "key": "F",
+            "name": "Toggle full screen",
+            "icon": "screen-full",
+            "type": "command",
+            "command": "workbench.action.toggleFullScreen"
+          },
+          {
+            "key": "t",
+            "name": "toggle always on top",
+            "icon": "multiple-windows",
+            "type": "command",
+            "command": "workbench.action.toggleWindowAlwaysOnTop"
+          },
+          {
+            "key": "L",
+            "name": "Toggle scroll lock",
+            "icon": "screen-full",
+            "type": "command",
+            "command": "workbench.action.toggleLockedScrolling"
+          }
+        ]
       },
       {
         "key": "b",
@@ -219,64 +298,6 @@
         "icon": "output",
         "type": "command",
         "command": "workbench.action.toggleAuxiliaryBar"
-      },
-      {
-        "key": "T",
-        "name": "Toggle tab visibility",
-        "icon": "files",
-        "type": "conditional",
-        "bindings": [
-          {
-            "key": "",
-            "name": "Show editor tabs",
-            "type": "command",
-            "command": "workbench.action.showMultipleEditorTabs"
-          },
-          {
-            "key": "when:editorTabsVisible",
-            "name": "Hide editor tabs",
-            "type": "command",
-            "command": "workbench.action.hideEditorTabs"
-          }
-        ]
-      },
-      {
-        "key": "*",
-        "name": "misc",
-        "icon": "eye",
-        "type": "bindings",
-        "bindings": [
-          // workbench.action.toggleCommenting
-          // editor.action.toggleTabFocusMode
-          {
-            "key": "a",
-            "name": "Toggle tool/activity bar visibility",
-            "icon": "tools",
-            "type": "command",
-            "command": "workbench.action.toggleActivityBarVisibility"
-          },
-          {
-            "key": "g",
-            "name": "Toggle git blame editor decoration",
-            "icon": "whitespace",
-            "type": "command",
-            "command": "git.blame.toggleEditorDecoration"
-          },
-          {
-            "key": "w",
-            "name": "Toggle render whitespace",
-            "icon": "whitespace",
-            "type": "command",
-            "command": "editor.action.toggleRenderWhitespace"
-          },
-          {
-            "key": "c",
-            "name": "Toggle find case sensitive",
-            "icon": "case-sensitive",
-            "type": "command",
-            "command": "toggleFindCaseSensitive"
-          }
-        ]
       },
       {
         "key": "q",

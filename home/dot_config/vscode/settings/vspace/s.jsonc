@@ -16,8 +16,12 @@
         "key": "s",
         "name": "Show search",
         "icon": "search",
-        "type": "command",
-        "command": "workbench.view.search"
+        "type": "commands",
+        "commands": [
+          "search.action.openNewEditor",
+          "workbench.action.moveEditorToRightGroup",
+          "workbench.action.search.toggleQueryDetails"
+        ]
       },
       {
         "key": "c",
@@ -32,13 +36,6 @@
             }
           ]
         }
-      },
-      {
-        "key": "e",
-        "name": "Edit symbol",
-        "icon": "edit",
-        "type": "command",
-        "command": "editor.action.rename"
       },
       {
         "key": "h",
@@ -86,13 +83,6 @@
         "icon": "symbol-class",
         "type": "command",
         "command": "workbench.action.gotoSymbol"
-      },
-      {
-        "key": "p",
-        "name": "Search in project",
-        "icon": "search",
-        "type": "command",
-        "command": "workbench.action.findInFiles"
       },
       {
         "key": "r",

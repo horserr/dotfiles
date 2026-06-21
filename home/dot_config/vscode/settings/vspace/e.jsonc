@@ -21,31 +21,31 @@
       },
       // editor group size
       {
-        "key": " ",
-        "name": "+Editor Group Size",
+        "key": "m",
+        "name": "+Editor Group Size/Maximize",
         "icon": "chrome-maximize",
         "type": "bindings",
         "bindings": [
-          {
-            "key": ",",
-            "name": "Toggle editor group size",
-            "icon": "chrome-maximize",
-            "type": "command",
-            "command": "workbench.action.toggleEditorWidths"
-          },
           {
             "key": "m",
             "name": "Maximize editor group and hide sidebar",
             "icon": "chrome-maximize",
             "type": "command",
-            "command": "workbench.action.maximizeEditorHideSidebar"
+            "command": "workbench.action.toggleMaximizeEditorGroup"
+          },
+          {
+            "key": "e",
+            "name": "Reset/even editor group sizes",
+            "icon": "move",
+            "type": "command",
+            "command": "workbench.action.evenEditorWidths"
           },
           {
             "key": "f",
             "name": "Maximize editor group following the focus",
             "icon": "chrome-maximize",
             "type": "command",
-            "command": "workbench.action.minimizeOtherEditorGroupsHideSidebar"
+            "command": "workbench.action.toggleEditorWidths"
           }
         ]
       },
@@ -115,6 +115,13 @@
             "command": "workbench.action.closeEditorsInOtherGroups"
           },
           {
+            "key": "a",
+            "name": "Close all editor groups",
+            "icon": "close-all",
+            "type": "command",
+            "command": "workbench.action.closeAllGroups"
+          },
+          {
             "key": "d",
             "name": "Close editor groups",
             "icon": "close",
@@ -156,35 +163,35 @@
             "name": "Copy editor group left",
             "icon": "triangle-left",
             "type": "command",
-            "command": "workbench.action.duplicateActiveGroupLeft"
+            "command": "workbench.action.duplicateActiveEditorGroupLeft"
           },
           {
             "key": "j",
             "name": "Copy editor group down",
             "icon": "triangle-down",
             "type": "command",
-            "command": "workbench.action.duplicateActiveGroupRight"
+            "command": "workbench.action.duplicateActiveEditorGroupDown"
           },
           {
             "key": "k",
             "name": "Copy editor group up",
             "icon": "triangle-up",
             "type": "command",
-            "command": "workbench.action.duplicateActiveGroupUp"
+            "command": "workbench.action.duplicateActiveEditorGroupUp"
           },
           {
             "key": "l",
             "name": "Copy editor group right",
             "icon": "triangle-right",
             "type": "command",
-            "command": "workbench.action.duplicateActiveGroupDown"
+            "command": "workbench.action.duplicateActiveEditorGroupRight"
           },
           {
             "key": "w",
             "name": "Copy editor group to new window",
             "icon": "triangle-right",
             "type": "command",
-            "command": "workbench.action.copyEditorToNewWindow"
+            "command": "workbench.action.copyEditorGroupToNewWindow"
           }
         ]
       },
@@ -221,8 +228,26 @@
         "key": "w",
         "name": "Move entire editor group into new window",
         "icon": "triangle-right",
-        "type": "command",
-        "command": "workbench.action.moveEditorGroupToNewWindow"
+        "type": "conditional",
+        "bindings": [
+          {
+            "key": "when:isAuxiliaryWindow || isAuxiliaryWindowFocusedContext",
+            "name": "Join to the main window",
+            "icon": "combine",
+            "type": "command",
+            "command": "workbench.action.restoreEditorsToMainWindow"
+          },
+          {
+            "key": "",
+            "name": "Move entire editor group into new window",
+            "icon": "combine",
+            "type": "commands",
+            "commands": [
+              "workbench.action.moveEditorGroupToNewWindow",
+              "workbench.action.focusActiveEditorGroup"
+            ]
+          }
+        ]
       },
       {
         "key": "J",
@@ -232,7 +257,7 @@
         "bindings": [
           {
             "key": "J",
-            "name": "Join next editor group",
+            "name": "Join previous editor group",
             "icon": "combine",
             "type": "command",
             "command": "workbench.action.joinTwoGroups"
@@ -243,21 +268,6 @@
             "icon": "combine",
             "type": "command",
             "command": "workbench.action.joinAllGroups"
-          },
-          {
-            "key": "w",
-            "name": "Join to the main window",
-            "icon": "combine",
-            "type": "conditional",
-            "bindings": [
-              {
-                "key": "when:isAuxiliaryWindow || isAuxiliaryWindowFocusedContext",
-                "name": "Join to the main window",
-                "icon": "combine",
-                "type": "command",
-                "command": "workbench.action.restoreEditorsToMainWindow"
-              }
-            ]
           }
         ]
       }

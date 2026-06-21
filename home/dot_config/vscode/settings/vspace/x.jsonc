@@ -73,6 +73,13 @@
         ]
       },
       {
+        "key": "e",
+        "name": "Edit symbol",
+        "icon": "edit",
+        "type": "command",
+        "command": "editor.action.rename"
+      },
+      {
         "key": "v",
         "name": "Smart select/expand region",
         "icon": "selection",

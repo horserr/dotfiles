@@ -35,48 +35,6 @@
         "command": "workbench.action.quickSwitchWindow"
       },
       {
-        "key": "=",
-        "name": "Reset window sizes",
-        "icon": "move",
-        "type": "command",
-        "command": "workbench.action.evenEditorWidths"
-      },
-      {
-        "key": "h",
-        "name": "Focus window left",
-        "icon": "arrow-left",
-        "type": "command",
-        "command": "workbench.action.navigateLeft"
-      },
-      {
-        "key": "j",
-        "name": "Focus window down",
-        "icon": "arrow-down",
-        "type": "command",
-        "command": "workbench.action.navigateDown"
-      },
-      {
-        "key": "k",
-        "name": "Focus window up",
-        "icon": "arrow-up",
-        "type": "command",
-        "command": "workbench.action.navigateUp"
-      },
-      {
-        "key": "l",
-        "name": "Focus window right",
-        "icon": "arrow-right",
-        "type": "command",
-        "command": "workbench.action.navigateRight"
-      },
-      {
-        "key": "L",
-        "name": "Toggle scroll lock",
-        "icon": "screen-full",
-        "type": "command",
-        "command": "workbench.action.toggleLockedScrolling"
-      },
-      {
         "key": "n",
         "name": "Open new empty frame",
         "icon": "empty-window",
@@ -84,25 +42,18 @@
         "command": "workbench.action.newWindow"
       },
       {
-        "key": "N",
+        "key": "c",
         "name": "Duplicate workspace in new frame",
         "icon": "window",
         "type": "command",
         "command": "workbench.action.duplicateWorkspaceInNewWindow"
       },
       {
-        "key": "x",
-        "name": "Close all windows",
-        "icon": "close-all",
+        "key": "s",
+        "name": "save workspace",
+        "icon": "multiple-windows",
         "type": "command",
-        "command": "workbench.action.closeAllGroups"
-      },
-      {
-        "key": "D",
-        "name": "Close all other windows",
-        "icon": "close-all",
-        "type": "command",
-        "command": "workbench.action.closeEditorsInOtherGroups"
+        "command": "workbench.action.saveWorkspaceAs"
       },
       // layout
       {
