@@ -1,0 +1,184 @@
+[
+  {
+    "key": "ctrl+j",
+    "command": "search.focus.nextInputBox",
+    "when": "inputBoxFocus && (inSearchEditor || searchViewletVisible)"
+  },
+  {
+    "key": "ctrl+k",
+    "command": "search.focus.previousInputBox",
+    "when": "inputBoxFocus && (inSearchEditor || searchViewletVisible)"
+  },
+  // {
+  //   "key": "alt+enter",
+  //   "command": "search.action.openInEditor",
+  //   "when": "hasSearchResult && searchViewletFocus"
+  // },
+  {
+    "key": "escape",
+    "command": "whichkey.show",
+    "args": [
+      {
+        "key": "f",
+        "name": "focus search text box",
+        "icon": "x",
+        "type": "command",
+        "command": "search.action.focusQueryEditorWidget"
+      },
+      {
+        "key": "g",
+        "name": "apply changes",
+        "icon": "x",
+        "type": "command",
+        "command": "searchEditorApplyChanges.apply"
+      },
+      {
+        "key": "t",
+        "name": "toggle query details",
+        "icon": "x",
+        "type": "command",
+        "command": "workbench.action.search.toggleQueryDetails"
+      },
+      {
+        "key": "d",
+        "name": "delete results of current file",
+        "icon": "x",
+        "type": "command",
+        "command": "search.searchEditor.action.deleteFileResults"
+      },
+      {
+        "key": "j",
+        "name": "focus next search result",
+        "icon": "x",
+        "type": "transient",
+        "command": "search.action.focusNextSearchResult",
+        "bindings": [
+          {
+            "key": "j",
+            "name": "focus next search result",
+            "icon": "x",
+            "type": "command",
+            "command": "search.action.focusNextSearchResult"
+          },
+          {
+            "key": "k",
+            "name": "focus previous search result",
+            "icon": "x",
+            "type": "command",
+            "command": "search.action.focusPreviousSearchResult"
+          }
+        ]
+      },
+      {
+        "key": "k",
+        "name": "focus previous search result",
+        "icon": "x",
+        "type": "command",
+        "command": "search.action.focusPreviousSearchResult",
+        "bindings": [
+          {
+            "key": "j",
+            "name": "focus next search result",
+            "icon": "x",
+            "type": "command",
+            "command": "search.action.focusNextSearchResult"
+          },
+          {
+            "key": "k",
+            "name": "focus previous search result",
+            "icon": "x",
+            "type": "command",
+            "command": "search.action.focusPreviousSearchResult"
+          }
+        ]
+      },
+      {
+        "key": " ",
+        "name": "+Focus",
+        "icon": "x",
+        "type": "bindings",
+        "bindings": [
+          {
+            "key": "x",
+            "icon": "x",
+            "type": "command",
+            "command": "search.action.focusFilesToExclude"
+          },
+          {
+            "key": "i",
+            "icon": "x",
+            "type": "command",
+            "command": "search.action.focusFilesToInclude"
+          },
+          {
+            "key": "q",
+            "icon": "x",
+            "type": "command",
+            "command": "cleanSearchEditorState"
+          }
+        ]
+      },
+      {
+        "key": "r",
+        "name": "rerun search",
+        "icon": "x",
+        "type": "command",
+        "command": "rerunSearchEditorSearch"
+      },
+      {
+        "key": "b",
+        "name": "select all search match",
+        "icon": "x",
+        "type": "command",
+        "command": "selectAllSearchEditorMatches"
+      },
+      {
+        "key": "l",
+        "name": "change context lines",
+        "icon": "x",
+        "type": "transient",
+        "bindings": [
+          {
+            "key": "l",
+            "name": "toggle context lines",
+            "icon": "x",
+            "type": "command",
+            "command": "toggleSearchEditorContextLines"
+          },
+          {
+            "key": "k",
+            "name": "add more",
+            "icon": "x",
+            "type": "command",
+            "command": "increaseSearchEditorContextLines"
+          },
+          {
+            "key": "j",
+            "name": "less",
+            "icon": "x",
+            "type": "command",
+            "command": "decreaseSearchEditorContextLines"
+          }
+        ]
+      }
+    ],
+    "when": "inSearchEditor && editorTextFocus && (vim.mode =~ /normal/i) && !editorHasMultipleSelections && !editorHasSelection"
+  },
+  ////
+
+  {
+    "key": "alt+c",
+    "command": "toggleSearchEditorCaseSensitive",
+    "when": "inSearchEditor && searchInputBoxFocus"
+  },
+  {
+    "key": "alt+w",
+    "command": "toggleSearchEditorWholeWord",
+    "when": "inSearchEditor && searchInputBoxFocus"
+  },
+  {
+    "key": "alt+r",
+    "command": "toggleSearchEditorRegex",
+    "when": "inSearchEditor && searchInputBoxFocus"
+  }
+]
