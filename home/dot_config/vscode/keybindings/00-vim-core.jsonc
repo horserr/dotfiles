@@ -55,38 +55,17 @@
   {
     "key": "ctrl+j",
     "command": "workbench.action.navigateDown",
-    "when": "!codeActionMenuVisible && !inQuickOpen && !suggestWidgetVisible && !parameterHintsVisible"
+    "when": "!codeActionMenuVisible && !inQuickOpen && !suggestWidgetVisible && !parameterHintsVisible && !inputBoxFocus"
   },
   {
     "key": "ctrl+k",
     "command": "workbench.action.navigateUp",
-    "when": "!codeActionMenuVisible && !inQuickOpen && !suggestWidgetVisible && !parameterHintsVisible"
+    "when": "!codeActionMenuVisible && !inQuickOpen && !suggestWidgetVisible && !parameterHintsVisible && !inputBoxFocus"
   },
   {
     "key": "ctrl+l",
     "command": "workbench.action.navigateRight",
     "when": "!codeActionMenuVisible && !inQuickOpen && !suggestWidgetVisible && !parameterHintsVisible && !isInDiffEditor"
-  },
-  // Quick Navigation for diff view
-  {
-    "key": "ctrl+h",
-    "command": "workbench.action.compareEditor.focusSecondarySide",
-    "when": "isInDiffEditor && !isInDiffLeftEditor"
-  },
-  {
-    "key": "ctrl+h",
-    "command": "workbench.action.navigateLeft",
-    "when": "isInDiffEditor && isInDiffLeftEditor"
-  },
-  {
-    "key": "ctrl+l",
-    "command": "workbench.action.compareEditor.focusPrimarySide",
-    "when": "isInDiffEditor && isInDiffLeftEditor"
-  },
-  {
-    "key": "ctrl+l",
-    "command": "workbench.action.navigateRight",
-    "when": "isInDiffEditor && !isInDiffLeftEditor"
   },
   // quick open
   {
