@@ -1,0 +1,10 @@
+[
+  // git.graph.checkout
+  // git.graph.checkoutDetached
+  // git.graph.cherryPick
+  // git.graph.compareRef
+  // git.graph.compareWithMergeBase
+  // git.graph.compareWithRemote
+  // git.graph.deleteBranch
+  // git.graph.deleteTag
+]

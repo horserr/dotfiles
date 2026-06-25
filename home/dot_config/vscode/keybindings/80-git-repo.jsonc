@@ -1,0 +1,28 @@
+[
+  // git.repositories.checkout
+  // git.repositories.checkoutDetached
+  // git.repositories.compareRef
+  // git.repositories.copyBranchName
+  // git.repositories.copyCommitHash
+  // git.repositories.copyStashName
+  // git.repositories.copyTagName
+  // git.repositories.createBranch
+  // git.repositories.createFrom
+  // git.repositories.createTag
+  // git.repositories.createWorktree
+  // git.repositories.deleteBranch
+  // git.repositories.deleteTag
+  // git.repositories.deleteWorktree
+  // git.repositories.merge
+  // git.repositories.openWorktree
+  // git.repositories.openWorktreeInNewWindow
+  // git.repositories.rebase
+  // git.repositories.stashApply
+  // git.repositories.stashCopyBranchName
+  // git.repositories.stashDrop
+  // git.repositories.stashPop
+  // git.repositories.stashView
+  // git.repositories.worktreeCopyBranchName
+  // git.repositories.worktreeCopyCommitHash
+  // git.repositories.worktreeCopyPath
+]

@@ -42,12 +42,11 @@
   "git.autofetchPeriod": 180, // every 3mins
   "git.autoRepositoryDetection": true,
   // SIGNIFICANT
-  "git.autoStash": false,
-  "git.blame.editorDecoration.disableHover": false,
+  "git.autoStash": true,
+  "git.blame.editorDecoration.disableHover": true,
   "git.blame.editorDecoration.enabled": true,
   "git.blame.editorDecoration.template": "${subject}, ${authorName} (${authorDateAgo})",
   "git.blame.ignoreWhitespace": true,
-  "git.blame.statusBarItem.enabled": true,
   "git.blame.statusBarItem.template": "${authorName} (${authorDateAgo})",
   "git.branchPrefix": "",
   // WORKSPACE
@@ -66,9 +65,6 @@
   // use git default branch name
   "git.defaultBranchName": "",
   "git.defaultCloneDirectory": "~/WorkSpace",
-  "git.detectSubmodulesLimit": 3,
-  "git.detectWorktrees": true,
-  "git.detectWorktreesLimit": 5,
   "git.diagnosticsCommitHook.enabled": true,
   // WORKSPACE
   "git.diagnosticsCommitHook.sources": {
@@ -119,8 +115,6 @@
   "git.showInlineOpenFileAction": true,
   "git.showPushSuccessNotification": true,
   "git.showReferenceDetails": true,
-  // minor PERFORMANCE
-  "git.statusLimit": 15,
   "git.supportCancellation": true,
   "git.terminalGitEditor": true,
   "git.timeline.showUncommitted": true,
@@ -134,26 +128,18 @@
     ".env",
     ".env.local",
     "node_modules/**",
-    ".vscode/settings.json"
+    ".vscode/**"
   ],
   /************
    * SCM PANE *
    ************/
-  // hide small icons
-  "scm.alwaysShowActions": false,
   // hide redundant repositories
   "scm.alwaysShowRepositories": false,
-  "scm.autoReveal": true,
-  "scm.compactFolders": true,
   "scm.countBadge": "focused",
-  "scm.defaultViewMode": "list",
-  "scm.defaultViewSortKey": "path",
-  "scm.diffDecorationsGutterWidth": 4,
+  "scm.diffDecorationsGutterWidth": 5,
   "scm.diffDecorationsIgnoreTrimWhitespace": "inherit",
   "scm.graph.badges": "all",
-  "scm.graph.pageOnScroll": false,
   "scm.graph.pageSize": 20,
-  "scm.inputFontSize": 15,
   "scm.providerCountBadge": "auto",
   "scm.repositories.explorer": true,
   "scm.repositories.selectionMode": "single",

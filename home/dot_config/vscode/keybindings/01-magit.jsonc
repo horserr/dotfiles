@@ -1,0 +1,198 @@
+[
+  // keybinds for edamagit: https://marketplace.visualstudio.com/items?itemName=kahole.magit
+  // use vscode command: workbench.extensions.action.openExtensionsFolder
+  // then enter kahole.magit
+  // the native keybindings are inside package.json
+  {
+    "command": "-magit.status",
+    "key": "alt+x g"
+  },
+  {
+    "command": "-magit.dispatch",
+    "key": "alt+x ctrl+g"
+  },
+  {
+    "command": "-magit.file-popup",
+    "key": "alt+x alt+g"
+  },
+  {
+    "command": "-magit.toggle-fold",
+    "key": "tab"
+  },
+  {
+    "command": "-magit.refresh",
+    "key": "g"
+  },
+  {
+    "command": "-magit.help",
+    "key": "shift+-"
+  },
+  {
+    "command": "-magit.help",
+    "key": "shift+/"
+  },
+  {
+    "command": "-magit.visit-at-point",
+    "key": "enter"
+  },
+  {
+    "command": "-magit.apply-at-point",
+    "key": "a"
+  },
+  {
+    "command": "-magit.discard-at-point",
+    "key": "k"
+  },
+  {
+    "command": "-magit.reverse-at-point",
+    "key": "v"
+  },
+  {
+    "command": "-magit.commit",
+    "key": "c"
+  },
+  {
+    "command": "-magit.branching",
+    "key": "b"
+  },
+  {
+    "command": "-magit.merging",
+    "key": "m"
+  },
+  {
+    "command": "-magit.rebasing",
+    "key": "r"
+  },
+  {
+    "command": "-magit.resetting",
+    "key": "shift+x"
+  },
+  {
+    "command": "-magit.reset-mixed",
+    "key": "x"
+  },
+  {
+    "command": "-magit.reset-hard",
+    "key": "ctrl+u x"
+  },
+  {
+    "command": "-magit.remoting",
+    "key": "shift+m"
+  },
+  {
+    "command": "-magit.logging",
+    "key": "l"
+  },
+  {
+    "command": "-magit.show-refs",
+    "key": "y"
+  },
+  {
+    "command": "-magit.diffing",
+    "key": "d"
+  },
+  {
+    "command": "-magit.tagging",
+    "key": "t"
+  },
+  {
+    "command": "-magit.cherry-picking",
+    "key": "shift+a"
+  },
+  {
+    "command": "-magit.reverting",
+    "key": "shift+v"
+  },
+  {
+    "command": "-magit.ignoring",
+    "key": "i"
+  },
+  {
+    "command": "-magit.ignoring",
+    "key": "shift+i"
+  },
+  {
+    "command": "-magit.running",
+    "key": "shift+1"
+  },
+  {
+    "command": "-magit.worktree",
+    "key": "shift+5"
+  },
+  {
+    "command": "-magit.pushing",
+    "key": "shift+p"
+  },
+  {
+    "command": "-magit.pulling",
+    "key": "shift+f"
+  },
+  {
+    "command": "-magit.stashing",
+    "key": "z"
+  },
+  {
+    "command": "-magit.submodules",
+    "key": "o"
+  },
+  {
+    "command": "-magit.fetching",
+    "key": "f"
+  },
+  {
+    "command": "-magit.stage",
+    "key": "s"
+  },
+  {
+    "command": "-magit.stage-all",
+    "key": "shift+s"
+  },
+  {
+    "command": "-magit.unstage",
+    "key": "u"
+  },
+  {
+    "command": "-magit.unstage-all",
+    "key": "shift+u"
+  },
+  {
+    "command": "-magit.process-log",
+    "key": "shift+4"
+  },
+  {
+    "command": "-magit.quit",
+    "key": "q"
+  },
+  {
+    "command": "-magit.move-next-entity",
+    "key": "ctrl+j"
+  },
+  {
+    "command": "-magit.move-previous-entity",
+    "key": "ctrl+k"
+  },
+  {
+    "command": "-magit.save-and-close-editor",
+    "key": "ctrl+c ctrl+c"
+  },
+  {
+    "command": "-magit.clear-and-abort-editor",
+    "key": "ctrl+c ctrl+k"
+  },
+  {
+    "command": "-magit.save-and-close-editor",
+    "key": "ctrl+c ctrl+c"
+  },
+  {
+    "command": "-magit.clear-and-abort-editor",
+    "key": "ctrl+c ctrl+k"
+  },
+  {
+    "command": "-magit.bisect",
+    "key": "shift+b"
+  }
+  // {
+  //   "command": "workbench.action.closeActiveEditor",
+  //   "key": "q"
+  // }
+]
