@@ -5,6 +5,22 @@
     "icon": "search",
     "type": "bindings",
     "bindings": [
+      // {
+      //   "key": "y",
+      //   "name": "+Integration",
+      //   "icon": "search",
+      //   "type": "commands",
+      //   "commands": [
+      //     "workbench.action.createTerminalEditor",
+      //     {
+      //       "command": "workbench.action.terminal.sendSequence",
+      //       "args": {
+      //         // \u000d 代表按下 Enter 回车键，让命令立即执行
+      //         "text": "yazi\u000d"
+      //       }
+      //     }
+      //   ]
+      // }
       {
         "key": "y",
         "name": "+Integration",

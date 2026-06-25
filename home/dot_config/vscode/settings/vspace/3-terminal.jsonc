@@ -6,13 +6,6 @@
     "type": "bindings",
     "bindings": [
       {
-        "key": ",",
-        "name": "Open developer tools",
-        "icon": "keyboard",
-        "type": "command",
-        "command": "workbench.action.toggleDevTools"
-      },
-      {
         "key": "t",
         "name": "Show terminal",
         "icon": "terminal",

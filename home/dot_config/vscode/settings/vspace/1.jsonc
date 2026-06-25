@@ -23,14 +23,14 @@
     "type": "command",
     "command": "workbench.action.focusActiveEditorGroup"
   },
-  {
-    "key": ".",
-    "name": "Repeat most recent action",
-    "icon": "redo",
-    "type": "command",
-    "command": "whichkey.repeatMostRecent",
-    "args": "vspacecode.bindings"
-  },
+  // {
+  //   "key": ".",
+  //   "name": "Repeat most recent action",
+  //   "icon": "redo",
+  //   "type": "command",
+  //   "command": "whichkey.repeatMostRecent",
+  //   "args": "vspacecode.bindings"
+  // },
   {
     "key": "?",
     "name": "Search keybindings",

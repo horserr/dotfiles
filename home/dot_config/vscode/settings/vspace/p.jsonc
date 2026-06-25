@@ -72,6 +72,21 @@
       },
 
       {
+        "key": "o",
+        "name": "open project",
+        "icon": "clock",
+        "type": "bindings",
+        "bindings": [
+          {
+            "key": "r",
+            "name": "open github repo without cloning",
+            "icon": "arrow-down",
+            "type": "command",
+            "command": "remoteHub.openRepository"
+          }
+        ]
+      },
+      {
         "key": "c",
         "name": "Compile project",
         "icon": "gear",

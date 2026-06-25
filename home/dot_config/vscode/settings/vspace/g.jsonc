@@ -3,6 +3,7 @@
   // git.copyCommitId
   // git.copyCommitMessage
   // git.copyContentToClipboard
+  // editor.action.diffReview.next
   {
     "key": "g",
     "name": "+Git",
@@ -10,13 +11,73 @@
     "type": "bindings",
     "bindings": [
       {
-        "key": "g",
-        "name": "stage the selected lines",
+        "key": ",",
+        "name": "refresh vscode git ui",
         "icon": "file",
         "type": "command",
-        "command": "git.stageSelectedRanges"
+        "command": "git.refresh"
       },
-      // editor.action.diffReview.next
+      // add / stage
+      {
+        "key": "a",
+        "name": "+Stage/Add",
+        "icon": "source-control",
+        "type": "bindings",
+        "bindings": [
+          {
+            "key": "a",
+            "name": "stage the selected lines",
+            "icon": "file",
+            "type": "command",
+            "command": "git.stageSelectedRanges"
+          },
+          {
+            "key": "m",
+            "name": "stage all merged files",
+            "icon": "arrow-down",
+            "type": "command",
+            "command": "git.stageAllMerge"
+          },
+          {
+            "key": "f",
+            "name": "stage entire file",
+            "icon": "arrow-down",
+            "type": "command",
+            "command": "magit.stage-file"
+          }
+        ]
+      },
+      // Undo/Unstage/Restore/Revert
+      {
+        "key": "u",
+        "name": "+Undo/Unstage/Restore/Revert",
+        "icon": "source-control",
+        "type": "bindings",
+        "bindings": [
+          {
+            "key": "r",
+            "name": "restore selected lines",
+            "icon": "arrow-down",
+            "type": "command",
+            "command": "git.revertSelectedRanges"
+          },
+          {
+            "key": "m",
+            "name": "stage all merged files",
+            "icon": "arrow-down",
+            "type": "command",
+            "command": "git.stageAllMerge"
+          },
+          {
+            "key": "f",
+            "name": "stage entire file",
+            "icon": "arrow-down",
+            "type": "command",
+            "command": "magit.stage-file"
+          }
+        ]
+      },
+      // commit
       {
         "key": "c",
         "name": "+Commit",
@@ -28,7 +89,8 @@
             "name": "commit",
             "icon": "arrow-down",
             "type": "command",
-            "command": "git.commit"
+            // "command": "git.commit"
+            "command": "git.commitStaged"
           },
           {
             "key": "m",
@@ -46,7 +108,37 @@
           }
         ]
       },
-      // open
+      // push
+      {
+        "key": "p",
+        "name": "+Push",
+        "icon": "source-control",
+        "type": "bindings",
+        "bindings": [
+          {
+            "key": "p",
+            "name": "push",
+            "icon": "arrow-up",
+            "type": "command",
+            "command": "git.push"
+          },
+          {
+            "key": "p",
+            "name": "publish (set upstream)",
+            "icon": "arrow-up",
+            "type": "command",
+            "command": "git.publish"
+          },
+          {
+            "key": "t",
+            "name": "push tags",
+            "icon": "arrow-down",
+            "type": "command",
+            "command": "git.pushTags"
+          }
+        ]
+      },
+      // open / diff
       {
         // git.openRepositoriesInParentFolders
         "key": "o",
@@ -150,7 +242,6 @@
             "name": "switch to another branch create",
             "icon": "arrow-down",
             "type": "command",
-            // git.branchFrom
             "command": "git.branch"
           }
         ]
@@ -179,11 +270,69 @@
           // merge editor
           {
             "key": "e",
-            "name": "open merge editor 3-way",
+            "name": "open 3-way merge editor",
+            "icon": "arrow-down",
+            "type": "commands",
+            "commands": [
+              "git.openMergeEditor",
+              "workbench.action.moveEditorToNewWindow"
+            ]
+          },
+          {
+            "key": ",",
+            "name": "accept accept selected lines",
             "icon": "arrow-down",
             "type": "command",
-            "command": "git.openMergeEditor"
+            "command": "merge-conflict.accept.selection"
+          },
+          {
+            // incoming change is in the lower side
+            "key": "j",
+            "name": "accept the incoming conflict",
+            "icon": "arrow-down",
+            "type": "command",
+            "command": "merge-conflict.accept.incoming"
+          },
+          {
+            // current change is in the upper
+            "key": "k",
+            "name": "accept the current conflict",
+            "icon": "arrow-up",
+            "type": "command",
+            "command": "merge-conflict.accept.current"
+          },
+          {
+            // shorted for 'middle'
+            "key": "m",
+            "name": "accept the conflicts from both sides",
+            "icon": "arrow-both",
+            "type": "command",
+            "command": "merge-conflict.accept.both"
+          },
+          {
+            "key": "J",
+            "name": "accept all incoming conflicts",
+            "icon": "arrow-down",
+            "type": "command",
+            "command": "merge-conflict.accept.all-incoming"
+          },
+          {
+            "key": "K",
+            "name": "accept all current conflicts",
+            "icon": "arrow-down",
+            "type": "command",
+            "command": "merge-conflict.accept.all-current"
+          },
+          {
+            "key": "M",
+            "name": "accept all both conflicts",
+            "icon": "arrow-down",
+            "type": "command",
+            "command": "merge-conflict.accept.all-both"
           }
+          // merge-conflict.compare
+          // merge-conflict.next
+          // merge-conflict.previous
         ]
       },
       // worktree
@@ -218,12 +367,116 @@
           }
         ]
       },
+      // rebase/rename
       {
-        "key": "o",
-        "name": "open github repo without cloning",
+        "key": "r",
+        "name": "+Rebase/Rename",
         "icon": "arrow-down",
-        "type": "command",
-        "command": "remoteHub.openRepository"
+        "type": "bindings",
+        "bindings": [
+          {
+            "key": "r",
+            "name": "rebase",
+            "icon": "arrow-down",
+            "type": "command",
+            "command": "git.rebase"
+          },
+          {
+            "key": "a",
+            "name": "rebase abort",
+            "icon": "arrow-down",
+            "type": "command",
+            "command": "git.rebaseAbort"
+          },
+          {
+            "key": "n",
+            "name": "git rename file",
+            "icon": "arrow-down",
+            "type": "command",
+            "command": "git.rename"
+          },
+          {
+            "key": "b",
+            "name": "rename branch",
+            "icon": "arrow-down",
+            "type": "command",
+            "command": "git.renameBranch"
+          }
+        ]
+      },
+      // delete/remove
+      {
+        "key": "d",
+        "name": "+Delete",
+        "icon": "arrow-down",
+        "type": "bindings",
+        "bindings": [
+          {
+            "key": "d",
+            "name": "remove current file from git",
+            "icon": "arrow-down",
+            "type": "command",
+            "command": "git.delete"
+          },
+          {
+            "key": "b",
+            "name": "remove branch",
+            "icon": "arrow-down",
+            "type": "command",
+            "command": "git.deleteBranch"
+          },
+          {
+            "key": "B",
+            "name": "remove remote branch",
+            "icon": "arrow-down",
+            "type": "command",
+            "command": "git.deleteRemoteBranch"
+          },
+          {
+            "key": "t",
+            "name": "remove tag",
+            "icon": "arrow-down",
+            "type": "command",
+            "command": "git.deleteTag"
+          },
+          {
+            "key": "T",
+            "name": "remove remote tag",
+            "icon": "arrow-down",
+            "type": "command",
+            "command": "git.deleteRemoteTag"
+          },
+          {
+            "key": "u",
+            "name": "remove remote upstream/remote",
+            "icon": "arrow-down",
+            "type": "command",
+            "command": "git.removeRemote"
+          }
+        ]
+      },
+      // stash
+      {
+        "key": "k",
+        "name": "+Keep/Stash",
+        "icon": "file",
+        "type": "bindings",
+        "bindings": [
+          {
+            "key": "d",
+            "name": "Diff",
+            "icon": "diff",
+            "type": "command",
+            "command": "magit.diff-file"
+          },
+          {
+            "key": "l",
+            "name": "Show log/timeline",
+            "icon": "history",
+            "type": "command",
+            "command": "timeline.focus"
+          }
+        ]
       },
       {
         "key": "a",
@@ -258,6 +511,13 @@
             "icon": "file",
             "type": "command",
             "command": "git.createWorktree"
+          },
+          {
+            "key": "b",
+            "name": "add branch",
+            "icon": "file",
+            "type": "command",
+            "command": "git.branchFrom"
           }
         ]
       },
@@ -267,20 +527,6 @@
         "icon": "file",
         "type": "command",
         "command": "magit.blame-file"
-      },
-      {
-        "key": "c",
-        "name": "Clone",
-        "icon": "repo-clone",
-        "type": "command",
-        "command": "git.clone"
-      },
-      {
-        "key": "i",
-        "name": "Initialize repository",
-        "icon": "repo-create",
-        "type": "command",
-        "command": "git.init"
       },
       {
         "key": "m",
@@ -300,8 +546,7 @@
         "key": "S",
         "name": "Stage file",
         "icon": "file-add",
-        "type": "command",
-        "command": "magit.stage-file"
+        "type": "command"
       },
       {
         "key": "U",

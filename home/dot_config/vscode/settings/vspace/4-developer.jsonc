@@ -108,11 +108,14 @@
         "type": "bindings",
         "bindings": [
           {
-            "key": "c",
+            "key": "k",
             "name": "inspect context key(when clause)",
             "icon": "keyboard",
-            "type": "command",
-            "command": "workbench.action.inspectContextKeys"
+            "type": "commands",
+            "commands": [
+              "workbench.action.toggleDevTools",
+              "workbench.action.inspectContextKeys"
+            ]
           },
           {
             "key": "m",

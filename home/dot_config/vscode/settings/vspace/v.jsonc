@@ -201,6 +201,16 @@
         "type": "bindings",
         "bindings": [
           {
+            "key": ",",
+            "name": "Toggle, save vertical space",
+            "icon": "tools",
+            "type": "commands",
+            "commands": [
+              "editor.action.toggleStickyScroll",
+              "workbench.action.hideEditorTabs"
+            ]
+          },
+          {
             "key": "g",
             "name": "Toggle git blame editor decoration",
             "icon": "whitespace",
@@ -222,7 +232,7 @@
             "command": "workbench.action.toggleCenteredLayout"
           },
           {
-            "key": "M",
+            "key": "m",
             "name": "Toggle minimap",
             "icon": "symbol-ruler",
             "type": "command",
@@ -236,14 +246,14 @@
             "command": "editor.action.toggleWordWrap"
           },
           {
-            "key": "B",
+            "key": "b",
             "name": "Toggle breadcrumbs",
             "icon": "tools",
             "type": "command",
             "command": "breadcrumbs.toggle"
           },
           {
-            "key": "T",
+            "key": "t",
             "name": "Toggle tab visibility",
             "icon": "files",
             "type": "conditional",
@@ -263,7 +273,7 @@
             ]
           },
           {
-            "key": "S",
+            "key": "s",
             "name": "Toggle stickyscrool",
             "icon": "tools",
             "type": "commands",
