@@ -3,10 +3,10 @@
    * VSPACECODE *
    **************/
   {
-    // use space in editor
     "key": "space",
     "command": "vspacecode.space",
-    "when": "activeEditorGroupEmpty && focusedView == '' && !whichkeyActive && !inputFocus"
+    // "when": "activeEditorGroupEmpty && focusedView == '' && !whichkeyActive && !inputFocus"
+    "when": "!editorTextFocus && !inputFocus && !listFocus && !whichkeyActive"
   },
   {
     // use shift+space in sidebar, regardless of whether input is focused or not
@@ -36,14 +36,14 @@
    * CONDITIONAL TRIGGER KEY BINDINGS *
    ************************************/
   {
-    // for detecting whether this windows are subordinate to main window
-    "key": "w",
+    // for detecting whether split editor in current tab
+    "key": "f",
     "command": "whichkey.triggerKey",
     "args": {
-      "key": "w",
-      "when": "isAuxiliaryWindow || isAuxiliaryWindowFocusedContext"
+      "key": "f",
+      "when": "sideBySideEditorActive"
     },
-    "when": "whichkeyVisible && (isAuxiliaryWindow || isAuxiliaryWindowFocusedContext)"
+    "when": "whichkeyVisible && sideBySideEditorActive"
   },
   {
     // for detecting whether this current editor tab in pinned or not
@@ -56,14 +56,14 @@
     "when": "whichkeyVisible && activeEditorIsPinned"
   },
   {
-    // for detecting whether split editor in current tab
-    "key": "f",
+    // for detecting whether this windows are subordinate to main window
+    "key": "w",
     "command": "whichkey.triggerKey",
     "args": {
-      "key": "f",
-      "when": "sideBySideEditorActive"
+      "key": "w",
+      "when": "isAuxiliaryWindow || isAuxiliaryWindowFocusedContext"
     },
-    "when": "whichkeyVisible && sideBySideEditorActive"
+    "when": "whichkeyVisible && (isAuxiliaryWindow || isAuxiliaryWindowFocusedContext)"
   },
   {
     // for detecting whether split editor in current tab

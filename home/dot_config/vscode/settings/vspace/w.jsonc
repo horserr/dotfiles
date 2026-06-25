@@ -1,7 +1,7 @@
 [
   {
     "key": "w",
-    "name": "+Window/Workspace",
+    "name": "+Window",
     "icon": "split-horizontal",
     "type": "bindings",
     "bindings": [
@@ -28,32 +28,40 @@
         ]
       },
       {
+        "key": "d",
+        "name": "+Close Window",
+        "icon": "x",
+        "type": "bindings",
+        "bindings": [
+          {
+            "key": "d",
+            "name": "Close current window",
+            "icon": "x",
+            "type": "command",
+            "command": "workbench.action.closeWindow"
+          },
+          {
+            "key": "o",
+            "name": "Close other windows",
+            "icon": "x",
+            "type": "command",
+            "command": "workbench.action.closeOtherWindows"
+          }
+        ]
+      },
+      {
         "key": ",",
-        "name": "Switch frame",
+        "name": "List windows",
         "icon": "multiple-windows",
         "type": "command",
         "command": "workbench.action.quickSwitchWindow"
       },
       {
         "key": "n",
-        "name": "Open new empty frame",
+        "name": "Open new empty window",
         "icon": "empty-window",
         "type": "command",
         "command": "workbench.action.newWindow"
-      },
-      {
-        "key": "c",
-        "name": "Duplicate workspace in new frame",
-        "icon": "window",
-        "type": "command",
-        "command": "workbench.action.duplicateWorkspaceInNewWindow"
-      },
-      {
-        "key": "s",
-        "name": "save workspace",
-        "icon": "multiple-windows",
-        "type": "command",
-        "command": "workbench.action.saveWorkspaceAs"
       },
       // layout
       {

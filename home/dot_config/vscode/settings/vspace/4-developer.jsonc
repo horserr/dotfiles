@@ -20,8 +20,7 @@
       // workbench.actions.sync.workbench.views.sync.remoteActivity.replaceCurrent
       // workbench.actions.sync.workbench.views.sync.remoteActivity.resolveResource
       // workbench.actions.syncData.reset
-      // workbench.action.setDefaultLogLevel
-      // workbench.action.setLogLevel
+      // git.migrateWorktreeChanges
 
       {
         "key": ".",

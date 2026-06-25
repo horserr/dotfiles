@@ -123,8 +123,30 @@
         "key": "d",
         "name": "Close current active buffer",
         "icon": "x",
-        "type": "command",
-        "command": "workbench.action.closeActiveEditor"
+        "type": "bindings",
+        "bindings": [
+          {
+            "key": "d",
+            "name": "Close current active buffer",
+            "icon": "x",
+            "type": "command",
+            "command": "workbench.action.closeActiveEditor"
+          },
+          {
+            "key": "u",
+            "name": "Close unmodified editors",
+            "icon": "x",
+            "type": "command",
+            "command": "git.closeAllUnmodifiedEditors"
+          },
+          {
+            "key": "c",
+            "name": "Close diff/compare editors",
+            "icon": "x",
+            "type": "command",
+            "command": "git.closeAllDiffEditors"
+          }
+        ]
       },
       {
         "key": "u",

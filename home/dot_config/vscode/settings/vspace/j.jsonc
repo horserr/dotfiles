@@ -13,6 +13,17 @@
         "command": "breadcrumbs.focus"
       },
       {
+        "key": ",",
+        "name": "open quick diff (Next error)",
+        "icon": "arrow-down",
+        "type": "commands",
+        "commands": [
+          "editor.action.dirtydiff.next",
+          "toggleQuickDiffWidgetFocus",
+          "Move Cursor To Bottom Of ViewPort"
+        ]
+      },
+      {
         "key": "J",
         "name": "focus editor sticky scroll",
         "icon": "clock",

@@ -6,13 +6,6 @@
     "type": "bindings",
     "bindings": [
       {
-        "key": "q",
-        "name": "Close frame",
-        "icon": "close",
-        "type": "command",
-        "command": "workbench.action.closeWindow"
-      },
-      {
         "key": "e",
         "name": "Close all editors and editor groups",
         "icon": "close",

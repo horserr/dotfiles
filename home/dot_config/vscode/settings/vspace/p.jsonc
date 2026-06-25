@@ -1,7 +1,7 @@
 [
   {
     "key": "p",
-    "name": "+Project",
+    "name": "+Project/Workspace",
     "icon": "project",
     "type": "bindings",
     "bindings": [
@@ -19,6 +19,58 @@
         "type": "command",
         "command": "workbench.action.openRecent"
       },
+      {
+        "key": "c",
+        "name": "Duplicate workspace in new window",
+        "icon": "window",
+        "type": "command",
+        "command": "workbench.action.duplicateWorkspaceInNewWindow"
+      },
+      {
+        "key": "s",
+        "name": "save workspace",
+        "icon": "multiple-windows",
+        "type": "command",
+        "command": "workbench.action.saveWorkspaceAs"
+      },
+      {
+        "key": "d",
+        "name": "+Close Project",
+        "icon": "x",
+        "type": "command",
+        "bindings": [
+          {
+            "key": "o",
+            "name": "Close other repositories",
+            "icon": "x",
+            "type": "command",
+            "command": "git.closeOtherRepositories"
+          }
+        ]
+      },
+      {
+        "key": "c",
+        "name": "continue working on",
+        "icon": "clock",
+        "type": "bindings",
+        "bindings": [
+          {
+            "key": "c",
+            "name": "continue working on...",
+            "icon": "clock",
+            "type": "command",
+            "command": "_workbench.editSessions.actions.continueEditSession"
+          },
+          {
+            "key": "l",
+            "name": "continue working on local",
+            "icon": "clock",
+            "type": "command",
+            "command": "git.continueInLocalClone"
+          }
+        ]
+      },
+
       {
         "key": "c",
         "name": "Compile project",

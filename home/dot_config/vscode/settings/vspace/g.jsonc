@@ -1,27 +1,264 @@
 [
+  // timeline
+  // git.copyCommitId
+  // git.copyCommitMessage
+  // git.copyContentToClipboard
   {
     "key": "g",
     "name": "+Git",
     "icon": "git-branch",
     "type": "bindings",
     "bindings": [
+      {
+        "key": "g",
+        "name": "stage the selected lines",
+        "icon": "file",
+        "type": "command",
+        "command": "git.stageSelectedRanges"
+      },
       // editor.action.diffReview.next
       {
-        "key": "v",
-        "name": "toggle Show source control",
+        "key": "c",
+        "name": "+Commit",
         "icon": "source-control",
-        "type": "command",
-        "command": "workbench.view.scm"
+        "type": "bindings",
+        "bindings": [
+          {
+            "key": "c",
+            "name": "commit",
+            "icon": "arrow-down",
+            "type": "command",
+            "command": "git.commit"
+          },
+          {
+            "key": "m",
+            "name": "commit amend",
+            "icon": "arrow-down",
+            "type": "command",
+            "command": "git.commitAmend"
+          },
+          {
+            "key": "a",
+            "name": "commit all",
+            "icon": "arrow-down",
+            "type": "command",
+            "command": "git.commitAll"
+          }
+        ]
+      },
+      // open
+      {
+        // git.openRepositoriesInParentFolders
+        "key": "o",
+        "name": "+Open",
+        "icon": "source-control",
+        "type": "bindings",
+        "bindings": [
+          {
+            "key": "o",
+            "name": "open current file change(diff)",
+            "icon": "arrow-down",
+            "type": "commands",
+            "commands": [
+              "workbench.action.copyEditorToNewWindow",
+              "git.openChange"
+            ]
+          },
+          {
+            "key": "O",
+            "name": "open current file original version(HEAD)",
+            "icon": "arrow-down",
+            "type": "commands",
+            "commands": [
+              "workbench.action.copyEditorToNewWindow",
+              "git.openHEADFile"
+            ]
+          },
+          {
+            "key": " ",
+            "name": "open changes in new window",
+            "icon": "arrow-down",
+            "type": "commands",
+            "commands": [
+              "workbench.action.newEmptyEditorWindow",
+              "git.openAllChanges"
+            ]
+          }
+        ]
+      },
+      // fetch
+      {
+        "key": "f",
+        "name": "+Fetch",
+        "icon": "source-control",
+        "type": "bindings",
+        "bindings": [
+          {
+            "key": "f",
+            "name": "fetch",
+            "icon": "arrow-down",
+            "type": "command",
+            "command": "git.fetch"
+          },
+          {
+            "key": "a",
+            "name": "fetch all",
+            "icon": "arrow-down",
+            "type": "command",
+            "command": "git.fetchAll"
+          },
+          {
+            "key": "p",
+            "name": "fetch prune",
+            "icon": "arrow-down",
+            "type": "command",
+            "command": "git.fetchPrune"
+          }
+        ]
+      },
+      // jump, switch, checkout
+      {
+        "key": "j",
+        "name": "+Jump/Switch",
+        "icon": "source-control",
+        "type": "bindings",
+        "bindings": [
+          {
+            "key": "j",
+            "name": "switch to another branch",
+            "icon": "arrow-down",
+            "type": "command",
+            "command": "git.checkout"
+          },
+          {
+            "key": "w",
+            "name": "switch to another worktree",
+            "icon": "arrow-down",
+            "type": "command",
+            // "command": "git.openWorktree"
+            "command": "git.openWorktreeInNewWindow"
+          },
+          {
+            "key": "d",
+            "name": "switch to another branch detached",
+            "icon": "arrow-down",
+            "type": "command",
+            "command": "git.checkoutDetached"
+          },
+          {
+            "key": "c",
+            "name": "switch to another branch create",
+            "icon": "arrow-down",
+            "type": "command",
+            // git.branchFrom
+            "command": "git.branch"
+          }
+        ]
+      },
+      // merge
+      {
+        "key": "m",
+        "name": "+Merge",
+        "icon": "arrow-down",
+        "type": "bindings",
+        "bindings": [
+          {
+            "key": "m",
+            "name": "merge",
+            "icon": "arrow-down",
+            "type": "command",
+            "command": "git.merge"
+          },
+          {
+            "key": "a",
+            "name": "merge abort",
+            "icon": "arrow-down",
+            "type": "command",
+            "command": "git.mergeAbort"
+          },
+          // merge editor
+          {
+            "key": "e",
+            "name": "open merge editor 3-way",
+            "icon": "arrow-down",
+            "type": "command",
+            "command": "git.openMergeEditor"
+          }
+        ]
+      },
+      // worktree
+      {
+        "key": "w",
+        "name": "+Worktree",
+        "icon": "arrow-down",
+        "type": "bindings",
+        "bindings": [
+          {
+            // link: https://github.com/microsoft/vscode-docs/blob/main/release-notes/v1_104.md#preview-and-migrate-git-worktree-changes
+            "key": "w",
+            "name": "worktree migrate, should first use comapre with workspace",
+            "icon": "arrow-down",
+            "type": "command",
+            "command": "git.migrateWorktreeChanges"
+            // when encounter migrate conflicts, use git.openWorktreeMergeEditor
+          },
+          {
+            "key": "a",
+            "name": "worktree add",
+            "icon": "arrow-down",
+            "type": "command",
+            "command": "git.createWorktree"
+          },
+          {
+            "key": "d",
+            "name": "worktree delete",
+            "icon": "arrow-down",
+            "type": "command",
+            "command": "git.deleteWorktree"
+          }
+        ]
       },
       {
-        "key": ",",
-        "name": "open quick diff (Next error)",
+        "key": "o",
+        "name": "open github repo without cloning",
         "icon": "arrow-down",
-        "type": "commands",
-        "commands": [
-          "editor.action.dirtydiff.next",
-          "toggleQuickDiffWidgetFocus",
-          "Move Cursor To Bottom Of ViewPort"
+        "type": "command",
+        "command": "remoteHub.openRepository"
+      },
+      {
+        "key": "a",
+        "name": "+Add",
+        "icon": "file",
+        "type": "bindings",
+        "bindings": [
+          {
+            "key": "a",
+            "name": "stage the hunk(contiguous block)",
+            "icon": "file",
+            "type": "command",
+            "command": "git.diff.stageHunk"
+          },
+          {
+            "key": "r",
+            "name": "add remote",
+            "icon": "file",
+            "type": "command",
+            "command": "git.addRemote"
+          },
+          {
+            "key": "t",
+            "name": "add tag",
+            "icon": "file",
+            "type": "command",
+            "command": "git.createTag"
+          },
+          {
+            "key": "w",
+            "name": "add worktree",
+            "icon": "file",
+            "type": "command",
+            "command": "git.createWorktree"
+          }
         ]
       },
       {

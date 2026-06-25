@@ -5,13 +5,52 @@
     "icon": "info",
     "type": "bindings",
     "bindings": [
-      // change view size
-      // workbench.action.toggleScreencastMode
       // workbench.action.zenHideEditorTabs
       // workbench.action.zenShowEditorTab
       // workbench.action.zenShowMultipleEditorTabs
       // workbench.action.toggleSeparatePinnedEditorTabs
 
+      // git.blame.toggleStatusBarItem
+
+      {
+        "key": "k",
+        "name": "Toggle maximized panel",
+        "icon": "chevron-up",
+        "type": "command",
+        "command": "workbench.action.toggleMaximizedPanel"
+      },
+      {
+        "key": "h",
+        "name": "Toggle side bar visibility",
+        "icon": "split-horizontal",
+        "type": "command",
+        "command": "workbench.action.toggleSidebarVisibility"
+      },
+      {
+        "key": "j",
+        "name": "Toggle panel visibility",
+        "icon": "output",
+        "type": "command",
+        "command": "workbench.action.togglePanel"
+      },
+      {
+        "key": "l",
+        "name": "Toggle secondary bar visibility",
+        "icon": "output",
+        "type": "command",
+        "command": "workbench.action.toggleAuxiliaryBar"
+      },
+      {
+        "key": "q",
+        "name": "close all panels",
+        "icon": "files",
+        "type": "commands",
+        "commands": [
+          "workbench.action.closeSidebar",
+          "workbench.action.closePanel",
+          "workbench.action.closeAuxiliaryBar"
+        ]
+      },
       // change view/editor size
       {
         "key": "v",
@@ -89,20 +128,6 @@
           }
         ]
       },
-      {
-        "key": "m",
-        "name": "Toggle maximized panel",
-        "icon": "chevron-up",
-        "type": "command",
-        "command": "workbench.action.toggleMaximizedPanel"
-      },
-      {
-        "key": "a",
-        "name": "Toggle tool/activity bar visibility",
-        "icon": "tools",
-        "type": "command",
-        "command": "workbench.action.toggleActivityBarVisibility"
-      },
       // all views & view containers
       {
         "key": " ",
@@ -116,6 +141,13 @@
             "icon": "unfold",
             "type": "command",
             "command": "workbench.action.openView"
+          },
+          {
+            "key": "g",
+            "name": "toggle Show source control",
+            "icon": "source-control",
+            "type": "command",
+            "command": "workbench.view.scm"
           },
           {
             "key": "n",
@@ -242,6 +274,7 @@
           }
         ]
       },
+      // workspace/window
       {
         "key": "w",
         "name": "+workspace/window layout",
@@ -256,7 +289,7 @@
             "command": "workbench.action.toggleZenMode"
           },
           {
-            "key": "F",
+            "key": "f",
             "name": "Toggle full screen",
             "icon": "screen-full",
             "type": "command",
@@ -270,44 +303,19 @@
             "command": "workbench.action.toggleWindowAlwaysOnTop"
           },
           {
-            "key": "L",
+            "key": "l",
             "name": "Toggle scroll lock",
             "icon": "screen-full",
             "type": "command",
             "command": "workbench.action.toggleLockedScrolling"
+          },
+          {
+            "key": "c",
+            "name": "Toggle screen cast mode(showing keystroke when typing)",
+            "icon": "screen-full",
+            "type": "command",
+            "command": "workbench.action.toggleScreencastMode"
           }
-        ]
-      },
-      {
-        "key": "b",
-        "name": "Toggle side bar visibility",
-        "icon": "split-horizontal",
-        "type": "command",
-        "command": "workbench.action.toggleSidebarVisibility"
-      },
-      {
-        "key": "j",
-        "name": "Toggle panel visibility",
-        "icon": "output",
-        "type": "command",
-        "command": "workbench.action.togglePanel"
-      },
-      {
-        "key": "a",
-        "name": "Toggle secondary bar visibility",
-        "icon": "output",
-        "type": "command",
-        "command": "workbench.action.toggleAuxiliaryBar"
-      },
-      {
-        "key": "q",
-        "name": "close all panels",
-        "icon": "files",
-        "type": "commands",
-        "commands": [
-          "workbench.action.closeSidebar",
-          "workbench.action.closePanel",
-          "workbench.action.closeAuxiliaryBar"
         ]
       }
     ]

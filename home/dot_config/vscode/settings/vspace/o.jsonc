@@ -1,0 +1,20 @@
+[
+  {
+    "key": "o",
+    "name": "+Output",
+    "icon": "split-horizontal",
+    "type": "bindings",
+    "bindings": [
+      {
+        // use git.commandsToLog setting to log git commands stdout to output panel
+        "key": "g",
+        "name": "view git output",
+        "icon": "multiple-windows",
+        "type": "command",
+        "command": "git.showOutput"
+      }
+      // workbench.action.setDefaultLogLevel
+      // workbench.action.setLogLevel
+    ]
+  }
+]
