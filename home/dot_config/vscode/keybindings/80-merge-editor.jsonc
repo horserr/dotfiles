@@ -1,0 +1,225 @@
+[
+  // merge.dev.copyContentsJson
+  // merge.dev.loadContentsFromFolder
+  // merge.dev.openContentsJson
+  // merge.dev.openSelectionInTemporaryMergeEditor
+  // merge.dev.saveContentsToFolder
+  {
+    "key": "escape",
+    "command": "whichkey.show",
+    "args": [
+      {
+        "key": "*",
+        "name": "return focus to result editor",
+        "icon": "x",
+        "type": "command",
+        "command": "runCommands",
+        "args": {
+          "commands": [
+            "workbench.action.focusActiveEditorGroup",
+            {
+              "command": "cursorMove",
+              "args": {
+                "to": "viewPortIfOutside"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "key": ",",
+        "name": "reset changes",
+        "icon": "x",
+        "type": "command",
+        "command": "mergeEditor.resetResultToBaseAndAutoMerge"
+      },
+      {
+        "key": "'",
+        "name": "toggle focus between incoming(left) and current(right)",
+        "icon": "x",
+        "type": "command",
+        "command": "mergeEditor.toggleBetweenInputs"
+      },
+      {
+        "key": "h",
+        "name": "toggle accept/apply incoming(left) changes",
+        "icon": "x",
+        "type": "command",
+        "command": "merge.toggleActiveConflictInput1"
+      },
+      {
+        "key": "l",
+        "name": "toggle accept/apply current(right) changes",
+        "icon": "x",
+        "type": "command",
+        "command": "merge.toggleActiveConflictInput2"
+      },
+      {
+        "key": "m",
+        "name": "accept both changes",
+        "icon": "x",
+        "type": "command",
+        "command": "mergeEditor.acceptAllCombination"
+      },
+      {
+        "key": "k",
+        "name": "goto previous unhandle conflict",
+        "icon": "x",
+        "type": "command",
+        "command": "merge.goToPreviousUnhandledConflict"
+      },
+      {
+        "key": "j",
+        "name": "goto next unhandle conflict",
+        "icon": "x",
+        "type": "command",
+        "command": "merge.goToNextUnhandledConflict"
+      },
+      // compare
+      {
+        "key": "c",
+        "name": "+Compare/Diff",
+        "icon": "x",
+        "type": "bindings",
+        "bindings": [
+          {
+            "key": "h",
+            "name": "compare incoming(left) with base",
+            "icon": "x",
+            "type": "command",
+            "command": "mergeEditor.compareInput1WithBase"
+          },
+          {
+            "key": "l",
+            "name": "compare current(right) with base",
+            "icon": "x",
+            "type": "command",
+            "command": "mergeEditor.compareInput2WithBase"
+          }
+        ]
+      },
+      // open/show
+      {
+        "key": "o",
+        "name": "+Open/Show",
+        "icon": "x",
+        "type": "bindings",
+        "bindings": [
+          {
+            "key": "o",
+            "name": "open base file",
+            "icon": "x",
+            "type": "command",
+            "command": "merge.openBaseEditor"
+          },
+          {
+            "key": "O",
+            "name": "open result file",
+            "icon": "x",
+            "type": "command",
+            "command": "merge.openResult"
+          },
+          {
+            "key": "c",
+            "name": "show non conflicting changes",
+            "icon": "x",
+            "type": "command",
+            "command": "merge.showNonConflictingChanges"
+          },
+          {
+            "key": "b",
+            "name": "show base file",
+            "icon": "x",
+            "type": "bindings",
+            "bindings": [
+              {
+                "key": "b",
+                "name": "show base file",
+                "icon": "x",
+                "type": "commands",
+                // "command": "merge.showBaseTop"
+                "commands": [
+                  "merge.showBaseCenter",
+                  "workbench.action.focusActiveEditorGroup"
+                ]
+              },
+              {
+                "key": "m",
+                "name": "show base file middle(center)",
+                "icon": "x",
+                "type": "commands",
+                "commands": [
+                  "merge.showBaseCenter",
+                  "workbench.action.focusActiveEditorGroup"
+                ]
+              },
+              {
+                "key": "k",
+                "name": "show base file top",
+                "icon": "x",
+                "type": "commands",
+                "commands": [
+                  "merge.showBaseTop",
+                  "workbench.action.focusActiveEditorGroup"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      // view/layout
+      {
+        "key": "v",
+        "name": "+View/Layout",
+        "icon": "x",
+        "type": "bindings",
+        "bindings": [
+          {
+            "key": "v",
+            "name": "mixed layout",
+            "icon": "x",
+            "type": "commands",
+            "commands": [
+              "merge.mixedLayout",
+              "workbench.action.focusActiveEditorGroup"
+            ]
+          },
+          {
+            "key": "c",
+            "name": "column layout",
+            "icon": "x",
+            "type": "commands",
+            "commands": [
+              "merge.columnLayout",
+              "workbench.action.focusActiveEditorGroup"
+            ]
+          }
+        ]
+      },
+      // accept
+      {
+        "key": "a",
+        "name": "+Accept",
+        "icon": "x",
+        "type": "bindings",
+        "bindings": [
+          {
+            "key": "h",
+            "name": "accept incoming(left)",
+            "icon": "x",
+            "type": "command",
+            "command": "merge.acceptAllInput1"
+          },
+          {
+            "key": "l",
+            "name": "accept current(right)",
+            "icon": "x",
+            "type": "command",
+            "command": "merge.acceptAllInput2"
+          }
+        ]
+      }
+    ],
+    "when": "isMergeEditor && editorTextFocus && (vim.mode =~ /normal/i) && !editorHasMultipleSelections && !editorHasSelection"
+  }
+]
