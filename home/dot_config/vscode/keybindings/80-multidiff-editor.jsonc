@@ -1,0 +1,32 @@
+[
+  // multiDiffEditor.collapseAll
+  // multiDiffEditor.expandAll
+  {
+    "key": "escape",
+    "command": "whichkey.show",
+    "args": [
+      {
+        "key": "o",
+        "name": "open file",
+        "icon": "x",
+        "type": "command",
+        "command": "multiDiffEditor.goToFile"
+      },
+      {
+        "key": "k",
+        "name": "goto previous change",
+        "icon": "x",
+        "type": "command",
+        "command": "multiDiffEditor.goToPreviousChange"
+      },
+      {
+        "key": "j",
+        "name": "goto next unhandle conflict",
+        "icon": "x",
+        "type": "command",
+        "command": "multiDiffEditor.goToNextChange"
+      }
+    ],
+    "when": "activeEditor == 'multiDiffEditor' && editorTextFocus && (vim.mode =~ /normal/i) && !editorHasMultipleSelections && !editorHasSelection"
+  }
+]
