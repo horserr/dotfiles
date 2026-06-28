@@ -1,0 +1,83 @@
+[
+  {
+    "key": "a",
+    "name": "+Profile",
+    "icon": "defaultProfile-icon",
+    "type": "bindings",
+    "bindings": [
+      {
+        "key": "a",
+        "name": "switch profile",
+        "type": "command",
+        "command": "workbench.profiles.actions.switchProfile"
+      },
+      {
+        "key": "o",
+        "name": "new window with profile",
+        "type": "command",
+        "bindings": [
+          {
+            "key": "o",
+            "name": "new window with profile",
+            "type": "command",
+            "command": "workbench.profiles.actions.newWindowWithProfile"
+          },
+          {
+            "key": "d",
+            "name": "new window with default profile",
+            "type": "command",
+            "command": "workbench.action.openProfile.Default"
+          }
+        ]
+      },
+      {
+        "key": " ",
+        "name": "open profile ui interfact",
+        "type": "command",
+        "command": "workbench.profiles.actions.manageProfiles"
+      },
+      {
+        "key": "d",
+        "name": "delete profile",
+        "type": "command",
+        "command": "workbench.profiles.actions.deleteProfile"
+      },
+      {
+        "key": "t",
+        "name": "temporary profile",
+        "type": "command",
+        "command": "workbench.profiles.actions.createTemporaryProfile"
+      },
+      {
+        "key": "n",
+        "name": "new profile",
+        "type": "command",
+        "command": "workbench.profiles.actions.createProfile"
+      },
+      {
+        "key": "c",
+        "name": "copy current profile",
+        "type": "command",
+        "command": "workbench.profiles.actions.createFromCurrentProfile"
+      },
+      {
+        "key": "y",
+        "name": "export profile",
+        "type": "command",
+        "command": "workbench.profiles.actions.exportProfile"
+      },
+      {
+        "key": "x",
+        "name": "clean up profiles",
+        "type": "command",
+        "command": "workbench.profiles.actions.cleanupProfiles"
+      },
+      {
+        "key": "r",
+        "name": "reset profile association",
+        "type": "command",
+        "command": "workbench.profiles.actions.resetWorkspaces"
+      }
+    ]
+  }
+]

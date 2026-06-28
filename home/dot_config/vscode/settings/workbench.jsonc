@@ -1,0 +1,42 @@
+{
+  "$schema": "vscode://schemas/settings/user",
+  "lifeline.clock.format": "h:mm A",
+  "workbench.activityBar.location": "bottom",
+  "workbench.colorCustomizations": {
+    // editor bracket color customization
+    // "editorBracketHighlight.foreground1": "#5caeef",
+    // "editorBracketHighlight.foreground2": "#dfb976",
+    // "editorBracketHighlight.foreground3": "#c172d9",
+    // "editorBracketHighlight.foreground4": "#4fb1bc",
+    // "editorBracketHighlight.foreground5": "#97c26c",
+    // "editorBracketHighlight.foreground6": "#abb2c0",
+    // "editorBracketHighlight.unexpectedBracket.foreground": "#db6165"
+  },
+  "workbench.commandPalette.showAskInChat": false,
+  "workbench.editor.closeEmptyGroups": true,
+  "workbench.editor.enablePreviewFromQuickOpen": true,
+  "workbench.editor.highlightModifiedTabs": true,
+  // "workbench.editor.titleScrollbarSizing": "large",
+  //////////// NOTE: hide editor tabs
+  // "workbench.editor.showTabs": "single",
+  "workbench.editor.openPositioning": "right",
+  "workbench.editor.pinnedTabSizing": "shrink",
+  "workbench.editor.pinnedTabsOnSeparateRow": true,
+  "workbench.editor.scrollToSwitchTabs": true,
+  "workbench.editor.showTabIndex": true,
+  "workbench.editor.tabActionCloseVisibility": false,
+  "workbench.editor.useModal": "some",
+  "workbench.editorAssociations": {
+    "*.copilotmd": "vscode.markdown.preview.editor"
+  },
+  "workbench.iconTheme": "catppuccin-mocha",
+  "workbench.layoutControl.enabled": false,
+  "workbench.list.smoothScrolling": true,
+  "workbench.notifications.position": "top-right",
+  "workbench.panel.showLabels": false,
+  "workbench.preferredDarkColorTheme": "Catppuccin Mocha",
+  "workbench.secondarySideBar.showLabels": false,
+  "workbench.startupEditor": "none",
+  "workbench.statusBar.visible": true,
+  "workbench.tree.stickyScrollMaxItemCount": 4
+}

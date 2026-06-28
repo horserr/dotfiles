@@ -1,0 +1,5 @@
+{
+  "$schema": "vscode://schemas/settings/user",
+  // 建议：当本机开发时，并且docker网络模式为host，并且WSL网络模式为mirrored，开启，否则需要手动关闭
+  "http.useLocalProxyConfiguration": true
+}

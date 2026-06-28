@@ -37,6 +37,13 @@
         "command": "editor.action.inspectTMScopes"
       },
       {
+        "key": "s",
+        "name": "Show startup performance",
+        "icon": "keyboard",
+        "type": "command",
+        "command": "perfview.show"
+      },
+      {
         "key": "p",
         "name": "Show process",
         "icon": "keyboard",
@@ -75,6 +82,13 @@
       {
         "key": "U",
         "name": "Open User folder",
+        "icon": "keyboard",
+        "type": "command",
+        "command": "workbench.action.revealUserDataFolder"
+      },
+      {
+        "key": "P",
+        "name": "Open profile folder",
         "icon": "keyboard",
         "type": "command",
         "command": "workbench.action.revealUserDataFolder"
@@ -148,6 +162,13 @@
         "bindings": [
           {
             "key": "r",
+            "name": "show running extensions",
+            "icon": "keyboard",
+            "type": "command",
+            "command": "workbench.action.showRuntimeExtensions"
+          },
+          {
+            "key": "R",
             "name": "Restart extension",
             "icon": "keyboard",
             "type": "command",
@@ -159,8 +180,45 @@
             "icon": "keyboard",
             "type": "command",
             "command": "workbench.extensions.action.openExtensionsFolder"
+          },
+          {
+            "key": "v",
+            "name": "show extensions",
+            "icon": "keyboard",
+            "type": "command",
+            "bindings": [
+              {
+                "key": "u",
+                "name": "show workspace unsupport or limited extensions",
+                "icon": "keyboard",
+                "type": "command",
+                "command": "workbench.extensions.action.listWorkspaceUnsupportedExtensions"
+                // "command": "workbench.extensions.search",
+                // "args": "@workspaceUnsupported"
+              },
+              {
+                "key": "e",
+                "name": "show enabled extensions",
+                "icon": "keyboard",
+                "type": "command",
+                "command": "workbench.extensions.action.showEnabledExtensions"
+              },
+              {
+                "key": "d",
+                "name": "show disabled extensions",
+                "icon": "keyboard",
+                "type": "command",
+                "command": "workbench.extensions.action.showDisabledExtensions"
+              }
+            ]
           }
         ]
+      },
+      {
+        "key": "s",
+        "name": "open setting sync folder",
+        "type": "command",
+        "command": "workbench.userData.actions.openSyncBackupsFolder"
       },
       {
         "key": "R",

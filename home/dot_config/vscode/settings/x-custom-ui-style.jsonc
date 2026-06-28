@@ -1,0 +1,20 @@
+{
+  "$schema": "vscode://schemas/settings/user",
+  "custom-ui-style.external.imports": [
+    "file://${userHome}/.config/vscode/custom-ui.css"
+  ],
+  "custom-ui-style.external.loadStrategy": "refetch",
+  "custom-ui-style.webview.enable": true,
+  "custom-ui-style.webview.monospaceSelector": [
+    ".codeblock",
+    ".prism [class*='language-']"
+  ],
+  "custom-ui-style.webview.stylesheet": {
+    ":root": {
+      "--vscode-font-size": "16px !important"
+    },
+    // format vspacecode
+    // Colorize entries starting with a `+` differently
+    ".quick-input-widget > .quick-input-list .monaco-list-row[aria-label*=\" +\"] .label-description": "color: #8ec07c;"
+  }
+}

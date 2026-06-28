@@ -13,8 +13,22 @@
         "args": "${userHome}/.config/.dotfiles/"
       },
       {
+        "key": "a",
+        "name": "add folder to workspace",
+        "icon": "clock",
+        "type": "command",
+        "command": "workbench.action.addRootFolder"
+      },
+      {
+        "key": "n",
+        "name": "Open new empty workspace",
+        "icon": "empty-window",
+        "type": "command",
+        "command": "workbench.action.newWindow"
+      },
+      {
         "key": "r",
-        "name": "+Open recent folders/files",
+        "name": "Open recent folders/files",
         "icon": "clock",
         "type": "command",
         "command": "workbench.action.openRecent"
@@ -35,18 +49,10 @@
       },
       {
         "key": "d",
-        "name": "+Close Project",
+        "name": "remove folder from workspace",
         "icon": "x",
         "type": "command",
-        "bindings": [
-          {
-            "key": "o",
-            "name": "Close other repositories",
-            "icon": "x",
-            "type": "command",
-            "command": "git.closeOtherRepositories"
-          }
-        ]
+        "command": "workbench.action.removeRootFolder"
       },
       {
         "key": "c",
@@ -70,13 +76,40 @@
           }
         ]
       },
-
       {
         "key": "o",
         "name": "open project",
         "icon": "clock",
         "type": "bindings",
         "bindings": [
+          {
+            "key": "f",
+            "name": "open file in new window as workspace",
+            "icon": "folder-opened",
+            "type": "command",
+            "command": "workbench.action.files.openFileInNewWindow"
+          },
+          {
+            "key": "o",
+            "name": "open folder in new window as workspace",
+            "icon": "folder-opened",
+            "type": "command",
+            "command": "workbench.action.files.openFolderInNewWindow"
+          },
+          {
+            "key": "O",
+            "name": "open file/folder in new window",
+            "icon": "folder-opened",
+            "type": "command",
+            "command": "workbench.action.files.openFileFolderInNewWindow"
+          },
+          {
+            "key": "w",
+            "name": "open folder via workspace",
+            "icon": "folder-opened",
+            "type": "command",
+            "command": "workbench.action.files.openFolderViaWorkspace"
+          },
           {
             "key": "r",
             "name": "open github repo without cloning",
@@ -85,20 +118,6 @@
             "command": "remoteHub.openRepository"
           }
         ]
-      },
-      {
-        "key": "c",
-        "name": "Compile project",
-        "icon": "gear",
-        "type": "command",
-        "command": "workbench.action.tasks.build"
-      },
-      {
-        "key": "T",
-        "name": "Test project",
-        "icon": "beaker",
-        "type": "command",
-        "command": "workbench.action.tasks.test"
       }
     ]
   }

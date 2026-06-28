@@ -56,6 +56,15 @@
     "when": "whichkeyVisible && activeEditorIsPinned"
   },
   {
+    "key": "t",
+    "command": "whichkey.triggerKey",
+    "args": {
+      "key": "t",
+      "when": "editorTabsVisible"
+    },
+    "when": "whichkeyVisible && editorTabsVisible"
+  },
+  {
     // for detecting whether this windows are subordinate to main window
     "key": "w",
     "command": "whichkey.triggerKey",

@@ -100,12 +100,14 @@
         "bindings": [
           {
             "key": "x",
+            "name": "focus files to exclude",
             "icon": "x",
             "type": "command",
             "command": "search.action.focusFilesToExclude"
           },
           {
             "key": "i",
+            "name": "focus files to exclude",
             "icon": "x",
             "type": "command",
             "command": "search.action.focusFilesToInclude"

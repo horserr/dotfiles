@@ -5,152 +5,46 @@
     "icon": "gather",
     "type": "bindings",
     "bindings": [
+      // open quick diff
       {
         "key": "j",
-        "name": "focus editor breadcrumbs",
-        "icon": "clock",
-        "type": "command",
-        "command": "breadcrumbs.focus"
-      },
-      {
-        "key": ",",
-        "name": "open quick diff (Next error)",
-        "icon": "arrow-down",
-        "type": "commands",
-        "commands": [
-          "editor.action.dirtydiff.next",
-          "toggleQuickDiffWidgetFocus",
-          "Move Cursor To Bottom Of ViewPort"
-        ]
-      },
-      {
-        "key": "J",
-        "name": "focus editor sticky scroll",
-        "icon": "clock",
-        "type": "command",
-        "command": "editor.action.focusStickyScroll"
-      },
-      {
-        "key": "e",
-        "name": "Next error",
+        "name": "open quick diff",
         "icon": "arrow-down",
         "type": "command",
-        "command": "editor.action.marker.nextInFiles"
+        "command": "runCommands",
+        "args": {
+          "commands": [
+            "editor.action.dirtydiff.next",
+            "toggleQuickDiffWidgetFocus",
+            {
+              "command": "cursorMove",
+              "args": {
+                "to": "viewPortBottom"
+              }
+            }
+          ]
+        }
       },
       {
-        "key": "E",
-        "name": "Previous error",
-        "icon": "arrow-up",
-        "type": "command",
-        "command": "editor.action.marker.prevInFiles"
-      },
-      {
-        "key": "s",
+        "key": " ",
         "name": "Jump to symbol in buffer",
         "icon": "symbol-class",
         "type": "command",
         "command": "workbench.action.gotoSymbol"
       },
       {
-        "key": "j",
-        "name": "Jump to character",
-        "icon": "case-sensitive",
-        "type": "command",
-        "command": "vim.remap",
-        "args": {
-          "after": ["leader", "leader", "s"]
-        }
-      },
-      {
-        "key": "l",
-        "name": "Jump to line",
-        "icon": "list-flat",
-        "type": "command",
-        "command": "vim.remap",
-        "args": {
-          "after": ["leader", "leader", "leader", "b", "d", "j", "k"]
-        }
-      },
-      {
-        "key": "n",
-        "name": "Split new line",
-        "icon": "whitespace",
-        "type": "command",
-        "command": "lineBreakInsert"
-      },
-      {
-        "key": "v",
-        "name": "Jump to outline/variables",
-        "icon": "variable",
-        "type": "command",
-        "command": "breadcrumbs.focusAndSelect"
-      },
-      {
-        "key": "w",
-        "name": "Jump to word",
-        "icon": "symbol-keyword",
-        "type": "command",
-        "command": "vim.remap",
-        "args": {
-          "after": ["leader", "leader", "leader", "b", "d", "w"]
-        }
-      },
-      {
-        "key": "I",
+        "key": "s",
         "name": "Jump to symbol in project",
         "icon": "project",
         "type": "command",
         "command": "workbench.action.showAllSymbols"
       },
       {
-        "key": ".",
-        "name": "Error transient",
-        "icon": "window",
-        "type": "transient",
-        "bindings": [
-          {
-            "key": "f",
-            "name": "Fix error",
-            "icon": "lightbulb-autofix",
-            "type": "command",
-            "command": "editor.action.quickFix"
-          },
-          {
-            "key": "n",
-            "name": "Next error",
-            "icon": "arrow-down",
-            "type": "command",
-            "command": "editor.action.marker.nextInFiles"
-          },
-          {
-            "key": "p",
-            "name": "Previous error",
-            "icon": "arrow-up",
-            "type": "command",
-            "command": "editor.action.marker.prevInFiles"
-          },
-          {
-            "key": "N",
-            "name": "Previous error",
-            "icon": "arrow-up",
-            "type": "command",
-            "command": "editor.action.marker.prevInFiles"
-          }
-        ]
-      },
-      {
-        "key": "e",
-        "name": "Show error",
-        "icon": "error",
+        "key": "b",
+        "name": "focus editor breadcrumbs",
+        "icon": "clock",
         "type": "command",
-        "command": "editor.action.showHover"
-      },
-      {
-        "key": "f",
-        "name": "Fix error",
-        "icon": "lightbulb-autofix",
-        "type": "command",
-        "command": "editor.action.quickFix"
+        "command": "breadcrumbs.focusAndSelect"
       }
     ]
   }

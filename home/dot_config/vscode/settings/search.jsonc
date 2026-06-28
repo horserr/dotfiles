@@ -1,0 +1,23 @@
+{
+  "$schema": "vscode://schemas/settings/user",
+  // Search
+  "search.exclude": {
+    "**/.git": true,
+    "**/.idea": true,
+    "**/.svn": true,
+    "**/build": true,
+    "**/tmp": true,
+    "**/.pixi/envs": true
+  },
+  "search.experimental.closedNotebookRichContentResults": true,
+  "search.followSymlinks": false,
+  "search.quickAccess.preserveInput": true,
+  "search.searchEditor.reusePriorSearchConfiguration": true,
+  "search.searchEditor.singleClickBehaviour": "peekDefinition",
+  "search.searchView.keywordSuggestions": true,
+  "search.searchView.semanticSearchBehavior": "auto",
+  "search.seedWithNearestWord": true,
+  "search.smartCase": true,
+  "search.useGlobalIgnoreFiles": true,
+  "search.useParentIgnoreFiles": true
+}

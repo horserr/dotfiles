@@ -1,4 +1,18 @@
 [
+  // {
+  //   "key": "u",
+  //   "name": "unstage selected range",
+  //   "icon": "arrow-down",
+  //   "type": "command",
+  //   "command": "git.unstageSelectedRanges"
+  // },
+  // {
+  //   "key": "f",
+  //   "name": "unstage file",
+  //   "icon": "arrow-down",
+  //   "type": "command",
+  //   "command": "git.unstageFile"
+  // },
   {
     "key": "ctrl+h",
     "command": "workbench.action.compareEditor.focusSecondarySide",

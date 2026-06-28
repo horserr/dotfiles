@@ -25,4 +25,11 @@
   // git.repositories.worktreeCopyBranchName
   // git.repositories.worktreeCopyCommitHash
   // git.repositories.worktreeCopyPath
+  /*   {
+    "key": "o",
+    "name": "Close other repositories",
+    "icon": "x",
+    "type": "command",
+    "command": "git.closeOtherRepositories"
+  } */
 ]

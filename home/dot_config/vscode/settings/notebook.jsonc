@@ -1,0 +1,34 @@
+{
+  "$schema": "vscode://schemas/settings/user",
+  "notebook.cellToolbarLocation": {
+    "default": "right",
+    "jupyter-notebook": "left"
+  },
+  "notebook.cellToolbarVisibility": "hover",
+  "notebook.codeActionsOnSave": {
+    "notebook.source.fixAll": "explicit",
+    "notebook.source.organizeImports": "explicit"
+  },
+  "notebook.defaultFormatter": "charliermarsh.ruff",
+  "notebook.diff.overviewRuler": true,
+  "notebook.formatOnCellExecution": true,
+  "notebook.formatOnSave.enabled": true,
+  "notebook.globalToolbar": false,
+  "notebook.globalToolbarShowLabel": "dynamic",
+  "notebook.insertFinalNewline": true,
+  // "notebook.markup.fontFamily": "LXGW WenKai",
+  // "notebook.markup.fontFamily": "Comfortaa",
+  "notebook.markup.fontFamily": "Microsoft YaHei",
+  "notebook.markup.fontSize": 16,
+  "notebook.outline.showCodeCells": true,
+  // "notebook.output.fontFamily": "AI楷",
+  "notebook.output.fontFamily": "ProggyClean Nerf Font",
+  "notebook.output.fontSize": 16.5,
+  "notebook.output.lineHeight": 1.3,
+  "notebook.output.scrolling": true,
+  "notebook.output.textLineLimit": 6,
+  // jupyter notebook settings
+  "notebook.output.wordWrap": true,
+  "notebook.showCellStatusBar": "visibleAfterExecute",
+  "notebook.stickyScroll.enabled": true
+}

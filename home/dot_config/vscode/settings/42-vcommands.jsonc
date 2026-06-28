@@ -44,14 +44,40 @@
   "commands.showKeybindings": true,
 
   "commands.commands": {
-    "Quick Extensions View": {
-      "command": "workbench.extensions.search",
-      "args": "@builtin"
+    "Time": {
+      "command": "noop",
+      "statusBar": {
+        "text": "${currentHour}:${currentMinute}:${currentSecond}",
+        "updateEvents": [
+          {
+            "kind": "interval",
+            "value": 1000
+          }
+        ]
+      }
     },
-    "Open Dotfile Source Folder": {
-      "command": "commands.openFolder",
-      "args": "${userHome}/.config/.dotfiles/",
-      "hidden": true
+    "Search For Selected Text": {
+      "command": "commands.openExternal",
+      "args": "https://www.google.com/search?q=${selectedText}"
+    },
+
+    "Move Cursor If Out Of Viewport": {
+      "command": "cursorMove",
+      "args": {
+        "to": "viewPortIfOutside"
+      }
+    },
+    "Move Cursor To Center Of ViewPort": {
+      "command": "cursorMove",
+      "args": {
+        "to": "viewPortCenter"
+      }
+    },
+    "Move Cursor To Top Of ViewPort": {
+      "command": "cursorMove",
+      "args": {
+        "to": "viewPortTop"
+      }
     }
   }
 }

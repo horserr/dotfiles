@@ -1,0 +1,27 @@
+{
+  "$schema": "vscode://schemas/settings/user",
+  "chat.agent.maxRequests": 200,
+  "chat.agent.thinking.collapsedTools": "withThinking",
+  "chat.agent.thinking.phrases": {
+    "mode": "append",
+    "phrases": [
+      "Bribing the hamster",
+      "Reticulating splines",
+      "Untangling the spaghetti"
+    ]
+  },
+  "chat.disableAIFeatures": false,
+  // copilot chat settings
+  "chat.editor.fontSize": 17,
+  "chat.editor.lineHeight": 1.4,
+  "chat.editor.wordWrap": "on",
+  "chat.edits2.enabled": true,
+  "chat.fontFamily": "LXGW Wenkai",
+  "chat.fontSize": 17,
+  "chat.notifyWindowOnConfirmation": "windowNotFocused",
+  "chat.notifyWindowOnResponseReceived": "windowNotFocused",
+  "chat.renderRelatedFiles": true,
+  "chat.tools.terminal.sandbox.enabled": false,
+  "chat.viewProgressBadge.enabled": true,
+  "chat.viewSessions.orientation": "stacked"
+}

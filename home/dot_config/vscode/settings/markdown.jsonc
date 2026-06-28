@@ -1,0 +1,7 @@
+{
+  "$schema": "vscode://schemas/settings/user",
+  "markdown.preview.breaks": true,
+  "markdown.preview.fontSize": 16,
+  "markdown.preview.lineHeight": 1.4,
+  "markdown.preview.typographer": true
+}

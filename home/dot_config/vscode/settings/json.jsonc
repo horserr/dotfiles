@@ -1,0 +1,12 @@
+{
+  "schema": "vscode://schemas/settings/user",
+  "json.schemaDownload.trustedDomains": {
+    "https://aka.ms": true,
+    "https://esm.sh": true,
+    "https://json-schema.org/": true,
+    "https://json.schemastore.org/": true,
+    "https://raw.githubusercontent.com/": true,
+    "https://schemastore.azurewebsites.net/": true,
+    "https://www.schemastore.org/": true
+  }
+}

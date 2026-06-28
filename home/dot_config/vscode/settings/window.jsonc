@@ -1,0 +1,19 @@
+{
+  "$schema": "vscode://schemas/settings/user",
+
+  "window.autoDetectColorScheme": true,
+  "window.commandCenter": false,
+  "window.confirmBeforeClose": "keyboardOnly",
+  "window.confirmSaveUntitledWorkspace": false,
+  "window.density.editorTabHeight": "compact",
+  "window.dialogStyle": "custom",
+  "window.menuBarVisibility": "toggle",
+  "window.newWindowProfile": "Default",
+  "window.openFilesInNewWindow": "default",
+  "window.openFoldersInNewWindow": "default",
+  "window.restoreWindows": "none",
+  "window.systemColorTheme": "auto",
+  "window.title": "${dirty}😉${rootNameShort}${separator}${activeEditorShort}",
+  "window.titleSeparator": " 📍 ",
+  "window.zoomLevel": 0.8
+}

@@ -1,32 +1,40 @@
 [
+  // fix inline chat
   {
-    "key": "`",
-    "command": "workbench.action.chat.openInNewWindow",
-    "when": "auxiliaryBarFocus && !chatInputHasFocus"
-  },
-  {
+    // remove origin vim escape function
     "key": "escape",
-    "command": "workbench.action.focusactiveeditorgroup",
-    "when": "auxiliarybarfocus"
+    "command": "-extension.vim_escape",
+    "when": "editorTextFocus && vim.active && !inDebugRepl"
   },
   {
-    "key": "alt+/",
-    "command": "workbench.action.toggleAuxiliaryBar",
-    "when": "auxiliaryBarVisible && chatInputHasFocus"
+    // add more precise conditions for escape, dealing with copilot suggestions
+    "key": "Escape",
+    "command": "extension.vim_escape",
+    "when": "editorTextFocus && vim.active && !inDebugRepl && !inlineSuggestionVisible && !inlineEditIsVisible && !testing.isPeekVisible && !testing.isInPeek && !suggestWidgetVisible && !findWidgetVisible && !dirtyDiffVisible && (vim.mode == 'Insert' || !notebookEditorFocused)"
   },
   {
-    "key": "alt+/",
-    "command": "workbench.panel.chat.view.copilot.focus",
-    "when": "!(auxiliaryBarVisible && chatInputHasFocus)"
+    // remove origin vim tab function
+    "key": "tab",
+    "command": "-extension.vim_tab",
+    "when": "editorTextFocus && vim.active && !inDebugRepl && vim.mode != 'Insert'"
   },
   {
-    "key": "`",
-    "command": "workbench.action.quickchat.openInChatView",
-    "when": "quickChatHasFocus && !chatInputHasFocus"
+    // add more precise conditions for tab, dealing with copilot suggestions
+    "key": "tab",
+    "command": "extension.vim_tab",
+    "when": "editorTextFocus && vim.active && vim.mode != 'Insert' && !inDebugRepl && !inlineEditIsVisible"
   },
   {
-    "key": "alt+3",
-    "command": "workbench.action.chat.openInSidebar"
+    // remove origin markdown next cell
+    "key": "tab",
+    "command": "-markdowntable.nextCell",
+    "when": "editorTextFocus && markdowntable.contextkey.selection.InMarkdownTable && !editorReadonly && !editorTabMovesFocus && !inSnippetMode && !suggestWidgetMultipleSuggestions && !suggestWidgetVisible"
+  },
+  {
+    // support markdown next cell when vim is in insert mode
+    "key": "tab",
+    "command": "markdowntable.nextCell",
+    "when": "editorTextFocus && markdowntable.contextkey.selection.InMarkdownTable && !editorReadonly && !editorTabMovesFocus && !inSnippetMode && !suggestWidgetMultipleSuggestions && !suggestWidgetVisible && vim.mode == 'Insert'"
   },
   {
     "key": "ctrl+h",

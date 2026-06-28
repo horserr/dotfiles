@@ -4,6 +4,45 @@
   // git.copyCommitMessage
   // git.copyContentToClipboard
   // editor.action.diffReview.next
+
+  // workbench.scm.action.collapseAll
+  // workbench.scm.action.collapseAllRepositories
+  // workbench.scm.action.expandAllRepositories
+  // workbench.scm.action.focusNextInput
+  // workbench.scm.action.focusNextResourceGroup
+  // workbench.scm.action.focusPreviousInput
+  // workbench.scm.action.focusPreviousResourceGroup
+  // workbench.scm.action.graph.addHistoryItemChangeToChat
+  // workbench.scm.action.graph.addHistoryItemToChat
+  // workbench.scm.action.graph.openFile
+  // workbench.scm.action.graph.pickHistoryItemRefs
+  // workbench.scm.action.graph.pickRepository
+  // workbench.scm.action.graph.refresh
+  // workbench.scm.action.graph.revealCurrentHistoryItem
+  // workbench.scm.action.graph.setListViewMode
+  // workbench.scm.action.graph.setTreeViewMode
+  // workbench.scm.action.graph.summarizeHistoryItem
+  // workbench.scm.action.graph.viewChanges
+  // workbench.scm.action.repositories.setSelectionMode.multiple
+  // workbench.scm.action.repositories.setSelectionMode.single
+  // workbench.scm.action.repositories.setSortKey.discoveryTime
+  // workbench.scm.action.repositories.setSortKey.name
+  // workbench.scm.action.repositories.setSortKey.path
+  // workbench.scm.action.setListViewMode
+  // workbench.scm.action.setListViewModeNavigation
+  // workbench.scm.action.setSortKey.name
+  // workbench.scm.action.setSortKey.path
+  // workbench.scm.action.setSortKey.status
+  // workbench.scm.action.setTreeViewMode
+  // workbench.scm.action.setTreeViewModeNavigation
+  // workbench.scm.focus
+  // workbench.scm.history.focus
+  // workbench.scm.history.resetViewLocation
+  // workbench.scm.removeView
+  // workbench.scm.repositories.focus
+  // workbench.scm.repositories.resetViewLocation
+  // workbench.scm.resetViewLocation
+  // workbench.scm.toggleVisibility
   {
     "key": "g",
     "name": "+Git",
@@ -32,6 +71,20 @@
             "command": "git.stageSelectedRanges"
           },
           {
+            "key": " ",
+            "name": "stage all tracked files",
+            "icon": "arrow-down",
+            "type": "command",
+            "command": "git.stageAllTracked"
+          },
+          {
+            "key": "u",
+            "name": "stage all untracked files",
+            "icon": "arrow-down",
+            "type": "command",
+            "command": "git.stageAllUntracked"
+          },
+          {
             "key": "m",
             "name": "stage all merged files",
             "icon": "arrow-down",
@@ -55,6 +108,13 @@
         "type": "bindings",
         "bindings": [
           {
+            "key": "f",
+            "name": "unstage current file",
+            "icon": "arrow-down",
+            "type": "command",
+            "command": "git.unstage"
+          },
+          {
             "key": "r",
             "name": "restore selected lines",
             "icon": "arrow-down",
@@ -62,18 +122,11 @@
             "command": "git.revertSelectedRanges"
           },
           {
-            "key": "m",
-            "name": "stage all merged files",
+            "key": "a",
+            "name": "unstage all",
             "icon": "arrow-down",
             "type": "command",
-            "command": "git.stageAllMerge"
-          },
-          {
-            "key": "f",
-            "name": "stage entire file",
-            "icon": "arrow-down",
-            "type": "command",
-            "command": "magit.stage-file"
+            "command": "git.unstageAll"
           }
         ]
       },
@@ -138,10 +191,9 @@
           }
         ]
       },
-      // open / diff
+      // diff
       {
-        // git.openRepositoriesInParentFolders
-        "key": "o",
+        "key": "x",
         "name": "+Open",
         "icon": "source-control",
         "type": "bindings",
@@ -150,31 +202,46 @@
             "key": "o",
             "name": "open current file change(diff)",
             "icon": "arrow-down",
-            "type": "commands",
-            "commands": [
-              "workbench.action.copyEditorToNewWindow",
-              "git.openChange"
-            ]
+            "type": "command",
+            "command": "git.openChange"
           },
           {
             "key": "O",
             "name": "open current file original version(HEAD)",
             "icon": "arrow-down",
-            "type": "commands",
-            "commands": [
-              "workbench.action.copyEditorToNewWindow",
-              "git.openHEADFile"
-            ]
+            "type": "command",
+            "command": "git.openHEADFile"
           },
           {
             "key": " ",
-            "name": "open changes in new window",
+            "name": "open all changed files in new window",
             "icon": "arrow-down",
             "type": "commands",
             "commands": [
               "workbench.action.newEmptyEditorWindow",
               "git.openAllChanges"
             ]
+          },
+          {
+            "key": "x",
+            "name": "open multi diff editor for all changes",
+            "icon": "arrow-down",
+            "type": "command",
+            "command": "git.viewChanges"
+          },
+          {
+            "key": "s",
+            "name": "open multi diff editor for all staged changes",
+            "icon": "arrow-down",
+            "type": "command",
+            "command": "git.viewStagedChanges"
+          },
+          {
+            "key": "u",
+            "name": "open multi diff editor for all untracked changes",
+            "icon": "arrow-down",
+            "type": "command",
+            "command": "git.viewUntrackedChanges"
           }
         ]
       },
@@ -261,78 +328,103 @@
             "command": "git.merge"
           },
           {
-            "key": "a",
+            "key": "q",
             "name": "merge abort",
             "icon": "arrow-down",
             "type": "command",
             "command": "git.mergeAbort"
+          },
+          // compare
+          {
+            "key": "c",
+            "name": "compare current conflict",
+            "icon": "arrow-down",
+            "type": "command",
+            "command": "merge-conflict.compare"
           },
           // merge editor
           {
             "key": "e",
             "name": "open 3-way merge editor",
             "icon": "arrow-down",
-            "type": "commands",
-            "commands": [
-              "git.openMergeEditor",
-              "workbench.action.moveEditorToNewWindow"
+            "type": "command",
+            "command": "runCommands",
+            "args": {
+              "commands": [
+                "git.openMergeEditor",
+                "workbench.action.moveEditorToNewWindow",
+                // "workbench.action.focusActiveEditorGroup",
+                "merge.goToNextUnhandledConflict",
+                {
+                  "command": "cursorMove",
+                  "args": {
+                    "to": "viewPortIfOutside"
+                  }
+                }
+              ]
+            }
+          },
+          // accept
+          {
+            "key": "a",
+            "name": "+Accept",
+            "icon": "arrow-down",
+            "type": "bindings",
+            "bindings": [
+              {
+                "key": ",",
+                "name": "accept accept selected lines",
+                "icon": "arrow-down",
+                "type": "command",
+                "command": "merge-conflict.accept.selection"
+              },
+              {
+                // incoming change is in the lower side
+                "key": "j",
+                "name": "accept the incoming conflict",
+                "icon": "arrow-down",
+                "type": "command",
+                "command": "merge-conflict.accept.incoming"
+              },
+              {
+                // current change is in the upper
+                "key": "k",
+                "name": "accept the current conflict",
+                "icon": "arrow-up",
+                "type": "command",
+                "command": "merge-conflict.accept.current"
+              },
+              {
+                // shorted for 'middle'
+                "key": "m",
+                "name": "accept the conflicts from both sides",
+                "icon": "arrow-both",
+                "type": "command",
+                "command": "merge-conflict.accept.both"
+              },
+              {
+                "key": "J",
+                "name": "accept all incoming conflicts",
+                "icon": "arrow-down",
+                "type": "command",
+                "command": "merge-conflict.accept.all-incoming"
+              },
+              {
+                "key": "K",
+                "name": "accept all current conflicts",
+                "icon": "arrow-down",
+                "type": "command",
+                "command": "merge-conflict.accept.all-current"
+              },
+              {
+                "key": "M",
+                "name": "accept all both conflicts",
+                "icon": "arrow-down",
+                "type": "command",
+                "command": "merge-conflict.accept.all-both"
+              }
             ]
-          },
-          {
-            "key": ",",
-            "name": "accept accept selected lines",
-            "icon": "arrow-down",
-            "type": "command",
-            "command": "merge-conflict.accept.selection"
-          },
-          {
-            // incoming change is in the lower side
-            "key": "j",
-            "name": "accept the incoming conflict",
-            "icon": "arrow-down",
-            "type": "command",
-            "command": "merge-conflict.accept.incoming"
-          },
-          {
-            // current change is in the upper
-            "key": "k",
-            "name": "accept the current conflict",
-            "icon": "arrow-up",
-            "type": "command",
-            "command": "merge-conflict.accept.current"
-          },
-          {
-            // shorted for 'middle'
-            "key": "m",
-            "name": "accept the conflicts from both sides",
-            "icon": "arrow-both",
-            "type": "command",
-            "command": "merge-conflict.accept.both"
-          },
-          {
-            "key": "J",
-            "name": "accept all incoming conflicts",
-            "icon": "arrow-down",
-            "type": "command",
-            "command": "merge-conflict.accept.all-incoming"
-          },
-          {
-            "key": "K",
-            "name": "accept all current conflicts",
-            "icon": "arrow-down",
-            "type": "command",
-            "command": "merge-conflict.accept.all-current"
-          },
-          {
-            "key": "M",
-            "name": "accept all both conflicts",
-            "icon": "arrow-down",
-            "type": "command",
-            "command": "merge-conflict.accept.all-both"
           }
-          // merge-conflict.compare
-          // merge-conflict.next
-          // merge-conflict.previous
         ]
       },
       // worktree
@@ -343,8 +435,15 @@
         "type": "bindings",
         "bindings": [
           {
-            // link: https://github.com/microsoft/vscode-docs/blob/main/release-notes/v1_104.md#preview-and-migrate-git-worktree-changes
             "key": "w",
+            "name": "worktree add",
+            "icon": "arrow-down",
+            "type": "command",
+            "command": "git.createWorktree"
+          },
+          {
+            // link: https://github.com/microsoft/vscode-docs/blob/main/release-notes/v1_104.md#preview-and-migrate-git-worktree-changes
+            "key": "M",
             "name": "worktree migrate, should first use comapre with workspace",
             "icon": "arrow-down",
             "type": "command",
@@ -352,22 +451,22 @@
             // when encounter migrate conflicts, use git.openWorktreeMergeEditor
           },
           {
-            "key": "a",
-            "name": "worktree add",
-            "icon": "arrow-down",
-            "type": "command",
-            "command": "git.createWorktree"
-          },
-          {
             "key": "d",
             "name": "worktree delete",
             "icon": "arrow-down",
             "type": "command",
             "command": "git.deleteWorktree"
+          },
+          {
+            "key": "m",
+            "name": "worktree merge",
+            "icon": "arrow-down",
+            "type": "command",
+            "command": "git.openWorktreeMergeEditor"
           }
         ]
       },
-      // rebase/rename
+      // rebase/reset/rename
       {
         "key": "r",
         "name": "+Rebase/Rename",
@@ -387,6 +486,13 @@
             "icon": "arrow-down",
             "type": "command",
             "command": "git.rebaseAbort"
+          },
+          {
+            "key": "c",
+            "name": "reset/undo last commit with mixed mode",
+            "icon": "arrow-down",
+            "type": "command",
+            "command": "git.undoCommit"
           },
           {
             "key": "n",
@@ -463,18 +569,122 @@
         "type": "bindings",
         "bindings": [
           {
-            "key": "d",
-            "name": "Diff",
+            "key": "v",
+            "name": "stash view",
             "icon": "diff",
             "type": "command",
-            "command": "magit.diff-file"
+            "command": "git.stashView"
           },
           {
-            "key": "l",
-            "name": "Show log/timeline",
-            "icon": "history",
+            "key": "s",
+            "name": "stash staged",
+            "icon": "diff",
             "type": "command",
-            "command": "timeline.focus"
+            "command": "git.stashStaged"
+          },
+          {
+            "key": "k",
+            "name": "stash all tracked",
+            "icon": "diff",
+            "type": "command",
+            "command": "git.stash"
+          },
+          {
+            "key": "u",
+            "name": "stash all tracked and untracked, no ignored",
+            "icon": "diff",
+            "type": "command",
+            "command": "git.stashIncludeUntracked"
+          },
+          // apply
+          {
+            "key": "a",
+            "name": "+Apply",
+            "icon": "file",
+            "type": "bindings",
+            "bindings": [
+              {
+                "key": "a",
+                "name": "stash apply",
+                "icon": "history",
+                "type": "command",
+                "command": "git.stashApply"
+              },
+              {
+                "key": ",",
+                "name": "stash apply latest",
+                "icon": "history",
+                "type": "command",
+                "command": "git.stashApplyLatest"
+              },
+              {
+                "key": "e",
+                "name": "stash apply editor",
+                "icon": "history",
+                "type": "command",
+                "command": "git.stashApplyEditor"
+              }
+            ]
+          },
+          // pop
+          {
+            "key": "p",
+            "name": "+Pop",
+            "icon": "file",
+            "type": "bindings",
+            "bindings": [
+              {
+                "key": "p",
+                "name": "stash pop",
+                "icon": "history",
+                "type": "command",
+                "command": "git.stashPop"
+              },
+              {
+                "key": "e",
+                "name": "pop editor",
+                "icon": "history",
+                "type": "command",
+                "command": "git.stashPopEditor"
+              },
+              {
+                "key": ",",
+                "name": "pop latest",
+                "icon": "history",
+                "type": "command",
+                "command": "git.stashPopLatest"
+              }
+            ]
+          },
+          // drop
+          {
+            "key": "d",
+            "name": "+Drop",
+            "icon": "file",
+            "type": "bindings",
+            "bindings": [
+              {
+                "key": "d",
+                "name": "stash drop",
+                "icon": "history",
+                "type": "command",
+                "command": "git.stashDrop"
+              },
+              {
+                "key": "e",
+                "name": "drop editor",
+                "icon": "history",
+                "type": "command",
+                "command": "git.stashDropEditor"
+              },
+              {
+                "key": "D",
+                "name": "drop all",
+                "icon": "history",
+                "type": "command",
+                "command": "git.stashDropAll"
+              }
+            ]
           }
         ]
       },
@@ -541,41 +751,6 @@
         "icon": "preview",
         "type": "command",
         "command": "magit.status"
-      },
-      {
-        "key": "S",
-        "name": "Stage file",
-        "icon": "file-add",
-        "type": "command"
-      },
-      {
-        "key": "U",
-        "name": "Unstage file",
-        "icon": "file",
-        "type": "command",
-        "command": "magit.unstage-file"
-      },
-      {
-        "key": "f",
-        "name": "+File",
-        "icon": "file",
-        "type": "bindings",
-        "bindings": [
-          {
-            "key": "d",
-            "name": "Diff",
-            "icon": "diff",
-            "type": "command",
-            "command": "magit.diff-file"
-          },
-          {
-            "key": "l",
-            "name": "Show log/timeline",
-            "icon": "history",
-            "type": "command",
-            "command": "timeline.focus"
-          }
-        ]
       }
     ]
   }

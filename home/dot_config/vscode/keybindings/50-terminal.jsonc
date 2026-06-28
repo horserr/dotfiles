@@ -3,30 +3,5 @@
     "key": "shift+escape",
     "command": "workbench.action.terminal.kill",
     "when": "terminalFocus && terminalProcessSupported"
-  },
-  {
-    "key": "ctrl+j",
-    "command": "workbench.action.terminal.toggleTerminal",
-    "when": "terminal.active"
-  },
-  {
-    "key": "alt+j",
-    "command": "workbench.action.focusActiveEditorGroup",
-    "when": "terminalFocus"
-  },
-  {
-    "key": "ctrl+shift+j",
-    "command": "workbench.action.terminal.openNativeConsole",
-    "when": "!terminalFocus"
-  },
-  {
-    "key": "ctrl+shift+`",
-    "command": "workbench.action.terminal.new",
-    "when": "terminalFocus && (terminalProcessSupported || terminalWebExtensionContributedProfile)"
-  },
-  {
-    "key": "alt+0",
-    "command": "workbench.action.toggleMaximizedPanel",
-    "when": "terminalFocus && (panelAlignment == 'center' || panelPosition != 'bottom' && panelPosition != 'top')"
   }
 ]

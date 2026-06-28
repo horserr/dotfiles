@@ -48,8 +48,15 @@
         "command": "workbench.action.tasks.showLog"
       },
       {
-        "key": "t",
-        "name": "Run test task",
+        "key": "c",
+        "name": "Compile project",
+        "icon": "gear",
+        "type": "command",
+        "command": "workbench.action.tasks.build"
+      },
+      {
+        "key": "T",
+        "name": "Test project",
         "icon": "beaker",
         "type": "command",
         "command": "workbench.action.tasks.test"

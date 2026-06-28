@@ -143,6 +143,13 @@
             "command": "workbench.action.openView"
           },
           {
+            "key": "e",
+            "name": "view explorer",
+            "icon": "source-control",
+            "type": "command",
+            "command": "workbench.view.explorer"
+          },
+          {
             "key": "g",
             "name": "toggle Show source control",
             "icon": "source-control",

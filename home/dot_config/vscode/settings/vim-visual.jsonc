@@ -188,8 +188,16 @@
       "commands": ["actions.find"]
     },
     {
-      "before": ["<leader>", "F"],
-      "commands": ["workbench.action.findInFiles"]
+      // shortcuts for easymotion
+      // jump to any char
+      "before": ["f"],
+      "after": ["<leader>", "<leader>", "s"]
+    },
+    {
+      // shortcuts for easymotion
+      // jump to start of line
+      "before": ["K"],
+      "after": ["<leader>", "<leader>", "<leader>", "b", "d", "j", "k"]
     },
     {
       "before": ["<space>"],

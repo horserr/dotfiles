@@ -1,5 +1,19 @@
 {
   "$schema": "vscode://schemas/settings/user",
+  // #region fold
+  // zR(reduce) unfold all
+  // zM(more) fold all
+  // zc(close) fold current
+  // zo(open) unfold current
+  // zO unfold current and beyond
+  // #endregion
+  /*   easy motion
+  search character <leader><leader> s <char>
+  Search n-character <leader><leader> / <char>... <CR>
+  til char <leader><leader><leader> bdt <char>
+  start of word <leader><leader><leader> bdw
+  end of word <leader><leader><leader> bde
+  start of line <leader><leader><leader> bdjk */
   "vim.normalModeKeyBindingsNonRecursive": [
     {
       // clipboard yank
@@ -18,15 +32,10 @@
       "commands": ["editor.action.formatDocument"]
     },
     {
-      // goto previous edit place
-      // originalgi is for goto insert position
-      "before": ["g", "i"],
-      "after": ["g", ";"]
-    },
-    {
-      // goto next edit place
-      "before": ["g", "I"],
-      "after": ["g", ","]
+      // quick fix
+      // original is go to file, but it has problem
+      "before": ["g", "f"],
+      "commands": ["editor.action.quickFix"]
     },
     {
       // goto previous tab
@@ -75,15 +84,14 @@
       "after": ["g", "^"]
     },
     {
-      // find the next exact word under cursor
-      // original gf is for goto file, can be replaced with gd (goto definition)
-      "before": ["g", "w"],
-      "after": ["*"]
+      // goto next (merge) conflict
+      "before": ["g", "m"],
+      "commands": ["merge-conflict.next"]
     },
     {
-      // find the next word under cursor
-      "before": ["g", "W"],
-      "after": ["g", "*"]
+      // goto previous (merge)conflict
+      "before": ["g", "M"],
+      "commands": ["merge-conflict.previous"]
     },
     {
       // softwrap visual line jump to line middle
@@ -109,24 +117,8 @@
     },
     {
       // use vscode native jump to bracket
-      "before": ["g", "o"],
+      "before": ["g", "b"],
       "commands": ["editor.action.jumpToBracket"]
-    },
-    {
-      // jump out of current scop
-      "before": ["g", "O"],
-      "commands": ["editor.gotoParentFold"]
-    },
-    {
-      // jump to next siblings
-      // the original g. is looping through edit history, but the above gi does already cover it.
-      "before": ["g", "."],
-      "commands": ["editor.gotoNextFold"]
-    },
-    {
-      // jump to previous siblings
-      "before": ["g", ","],
-      "commands": ["editor.gotoPreviousFold"]
     },
     {
       // use vscode native jump to bracket
@@ -151,8 +143,71 @@
     },
     {
       // shortcuts for easymotion
-      "after": ["<leader>", "<leader>", "s"],
-      "before": ["f"]
+      // jump to any char
+      "before": ["f"],
+      "after": ["<leader>", "<leader>", "s"]
+    },
+    {
+      // shortcuts for easymotion
+      // jump to start of line
+      "before": ["K"],
+      "after": ["<leader>", "<leader>", "<leader>", "b", "d", "j", "k"]
+    },
+    {
+      // goto parent folding
+      "before": ["z", "h"],
+      "commands": ["editor.gotoParentFold"]
+    },
+    {
+      // goto next folding
+      "before": ["z", "j"],
+      "commands": ["editor.gotoNextFold"]
+    },
+    {
+      // goto previous folding
+      "before": ["z", "k"],
+      "commands": ["editor.gotoPreviousFold"]
+    },
+    {
+      // goto next symbol
+      // override default behavior
+      "before": ["*"],
+      "commands": ["editor.action.wordHighlight.next"]
+    },
+    {
+      // goto previous symbol
+      // override default behavior
+      "before": ["#"],
+      "commands": ["editor.action.wordHighlight.prev"]
+    },
+    {
+      // navigate back
+      // override default behavior
+      "before": ["<C-o>"],
+      "commands": ["workbench.action.navigateBackInNavigationLocations"]
+    },
+    {
+      // navigate forward
+      "before": ["<C-i>"],
+      "commands": ["workbench.action.navigateForwardInNavigationLocations"]
+    },
+    {
+      // goto backward edit place
+      // override default behavior
+      "before": ["g", "i"],
+      "commands": ["workbench.action.navigateBackInEditLocations"]
+    },
+    {
+      // go forward edit place
+      // override default behavior
+      "before": ["g", "o"],
+      "commands": ["workbench.action.navigateForwardInEditLocations"]
+    },
+    {
+      // goto last edit place
+      // override default behavior
+      "before": ["g", "I"],
+      "commands": ["workbench.action.navigateToLastEditLocation"]
     },
     {
       "before": ["<leader>", "e"],

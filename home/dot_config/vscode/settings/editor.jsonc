@@ -1,0 +1,127 @@
+{
+  "$schema": "vscode://schemas/settings/user",
+  "editor.acceptSuggestionOnEnter": "smart",
+  "editor.accessibilityPageSize": 15,
+  "editor.accessibilitySupport": "off",
+  "editor.allowVariableFontsInAccessibilityMode": true,
+  "editor.autoIndentOnPaste": true,
+  "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
+  "editor.codeActionsOnSave": {
+    // refer to https://www.byteplus.com/en/topic/513795?title=vscode-editor-codeactionsonsave-a-complete-guide
+    "source.fixAll": "explicit",
+    "source.organizeImports": "explicit"
+  },
+  "editor.codeActionWidget.includeNearbyQuickFixes": true,
+  "editor.codeLensFontSize": 15,
+  "editor.copyWithSyntaxHighlighting": true,
+  "editor.cursorBlinking": "smooth",
+  "editor.cursorSmoothCaretAnimation": "on",
+  "editor.cursorSurroundingLines": 5,
+  "editor.definitionLinkOpensInPeek": true,
+  "editor.detectIndentation": true,
+  "editor.foldingImportsByDefault": true,
+  "editor.foldingStrategy": "auto",
+  "editor.fontFamily": "Cascadia Code, FiraCode Nerd Font, LXGW Neo XiHei, 江西拙楷, 杨任东竹石体 Heavy, Consolas, Microsoft YaHei",
+  // "editor.fontLigatures": "'ss01','ss02','ss03','ss04','ss05','ss06','zero','onum'",
+  "editor.fontLigatures": true,
+  // Editor settings
+  "editor.fontSize": 18,
+  "editor.formatOnPaste": true,
+  // "prettier.requireConfig": true,
+  "editor.formatOnType": true,
+  "editor.guides.bracketPairs": "active",
+  "editor.guides.indentation": true,
+  "editor.hideCursorInOverviewRuler": true,
+  "editor.indentSize": "tabSize",
+  "editor.inlayHints.enabled": "offUnlessPressed",
+  "editor.inlayHints.fontFamily": "Cascadia Code, Comic Sans MS",
+  "editor.inlayHints.fontSize": 15,
+  "editor.inlayHints.padding": true,
+  "editor.inlineSuggest.edits.showCollapsed": true,
+  "editor.inlineSuggest.showToolbar": "always",
+  "editor.insertSpaces": true,
+  "editor.lineHeight": 1.45,
+  "editor.lineNumbers": "off",
+  "editor.linkedEditing": true,
+  "editor.minimap.enabled": true,
+  "editor.minimap.sectionHeaderFontSize": 13,
+  "editor.minimap.showSlider": "always",
+  "editor.occurrencesHighlight": "singleFile",
+  "editor.occurrencesHighlightDelay": 300,
+  "editor.parameterHints.enabled": true,
+  // "editor.tabCompletion": "onlySnippets",
+  // "triggercharac",
+  "editor.quickSuggestions": {
+    "comments": true,
+    "other": true,
+    "strings": true
+  },
+  "editor.quickSuggestionsDelay": 100,
+  "editor.renderControlCharacters": true,
+  "editor.renderWhitespace": "selection",
+  "editor.rulers": [80, 120],
+  // enable semanticHighlighting by default
+  "editor.semanticHighlighting.enabled": true,
+  "editor.smoothScrolling": true,
+  "editor.snippetSuggestions": "inline", // the sorting order of snippet within quick suggestions
+  "editor.stickyScroll.enabled": false,
+  "editor.suggest.insertMode": "insert",
+  "editor.suggest.localityBonus": true,
+  "editor.suggest.preview": true,
+  "editor.suggestFontSize": 17,
+  //////////// IngelliSense ////////////////////////////////////////////////////
+  "editor.suggestOnTriggerCharacters": true,
+  "editor.suggestSelection": "recentlyUsedByPrefix",
+  "editor.tabCompletion": "on",
+  "editor.tabSize": 2,
+  "editor.tokenColorCustomizations": {
+    // vscode command: editor.action.inspectTMScopes
+    "textMateRules": [
+      {
+        "scope": [
+          "comment",
+          "constant", //String, Number, Boolean…, this, super
+          "keyword", //import, export, return…
+          "markup.italic",
+          "meta.selector",
+          "storage.modifier", //static keyword
+          "storage.type",
+          "storage.type.class.js", //class keyword
+          "variable.language"
+        ],
+        "settings": {
+          "fontStyle": "italic"
+        }
+      },
+      {
+        "scope": [
+          //following will be excluded from italics (VSCode has some defaults for italics which aren't amazingT)
+          "invalid",
+          "keyword.operator",
+          "constant.numeric.css",
+          "keyword.other.unit.px.css",
+          "constant.numeric.decimal.js",
+          "constant.numeric.json"
+        ],
+        "settings": {
+          "fontStyle": "underline"
+        }
+      }
+    ]
+    // "[*Dark*]": {
+    //   "textMateRules": [
+    //     {
+    //       "scope": "ref.matchtext",
+    //       "settings": {
+    //         "foreground": "#fff"
+    //       }
+    //     }
+    //   ]
+    // }
+  },
+  "editor.unicodeHighlight.nonBasicASCII": false,
+  "editor.wordBasedSuggestions": "matchingDocuments",
+  "editor.wordSeparators": "-`~!@#$%^&*()-=+[{]}\\|;:'\",.<>/?，。；“’（）【】《》",
+  "editor.wordWrap": "bounded",
+  "editor.wrappingStrategy": "simple"
+}

@@ -61,7 +61,7 @@
         "name": "Open new empty window",
         "icon": "empty-window",
         "type": "command",
-        "command": "workbench.action.newWindow"
+        "command": "workbench.action.newEmptyEditorWindow"
       },
       // layout
       {

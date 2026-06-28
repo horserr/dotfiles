@@ -1,0 +1,4 @@
+{
+  "$schema": "vscode://schemas/settings/user",
+  "markdowntable.showMenu.csvToTable": true
+}

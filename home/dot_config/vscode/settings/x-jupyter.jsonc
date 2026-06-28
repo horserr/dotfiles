@@ -1,0 +1,7 @@
+{
+  "$schema": "vscode://schemas/settings/user",
+  "jupyter.interactiveWindow.notebookRepl": true,
+  "jupyter.interactiveWindow.textEditor.executeSelection": true,
+  "jupyter.interactiveWindow.textEditor.magicCommandsAsComments": true,
+  "jupyter.interactiveWindow.textEditor.normalizeSelection": true,
+}

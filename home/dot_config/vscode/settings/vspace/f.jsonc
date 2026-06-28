@@ -41,6 +41,13 @@
         "command": "workbench.action.quickOpen"
       },
       {
+        "key": "O",
+        "name": "show opened files in new window",
+        "icon": "folder-opened",
+        "type": "bindings",
+        "command": "workbench.action.files.showOpenedFileInNewWindow"
+      },
+      {
         "key": ",",
         "name": "active files in current editor group",
         "icon": "versions",
@@ -85,10 +92,10 @@
       },
       {
         "key": "v",
-        "name": "Show explorer",
+        "name": "reveal current file in explorer",
         "icon": "list-tree",
         "type": "command",
-        "command": "workbench.view.explorer"
+        "command": "workbench.files.action.showActiveFileInExplorer"
       },
       {
         "key": "R",
@@ -126,21 +133,35 @@
         "type": "bindings",
         "bindings": [
           {
+            "key": " ",
+            "name": "Close other tabs in current editor group",
+            "icon": "close-all",
+            "type": "command",
+            "command": "workbench.action.closeOtherEditors"
+          },
+          {
             "key": "d",
-            "name": "Close current active buffer",
+            "name": "Close current active editor",
             "icon": "x",
             "type": "command",
             "command": "workbench.action.closeActiveEditor"
           },
           {
-            "key": "u",
+            "key": "p",
+            "name": "Close pined editors",
+            "icon": "x",
+            "type": "command",
+            "command": "git.closeAllDiffEditors"
+          },
+          {
+            "key": "m",
             "name": "Close unmodified editors",
             "icon": "x",
             "type": "command",
             "command": "git.closeAllUnmodifiedEditors"
           },
           {
-            "key": "c",
+            "key": "x",
             "name": "Close diff/compare editors",
             "icon": "x",
             "type": "command",
@@ -167,25 +188,50 @@
         // workbench.action.files.showOpenedFileInNewWindow
         // open file with
 
-        // workbench.action.toggleAutoSave
-        // workbench.action.files.save
-        // workbench.action.files.saveAll
-        // workbench.action.files.saveAs
-        // workbench.action.files.saveFiles
-        // workbench.action.files.saveLocalFile
-        // workbench.files.action.saveAllInGroup
         "key": "s",
-        "name": "quit file without prompt save message",
+        "name": "+Save",
         "icon": "code",
         "type": "command",
-        "command": "workbench.action.editor.revertAndCloseActiveEditor"
-      },
-      {
-        "key": "q",
-        "name": "quit file without prompt save message",
-        "icon": "code",
-        "type": "command",
-        "command": "workbench.action.editor.revertAndCloseActiveEditor"
+        "bindings": [
+          // workbench.action.toggleAutoSave
+          // workbench.action.files.saveFiles
+          // workbench.action.files.saveLocalFile
+          {
+            "key": "s",
+            "name": "save file",
+            "icon": "code",
+            "type": "command",
+            "command": "workbench.action.files.save"
+          },
+          {
+            "key": ",",
+            "name": "save as",
+            "icon": "code",
+            "type": "command",
+            "command": "workbench.action.files.saveAs"
+          },
+          {
+            "key": "a",
+            "name": "save all files",
+            "icon": "code",
+            "type": "command",
+            "command": "workbench.action.files.saveAll"
+          },
+          {
+            "key": "e",
+            "name": "save files in current editor group",
+            "icon": "code",
+            "type": "command",
+            "command": "workbench.files.action.saveAllInGroup"
+          },
+          {
+            "key": "q",
+            "name": "quit file without prompt save message",
+            "icon": "code",
+            "type": "command",
+            "command": "workbench.action.editor.revertAndCloseActiveEditor"
+          }
+        ]
       },
       {
         "key": "n",

@@ -73,7 +73,7 @@
         "name": "Open user settings",
         "icon": "keyboard",
         "type": "command",
-        "command": "workbench.action.openRawDefaultSettings"
+        "command": "workbench.action.openSettingsJson"
       },
       {
         "key": "w",
@@ -81,6 +81,13 @@
         "icon": "keyboard",
         "type": "command",
         "command": "workbench.action.openWorkspaceSettingsFile"
+      },
+      {
+        "key": "t",
+        "name": "Configure workspace trust",
+        "icon": "symbol-snippet",
+        "type": "command",
+        "command": "workbench.trust.manage"
       },
       {
         "key": "x",

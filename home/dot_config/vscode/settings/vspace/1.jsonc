@@ -21,7 +21,18 @@
     "name": "focus editor",
     "icon": "search",
     "type": "command",
-    "command": "workbench.action.focusActiveEditorGroup"
+    "command": "runCommands",
+    "args": {
+      "commands": [
+        "workbench.action.focusActiveEditorGroup",
+        {
+          "command": "cursorMove",
+          "args": {
+            "to": "viewPortIfOutside"
+          }
+        }
+      ]
+    }
   },
   // {
   //   "key": ".",

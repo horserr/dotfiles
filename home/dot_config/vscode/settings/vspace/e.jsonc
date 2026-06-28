@@ -101,15 +101,15 @@
         "type": "bindings",
         "bindings": [
           {
-            "key": " ",
-            "name": "Close other tabs in current editor group",
-            "icon": "close-all",
+            "key": "d",
+            "name": "Close editor groups",
+            "icon": "close",
             "type": "command",
-            "command": "workbench.action.closeOtherEditors"
+            "command": "workbench.action.closeEditorsInGroup"
           },
           {
             "key": "o",
-            "name": "Close editors in other editor group",
+            "name": "Close other editor groups",
             "icon": "close-all",
             "type": "command",
             "command": "workbench.action.closeEditorsInOtherGroups"
@@ -120,13 +120,6 @@
             "icon": "close-all",
             "type": "command",
             "command": "workbench.action.closeAllGroups"
-          },
-          {
-            "key": "d",
-            "name": "Close editor groups",
-            "icon": "close",
-            "type": "command",
-            "command": "workbench.action.closeEditorsInGroup"
           },
           {
             "key": "h",
