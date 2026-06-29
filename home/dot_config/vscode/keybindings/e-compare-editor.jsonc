@@ -1,0 +1,78 @@
+[
+  {
+    "key": "ctrl+h",
+    "command": "workbench.action.compareEditor.focusSecondarySide",
+    "when": "isInDiffEditor && !isInDiffLeftEditor"
+  },
+  {
+    "key": "ctrl+h",
+    "command": "workbench.action.navigateLeft",
+    "when": "isInDiffEditor && isInDiffLeftEditor"
+  },
+  {
+    "key": "ctrl+l",
+    "command": "workbench.action.compareEditor.focusPrimarySide",
+    "when": "isInDiffEditor && isInDiffLeftEditor"
+  },
+  {
+    "key": "ctrl+l",
+    "command": "workbench.action.navigateRight",
+    "when": "isInDiffEditor && !isInDiffLeftEditor"
+  },
+  {
+    "key": "escape",
+    "command": "whichkey.show",
+    "args": [
+      {
+        "key": ",",
+        "name": "swap sides",
+        "icon": "x",
+        "type": "command",
+        "command": "workbench.action.compareEditor.swapSides"
+      },
+      {
+        "key": "'",
+        "name": "toggle focus between sides",
+        "icon": "x",
+        "type": "command",
+        "command": "workbench.action.compareEditor.focusOtherSide"
+      },
+      {
+        "key": "h",
+        "name": "focus secondary side",
+        "icon": "x",
+        "type": "command",
+        "command": "workbench.action.compareEditor.focusSecondarySide"
+      },
+      {
+        "key": "l",
+        "name": "focus primary side",
+        "icon": "x",
+        "type": "command",
+        "command": "workbench.action.compareEditor.focusPrimarySide"
+      },
+      {
+        "key": "k",
+        "name": "goto previous change",
+        "icon": "x",
+        "type": "command",
+        "command": "workbench.action.compareEditor.previousChange"
+      },
+      {
+        "key": "j",
+        "name": "goto next change",
+        "icon": "x",
+        "type": "command",
+        "command": "workbench.action.compareEditor.nextChange"
+      },
+      {
+        "key": "o",
+        "name": "open current side file",
+        "icon": "x",
+        "type": "command",
+        "command": "workbench.action.compareEditor.openSide"
+      }
+    ],
+    "when": "isInDiffEditor && !dirtyDiffVisible && editorTextFocus && (vim.mode =~ /normal/i) && !editorHasMultipleSelections && !editorHasSelection"
+  }
+]
