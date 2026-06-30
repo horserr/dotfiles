@@ -5,7 +5,6 @@
     "icon": "question",
     "type": "bindings",
     "bindings": [
-      // workbench.action.reopenTextEditor
       // createCursor
       // workbench.action.toggleMultiCursorModifier
       // workbench.action.webview.openDeveloperTools
@@ -20,8 +19,18 @@
       // workbench.actions.sync.workbench.views.sync.remoteActivity.replaceCurrent
       // workbench.actions.sync.workbench.views.sync.remoteActivity.resolveResource
       // workbench.actions.syncData.reset
-      // git.migrateWorktreeChanges
 
+      // for testing local vscode client and remote vscode server
+      // workbench.action.pauseSocketWriting
+
+      {
+        "key": ",",
+        "name": "show all developer commands",
+        "icon": "keyboard",
+        "type": "command",
+        "command": "workbench.action.quickOpen",
+        "args": "> Developer: "
+      },
       {
         "key": ".",
         "name": "Open developer tools",
@@ -147,7 +156,7 @@
           },
           {
             "key": "k",
-            "name": "toggle keybindings logging",
+            "name": "toggle keybindings logging for troubleshooting",
             "icon": "keyboard",
             "type": "command",
             "command": "workbench.action.toggleKeybindingsLog"
@@ -219,6 +228,19 @@
         "name": "open setting sync folder",
         "type": "command",
         "command": "workbench.userData.actions.openSyncBackupsFolder"
+      },
+      {
+        "key": "n",
+        "name": "+Network",
+        "type": "bindings",
+        "bindings": [
+          {
+            "key": "m",
+            "name": "metered network",
+            "type": "command",
+            "command": "workbench.action.configureMeteredConnection"
+          }
+        ]
       },
       {
         "key": "R",

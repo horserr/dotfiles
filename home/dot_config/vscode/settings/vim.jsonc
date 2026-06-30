@@ -17,9 +17,23 @@
   // gq} – Formats from the cursor to the end of the paragraph.
   // gqG – Formats from the cursor to the end of the file.
   // gggqG – Formats the entire file (goes to top, then formats to bottom).
-  // zt (Top): Redraws the screen so the current line is at the top of the window.
-  // zz (Center): Redraws the screen so the current line is dead center (highly recommended for staying focused).
-  // zb (Bottom): Redraws the screen so the current line is at the bottom of the window.
+  /*   https://github.com/VSCodeVim/Vim/blob/837580bbb5be9fb0ac0f5e140f0809be77412328/src/mode/mode.ts
+  export enum Mode {
+    Normal,
+    Insert,
+    Visual,
+    VisualBlock,
+    VisualLine,
+    SearchInProgressMode,
+    CommandlineInProgress,
+    Replace,
+    EasyMotionMode,
+    EasyMotionInputMode,
+    SurroundInputMode,
+    OperatorPendingMode, // Pseudo-Mode, used only when remapping. DON'T SET TO THIS MODE
+    Disabled,
+  } */
+
   "vim.argumentObjectClosingDelimiters": [")", "]", "}", ">"],
   "vim.argumentObjectOpeningDelimiters": ["(", "[", "{", "<"],
   "vim.argumentObjectSeparators": [",", ";"],
@@ -30,16 +44,6 @@
   "vim.autoSwitchInputMethod.switchIMCmd": "C:\\Users\\ASUSCosmos\\.local\\bin\\im-select.exe {im}",
   // Vim settings
   "vim.camelCaseMotion.enable": true,
-  "vim.commandLineModeKeyBindingsNonRecursive": [
-    {
-      "after": ["<Down>"],
-      "before": ["<C-j>"]
-    },
-    {
-      "after": ["<Up>"],
-      "before": ["<C-k>"]
-    }
-  ],
   "vim.cursorStylePerMode.insert": "line-thin",
   "vim.cursorStylePerMode.normal": "block",
   "vim.cursorStylePerMode.replace": "underline",
@@ -82,21 +86,6 @@
   "vim.mouseSelectionGoesIntoVisualMode": true,
   // "vim.neovimPath": "C:\\Program Files\\Neovim\\bin\\nvim.exe",
   // useful when in visual or change mode
-  "vim.operatorPendingModeKeyBindingsNonRecursive": [
-    {
-      "after": ["g", "$"],
-      "before": ["L"]
-    },
-    {
-      "after": ["g", "^"],
-      "before": ["H"]
-    },
-    {
-      // camel case word
-      "after": ["<leader>", "w"],
-      "before": ["w"]
-    }
-  ],
   "vim.overrideCopy": true,
   "vim.replaceWithRegister": true,
   "vim.showcmd": true,

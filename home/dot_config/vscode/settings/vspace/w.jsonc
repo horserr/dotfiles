@@ -46,8 +46,29 @@
             "icon": "x",
             "type": "command",
             "command": "workbench.action.closeOtherWindows"
+          },
+          {
+            "key": "a",
+            "name": "Close all windows",
+            "icon": "x",
+            "type": "command",
+            "command": "workbench.action.quit"
           }
         ]
+      },
+      {
+        "key": "r",
+        "name": "Reload window",
+        "icon": "refresh",
+        "type": "command",
+        "command": "workbench.action.reloadWindow"
+      },
+      {
+        "key": "R",
+        "name": "Reload window with extensions disabled",
+        "icon": "refresh",
+        "type": "command",
+        "command": "workbench.action.reloadWindowWithExtensionsDisabled"
       },
       {
         "key": ",",

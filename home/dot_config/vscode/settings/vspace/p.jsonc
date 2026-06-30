@@ -84,6 +84,13 @@
         "bindings": [
           {
             "key": "f",
+            "name": "opened current file in new window as workspace",
+            "icon": "folder-opened",
+            "type": "bindings",
+            "command": "workbench.action.files.showOpenedFileInNewWindow"
+          },
+          {
+            "key": "F",
             "name": "open file in new window as workspace",
             "icon": "folder-opened",
             "type": "command",
@@ -116,6 +123,30 @@
             "icon": "arrow-down",
             "type": "command",
             "command": "remoteHub.openRepository"
+          }
+        ]
+      },
+      {
+        //   workbench.view.remote
+        // workbench.action.remote.showMenu
+        "key": "O",
+        "name": "open remote",
+        "icon": "clock",
+        "type": "bindings",
+        "bindings": [
+          {
+            "key": "O",
+            "name": "show remote menu",
+            "icon": "folder-opened",
+            "type": "bindings",
+            "command": "workbench.action.remote.showMenu"
+          },
+          {
+            "key": "d",
+            "name": "close remote connection",
+            "icon": "folder-opened",
+            "type": "command",
+            "command": "workbench.action.remote.close"
           }
         ]
       }

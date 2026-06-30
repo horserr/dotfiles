@@ -52,7 +52,7 @@
       // editor group new
       {
         "key": "n",
-        "name": "+Editor Group create",
+        "name": "+Editor Group new",
         "icon": "attach-compact",
         "type": "bindings",
         "bindings": [

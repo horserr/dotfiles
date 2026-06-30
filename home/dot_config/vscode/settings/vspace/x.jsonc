@@ -1,12 +1,56 @@
 [
+  // editor.action.transpose
+  // editor.action.transposeLetters
   {
     "key": "x",
     "name": "+Text",
     "icon": "symbol-text",
     "type": "bindings",
     "bindings": [
-      // editor.action.transpose
-      // editor.action.transposeLetters
+      {
+        "key": "x",
+        "name": "+Snippets",
+        "icon": "symbol-snippet",
+        "type": "bindings",
+        "bindings": [
+          {
+            "key": " ",
+            "name": "Configure user snippets",
+            "icon": "symbol-snippet",
+            "type": "command",
+            "command": "workbench.action.openSnippets"
+          },
+          {
+            "key": "x",
+            "name": "fill file with snippets",
+            "icon": "symbol-snippet",
+            "type": "command",
+            "command": "workbench.action.populateFileFromSnippet"
+          }
+        ]
+      },
+      {
+        "key": "o",
+        "name": "+Reopen",
+        "icon": "symbol-snippet",
+        "type": "bindings",
+        "bindings": [
+          {
+            "key": "o",
+            "name": "reopen with",
+            "icon": "symbol-snippet",
+            "type": "command",
+            "command": "workbench.action.reopenWithEditor"
+          },
+          {
+            "key": "O",
+            "name": "reopen with",
+            "icon": "symbol-snippet",
+            "type": "command",
+            "command": "workbench.action.reopenTextEditor"
+          }
+        ]
+      },
       {
         "key": ".",
         "name": "Quick fix",
@@ -14,6 +58,7 @@
         "type": "command",
         "command": "editor.action.quickFix"
       },
+      // workbench.action.reopenTextEditor
       {
         "key": "l",
         "name": "Open language settings",
@@ -29,18 +74,18 @@
         "type": "bindings",
         "bindings": [
           {
-            "key": "d",
-            "name": "Detect indentation",
+            "key": "a",
+            "name": "auto Detect indentation",
             "icon": "whitespace",
             "type": "command",
             "command": "editor.action.detectIndentation"
           },
           {
             "key": "i",
-            "name": "Change indentation",
+            "name": "Change tab display size",
             "icon": "edit",
             "type": "command",
-            "command": "changeEditorIndentation"
+            "command": "editor.action.changeTabDisplaySize"
           },
           {
             "key": "r",
@@ -53,31 +98,38 @@
             "key": "s",
             "name": "Convert indentation to spaces",
             "icon": "arrow-small-right",
-            "type": "command",
-            "command": "editor.action.indentationToSpaces"
+            "type": "commands",
+            "commands": [
+              "editor.action.indentationToSpaces",
+              "editor.action.indentUsingSpaces"
+            ]
           },
           {
             "key": "t",
             "name": "Convert indentation to tabs",
             "icon": "export",
-            "type": "command",
-            "command": "editor.action.indentationToTabs"
-          },
-          {
-            "key": "R",
-            "name": "Reindent selected",
-            "icon": "selection",
-            "type": "command",
-            "command": "editor.action.reindentselectedlines"
+            "type": "commands",
+            "commands": [
+              "editor.action.indentationToTabs",
+              "editor.action.indentUsingTabs"
+            ]
           }
         ]
       },
       {
-        "key": "e",
-        "name": "Edit symbol",
-        "icon": "edit",
-        "type": "command",
-        "command": "editor.action.rename"
+        "key": "r",
+        "name": "+Refactor",
+        "icon": "refactor-preview-view-icon",
+        "type": "bindings",
+        "bindings": [
+          {
+            "key": "e",
+            "name": "Edit symbol",
+            "icon": "edit",
+            "type": "command",
+            "command": "editor.action.rename"
+          }
+        ]
       },
       {
         "key": "v",

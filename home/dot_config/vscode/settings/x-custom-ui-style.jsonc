@@ -1,5 +1,6 @@
 {
   "$schema": "vscode://schemas/settings/user",
+  // https://github.com/microsoft/vscode/issues/519#issuecomment-4585637607
   "custom-ui-style.external.imports": [
     "file://${userHome}/.config/vscode/custom-ui.css"
   ],

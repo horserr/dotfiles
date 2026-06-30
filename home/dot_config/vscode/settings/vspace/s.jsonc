@@ -1,10 +1,18 @@
 [
+// workbench.action.replaceInFiles
   {
     "key": "s",
     "name": "+Search",
     "icon": "search",
     "type": "bindings",
     "bindings": [
+      {
+        "key": "s",
+        "name": "quick open with modes",
+        "icon": "terminal",
+        "type": "command",
+        "command": "workbench.action.quickTextSearch"
+      },
       {
         "key": "o",
         "name": "Search online with selection",
@@ -13,8 +21,8 @@
         "command": "Search For Selected Text"
       },
       {
-        "key": "s",
-        "name": "Show search",
+        "key": "e",
+        "name": "open search editor",
         "icon": "search",
         "type": "commands",
         "commands": [

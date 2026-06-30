@@ -6,6 +6,20 @@
     "type": "bindings",
     "bindings": [
       {
+        "key": " ",
+        "name": "quick open with modes",
+        "icon": "terminal",
+        "type": "command",
+        "command": "workbench.action.quickOpenWithModes"
+      },
+      {
+        "key": ",",
+        "name": "switch terminal",
+        "icon": "terminal",
+        "type": "command",
+        "command": "workbench.action.quickOpenTerm"
+      },
+      {
         "key": "t",
         "name": "Show terminal",
         "icon": "terminal",

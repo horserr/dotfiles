@@ -83,18 +83,18 @@
         "command": "workbench.action.openWorkspaceSettingsFile"
       },
       {
+        "key": "r",
+        "name": "Open remote settings",
+        "icon": "keyboard",
+        "type": "command",
+        "command": "workbench.action.openRemoteSettingsFile"
+      },
+      {
         "key": "t",
         "name": "Configure workspace trust",
         "icon": "symbol-snippet",
         "type": "command",
         "command": "workbench.trust.manage"
-      },
-      {
-        "key": "x",
-        "name": "Configure user snippets",
-        "icon": "symbol-snippet",
-        "type": "command",
-        "command": "workbench.action.openSnippets"
       },
       // ui settings
       {

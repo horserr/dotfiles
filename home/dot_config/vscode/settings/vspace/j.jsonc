@@ -5,9 +5,16 @@
     "icon": "gather",
     "type": "bindings",
     "bindings": [
-      // open quick diff
       {
         "key": "j",
+        "name": "focus editor breadcrumbs",
+        "icon": "clock",
+        "type": "command",
+        "command": "breadcrumbs.focusAndSelect"
+      },
+      // open quick diff
+      {
+        "key": "x",
         "name": "open quick diff",
         "icon": "arrow-down",
         "type": "command",
@@ -38,13 +45,6 @@
         "icon": "project",
         "type": "command",
         "command": "workbench.action.showAllSymbols"
-      },
-      {
-        "key": "b",
-        "name": "focus editor breadcrumbs",
-        "icon": "clock",
-        "type": "command",
-        "command": "breadcrumbs.focusAndSelect"
       }
     ]
   }

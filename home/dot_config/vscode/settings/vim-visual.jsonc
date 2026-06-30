@@ -7,6 +7,11 @@
       "commands": ["editor.action.selectToBracket"]
     },
     {
+      // multi-cursor end of each line
+      "before": ["A"],
+      "commands": ["editor.action.insertCursorAtEndOfEachLineSelected"]
+    },
+    {
       // press v again to enter line selection
       "before": ["v"],
       "after": ["V"]
@@ -48,9 +53,10 @@
       "commands": ["editor.action.selectHighlights"]
     },
     {
-      // multi-cursor end of each line
-      "before": ["A"],
-      "commands": ["editor.action.insertCursorAtEndOfEachLineSelected"]
+      // find
+      // same with normal mode
+      "before": ["g", "f"],
+      "commands": ["actions.findWithSelection"]
     },
     {
       // same with normal mode
@@ -117,10 +123,6 @@
       "after": ["g", "^"]
     },
     {
-      "before": ["<C-i>"],
-      "commands": ["inlineChat.start"]
-    },
-    {
       "before": ["<leader>", "E"],
       "commands": ["editor.action.refactor"]
     },
@@ -142,7 +144,7 @@
       "commands": ["editor.action.formatSelection"]
     },
     {
-      "before": [";", "m"],
+      "before": [",", "m"],
       "commands": [
         {
           "args": {
@@ -153,7 +155,7 @@
       ]
     },
     {
-      "before": [";", "M"],
+      "before": [",", "M"],
       "commands": [
         {
           "args": {
@@ -164,23 +166,23 @@
       ]
     },
     {
-      "before": [";", "b"],
+      "before": [",", "b"],
       "commands": ["markdown.extension.editing.toggleBold"]
     },
     {
-      "before": [";", "i"],
+      "before": [",", "i"],
       "commands": ["markdown.extension.editing.toggleItalic"]
     },
     {
-      "before": [";", "c"],
+      "before": [",", "c"],
       "commands": ["markdown.extension.editing.toggleCodeSpan"]
     },
     {
-      "before": [";", "C"],
+      "before": [",", "C"],
       "commands": ["markdown.extension.editing.toggleCodeBlock"]
     },
     {
-      "before": [";", "t"],
+      "before": [",", "t"],
       "commands": ["markdown.extension.checkTaskList"]
     },
     {
@@ -194,12 +196,14 @@
       "after": ["<leader>", "<leader>", "s"]
     },
     {
-      // shortcuts for easymotion
-      // jump to start of line
-      "before": ["K"],
-      "after": ["<leader>", "<leader>", "<leader>", "b", "d", "j", "k"]
+      "before": ["J"],
+      "commands": ["editor.action.moveLinesDownAction"]
     },
-    {
+	  {
+      "before": ["K"],
+      "commands": ["editor.action.moveLinesUpAction"]
+    }
+    ,{
       "before": ["<space>"],
       "commands": ["vspacecode.space"]
     }

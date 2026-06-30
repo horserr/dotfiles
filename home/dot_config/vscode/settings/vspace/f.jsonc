@@ -34,18 +34,28 @@
         "command": "workbench.action.toggleSplitEditorInGroup"
       },
       {
+        "key": "r",
+        "name": "replace editor",
+        "icon": "folder-opened",
+        "type": "commands",
+        "commands": [
+          "workbench.action.closeActiveEditor",
+          "workbench.action.quickOpen"
+        ]
+      },
+      {
+        "key": " ",
+        "name": "Quick open file/folder from recent history",
+        "icon": "folder-opened",
+        "type": "command",
+        "command": "workbench.action.openPreviousEditorFromHistory"
+      },
+      {
         "key": "o",
-        "name": "Quick open file/folder",
+        "name": "Quick open file",
         "icon": "folder-opened",
         "type": "command",
         "command": "workbench.action.quickOpen"
-      },
-      {
-        "key": "O",
-        "name": "show opened files in new window",
-        "icon": "folder-opened",
-        "type": "bindings",
-        "command": "workbench.action.files.showOpenedFileInNewWindow"
       },
       {
         "key": ",",
@@ -75,20 +85,6 @@
             "command": "workbench.action.localHistory.compareWithSelected"
           }
         ]
-      },
-      {
-        "key": " ",
-        "name": "quick open edit history",
-        "icon": "versions",
-        "type": "command",
-        "command": "workbench.action.openPreviousEditorFromHistory"
-      },
-      {
-        "key": "r",
-        "name": "show most recent editor in current editor group",
-        "icon": "versions",
-        "type": "command",
-        "command": "workbench.action.quickOpenPreviousRecentlyUsedEditorInGroup"
       },
       {
         "key": "v",
@@ -184,10 +180,6 @@
         "command": "workbench.action.editor.changeLanguageMode"
       },
       {
-        // workbench.action.files.openFolderViaWorkspace
-        // workbench.action.files.showOpenedFileInNewWindow
-        // open file with
-
         "key": "s",
         "name": "+Save",
         "icon": "code",
@@ -235,10 +227,58 @@
       },
       {
         "key": "n",
-        "name": "New untitled buffer",
+        "name": "+New untitled file",
         "icon": "file-add",
         "type": "command",
-        "command": "workbench.action.files.newUntitledFile"
+        "bindings": [
+          {
+            "key": "n",
+            "name": "new untitled file left",
+            "icon": "folder-opened",
+            "type": "command",
+            "command": "workbench.action.files.newUntitledFile"
+          },
+          {
+            "key": "h",
+            "name": "new untitled file left",
+            "icon": "folder-opened",
+            "type": "commands",
+            "commands": [
+              "workbench.action.files.newUntitledFile",
+              "workbench.action.moveEditorToLeftGroup"
+            ]
+          },
+          {
+            "key": "k",
+            "name": "new untitled file above",
+            "icon": "folder-opened",
+            "type": "commands",
+            "commands": [
+              "workbench.action.files.newUntitledFile",
+              "workbench.action.moveEditorToAboveGroup"
+            ]
+          },
+          {
+            "key": "j",
+            "name": "new untitled file below",
+            "icon": "folder-opened",
+            "type": "commands",
+            "commands": [
+              "workbench.action.files.newUntitledFile",
+              "workbench.action.moveEditorToBelowGroup"
+            ]
+          },
+          {
+            "key": "l",
+            "name": "new untitled file right",
+            "icon": "folder-opened",
+            "type": "commands",
+            "commands": [
+              "workbench.action.files.newUntitledFile",
+              "workbench.action.moveEditorToRightGroup"
+            ]
+          }
+        ]
       },
       // copy file path
       {

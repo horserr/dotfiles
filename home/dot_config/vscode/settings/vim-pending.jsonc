@@ -1,0 +1,18 @@
+{
+  "$schema": "vscode://schemas/settings/user",
+  "vim.operatorPendingModeKeyBindingsNonRecursive": [
+    {
+      "after": ["g", "$"],
+      "before": ["L"]
+    },
+    {
+      "after": ["g", "^"],
+      "before": ["H"]
+    },
+    {
+      // camel case word
+      "after": ["<leader>", "w"],
+      "before": ["w"]
+    }
+  ]
+}

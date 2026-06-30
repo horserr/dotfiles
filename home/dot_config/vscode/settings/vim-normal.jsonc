@@ -170,7 +170,7 @@
       "before": ["#"],
       "commands": ["editor.action.wordHighlight.prev"]
     },
-    {
+    /*     {
       // navigate back
       // override default behavior
       "before": ["<C-o>"],
@@ -180,7 +180,7 @@
       // navigate forward
       "before": ["<C-i>"],
       "commands": ["workbench.action.navigateForwardInNavigationLocations"]
-    },
+    }, */
     {
       // goto backward edit place
       // override default behavior

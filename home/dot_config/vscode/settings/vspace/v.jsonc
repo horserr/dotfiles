@@ -11,7 +11,18 @@
       // workbench.action.toggleSeparatePinnedEditorTabs
 
       // git.blame.toggleStatusBarItem
+      // workbench.action.resetFocusedViewLocation
+      // workbench.action.resetViewLocations
+      // workbench.action.restartExtensionHost
+      // workbench.action.restoreAuxiliaryBar
 
+      {
+        "key": ",",
+        "name": "layout customization",
+        "icon": "chevron-up",
+        "type": "command",
+        "command": "workbench.action.customizeLayout"
+      },
       {
         "key": "k",
         "name": "Toggle maximized panel",
@@ -176,6 +187,7 @@
             "icon": "error",
             "type": "command",
             "command": "workbench.actions.view.problems"
+            // workbench.action.problems.focus
           },
           {
             "key": "r",
@@ -218,6 +230,13 @@
             ]
           },
           {
+            "key": "e",
+            "name": "show editor context menu",
+            "icon": "whitespace",
+            "type": "command",
+            "command": "editor.action.showContextMenu"
+          },
+          {
             "key": "g",
             "name": "Toggle git blame editor decoration",
             "icon": "whitespace",
@@ -258,6 +277,13 @@
             "icon": "tools",
             "type": "command",
             "command": "breadcrumbs.toggle"
+          },
+          {
+            "key": "p",
+            "name": "separate pinned tabs",
+            "icon": "tools",
+            "type": "command",
+            "command": "workbench.action.toggleSeparatePinnedEditorTabs"
           },
           {
             "key": "t",

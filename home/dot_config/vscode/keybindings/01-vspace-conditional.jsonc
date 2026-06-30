@@ -15,17 +15,6 @@
     "when": "!editorFocus && !whichkeyActive"
   },
   {
-    "key": "`",
-    "command": "runCommands",
-    "args": {
-      "commands": [
-        "whichkey.show",
-        { "command": "whichkey.triggerKey", "args": "w" }
-      ]
-    },
-    "when": "!editorFocus && !inputFocus && !whichkeyActive"
-  },
-  {
     // use shift+space in terminal
     // "key": "shift+space",
     "key": "ctrl+q",

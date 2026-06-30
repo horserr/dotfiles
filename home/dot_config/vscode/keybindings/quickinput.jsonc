@@ -1,0 +1,30 @@
+[
+  // workbench.action.quickPickManyToggle
+  // quickInput.accept
+  // quickInput.acceptInBackground
+  // quickInput.first
+  // quickInput.hide
+  // quickInput.last
+  // quickInput.next
+  // quickInput.nextSeparator
+  // quickInput.nextSeparatorWithQuickAccessFallback
+  // quickInput.pageNext
+  // quickInput.pagePrevious
+  // quickInput.previous
+  // quickInput.previousSeparator
+  // quickInput.previousSeparatorWithQuickAccessFallback
+  // quickInput.toggleCheckbox
+  // quickInput.toggleHover
+  {
+    "key": "ctrl+j",
+    // workbench.action.quickOpenNavigateNext
+    "command": "workbench.action.quickOpenSelectNext",
+    "when": "inQuickOpen"
+  },
+  {
+    "key": "ctrl+k",
+    // workbench.action.quickOpenNavigatePrevious
+    "command": "workbench.action.quickOpenSelectPrevious",
+    "when": "inQuickOpen"
+  }
+]

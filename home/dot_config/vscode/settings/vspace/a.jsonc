@@ -1,4 +1,7 @@
 [
+  // workbench.action.openProfile.Default
+  // workbench.action.openProfile.Leetcode
+  // workbench.action.openProfile.Web
   {
     "key": "a",
     "name": "+Profile",

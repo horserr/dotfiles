@@ -1,4 +1,6 @@
 [
+  // toggle.diff.ignoreTrimWhitespace
+  // toggle.diff.renderSideBySide
   {
     "key": "ctrl+h",
     "command": "workbench.action.compareEditor.focusSecondarySide",

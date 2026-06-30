@@ -1,0 +1,20 @@
+[
+  {
+    // folder filter
+    "key": "f",
+    "command": "list.find",
+    "when": "listFocus && !inputFocus"
+  },
+  {
+    // toggle filter
+    "key": "shift+f",
+    "command": "list.toggleFilterOnType",
+    "when": "listFocus && inputFocus"
+  },
+  {
+    // folder tree sticky scrool
+    "key": "t",
+    "command": "tree.toggleStickyScroll",
+    "when": "listFocus && !inputFocus"
+  }
+]
