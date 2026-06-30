@@ -1,0 +1,312 @@
+[
+  {
+    // editor.toggleFold
+    // editor.toggleFoldRecursively
+    // editor.toggleImportFold
+    "key": "z",
+    "command": "whichkey.show",
+    "args": [
+      // fold/close
+      {
+        "key": "c",
+        "name": "+Fold/Close",
+        "icon": "x",
+        "type": "bindings",
+        "bindings": [
+          {
+            "key": "c",
+            "name": "fold",
+            "icon": "x",
+            "type": "command",
+            "command": "editor.fold"
+          },
+          {
+            "key": "a",
+            "name": "fold all",
+            "icon": "x",
+            "type": "command",
+            "command": "editor.foldAll"
+          },
+          {
+            "key": "r",
+            "name": "fold recursively",
+            "icon": "x",
+            "type": "command",
+            "command": "editor.foldRecursively"
+          },
+          {
+            "key": "m",
+            "name": "fold all marker regions",
+            "icon": "x",
+            "type": "command",
+            "command": "editor.foldAllMarkerRegions"
+          },
+          {
+            "key": "b",
+            "name": "fold all block comments",
+            "icon": "x",
+            "type": "command",
+            "command": "editor.foldAllBlockComments"
+          },
+          {
+            "key": "x",
+            "name": "fold all except selected, selected exclusively unfold",
+            "icon": "x",
+            "type": "command",
+            "command": "editor.foldAllExcept"
+          }
+        ]
+      },
+      // unfold/open
+      {
+        "key": "o",
+        "name": "+Unfold/Open",
+        "icon": "x",
+        "type": "bindings",
+        "bindings": [
+          {
+            "key": "o",
+            "name": "unfold",
+            "icon": "x",
+            "type": "command",
+            "command": "editor.unfold"
+          },
+          {
+            "key": "a",
+            "name": "unfold all",
+            "icon": "x",
+            "type": "command",
+            "command": "editor.unfoldAll"
+          },
+          {
+            "key": "m",
+            "name": "unfold all marker region",
+            "icon": "x",
+            "type": "command",
+            "command": "editor.unfoldAllMarkerRegions"
+          },
+          {
+            "key": "r",
+            "name": "unfold recursively",
+            "icon": "x",
+            "type": "command",
+            "command": "editor.unfoldRecursively"
+          },
+          {
+            "key": "x",
+            "name": "unfold all except select",
+            "icon": "x",
+            "type": "command",
+            "command": "editor.unfoldAllExcept"
+          }
+        ]
+      },
+      // cursor move
+      {
+        "key": "m",
+        "name": "+cursor move",
+        "icon": "x",
+        "type": "bindings",
+        "bindings": [
+          {
+            "key": "m",
+            "name": "move cursor to middle of screen",
+            "icon": "x",
+            "type": "command",
+            "command": "cursorMove",
+            "args": {
+              "to": "viewPortCenter"
+            }
+          },
+          {
+            "key": "k",
+            "name": "move cursor to top of screen",
+            "icon": "x",
+            "type": "command",
+            "command": "cursorMove",
+            "args": {
+              "to": "viewPortTop"
+            }
+          },
+          {
+            "key": "j",
+            "name": "move cursor to bottom of screen",
+            "icon": "x",
+            "type": "command",
+            "command": "cursorMove",
+            "args": {
+              "to": "viewPortBottom"
+            }
+          }
+        ]
+      },
+      // scroll
+      {
+        "key": "k",
+        "name": "scroll half page up",
+        "icon": "x",
+        "type": "transient",
+        "command": "editorScroll",
+        "args": {
+          "to": "up",
+          "by": "halfPage",
+          "revealCursor": true
+        },
+        "bindings": [
+          {
+            "key": "k",
+            "name": "scroll line up",
+            "icon": "x",
+            "type": "command",
+            "command": "scrollLineUp"
+          },
+          {
+            "key": "j",
+            "name": "scroll line down",
+            "icon": "x",
+            "type": "command",
+            "command": "scrollLineDown"
+          },
+          {
+            "key": "K",
+            "name": "scroll half page up",
+            "icon": "x",
+            "type": "command",
+            "command": "editorScroll",
+            "args": {
+              "to": "up",
+              "by": "halfPage",
+              "revealCursor": true
+            }
+          },
+          {
+            "key": "J",
+            "name": "scroll half page down",
+            "icon": "x",
+            "type": "command",
+            "command": "editorScroll",
+            "args": {
+              "to": "down",
+              "by": "halfPage",
+              "revealCursor": true
+            }
+          }
+        ]
+      },
+      // scroll
+      {
+        "key": "j",
+        "name": "scroll half page down",
+        "icon": "x",
+        "type": "transient",
+        "command": "editorScroll",
+        "args": {
+          "to": "down",
+          "by": "halfPage",
+          "revealCursor": true
+        },
+        "bindings": [
+          {
+            "key": "k",
+            "name": "scroll line up",
+            "icon": "x",
+            "type": "command",
+            "command": "scrollLineUp"
+          },
+          {
+            "key": "j",
+            "name": "scroll line down",
+            "icon": "x",
+            "type": "command",
+            "command": "scrollLineDown"
+          },
+          {
+            "key": "K",
+            "name": "scroll half page up",
+            "icon": "x",
+            "type": "command",
+            "command": "editorScroll",
+            "args": {
+              "to": "up",
+              "by": "halfPage",
+              "revealCursor": true
+            }
+          },
+          {
+            "key": "J",
+            "name": "scroll half page down",
+            "icon": "x",
+            "type": "command",
+            "command": "editorScroll",
+            "args": {
+              "to": "down",
+              "by": "halfPage",
+              "revealCursor": true
+            }
+          }
+        ]
+      },
+      // bring cursor
+      {
+        "key": "b",
+        "name": "+Bring",
+        "icon": "x",
+        "type": "bindings",
+        "bindings": [
+          {
+            "key": "m",
+            "name": "bring cursor to middle of screen",
+            "icon": "x",
+            "type": "command",
+            "command": "vim.remap",
+            "args": {
+              "after": ["z", "z"]
+            }
+          },
+          {
+            "key": "j",
+            "name": "bring cursor to top of screen",
+            "icon": "x",
+            "type": "command",
+            "command": "vim.remap",
+            "args": {
+              "after": ["z", "t"]
+            }
+          },
+          {
+            "key": "j",
+            "name": "bring cursor to bottom of screen",
+            "icon": "x",
+            "type": "command",
+            "command": "vim.remap",
+            "args": {
+              "after": ["z", "b"]
+            }
+          }
+        ]
+      },
+      {
+        "key": "u",
+        "name": "goto up folding",
+        "icon": "x",
+        "type": "command",
+        "command": "editor.gotoParentFold"
+      },
+      {
+        "key": "n",
+        "name": "goto next folding",
+        "icon": "x",
+        "type": "command",
+        "command": "editor.gotoNextFold"
+      },
+      {
+        "key": "N",
+        "name": "goto previous folding",
+        "icon": "x",
+        "type": "command",
+        "command": "editor.gotoPreviousFold"
+      }
+    ],
+    "when": "editorTextFocus && (vim.mode =~ /normal|visualline/i)"
+  }
+]

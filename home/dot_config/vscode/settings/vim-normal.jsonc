@@ -33,9 +33,14 @@
     },
     {
       // quick fix
+      "before": ["g", "."],
+      "commands": ["editor.action.quickFix"]
+    },
+    {
+      // find
       // original is go to file, but it has problem
       "before": ["g", "f"],
-      "commands": ["editor.action.quickFix"]
+      "commands": ["actions.find"]
     },
     {
       // goto previous tab
@@ -154,21 +159,6 @@
       "after": ["<leader>", "<leader>", "<leader>", "b", "d", "j", "k"]
     },
     {
-      // goto parent folding
-      "before": ["z", "h"],
-      "commands": ["editor.gotoParentFold"]
-    },
-    {
-      // goto next folding
-      "before": ["z", "j"],
-      "commands": ["editor.gotoNextFold"]
-    },
-    {
-      // goto previous folding
-      "before": ["z", "k"],
-      "commands": ["editor.gotoPreviousFold"]
-    },
-    {
       // goto next symbol
       // override default behavior
       "before": ["*"],
@@ -226,8 +216,8 @@
       "commands": [
         "vspacecode.space",
         {
-          "args": "m",
-          "command": "whichkey.triggerKey"
+          "command": "whichkey.triggerKey",
+          "args": "m"
         }
       ]
     }
