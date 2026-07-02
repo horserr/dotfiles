@@ -415,6 +415,13 @@
             "command": "editor.gotoPreviousFold"
           }
         ]
+      },
+      {
+        "key": "?",
+        "name": "Search keybindings",
+        "icon": "keyboard",
+        "type": "command",
+        "command": "whichkey.searchBindings"
       }
     ],
     "when": "editorTextFocus && (vim.mode =~ /normal|visualline/i)"
