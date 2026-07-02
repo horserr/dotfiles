@@ -1,4 +1,7 @@
 {
+  // nyxt browser https://nyxt.atlas.engineer/
+  // msys2
+  // email https://github.com/pimalaya/himalaya
   "winapps": {
     "scoop": {
       "extras": [
@@ -11,7 +14,6 @@
         "quicklook",
         "zotero",
         "tailscale",
-        "zen-browser",
         "Windhawk",
         "npiperelay",
         "potplayer",
@@ -42,6 +44,7 @@
         "ripgrep",
         "nodejs",
         "rclone",
+        "scoop-search",
         // "yt-dlp",
         "aria2",
         "pandoc",
@@ -64,6 +67,14 @@
     "winget": {
       "admin": ["Nilesoft.Shell", "Nushell.Nushell"],
       "normal": [
+        // auto dark mode
+        "ArminOsaj.AutoDarkMode",
+        // vivaldi.vivaldi
+        "vivaldi.vivaldi",
+        // thunder bird
+        // "Molilla.Thunderbird",
+        // twinkletray
+        "xanderfrangos.twinkletray",
         // adobe creative cloud
         "Adobe.CreativeCloud",
         // remote desktop
