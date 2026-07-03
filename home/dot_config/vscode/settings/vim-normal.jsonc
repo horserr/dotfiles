@@ -158,7 +158,7 @@
       "before": ["K"],
       "after": ["<leader>", "<leader>", "<leader>", "b", "d", "j", "k"]
     },
-    {
+    /*     {
       // goto next symbol
       // override default behavior
       "before": ["*"],
@@ -169,7 +169,7 @@
       // override default behavior
       "before": ["#"],
       "commands": ["editor.action.wordHighlight.prev"]
-    },
+    }, */
     /*     {
       // navigate back
       // override default behavior
@@ -198,6 +198,13 @@
       // override default behavior
       "before": ["g", "I"],
       "commands": ["workbench.action.navigateToLastEditLocation"]
+    },
+    {
+      // focus hover
+      // enhance the default behaviro
+      // link: https://github.com/VSCodeVim/Vim/issues/3740#issuecomment-1904249031
+      "before": ["g", "h"],
+      "commands": ["editor.action.showDefinitionPreviewHover"]
     },
     {
       "before": ["<leader>", "e"],

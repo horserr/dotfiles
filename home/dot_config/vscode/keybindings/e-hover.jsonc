@@ -1,5 +1,6 @@
 [
-  // move inside hover window
+  // editor.action.showHover
+  // editor.action.showDefinitionPreviewHover
   {
     "key": "h",
     "command": "editor.action.scrollLeftHover",
@@ -18,6 +19,31 @@
   {
     "key": "l",
     "command": "editor.action.scrollRightHover",
+    "when": "editorHoverFocused"
+  },
+  {
+    "key": "g",
+    "command": "editor.action.goToTopHover",
+    "when": "editorHoverFocused"
+  },
+  {
+    "key": "shift+g",
+    "command": "editor.action.goToBottomHover",
+    "when": "editorHoverFocused"
+  },
+  {
+    "key": "u",
+    "command": "editor.action.pageUpHover",
+    "when": "editorHoverFocused"
+  },
+  {
+    "key": "d",
+    "command": "editor.action.pageDownHover",
+    "when": "editorHoverFocused"
+  },
+  {
+    "key": "escape",
+    "command": "editor.action.hideHover",
     "when": "editorHoverFocused"
   }
 ]
