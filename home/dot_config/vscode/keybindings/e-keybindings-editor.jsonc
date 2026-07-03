@@ -26,17 +26,17 @@
   {
     "key": "y",
     "command": "keybindings.editor.copyKeybindingEntry",
-    "when": "inKeybindings && keybindingFocus && !whenFocus"
+    "when": "inKeybindings && keybindingFocus && !whenFocus && !inputFocus"
   },
   {
     "key": "e",
     "command": "keybindings.editor.defineWhenExpression",
-    "when": "inKeybindings && keybindingFocus"
+    "when": "inKeybindings && keybindingFocus && !inputFocus"
   },
   {
     "key": "a",
     "command": "keybindings.editor.addKeybinding",
-    "when": "inKeybindings && keybindingFocus"
+    "when": "inKeybindings && keybindingFocus && !inputFocus"
   },
   {
     "key": "d",
@@ -48,24 +48,8 @@
     "command": "keybindings.editor.searchKeybindings",
     "when": "inKeybindings && !inputFocus"
   },
-  // Below are default keybindings
   {
-    "key": "enter",
-    "command": "keybindings.editor.acceptWhenExpression",
-    "when": "inKeybindings && whenFocus && !suggestWidgetVisible"
-  },
-  {
-    "key": "escape",
-    "command": "keybindings.editor.clearSearchResults",
-    "when": "inKeybindings && inKeybindingsSearch && keybindingsSearchHasValue"
-  },
-  {
-    "key": "enter",
-    "command": "keybindings.editor.defineKeybinding",
-    "when": "inKeybindings && keybindingFocus && !whenFocus"
-  },
-  {
-    "key": "ctrl+down",
+    "key": "ctrl+j",
     "command": "keybindings.editor.focusKeybindings",
     "when": "inKeybindings && inKeybindingsSearch"
   },
