@@ -1,5 +1,14 @@
 {
   "$schema": "vscode://schemas/settings/user",
   "extensions.allowOpenInModalEditor": true,
+  "extensions.autoCheckUpdates": true,
+  "extensions.autoUpdate": "on",
+  "extensions.experimental.affinity": {
+    "usernamehw.commands": 2,
+    //Caveats: One issue with using the affinity setting is that each time you update your settings file, the Vim plugin will reload, which can take a few seconds. https://github.com/VSCodeVim/Vim#:~:text=VSCodeVim%20is%20too%20slow
+    "vscodevim.vim": 1,
+    "VSpaceCode.vspacecode": 2,
+    "VSpaceCode.whichkey": 2
+  },
   "extensions.supportUntrustedWorkspaces": {}
 }

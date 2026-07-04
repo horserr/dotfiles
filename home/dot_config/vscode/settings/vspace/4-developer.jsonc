@@ -250,4 +250,23 @@
       }
     ]
   }
+  // editor.action.unicodeHighlight.disableHighlightingOfAmbiguousCharacters
+  // editor.action.unicodeHighlight.disableHighlightingOfInvisibleCharacters
+  // editor.action.unicodeHighlight.disableHighlightingOfNonBasicAsciiCharacters
+  // editor.action.unicodeHighlight.showExcludeOptions
+  /*   {
+    // 控制是否高亮容易混淆的歧义字符
+    "editor.unicodeHighlight.ambiguousCharacters": true,
+
+    // 控制是否高亮不可见的零宽字符（强烈建议保持 true，防代码踩坑）
+    "editor.unicodeHighlight.invisibleCharacters": true,
+
+    // 控制是否高亮所有非英文字符（如果你写中文注释，建议设为 false，否则满屏都是黄框）
+    "editor.unicodeHighlight.nonBasicASCIICharacters": false,
+
+    // 你的高亮排除白名单列表（由 showExcludeOptions 命令自动生成）
+    "editor.unicodeHighlight.allowedCharacters": {
+        "：": true // 例如允许中文冒号不报警
+    }
+} */
 ]

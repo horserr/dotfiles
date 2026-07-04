@@ -1,0 +1,11 @@
+{
+  "$schema": "vscode://schemas/settings/user",
+  "zenMode.centerLayout": false,
+  "zenMode.fullScreen": false,
+  "zenMode.hideActivityBar": true,
+  "zenMode.hideLineNumbers": true,
+  "zenMode.hideStatusBar": false,
+  "zenMode.restore": false,
+  "zenMode.showTabs": "single",
+  "zenMode.silentNotifications": true
+}

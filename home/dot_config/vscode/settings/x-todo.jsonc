@@ -1,0 +1,42 @@
+{
+  "$schema": "vscode://schemas/settings/user",
+  "better-todo-tree.general.statusBar": "current file",
+  "better-todo-tree.general.showIconsInsteadOfTagsInStatusBar": true,
+  "better-todo-tree.general.statusBarClickBehaviour": "toggle highlights",
+  "better-todo-tree.general.tagGroups": {
+    "FIXME": ["FIXME", "FIXIT", "FIX"]
+  },
+  "better-todo-tree.general.tags": [
+    "TODO",
+    "BUG",
+    "HACK",
+    "FIXME",
+    "FIX",
+    "FIXIT",
+    "XXX"
+  ],
+  "better-todo-tree.general.showActivityBarBadge": true,
+  "better-todo-tree.highlights.customHighlight": {
+    "TODO": {
+      "background": "#8FBCBB",
+      "foreground": "#5c3f12af",
+      "gutterIcon": true,
+      "icon": "zap",
+      "iconColour": "#8FBCBB",
+      "type": "tag-and-comment"
+    }
+  },
+  "better-todo-tree.highlights.defaultHighlight": {
+    "background": "#163467",
+    "foreground": "#83ADF4",
+    "icon": "alert",
+    "iconColour": "#83ADF4",
+    "type": "text"
+  },
+  "better-todo-tree.highlights.enabled": true,
+  "better-todo-tree.highlights.highlightDelay": 300,
+  "better-todo-tree.highlights.useColourScheme": true,
+  "better-todo-tree.filtering.ignoreGitSubmodules": true,
+  "better-todo-tree.tree.buttons.export": true,
+  "better-todo-tree.regex.regexCaseSensitive": false
+}

@@ -1,4 +1,6 @@
 [
+  // editor.closeCallHierarchy
+  // editor.closeTypeHierarchy
   {
     "key": "j",
     "name": "+Jump/Join",

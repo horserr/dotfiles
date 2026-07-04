@@ -58,11 +58,12 @@
     "command": "keybindings.editor.recordSearchKeys",
     "when": "inKeybindings && inKeybindingsSearch"
   },
+  /*   // default
   {
     "key": "escape",
     "command": "keybindings.editor.rejectWhenExpression",
     "when": "inKeybindings && whenFocus && !suggestWidgetVisible"
-  },
+  }, */
   {
     "key": "alt+p",
     "command": "keybindings.editor.toggleSortByPrecedence",

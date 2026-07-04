@@ -15,6 +15,11 @@
   // quickInput.previousSeparatorWithQuickAccessFallback
   // quickInput.toggleCheckbox
   // quickInput.toggleHover
+  /*   {
+    "key": "ctrl+space",
+    "command": "quickInput.toggleHover",
+    "when": "inQuickInput && quickInputType == 'quickPick' || inQuickInput && quickInputType == 'quickTree'"
+  } */
   {
     "key": "ctrl+j",
     // workbench.action.quickOpenNavigateNext

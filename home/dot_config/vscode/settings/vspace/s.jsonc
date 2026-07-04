@@ -1,5 +1,18 @@
 [
-// workbench.action.replaceInFiles
+  // workbench.action.replaceInFiles
+
+  // editor.actions.findWithArgs
+  // editor.action.selectAll
+  // editor.action.selectAllMatches
+  // editor.action.selectEditor
+  // editor.action.selectFromAnchorToCursor
+  // editor.action.selectHighlights
+  // editor.action.selectNextStickyScrollLine
+  // editor.action.selectPreviousStickyScrollLine
+  // editor.action.selectToBracket
+  // editor.action.setSelectionAnchor
+
+  // select all occurrence of find match editor.action.selectHighlights
   {
     "key": "s",
     "name": "+Search",
@@ -31,60 +44,20 @@
           "workbench.action.search.toggleQueryDetails"
         ]
       },
-      {
-        "key": "c",
-        "name": "Clear highlight",
-        "icon": "clear-all",
-        "type": "command",
-        "command": "vim.remap",
-        "args": {
-          "commands": [
-            {
-              "command": ":noh"
-            }
-          ]
-        }
-      },
-      {
-        "key": "h",
-        "name": "Highlight symbol",
-        "icon": "symbol-color",
-        "type": "transient",
-        "command": "editor.action.wordHighlight.trigger",
-        "bindings": [
-          {
-            "key": "/",
-            "name": "Search in project with selection",
-            "icon": "selection",
-            "type": "commands",
-            "commands": [
-              "editor.action.addSelectionToNextFindMatch",
-              "workbench.action.findInFiles"
-            ]
-          },
-          {
-            "key": "n",
-            "name": "Next occurrence",
-            "icon": "arrow-down",
-            "type": "command",
-            "command": "editor.action.wordHighlight.next"
-          },
-          {
-            "key": "p",
-            "name": "Previous occurrence",
-            "icon": "arrow-up",
-            "type": "command",
-            "command": "editor.action.wordHighlight.prev"
-          },
-          {
-            "key": "N",
-            "name": "Previous occurrence",
-            "icon": "arrow-up",
-            "type": "command",
-            "command": "editor.action.wordHighlight.prev"
-          }
-        ]
-      },
+      // {
+      //   "key": "c",
+      //   "name": "Clear highlight",
+      //   "icon": "clear-all",
+      //   "type": "command",
+      //   "command": "vim.remap",
+      //   "args": {
+      //     "commands": [
+      //       {
+      //         "command": ":noh"
+      //       }
+      //     ]
+      //   }
+      // },
       {
         "key": "j",
         "name": "Jump to symbol in buffer",

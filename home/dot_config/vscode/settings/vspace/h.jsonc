@@ -23,6 +23,12 @@
             "command": "commands.suggestCommands"
           },
           {
+            "key": "C",
+            "name": "show color picker",
+            "type": "command",
+            "command": "editor.action.showOrFocusStandaloneColorPicker"
+          },
+          {
             "key": "s",
             "name": "show settings",
             "type": "command",
@@ -53,6 +59,13 @@
             "command": "workbench.action.configureLanguageBasedSettings"
           }
         ]
+      },
+      {
+        "key": "f",
+        "name": "Open feature request",
+        "icon": "keyboard",
+        "type": "command",
+        "command": "workbench.action.openRequestFeatureUrl"
       },
       {
         "key": "k",
@@ -134,8 +147,16 @@
         "bindings": [
           {
             "key": "v",
-            "name": "Open VSCode snippet variable Documentation",
+            "name": "Open VSCode variables for debug and tasks Documentation",
             "icon": "book",
+            "type": "command",
+            "command": "vscode.open",
+            "args": "https://code.visualstudio.com/docs/reference/variables-reference"
+          },
+          {
+            "key": "s",
+            "name": "Open VSCode snippet variable Documentation",
+            "icon": "symbol-snippet",
             "type": "command",
             "command": "vscode.open",
             "args": "https://code.visualstudio.com/docs/editing/userdefinedsnippets#_variables"

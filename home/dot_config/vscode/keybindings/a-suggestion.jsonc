@@ -1,0 +1,49 @@
+[
+  /*   this command use alternative way to insert suggestion, which is setted in editor.suggest.insertMode
+  link: https://stackoverflow.com/questions/75403131/difference-between-acceptselectedsuggestion-and-acceptalternativeselectedsugg */
+  // acceptAlternativeSelectedSuggestion
+
+  // acceptSelectedSuggestionOnEnter
+  // editor.action.resetSuggestSize
+  // hideSuggestWidget
+
+  // focusSuggestion
+  // insertNextSuggestion
+  // insertPrevSuggestion
+  // selectFirstSuggestion
+  // selectLastSuggestion
+  // selectNextPageSuggestion
+  // selectPrevPageSuggestion
+  {
+    "key": "ctrl+j",
+    "command": "selectNextSuggestion",
+    "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
+  },
+  {
+    "key": "ctrl+k",
+    "command": "selectPrevSuggestion",
+    "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
+  },
+  {
+    "key": "ctrl+l",
+    // "command": "toggleSuggestionFocus",
+    "command": "toggleSuggestionDetails",
+    "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
+  }
+  // copilot inline suggestion (ghost test)
+
+  // editor.action.inlineSuggest.acceptNextLine
+  // editor.action.inlineSuggest.acceptNextWord
+  // editor.action.inlineSuggest.cancelSnooze
+  // editor.action.inlineSuggest.commit
+  // editor.action.inlineSuggest.commitAlternativeAction
+  // editor.action.inlineSuggest.dev.extractRepro
+  // editor.action.inlineSuggest.hide
+  // editor.action.inlineSuggest.jump
+  // editor.action.inlineSuggest.showNext
+  // editor.action.inlineSuggest.showPrevious
+  // editor.action.inlineSuggest.snooze
+  // editor.action.inlineSuggest.toggleAlwaysShowToolbar
+  // editor.action.inlineSuggest.toggleShowCollapsed
+  // editor.action.inlineSuggest.trigger
+]

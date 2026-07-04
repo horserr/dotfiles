@@ -1,4 +1,31 @@
 [
+  // xterm.js escape sequence: https://github.com/xtermjs/xterm.js/blob/master/src/common/data/EscapeSequences.ts
+  // {
+  //   "key": "ctrl+shift+t",
+  //   "command": "workbench.action.terminal.newWithProfile",
+  //   "args": {
+  //     "profileName": "zsh",
+  //     "location": "editor"
+  //   }
+  // }
+  // send sequence also support variable substitution
+  // {
+  //   "key": "ctrl+alt+r",
+  //   "command": "workbench.action.terminal.sendSequence",
+  //   "args": { "text": "\u0012"/*^R*/ },
+  //   "when": "terminalFocus"
+  // }
+
+  //   {
+  //   "key": "ctrl+shift+/",
+  //   "command": "workbench.action.terminal.sendSignal",
+  //   "args": {
+  //     "signal": "SIGTERM"
+  //   }
+  // }
+
+  //  "workbench.action.terminal.focusHover"
+
   {
     "key": ",",
     "name": "+Terminal",

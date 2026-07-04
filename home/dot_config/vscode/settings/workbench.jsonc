@@ -13,26 +13,54 @@
     // "editorBracketHighlight.unexpectedBracket.foreground": "#db6165"
   },
   "workbench.commandPalette.showAskInChat": false,
+  "workbench.diffEditorAssociations": {},
+  // "workbench.editor.titleScrollbarSizing": "large",
+  "workbench.editor.centeredLayoutAutoResize": false,
+  "workbench.editor.centeredLayoutFixedWidth": false,
   "workbench.editor.closeEmptyGroups": true,
+  // WORKSPACE setting
+  "workbench.editor.customLabels.patterns": {},
+  // move editor ection into title bar
+  "workbench.editor.editorActionsLocation": "titleBar",
   "workbench.editor.enablePreview": true,
   "workbench.editor.enablePreviewFromQuickOpen": false,
   "workbench.editor.highlightModifiedTabs": true,
-  // "workbench.editor.titleScrollbarSizing": "large",
+  "workbench.editor.labelFormat": "default",
+  // limit the number of opened tabs
+  "workbench.editor.limit.enabled": true,
+  "workbench.editor.limit.excludeDirty": true,
+  "workbench.editor.limit.perEditorGroup": true,
+  "workbench.editor.limit.value": 6,
+  "workbench.editor.navigationScope": "editorGroup",
   //////////// NOTE: hide editor tabs
   // "workbench.editor.showTabs": "single",
   "workbench.editor.openPositioning": "right",
   "workbench.editor.pinnedTabSizing": "shrink",
   "workbench.editor.pinnedTabsOnSeparateRow": true,
+  // language detection
+  "workbench.editor.preferHistoryBasedLanguageDetection": true,
+  // don't focus instead of opening another editor
+  "workbench.editor.revealIfOpen": false,
   "workbench.editor.scrollToSwitchTabs": true,
-  "workbench.editor.showTabIndex": true,
+  // don't use the recent view state
+  "workbench.editor.sharedViewState": false,
+  // don't show icons
+  "workbench.editor.showIcons": false,
+  // don't show tab index
+  "workbench.editor.showTabIndex": false,
+  // control split behavior
+  "workbench.editor.splitSizing": "auto",
+  // don't show close button
   "workbench.editor.tabActionCloseVisibility": false,
   "workbench.editor.useModal": "off",
   "workbench.editorAssociations": {
     "*.copilotmd": "vscode.markdown.preview.editor"
   },
+  "workbench.editorLargeFileConfirmation": 10,
   "workbench.iconTheme": "catppuccin-mocha",
   "workbench.layoutControl.enabled": false,
   "workbench.list.smoothScrolling": true,
+  "workbench.navigationControl.enabled": true,
   "workbench.notifications.position": "top-right",
   "workbench.panel.showLabels": false,
   "workbench.preferredDarkColorTheme": "Catppuccin Mocha",

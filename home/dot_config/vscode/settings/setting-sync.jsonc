@@ -1,0 +1,11 @@
+{
+  "$schema": "vscode://schemas/settings/user",
+  "settingsSync.ignoredExtensions": ["leetcode.vscode-leetcode"],
+  "settingsSync.ignoredSettings": [
+    "-vim.autoSwitchInputMethod.defaultIM",
+    "-vim.autoSwitchInputMethod.obtainIMCmd",
+    "-vim.autoSwitchInputMethod.switchIMCmd",
+    "-window.zoomLevel",
+    "-files.dialog.defaultPath"
+  ]
+}

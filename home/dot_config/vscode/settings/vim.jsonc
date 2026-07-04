@@ -33,7 +33,6 @@
     OperatorPendingMode, // Pseudo-Mode, used only when remapping. DON'T SET TO THIS MODE
     Disabled,
   } */
-
   "vim.argumentObjectClosingDelimiters": [")", "]", "}", ">"],
   "vim.argumentObjectOpeningDelimiters": ["(", "[", "{", "<"],
   "vim.argumentObjectSeparators": [",", ";"],
@@ -72,10 +71,11 @@
     "<C-u>": true // half page up
   },
   "vim.highlightedyank.color": "rgba(144, 186, 88, 0.76)",
+  "vim.highlightedyank.duration": 250,
   "vim.highlightedyank.enable": true,
   "vim.highlightedyank.textColor": "#a34573e1",
-  "vim.highlightedyank.duration": 250,
   "vim.history": 20,
+  "vim.hlsearch": false,
   "vim.ignorecase": true,
   "vim.inccommand": "replace",
   "vim.incsearch": true,

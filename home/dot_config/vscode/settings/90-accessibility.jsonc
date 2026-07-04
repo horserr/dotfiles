@@ -1,23 +1,31 @@
 {
   "$schema": "vscode://schemas/settings/user",
-
+  "accessibility.dimUnfocused.enabled": true,
+  "accessibility.dimUnfocused.opacity": 0.85,
+  "accessibility.signalOptions.debouncePositionChanges": true,
   "accessibility.signalOptions.volume": 50,
-  "accessibility.signals.lineHasWarning": {
-    "sound": "auto",
-    "announcement": "auto"
+  "accessibility.signals.lineHasBreakpoint": {
+    "announcement": "auto",
+    "sound": "on"
   },
   "accessibility.signals.lineHasError": {
-    "sound": "on",
-    "announcement": "auto"
+    "announcement": "auto",
+    "sound": "on"
+  },
+  "accessibility.signals.lineHasWarning": {
+    "announcement": "auto",
+    "sound": "auto"
   },
   "accessibility.signals.terminalBell": {
-    "sound": "on",
-    "announcement": "auto"
+    "announcement": "auto",
+    "sound": "on"
   },
-  "accessibility.signals.lineHasBreakpoint": {
-    "sound": "on",
-    "announcement": "auto"
+  "accessibility.signals.terminalQuickFix": {
+    "announcement": "auto",
+    "sound": "on"
   },
+  // use help: list signal sound or signals.sounds.help
+  "editor.allowVariableFontsInAccessibilityMode": true,
   "terminal.integrated.accessibleViewFocusOnCommandExecution": false,
   "terminal.integrated.accessibleViewPreserveCursorPosition": true
 }

@@ -201,10 +201,15 @@
     },
     {
       // focus hover
-      // enhance the default behaviro
+      // enhance the default behavior
       // link: https://github.com/VSCodeVim/Vim/issues/3740#issuecomment-1904249031
       "before": ["g", "h"],
       "commands": ["editor.action.showDefinitionPreviewHover"]
+    },
+    {
+      // parameter hint
+      "before": ["g", "H"],
+      "commands": ["editor.action.triggerParameterHints"]
     },
     {
       "before": ["<leader>", "e"],

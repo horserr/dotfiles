@@ -1,0 +1,9 @@
+{
+  "$schema": "vscode://schemas/settings/user",
+  "livePreview.customExternalBrowser": "Chrome",
+  "livePreview.debugOnExternalPreview": true,
+  "livePreview.openPreviewTarget": "External Browser",
+  "livePreview.portNumber": 1111,
+  "livePreview.showServerStatusNotifications": true,
+  "livePreview.tasks.runTaskWithExternalPreview": true
+}

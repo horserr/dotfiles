@@ -36,6 +36,13 @@
         "type": "bindings",
         "bindings": [
           {
+            "key": "l",
+            "name": "Open link",
+            "icon": "link-external",
+            "type": "command",
+            "command": "editor.action.openLink"
+          },
+          {
             "key": "o",
             "name": "reopen with",
             "icon": "symbol-snippet",
@@ -167,13 +174,6 @@
         "icon": "selection",
         "type": "command",
         "command": "editor.action.organizeImports"
-      },
-      {
-        "key": "o",
-        "name": "Open link",
-        "icon": "link-external",
-        "type": "command",
-        "command": "editor.action.openLink"
       },
       {
         "key": "r",

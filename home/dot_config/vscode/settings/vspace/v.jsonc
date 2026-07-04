@@ -168,6 +168,13 @@
             "command": "workbench.view.scm"
           },
           {
+            "key": "c",
+            "name": "Show container view",
+            "icon": "source-control",
+            "type": "command",
+            "command": "workbench.view.extension.containersView"
+          },
+          {
             "key": "n",
             "name": "Show notification",
             "icon": "comment",
@@ -228,6 +235,13 @@
               "editor.action.toggleStickyScroll",
               "workbench.action.hideEditorTabs"
             ]
+          },
+          {
+            "key": ",",
+            "name": "Toggle markdown preview",
+            "icon": "tools",
+            "type": "command",
+            "command": "markdown.togglePreview"
           },
           {
             "key": "e",

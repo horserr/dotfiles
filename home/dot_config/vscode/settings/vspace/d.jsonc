@@ -1,4 +1,5 @@
 [
+//  "editor.debug.action.showDebugHover"
   {
     "key": "d",
     "name": "+Debug",

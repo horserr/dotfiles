@@ -1,6 +1,4 @@
 [
-  // toggle.diff.ignoreTrimWhitespace
-  // toggle.diff.renderSideBySide
   {
     "key": "ctrl+h",
     "command": "workbench.action.compareEditor.focusSecondarySide",
@@ -31,6 +29,13 @@
         "icon": "x",
         "type": "command",
         "command": "workbench.action.compareEditor.swapSides"
+      },
+      {
+        "key": "a",
+        "name": "enter acceible diff viewer",
+        "icon": "x",
+        "type": "command",
+        "command": "editor.action.accessibleDiffViewer.next"
       },
       {
         "key": "'",
@@ -73,6 +78,49 @@
         "icon": "x",
         "type": "command",
         "command": "workbench.action.compareEditor.openSide"
+      },
+      {
+        "key": "t",
+        "name": "+Toggle",
+        "icon": "x",
+        "type": "bindings",
+        "bindings": [
+          {
+            "key": "w",
+            "name": "toggle ingore trime white space",
+            "icon": "x",
+            "type": "command",
+            "command": "toggle.diff.ignoreTrimWhitespace"
+          },
+          {
+            "key": "c",
+            "name": "toggle collapse unchanges regions",
+            "icon": "x",
+            "type": "command",
+            "command": "diffEditor.toggleCollapseUnchangedRegions"
+          },
+          {
+            "key": "i",
+            "name": "toggle inline view",
+            "icon": "x",
+            "type": "command",
+            "command": "toggle.diff.renderSideBySide"
+          },
+          {
+            "key": "m",
+            "name": "toggle show moved code block",
+            "icon": "x",
+            "type": "command",
+            "command": "diffEditor.toggleShowMovedCodeBlocks"
+          },
+          {
+            "key": "m",
+            "name": "toggle show moved code block",
+            "icon": "x",
+            "type": "command",
+            "command": "diffEditor.toggleShowMovedCodeBlocks"
+          }
+        ]
       }
     ],
     "when": "isInDiffEditor && !dirtyDiffVisible && editorTextFocus && (vim.mode =~ /normal/i) && !editorHasMultipleSelections && !editorHasSelection"

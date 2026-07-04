@@ -1,0 +1,18 @@
+{
+  "$schema": "vscode://schemas/settings/user",
+  "overleaf-workshop.compileOnSave.enabled": false,
+  "overleaf-workshop.pdfViewer.themes": {
+    "dark": {
+      "bgColor": "#303541",
+      "fontColor": "#c8cee0"
+    },
+    "default": {
+      "bgColor": "#303541",
+      "fontColor": "#c8cee0"
+    },
+    "light": {
+      "bgColor": "#e6e6e6",
+      "fontColor": "#333333"
+    }
+  }
+}

@@ -4,7 +4,7 @@
   "window.autoDetectColorScheme": true,
   "window.autoDetectHighContrast": true,
   "window.commandCenter": false,
-  "window.confirmBeforeClose": "keyboardOnly",
+  "window.confirmBeforeClose": "never",
   "window.confirmSaveUntitledWorkspace": false,
   "window.density.editorTabHeight": "compact",
   "window.dialogStyle": "custom",
