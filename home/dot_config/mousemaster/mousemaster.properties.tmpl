@@ -43,7 +43,8 @@ idle-mode.noop.ignore-redundant=+inputRedundant
 idle-mode.set-variable.isEnter=_{!isEnter} +;-200
 idle-mode.unset-variable.isEnter=_{isEnter} +;-200
 # map enter only when isEnter is on, and suppress the original ; key behavior
-idle-mode.macro.insert-enter=_{!isEnter} ;-0-200 -> +enter -enter
+idle-mode.macro.insert-enter=^{leftshift} _{!isEnter} ;-0-200 -> +enter -enter
+idle-mode.macro.insert-colon=_{leftshift} ;-0-200 -> +leftshift +; -; -leftshift
 
 # Toggle isUppercase on/off, pressing UPPERCASEKEY for at least 200ms
 idle-mode.set-variable.isUppercase=_{!isUppercase} +UPPERCASEKEY-200
