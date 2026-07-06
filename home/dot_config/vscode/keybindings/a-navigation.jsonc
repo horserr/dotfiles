@@ -1,10 +1,5 @@
 [
   {
-    "key": "ctrl+h",
-    "command": "workbench.action.navigateLeft",
-    "when": "!inQuickOpen && !suggestWidgetVisible && !parameterHintsVisible && !isInDiffEditor"
-  },
-  {
     "key": "ctrl+j",
     "command": "workbench.action.navigateDown",
     "when": "!codeActionMenuVisible && !inQuickOpen && !suggestWidgetVisible && !parameterHintsVisible && !inputBoxFocus"
@@ -15,8 +10,72 @@
     "when": "!codeActionMenuVisible && !inQuickOpen && !suggestWidgetVisible && !parameterHintsVisible && !inputBoxFocus"
   },
   {
+    "key": "ctrl+h",
+    "command": "workbench.action.navigateLeft",
+    // "when": "!terminalFocus && !inQuickOpen && !suggestWidgetVisible && !parameterHintsVisible && !isInDiffEditor"
+    "when": "!inQuickOpen && !suggestWidgetVisible && !parameterHintsVisible && !isInDiffEditor"
+  },
+  {
     "key": "ctrl+l",
     "command": "workbench.action.navigateRight",
+    // "when": "!terminalFocus && !codeActionMenuVisible && !inQuickOpen && !suggestWidgetVisible && !parameterHintsVisible && !isInDiffEditor"
     "when": "!codeActionMenuVisible && !inQuickOpen && !suggestWidgetVisible && !parameterHintsVisible && !isInDiffEditor"
+  },
+  {
+    "key": "ctrl+j",
+    "command": "workbench.action.terminal.focusNext",
+    "when": "terminalFocus && !terminalEditorFocus && !suggestWidgetVisible"
+  },
+  {
+    "key": "ctrl+h",
+    "command": "workbench.action.terminal.focusPreviousPane",
+    "when": "terminalFocus && terminalSplitPaneActive && !terminalEditorFocus && !suggestWidgetVisible"
+  },
+  {
+    "key": "ctrl+l",
+    "command": "workbench.action.terminal.focusNextPane",
+    "when": "terminalFocus && terminalSplitPaneActive && !terminalEditorFocus && !suggestWidgetVisible"
   }
+
+  // cannot set keybidings for webview, use custom css and js instead
+  // {
+  //   "key": "j",
+  //   "command": "workbench.action.webview.scrollDown",
+  //   "when": "webviewHasFocus"
+  // },
+  // {
+  //   "key": "k",
+  //   "command": "workbench.action.webview.scrollUp",
+  //   "when": "webviewHasFocus"
+  // },
+  // {
+  //   "key": "l",
+  //   "command": "workbench.action.webview.scrollRight",
+  //   "when": "webviewHasFocus"
+  // },
+  // {
+  //   "key": "h",
+  //   "command": "workbench.action.webview.scrollLeft",
+  //   "when": "webviewHasFocus"
+  // },
+  // {
+  //   "key": "d",
+  //   "command": "workbench.action.webview.scrollPageDown",
+  //   "when": "webviewHasFocus"
+  // },
+  // {
+  //   "key": "u",
+  //   "command": "workbench.action.webview.scrollPageUp",
+  //   "when": "webviewHasFocus"
+  // },
+  // {
+  //   "key": "g",
+  //   "command": "workbench.action.webview.scrollGoToTop",
+  //   "when": "webviewHasFocus"
+  // },
+  // {
+  //   "key": "shift+g",
+  //   "command": "workbench.action.webview.scrollGoToBottom",
+  //   "when": "webviewHasFocus"
+  // }
 ]
