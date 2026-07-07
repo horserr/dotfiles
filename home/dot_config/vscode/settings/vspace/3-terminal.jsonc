@@ -1,65 +1,761 @@
 [
-  // xterm.js escape sequence: https://github.com/xtermjs/xterm.js/blob/master/src/common/data/EscapeSequences.ts
-  // {
-  //   "key": "ctrl+shift+t",
-  //   "command": "workbench.action.terminal.newWithProfile",
-  //   "args": {
-  //     "profileName": "zsh",
-  //     "location": "editor"
-  //   }
-  // }
-  // send sequence also support variable substitution
-  // {
-  //   "key": "ctrl+alt+r",
-  //   "command": "workbench.action.terminal.sendSequence",
-  //   "args": { "text": "\u0012"/*^R*/ },
-  //   "when": "terminalFocus"
-  // }
-
-  //   {
-  //   "key": "ctrl+shift+/",
-  //   "command": "workbench.action.terminal.sendSignal",
-  //   "args": {
-  //     "signal": "SIGTERM"
-  //   }
-  // }
-
-  //  "workbench.action.terminal.focusHover"
-
+  // workbench.action.terminal.toggleStickyScroll
   {
     "key": ",",
     "name": "+Terminal",
     "icon": "question",
     "type": "bindings",
     "bindings": [
-      {
-        "key": " ",
-        "name": "quick open with modes",
-        "icon": "terminal",
-        "type": "command",
-        "command": "workbench.action.quickOpenWithModes"
-      },
+      // , scroll
       {
         "key": ",",
-        "name": "switch terminal",
-        "icon": "terminal",
-        "type": "command",
-        "command": "workbench.action.quickOpenTerm"
+        "name": "+Scroll",
+        "icon": "move",
+        "type": "transient",
+        "bindings": [
+          {
+            "key": "j",
+            "name": "scroll down",
+            "icon": "chevron-down",
+            "type": "command",
+            "command": "workbench.action.terminal.scrollDown"
+          },
+          {
+            "key": "k",
+            "name": "scroll up",
+            "icon": "chevron-up",
+            "type": "command",
+            "command": "workbench.action.terminal.scrollUp"
+          },
+          {
+            "key": "d",
+            "name": "scroll down page",
+            "icon": "fold-down",
+            "type": "command",
+            "command": "workbench.action.terminal.scrollDownPage"
+          },
+          {
+            "key": "u",
+            "name": "scroll up page",
+            "icon": "fold-up",
+            "type": "command",
+            "command": "workbench.action.terminal.scrollUpPage"
+          },
+          {
+            "key": "n",
+            "name": "scroll next command",
+            "icon": "arrow-circle-down",
+            "type": "command",
+            "command": "workbench.action.terminal.scrollToNextCommand"
+          },
+          {
+            "key": "p",
+            "name": "scroll previous command",
+            "icon": "arrow-circle-up",
+            "type": "command",
+            "command": "workbench.action.terminal.scrollToPreviousCommand"
+          },
+          {
+            "key": "g",
+            "name": "scroll top",
+            "icon": "quickInputAlignmentTop",
+            "type": "command",
+            "command": "workbench.action.terminal.scrollToTop"
+          },
+          {
+            "key": "G",
+            "name": "scroll bottom",
+            "icon": "move",
+            "type": "command",
+            "command": "workbench.action.terminal.scrollToBottom"
+          }
+        ]
       },
+      // / session
       {
-        "key": "t",
-        "name": "Show terminal",
+        "key": "/",
+        "name": "+Session",
         "icon": "terminal",
-        "type": "command",
-        "command": "workbench.action.terminal.focus"
+        "type": "bindings",
+        "bindings": [
+          {
+            "key": "/",
+            "name": "switch terminal",
+            "icon": "terminal",
+            "type": "command",
+            // "command": "workbench.action.terminal.switchTerminal"
+            "command": "workbench.action.quickOpenTerm"
+          },
+          {
+            "key": "a",
+            "name": "attach terminal session",
+            "icon": "terminal",
+            "type": "command",
+            "command": "workbench.action.terminal.attachToSession"
+          },
+          {
+            "key": "d",
+            "name": "detach terminal session",
+            "icon": "terminal",
+            "type": "command",
+            "command": "workbench.action.terminal.detachSession"
+          }
+        ]
       },
+      // i input
       {
-        "key": "T",
-        "name": "Open new external terminal",
+        "key": "i",
+        "name": "+Input",
+        "icon": "quickInputAlignmentCenter",
+        "type": "bindings",
+        "bindings": [
+          {
+            "key": "i",
+            "name": "send sequence",
+            "icon": "terminal",
+            "type": "command",
+            "command": "workbench.action.terminal.sendSequence"
+          },
+          {
+            "key": " ",
+            "name": "print to terminal",
+            "icon": "terminal",
+            "type": "command",
+            "command": "workbench.action.terminal.writeDataToTerminal"
+          },
+          {
+            "key": "f",
+            "name": "quick fix",
+            "icon": "terminal",
+            "type": "command",
+            "command": "workbench.action.terminal.showQuickFixes"
+          }
+        ]
+      },
+      // g goto/commands
+      {
+        "key": "g",
+        "name": "+Goto/commands",
+        "icon": "go-to-file",
+        "type": "bindings",
+        "bindings": [
+          {
+            "key": "r",
+            "name": "goto recent directory",
+            "icon": "terminal",
+            "type": "command",
+            "command": "workbench.action.terminal.goToRecentDirectory"
+          }
+        ]
+      },
+      // d kill
+      {
+        "key": "d",
+        "name": "+Kill",
+        "icon": "x",
+        "type": "bindings",
+        "bindings": [
+          {
+            "key": "d",
+            "name": "kill current terminal",
+            "icon": "x",
+            "type": "commands",
+            "commands": [
+              "workbench.action.terminal.killViewOrEditor",
+              "workbench.action.focusActiveEditorGroup"
+            ]
+            // "command": "workbench.action.terminal.kill" this command can only close terminal in panel
+            // "command": "workbench.action.terminal.killEditor" this command is same as close current editor
+          },
+          {
+            "key": " ",
+            "name": "kill current terminal tab, may including multiple split terminals",
+            "icon": "x",
+            "type": "command",
+            "command": "workbench.action.terminal.killActiveTab"
+          },
+          {
+            "key": "a",
+            "name": "kill all terminals",
+            "icon": "x",
+            "type": "command",
+            "command": "workbench.action.terminal.killAll"
+          }
+        ]
+      },
+      // y yank/copy
+      {
+        "key": "y",
+        "name": "+Yank/Copy",
+        "icon": "x",
+        "type": "bindings",
+        "bindings": [
+          {
+            "key": "y",
+            "name": "copy last command and output",
+            "icon": "x",
+            "type": "command",
+            "command": "workbench.action.terminal.copyLastCommandAndLastCommandOutput"
+          },
+          {
+            "key": "c",
+            "name": "copy last command",
+            "icon": "x",
+            "type": "command",
+            "command": "workbench.action.terminal.copyLastCommand"
+          },
+          {
+            "key": "o",
+            "name": "copy last command and output",
+            "icon": "x",
+            "type": "command",
+            "command": "workbench.action.terminal.copyLastCommandOutput"
+          }
+        ]
+      },
+      // n open/new
+      {
+        "key": "n",
+        "name": "+Open/New",
+        "icon": "terminal",
+        "type": "bindings",
+        // terminal.toggleVisibility
+        "bindings": [
+          {
+            "key": "i",
+            "name": "open cwd in integrated terminal",
+            "icon": "terminal",
+            "type": "command",
+            "command": "workbench.action.terminal.newWithCwd",
+            "args": {
+              "cwd": "${fileDirname}"
+            }
+          },
+          {
+            "key": "x",
+            "name": "Open cwd in external terminal",
+            "icon": "terminal-cmd",
+            "type": "command",
+            "command": "openInTerminal"
+          },
+          {
+            "key": "s",
+            "name": "new integrated terminal(split)",
+            "icon": "split-horizontal",
+            "type": "command",
+            // "command": "workbench.action.terminal.split"
+            // "command": "workbench.action.terminal.splitActiveTab"
+            "command": "workbench.action.terminal.splitInActiveWorkspace"
+          },
+          {
+            "key": "a",
+            "name": "Open integrated terminal with profile picker",
+            "icon": "defaultProfile-icon",
+            "type": "command",
+            "command": "workbench.action.terminal.newWithProfile"
+          },
+          {
+            "key": "r",
+            "name": "Open workspace root in integrated terminal",
+            "icon": "terminal",
+            "type": "command",
+            // "command": "workbench.action.terminal.new"
+            "command": "workbench.action.terminal.newInActiveWorkspace"
+          },
+          {
+            "key": "R",
+            "name": "Open worksapce root in external terminal",
+            "icon": "terminal-cmd",
+            "type": "command",
+            "command": "workbench.action.terminal.openNativeConsole"
+          },
+          {
+            "key": "e",
+            "name": "create terminal in editor area",
+            "icon": "open-editors-view-icon",
+            "type": "command",
+            // workbench.action.createTerminalEditorSameGroup
+            "command": "workbench.action.createTerminalEditor"
+          },
+          {
+            "key": "E",
+            "name": "create terminal in editor area by side",
+            "icon": "chevron-right",
+            "type": "command",
+            "command": "workbench.action.createTerminalEditorSide"
+          },
+          {
+            "key": "w",
+            "name": "new integrated terminal window",
+            "icon": "share-window",
+            "type": "command",
+            "command": "workbench.action.terminal.newInNewWindow"
+          }
+        ]
+      },
+      // a customize
+      {
+        "key": "a",
+        "name": "+Customize",
+        "icon": "ai-customization-view-icon",
+        "type": "bindings",
+        "bindings": [
+          {
+            "key": "a",
+            "name": "select default profile",
+            "icon": "profiles-editor-edit-folder",
+            "type": "command",
+            "command": "workbench.action.terminal.selectDefaultShell"
+          },
+          {
+            "key": "c",
+            "name": "change color",
+            "icon": "x",
+            "type": "command",
+            "command": "workbench.action.terminal.changeColor"
+          },
+          {
+            "key": "i",
+            "name": "change icon",
+            "icon": "x",
+            "type": "command",
+            // "command": "workbench.action.terminal.changeIconActiveTab"
+            "command": "workbench.action.terminal.changeIcon"
+          },
+          {
+            "key": "n",
+            "name": "change name",
+            "icon": "x",
+            "type": "command",
+            // workbench.action.terminal.renameActiveTab
+            "command": "workbench.action.terminal.rename"
+          }
+        ]
+      },
+      // r run
+      {
+        "key": "r",
+        "name": "+Run",
+        "icon": "run-with-deps",
+        "type": "bindings",
+        "bindings": [
+          {
+            "key": "f",
+            "name": "run current file",
+            "icon": "run",
+            "type": "command",
+            "command": "workbench.action.terminal.runActiveFile"
+          },
+          {
+            "key": "s",
+            "name": "run selected text",
+            "icon": "refresh",
+            "type": "command",
+            "command": "workbench.action.terminal.runSelectedText"
+          },
+          {
+            "key": "r",
+            "name": "run recent commands",
+            "icon": "refresh",
+            "type": "command",
+            "command": "workbench.action.terminal.runRecentCommand"
+          }
+        ]
+      },
+      // m move
+      {
+        "key": "m",
+        "name": "+Move",
+        "icon": "terminal",
+        "type": "bindings",
+        "bindings": [
+          {
+            "key": "e",
+            "name": "move into editor",
+            "icon": "search-new-editor",
+            "type": "command",
+            "command": "workbench.action.terminal.moveToEditor"
+          },
+          {
+            "key": "p",
+            "name": "move into panel",
+            "icon": "empty-window",
+            "type": "command",
+            "command": "workbench.action.terminal.moveToTerminalPanel"
+          },
+          {
+            "key": "w",
+            "name": "move into window",
+            "icon": "empty-window",
+            "type": "command",
+            "command": "workbench.action.terminal.moveIntoNewWindow"
+          }
+        ]
+      },
+      // a accessibleView
+      {
+        "key": "a",
+        "name": "open terminal accessible view, for selection",
+        "icon": "workspace-trust-editor-label-icon",
+        "type": "command",
+        "command": "workbench.action.terminal.focusAccessibleBuffer"
+        // "command": "editor.action.accessibleView"
+      },
+      // v selection
+      {
+        "key": "v",
+        "name": "+Select",
+        "icon": "selection",
+        "type": "transient",
+        "bindings": [
+          {
+            "key": "a",
+            "name": "select all",
+            "icon": "selection",
+            "type": "command",
+            "command": "workbench.action.terminal.selectAll"
+          },
+          {
+            "key": "j",
+            "name": "select to next line",
+            "icon": "selection",
+            "type": "command",
+            "command": "workbench.action.terminal.selectToNextLine"
+          },
+          {
+            "key": "k",
+            "name": "select to previous line",
+            "icon": "selection",
+            "type": "command",
+            "command": "workbench.action.terminal.selectToPreviousLine"
+          },
+          {
+            "key": "n",
+            "name": "select to next command",
+            "icon": "selection",
+            "type": "command",
+            "command": "workbench.action.terminal.selectToNextCommand"
+          },
+          {
+            "key": "p",
+            "name": "select to previous command",
+            "icon": "selection",
+            "type": "command",
+            "command": "workbench.action.terminal.selectToPreviousCommand"
+          }
+        ]
+      },
+      // f focus
+      {
+        "key": "f",
+        "name": "+Show/focus",
+        "icon": "star-full",
+        "type": "transient",
+        // terminal.toggleVisibility
+        // "command": "terminal.focus"
+        "command": "workbench.action.terminal.focus",
+        "bindings": [
+          {
+            "key": "h",
+            "name": "focus previous pane(split terminal)",
+            "icon": "keyboard",
+            "type": "command",
+            "command": "workbench.action.terminal.focusPreviousPane"
+          },
+          {
+            "key": "k",
+            "name": "focus previous tab",
+            "icon": "keyboard",
+            "type": "command",
+            "command": "workbench.action.terminal.focusPrevious"
+          },
+          {
+            "key": "l",
+            "name": "focus next pane(split terminal)",
+            "icon": "keyboard",
+            "type": "command",
+            "command": "workbench.action.terminal.focusNextPane"
+          },
+          {
+            "key": "j",
+            "name": "focus next terminal tab",
+            "icon": "keyboard",
+            "type": "command",
+            "command": "workbench.action.terminal.focusNext"
+          },
+          {
+            "key": "t",
+            "name": "focus tab",
+            "icon": "x",
+            "type": "commands",
+            "commands": [
+              "workbench.action.terminal.focusTabs",
+              "quickInput.hide"
+            ]
+          }
+        ]
+      },
+      // l link
+      {
+        "key": "l",
+        "name": "+Link",
+        "icon": "open-in-window",
+        "type": "bindings",
+        "bindings": [
+          {
+            "key": "l",
+            "name": "open url links",
+            "icon": "workspace-trust-editor-label-icon",
+            "type": "command",
+            "command": "workbench.action.terminal.openUrlLink"
+          },
+          {
+            "key": "f",
+            "name": "open file links",
+            "icon": "workspace-trust-editor-label-icon",
+            "type": "command",
+            "command": "workbench.action.terminal.openFileLink"
+          },
+          {
+            "key": "o",
+            "name": "open detected links",
+            "icon": "link",
+            "type": "command",
+            "command": "workbench.action.terminal.openDetectedLink"
+          }
+        ]
+      },
+      // x clear
+      {
+        "key": "x",
+        "name": "+Clear",
+        "icon": "x",
+        "type": "bindings",
+        "bindings": [
+          {
+            "key": "x",
+            "name": "clear terminal previous session",
+            "icon": "x",
+            "type": "command",
+            "command": "workbench.action.terminal.clear"
+          },
+          {
+            "key": "x",
+            "name": "clear terminal previous session",
+            "icon": "x",
+            "type": "command",
+            "command": "workbench.action.terminal.clearPreviousSessionHistory"
+          }
+        ]
+      },
+      // J join/unsplit
+      {
+        "key": "J",
+        "name": "join",
+        "icon": "merge",
+        "type": "bindings",
+        "bindings": [
+          {
+            "key": "J",
+            "name": "join",
+            "icon": "merge",
+            "type": "command",
+            // workbench.action.terminal.joinActiveTab
+            "command": "workbench.action.terminal.join"
+          },
+          {
+            "key": "u",
+            "name": "unsplit",
+            "icon": "activate-breakpoints",
+            "type": "command",
+            "command": "workbench.action.terminal.unsplit"
+          }
+        ]
+      },
+      // V resize
+      {
+        "key": "V",
+        "name": "+Resize",
+        "icon": "keyboard",
+        "type": "transient",
+        "bindings": [
+          {
+            "key": "j",
+            "name": "resize terminal panel down",
+            "icon": "triangle-down",
+            "type": "command",
+            "command": "workbench.action.terminal.resizePaneDown"
+          },
+          {
+            "key": "h",
+            "name": "resize terminal panel left",
+            "icon": "triangle-left",
+            "type": "command",
+            "command": "workbench.action.terminal.resizePaneLeft"
+          },
+          {
+            "key": "l",
+            "name": "resize terminal panel right",
+            "icon": "triangle-right",
+            "type": "command",
+            "command": "workbench.action.terminal.resizePaneRight"
+          },
+          {
+            "key": "k",
+            "name": "resize terminal panel up",
+            "icon": "triangle-up",
+            "type": "command",
+            "command": "workbench.action.terminal.resizePaneUp"
+          }
+        ]
+      },
+      // size
+      {
+        "key": "s",
+        "name": "+Size",
         "icon": "chevron-right",
+        "type": "bindings",
+        "bindings": [
+          {
+            "key": "f",
+            "name": "set fixed size",
+            "icon": "chevron-right",
+            "type": "command",
+            "command": "workbench.action.terminal.setDimensions"
+          },
+          {
+            "key": "s",
+            "name": "set content width",
+            "icon": "chevron-right",
+            "type": "command",
+            "command": "workbench.action.terminal.sizeToContentWidth"
+          }
+        ]
+      },
+      // R reload/reset
+      {
+        "key": "R",
+        "name": "+Reload/Reset",
+        "icon": "refresh",
+        "type": "bindings",
+        "bindings": [
+          {
+            "key": "r",
+            "name": "relaunch terminal",
+            "icon": "refresh",
+            "type": "command",
+            "command": "workbench.action.terminal.relaunch"
+          },
+          {
+            "key": "R",
+            "name": "restart pty host",
+            "icon": "refresh",
+            "type": "command",
+            "command": "workbench.action.terminal.restartPtyHost"
+          }
+          // terminal.removeView
+          // terminal.resetViewContainerLocation
+          // terminal.resetViewLocation
+        ]
+      },
+      // * misc
+      {
+        "key": "*",
+        "name": "+Misc",
+        "icon": "chevron-right",
+        "type": "bindings",
+        "bindings": [
+          // suggestion
+          {
+            "key": "S",
+            "name": "+Suggestion",
+            "icon": "x",
+            "type": "bindings",
+            "bindings": [
+              {
+                "key": "s",
+                "name": "show suggestion on type, show intelliSense or suggestion widget",
+                "icon": "x",
+                "type": "command",
+                "command": "workbench.action.terminal.showSuggestOnType"
+              },
+              {
+                "key": "S",
+                "name": "suppress suggestion on type, don't show intelliSense or suggestion widget",
+                "icon": "x",
+                "type": "command",
+                "command": "workbench.action.terminal.doNotShowSuggestOnType"
+              },
+              {
+                "key": "x",
+                "name": "clean suggestion cache, for better autocompletion",
+                "icon": "chevron-right",
+                "type": "remove",
+                "command": "terminal.integrated.suggest.clearCachedGlobals"
+              },
+              {
+                "key": "*",
+                "name": "show suggestion on type, show intelliSense or suggestion widget",
+                "icon": "x",
+                "type": "command",
+                "command": "workbench.action.terminal.suggestLearnMore"
+              }
+            ]
+          },
+          {
+            "key": "e",
+            "name": "show environment contribution",
+            "icon": "chevron-right",
+            "type": "command",
+            "command": "workbench.action.terminal.showEnvironmentContributions"
+          },
+          {
+            "key": "t",
+            "name": "show texture atlas",
+            "icon": "map",
+            "type": "command",
+            "command": "workbench.action.terminal.showTextureAtlas"
+          }
+          /* workbench.action.terminal.changeSelectionModeAlways
+            workbench.action.terminal.changeSelectionModeNever
+            workbench.action.terminal.changeSelectionModePartial
+
+            these commands are related to "terminal.integrated.suggest.selectionMode": "partial" */
+        ]
+      },
+      // ? search keybindings
+      {
+        "key": "?",
+        "name": "Search keybindings",
+        "icon": "keyboard",
         "type": "command",
-        "command": "workbench.action.terminal.openNativeConsole"
+        "command": "whichkey.searchBindings"
       }
     ]
   }
 ]
+
+// xterm.js escape sequence: https://github.com/xtermjs/xterm.js/blob/master/src/common/data/EscapeSequences.ts
+// {
+//   "key": "ctrl+shift+t",
+//   "command": "workbench.action.terminal.newWithProfile",
+//   "args": {
+//     "profileName": "zsh",
+//     "location": "editor"
+//   }
+// }
+// send sequence also support variable substitution
+// {
+//   "key": "ctrl+alt+r",
+//   "command": "workbench.action.terminal.sendSequence",
+//   "args": { "text": "\u0012"/*^R*/ },
+//   "when": "terminalFocus"
+// }
+
+//   {
+//   "key": "ctrl+shift+/",
+//   "command": "workbench.action.terminal.sendSignal",
+//   "args": {
+//     "signal": "SIGTERM"
+//   }
+// }

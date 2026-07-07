@@ -1,0 +1,73 @@
+[
+  /*   to allow vscode vim work in accessible view, turn this setting to false
+  "accessibility.accessibleView.closeOnKeyPress": false, */
+
+  /*   cannot override the default behavior of escape in accessible view, which is used to close this view
+  please use ctrl-[ instead
+    {
+    "key": "escape",
+    "command": "vim.remap",
+    "args": {
+      "after": ["ctrl+["]
+    },
+    "when": "(accessibilityHelpIsShown || accessibleViewIsShownViewIsFocused) && vim.active && vim.mode != 'Normal'"
+  }, */
+
+  // can use accessibleView in copilot chat, terminal, hover, problems, notification, debug console
+  // accessibleViewCurrentProviderId
+  // - terminal
+  // - inlineCompletions
+  // - inlineChat
+  // - panelChat
+  // - quickChat
+  // - comments
+  {
+    "key": "alt+o",
+    "command": "editor.action.accessibleView",
+    "when": "!(accessibilityHelpIsShown || accessibleViewIsShown)"
+  },
+  {
+    // toggle accessibility(screen reader) mode
+    "key": "ctrl+alt+o",
+    "command": "editor.action.toggleScreenReaderAccessibilityMode"
+  },
+  {
+    "key": "ctrl+j",
+    "command": "editor.action.accessibleViewNext",
+    "when": "accessibilityHelpIsShown || accessibleViewIsShownViewIsFocused"
+  },
+  {
+    "key": "ctrl+k",
+    "command": "editor.action.accessibleViewPrevious",
+    "when": "accessibleaccessibilityHelpIsShown || accessibleViewIsShownIsFocused"
+  },
+  {
+    "key": "ctrl+s",
+    "command": "editor.action.accessibleViewGoToSymbol",
+    "when": "accessibleViewGoToSymbolSupported && (accessibilityHelpIsShown || accessibleViewIsShown)"
+  },
+  {
+    "key": "ctrl+j",
+    "command": "editor.action.accessibleViewNextCodeBlock",
+    "when": "accessibleViewContainsCodeBlocks && accessibleViewCurrentProviderId == 'inlineChat' || accessibleViewContainsCodeBlocks && accessibleViewCurrentProviderId == 'panelChat' || accessibleViewContainsCodeBlocks && accessibleViewCurrentProviderId == 'quickChat'"
+  },
+  {
+    "key": "ctrl+k",
+    "command": "editor.action.accessibleViewPreviousCodeBlock",
+    "when": "accessibleViewContainsCodeBlocks && accessibleViewCurrentProviderId == 'inlineChat' || accessibleViewContainsCodeBlocks && accessibleViewCurrentProviderId == 'panelChat' || accessibleViewContainsCodeBlocks && accessibleViewCurrentProviderId == 'quickChat'"
+  },
+  // terminal accessible buffer
+  {
+    "key": "ctrl+j",
+    "command": "workbench.action.terminal.accessibleBufferGoToNextCommand",
+    "when": "accessibleViewIsFocused && accessibleViewCurrentProviderId == 'terminal'"
+  },
+  {
+    "key": "ctrl+k",
+    "command": "workbench.action.terminal.accessibleBufferGoToPreviousCommand",
+    "when": "accessibleViewIsFocused && accessibleViewCurrentProviderId == 'terminal'"
+  }
+
+  // workbench.action.terminal.scrollToBottomAccessibleView
+  // workbench.action.terminal.scrollToTopAccessibleView
+]

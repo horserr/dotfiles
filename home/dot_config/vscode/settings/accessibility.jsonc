@@ -1,0 +1,40 @@
+{
+  "$schema": "vscode://schemas/settings/user",
+  "accessibility.accessibleView.closeOnKeyPress": false,
+  "accessibility.chat.showCheckmarks": true,
+  "accessibility.dimUnfocused.enabled": true,
+  "accessibility.dimUnfocused.opacity": 0.9,
+  "accessibility.hideAccessibleView": false,
+  "accessibility.openChatEditedFiles": false,
+  "accessibility.replEditor.autoFocusReplExecution": "input",
+  "accessibility.signalOptions.debouncePositionChanges": true,
+  "accessibility.signalOptions.volume": 50,
+  "accessibility.signals.lineHasBreakpoint": {
+    "announcement": "auto",
+    "sound": "on"
+  },
+  "accessibility.signals.lineHasError": {
+    "announcement": "auto",
+    "sound": "on"
+  },
+  "accessibility.signals.lineHasWarning": {
+    "announcement": "auto",
+    "sound": "auto"
+  },
+  "accessibility.signals.terminalBell": {
+    "announcement": "auto",
+    "sound": "on"
+  },
+  "accessibility.signals.terminalQuickFix": {
+    "announcement": "auto",
+    "sound": "on"
+  },
+  "accessibility.underlineLinks": true,
+  "accessibility.windowTitleOptimized": true,
+  "editor.accessibilityPageSize": 500,
+  "editor.accessibilitySupport": "auto",
+  // use help: list signal sound or signals.sounds.help
+  "editor.allowVariableFontsInAccessibilityMode": true,
+  "terminal.integrated.accessibleViewFocusOnCommandExecution": false,
+  "terminal.integrated.accessibleViewPreserveCursorPosition": true
+}

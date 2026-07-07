@@ -1,0 +1,51 @@
+[
+  // ctrl+shift+j toggle terminal
+  {
+    "key": "ctrl+shift+j",
+    "command": "workbench.action.terminal.toggleTerminal"
+  },
+  // terminal native vspacecode
+  {
+    "key": "shift+space",
+    "command": "runCommands",
+    "args": {
+      "commands": [
+        "vspacecode.space",
+        { "command": "whichkey.triggerKey", "args": "," }
+      ]
+    },
+    "when": "terminalFocus"
+  },
+  // use enter to copy selection
+  {
+    "key": "enter",
+    // workbench.action.terminal.copySelection
+    // workbench.action.terminal.copySelectionAsHtml
+    "command": "workbench.action.terminal.copyAndClearSelection",
+    "when": "terminalTextSelectedInFocused || terminalFocus && terminalTextSelected"
+  },
+  // use ctrl+enter to paste
+  {
+    "key": "ctrl+enter",
+    "command": "workbench.action.terminal.paste",
+    "when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported"
+  },
+  {
+    "key": "ctrl+enter",
+    "command": "workbench.action.terminal.pastePwsh",
+    "when": "terminalFocus && !accessibilityModeEnabled && terminalShellType == 'pwsh'"
+  }
+]
+
+/* // terminal picker
+  // quick list keybinings already cover this
+   {
+    "key": "ctrl+j",
+    "command": "workbench.action.quickOpenNavigateNextInTerminalPicker",
+    "when": "inTerminalPicker"
+  },
+  {
+    "key": "ctrl+k",
+    "command": "workbench.action.quickOpenNavigatePreviousInTerminalPicker",
+    "when": "inTerminalPicker"
+  }, */
