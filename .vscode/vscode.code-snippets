@@ -1,0 +1,22 @@
+{
+  "setting schema filler": {
+    "prefix": "wrap with setting schema",
+    "body": [
+      "{",
+      "  \"\\$schema\": \"vscode://schemas/settings/user\",",
+      "$TM_SELECTED_TEXT",
+      "}"
+    ],
+    "description": "fill file with setting schema",
+    "include": "**/vscode/settings/**/*.jsonc",
+    "isFileTemplate": true
+  },
+  "Extract Command ID from Clipboard": {
+    "prefix": "getcmd",
+    "body": [
+      "${CLIPBOARD/(?:^[\\s\\S]*?\"command\"\\s*:\\s*\"([^\"]+)\"[\\s\\S]*$)|([\\s\\S]+)/$1$2/}"
+    ],
+    "include": "**/vscode/**/*.jsonc",
+    "description": "Extracts the command ID from a copied VS Code keybinding JSON block. If no match is found, output all of them, and only match the first one"
+  }
+}
