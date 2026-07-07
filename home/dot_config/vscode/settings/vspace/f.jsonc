@@ -143,6 +143,20 @@
             "command": "workbench.action.closeActiveEditor"
           },
           {
+            "key": "h",
+            "name": "Close left editors",
+            "icon": "close-all",
+            "type": "command",
+            "command": "workbench.action.closeEditorsToTheLeft"
+          },
+          {
+            "key": "l",
+            "name": "Close right editors",
+            "icon": "close-all",
+            "type": "command",
+            "command": "workbench.action.closeEditorsToTheRight"
+          },
+          {
             "key": "p",
             "name": "Close pined editors",
             "icon": "x",

@@ -29,6 +29,7 @@
   "editor.fontLigatures": true,
   // Editor settings
   "editor.fontSize": 17,
+  "editor.fontVariations": true,
   "editor.formatOnPaste": true,
   // "prettier.requireConfig": true,
   "editor.formatOnType": true,

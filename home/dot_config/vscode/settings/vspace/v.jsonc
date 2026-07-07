@@ -16,12 +16,88 @@
       // workbench.action.restartExtensionHost
       // workbench.action.restoreAuxiliaryBar
 
+      // editor group layout
       {
         "key": ",",
-        "name": "layout customization",
-        "icon": "chevron-up",
-        "type": "command",
-        "command": "workbench.action.customizeLayout"
+        "name": "+Layout",
+        "icon": "layout",
+        "type": "bindings",
+        "bindings": [
+          {
+            "key": "v",
+            "name": "view editor layout",
+            "icon": "layout",
+            "type": "command",
+            "command": "layouts_list.focus"
+          },
+          {
+            "key": "s",
+            "name": "layout save",
+            "icon": "layout",
+            "type": "command",
+            "command": "layouts_list.focus"
+          },
+          {
+            "key": "u",
+            "name": "update editor layout",
+            "icon": "layout",
+            "type": "command",
+            "command": "editorLayout.update"
+          },
+          {
+            "key": "o",
+            "name": "open editor layout",
+            "icon": "layout",
+            "type": "command",
+            "command": "editorLayout.open"
+          },
+          {
+            "key": "u",
+            "name": "update editor layout",
+            "icon": "layout",
+            "type": "command",
+            "command": "editorLayout.update"
+          },
+          {
+            "key": "d",
+            "name": "delete editor layout",
+            "icon": "layout",
+            "type": "command",
+            "command": "editorLayout.remove"
+          },
+          {
+            "key": "'",
+            "name": "Toggle editor group layout",
+            "icon": "tools",
+            "type": "conditional",
+            "bindings": [
+              {
+                "key": "when:sideBySideEditorActive",
+                "name": "the other side of split editor",
+                "icon": "arrow-both",
+                "type": "commands",
+                "commands": [
+                  "workbench.action.toggleSplitEditorInGroupLayout",
+                  "workbench.action.focusActiveEditorGroup"
+                ]
+              },
+              {
+                "key": "",
+                "name": "Last file in editor group",
+                "icon": "arrow-both",
+                "type": "command",
+                "command": "workbench.action.toggleEditorGroupLayout"
+              }
+            ]
+          },
+          {
+            "key": ",",
+            "name": "layout customization",
+            "icon": "chevron-up",
+            "type": "command",
+            "command": "workbench.action.customizeLayout"
+          }
+        ]
       },
       {
         "key": "k",
@@ -113,43 +189,17 @@
           }
         ]
       },
-      // editor in group layout
-      {
-        "key": "'",
-        "name": "Toggle editor group layout",
-        "icon": "tools",
-        "type": "conditional",
-        "bindings": [
-          {
-            "key": "when:sideBySideEditorActive",
-            "name": "the other side of split editor",
-            "icon": "arrow-both",
-            "type": "commands",
-            "commands": [
-              "workbench.action.toggleSplitEditorInGroupLayout",
-              "workbench.action.focusActiveEditorGroup"
-            ]
-          },
-          {
-            "key": "",
-            "name": "Last file in editor group",
-            "icon": "arrow-both",
-            "type": "command",
-            "command": "workbench.action.toggleEditorGroupLayout"
-          }
-        ]
-      },
       // all views & view containers
       {
         "key": " ",
-        "name": "Show notification",
+        "name": "+Views",
         "icon": "comment",
         "type": "command",
         "bindings": [
           {
             "key": " ",
             "name": "view",
-            "icon": "unfold",
+            "icon": "preview",
             "type": "command",
             "command": "workbench.action.openView"
           },
@@ -219,23 +269,13 @@
           }
         ]
       },
-      // file/editor view
+      // file/editor view components
       {
         "key": "e",
-        "name": "file/editor interior view",
+        "name": "+file/editor interior view components",
         "icon": "list-flat",
         "type": "bindings",
         "bindings": [
-          {
-            "key": ",",
-            "name": "Toggle, save vertical space",
-            "icon": "tools",
-            "type": "commands",
-            "commands": [
-              "editor.action.toggleStickyScroll",
-              "workbench.action.hideEditorTabs"
-            ]
-          },
           {
             "key": ",",
             "name": "Toggle markdown preview",

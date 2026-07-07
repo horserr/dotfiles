@@ -29,7 +29,14 @@
 
   // default behavior is that terminal intercepts all keybindins. Commands in this list surpress this behavior
   // link: https://code.visualstudio.com/docs/terminal/advanced#_keyboard-shortcuts-and-the-shell
-  "terminal.integrated.commandsToSkipShell": ["vspacecode.space"],
+  "terminal.integrated.commandsToSkipShell": [
+    "vspacecode.space",
+    "whichkey.show",
+    "editor.action.accessibleView",
+    "workbench.action.terminal.fontZoomIn",
+    "workbench.action.terminal.fontZoomOut",
+    "workbench.action.terminal.fontZoomReset"
+  ],
   "terminal.integrated.sendKeybindingsToShell": false,
   "terminal.integrated.allowChords": false,
   "terminal.integrated.allowMnemonics": false,
@@ -152,6 +159,7 @@
   //   "ls"
   // ],
   // "terminal.integrated.stickyScroll.maxLineCount": 2,
+  "terminal.integrated.suggest.selectionMode": "partial",
   "terminal.integrated.suggest.cdPath": "relative",
   "terminal.integrated.suggest.inlineSuggestion": "alwaysOnTopExceptExactMatch",
   // ?

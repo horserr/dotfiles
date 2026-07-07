@@ -14,6 +14,21 @@
   // selectLastSuggestion
   // selectNextPageSuggestion
   // selectPrevPageSuggestion
+
+  // terminal suggestion
+  // workbench.action.terminal.triggerSuggest
+  // workbench.action.terminal.selectNextPageSuggestion
+  // workbench.action.terminal.selectNextSuggestion
+  // workbench.action.terminal.selectPrevPageSuggestion
+  // workbench.action.terminal.selectPrevSuggestion
+  // terminal suggestions
+  // workbench.action.terminal.acceptSelectedSuggestion
+  // workbench.action.terminal.acceptSelectedSuggestionEnter
+  // workbench.action.terminal.suggestToggleDetails
+  // workbench.action.terminal.suggestToggleDetailsFocus
+  // workbench.action.terminal.hideSuggestWidget
+  // workbench.action.terminal.hideSuggestWidgetAndNavigateHistory
+  // workbench.action.terminal.resetSuggestWidgetSize
   {
     "key": "ctrl+j",
     "command": "selectNextSuggestion",

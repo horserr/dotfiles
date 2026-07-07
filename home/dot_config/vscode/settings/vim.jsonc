@@ -95,6 +95,7 @@
   "vim.smartcase": true,
   "vim.sneak": true,
   "vim.sneakUseIgnorecaseAndSmartcase": true,
+  // move command to start of line
   "vim.startofline": true,
   "vim.surround": true,
   "vim.targets.bracketObjects.enable": true,

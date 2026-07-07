@@ -68,18 +68,18 @@
         "command": "workbench.action.openRequestFeatureUrl"
       },
       {
+        "key": "a",
+        "name": "show accessiblility help",
+        "icon": "keyboard",
+        "type": "command",
+        "command": "editor.action.accessibilityHelp"
+      },
+      {
         "key": "k",
         "name": "Open key bindings editor",
         "icon": "keyboard",
         "type": "command",
         "command": "workbench.action.openGlobalKeybindings"
-      },
-      {
-        "key": "s",
-        "name": "Open default system settings",
-        "icon": "keyboard",
-        "type": "command",
-        "command": "workbench.action.openRawDefaultSettings"
       },
       {
         "key": "u",
@@ -112,7 +112,7 @@
       // ui settings
       {
         "key": ",",
-        "name": "+Settings alternative interface",
+        "name": "+Settings alternative interface(default)",
         "icon": "settings",
         "type": "bindings",
         "bindings": [
@@ -122,6 +122,13 @@
             "icon": "settings",
             "type": "command",
             "command": "workbench.action.openGlobalSettings"
+          },
+          {
+            "key": "s",
+            "name": "Open default system settings",
+            "icon": "keyboard",
+            "type": "command",
+            "command": "workbench.action.openRawDefaultSettings"
           },
           {
             "key": "k",
@@ -145,6 +152,13 @@
         "icon": "book",
         "type": "bindings",
         "bindings": [
+          {
+            "key": "a",
+            "name": "Open accessible help document",
+            "icon": "book",
+            "type": "command",
+            "command": "editor.action.accessibilityHelp"
+          },
           {
             "key": "v",
             "name": "Open VSCode variables for debug and tasks Documentation",

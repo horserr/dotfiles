@@ -52,6 +52,7 @@
   "workbench.editor.splitSizing": "auto",
   // don't show close button
   "workbench.editor.tabActionCloseVisibility": false,
+  "workbench.editor.tabSizing": "shrink",
   "workbench.editor.useModal": "off",
   "workbench.editorAssociations": {
     "*.copilotmd": "vscode.markdown.preview.editor"

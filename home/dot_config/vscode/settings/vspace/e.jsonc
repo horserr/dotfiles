@@ -108,7 +108,7 @@
             "command": "workbench.action.closeEditorsInGroup"
           },
           {
-            "key": "o",
+            "key": " ",
             "name": "Close other editor groups",
             "icon": "close-all",
             "type": "command",
@@ -123,17 +123,43 @@
           },
           {
             "key": "h",
-            "name": "Close left editors",
+            "name": "close left editor groups",
             "icon": "close-all",
-            "type": "command",
-            "command": "workbench.action.closeEditorsToTheLeft"
+            "type": "commands",
+            "commands": [
+              "workbench.action.focusLeftGroup",
+              "workbench.action.closeEditorsInGroup"
+            ]
+          },
+          {
+            "key": "j",
+            "name": "close below editor groups",
+            "icon": "close-all",
+            "type": "commands",
+            "commands": [
+              "workbench.action.focusBelowGroup",
+              "workbench.action.closeEditorsInGroup"
+            ]
+          },
+          {
+            "key": "k",
+            "name": "close above editor groups",
+            "icon": "close-all",
+            "type": "commands",
+            "commands": [
+              "workbench.action.focusAboveGroup",
+              "workbench.action.closeEditorsInGroup"
+            ]
           },
           {
             "key": "l",
-            "name": "Close right editors",
+            "name": "Close right editor group",
             "icon": "close-all",
-            "type": "command",
-            "command": "workbench.action.closeEditorsToTheRight"
+            "type": "commands",
+            "commands": [
+              "workbench.action.focusRightGroup",
+              "workbench.action.closeEditorsInGroup"
+            ]
           }
         ]
       },

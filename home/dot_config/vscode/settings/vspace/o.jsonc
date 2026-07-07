@@ -60,11 +60,18 @@
         "command": "workbench.action.openLogsFolder"
       },
       {
-        "key": "F",
+        "key": "x",
         "name": "open extension log folder",
         "icon": "multiple-windows",
         "type": "command",
         "command": "workbench.action.openExtensionLogsFolder"
+      },
+      {
+        "key": "t",
+        "name": "open terminal logs",
+        "icon": "multiple-windows",
+        "type": "command",
+        "command": "workbench.action.output.show.terminal"
       }
       // workbench.action.setDefaultLogLevel
       // workbench.action.setLogLevel

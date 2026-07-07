@@ -1,18 +1,16 @@
 [
-  // workbench.action.replaceInFiles
-
-  // editor.actions.findWithArgs
+  // UNSED
+  // addCursorsAtSearchResults
+  // editor.action.setSelectionAnchor
   // editor.action.selectAll
   // editor.action.selectAllMatches
   // editor.action.selectEditor
   // editor.action.selectFromAnchorToCursor
   // editor.action.selectHighlights
-  // editor.action.selectNextStickyScrollLine
-  // editor.action.selectPreviousStickyScrollLine
   // editor.action.selectToBracket
-  // editor.action.setSelectionAnchor
+  // editor.actions.findWithArgs
 
-  // select all occurrence of find match editor.action.selectHighlights
+  // workbench.action.replaceInFiles
   {
     "key": "s",
     "name": "+Search",
@@ -21,17 +19,25 @@
     "bindings": [
       {
         "key": "s",
+        "name": "find in current file, open find widget",
+        "icon": "terminal",
+        "type": "command",
+        // actions.findWithSelection
+        "command": "actions.find"
+      },
+      {
+        "key": " ",
         "name": "quick open with modes",
         "icon": "terminal",
         "type": "command",
         "command": "workbench.action.quickTextSearch"
       },
       {
-        "key": "o",
-        "name": "Search online with selection",
-        "icon": "clear-all",
+        "key": "a",
+        "name": "select all hightligt, select all occurrence of find match",
+        "icon": "collection-small",
         "type": "command",
-        "command": "Search For Selected Text"
+        "command": "editor.action.selectHighlights"
       },
       {
         "key": "e",
@@ -44,34 +50,6 @@
           "workbench.action.search.toggleQueryDetails"
         ]
       },
-      // {
-      //   "key": "c",
-      //   "name": "Clear highlight",
-      //   "icon": "clear-all",
-      //   "type": "command",
-      //   "command": "vim.remap",
-      //   "args": {
-      //     "commands": [
-      //       {
-      //         "command": ":noh"
-      //       }
-      //     ]
-      //   }
-      // },
-      {
-        "key": "j",
-        "name": "Jump to symbol in buffer",
-        "icon": "symbol-class",
-        "type": "command",
-        "command": "workbench.action.gotoSymbol"
-      },
-      {
-        "key": "r",
-        "name": "Search all references",
-        "icon": "references",
-        "type": "command",
-        "command": "editor.action.referenceSearch.trigger"
-      },
       {
         "key": "s",
         "name": "Fuzzy search in current buffer",
@@ -80,15 +58,8 @@
         "command": "fuzzySearch.activeTextEditorWithCurrentSelection"
       },
       {
-        "key": "J",
-        "name": "Jump to symbol in project",
-        "icon": "symbol-class",
-        "type": "command",
-        "command": "workbench.action.showAllSymbols"
-      },
-      {
-        "key": "P",
-        "name": "Search in project with selection",
+        "key": "v",
+        "name": "open search view",
         "icon": "selection",
         "type": "commands",
         "commands": [

@@ -1,4 +1,8 @@
 [
+  // editor.action.accessibleDiffViewer.next
+  // editor.action.accessibleDiffViewer.prev
+  // editor.action.diffReview.next
+  // editor.action.diffReview.prev
   {
     "key": "ctrl+h",
     "command": "workbench.action.compareEditor.focusSecondarySide",

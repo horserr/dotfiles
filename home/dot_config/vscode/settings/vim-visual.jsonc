@@ -30,11 +30,16 @@
     {
       // multi-cursor move selection
       "before": ["m"],
+      // editor.action.nextMatchFindAction: this command needs to open find widget
+      // editor.action.nextSelectionMatchFindAction: this command don't need to select word or open find widget
+      // this command is suited for multi-cursor mode
       "commands": ["editor.action.moveSelectionToNextFindMatch"]
     },
     {
       // multi-cursor move selection
       "before": ["M"],
+      // editor.action.previousMatchFindAction
+      // editor.action.previousSelectionMatchFindAction
       "commands": ["editor.action.moveSelectionToPreviousFindMatch"]
     },
     {
@@ -46,17 +51,6 @@
       // multi-cursor move focus
       "before": ["."],
       "commands": ["editor.action.focusPreviousCursor"]
-    },
-    {
-      // multi-cursor add all selections
-      "before": ["g", "B"],
-      "commands": ["editor.action.selectHighlights"]
-    },
-    {
-      // find
-      // same with normal mode
-      "before": ["g", "f"],
-      "commands": ["actions.findWithSelection"]
     },
     {
       // same with normal mode
@@ -72,9 +66,15 @@
       "commands": ["editor.gotoPreviousFold"]
     },
     {
+      // vspacecode -> line/selection
       "before": ["u"],
-      "commands": [
+      /*       "commands": [
         { "command": "workbench.action.quickOpen", "args": "> Transform " }
+      ] */
+      "commands": [
+        "vspacecode.space",
+        { "command": "whichkey.triggerKey", "args": "x" },
+        { "command": "whichkey.triggerKey", "args": "t" }
       ]
     },
     {
@@ -186,36 +186,35 @@
       "commands": ["markdown.extension.checkTaskList"]
     },
     {
-      "before": ["<leader>", "f"],
-      "commands": ["actions.find"]
-    },
-    {
       // shortcuts for easymotion
       // jump to any char
       "before": ["f"],
       "after": ["<leader>", "<leader>", "s"]
     },
     {
+      "before": ["g", "'"],
+      "after": ["<leader>", "<leader>", "<leader>", "b", "d", "j", "k"]
+    },
+    {
       "before": ["J"],
       "commands": ["editor.action.moveLinesDownAction"]
     },
-	  {
+    {
       "before": ["K"],
       "commands": ["editor.action.moveLinesUpAction"]
-    }
-    ,{
+    },
+    {
+      // vspacecode -> line/selection
+      "before": ["L"],
+      "commands": [
+        "vspacecode.space",
+        { "command": "whichkey.triggerKey", "args": "x" },
+        { "command": "whichkey.triggerKey", "args": "l" }
+      ]
+    },
+    {
       "before": ["<space>"],
       "commands": ["vspacecode.space"]
     }
-    // {
-    //   "before": [","],
-    //   "commands": [
-    //     "vspacecode.space",
-    //     {
-    //       "args": "m",
-    //       "command": "whichkey.triggerKey"
-    //     }
-    //   ]
-    // }
   ]
 }

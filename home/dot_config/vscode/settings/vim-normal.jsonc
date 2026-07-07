@@ -16,6 +16,12 @@
   start of line <leader><leader><leader> bdjk */
   "vim.normalModeKeyBindingsNonRecursive": [
     {
+      // discard content to be pasted
+      // use before x, d, c
+      "before": ["?"],
+      "after": ["\"", "_"]
+    },
+    {
       // clipboard yank
       "before": ["g", "y"],
       "commands": ["editor.action.clipboardCopyAction"]
@@ -155,7 +161,7 @@
     {
       // shortcuts for easymotion
       // jump to start of line
-      "before": ["K"],
+      "before": ["g", "'"],
       "after": ["<leader>", "<leader>", "<leader>", "b", "d", "j", "k"]
     },
     /*     {
@@ -212,26 +218,8 @@
       "commands": ["editor.action.triggerParameterHints"]
     },
     {
-      "before": ["<leader>", "e"],
-      "commands": ["editor.action.rename"]
-    },
-    {
-      "before": ["<leader>", "E"],
-      "commands": ["editor.action.refactor"]
-    },
-    {
       "before": ["<space>"],
       "commands": ["vspacecode.space"]
-    },
-    {
-      "before": [","],
-      "commands": [
-        "vspacecode.space",
-        {
-          "command": "whichkey.triggerKey",
-          "args": "m"
-        }
-      ]
     }
   ]
 }

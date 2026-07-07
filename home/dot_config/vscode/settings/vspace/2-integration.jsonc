@@ -27,6 +27,13 @@
         "icon": "search",
         "type": "command",
         "command": "yazi-vscode.toggle"
+      },
+      {
+        "key": " ",
+        "name": "quick open with modes",
+        "icon": "terminal",
+        "type": "command",
+        "command": "workbench.action.quickOpenWithModes"
       }
     ]
   }

@@ -22,6 +22,8 @@
 
       // for testing local vscode client and remote vscode server
       // workbench.action.pauseSocketWriting
+      // workbench.action.generateColorTheme
+      // developer.showCurrentFileAsReleaseNotes
 
       {
         "key": ",",
@@ -155,7 +157,7 @@
             "command": "workbench.action.inspectKeyMappingsJSON"
           },
           {
-            "key": "k",
+            "key": "t",
             "name": "toggle keybindings logging for troubleshooting",
             "icon": "keyboard",
             "type": "command",

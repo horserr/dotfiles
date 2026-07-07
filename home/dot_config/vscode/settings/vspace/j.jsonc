@@ -14,6 +14,13 @@
         "type": "command",
         "command": "breadcrumbs.focusAndSelect"
       },
+      {
+        "key": "n",
+        "name": "+Find Match",
+        "icon": "clock",
+        "type": "command",
+        "command": "breadcrumbs.focusAndSelect"
+      },
       // open quick diff
       {
         "key": "x",
@@ -47,6 +54,13 @@
         "icon": "project",
         "type": "command",
         "command": "workbench.action.showAllSymbols"
+      },
+      {
+        "key": "r",
+        "name": "Search all references",
+        "icon": "references",
+        "type": "command",
+        "command": "editor.action.referenceSearch.trigger"
       }
     ]
   }

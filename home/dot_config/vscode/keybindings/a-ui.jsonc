@@ -1,0 +1,59 @@
+[
+  {
+    "key": "ctrl+shift+=",
+    "command": "workbench.action.zoomIn"
+  },
+  {
+    "key": "ctrl+shift+-",
+    "command": "workbench.action.zoomOut"
+  },
+  {
+    "key": "ctrl+shift+0",
+    "command": "workbench.action.zoomReset"
+  },
+  // zoom in
+  {
+    "key": "ctrl+=",
+    "command": "editor.action.fontZoomIn",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "ctrl+=",
+    "command": "workbench.action.terminal.fontZoomIn",
+    "when": "terminalFocusInAny"
+  },
+  {
+    // inside imagePreview
+    "key": "ctrl+=",
+    "command": "imagePreview.zoomIn",
+    "when": "activeCustomEditorId == 'imagePreview.previewEditor'"
+  },
+  // zoom out
+  {
+    "key": "ctrl+-",
+    "command": "editor.action.fontZoomOut",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "ctrl+-",
+    "command": "workbench.action.terminal.fontZoomOut",
+    "when": "terminalFocusInAny"
+  },
+  {
+    // inside imagePreview
+    "key": "ctrl+-",
+    "command": "imagePreview.zoomOut",
+    "when": "activeCustomEditorId == 'imagePreview.previewEditor'"
+  },
+  // reset zoom
+  {
+    "key": "ctrl+0",
+    "command": "editor.action.fontZoomReset",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "ctrl+0",
+    "command": "workbench.action.terminal.fontZoomReset",
+    "when": "terminalFocusInAny"
+  }
+]

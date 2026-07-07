@@ -1,0 +1,22 @@
+[
+  /* // copilot chat for terminal
+workbench.action.terminal.chat.addTerminalSelection
+workbench.action.terminal.chat.close
+workbench.action.terminal.chat.continueInBackground
+workbench.action.terminal.chat.disableSessionAutoApproval
+workbench.action.terminal.chat.focusChatInstance
+workbench.action.terminal.chat.focusMostRecentChatTerminal
+workbench.action.terminal.chat.focusMostRecentChatTerminalOutput
+workbench.action.terminal.chat.focusTerminalByExecutionId
+workbench.action.terminal.chat.focusTerminalById
+workbench.action.terminal.chat.insertCommand
+workbench.action.terminal.chat.insertFirstCommand
+workbench.action.terminal.chat.openTerminalSettingsLink
+workbench.action.terminal.chat.rerunRequest
+workbench.action.terminal.chat.runCommand
+workbench.action.terminal.chat.runFirstCommand
+workbench.action.terminal.chat.start
+workbench.action.terminal.chat.toggleChatTerminalOutput
+workbench.action.terminal.chat.viewHiddenChatTerminals
+workbench.action.terminal.chat.viewInChat */
+]

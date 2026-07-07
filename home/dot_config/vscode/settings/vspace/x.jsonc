@@ -7,6 +7,7 @@
     "icon": "symbol-text",
     "type": "bindings",
     "bindings": [
+      // x snippet
       {
         "key": "x",
         "name": "+Snippets",
@@ -29,12 +30,20 @@
           }
         ]
       },
+      // o open
       {
         "key": "o",
         "name": "+Reopen",
         "icon": "symbol-snippet",
         "type": "bindings",
         "bindings": [
+          {
+            "key": "o",
+            "name": "Search online with selection",
+            "icon": "clear-all",
+            "type": "command",
+            "command": "Search For Selected Text"
+          },
           {
             "key": "l",
             "name": "Open link",
@@ -43,21 +52,22 @@
             "command": "editor.action.openLink"
           },
           {
-            "key": "o",
+            "key": "r",
             "name": "reopen with",
             "icon": "symbol-snippet",
             "type": "command",
             "command": "workbench.action.reopenWithEditor"
           },
           {
-            "key": "O",
-            "name": "reopen with",
+            "key": "t",
+            "name": "reopen with text editor",
             "icon": "symbol-snippet",
             "type": "command",
             "command": "workbench.action.reopenTextEditor"
           }
         ]
       },
+      // . quick fix
       {
         "key": ".",
         "name": "Quick fix",
@@ -65,15 +75,83 @@
         "type": "command",
         "command": "editor.action.quickFix"
       },
-      // workbench.action.reopenTextEditor
+      // l line
       {
         "key": "l",
-        "name": "Open language settings",
-        "icon": "code",
-        "type": "command",
-        "command": "workbench.action.configureLanguageBasedSettings"
+        "name": "+Lines",
+        "icon": "list-flat",
+        "type": "bindings",
+        "bindings": [
+          {
+            "key": "j",
+            "name": "Duplicate lines down",
+            "icon": "fold-down",
+            "type": "transient",
+            "command": "editor.action.copyLinesDownAction",
+            "bindings": [
+              {
+                "key": "j",
+                "name": "Duplicate lines down",
+                "icon": "fold-down",
+                "type": "command",
+                "command": "editor.action.copyLinesDownAction"
+              },
+              {
+                "key": "k",
+                "name": "Duplicate lines up",
+                "icon": "fold-up",
+                "type": "command",
+                "command": "editor.action.copyLinesUpAction"
+              }
+            ]
+          },
+          {
+            "key": "k",
+            "name": "Duplicate lines up",
+            "icon": "fold-up",
+            "type": "transient",
+            "command": "editor.action.copyLinesUpAction",
+            "bindings": [
+              {
+                "key": "j",
+                "name": "Duplicate lines down",
+                "icon": "fold-down",
+                "type": "command",
+                "command": "editor.action.copyLinesDownAction"
+              },
+              {
+                "key": "k",
+                "name": "Duplicate lines up",
+                "icon": "fold-up",
+                "type": "command",
+                "command": "editor.action.copyLinesUpAction"
+              }
+            ]
+          },
+          {
+            "key": "d",
+            "name": "remove duplicate lines",
+            "icon": "diff-removed",
+            "type": "command",
+            "command": "editor.action.removeDuplicateLines"
+          },
+          {
+            "key": "s",
+            "name": "Sort lines in ascending order",
+            "icon": "chevron-left",
+            "type": "command",
+            "command": "editor.action.sortLinesAscending"
+          },
+          {
+            "key": "S",
+            "name": "Sort lines in descending order",
+            "icon": "chevron-right",
+            "type": "command",
+            "command": "editor.action.sortLinesDescending"
+          }
+        ]
       },
-      // indentation
+      // i indentation
       {
         "key": "i",
         "name": "+Indentation",
@@ -123,6 +201,7 @@
           }
         ]
       },
+      // r refactor
       {
         "key": "r",
         "name": "+Refactor",
@@ -130,14 +209,36 @@
         "type": "bindings",
         "bindings": [
           {
+            "key": "r",
+            "name": "Refactor",
+            "icon": "edit",
+            "type": "command",
+            "command": "editor.action.refactor"
+          },
+          {
+            "key": "i",
+            "name": "Organize Imports",
+            "icon": "selection",
+            "type": "command",
+            "command": "editor.action.organizeImports"
+          },
+          {
             "key": "e",
             "name": "Edit symbol",
             "icon": "edit",
             "type": "command",
             "command": "editor.action.rename"
+          },
+          {
+            "key": "w",
+            "name": "Delete trailing whitespace",
+            "icon": "whitespace",
+            "type": "command",
+            "command": "editor.action.trimTrailingWhitespace"
           }
         ]
       },
+      // v smart selection
       {
         "key": "v",
         "name": "Smart select/expand region",
@@ -153,6 +254,13 @@
             "command": "editor.action.smartSelect.grow"
           },
           {
+            "key": "l",
+            "name": "Grow line selection",
+            "icon": "add",
+            "type": "command",
+            "command": "expandLineSelection"
+          },
+          {
             "key": "V",
             "name": "Shrink selection",
             "icon": "remove",
@@ -161,147 +269,66 @@
           }
         ]
       },
+      // t transform
       {
-        "key": "a",
-        "name": "Find all references",
-        "icon": "references",
-        "type": "command",
-        "command": "editor.action.referenceSearch.trigger"
-      },
-      {
-        "key": "i",
-        "name": "Organize Imports",
-        "icon": "selection",
-        "type": "command",
-        "command": "editor.action.organizeImports"
-      },
-      {
-        "key": "r",
-        "name": "Rename symbol",
-        "icon": "symbol-keyword",
-        "type": "command",
-        "command": "editor.action.rename"
-      },
-      {
-        "key": "u",
-        "name": "To lower case",
-        "icon": "case-sensitive",
-        "type": "command",
-        "command": "editor.action.transformToLowercase"
-      },
-      {
-        "key": "J",
-        "name": "Move lines down",
-        "icon": "triangle-down",
-        "type": "transient",
-        "command": "editor.action.moveLinesDownAction",
-        "bindings": [
-          {
-            "key": "J",
-            "name": "Move lines down",
-            "icon": "triangle-down",
-            "type": "command",
-            "command": "editor.action.moveLinesDownAction"
-          },
-          {
-            "key": "K",
-            "name": "Move lines up",
-            "icon": "triangle-up",
-            "type": "command",
-            "command": "editor.action.moveLinesUpAction"
-          }
-        ]
-      },
-      {
-        "key": "K",
-        "name": "Move lines up",
-        "icon": "triangle-up",
-        "type": "transient",
-        "command": "editor.action.moveLinesUpAction",
-        "bindings": [
-          {
-            "key": "J",
-            "name": "Move lines down",
-            "icon": "triangle-down",
-            "type": "command",
-            "command": "editor.action.moveLinesDownAction"
-          },
-          {
-            "key": "K",
-            "name": "Move lines up",
-            "icon": "triangle-up",
-            "type": "command",
-            "command": "editor.action.moveLinesUpAction"
-          }
-        ]
-      },
-      {
-        "key": "R",
-        "name": "Refactor",
-        "icon": "edit",
-        "type": "command",
-        "command": "editor.action.refactor"
-      },
-      {
-        "key": "U",
-        "name": "To upper case",
-        "icon": "preserve-case",
-        "type": "command",
-        "command": "editor.action.transformToUppercase"
-      },
-      {
-        "key": "d",
-        "name": "+Delete",
-        "icon": "trash",
+        "key": "t",
+        "name": "+Transform",
+        "icon": "color-mode",
         "type": "bindings",
         "bindings": [
           {
-            "key": "w",
-            "name": "Delete trailing whitespace",
-            "icon": "whitespace",
+            "key": "U",
+            "name": "transform to UPPERCASE",
+            "icon": "arrow-both",
             "type": "command",
-            "command": "editor.action.trimTrailingWhitespace"
-          }
-        ]
-      },
-      {
-        "key": "l",
-        "name": "+Lines",
-        "icon": "list-flat",
-        "type": "bindings",
-        "bindings": [
+            "command": "editor.action.transformToUppercase"
+          },
           {
-            "key": "d",
-            "name": "Duplicate lines down",
-            "icon": "fold-down",
+            "key": "c",
+            "name": "transform to camelCase",
+            "icon": "arrow-both",
             "type": "command",
-            "command": "editor.action.copyLinesDownAction"
+            "command": "editor.action.transformToCamelcase"
+          },
+          {
+            "key": "u",
+            "name": "transform to lowercase",
+            "icon": "arrow-both",
+            "type": "command",
+            "command": "editor.action.transformToLowercase"
+          },
+          {
+            "key": "k",
+            "name": "transform to Kebab-case, middle link, css liek",
+            "icon": "arrow-both",
+            "type": "command",
+            "command": "editor.action.transformToKebabcase"
+          },
+          {
+            "key": "p",
+            "name": "transform to PascalCase, all title",
+            "icon": "arrow-both",
+            "type": "command",
+            "command": "editor.action.transformToPascalcase"
           },
           {
             "key": "s",
-            "name": "Sort lines in ascending order",
-            "icon": "chevron-left",
+            "name": "transform to snake_case, underline",
+            "icon": "arrow-both",
             "type": "command",
-            "command": "editor.action.sortLinesAscending"
+            "command": "editor.action.transformToSnakecase"
           },
           {
-            "key": "D",
-            "name": "Duplicate lines up",
-            "icon": "fold-up",
+            "key": "t",
+            "name": "transform to Titlecase",
+            "icon": "arrow-both",
             "type": "command",
-            "command": "editor.action.copyLinesUpAction"
-          },
-          {
-            "key": "S",
-            "name": "Sort lines in descending order",
-            "icon": "chevron-right",
-            "type": "command",
-            "command": "editor.action.sortLinesDescending"
+            "command": "editor.action.transformToTitlecase"
           }
         ]
       },
       {
-        // when in merge editor
+        // m merge editor
         "key": "m",
         "name": "+Merge conflict",
         "icon": "git-merge",
