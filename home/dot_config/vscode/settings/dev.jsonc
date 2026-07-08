@@ -33,7 +33,8 @@
   // 与 docker-in-docker 的配置有关
   "dev.containers.dockerSocketPath": "/var/run/docker.sock",
   // UPLIFTING 使用 wsl 中的 docker 命令
-  "dev.containers.executeInWSL": true,
+  // turn this setting off, not automatically start wsl in the background
+  "dev.containers.executeInWSL": false,
   // UPLIFTING 使用默认的 wsl distro
   "dev.containers.executeInWSLDistro": "",
   // SIGNIFICANT
