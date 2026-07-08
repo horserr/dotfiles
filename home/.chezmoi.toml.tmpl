@@ -29,10 +29,16 @@ sourceDir = "~/.config/.dotfiles"
     isRemote = {{ or $isSSH $isMOSH $isCodeSpaces $isRemoteContainer }}
 
 [interpreters.ps1]
-    args = ["-NoProfile"]
+    command = """
+    {{- if lookPath "pwsh" -}}pwsh
+    {{- else if lookPath "powershell.exe" -}}powershell.exe
+    {{- end -}}
+    """
+    args = ["-NoProfile", "-NonInteractive", "-ExecutionPolicy", "Bypass", "-File"]
+
 [cd]
     command = """
-    {{- if lookPath "nu" -}}nu
+    {{- if lookPath "bash" -}}bash
     {{- else if lookPath "fish" -}}fish
     {{- else if lookPath "pwsh" -}}pwsh
     {{- else if lookPath "powershell.exe" -}}powershell.exe

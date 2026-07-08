@@ -153,6 +153,21 @@ $mappings = @{
     target = "$dotConfigPath\vscode\keybindings.json"
     desc   = "VSCode Keybindings"
   }
+  # VSCode snippets
+  "$env:APPDATA\Code\User\snippets" = @{
+    target = "$dotConfigPath\vscode\snippets"
+    desc   = "VSCode snippets"
+  }
+  # VSCode prompts
+  "$env:APPDATA\Code\User\prompts" = @{
+    target = "$dotConfigPath\vscode\prompts"
+    desc   = "VSCode prompts"
+  }
+  # VSCode tasks
+  "$env:APPDATA\Code\User\tasks.json" = @{
+    target = "$dotConfigPath\vscode\tasks.json"
+    desc   = "VSCode tasks"
+  }
 }
 
 # ============================================================================
