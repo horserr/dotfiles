@@ -1,5 +1,4 @@
 {
-  "$schema": "vscode://schemas/settings/user",
   // #region fold
   // zR(reduce) unfold all
   // zM(more) fold all
@@ -216,6 +215,15 @@
       // parameter hint
       "before": ["g", "H"],
       "commands": ["editor.action.triggerParameterHints"]
+    },
+    {
+      // fold -> vspacecode
+      "before": ["z"],
+      "commands": [
+        "vspacecode.space",
+        { "command": "whichkey.triggerKey", "args": "x" },
+        { "command": "whichkey.triggerKey", "args": "z" }
+      ]
     },
     {
       "before": ["<space>"],

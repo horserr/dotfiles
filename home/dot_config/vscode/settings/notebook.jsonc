@@ -1,5 +1,4 @@
 {
-  "$schema": "vscode://schemas/settings/user",
   "notebook.cellToolbarLocation": {
     "default": "right",
     "jupyter-notebook": "left"

@@ -1,4 +1,8 @@
 {
+  // "editor.folding": false,
+  // "editor.glyphMargin": false,
+  // "editor.lineNumbers": "interval",
+
   // catppuccin-icons list: https://github.com/catppuccin/vscode-icons/tree/main/icons/mocha
   // Files with the `spec.ts` extension will have the `typescript-test` icon.
   "catppuccin-icons.associations.extensions": {
@@ -75,5 +79,94 @@
     "dot_ideavimrc": "Vimscript",
     "dot_inputrc": "shellscript",
     "dot_vimrc": "Vimscript"
+  },
+  "files.readonlyInclude": {
+    "refs/vscode-commands.txt": true,
+    "refs/when-clause-sample.json": true
+  },
+  "saveEditorLayout.list": [],
+  // vspacecode dynamic workspace integratiion
+  "vspacecode.bindingOverrides": [
+    {
+      "keys": ["/", "/"],
+      "name": "+Search with options",
+      "type": "bindings",
+      "bindings": [
+        {
+          "key": "v",
+          "name": "search in vscode folder",
+          "type": "command",
+          "command": "search.action.openNewEditor",
+          "args": {
+            "query": "${selectedText:todo}",
+            "filesToInclude": "${workspaceFolder}/**/vscode/**",
+            "isRegexp": false,
+            "isCaseSensitive": false,
+            "matchWholeWord": false,
+            "preserveCase": false,
+            "excludeSettingAndIgnoreFiles": true,
+            "triggerSearch": true,
+            "showIncludesExcludes": false,
+            "location": "reuse",
+            "contextLines": 2
+            // "filesToExclude": "",
+          }
+        }
+      ]
+    }
+  ],
+  "json.schemas": [
+    // user settings
+    {
+      "fileMatch": [
+        "**/vscode/settings/*.jsonc.tmpl",
+        "**/vscode/settings/*.jsonc"
+      ],
+      "url": "vscode://schemas/settings/user"
+    },
+    // todo language specific settings
+    {
+      "fileMatch": [
+        "**/vscode/settings/l-*.jsonc.tmpl",
+        "**/vscode/settings/l-*.jsonc"
+      ],
+      "url": "vscode://schemas/settings/resourceLanguage"
+    },
+    // language specific sippets
+    {
+      "fileMatch": ["**/vscode/snippets/*.json"],
+      "url": "vscode://schemas/snippets"
+    },
+    // keybindings
+    {
+      "fileMatch": [
+        "**/vscode/keybindings/*.jsonc",
+        "**/vscode/keybindings/*.jsonc.tmpl"
+      ],
+      "url": "vscode://schemas/keybindings"
+    },
+    // global snippets
+    {
+      "fileMatch": ["*.code-snippets"],
+      "url": "vscode://schemas/global-snippets"
+    },
+    // tasks
+    {
+      "fileMatch": ["**/vscode/tasks.json"],
+      "url": "vscode://schemas/tasks"
+    }
+  ],
+  "workbench.diffEditorAssociations": {},
+  // workspace tab label customization
+  "workbench.editor.customLabels.patterns": {
+    "**/git/**": "${filename}(git)",
+    "**/vscode/**/*.jsonc": "${filename}(vsc)",
+    "**/vscode/**/vspace/**/*.jsonc": "${filename}(vspace)",
+    "**/vscode/keybindings/**/*.jsonc": "${filename}(key)",
+    "**/vscode/settings/**/*.jsonc": "${filename}(setting)"
+  },
+  "workbench.editor.showTabs": "multiple",
+  "workbench.editorAssociations": {
+    "*.copilotmd": "vscode.markdown.preview.editor"
   }
 }

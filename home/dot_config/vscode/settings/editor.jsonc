@@ -1,5 +1,4 @@
 {
-  "$schema": "vscode://schemas/settings/user",
   "editor.acceptSuggestionOnEnter": "smart",
   "editor.accessibilityPageSize": 15,
   "editor.accessibilitySupport": "off",
@@ -62,10 +61,7 @@
   "editor.quickSuggestionsDelay": 100,
   "editor.renderControlCharacters": true,
   "editor.renderWhitespace": "selection",
-  "editor.rulers": [
-    80,
-    120
-  ],
+  "editor.rulers": [80, 120],
   // enable semanticHighlighting by default
   "editor.semanticHighlighting.enabled": true,
   "editor.smoothScrolling": true,

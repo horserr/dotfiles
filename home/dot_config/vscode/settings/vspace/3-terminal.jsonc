@@ -393,14 +393,6 @@
         ]
       },
       // a accessibleView
-      {
-        "key": "a",
-        "name": "open terminal accessible view, for selection",
-        "icon": "workspace-trust-editor-label-icon",
-        "type": "command",
-        "command": "workbench.action.terminal.focusAccessibleBuffer"
-        // "command": "editor.action.accessibleView"
-      },
       // v selection
       {
         "key": "v",

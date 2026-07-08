@@ -1,5 +1,4 @@
 {
-  "$schema": "vscode://schemas/settings/user",
   "vim.visualModeKeyBindingsNonRecursive": [
     {
       // use vscode native select in bracket
@@ -210,6 +209,15 @@
         "vspacecode.space",
         { "command": "whichkey.triggerKey", "args": "x" },
         { "command": "whichkey.triggerKey", "args": "l" }
+      ]
+    },
+    {
+      // fold -> vspacecode
+      "before": ["z"],
+      "commands": [
+        "vspacecode.space",
+        { "command": "whichkey.triggerKey", "args": "x" },
+        { "command": "whichkey.triggerKey", "args": "z" }
       ]
     },
     {

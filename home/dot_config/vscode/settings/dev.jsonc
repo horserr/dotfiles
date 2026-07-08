@@ -1,5 +1,4 @@
 {
-  "$schema": "vscode://schemas/settings/user",
   "dev.containers.bootstrapImage": "",
   "dev.containers.bootstrapImagePull": true,
   // "dotfiles.installCommand": "chezmoi init --source ~/.config/.dotfiles && chezmoi apply",

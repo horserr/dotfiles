@@ -1,5 +1,4 @@
 {
-  "$schema": "vscode://schemas/settings/user",
   "chat.agent.maxRequests": 200,
   "chat.agent.thinking.collapsedTools": "withThinking",
   "chat.disableAIFeatures": false,

@@ -10,7 +10,7 @@
   terminal.integrated.suggest.upArrowNavigatesHistory : send up arrow to the shell instead of browsing completions, this is particularly useful on zsh where you can filter and then press up to do a history search with that prefix.
   terminal.integrated.suggest.selectionMode : how the Intellisense popup is focused which determines what Enter and Tab do.
   terminal.integrated.suggest.insertTrailingSpace : insert a trailing space and re-trigger completions after accepting. */
-  "$schema": "vscode://schemas/settings/user",
+
   "terminal.external.windowsExec": "wt",
   // UPLIFTING 自动识别 scheme 并允许点击
   "terminal.integrated.allowedLinkSchemes": [

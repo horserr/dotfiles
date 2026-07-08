@@ -34,6 +34,13 @@
         "icon": "terminal",
         "type": "command",
         "command": "workbench.action.quickOpenWithModes"
+      },
+      {
+        "key": "/",
+        "name": "+Add custom workspace integration here",
+        "icon": "zap",
+        "type": "command",
+        "command": "noop"
       }
     ]
   }

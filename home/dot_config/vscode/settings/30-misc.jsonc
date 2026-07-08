@@ -1,8 +1,7 @@
 {
-  "$schema": "vscode://schemas/settings/user",
   "application.experimental.rendererProfiling": true,
   "containers.containerClient": "com.microsoft.visualstudio.containers.docker",
   "containers.orchestratorClient": "com.microsoft.visualstudio.orchestrators.dockercompose",
   // setting sync
-  "update.enableWindowsBackgroundUpdates": true,
+  "update.enableWindowsBackgroundUpdates": true
 }

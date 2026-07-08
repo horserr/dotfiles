@@ -1,5 +1,4 @@
 {
-  "$schema": "vscode://schemas/settings/user",
   "better-todo-tree.general.statusBar": "current file",
   "better-todo-tree.general.showIconsInsteadOfTagsInStatusBar": true,
   "better-todo-tree.general.statusBarClickBehaviour": "toggle highlights",

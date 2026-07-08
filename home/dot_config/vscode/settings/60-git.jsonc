@@ -7,7 +7,7 @@
     "editor.fontLigatures": true,
     "editor.wordWrap": "bounded"
   },
-  "$schema": "vscode://schemas/settings/user",
+
   /**************
    * DIFFEDITOR *
    **************/

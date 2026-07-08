@@ -1,5 +1,4 @@
 {
-  "$schema": "vscode://schemas/settings/user",
   "vim.insertModeKeyBindings": [
     // reference: https://code.visualstudio.com/docs/editing/userdefinedsnippets#_assign-keyboard-shortcuts-to-snippets
     // can also use "command": "type" https://code.visualstudio.com/docs/configure/keybindings#_command-arguments
@@ -14,15 +13,15 @@
     },
     {
       "before": [",", "f"],
-      "after": ["("],
+      "after": ["("]
     },
     {
       "before": [",", "v"],
-      "after": ["{"],
+      "after": ["{"]
     },
     {
       "before": [",", "b"],
-      "after": ["["],
+      "after": ["["]
     },
     {
       "before": [",", ",", "b"],
@@ -34,7 +33,7 @@
           "command": "editor.action.insertSnippet"
         }
       ]
-    },
+    }
     // cannot use when clause here
     // https://github.com/VSCodeVim/Vim/issues/1372#issuecomment-450553106
     // {

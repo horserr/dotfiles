@@ -1,5 +1,4 @@
 {
-  "$schema": "vscode://schemas/settings/user",
   "explorer.autoOpenDroppedFile": true,
   "explorer.confirmDelete": false,
   "explorer.confirmPasteNative": false,
@@ -7,5 +6,5 @@
   "explorer.excludeGitIgnore": false,
   "explorer.fileNesting.enabled": true,
   "explorer.incrementalNaming": "smart",
-  "outline.collapseItems": "alwaysCollapse",
+  "outline.collapseItems": "alwaysCollapse"
 }

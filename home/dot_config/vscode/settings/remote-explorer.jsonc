@@ -1,5 +1,4 @@
 {
-  "$schema": "vscode://schemas/settings/user",
   "remote-explorer.collapseRecentFolders": false,
   "remote-explorer.foldersSortOrder": "most recently used"
 }

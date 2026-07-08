@@ -104,11 +104,27 @@
       },
       {
         "key": "t",
-        "name": "Configure workspace trust",
-        "icon": "symbol-snippet",
-        "type": "command",
-        "command": "workbench.trust.manage"
+        "name": "+Trust",
+        "icon": "extension-workspace-trust",
+        "type": "bindings",
+        "bindings": [
+          {
+            "key": "w",
+            "name": "Configure workspace trust",
+            "icon": "workspace-trusted",
+            "type": "command",
+            "command": "workbench.trust.manage"
+          },
+          {
+            "key": "d",
+            "name": "Configure domain trust",
+            "icon": "search-show-replace",
+            "type": "command",
+            "command": "workbench.action.manageTrustedDomain"
+          }
+        ]
       },
+
       // ui settings
       {
         "key": ",",
@@ -146,6 +162,7 @@
           }
         ]
       },
+      // d doc
       {
         "key": "d",
         "name": "+Doc/Manual",
@@ -205,6 +222,15 @@
             "type": "command",
             "command": "vscode.open",
             "args": "https://github.com/usernamehw/vscode-commands/blob/master/README.md"
+          },
+          // s json schema
+          {
+            "key": "s",
+            "name": "Open vscode json schemas",
+            "icon": "getting-started-step-checked",
+            "type": "command",
+            "command": "vscode.open",
+            "args": "https://github.com/wraith13/vscode-schemas"
           }
         ]
       }

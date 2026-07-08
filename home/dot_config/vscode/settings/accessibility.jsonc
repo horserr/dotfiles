@@ -1,5 +1,4 @@
 {
-  "$schema": "vscode://schemas/settings/user",
   "accessibility.accessibleView.closeOnKeyPress": false,
   "accessibility.chat.showCheckmarks": true,
   "accessibility.dimUnfocused.enabled": true,

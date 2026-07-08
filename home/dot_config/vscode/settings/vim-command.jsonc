@@ -1,5 +1,4 @@
 {
-  "$schema": "vscode://schemas/settings/user",
   /*   all vscode support command line
   https://github.com/VSCodeVim/Vim/blob/master/src/cmd_line/commands/let.ts */
   "vim.commandLineModeKeyBindingsNonRecursive": [
