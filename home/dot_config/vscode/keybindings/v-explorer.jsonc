@@ -7,90 +7,67 @@
     "command": "filesExplorer.cancelCut",
     "when": "explorerResourceCut && filesExplorerFocus && foldersViewVisible && !inputFocus"
   },
-  {
-    // return focus to current folder
-    "key": "escape",
-    "command": "workbench.explorer.fileView.focus",
-    "when": "!explorerResourceCut && filesExplorerFocus && !inputFocus"
-  },
+  // {
+  //   // return focus to current folder
+  //   "key": "escape",
+  //   "command": "workbench.explorer.fileView.focus",
+  //   "when": "!explorerResourceCut && filesExplorerFocus && !inputFocus"
+  // },
+  // v S find in workspace
   {
     // open global search
-    "key": "S",
+    "key": "v S",
     // "command": "list.find",
     "command": "filesExplorer.findInWorkspace",
     "when": "filesExplorerFocus && !inputFocus"
   },
-  // {
-  //   // folder search
-  //   "key": "s",
-  //   // "command": "list.find",
-  //   "command": "filesExplorer.findInFolder",
-  //   "when": "explorerResourceIsFolder && filesExplorerFocus && foldersViewVisible && !inputFocus"
-  // },
+  // v s find in folder
   {
-    "key": "s",
+    "key": "v s",
     "command": "search.action.restrictSearchToFolder",
     "when": "filesExplorerFocus && !inputFocus"
     // "when": "folderMatchWithResourceFocus && searchViewletVisible"
   },
+  // v a new file or folder
   {
-    // new file or folder
-    "key": "a",
+    "key": "v a",
     "command": "explorer.newFile",
     "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
   },
+  // v d delete file
   {
-    // delete file
-    "key": "d",
+    "key": "v d",
     "command": "deleteFile",
     "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
   },
+  // v x cut files
   {
-    // rename file
-    "key": "r",
-    "command": "renameFile",
-    "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
-  },
-  {
-    // cut files
     "key": "x",
     "command": "filesExplorer.cut",
     "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
   },
+  // v r rename file
   {
-    // show in native file explorer
-    "key": "shift+r",
+    "key": "v r",
+    "command": "renameFile",
+    "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+  },
+  // v shift+r show in native file explorer
+  {
+    "key": "v shift+r",
     "command": "revealFileInOS",
     "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
   },
+  // v y copy file
   {
-    // copy file
-    "key": "y",
+    "key": "v y",
     "command": "filesExplorer.copy",
     "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !inputFocus"
   },
+  // v p paste file
   {
-    // paste file
-    "key": "p",
+    "key": "v p",
     "command": "filesExplorer.paste",
     "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceReadonly && !inputFocus"
-  },
-  {
-    // select next
-    "key": "shift+j",
-    "command": "list.expandSelectionDown",
-    "when": "listFocus && listHasSelectionOrFocus && !inputFocus"
-  },
-  {
-    // select previous
-    "key": "shift+k",
-    "command": "list.expandSelectionUp",
-    "when": "listFocus && listHasSelectionOrFocus && !inputFocus"
-  },
-  {
-    // toggle selection
-    "key": "space",
-    "command": "list.toggleSelection",
-    "when": "filesExplorerFocus && !inputFocus"
   }
 ]

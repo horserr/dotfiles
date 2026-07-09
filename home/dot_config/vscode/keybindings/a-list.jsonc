@@ -1,21 +1,215 @@
 [
-//  "list.showHover"
+  // list.toggleKeyboardNavigation,
+  // list.triggerTypeNavigation,
+  // list.toggleKeyboardNavigation
   {
-    // folder filter
+    "key": "escape",
+    "command": "list.clear",
+    "when": "listFocus && listHasSelectionOrFocus && !inputFocus && !treestickyScrollFocused"
+  },
+  {
+    "key": "escape",
+    "command": "list.closeFind",
+    "when": "listFocus && treeFindOpen"
+  },
+  // f filter
+  {
     "key": "f",
     "command": "list.find",
-    "when": "listFocus && !inputFocus"
+    "when": "listFocus && !inputFocus && !treestickyScrollFocused"
   },
+  // t t toggle filter on type, "workbench.list.defaultFindMode": "filter",
   {
-    // toggle filter
-    "key": "shift+f",
+    "key": "t t",
     "command": "list.toggleFilterOnType",
-    "when": "listFocus && inputFocus"
+    "when": "listFocus && treeFindOpen && !inputFocus && !treestickyScrollFocused"
   },
+  // t f toggle fuzzy search or continguous search, "workbench.list.defaultFindMatchType": "fuzzy",
   {
-    // folder tree sticky scrool
-    "key": "t",
+    "key": "t f",
+    "command": "list.toggleFindMode",
+    "when": "listFocus && treeFindOpen && !inputFocus && !treestickyScrollFocused"
+  },
+  // t s toggle sticky scrool, "workbench.tree.enableStickyScroll": true
+  {
+    "key": "t s",
     "command": "tree.toggleStickyScroll",
     "when": "listFocus && !inputFocus"
+  },
+  // h h collapse
+  {
+    "key": "h h",
+    "command": "list.collapse",
+    "when": "listFocus && !inputFocus && !treestickyScrollFocused"
+  },
+  /*   shift+h hover
+  tip: use editor.action.accessibleView to view hover in accessible view */
+  {
+    "key": "shift+h",
+    "command": "list.showHover",
+    "when": "listFocus && !inputFocus && !treestickyScrollFocused"
+  },
+  // h r collapse all
+  {
+    // this command recursively collapse all folders under the selection/highlight
+    "key": "h r",
+    "command": "list.collapseAllToFocus",
+    "when": "listFocus && !inputFocus && !treestickyScrollFocused"
+  },
+  // h a collapse all
+  {
+    "key": "h a",
+    "command": "list.collapseAll",
+    "when": "listFocus && !inputFocus && !treestickyScrollFocused"
+  },
+  // l expand
+  {
+    "key": "l",
+    "command": "list.expand",
+    "when": "(treeElementCanExpand || treeElementHasChild ) && listFocus && !inputFocus && !treestickyScrollFocused"
+  },
+  // l select
+  {
+    "key": "l",
+    "command": "list.select",
+    "when": "listFocus && !inputFocus && !treestickyScrollFocused"
+  },
+  // shift+l preserve focus (preview mode)
+  {
+    "key": "shift+l",
+    "command": "list.selectAndPreserveFocus",
+    "when": "listFocus && !inputFocus && !treestickyScrollFocused"
+  },
+  // o toggle expand
+  {
+    "key": "o",
+    "command": "list.toggleExpand",
+    "when": "listFocus && !inputFocus && !treestickyScrollFocused"
+  },
+  // j focus down
+  {
+    "key": "j",
+    "command": "list.focusDown",
+    "when": "listFocus && !inputFocus && !treestickyScrollFocused"
+  },
+  // k focus up
+  {
+    "key": "k",
+    "command": "list.focusUp",
+    "when": "listFocus && !inputFocus && !treestickyScrollFocused"
+  },
+  // p focus parent
+  {
+    "key": "p",
+    "command": "list.focusParent",
+    "when": "listFocus && !inputFocus && !treestickyScrollFocused"
+  },
+  // note: don't understand the purpose of 'focus any' commands, but leave them here for completion
+  // n j focus any down
+  {
+    "key": "n j",
+    "command": "list.focusAnyDown",
+    "when": "listFocus && !inputFocus && !treestickyScrollFocused"
+  },
+  // n h focus any first
+  {
+    "key": "n h",
+    "command": "list.focusAnyFirst",
+    "when": "listFocus && !inputFocus && !treestickyScrollFocused"
+  },
+  // n l focus any last
+  {
+    "key": "n l",
+    "command": "list.focusAnyLast",
+    "when": "listFocus && !inputFocus && !treestickyScrollFocused"
+  },
+  // n k focus any up
+  {
+    "key": "n k",
+    "command": "list.focusAnyUp",
+    "when": "listFocus && !inputFocus && !treestickyScrollFocused"
+  },
+  // g focus first
+  {
+    "key": "g",
+    "command": "list.focusFirst",
+    "when": "listFocus && !inputFocus && !treestickyScrollFocused"
+  },
+  // shift+g focus last
+  {
+    "key": "shift+g",
+    "command": "list.focusLast",
+    "when": "listFocus && !inputFocus && !treestickyScrollFocused"
+  },
+  // d focus page down
+  {
+    "key": "d",
+    "command": "list.focusPageDown",
+    "when": "listFocus && !inputFocus && !treestickyScrollFocused"
+  },
+  // u focus page up
+  {
+    "key": "u",
+    "command": "list.focusPageUp",
+    "when": "listFocus && !inputFocus && !treestickyScrollFocused"
+  },
+  // e scroll down
+  {
+    "key": "e",
+    "command": "list.scrollDown",
+    "when": "listFocus && !inputFocus && !treestickyScrollFocused && listScrollAtBoundary != 'both' && listScrollAtBoundary != 'bottom'"
+  },
+  // y scroll up
+  {
+    "key": "y",
+    "command": "list.scrollUp",
+    "when": "listFocus && !inputFocus && !treestickyScrollFocused && listScrollAtBoundary != 'both' && listScrollAtBoundary != 'top'"
+  },
+  // shift+j expand selection down
+  {
+    "key": "shift+j",
+    "command": "list.expandSelectionDown",
+    "when": "listFocus && !inputFocus && !treestickyScrollFocused"
+  },
+  // shift+k expand selection up
+  {
+    "key": "shift+k",
+    "command": "list.expandSelectionUp",
+    "when": "listFocus && !inputFocus && !treestickyScrollFocused"
+  },
+  // a select all
+  {
+    "key": "a",
+    "command": "list.selectAll",
+    "when": "listFocus && listSupportsMultiselect && !inputFocus && !treestickyScrollFocused"
+  },
+  // s resize column
+  {
+    "key": "s",
+    "command": "list.resizeColumn",
+    "when": "listFocus && !inputFocus && !treestickyScrollFocused"
+  },
+  // space toggle selection
+  {
+    "key": "space",
+    "command": "list.toggleSelection",
+    "when": "listFocus && !inputFocus && !treestickyScrollFocused"
+  },
+  // note: don't know how to move focus to tree sticky scroll
+  // tree sticky scroll
+  {
+    "key": "h",
+    "command": "list.stickyScroll.collapse",
+    "when": "treestickyScrollFocused"
+  },
+  {
+    "key": "l",
+    "command": "list.stickyScrollselect",
+    "when": "treestickyScrollFocused"
+  },
+  {
+    "key": "space",
+    "command": "list.stickyScrolltoggleExpand",
+    "when": "treestickyScrollFocused"
   }
 ]

@@ -1,6 +1,7 @@
 {
   "lifeline.clock.format": "h:mm A",
   "workbench.activityBar.location": "bottom",
+  "workbench.browser.newTabPlacement": "window",
   "workbench.colorCustomizations": {
     // editor bracket color customization
     // "editorBracketHighlight.foreground1": "#5caeef",
@@ -57,10 +58,21 @@
     "*.copilotmd": "vscode.markdown.preview.editor"
   },
   "workbench.editorLargeFileConfirmation": 10,
-  "workbench.iconTheme": "catppuccin-mocha",
+  "workbench.iconTheme": "catppuccin-latte",
   "workbench.layoutControl.enabled": false,
+  // WORKBENCH LIST
+  "workbench.list.defaultFindMatchType": "fuzzy",
+  "workbench.list.defaultFindMode": "filter",
+  "workbench.list.fastScrollSensitivity": 5,
+  "workbench.list.horizontalScrolling": false,
+  "workbench.list.mouseWheelScrollSensitivity": 1,
+  "workbench.list.multiSelectModifier": "ctrlCmd",
+  "workbench.list.scrollByPage": true,
   "workbench.list.smoothScrolling": true,
-  "workbench.navigationControl.enabled": true,
+  // @link: https://github.com/microsoft/vscode/issues/68233#issuecomment-466475928
+  "workbench.list.typeNavigationMode": "trigger",
+
+  "workbench.navigationControl.enabled": false,
   "workbench.notifications.position": "top-right",
   "workbench.panel.showLabels": false,
   "workbench.preferredDarkColorTheme": "Catppuccin Mocha",
@@ -70,5 +82,6 @@
   "workbench.secondarySideBar.showLabels": false,
   "workbench.startupEditor": "none",
   "workbench.statusBar.visible": true,
-  "workbench.tree.stickyScrollMaxItemCount": 4
+  "workbench.tree.stickyScrollMaxItemCount": 4,
+  "workbench.tree.enableStickyScroll": true
 }
