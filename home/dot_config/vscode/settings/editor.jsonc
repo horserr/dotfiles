@@ -123,7 +123,11 @@
   },
   "editor.unicodeHighlight.nonBasicASCII": false,
   "editor.wordBasedSuggestions": "matchingDocuments",
-  "editor.wordSeparators": "-`~!@#$%^&*()-=+[{]}\\|;:'\",.<>/?，。；“’（）【】《》",
+  /*   move words withing CJK characters
+  @link https://github.com/microsoft/vscode/issues/50045 */
+  "editor.wordSegmenterLocales": ["zh-CN"],
+  "editor.wordSeparators": "-`~!@#$%^&*()-=+[{]}\\|;:'\",.<>/?。，、；：！？「」『』“”‘’（）【】《》",
   "editor.wordWrap": "bounded",
+  // use 'advance' for CJK characters
   "editor.wrappingStrategy": "simple"
 }

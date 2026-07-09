@@ -9,9 +9,16 @@
       "before": ["H"]
     },
     {
-      // camel case word
-      "after": ["<leader>", "w"],
-      "before": ["w"]
+      // camelCaseMotion
+      "before": ["w"],
+      // "after": ["<leader>", "w"]
+      "commands": ["cursorWordPartRight"]
+    },
+    {
+      // camelCaseMotion
+      "before": ["b"],
+      // "after": ["<leader>", "b"]
+      "commands": ["cursorWordPartLeft"]
     }
   ]
 }

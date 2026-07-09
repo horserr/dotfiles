@@ -118,12 +118,14 @@
     {
       // camelCaseMotion
       "before": ["w"],
-      "after": ["<leader>", "w"]
+      // "after": ["<leader>", "w"]
+      "commands": ["cursorWordPartRight"]
     },
     {
       // camelCaseMotion
       "before": ["b"],
-      "after": ["<leader>", "b"]
+      // "after": ["<leader>", "b"]
+      "commands": ["cursorWordPartLeft"]
     },
     {
       // use vscode native jump to bracket
