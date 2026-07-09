@@ -1,0 +1,40 @@
+[
+  {
+    "key": "n",
+    "name": "+Notification",
+    "icon": "gather",
+    "type": "bindings",
+    "bindings": [
+      // , focus notification toast
+      {
+        "key": ",",
+        "name": "focus notification toast",
+        "icon": "comment",
+        "type": "command",
+        "command": "notifications.focusToasts"
+      },
+      // n focus list
+      {
+        "key": "n",
+        "name": "Show notification list",
+        "icon": "comment",
+        "type": "command",
+        "command": "notifications.showList"
+      },
+      {
+        "key": "d",
+        "name": "toggle do not disturb mode",
+        "icon": "bell-slash",
+        "type": "command",
+        "command": "notifications.toggleDoNotDisturbMode"
+      },
+      {
+        "key": "D",
+        "name": "Show notification list",
+        "icon": "bell-slash-dot",
+        "type": "command",
+        "command": "notifications.toggleDoNotDisturbModeBySource"
+      }
+    ]
+  }
+]

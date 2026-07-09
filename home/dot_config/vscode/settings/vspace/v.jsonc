@@ -16,7 +16,7 @@
       // workbench.action.restartExtensionHost
       // workbench.action.restoreAuxiliaryBar
 
-      // editor group layout
+      // , editor group layout
       {
         "key": ",",
         "name": "+Layout",
@@ -99,6 +99,7 @@
           }
         ]
       },
+      // k
       {
         "key": "k",
         "name": "Toggle maximized panel",
@@ -106,6 +107,7 @@
         "type": "command",
         "command": "workbench.action.toggleMaximizedPanel"
       },
+      // h
       {
         "key": "h",
         "name": "Toggle side bar visibility",
@@ -113,6 +115,7 @@
         "type": "command",
         "command": "workbench.action.toggleSidebarVisibility"
       },
+      // j
       {
         "key": "j",
         "name": "Toggle panel visibility",
@@ -120,6 +123,7 @@
         "type": "command",
         "command": "workbench.action.togglePanel"
       },
+      // l
       {
         "key": "l",
         "name": "Toggle secondary bar visibility",
@@ -127,6 +131,7 @@
         "type": "command",
         "command": "workbench.action.toggleAuxiliaryBar"
       },
+      // q
       {
         "key": "q",
         "name": "close all panels",
@@ -138,7 +143,7 @@
           "workbench.action.closeAuxiliaryBar"
         ]
       },
-      // change view/editor size
+      // v change view/editor size
       {
         "key": "v",
         "name": "Shrink window",
@@ -189,7 +194,7 @@
           }
         ]
       },
-      // all views & view containers
+      // space all views & view containers
       {
         "key": " ",
         "name": "+Views",
@@ -223,13 +228,6 @@
             "icon": "source-control",
             "type": "command",
             "command": "workbench.view.extension.containersView"
-          },
-          {
-            "key": "n",
-            "name": "Show notification",
-            "icon": "comment",
-            "type": "command",
-            "command": "notifications.toggleList"
           },
           {
             "key": "o",
@@ -269,7 +267,7 @@
           }
         ]
       },
-      // file/editor view components
+      // e file/editor view components
       {
         "key": "e",
         "name": "+file/editor interior view components",
@@ -371,13 +369,14 @@
           }
         ]
       },
-      // workspace/window
+      // w workspace/window
       {
         "key": "w",
         "name": "+workspace/window layout",
         "icon": "screen-full",
         "type": "bindings",
         "bindings": [
+          // z toggle zen mode
           {
             "key": "z",
             "name": "Toggle zen mode",
@@ -385,6 +384,7 @@
             "type": "command",
             "command": "workbench.action.toggleZenMode"
           },
+          // f toggle full screen
           {
             "key": "f",
             "name": "Toggle full screen",
@@ -392,6 +392,7 @@
             "type": "command",
             "command": "workbench.action.toggleFullScreen"
           },
+          // t toggle always on top
           {
             "key": "t",
             "name": "toggle always on top",
@@ -399,6 +400,7 @@
             "type": "command",
             "command": "workbench.action.toggleWindowAlwaysOnTop"
           },
+          // l toggle scroll lock
           {
             "key": "l",
             "name": "Toggle scroll lock",
@@ -406,6 +408,15 @@
             "type": "command",
             "command": "workbench.action.toggleLockedScrolling"
           },
+          // n toggle notification
+          {
+            "key": "n",
+            "name": "Toggle notification show in title bar",
+            "icon": "bell-dot",
+            "type": "command",
+            "command": "toggle.workbench.notifications.showInTitleBar"
+          },
+          // c toggle screen cast mode
           {
             "key": "c",
             "name": "Toggle screen cast mode(showing keystroke when typing)",

@@ -10,7 +10,7 @@
     // add more precise conditions for escape, dealing with copilot suggestions
     "key": "escape",
     "command": "extension.vim_escape",
-    "when": "editorTextFocus && vim.active && !(accessibilityHelpIsShown || accessibleViewIsShownViewIsFocused) && !inDebugRepl && !inlineSuggestionVisible && !inlineEditIsVisible && !testing.isPeekVisible && !testing.isInPeek && !suggestWidgetVisible && !findWidgetVisible && !dirtyDiffVisible"
+    "when": "editorTextFocus && vim.active && !(accessibilityHelpIsShown || accessibleViewIsShownViewIsFocused) && !notificationCenterVisible && !notificationToastsVisible && !inDebugRepl && !inlineSuggestionVisible && !inlineEditIsVisible && !testing.isPeekVisible && !testing.isInPeek && !suggestWidgetVisible && !findWidgetVisible && !dirtyDiffVisible"
   },
   {
     // remove origin vim tab function

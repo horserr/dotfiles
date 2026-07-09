@@ -1,0 +1,86 @@
+[
+  // {
+  //   "key": "escape",
+  //   "command": "notifications.hideList",
+  //   "when": "notificationCenterVisible"
+  // },
+  // {
+  //   "key": "escape",
+  //   "command": "notifications.hideToasts",
+  //   "when": "notificationToastsVisible"
+  // },
+  // {
+  //   "key": "escape",
+  //   "command": "notifications.hideToasts",
+  //   "when": "notificationFocus && notificationToastsVisible"
+  // }
+  // {
+  //   "key": "space",
+  //   "command": "notification.toggle",
+  //   "when": "notificationFocus"
+  // },
+  {
+    "key": "ctrl+shift+l",
+    "command": "notification.acceptPrimaryAction",
+    "when": "notificationToastsVisible || notificationFocus"
+  },
+  {
+    "key": "shift+k",
+    "command": "workbench.action.setNotificationsPosition.topRight",
+    "when": "notificationToastsVisible || notificationFocus"
+  },
+  {
+    "key": "shift+j",
+    "command": "workbench.action.setNotificationsPosition.bottomRight",
+    "when": "notificationToastsVisible || notificationFocus"
+  },
+  {
+    "key": "shift+h",
+    "command": "workbench.action.setNotificationsPosition.bottomLeft",
+    "when": "notificationToastsVisible || notificationFocus"
+  },
+  {
+    "key": "d",
+    "command": "notification.clear",
+    "when": "notificationFocus"
+  },
+  {
+    "key": "shift+d",
+    "command": "notifications.clearAll",
+    "when": "notificationFocus"
+  },
+  {
+    "key": "j",
+    "command": "notifications.focusNextToast",
+    "when": "notificationFocus && notificationToastsVisible"
+  },
+  {
+    "key": "k",
+    "command": "notifications.focusPreviousToast",
+    "when": "notificationFocus && notificationToastsVisible"
+  },
+  {
+    "key": "h",
+    "command": "notification.collapse",
+    "when": "notificationFocus"
+  },
+  {
+    "key": "l",
+    "command": "notification.expand",
+    "when": "notificationFocus"
+  },
+  {
+    "key": "g",
+    "command": "notifications.focusFirstToast",
+    "when": "notificationFocus"
+  },
+  {
+    "key": "shift+g",
+    "command": "notifications.focusLastToast",
+    "when": "notificationFocus"
+  },
+  {
+    "key": "",
+    "command": "workbench.action.chat.resetGrowthSession"
+  }
+]
