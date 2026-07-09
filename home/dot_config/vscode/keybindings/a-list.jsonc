@@ -1,4 +1,10 @@
 [
+  // list selection when clause
+  // listSelectionNavigation 1 selection
+  // listHasSelectionOrFocus >=1 selection
+  // listDoubleSelection 2 selection
+  // listMultiSelection >=2 selection
+
   // list.toggleKeyboardNavigation,
   // list.triggerTypeNavigation,
   // list.toggleKeyboardNavigation
@@ -7,10 +13,11 @@
     "command": "list.clear",
     "when": "listFocus && listHasSelectionOrFocus && !inputFocus && !treestickyScrollFocused"
   },
+  // fix: first remove selection and then close find
   {
     "key": "escape",
     "command": "list.closeFind",
-    "when": "listFocus && treeFindOpen"
+    "when": "listFocus && treeFindOpen && !listMultiSelection"
   },
   // f filter
   {
