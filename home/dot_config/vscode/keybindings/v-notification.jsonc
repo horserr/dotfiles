@@ -22,22 +22,22 @@
   {
     "key": "ctrl+shift+l",
     "command": "notification.acceptPrimaryAction",
-    "when": "notificationToastsVisible || notificationFocus"
+    "when": "!inputFocus && (notificationToastsVisible || notificationFocus)"
   },
   {
     "key": "shift+k",
     "command": "workbench.action.setNotificationsPosition.topRight",
-    "when": "notificationToastsVisible || notificationFocus"
+    "when": "!inputFocus && (notificationToastsVisible || notificationFocus)"
   },
   {
-    "key": "shift+j",
+   "key": "shift+j",
     "command": "workbench.action.setNotificationsPosition.bottomRight",
-    "when": "notificationToastsVisible || notificationFocus"
+    "when": "!inputFocus && (notificationToastsVisible || notificationFocus)"
   },
   {
     "key": "shift+h",
     "command": "workbench.action.setNotificationsPosition.bottomLeft",
-    "when": "notificationToastsVisible || notificationFocus"
+    "when": "!inputFocus && (notificationToastsVisible || notificationFocus)"
   },
   {
     "key": "d",
