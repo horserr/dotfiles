@@ -65,7 +65,6 @@
       ]
     },
     "winget": {
-      "admin": ["Nilesoft.Shell", "Nushell.Nushell"],
       "normal": [
         // auto dark mode
         "ArminOsaj.AutoDarkMode",

@@ -1,9 +1,7 @@
 vscode-local:
-  - thenuprojectcontributors.vscode-nushell-lang
   - adamraichu.zip-viewer
   - albert.tabout
   - alefragnani.bookmarks
-  - amauryrabouan.new-vsc-prolog
   - anteprimorac.html-end-tag-labels
   - astral-sh.ty
   - bierner.emojisense
@@ -12,51 +10,46 @@ vscode-local:
   - bierner.markdown-mermaid
   - bierner.markdown-preview-github-styles
   - bierner.markdown-yaml-preamble
-  - bodil.file-browser
   - catppuccin.catppuccin-vsc
   - catppuccin.catppuccin-vsc-icons
   - charliermarsh.ruff
   - chrislajoie.vscode-modelines
   - code-nature.nilesoft-shell-file-formatter
-  - codesandbox-io.codesandbox-projects
-  - codesandbox-io.codesandbox-projects-theme
   - codezombiech.gitignore
   - ctc.vscode-tree-extension
+  - ctf0.save-editors-layout
   - dakara.dakara-foldplus
+  - dautroc.yazi-vscode
+  - davidnussio.vscode-jq-playground
   - dbcode.dbcode
-  - deepakgupta191199.save-commands
   - docker.docker
   - editorconfig.editorconfig
-  - egomobile.vscode-powertools
   - eliostruyf.vscode-demo-time
-  - endormi.2077-theme
   - esbenp.prettier-vscode
   - fflaten.windowssandbox-configuration
   - fill-labs.dependi
   - foam.foam-vscode
   - gediminaszlatkus.ctags-companion
   - github.codespaces
-  - github.copilot-chat
   - github.github-vscode-theme
   - github.remotehub
   - github.vscode-github-actions
   - github.vscode-pull-request-github
   - gruntfuggly.todo-tree
-  - holmescn.vscode-wordcount-cjk
+  - huggingface.huggingface-vscode-chat
   - igorjrd.cslpreview
+  - iliazeus.vscode-ansi
   - jacobdufault.fuzzy-search
+  - jakearl.search-editor-apply-changes
   - jdinhlife.gruvbox
+  - johnny-zhao.oai-compatible-copilot
   - johnpapa.vscode-peacock
+  - jq-syntax-highlighting.jq-syntax-highlighting
   - kahole.magit
   - karyfoundation.comment
   - littensy.charmed-icons
   - marcinjachmann.vscode-eincolor
   - mark-wiemer.vscode-autohotkey-plus-plus
-  - maxs-lab-of-things.bulk-copy
-  - maxs-lab-of-things.hide-me
-  - maxs-lab-of-things.projectweb
-  - maxs-lab-of-things.pseudo-folders
-  - maxs-lab-of-things.pushpin
   - mechatroner.rainbow-csv
   - mehyaa.workspace-storage-cleanup
   - mikestead.dotenv
@@ -81,11 +74,11 @@ vscode-local:
   - ms-vscode.remote-explorer
   - ms-vscode.remote-repositories
   - ms-vscode.vscode-github-issue-notebooks
-  - muhammad-ahmad.xlsx-viewer
   - mutantdino.resourcemonitor
   - ncukondo.vscode-markdown-academic-preview
   - ncukondo.vscode-pandoc-citation-preview
   - notzaki.pandocciter
+  - nur.script
   - octop162.markdown-table-editor
   - phoenisx.cssvar
   - pishu.epub-editor
@@ -94,8 +87,6 @@ vscode-local:
   - renan-r-santos.pixi-code
   - rimuruchan.vscode-fix-checksums-next
   - rioj7.command-variable
-  - romantomjak.go-template
-  - ryuta46.multi-command
   - sakethkanchi.kitty-vscode-theme
   - samuelcolvin.jinjahtml
   - slysherz.comment-box
@@ -105,7 +96,6 @@ vscode-local:
   - tamasfe.even-better-toml
   - this-fifo.natty
   - tock.vscode-css-custom-properties
-  - tombonnike.vscode-status-bar-format-toggle
   - tomrijndorp.find-it-faster
   - typespec.typespec-vscode
   - tyriar.sort-lines
@@ -121,3 +111,4 @@ vscode-local:
   - yellpika.latex-input
   - yoshi389111.markdown-table-rainbow
   - yzhang.markdown-all-in-one
+  - zh9528.file-size

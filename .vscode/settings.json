@@ -85,36 +85,8 @@
     "refs/when-clause-sample.json": true
   },
   "saveEditorLayout.list": [],
-  // vspacecode dynamic workspace integratiion
-  "vspacecode.bindingOverrides": [
-    {
-      "keys": ["/", "/"],
-      "name": "+Search with options",
-      "type": "bindings",
-      "bindings": [
-        {
-          "key": "v",
-          "name": "search in vscode folder",
-          "type": "command",
-          "command": "search.action.openNewEditor",
-          "args": {
-            "query": "${selectedText:todo}",
-            "filesToInclude": "${workspaceFolder}/**/vscode/**",
-            "isRegexp": false,
-            "isCaseSensitive": false,
-            "matchWholeWord": false,
-            "preserveCase": false,
-            "excludeSettingAndIgnoreFiles": true,
-            "triggerSearch": true,
-            "showIncludesExcludes": false,
-            "location": "reuse",
-            "contextLines": 2
-            // "filesToExclude": "",
-          }
-        }
-      ]
-    }
-  ],
+  "json.validate.enable": true,
+  "json.schemaDownload.enable": false,
   "json.schemas": [
     // user settings
     {
