@@ -1,0 +1,15 @@
+{
+  "sysinfo.enabledStatusBar": true,
+  // hide items in report `sysinfo-vscode.showSystemInformation`
+  "sysinfo.hideItems": [],
+  // Other commands can be set as well, but assume "sysinfo-vscode.switchStatusBarLabel" or "sysinfo-vscode.copyStatusBarText" is set.
+  "sysinfo.statusBarCommand": "sysinfo-vscode.switchStatusBarLabel",
+  "sysinfo.statusBarLabel": [
+    "$(device-desktop) ${os.hostname}",
+    "$(info) VS Code ${vscode.version}",
+    "$(symbol-color) ${settings:workbench.colorTheme}",
+    "$(info) ${vscode.env.appName} ${vscode.env.language} ${process.execArgv}",
+    "$(text-size) ${settings:editor.fontSize}"
+  ],
+  "sysinfo.statusBarSwitchInterval": 0
+}
