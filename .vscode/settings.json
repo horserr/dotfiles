@@ -140,5 +140,125 @@
   "workbench.editor.showTabs": "multiple",
   "workbench.editorAssociations": {
     "*.copilotmd": "vscode.markdown.preview.editor"
-  }
+  },
+  // vspacecode dynamic workspace integratiion
+  "vspacecode.bindingOverrides": [
+    {
+      "keys": ["/", "/"],
+      "name": "+Search with options",
+      "type": "bindings",
+      "bindings": [
+        // v vscode
+        {
+          "key": "v",
+          "name": "search in vscode folder",
+          "type": "command",
+          "command": "search.action.openNewEditor",
+          "args": {
+            "query": "",
+            "triggerSearch": true,
+            "focusResults": true,
+            "location": "reuse",
+
+            "isRegexp": false,
+            "isCaseSensitive": false,
+            "matchWholeWord": false,
+
+            "preserveCase": false,
+            "contextLines": 2,
+
+            "filesToInclude": "${workspaceFolder}/**/vscode/**",
+            "filesToExclude": "",
+            "excludeSettingAndIgnoreFiles": true,
+            "showIncludesExcludes": false
+            // "args": {
+            //   // === 核心搜索查询 ===
+            //   "query": "TODO", // [string] 搜索的关键词。支持 VS Code 动态变量（如 "${selectedText}" 提取当前选中文字）
+            //   "isRegexp": false, // [boolean] 是否启用正则表达式搜索。别名（简写）也可以使用 "regexp"
+            //   "isCaseSensitive": false, // [boolean] 是否区分大小写。别名也可以使用 "caseSensitive"
+            //   "matchWholeWord": false, // [boolean] 是否全字匹配（即两边必须是单词边界）。别名也可以使用 "wholeWord"
+
+            //   // === 范围与包含/排除（Scope Filter） ===
+            //   "filesToInclude": "src/", // [string] 指定只在哪些文件夹或文件类型中搜索（支持 glob 语法，如 "src/**/*.js"）。别名可以使用 "includes"
+            //   "filesToExclude": "tests/", // [string] 指定要排除的文件夹或文件类型。别名可以使用 "excludes"
+            //   "excludeSettingAndIgnoreFiles": true, // [boolean] 是否应用系统的设置（如 `search.exclude`）以及 `.gitignore` 文件来忽略文件。别名也可以使用 "useExcludeSettingsAndIgnoreFiles"
+
+            //   // === UI 与布局交互行为 ===
+            //   "triggerSearch": true, // [boolean] 当搜索编辑器打开时，是否立即自动执行搜索。如果为 false，则只填入参数不运行
+            //   "focusResults": true, // [boolean] 搜索完成后，焦点（光标）是否自动移动到搜索结果区。若为 false，则光标留在顶部的搜索框内
+            //   "showIncludesExcludes": true, // [boolean] 是否在搜索编辑器的顶部展开并显示 "files to include" 和 "files to exclude" 的输入框
+            //   "preserveCase": false, // [boolean] 在进行批量替换时是否保持原有的大小写格式（配合后续替换操作）
+            //   "location": "new", // [string] 选择打开的位置。可选值：
+            //   //   - "new" (默认值): 每次按下都新开一个搜索编辑器标签页
+            //   //   - "reuse": 强制刷新并复用当前已经打开的搜索编辑器标签页，不产生新标签页
+
+            //   // === 内容上下文显示 ===
+            //   "contextLines": 1 // [number] 搜索结果周围显示的上下文行数。
+            //   //   例如设置为 2，则每个搜索到的结果会展示其上方 2 行和下方 2 行的代码，极大方便免跳转阅读
+            // }
+          }
+        },
+        // s setting
+        {
+          "key": "s",
+          "name": "search in setting folder",
+          "type": "command",
+          "command": "search.action.openNewEditor",
+          "args": {
+            "query": "",
+            "triggerSearch": true,
+            "focusResults": true,
+            "location": "reuse",
+
+            "isRegexp": false,
+            "isCaseSensitive": false,
+            "matchWholeWord": false,
+
+            "preserveCase": false,
+            "contextLines": 2,
+
+            "filesToInclude": "${workspaceFolder}/**/vscode/settings/**",
+            "filesToExclude": "",
+            "excludeSettingAndIgnoreFiles": true,
+            "showIncludesExcludes": false
+          }
+        },
+        // k keybindings
+        {
+          "key": "k",
+          "name": "search in keybindings folder",
+          "type": "command",
+          "command": "search.action.openNewEditor",
+          "args": {
+            "query": "",
+            "triggerSearch": true,
+            "focusResults": true,
+            "location": "reuse",
+
+            "isRegexp": false,
+            "isCaseSensitive": false,
+            "matchWholeWord": false,
+
+            "preserveCase": false,
+            "contextLines": 2,
+
+            "filesToInclude": "${workspaceFolder}/**/vscode/keybindings/**",
+            "filesToExclude": "",
+            "excludeSettingAndIgnoreFiles": true,
+            "showIncludesExcludes": false
+          }
+        }
+      ]
+    }
+    // workbench.action.findInFiles Open search with specified args
+    /*     editor.actions.findWithArgs - Open a new In-Editor Find Widget with specific options.
+
+    searchString - String to prefill the find input
+    replaceString - String to prefill the replace input
+    isRegex - enable regex
+    preserveCase - try to keep the same case when replacing
+    findInSelection - restrict the find location to the current selection
+    matchWholeWord
+    isCaseSensitive */
+  ]
 }
