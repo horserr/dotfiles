@@ -5,17 +5,7 @@
     "icon": "info",
     "type": "bindings",
     "bindings": [
-      // workbench.action.zenHideEditorTabs
-      // workbench.action.zenShowEditorTab
-      // workbench.action.zenShowMultipleEditorTabs
-      // workbench.action.toggleSeparatePinnedEditorTabs
-
-      // git.blame.toggleStatusBarItem
-      // workbench.action.resetFocusedViewLocation
-      // workbench.action.resetViewLocations
-      // workbench.action.restartExtensionHost
       // workbench.action.restoreAuxiliaryBar
-
       // , editor group layout
       {
         "key": ",",
@@ -23,13 +13,23 @@
         "icon": "layout",
         "type": "bindings",
         "bindings": [
+          // layout customization
+          {
+            "key": ",",
+            "name": "layout customization",
+            "icon": "chevron-up",
+            "type": "command",
+            "command": "workbench.action.customizeLayout"
+          },
+          // v editor layout
           {
             "key": "v",
-            "name": "view editor layout",
+            "name": "open editor layout view",
             "icon": "layout",
             "type": "command",
             "command": "layouts_list.focus"
           },
+          // s save layout
           {
             "key": "s",
             "name": "layout save",
@@ -37,6 +37,7 @@
             "type": "command",
             "command": "layouts_list.focus"
           },
+          // u update editor layout
           {
             "key": "u",
             "name": "update editor layout",
@@ -44,6 +45,7 @@
             "type": "command",
             "command": "editorLayout.update"
           },
+          // o open editor layout
           {
             "key": "o",
             "name": "open editor layout",
@@ -51,13 +53,7 @@
             "type": "command",
             "command": "editorLayout.open"
           },
-          {
-            "key": "u",
-            "name": "update editor layout",
-            "icon": "layout",
-            "type": "command",
-            "command": "editorLayout.update"
-          },
+          // d delete editor layout
           {
             "key": "d",
             "name": "delete editor layout",
@@ -65,6 +61,7 @@
             "type": "command",
             "command": "editorLayout.remove"
           },
+          // ' toggle editor group layout
           {
             "key": "'",
             "name": "Toggle editor group layout",
@@ -90,24 +87,163 @@
               }
             ]
           },
+          // R reset all view locations
           {
-            "key": ",",
-            "name": "layout customization",
-            "icon": "chevron-up",
+            "key": "R",
+            "name": "reset all view locations",
+            "icon": "layout",
             "type": "command",
-            "command": "workbench.action.customizeLayout"
+            "command": "workbench.action.resetViewLocations"
           }
         ]
       },
-      // k
+      // f move focus
+      {
+        "key": "f",
+        "name": "+Move focus",
+        "icon": "screen-full",
+        "type": "bindings",
+        "bindings": [
+          // h move focus in sidebar
+          {
+            "key": "h",
+            "name": "+Move focus in sidebar",
+            "icon": "screen-full",
+            "type": "transient",
+            "command": "workbench.action.focusSideBar",
+            "bindings": [
+              {
+                "key": "j",
+                "name": "focus next view",
+                "icon": "marker-navigation-next",
+                "type": "command",
+                "command": "workbench.action.nextSideBarView"
+              },
+              {
+                "key": "l",
+                "name": "focus next view",
+                "icon": "marker-navigation-next",
+                "type": "command",
+                "command": "workbench.action.nextSideBarView"
+              },
+              {
+                "key": "k",
+                "name": "focus previous view",
+                "icon": "marker-navigation-previous",
+                "type": "command",
+                "command": "workbench.action.previousSideBarView"
+              },
+              {
+                "key": "h",
+                "name": "focus previous view",
+                "icon": "marker-navigation-previous",
+                "type": "command",
+                "command": "workbench.action.previousSideBarView"
+              }
+            ]
+          },
+          // j move focus in panel
+          {
+            "key": "j",
+            "name": "+Move focus in panel",
+            "icon": "screen-full",
+            "type": "transient",
+            "command": "workbench.action.focusPanel",
+            "bindings": [
+              {
+                "key": "j",
+                "name": "focus next view",
+                "icon": "marker-navigation-next",
+                "type": "command",
+                "command": "workbench.action.nextPanelView"
+              },
+              {
+                "key": "l",
+                "name": "focus next view",
+                "icon": "marker-navigation-next",
+                "type": "command",
+                "command": "workbench.action.nextPanelView"
+              },
+              {
+                "key": "k",
+                "name": "focus previous view",
+                "icon": "marker-navigation-previous",
+                "type": "command",
+                "command": "workbench.action.previousPanelView"
+              },
+              {
+                "key": "h",
+                "name": "focus previous view",
+                "icon": "marker-navigation-previous",
+                "type": "command",
+                "command": "workbench.action.previousPanelView"
+              }
+            ]
+          },
+          // l move focus in auxiliary bar
+          {
+            "key": "l",
+            "name": "+Move focus in auxiliary(secondary) bar",
+            "icon": "screen-full",
+            "type": "transient",
+            "command": "workbench.action.focusAuxiliaryBar",
+            "bindings": [
+              {
+                "key": "j",
+                "name": "focus next view",
+                "icon": "marker-navigation-next",
+                "type": "command",
+                "command": "workbench.action.nextAuxiliaryBarView"
+              },
+              {
+                "key": "l",
+                "name": "focus next view",
+                "icon": "marker-navigation-next",
+                "type": "command",
+                "command": "workbench.action.nextAuxiliaryBarView"
+              },
+              {
+                "key": "k",
+                "name": "focus previous view",
+                "icon": "marker-navigation-previous",
+                "type": "command",
+                "command": "workbench.action.previousAuxiliaryBarView"
+              },
+              {
+                "key": "h",
+                "name": "focus previous view",
+                "icon": "marker-navigation-previous",
+                "type": "command",
+                "command": "workbench.action.previousAuxiliaryBarView"
+              }
+            ]
+          }
+        ]
+      },
+      // k +Toggle view maximize
       {
         "key": "k",
-        "name": "Toggle maximized panel",
-        "icon": "chevron-up",
-        "type": "command",
-        "command": "workbench.action.toggleMaximizedPanel"
+        "name": "+Toggle view maximize",
+        "icon": "remote-explorer-review-issues",
+        "type": "bindings",
+        "bindings": [
+          {
+            "key": "j",
+            "name": "toggle panel view maximize",
+            "icon": "remove",
+            "type": "command",
+            "command": "workbench.action.toggleMaximizedPanel"
+          },
+          {
+            "key": "l",
+            "name": "Toggle secondary bar maximize",
+            "icon": "remove",
+            "type": "command",
+            "command": "workbench.action.toggleMaximizedAuxiliaryBar"
+          }
+        ]
       },
-      // h
+      // h Toggle side bar visibility
       {
         "key": "h",
         "name": "Toggle side bar visibility",
@@ -115,7 +251,7 @@
         "type": "command",
         "command": "workbench.action.toggleSidebarVisibility"
       },
-      // j
+      // j Toggle panel visibility
       {
         "key": "j",
         "name": "Toggle panel visibility",
@@ -123,7 +259,7 @@
         "type": "command",
         "command": "workbench.action.togglePanel"
       },
-      // l
+      // l Toggle secondary bar visibility
       {
         "key": "l",
         "name": "Toggle secondary bar visibility",
@@ -131,7 +267,7 @@
         "type": "command",
         "command": "workbench.action.toggleAuxiliaryBar"
       },
-      // q
+      // q close all panels
       {
         "key": "q",
         "name": "close all panels",
@@ -260,7 +396,7 @@
           },
           {
             "key": "x",
-            "name": "Show extensions",
+            "name": "Show installed extensions",
             "icon": "extensions",
             "type": "command",
             "command": "workbench.extensions.action.installedExtensions"
@@ -274,13 +410,7 @@
         "icon": "list-flat",
         "type": "bindings",
         "bindings": [
-          {
-            "key": ",",
-            "name": "Toggle markdown preview",
-            "icon": "tools",
-            "type": "command",
-            "command": "markdown.togglePreview"
-          },
+          // e editor context menu
           {
             "key": "e",
             "name": "show editor context menu",
@@ -288,6 +418,7 @@
             "type": "command",
             "command": "editor.action.showContextMenu"
           },
+          // g toggle git blame editor decoration
           {
             "key": "g",
             "name": "Toggle git blame editor decoration",
@@ -295,6 +426,7 @@
             "type": "command",
             "command": "git.blame.toggleEditorDecoration"
           },
+          // w render whitespace
           {
             "key": "w",
             "name": "Toggle render whitespace",
@@ -303,19 +435,13 @@
             "command": "editor.action.toggleRenderWhitespace"
           },
           {
-            "key": "c",
-            "name": "Toggle centered layout",
-            "icon": "list-flat",
-            "type": "command",
-            "command": "workbench.action.toggleCenteredLayout"
-          },
-          {
             "key": "m",
             "name": "Toggle minimap",
             "icon": "symbol-ruler",
             "type": "command",
             "command": "editor.action.toggleMinimap"
           },
+          // l wordwrap
           {
             "key": "l",
             "name": "Toggle word wrap",
@@ -323,6 +449,7 @@
             "type": "command",
             "command": "editor.action.toggleWordWrap"
           },
+          // b breadcrumbs
           {
             "key": "b",
             "name": "Toggle breadcrumbs",
@@ -330,13 +457,15 @@
             "type": "command",
             "command": "breadcrumbs.toggle"
           },
+          // p toggle separate pinned tabs
           {
             "key": "p",
-            "name": "separate pinned tabs",
+            "name": "toggle separate pinned tabs",
             "icon": "tools",
             "type": "command",
             "command": "workbench.action.toggleSeparatePinnedEditorTabs"
           },
+          // t toggle tab visibility
           {
             "key": "t",
             "name": "Toggle tab visibility",
@@ -357,9 +486,10 @@
               }
             ]
           },
+          // s toggle sticky scroll
           {
             "key": "s",
-            "name": "Toggle stickyscrool",
+            "name": "Toggle sticky scroll",
             "icon": "tools",
             "type": "commands",
             "commands": [
@@ -383,6 +513,9 @@
             "icon": "eye",
             "type": "command",
             "command": "workbench.action.toggleZenMode"
+            // workbench.action.zenHideEditorTabs
+            // workbench.action.zenShowEditorTab
+            // workbench.action.zenShowMultipleEditorTabs
           },
           // f toggle full screen
           {
@@ -416,13 +549,52 @@
             "type": "command",
             "command": "toggle.workbench.notifications.showInTitleBar"
           },
-          // c toggle screen cast mode
+          // c center layout
           {
             "key": "c",
+            "name": "Toggle centered layout",
+            "icon": "list-flat",
+            "type": "command",
+            "command": "workbench.action.toggleCenteredLayout"
+          },
+          // C toggle screen cast mode
+          {
+            "key": "C",
             "name": "Toggle screen cast mode(showing keystroke when typing)",
             "icon": "screen-full",
             "type": "command",
             "command": "workbench.action.toggleScreencastMode"
+          }
+        ]
+      },
+      // J status bar
+      {
+        "key": "J",
+        "name": "+Status bar",
+        "icon": "output",
+        "type": "bindings",
+        "bindings": [
+          // J focus status bar
+          {
+            "key": "J",
+            "name": "focus Status bar",
+            "icon": "output",
+            "type": "command",
+            "command": "workbench.action.focusStatusBar"
+          },
+          {
+            "key": "t",
+            "name": "toggle status bar visibility",
+            "icon": "output",
+            "type": "command",
+            "command": "workbench.action.toggleStatusbarVisibility"
+          },
+          {
+            "key": "g",
+            "name": "toggle git status bar decoration",
+            "icon": "output",
+            "type": "command",
+            "command": "git.blame.toggleStatusBarItem"
           }
         ]
       }
