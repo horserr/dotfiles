@@ -1,0 +1,37 @@
+[
+  // {
+  //   "key": "escape",
+  //   "command": "workbench.statusBar.clearFocus",
+  //   "when": "statusBarFocused"
+  // },
+  {
+    "key": "g",
+    "command": "workbench.statusBar.focusFirst",
+    "when": "statusBarFocused"
+  },
+  {
+    "key": "shift+g",
+    "command": "workbench.statusBar.focusLast",
+    "when": "statusBarFocused"
+  },
+  {
+    "key": "j",
+    "command": "workbench.statusBar.focusNext",
+    "when": "statusBarFocused"
+  },
+  {
+    "key": "l",
+    "command": "workbench.statusBar.focusNext",
+    "when": "statusBarFocused"
+  },
+  {
+    "key": "k",
+    "command": "workbench.statusBar.focusPrevious",
+    "when": "statusBarFocused"
+  },
+  {
+    "key": "h",
+    "command": "workbench.statusBar.focusPrevious",
+    "when": "statusBarFocused"
+  }
+]
