@@ -1,0 +1,26 @@
+{
+  // 提交框中的设置
+  "[scminput]": {
+    "editor.fontLigatures": true,
+    "editor.wordWrap": "bounded"
+  },
+  // hide redundant repositories
+  "scm.alwaysShowRepositories": false,
+  "scm.countBadge": "focused",
+  "scm.diffDecorationsGutterWidth": 5,
+  "scm.diffDecorationsIgnoreTrimWhitespace": "inherit",
+  "scm.graph.badges": "all",
+  "scm.graph.pageSize": 20,
+  "scm.providerCountBadge": "auto",
+  "scm.repositories.explorer": true,
+  "scm.repositories.selectionMode": "single",
+  "scm.repositories.sortOrder": "discovery time",
+  "scm.repositories.visible": 3,
+  // hide the giant commit button
+  "scm.showActionButton": false,
+  // TOGGLE off to hide AI-assisted commit message writing
+  "scm.showInputActionButton": true,
+  // UPLIFTING change editor appearance among branches
+  "scm.workingSets.default": "current",
+  "scm.workingSets.enabled": true
+}

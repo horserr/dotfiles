@@ -1,0 +1,25 @@
+{
+  "[diff]": {
+    "editor.lineNumbers": "off"
+  },
+  // TOGGLE on to show codeLens
+  "diffEditor.codeLens": false,
+  "diffEditor.experimental.showEmptyDecorations": true,
+  "diffEditor.experimental.showMoves": true,
+  "diffEditor.experimental.useTrueInlineView": true,
+  // 折叠区域上下各显示多少行代码，来提供上下文（背景）信息
+  "diffEditor.hideUnchangedRegions.contextLineCount": 3,
+  "diffEditor.hideUnchangedRegions.enabled": true,
+  // 触发折叠的最少行数
+  "diffEditor.hideUnchangedRegions.minimumLineCount": 5,
+  // 点击 展开更多 时显示的（未更改的）代码行数
+  "diffEditor.hideUnchangedRegions.revealLineCount": 10,
+  "diffEditor.ignoreTrimWhitespace": true,
+  // PERFORMANCE
+  "diffEditor.maxComputationTime": 1000,
+  // PERFORMANCE
+  "diffEditor.maxFileSize": 5, // size in MB
+  // TOGGLE 调整 inline 和 side by side 的最小宽度
+  "diffEditor.renderSideBySideInlineBreakpoint": 700,
+  "diffEditor.wordWrap": "inherit"
+}
