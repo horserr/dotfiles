@@ -1,11 +1,12 @@
 [
+  // todo remove view
+  // move view
   {
     "key": "v",
     "name": "+view",
     "icon": "info",
     "type": "bindings",
     "bindings": [
-      // workbench.action.restoreAuxiliaryBar
       // , editor group layout
       {
         "key": ",",
@@ -86,14 +87,6 @@
                 "command": "workbench.action.toggleEditorGroupLayout"
               }
             ]
-          },
-          // R reset all view locations
-          {
-            "key": "R",
-            "name": "reset all view locations",
-            "icon": "layout",
-            "type": "command",
-            "command": "workbench.action.resetViewLocations"
           }
         ]
       },
@@ -217,6 +210,84 @@
                 "command": "workbench.action.previousAuxiliaryBarView"
               }
             ]
+          },
+          // k move focus between parts
+          {
+            "key": "k",
+            "name": "+Move focus between parts",
+            "icon": "screen-full",
+            "type": "transient",
+            "bindings": [
+              {
+                "key": "j",
+                "name": "focus next part",
+                "icon": "marker-navigation-next",
+                "type": "command",
+                "command": "workbench.action.focusNextPart"
+              },
+              {
+                "key": "l",
+                "name": "focus next part",
+                "icon": "marker-navigation-next",
+                "type": "command",
+                "command": "workbench.action.focusNextPart"
+              },
+              {
+                "key": "k",
+                "name": "focus previous part",
+                "icon": "marker-navigation-previous",
+                "type": "command",
+                "command": "workbench.action.focusPreviousPart"
+              },
+              {
+                "key": "h",
+                "name": "focus previous part",
+                "icon": "marker-navigation-previous",
+                "type": "command",
+                "command": "workbench.action.focusPreviousPart"
+              }
+            ]
+          }
+        ]
+      },
+      // m move view
+      {
+        "key": "m",
+        "name": "+Move view",
+        "icon": "edit-sessions-view-icon",
+        "type": "bindings",
+        "bindings": [
+          // m move focused view
+          {
+            "key": "m",
+            "name": "move focused view",
+            "icon": "screen-full",
+            "type": "command",
+            "command": "workbench.action.moveFocusedView"
+          },
+          // space select view to move
+          {
+            "key": " ",
+            "name": "select view to move",
+            "icon": "screen-full",
+            "type": "command",
+            "command": "workbench.action.moveView"
+          },
+          // reset focused view
+          {
+            "key": "r",
+            "name": "reset focused view location",
+            "icon": "layout",
+            "type": "command",
+            "command": "workbench.action.resetFocusedViewLocation"
+          },
+          // R reset all view locations
+          {
+            "key": "R",
+            "name": "reset all view locations",
+            "icon": "layout",
+            "type": "command",
+            "command": "workbench.action.resetViewLocations"
           }
         ]
       },
@@ -239,6 +310,7 @@
             "name": "Toggle secondary bar maximize",
             "icon": "remove",
             "type": "command",
+            // workbench.action.restoreAuxiliaryBar
             "command": "workbench.action.toggleMaximizedAuxiliaryBar"
           }
         ]
