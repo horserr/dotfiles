@@ -23,12 +23,6 @@
             "command": "commands.suggestCommands"
           },
           {
-            "key": "C",
-            "name": "show color picker",
-            "type": "command",
-            "command": "editor.action.showOrFocusStandaloneColorPicker"
-          },
-          {
             "key": "s",
             "name": "show settings",
             "type": "command",
@@ -47,10 +41,16 @@
             "command": "commands.suggestCodicons"
           },
           {
-            "key": "c",
+            "key": "C",
             "name": "show colors",
             "type": "command",
             "command": "commands.suggestColors"
+          },
+          {
+            "key": "p",
+            "name": "show color picker",
+            "type": "command",
+            "command": "editor.action.showOrFocusStandaloneColorPicker"
           },
           {
             "key": "l",

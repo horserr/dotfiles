@@ -3,52 +3,13 @@
   // git.copyCommitId
   // git.copyCommitMessage
   // git.copyContentToClipboard
-  // editor.action.diffReview.next
-
-  // workbench.scm.action.collapseAll
-  // workbench.scm.action.collapseAllRepositories
-  // workbench.scm.action.expandAllRepositories
-  // workbench.scm.action.focusNextInput
-  // workbench.scm.action.focusNextResourceGroup
-  // workbench.scm.action.focusPreviousInput
-  // workbench.scm.action.focusPreviousResourceGroup
-  // workbench.scm.action.graph.addHistoryItemChangeToChat
-  // workbench.scm.action.graph.addHistoryItemToChat
-  // workbench.scm.action.graph.openFile
-  // workbench.scm.action.graph.pickHistoryItemRefs
-  // workbench.scm.action.graph.pickRepository
-  // workbench.scm.action.graph.refresh
-  // workbench.scm.action.graph.revealCurrentHistoryItem
-  // workbench.scm.action.graph.setListViewMode
-  // workbench.scm.action.graph.setTreeViewMode
-  // workbench.scm.action.graph.summarizeHistoryItem
-  // workbench.scm.action.graph.viewChanges
-  // workbench.scm.action.repositories.setSelectionMode.multiple
-  // workbench.scm.action.repositories.setSelectionMode.single
-  // workbench.scm.action.repositories.setSortKey.discoveryTime
-  // workbench.scm.action.repositories.setSortKey.name
-  // workbench.scm.action.repositories.setSortKey.path
-  // workbench.scm.action.setListViewMode
-  // workbench.scm.action.setListViewModeNavigation
-  // workbench.scm.action.setSortKey.name
-  // workbench.scm.action.setSortKey.path
-  // workbench.scm.action.setSortKey.status
-  // workbench.scm.action.setTreeViewMode
-  // workbench.scm.action.setTreeViewModeNavigation
-  // workbench.scm.focus
-  // workbench.scm.history.focus
-  // workbench.scm.history.resetViewLocation
-  // workbench.scm.removeView
-  // workbench.scm.repositories.focus
-  // workbench.scm.repositories.resetViewLocation
-  // workbench.scm.resetViewLocation
-  // workbench.scm.toggleVisibility
   {
     "key": "g",
     "name": "+Git",
     "icon": "git-branch",
     "type": "bindings",
     "bindings": [
+      // , refresh git ui
       {
         "key": ",",
         "name": "refresh vscode git ui",
@@ -56,7 +17,15 @@
         "type": "command",
         "command": "git.refresh"
       },
-      // add / stage
+      // i init repo
+      {
+        "key": "i",
+        "name": "init repo",
+        "icon": "file",
+        "type": "command",
+        "command": "git.init"
+      },
+      // a add / stage
       {
         "key": "a",
         "name": "+Stage/Add",
@@ -100,7 +69,7 @@
           }
         ]
       },
-      // Undo/Unstage/Restore/Revert
+      // u Undo/Unstage/Restore/Revert
       {
         "key": "u",
         "name": "+Undo/Unstage/Restore/Revert",
@@ -130,7 +99,7 @@
           }
         ]
       },
-      // commit
+      // c commit
       {
         "key": "c",
         "name": "+Commit",
@@ -161,7 +130,7 @@
           }
         ]
       },
-      // push
+      // p push
       {
         "key": "p",
         "name": "+Push",
@@ -191,11 +160,41 @@
           }
         ]
       },
-      // diff
+      // x diff
       {
         "key": "x",
-        "name": "+Open",
+        "name": "+Diff",
         "icon": "source-control",
+        "type": "bindings",
+        "bindings": [
+          {
+            "key": "x",
+            "name": "open multi diff editor for all changes",
+            "icon": "arrow-down",
+            "type": "command",
+            "command": "git.viewChanges"
+          },
+          {
+            "key": "s",
+            "name": "open multi diff editor for all staged changes",
+            "icon": "arrow-down",
+            "type": "command",
+            "command": "git.viewStagedChanges"
+          },
+          {
+            "key": "u",
+            "name": "open multi diff editor for all untracked changes",
+            "icon": "arrow-down",
+            "type": "command",
+            "command": "git.viewUntrackedChanges"
+          }
+        ]
+      },
+      // o open
+      {
+        "key": "o",
+        "name": "+Open",
+        "icon": "ports-open-preview-icon",
         "type": "bindings",
         "bindings": [
           {
@@ -221,31 +220,10 @@
               "workbench.action.newEmptyEditorWindow",
               "git.openAllChanges"
             ]
-          },
-          {
-            "key": "x",
-            "name": "open multi diff editor for all changes",
-            "icon": "arrow-down",
-            "type": "command",
-            "command": "git.viewChanges"
-          },
-          {
-            "key": "s",
-            "name": "open multi diff editor for all staged changes",
-            "icon": "arrow-down",
-            "type": "command",
-            "command": "git.viewStagedChanges"
-          },
-          {
-            "key": "u",
-            "name": "open multi diff editor for all untracked changes",
-            "icon": "arrow-down",
-            "type": "command",
-            "command": "git.viewUntrackedChanges"
           }
         ]
       },
-      // fetch
+      // f fetch
       {
         "key": "f",
         "name": "+Fetch",
@@ -275,7 +253,7 @@
           }
         ]
       },
-      // jump, switch, checkout
+      // j jump, switch, checkout
       {
         "key": "j",
         "name": "+Jump/Switch",
@@ -313,7 +291,7 @@
           }
         ]
       },
-      // merge
+      // m merge
       {
         "key": "m",
         "name": "+Merge",
@@ -427,7 +405,7 @@
           }
         ]
       },
-      // worktree
+      // w worktree
       {
         "key": "w",
         "name": "+Worktree",
@@ -466,13 +444,14 @@
           }
         ]
       },
-      // rebase/reset/rename
+      // r rebase/reset/rename
       {
         "key": "r",
         "name": "+Rebase/Rename",
         "icon": "arrow-down",
         "type": "bindings",
         "bindings": [
+          // r rebase
           {
             "key": "r",
             "name": "rebase",
@@ -480,6 +459,7 @@
             "type": "command",
             "command": "git.rebase"
           },
+          // a abort rebase
           {
             "key": "a",
             "name": "rebase abort",
@@ -487,6 +467,7 @@
             "type": "command",
             "command": "git.rebaseAbort"
           },
+          // c undo last commit
           {
             "key": "c",
             "name": "reset/undo last commit with mixed mode",
@@ -494,13 +475,15 @@
             "type": "command",
             "command": "git.undoCommit"
           },
+          // f rename file
           {
-            "key": "n",
+            "key": "f",
             "name": "git rename file",
             "icon": "arrow-down",
             "type": "command",
             "command": "git.rename"
           },
+          // b rename branch
           {
             "key": "b",
             "name": "rename branch",
@@ -510,7 +493,7 @@
           }
         ]
       },
-      // delete/remove
+      // d delete/remove
       {
         "key": "d",
         "name": "+Delete",
@@ -561,7 +544,7 @@
           }
         ]
       },
-      // stash
+      // k stash
       {
         "key": "k",
         "name": "+Keep/Stash",
@@ -688,8 +671,9 @@
           }
         ]
       },
+      // A Add
       {
-        "key": "a",
+        "key": "A",
         "name": "+Add",
         "icon": "file",
         "type": "bindings",
@@ -731,6 +715,7 @@
           }
         ]
       },
+      // b blame
       {
         "key": "b",
         "name": "Blame file",
@@ -738,6 +723,7 @@
         "type": "command",
         "command": "magit.blame-file"
       },
+      // m magit
       {
         "key": "m",
         "name": "Magit dispatch",
@@ -745,6 +731,7 @@
         "type": "command",
         "command": "magit.dispatch"
       },
+      // s status
       {
         "key": "s",
         "name": "Status",

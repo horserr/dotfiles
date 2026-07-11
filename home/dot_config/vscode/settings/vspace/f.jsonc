@@ -186,6 +186,7 @@
         "type": "command",
         "command": "workbench.action.reopenClosedEditor"
       },
+      // L Change file language
       {
         "key": "L",
         "name": "Change file language",
@@ -193,6 +194,40 @@
         "type": "command",
         "command": "workbench.action.editor.changeLanguageMode"
       },
+      // I change indentation, tab display size
+      {
+        "key": "I",
+        "name": "change indentation, tab display size",
+        "icon": "code",
+        "type": "command",
+        "command": "editor.action.changeTabDisplaySize"
+      },
+      // e +Encoding
+      {
+        "key": "e",
+        "name": "+Encoding",
+        "icon": "file-code",
+        "type": "bindings",
+        "bindings": [
+          // f change file encoding
+          {
+            "key": "f",
+            "name": "change file encoding",
+            "icon": "file-code",
+            "type": "command",
+            "command": "workbench.action.editor.changeEncoding"
+          },
+          // e change end of line(eol) encoding
+          {
+            "key": "e",
+            "name": "change end of line(eol) encoding",
+            "icon": "file-code",
+            "type": "command",
+            "command": "workbench.action.editor.changeEOL"
+          }
+        ]
+      },
+      // s +Save
       {
         "key": "s",
         "name": "+Save",
@@ -239,6 +274,7 @@
           }
         ]
       },
+      // +New untitle file
       {
         "key": "n",
         "name": "+New untitled file",
