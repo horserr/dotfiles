@@ -1,17 +1,31 @@
 {
   "window.autoDetectColorScheme": true,
   "window.autoDetectHighContrast": true,
+  // don't show input-box-like dialog
   "window.commandCenter": false,
   "window.confirmBeforeClose": "never",
   "window.confirmSaveUntitledWorkspace": false,
+  // window controls hidden, maximize, close icons
+  "window.controlsStyle": "hidden",
+  // unless in full screen, the window title is displayed
+  "window.customTitleBarVisibility": "windowed",
   "window.density.editorTabHeight": "compact",
   "window.dialogStyle": "custom",
+  "window.doubleClickIconToClose": true,
   "window.menuBarVisibility": "toggle",
+  "window.menuStyle": "inherit",
+  "window.newWindowDimensions": "default",
   "window.newWindowProfile": "Default",
   "window.openFilesInNewWindow": "default",
-  "window.openFoldersInNewWindow": "default",
+  "window.openFoldersInNewWindow": "on",
+  // Dictates what happens when you launch VS Code from your terminal or desktop shortcut without specifying a file or folder path.
+  "window.openWithoutArgumentsInNewWindow": "on",
+  "window.restoreFullscreen": false,
   "window.restoreWindows": "none",
+  "window.systemColorTheme": "auto",
   "window.title": "${dirty}😉${rootNameShort}${separator}${activeEditorShort}",
+  "window.titleBarStyle": "custom",
   "window.titleSeparator": " 📍 ",
-  "window.zoomLevel": 1.0
+  "window.zoomLevel": 1.0,
+  "window.zoomPerWindow": true
 }
