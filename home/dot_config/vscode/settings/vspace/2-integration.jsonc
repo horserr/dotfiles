@@ -5,25 +5,9 @@
     "icon": "search",
     "type": "bindings",
     "bindings": [
-      // {
-      //   "key": "y",
-      //   "name": "+Integration",
-      //   "icon": "search",
-      //   "type": "commands",
-      //   "commands": [
-      //     "workbench.action.createTerminalEditor",
-      //     {
-      //       "command": "workbench.action.terminal.sendSequence",
-      //       "args": {
-      //         // \u000d 代表按下 Enter 回车键，让命令立即执行
-      //         "text": "yazi\u000d"
-      //       }
-      //     }
-      //   ]
-      // }
       {
         "key": "y",
-        "name": "+Integration",
+        "name": "yazi",
         "icon": "search",
         "type": "command",
         "command": "yazi-vscode.toggle"
@@ -35,9 +19,129 @@
         "type": "command",
         "command": "workbench.action.quickOpenWithModes"
       },
+      // g gistpad
+      {
+        "key": "g",
+        "name": "+GistPad",
+        "icon": "gist",
+        "type": "bindings",
+        "bindings": [
+          // v view gistpad
+          {
+            "key": "v",
+            "name": "view gistpad",
+            "icon": "gist",
+            "type": "command",
+            "command": "gistpad.gists.focus"
+            // "command": "workbench.view.extension.gistpad"
+          },
+          // d delete
+          {
+            "key": "d",
+            "name": "+Delete",
+            "icon": "gist",
+            "type": "bindings",
+            "bindings": [
+              {
+                "key": "d",
+                "name": "+Delete",
+                "icon": "gist",
+                "type": "command",
+                "command": ""
+              }
+            ]
+          }
+        ]
+      },
+      // e explorer
+      {
+        "key": "e",
+        "name": "+Explorer",
+        "icon": "zap",
+        "type": "bindings",
+        "bindings": [
+          // s find in folder
+          {
+            "key": "s",
+            "name": "find in folder",
+            "icon": "zap",
+            "type": "command",
+            "command": "search.action.restrictSearchToFolder"
+          },
+          // S find in folder
+          {
+            "key": "s",
+            "name": "find in workspace",
+            "icon": "zap",
+            "type": "command",
+            "command": "filesExplorer.findInWorkspace"
+          },
+          // s find in folder
+          {
+            "key": "a",
+            "name": "new file",
+            "icon": "zap",
+            "type": "command",
+            "command": "explorer.newFile"
+          },
+          // d delete file
+          {
+            "key": "d",
+            "name": "delete file",
+            "icon": "zap",
+            "type": "command",
+            "command": "deleteFile"
+          },
+          {
+            "key": "x",
+            "name": "cut file",
+            "icon": "zap",
+            "type": "command",
+            "command": "filesExplorer.cut"
+          },
+          //
+          {
+            "key": "r",
+            "name": "rename file",
+            "icon": "zap",
+            "type": "command",
+            "command": "renameFile"
+          },
+          {
+            "key": "R",
+            "name": "reveal in file os",
+            "icon": "zap",
+            "type": "command",
+            "command": "revealFileInOS"
+          },
+          {
+            "key": "y",
+            "name": "copy file",
+            "icon": "zap",
+            "type": "command",
+            "command": "filesExplorer.copy"
+          },
+          {
+            "key": "p",
+            "name": "paste file",
+            "icon": "zap",
+            "type": "command",
+            "command": "filesExplorer.paste"
+          }
+        ]
+      },
+      // * misc
+      {
+        "key": "*",
+        "name": "+Misc",
+        "icon": "zap",
+        "type": "bindings",
+        "bindings": []
+      },
+      // / dynamic commands mounting point
       {
         "key": "/",
-        "name": "+Add custom workspace integration here",
+        "name": "+Add dynamic workspace integration here",
         "icon": "zap",
         "type": "command",
         "command": "noop"
