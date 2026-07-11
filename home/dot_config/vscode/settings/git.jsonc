@@ -5,6 +5,7 @@
   // TOGGLE can set 'all'
   "git.autofetch": true,
   "git.autofetchPeriod": 180, // every 3mins
+  "git.autorefresh": false,
   "git.autoRepositoryDetection": true,
   // SIGNIFICANT
   "git.autoStash": true,
