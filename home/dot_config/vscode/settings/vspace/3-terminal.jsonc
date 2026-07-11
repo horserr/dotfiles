@@ -6,6 +6,13 @@
     "icon": "question",
     "type": "bindings",
     "bindings": [
+      {
+        "key": " ",
+        "name": "Return to vspacecode",
+        "icon": "quick-input-back",
+        "type": "command",
+        "command": "vspacecode.space"
+      },
       // , scroll
       {
         "key": ",",
@@ -392,7 +399,6 @@
           }
         ]
       },
-      // a accessibleView
       // v selection
       {
         "key": "v",
@@ -601,7 +607,7 @@
           }
         ]
       },
-      // size
+      // s size
       {
         "key": "s",
         "name": "+Size",
