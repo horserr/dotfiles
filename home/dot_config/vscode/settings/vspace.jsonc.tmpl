@@ -1,11 +1,3 @@
 {
-
-
-  {{- $vspaceBindings := joinPath .chezmoi.sourceDir "dot_config/vscode/settings/vspace" -}}
-  {{- $mergedList := list -}}
-  {{- range (glob (joinPath $vspaceBindings "*.jsonc")) -}}
-    {{- $fileContent := include . | fromJsonc -}}
-    {{- $mergedList = concat $mergedList $fileContent -}}
-  {{- end -}}
-  "vspacecode.bindings": {{ $mergedList | toPrettyJson "\t" }}
+  "vspacecode.bindings": {{- includeTemplate "mergeList" (dict "GLOBAL" . "relativePath" "dot_config/vscode/settings/vspace") -}}
 }

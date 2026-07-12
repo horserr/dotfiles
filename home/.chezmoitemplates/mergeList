@@ -1,0 +1,38 @@
+{{- /* argument (dict "GLOBAL" $/. "relativePath" ARG) */ -}}
+{{- $keybindingsDir := joinPath .GLOBAL.chezmoi.sourceDir .relativePath -}}
+
+{{- $mergedList := list -}}
+{{- $fileContent := dict -}}
+{{- $cleanedContent := dict -}}
+
+{{- range (glob (joinPath $keybindingsDir "*.json*")) -}}
+  {{- /* file name */ -}}
+  {{- $fileName := base . -}}
+
+  {{- /* relative path */ -}}
+  {{- $relPath := trimPrefix (joinPath $.GLOBAL.chezmoi.sourceDir "/") . -}}
+
+  {{- if hasSuffix "jsonc.tmpl" . -}}
+    {{- /* merge jsonc template */ -}}
+    {{- $fileContent = includeTemplate $relPath $ | fromJsonc -}}
+  {{- else if hasSuffix "json.tmpl" . -}}
+    {{- /* merge json template */ -}}
+    {{- $fileContent = includeTemplate $relPath $ | fromJson -}}
+  {{- else if hasSuffix "jsonc" . -}}
+    {{- /* merge normal jsonc file */ -}}
+    {{- $fileContent = include . | fromJsonc -}}
+  {{- else if hasSuffix "jsonc" . -}}
+    {{- /* merge normal json file */ -}}
+    {{- $fileContent = include . | fromJson -}}
+  {{- else -}}
+    {{- fail (printf "Unknown file type: %s" $fileName) -}}
+  {{- end -}}
+
+  {{- $mergedList = concat $mergedList $fileContent -}}
+{{- end -}}
+
+{{- if eq (len $mergedList) 0 -}}
+  {{- fail "Abort! The whole settings is empty." -}}
+{{- end -}}
+
+{{ $mergedList | toPrettyJson "  " }}
