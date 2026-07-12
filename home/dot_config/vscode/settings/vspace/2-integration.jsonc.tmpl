@@ -1,0 +1,61 @@
+{{- /* args: (dict "global" "fileName") */ -}}
+{{- define "integration" -}}
+{{- $filePath := joinPath $.GLOBAL.chezmoi.sourceDir "dot_config/vscode/settings/vspace/integration" $.fileName -}}
+{{- include $filePath -}}
+{{- end -}}
+[
+  {
+    "key": "/",
+    "name": "+Integration",
+    "icon": "search",
+    "type": "bindings",
+    "bindings": [
+      {
+        "key": "y",
+        "name": "yazi",
+        "icon": "search",
+        "type": "command",
+        "command": "yazi-vscode.toggle"
+      },
+      {
+        "key": " ",
+        "name": "quick open with modes",
+        "icon": "terminal",
+        "type": "command",
+        "command": "workbench.action.quickOpenWithModes"
+      },
+      // g gistpad
+      {
+        "key": "g",
+        "name": "+GistPad",
+        "icon": "gist",
+        "type": "bindings",
+        "bindings": {{ template "integration" (dict "GLOBAL" $ "fileName" "gistpad.jsonc") }}
+      },
+      // e explorer
+      {
+        "key": "e",
+        "name": "+Explorer",
+        "icon": "zap",
+        "type": "bindings",
+        "bindings": {{ template "integration" (dict "GLOBAL" $ "fileName" "explorer.jsonc") }}
+      },
+      // * misc
+      {
+        "key": "*",
+        "name": "+Misc",
+        "icon": "zap",
+        "type": "bindings",
+        "bindings": []
+      },
+      // / dynamic commands mounting point
+      {
+        "key": "/",
+        "name": "+Add dynamic workspace integration here",
+        "icon": "zap",
+        "type": "command",
+        "command": "noop"
+      }
+    ]
+  }
+]

@@ -1,0 +1,27 @@
+[
+  // v view gistpad
+  {
+    "key": "v",
+    "name": "view gistpad",
+    "icon": "gist",
+    "type": "command",
+    "command": "gistpad.gists.focus"
+    // "command": "workbench.view.extension.gistpad"
+  },
+  // d delete
+  {
+    "key": "d",
+    "name": "+Delete",
+    "icon": "gist",
+    "type": "bindings",
+    "bindings": [
+      {
+        "key": "d",
+        "name": "+Delete",
+        "icon": "gist",
+        "type": "command",
+        "command": ""
+      }
+    ]
+  }
+]

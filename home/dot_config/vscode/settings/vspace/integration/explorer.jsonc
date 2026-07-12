@@ -1,0 +1,70 @@
+[
+  // s find in folder
+  {
+    "key": "s",
+    "name": "find in folder",
+    "icon": "zap",
+    "type": "command",
+    "command": "search.action.restrictSearchToFolder"
+  },
+  // S find in folder
+  {
+    "key": "s",
+    "name": "find in workspace",
+    "icon": "zap",
+    "type": "command",
+    "command": "filesExplorer.findInWorkspace"
+  },
+  // s find in folder
+  {
+    "key": "a",
+    "name": "new file",
+    "icon": "zap",
+    "type": "command",
+    "command": "explorer.newFile"
+  },
+  // d delete file
+  {
+    "key": "d",
+    "name": "delete file",
+    "icon": "zap",
+    "type": "command",
+    "command": "deleteFile"
+  },
+  {
+    "key": "x",
+    "name": "cut file",
+    "icon": "zap",
+    "type": "command",
+    "command": "filesExplorer.cut"
+  },
+  //
+  {
+    "key": "r",
+    "name": "rename file",
+    "icon": "zap",
+    "type": "command",
+    "command": "renameFile"
+  },
+  {
+    "key": "R",
+    "name": "reveal in file os",
+    "icon": "zap",
+    "type": "command",
+    "command": "revealFileInOS"
+  },
+  {
+    "key": "y",
+    "name": "copy file",
+    "icon": "zap",
+    "type": "command",
+    "command": "filesExplorer.copy"
+  },
+  {
+    "key": "p",
+    "name": "paste file",
+    "icon": "zap",
+    "type": "command",
+    "command": "filesExplorer.paste"
+  }
+]
