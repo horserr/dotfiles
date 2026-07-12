@@ -1,0 +1,17 @@
+[
+  // imagePreview.copyImage
+  // imagePreview.reopenAsPreview
+  // imagePreview.reopenAsText
+  // imagePreview.zoomIn
+  // imagePreview.zoomOut
+  {
+    "key": "ctrl+=",
+    "command": "imagePreview.zoomIn",
+    "when": "activeCustomEditorId == 'imagePreview.previewEditor'"
+  },
+  {
+    "key": "ctrl+-",
+    "command": "imagePreview.zoomOut",
+    "when": "activeCustomEditorId == 'imagePreview.previewEditor'"
+  },
+]

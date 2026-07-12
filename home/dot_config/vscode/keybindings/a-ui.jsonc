@@ -22,12 +22,6 @@
     "command": "workbench.action.terminal.fontZoomIn",
     "when": "terminalFocusInAny"
   },
-  {
-    // inside imagePreview
-    "key": "ctrl+=",
-    "command": "imagePreview.zoomIn",
-    "when": "activeCustomEditorId == 'imagePreview.previewEditor'"
-  },
   // zoom out
   {
     "key": "ctrl+-",
@@ -38,12 +32,6 @@
     "key": "ctrl+-",
     "command": "workbench.action.terminal.fontZoomOut",
     "when": "terminalFocusInAny"
-  },
-  {
-    // inside imagePreview
-    "key": "ctrl+-",
-    "command": "imagePreview.zoomOut",
-    "when": "activeCustomEditorId == 'imagePreview.previewEditor'"
   },
   // reset zoom
   {
