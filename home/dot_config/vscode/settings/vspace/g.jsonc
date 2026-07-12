@@ -192,50 +192,8 @@
         "key": "c",
         "name": "+Commit",
         "icon": "source-control",
-        "type": "bindings",
-        "bindings": [
-          {
-            "key": "c",
-            "name": "commit",
-            "icon": "arrow-down",
-            "type": "command",
-            // "command": "git.commit"
-            "command": "git.commitStaged"
-          },
-          {
-            "key": "m",
-            "name": "commit amend",
-            "icon": "arrow-down",
-            "type": "command",
-            "command": "git.commitAmend"
-          },
-          {
-            "key": "a",
-            "name": "commit all",
-            "icon": "arrow-down",
-            "type": "command",
-            "command": "git.commitAll"
-          }
-          // git.commitAllAmend
-          // git.commitAllAmendNoVerify
-          // git.commitAllNoVerify
-          // git.commitAllSigned
-          // git.commitAllSignedNoVerify
-          // git.commitAmendNoVerify
-          // git.commitEmpty
-          // git.commitEmptyNoVerify
-          // git.commitMessageAccept
-          // git.commitMessageDiscard
-          // git.commitNoVerify
-          // git.commitSigned
-          // git.commitSignedNoVerify
-          // git.commitStaged
-          // git.commitStagedAmend
-          // git.commitStagedAmendNoVerify
-          // git.commitStagedNoVerify
-          // git.commitStagedSigned
-          // git.commitStagedSignedNoVerify
-        ]
+        "type": "command",
+        "command": "magit.commit"
       },
       // p push
       {
