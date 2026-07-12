@@ -1,0 +1,22 @@
+[
+  {
+    "key": "v",
+    "command": "whichkey.show",
+    "args": [
+      {
+        "key": " ",
+        "name": "+View Common",
+        "icon": "x",
+        "type": "command",
+        "command": "runCommands",
+        "args": {
+          "commands": [
+            "vspacecode.space",
+            { "command": "whichkey.triggerKey", "args": "v" }
+          ]
+        }
+      }
+    ],
+    "when": "focusedView && !inputFocus"
+  }
+]

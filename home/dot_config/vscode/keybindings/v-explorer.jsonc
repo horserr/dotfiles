@@ -12,7 +12,7 @@
     "command": "whichkey.show",
     "args": [
       {
-        "key": "v",
+        "key": " ",
         "name": "+View Common",
         "icon": "x",
         "type": "command",
@@ -25,7 +25,7 @@
         }
       },
       {
-        "key": " ",
+        "key": "v",
         "name": "+View specific",
         "icon": "x",
         "type": "command",
@@ -39,6 +39,8 @@
         }
       }
     ],
-    "when": "filesExplorerFocus && !inputFocus"
+    // "when": "filesExplorerFocus && !inputFocus"
+    // "when": "(activeViewlet == 'workbench.view.explorer' || activePanel == 'workbench.view.explorer' || activeAuxiliary == 'workbench.view.explorer') && !inputFocus"
+    "when": "focusedView == 'workbench.explorer.fileView' && !inputFocus"
   }
 ]
