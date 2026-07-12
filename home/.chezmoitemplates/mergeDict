@@ -1,0 +1,40 @@
+{{- /* argument (dict "GLOBAL" $/. "relativePath" ARG) */ -}}
+{{- $settingsDir := joinPath $.GLOBAL.chezmoi.sourceDir $.relativePath -}}
+
+{{- $mergedDict := dict -}}
+{{- $fileContent := dict -}}
+{{- $cleanedContent := dict -}}
+
+{{- range (glob (joinPath $settingsDir "*.json*")) -}}
+  {{- /* file name */ -}}
+  {{- $fileName := base . -}}
+
+  {{- /* relative path */ -}}
+  {{- $relPath := trimPrefix (joinPath $.GLOBAL.chezmoi.sourceDir "/") . -}}
+
+  {{- if hasSuffix "jsonc.tmpl" . -}}
+    {{- /* merge template */ -}}
+    {{- $fileContent = includeTemplate $relPath $.GLOBAL | fromJsonc -}}
+  {{- else if hasSuffix "json.tmpl" . -}}
+    {{- /* merge json template */ -}}
+    {{- $fileContent = include . | fromJson -}}
+  {{- else if hasSuffix "jsonc" . -}}
+    {{- /* merge normal jsonc file */ -}}
+    {{- $fileContent = include . | fromJsonc -}}
+  {{- else if hasSuffix "json" . -}}
+    {{- /* merge normal json file */ -}}
+    {{- $fileContent = include . | fromJson -}}
+  {{- else -}}
+    {{- fail (printf "Unknown file type: %s" $fileName) -}}
+  {{- end -}}
+
+  {{- /* $cleanedContent = omit $fileContent "$schema" */ -}}
+  {{- /* $mergedDict = merge $mergedDict $cleanedContent */ -}}
+  {{- $mergedDict = merge $mergedDict $fileContent -}}
+{{- end -}}
+
+{{- if eq (len $mergedDict) 0 -}}
+  {{- fail "Abort! The whole settings is empty." -}}
+{{- end -}}
+
+{{ $mergedDict | toPrettyJson "  " }}
