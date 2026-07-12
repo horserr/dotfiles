@@ -1,8 +1,28 @@
 [
-  // timeline
+  // git.close close repository
+  // git.closeOtherRepositories
+  // git.compareWithWorkspace
+  // git.openFile
+  // git.viewCommit
+
+  // git.acceptMerge
+  // git.api.getRemoteSources
+  // git.api.getRepositories
+  // git.api.getRepositoryState
+  // git.clean
+  // git.cleanAll
+  // git.cleanAllTracked
+  // git.cleanAllUntracked
   // git.copyCommitId
   // git.copyCommitMessage
   // git.copyContentToClipboard
+
+  // git.pull
+  // git.pullFrom
+  // git.pullRebase
+  // git.pullRef
+  // git.runGitMerge
+  // git.runGitMergeDiff3
   {
     "key": "g",
     "name": "+Git",
@@ -17,13 +37,46 @@
         "type": "command",
         "command": "git.refresh"
       },
-      // i init repo
+      // i init/clone
       {
         "key": "i",
-        "name": "init repo",
+        "name": "+Init/Clone",
         "icon": "file",
-        "type": "command",
-        "command": "git.init"
+        "type": "bindings",
+        "bindings": [
+          // i init
+          {
+            "key": "i",
+            "name": "init repo",
+            "icon": "file",
+            "type": "command",
+            "command": "git.init"
+          },
+          // x add to git ignore
+          {
+            "key": "x",
+            "name": "add to git ignore",
+            "icon": "diff-ignored",
+            "type": "command",
+            "command": "git.ignore"
+          },
+          // c clone
+          {
+            "key": "c",
+            "name": "clone repo",
+            "icon": "file",
+            "type": "command",
+            "command": "git.clone"
+          },
+          // r recursively clone
+          {
+            "key": "r",
+            "name": "init repo",
+            "icon": "file",
+            "type": "command",
+            "command": "git.cloneRecursive"
+          }
+        ]
       },
       // a add / stage
       {
@@ -32,6 +85,16 @@
         "icon": "source-control",
         "type": "bindings",
         "bindings": [
+          // f stage current file
+          {
+            "key": "f",
+            "name": "stage current file",
+            "icon": "arrow-down",
+            "type": "command",
+            // "command": "git.stage"
+            "command": "magit.stage-file"
+          },
+          // a stage selected lines
           {
             "key": "a",
             "name": "stage the selected lines",
@@ -39,6 +102,15 @@
             "type": "command",
             "command": "git.stageSelectedRanges"
           },
+          // , stage hunk
+          {
+            "key": ",",
+            "name": "stage the hunk(contiguous block)",
+            "icon": "file",
+            "type": "command",
+            "command": "git.diff.stageHunk"
+          },
+          // space stage all tracked
           {
             "key": " ",
             "name": "stage all tracked files",
@@ -46,6 +118,7 @@
             "type": "command",
             "command": "git.stageAllTracked"
           },
+          // u staged all untracked
           {
             "key": "u",
             "name": "stage all untracked files",
@@ -53,19 +126,13 @@
             "type": "command",
             "command": "git.stageAllUntracked"
           },
+          // stage all merged-conflicting files
           {
             "key": "m",
             "name": "stage all merged files",
             "icon": "arrow-down",
             "type": "command",
             "command": "git.stageAllMerge"
-          },
-          {
-            "key": "f",
-            "name": "stage entire file",
-            "icon": "arrow-down",
-            "type": "command",
-            "command": "magit.stage-file"
           }
         ]
       },
@@ -76,13 +143,25 @@
         "icon": "source-control",
         "type": "bindings",
         "bindings": [
+          // f unstage current file
           {
             "key": "f",
             "name": "unstage current file",
             "icon": "arrow-down",
             "type": "command",
+            // this command has no effect
+            // "command": "git.unstageFile"
             "command": "git.unstage"
           },
+          // u unstage selected line
+          {
+            "key": "u",
+            "name": "unstage selected lines",
+            "icon": "arrow-down",
+            "type": "command",
+            "command": "git.unstageSelectedRanges"
+          },
+          // r restore selected line
           {
             "key": "r",
             "name": "restore selected lines",
@@ -90,6 +169,15 @@
             "type": "command",
             "command": "git.revertSelectedRanges"
           },
+          // R restore current file
+          {
+            "key": "R",
+            "name": "restore current file",
+            "icon": "arrow-down",
+            "type": "command",
+            "command": "git.revertChange"
+          },
+          // unstage all
           {
             "key": "a",
             "name": "unstage all",
@@ -128,6 +216,25 @@
             "type": "command",
             "command": "git.commitAll"
           }
+          // git.commitAllAmend
+          // git.commitAllAmendNoVerify
+          // git.commitAllNoVerify
+          // git.commitAllSigned
+          // git.commitAllSignedNoVerify
+          // git.commitAmendNoVerify
+          // git.commitEmpty
+          // git.commitEmptyNoVerify
+          // git.commitMessageAccept
+          // git.commitMessageDiscard
+          // git.commitNoVerify
+          // git.commitSigned
+          // git.commitSignedNoVerify
+          // git.commitStaged
+          // git.commitStagedAmend
+          // git.commitStagedAmendNoVerify
+          // git.commitStagedNoVerify
+          // git.commitStagedSigned
+          // git.commitStagedSignedNoVerify
         ]
       },
       // p push
@@ -137,6 +244,7 @@
         "icon": "source-control",
         "type": "bindings",
         "bindings": [
+          // p push
           {
             "key": "p",
             "name": "push",
@@ -144,13 +252,22 @@
             "type": "command",
             "command": "git.push"
           },
+          // u set upstream
           {
-            "key": "p",
+            "key": "P",
+            "name": "push to",
+            "icon": "arrow-up",
+            "type": "command",
+            "command": "git.pushTo"
+          },
+          {
+            "key": "u",
             "name": "publish (set upstream)",
             "icon": "arrow-up",
             "type": "command",
             "command": "git.publish"
           },
+          // t push tags
           {
             "key": "t",
             "name": "push tags",
@@ -158,6 +275,11 @@
             "type": "command",
             "command": "git.pushTags"
           }
+          // git.pushForce
+          // git.pushRef
+          // git.pushToForce
+          // git.pushWithTags
+          // git.pushWithTagsForce
         ]
       },
       // x diff
@@ -500,6 +622,7 @@
         "icon": "arrow-down",
         "type": "bindings",
         "bindings": [
+          // d remove current file
           {
             "key": "d",
             "name": "remove current file from git",
@@ -507,6 +630,15 @@
             "type": "command",
             "command": "git.delete"
           },
+          // u remove remote/upstream
+          {
+            "key": "u",
+            "name": "remove remote upstream/remote",
+            "icon": "arrow-down",
+            "type": "command",
+            "command": "git.removeRemote"
+          },
+          // b remove branch
           {
             "key": "b",
             "name": "remove branch",
@@ -514,6 +646,7 @@
             "type": "command",
             "command": "git.deleteBranch"
           },
+          // B remove remote branch
           {
             "key": "B",
             "name": "remove remote branch",
@@ -521,6 +654,7 @@
             "type": "command",
             "command": "git.deleteRemoteBranch"
           },
+          // t remove tab
           {
             "key": "t",
             "name": "remove tag",
@@ -528,19 +662,13 @@
             "type": "command",
             "command": "git.deleteTag"
           },
+          // T remove remote tag
           {
             "key": "T",
             "name": "remove remote tag",
             "icon": "arrow-down",
             "type": "command",
             "command": "git.deleteRemoteTag"
-          },
-          {
-            "key": "u",
-            "name": "remove remote upstream/remote",
-            "icon": "arrow-down",
-            "type": "command",
-            "command": "git.removeRemote"
           }
         ]
       },
@@ -579,7 +707,7 @@
             "type": "command",
             "command": "git.stashIncludeUntracked"
           },
-          // apply
+          // a apply
           {
             "key": "a",
             "name": "+Apply",
@@ -609,7 +737,7 @@
               }
             ]
           },
-          // pop
+          // p pop
           {
             "key": "p",
             "name": "+Pop",
@@ -639,7 +767,7 @@
               }
             ]
           },
-          // drop
+          // d drop
           {
             "key": "d",
             "name": "+Drop",
@@ -678,13 +806,6 @@
         "icon": "file",
         "type": "bindings",
         "bindings": [
-          {
-            "key": "a",
-            "name": "stage the hunk(contiguous block)",
-            "icon": "file",
-            "type": "command",
-            "command": "git.diff.stageHunk"
-          },
           {
             "key": "r",
             "name": "add remote",
