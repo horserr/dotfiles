@@ -1,5 +1,5 @@
 {{- /* argument (dict "GLOBAL" $/. "relativePath" ARG) */ -}}
-{{- $keybindingsDir := joinPath .GLOBAL.chezmoi.sourceDir .relativePath -}}
+{{- $keybindingsDir := joinPath $.GLOBAL.chezmoi.sourceDir .relativePath -}}
 
 {{- $mergedList := list -}}
 {{- $fileContent := dict -}}
@@ -14,10 +14,10 @@
 
   {{- if hasSuffix "jsonc.tmpl" . -}}
     {{- /* merge jsonc template */ -}}
-    {{- $fileContent = includeTemplate $relPath $ | fromJsonc -}}
+    {{- $fileContent = includeTemplate $relPath $.GLOBAL | fromJsonc -}}
   {{- else if hasSuffix "json.tmpl" . -}}
     {{- /* merge json template */ -}}
-    {{- $fileContent = includeTemplate $relPath $ | fromJson -}}
+    {{- $fileContent = includeTemplate $relPath $.GLOBAL | fromJson -}}
   {{- else if hasSuffix "jsonc" . -}}
     {{- /* merge normal jsonc file */ -}}
     {{- $fileContent = include . | fromJsonc -}}
