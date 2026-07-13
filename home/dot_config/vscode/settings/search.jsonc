@@ -1,22 +1,42 @@
 {
-  // Search
+  "search.actionsPosition": "auto",
+  "search.collapseResults": "auto",
+  "search.defaultViewMode": "tree",
   "search.exclude": {
     "**/.git": true,
     "**/.idea": true,
+    "**/.pixi/envs": true,
     "**/.svn": true,
+    "**/*.code-search": true,
+    "**/bower_components": true,
     "**/build": true,
-    "**/tmp": true,
-    "**/.pixi/envs": true
+    "**/tmp": true
   },
   "search.experimental.closedNotebookRichContentResults": true,
-  "search.followSymlinks": false,
+  "search.followSymlinks": true,
+  "search.mode": "newEditor",
   "search.quickAccess.preserveInput": true,
+  "search.quickOpen.history.filterSortOrder": "recency",
+  "search.quickOpen.includeHistory": true,
+  "search.quickOpen.includeSymbols": true,
+  // use prior search configuration
+  "search.searchEditor.defaultNumberOfContextLines": null,
+  "search.searchEditor.doubleClickBehaviour": "goToLocation",
+  "search.searchEditor.focusResultsOnSearch": false,
   "search.searchEditor.reusePriorSearchConfiguration": true,
   "search.searchEditor.singleClickBehaviour": "peekDefinition",
+  "search.searchOnType": true,
+  "search.searchOnTypeDebouncePeriod": 300,
   "search.searchView.keywordSuggestions": true,
-  "search.searchView.semanticSearchBehavior": "auto",
+  "search.searchView.semanticSearchBehavior": "runOnEmpty",
+  "search.seedOnFocus": false,
   "search.seedWithNearestWord": true,
+  "search.showLineNumbers": false,
   "search.smartCase": true,
+  "search.sortOrder": "modified",
   "search.useGlobalIgnoreFiles": true,
-  "search.useParentIgnoreFiles": true
+  // WORKSAPCE setting
+  "search.useIgnoreFiles": true,
+  "search.useParentIgnoreFiles": true,
+  "search.useReplacePreview": true
 }
