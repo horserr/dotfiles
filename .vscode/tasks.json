@@ -3,7 +3,6 @@
   // cd
   // dump
   // list: managed & ignored
-  // execute-template
   // source-path, target-path
 
   // purge
@@ -13,91 +12,120 @@
 
   // state
   "tasks": [
+    // test mouse master
     {
       "label": "test mouse master",
-      "type": "shell",
-      "command": "start mousemaster.exe",
+      // "type": "shell",
+      "type": "process",
+      // "command": "start mousemaster.exe",
+      "command": "mousemaster.exe",
       "detail": "temporarily test mouse master",
-      "problemMatcher": [],
       "options": { "cwd": "${env:USERPROFILE}/.config/mousemaster" },
-      "dependsOn": ["apply"]
+      "dependsOn": ["apply"],
+      "group": "test",
+      "icon": { "id": "key" },
+      "runOptions": { "instanceLimit": 1, "instancePolicy": "prompt" }
+      // "isBackground": true,
+      // "problemMatcher": {
+      //   "pattern": {
+      //     "regexp": "."
+      //   },
+      //   "background": {
+      //     "activeOnStart": true,
+      //     "beginsPattern": ".*",
+      //     "endsPattern": "ready in" // 2. 匹配到这个关键词时，VS Code 会认为服务已就绪
+      //   }
+      // }
     },
+    // apply
+    {
+      "label": "apply",
+      "type": "shell",
+      "command": "chezmoi apply",
+      "detail": "apply dotfiles modifications",
+      "runOptions": {
+        "instanceLimit": 1,
+        "instancePolicy": "terminateOldest",
+        "runOn": "folderOpen"
+      },
+      "icon": { "id": "ai-customization-plugin" },
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
+    },
+    {
+      "label": "show-data",
+      "type": "shell",
+      "command": "chezmoi data | less -RFX",
+      "detail": "show chezmoi parsed data",
+      "group": "none"
+    },
+    // execute template
+    {
+      "label": "execute template",
+      "type": "shell",
+      "command": "chezmoi execute-template -f ${file} | less -RFX",
+      "detail": "execute current tmpl file",
+      "group": "test",
+      "icon": { "id": "chip" }
+    },
+    // update
     {
       "label": "update",
       "type": "shell",
       "command": "chezmoi update",
       "detail": "update source state and then apply the newest change",
-      "problemMatcher": []
+      "group": "build"
     },
     {
       "label": "show-config",
       "type": "shell",
       "command": "chezmoi cat-config",
       "detail": "show chezmoi parsed config file",
-      "problemMatcher": []
+      "group": "none"
     },
     {
       "label": "dump-config",
       "type": "shell",
       "command": "chezmoi dump-config",
-      "detail": "show all chezmoi configuration",
-      "problemMatcher": []
-    },
-    {
-      "label": "show-data",
-      "type": "shell",
-      "command": "chezmoi data",
-      "detail": "show chezmoi parsed data",
-      "problemMatcher": []
-    },
-    {
-      "label": "apply",
-      "type": "shell",
-      "command": "chezmoi apply",
-      "detail": "apply dotfiles modifications",
-      "problemMatcher": []
+      "detail": "show all chezmoi configuration"
     },
     {
       "label": "apply without externals",
       "type": "shell",
       "command": "chezmoi apply --exclude=externals",
-      "detail": "apply dotfiles modifications without online check externals",
-      "problemMatcher": []
+      "detail": "apply dotfiles modifications without online check externals"
     },
     {
       "label": "init",
       "type": "shell",
       "command": "chezmoi init --source .",
-      "detail": "reapply after changing chezmoi configuration",
-      "problemMatcher": []
+      "detail": "reapply after changing chezmoi configuration"
     },
     {
       "label": "doctor",
       "type": "shell",
       "command": "chezmoi doctor",
-      "detail": "chezmoi doctor, check environment health",
-      "problemMatcher": []
+      "detail": "chezmoi doctor, check environment health"
     },
     {
       "label": "refresh-externals",
       "type": "shell",
       "command": "chezmoi --refresh-externals apply",
-      "detail": "force a refresh download archives",
-      "problemMatcher": []
+      "detail": "force a refresh download archives"
     },
     {
       "label": "test-in-docker",
       "type": "shell",
       "command": "chezmoi docker run --rm ${input:docker} ${input:github_user}",
-      "detail": "test chezmoi in an ephemeral docker container, you can also use `docker exec` command.\n reference: https://www.chezmoi.io/reference/commands/docker",
-      "problemMatcher": []
+      "detail": "test chezmoi in an ephemeral docker container, you can also use `docker exec` command.\n reference: https://www.chezmoi.io/reference/commands/docker"
     },
     {
       "label": "extension-list",
       "type": "shell",
       "command": "code --list-extensions",
-      "detail": "show extension list",
-      "problemMatcher": []
+      "detail": "show extension list"
     }
   ],
   "presentation": {

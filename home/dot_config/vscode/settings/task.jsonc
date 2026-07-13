@@ -1,0 +1,15 @@
+{
+  "task.allowAutomaticTasks": "off",
+  "task.autoDetect": "on",
+  // @link: https://github.com/microsoft/vscode/issues/267459
+  "task.notifyWindowOnTaskCompletion": 60000, // unit: ms
+  "task.problemMatchers.neverPrompt": true,
+  "task.quickOpen.detail": true,
+  "task.quickOpen.history": 20,
+  "task.quickOpen.showAll": false,
+  "task.quickOpen.skip": true,
+  "task.reconnection": true,
+  "task.saveBeforeRun": "always",
+  "task.slowProviderWarning": true,
+  "task.verboseLogging": false
+}
