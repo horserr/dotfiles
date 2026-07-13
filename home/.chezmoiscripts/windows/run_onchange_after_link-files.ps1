@@ -155,7 +155,7 @@ $mappings = @{
   }
   # VSCode snippets
   "$env:APPDATA\Code\User\snippets" = @{
-    target = "$dotConfigPath\vscode\snippets"
+    target = "$dotConfigPath\vscode\snippet"
     desc   = "VSCode snippets"
   }
   # VSCode prompts
