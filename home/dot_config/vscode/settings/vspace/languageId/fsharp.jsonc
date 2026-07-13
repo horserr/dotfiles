@@ -1,0 +1,281 @@
+[
+  {
+    "key": "languageId:fsharp",
+    "name": "F#",
+    "type": "bindings",
+    "bindings": [
+      {
+        "key": "=",
+        "name": "+Format",
+        "icon": "list-flat",
+        "type": "bindings",
+        "bindings": [
+          {
+            "key": "=",
+            "name": "Format region or buffer",
+            "icon": "list-flat",
+            "type": "command",
+            "command": "editor.action.format"
+          },
+          {
+            "key": "b",
+            "name": "Format buffer",
+            "icon": "file",
+            "type": "command",
+            "command": "editor.action.formatDocument"
+          },
+          {
+            "key": "c",
+            "name": "Format changes",
+            "icon": "diff",
+            "type": "command",
+            "command": "editor.action.formatChanges"
+          },
+          {
+            "key": "s",
+            "name": "Format selection",
+            "icon": "selection",
+            "type": "command",
+            "command": "editor.action.formatSelection"
+          },
+          {
+            "key": "B",
+            "name": "+Format buffer with formatter",
+            "icon": "file",
+            "type": "command",
+            "command": "editor.action.formatDocument.multiple"
+          },
+          {
+            "key": "S",
+            "name": "+Format selection with formatter",
+            "icon": "selection",
+            "type": "command",
+            "command": "editor.action.formatSelection.multiple"
+          }
+        ]
+      },
+      {
+        "key": "c",
+        "name": "+Compile",
+        "icon": "gear",
+        "type": "bindings",
+        "bindings": [
+          {
+            "key": "c",
+            "name": "MSBuild: Build current solution",
+            "icon": "package",
+            "type": "command",
+            "command": "MSBuild.buildCurrentSolution"
+          },
+          {
+            "key": "d",
+            "name": "F#: Run default project",
+            "icon": "play",
+            "type": "command",
+            "command": "fsharp.runDefaultProject"
+          },
+          {
+            "key": "l",
+            "name": "MSBuild: Clean current solution",
+            "icon": "trash",
+            "type": "command",
+            "command": "MSBuild.cleanCurrentSolution"
+          },
+          {
+            "key": "p",
+            "name": "MSBuild: Build current project",
+            "icon": "project",
+            "type": "command",
+            "command": "MSBuild.buildCurrent"
+          },
+          {
+            "key": "r",
+            "name": "MSBuild: Re-build current solution",
+            "icon": "refresh",
+            "type": "command",
+            "command": "MSBuild.rebuildCurrentSolution"
+          },
+          {
+            "key": "D",
+            "name": "F#: Debug default project",
+            "icon": "bug",
+            "type": "command",
+            "command": "fsharp.debugDefaultProject"
+          },
+          {
+            "key": "L",
+            "name": "MSBuild: Clean current project",
+            "icon": "trash",
+            "type": "command",
+            "command": "MSBuild.cleanCurrent"
+          }
+        ]
+      },
+      {
+        "key": "g",
+        "name": "+Go to",
+        "icon": "go-to-file",
+        "type": "bindings",
+        "bindings": [
+          {
+            "key": "d",
+            "name": "Go to definition",
+            "icon": "symbol-function",
+            "type": "command",
+            "command": "editor.action.revealDefinition"
+          },
+          {
+            "key": "e",
+            "name": "Go to errors/problems",
+            "icon": "error",
+            "type": "command",
+            "command": "workbench.action.problems.focus"
+          },
+          {
+            "key": "g",
+            "name": "Go to definition",
+            "icon": "symbol-function",
+            "type": "command",
+            "command": "editor.action.revealDefinition"
+          },
+          {
+            "key": "r",
+            "name": "Go to reference",
+            "icon": "symbol-reference",
+            "type": "command",
+            "command": "editor.action.goToReferences"
+          },
+          {
+            "key": "s",
+            "name": "Go to symbol in buffer",
+            "icon": "file",
+            "type": "command",
+            "command": "workbench.action.gotoSymbol"
+          },
+          {
+            "key": "t",
+            "name": "Go to type definition",
+            "icon": "symbol-struct",
+            "type": "command",
+            "command": "editor.action.goToTypeDefinition"
+          },
+          {
+            "key": "I",
+            "name": "Find implementations",
+            "icon": "symbol-module",
+            "type": "command",
+            "command": "references-view.findImplementations"
+          },
+          {
+            "key": "R",
+            "name": "Find references",
+            "icon": "symbol-reference",
+            "type": "command",
+            "command": "references-view.findReferences"
+          }
+        ]
+      },
+      {
+        "key": "r",
+        "name": "+Refactor",
+        "icon": "edit",
+        "type": "bindings",
+        "bindings": [
+          {
+            "key": "r",
+            "name": "Rename symbol",
+            "icon": "symbol-keyword",
+            "type": "command",
+            "command": "editor.action.rename"
+          }
+        ]
+      },
+      {
+        "key": "s",
+        "name": "+FSI REPL",
+        "icon": "repl",
+        "type": "bindings",
+        "bindings": [
+          {
+            "key": "f",
+            "name": "FSI: Send file",
+            "icon": "file",
+            "type": "command",
+            "command": "fsi.SendFile"
+          },
+          {
+            "key": "l",
+            "name": "FSI: Send line",
+            "type": "command",
+            "icon": "list-flat",
+            "command": "fsi.SendLine"
+          },
+          {
+            "key": "s",
+            "name": "FSI: Send selection",
+            "icon": "list-selection",
+            "type": "command",
+            "command": "fsi.SendSelection"
+          },
+          {
+            "key": "G",
+            "name": "FSI: Generate project references",
+            "icon": "references",
+            "type": "command",
+            "command": "fsi.GenerateProjectReferences"
+          },
+          {
+            "key": "L",
+            "name": "FSI: Send last selection",
+            "icon": "list-selection",
+            "type": "command",
+            "command": "fsi.SendLastSelection"
+          },
+          {
+            "key": "P",
+            "name": "FSI: Send references from project",
+            "icon": "project",
+            "type": "command",
+            "command": "fsi.SendProjectReferences"
+          },
+          {
+            "key": "S",
+            "name": "FSI: Start",
+            "icon": "repl",
+            "type": "command",
+            "command": "fsi.Start"
+          }
+        ]
+      },
+      {
+        "key": "G",
+        "name": "+Peek",
+        "icon": "eye",
+        "type": "bindings",
+        "bindings": [
+          {
+            "key": "d",
+            "name": "Peek definition",
+            "icon": "symbol-function",
+            "type": "command",
+            "command": "editor.action.peekDefinition"
+          },
+          {
+            "key": "r",
+            "name": "Peek references",
+            "icon": "symbol-reference",
+            "type": "command",
+            "command": "editor.action.referenceSearch.trigger"
+          },
+          {
+            "key": "t",
+            "name": "Peek type definition",
+            "icon": "symbol-struct",
+            "type": "command",
+            "command": "editor.action.peekTypeDefinition"
+          }
+        ]
+      }
+    ]
+  }
+]

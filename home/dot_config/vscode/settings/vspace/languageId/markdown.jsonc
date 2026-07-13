@@ -1,0 +1,185 @@
+[
+  {
+    "key": "languageId:markdown",
+    "name": "Markdown",
+    "icon": "tools",
+    "type": "bindings",
+    "bindings": [
+      {
+        "key": ",",
+        "name": "Toggle markdown preview",
+        "icon": "tools",
+        "type": "command",
+        "command": "markdown.togglePreview"
+      },
+      {
+        "key": "c",
+        "name": "+Buffer commands",
+        "icon": "file",
+        "type": "bindings",
+        "bindings": [
+          {
+            "key": "e",
+            "name": "Export to HTML",
+            "icon": "file-code",
+            "type": "command",
+            "command": "markdown.extension.printToHtml"
+          },
+          {
+            "key": "p",
+            "name": "Open preview to the side",
+            "icon": "open-preview",
+            "type": "command",
+            "command": "markdown.showPreviewToSide"
+          },
+          {
+            "key": "P",
+            "name": "Open preview in current group",
+            "icon": "preview",
+            "type": "command",
+            "command": "markdown.showPreview"
+          }
+        ]
+      },
+      {
+        "key": "t",
+        "name": "+Table of Contents",
+        "icon": "list-tree",
+        "type": "bindings",
+        "bindings": [
+          {
+            "key": "c",
+            "name": "Create Table of Contents",
+            "icon": "list-tree",
+            "type": "command",
+            "command": "markdown.extension.toc.create"
+          },
+          {
+            "key": "n",
+            "name": "Add section numbers",
+            "icon": "list-ordered",
+            "type": "command",
+            "command": "markdown.extension.toc.addSecNumbers"
+          },
+          {
+            "key": "u",
+            "name": "Update Table of Contents",
+            "icon": "refresh",
+            "type": "command",
+            "command": "markdown.extension.toc.update"
+          },
+          {
+            "key": "N",
+            "name": "Remove section numbers",
+            "icon": "list-unordered",
+            "type": "command",
+            "command": "markdown.extension.toc.removeSecNumbers"
+          }
+        ]
+      },
+      {
+        "key": "x",
+        "name": "+Text",
+        "icon": "symbol-text",
+        "type": "bindings",
+        "bindings": [
+          {
+            "key": "[",
+            "name": "Decrease Heading level",
+            "icon": "chevron-left",
+            "type": "transient",
+            "command": "markdown.extension.editing.toggleHeadingDown",
+            "bindings": [
+              {
+                "key": "[",
+                "name": "Decrease Heading level",
+                "icon": "chevron-left",
+                "type": "command",
+                "command": "markdown.extension.editing.toggleHeadingDown"
+              },
+              {
+                "key": "]",
+                "name": "Increase Heading level",
+                "icon": "chevron-right",
+                "type": "command",
+                "command": "markdown.extension.editing.toggleHeadingUp"
+              }
+            ]
+          },
+          {
+            "key": "]",
+            "name": "Increase Heading level",
+            "icon": "chevron-right",
+            "type": "transient",
+            "command": "markdown.extension.editing.toggleHeadingUp",
+            "bindings": [
+              {
+                "key": "[",
+                "name": "Decrease Heading level",
+                "icon": "chevron-left",
+                "type": "command",
+                "command": "markdown.extension.editing.toggleHeadingDown"
+              },
+              {
+                "key": "]",
+                "name": "Increase Heading level",
+                "icon": "chevron-right",
+                "type": "command",
+                "command": "markdown.extension.editing.toggleHeadingUp"
+              }
+            ]
+          },
+          {
+            "key": "`",
+            "name": "Toggle inline code",
+            "icon": "code",
+            "type": "command",
+            "command": "markdown.extension.editing.toggleCodeSpan"
+          },
+          {
+            "key": "b",
+            "name": "Toggle bold",
+            "icon": "bold",
+            "type": "command",
+            "command": "markdown.extension.editing.toggleBold"
+          },
+          {
+            "key": "i",
+            "name": "Toggle italic",
+            "icon": "italic",
+            "type": "command",
+            "command": "markdown.extension.editing.toggleItalic"
+          },
+          {
+            "key": "l",
+            "name": "Toggle list",
+            "icon": "list-unordered",
+            "type": "command",
+            "command": "markdown.extension.editing.toggleList"
+          },
+          {
+            "key": "m",
+            "name": "Toggle math",
+            "icon": "symbol-operator",
+            "type": "command",
+            "command": "markdown.extension.editing.toggleMath"
+          },
+          {
+            "key": "s",
+            "name": "Toggle strikethrough",
+            "icon": "remove",
+            "type": "command",
+            "command": "markdown.extension.editing.toggleStrikethrough"
+          },
+          {
+            "key": "~",
+            "name": "Toggle code block",
+            "icon": "file-code",
+            "type": "command",
+            "command": "markdown.extension.editing.toggleCodeBlock"
+          }
+        ]
+      }
+    ]
+  }
+]

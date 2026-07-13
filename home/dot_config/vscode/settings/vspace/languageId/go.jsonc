@@ -1,0 +1,543 @@
+[
+  {
+    "key": "languageId:go",
+    "name": "Go",
+    "type": "bindings",
+    "bindings": [
+      {
+        "key": " ",
+        "name": "Show all commands",
+        "icon": "rocket",
+        "type": "command",
+        "command": "go.show.commands"
+      },
+      {
+        "key": "=",
+        "name": "+Format",
+        "icon": "list-flat",
+        "type": "bindings",
+        "bindings": [
+          {
+            "key": "=",
+            "name": "Format region or buffer",
+            "icon": "list-flat",
+            "type": "command",
+            "command": "editor.action.format"
+          },
+          {
+            "key": "b",
+            "name": "Format buffer",
+            "icon": "file",
+            "type": "command",
+            "command": "editor.action.formatDocument"
+          },
+          {
+            "key": "c",
+            "name": "Format changes",
+            "icon": "diff",
+            "type": "command",
+            "command": "editor.action.formatChanges"
+          },
+          {
+            "key": "s",
+            "name": "Format selection",
+            "icon": "selection",
+            "type": "command",
+            "command": "editor.action.formatSelection"
+          },
+          {
+            "key": "B",
+            "name": "+Format buffer with formatter",
+            "icon": "file",
+            "type": "command",
+            "command": "editor.action.formatDocument.multiple"
+          },
+          {
+            "key": "S",
+            "name": "+Format selection with formatter",
+            "icon": "selection",
+            "type": "command",
+            "command": "editor.action.formatSelection.multiple"
+          }
+        ]
+      },
+      {
+        "key": "a",
+        "name": "+Actions",
+        "icon": "zap",
+        "type": "bindings",
+        "bindings": [
+          {
+            "key": "P",
+            "name": "Run code on Go Playground",
+            "icon": "squirrel",
+            "type": "command",
+            "command": "go.playground"
+          },
+          {
+            "key": "p",
+            "name": "+Package actions",
+            "icon": "package",
+            "type": "bindings",
+            "bindings": [
+              {
+                "key": "b",
+                "name": "Build package",
+                "icon": "gear",
+                "type": "command",
+                "command": "go.build.package"
+              },
+              {
+                "key": "g",
+                "name": "Get package",
+                "icon": "cloud-download",
+                "type": "command",
+                "command": "go.get.package"
+              },
+              {
+                "key": "i",
+                "name": "Install current package",
+                "icon": "package",
+                "type": "command",
+                "command": "go.install.package"
+              },
+              {
+                "key": "l",
+                "name": "Lint package",
+                "icon": "warning",
+                "type": "command",
+                "command": "go.lint.package"
+              },
+              {
+                "key": "s",
+                "name": "Browse packages",
+                "icon": "search",
+                "type": "command",
+                "command": "go.browse.packages"
+              },
+              {
+                "key": "v",
+                "name": "Vet package",
+                "icon": "dashboard",
+                "type": "command",
+                "command": "go.vet.package"
+              }
+            ]
+          },
+          {
+            "key": "w",
+            "name": "+Workspace actions",
+            "icon": "project",
+            "type": "bindings",
+            "bindings": [
+              {
+                "key": "b",
+                "name": "Build workspace",
+                "icon": "gear",
+                "type": "command",
+                "command": "go.build.workspace"
+              },
+              {
+                "key": "l",
+                "name": "Lint workspace",
+                "icon": "warning",
+                "type": "command",
+                "command": "go.lint.workspace"
+              },
+              {
+                "key": "p",
+                "name": "Add package to workspace",
+                "icon": "add",
+                "type": "command",
+                "command": "go.add.package.workspace"
+              },
+              {
+                "key": "v",
+                "name": "Vet workspace",
+                "icon": "dashboard",
+                "type": "command",
+                "command": "go.vet.workspace"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "b",
+        "name": "+Backend/environment",
+        "icon": "circuit-board",
+        "type": "bindings",
+        "bindings": [
+          {
+            "key": "e",
+            "name": "Choose Go environment",
+            "icon": "package",
+            "type": "command",
+            "command": "go.environment.choose"
+          },
+          {
+            "key": "g",
+            "name": "Show current GOPATH",
+            "icon": "file-submodule",
+            "type": "command",
+            "command": "go.gopath"
+          },
+          {
+            "key": "i",
+            "name": "Install/update tools",
+            "icon": "cloud-download",
+            "type": "command",
+            "command": "go.tools.install"
+          },
+          {
+            "key": "l",
+            "name": "Locate configured Go tools",
+            "icon": "tools",
+            "type": "command",
+            "command": "go.locate.tools"
+          },
+          {
+            "key": "R",
+            "name": "Restart language server",
+            "icon": "server-process",
+            "type": "command",
+            "command": "go.languageserver.restart"
+          }
+        ]
+      },
+      {
+        "key": "g",
+        "name": "+Go to",
+        "icon": "go-to-file",
+        "type": "bindings",
+        "bindings": [
+          {
+            "key": "d",
+            "name": "Go to definition",
+            "icon": "symbol-function",
+            "type": "command",
+            "command": "editor.action.revealDefinition"
+          },
+          {
+            "key": "e",
+            "name": "Go to errors/problems",
+            "icon": "error",
+            "type": "command",
+            "command": "workbench.action.problems.focus"
+          },
+          {
+            "key": "g",
+            "name": "Go to definition",
+            "icon": "symbol-function",
+            "type": "command",
+            "command": "editor.action.revealDefinition"
+          },
+          {
+            "key": "h",
+            "name": "Show call hierarchy",
+            "icon": "type-hierarchy",
+            "type": "command",
+            "command": "references-view.showCallHierarchy"
+          },
+          {
+            "key": "i",
+            "name": "Go to implementations",
+            "icon": "symbol-module",
+            "type": "command",
+            "command": "editor.action.goToImplementation"
+          },
+          {
+            "key": "r",
+            "name": "Go to references",
+            "icon": "symbol-reference",
+            "type": "command",
+            "command": "editor.action.goToReferences"
+          },
+          {
+            "key": "t",
+            "name": "Go to type definition",
+            "icon": "symbol-struct",
+            "type": "command",
+            "command": "editor.action.goToTypeDefinition"
+          },
+          {
+            "key": "I",
+            "name": "Find implementations",
+            "icon": "symbol-module",
+            "type": "command",
+            "command": "references-view.findImplementations"
+          },
+          {
+            "key": "R",
+            "name": "Find references",
+            "icon": "symbol-reference",
+            "type": "command",
+            "command": "references-view.findReferences"
+          }
+        ]
+      },
+      {
+        "key": "i",
+        "name": "+Insert/remove",
+        "icon": "add",
+        "type": "bindings",
+        "bindings": [
+          {
+            "key": "f",
+            "name": "Fill struct",
+            "icon": "symbol-struct",
+            "type": "command",
+            "command": "go.fill.struct"
+          },
+          {
+            "key": "i",
+            "name": "Add import",
+            "icon": "symbol-reference",
+            "type": "command",
+            "command": "go.import.add"
+          },
+          {
+            "key": "t",
+            "name": "Add tags to struct fields",
+            "icon": "add",
+            "type": "command",
+            "command": "go.add.tags"
+          },
+          {
+            "key": "I",
+            "name": "Generate interface stubs",
+            "icon": "symbol-interface",
+            "type": "command",
+            "command": "go.impl.cursor"
+          },
+          {
+            "key": "T",
+            "name": "Remove tags from struct fields",
+            "icon": "remove",
+            "type": "command",
+            "command": "go.remove.tags"
+          }
+        ]
+      },
+      {
+        "key": "r",
+        "name": "+Refactor",
+        "icon": "edit",
+        "type": "bindings",
+        "bindings": [
+          {
+            "key": ".",
+            "name": "Quick fix",
+            "icon": "lightbulb-autofix",
+            "type": "command",
+            "command": "editor.action.quickFix"
+          },
+          {
+            "key": "e",
+            "name": "Extract to function or variable",
+            "icon": "gather",
+            "type": "command",
+            "command": "editor.action.codeAction",
+            "args": {
+              "kind": "refactor.extract"
+            }
+          },
+          {
+            "key": "r",
+            "name": "Rename symbol",
+            "icon": "symbol-keyword",
+            "type": "command",
+            "command": "editor.action.rename"
+          }
+        ]
+      },
+      {
+        "key": "t",
+        "name": "+Test",
+        "icon": "beaker",
+        "type": "bindings",
+        "bindings": [
+          {
+            "key": "c",
+            "name": "Cancel running tests",
+            "icon": "close",
+            "type": "command",
+            "command": "go.test.cancel"
+          },
+          {
+            "key": "d",
+            "name": "Debug test at cursor",
+            "icon": "bug",
+            "type": "command",
+            "command": "go.debug.cursor"
+          },
+          {
+            "key": "f",
+            "name": "Test file",
+            "icon": "file",
+            "type": "command",
+            "command": "go.test.file"
+          },
+          {
+            "key": "l",
+            "name": "Test previous",
+            "icon": "clock",
+            "type": "command",
+            "command": "go.test.previous"
+          },
+          {
+            "key": "p",
+            "name": "Test package",
+            "icon": "package",
+            "type": "command",
+            "command": "go.test.package"
+          },
+          {
+            "key": "s",
+            "name": "Subtest at cursor",
+            "icon": "whole-word",
+            "type": "command",
+            "command": "go.subtest.cursor"
+          },
+          {
+            "key": "t",
+            "name": "Test function at cursor",
+            "icon": "whole-word",
+            "type": "command",
+            "command": "go.test.cursor"
+          },
+          {
+            "key": "w",
+            "name": "Test packages in workspace",
+            "icon": "project",
+            "type": "command",
+            "command": "go.test.workspace"
+          },
+          {
+            "key": "P",
+            "name": "Apply cover profile",
+            "icon": "jersey",
+            "type": "command",
+            "command": "go.apply.coverprofile"
+          },
+          {
+            "key": "b",
+            "name": "+Benchmarks",
+            "icon": "dashboard",
+            "type": "bindings",
+            "bindings": [
+              {
+                "key": "f",
+                "name": "Benchmark function at cursor",
+                "icon": "whole-word",
+                "type": "command",
+                "command": "go.benchmark.cursor"
+              },
+              {
+                "key": "p",
+                "name": "Benchmark package",
+                "icon": "package",
+                "type": "command",
+                "command": "go.benchmark.package"
+              },
+              {
+                "key": "F",
+                "name": "Benchmark file",
+                "icon": "file",
+                "type": "command",
+                "command": "go.benchmark.file"
+              }
+            ]
+          },
+          {
+            "key": "g",
+            "name": "+Generate",
+            "icon": "gear",
+            "type": "bindings",
+            "bindings": [
+              {
+                "key": "f",
+                "name": "Generate unit tests for function",
+                "icon": "symbol-function",
+                "type": "command",
+                "command": "go.test.generate.function"
+              },
+              {
+                "key": "p",
+                "name": "Generate unit tests for package",
+                "icon": "package",
+                "type": "command",
+                "command": "go.test.generate.package"
+              },
+              {
+                "key": "F",
+                "name": "Generate unit tests for file",
+                "icon": "file",
+                "type": "command",
+                "command": "go.test.generate.file"
+              }
+            ]
+          },
+          {
+            "key": "T",
+            "name": "+Toggle",
+            "icon": "settings",
+            "type": "bindings",
+            "bindings": [
+              {
+                "key": "c",
+                "name": "Toggle test coverage in current package",
+                "icon": "package",
+                "type": "command",
+                "command": "go.test.coverage"
+              },
+              {
+                "key": "f",
+                "name": "Toggle open test file",
+                "icon": "file",
+                "type": "command",
+                "command": "go.toggle.test.file"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "G",
+        "name": "+Peek",
+        "icon": "eye",
+        "type": "bindings",
+        "bindings": [
+          {
+            "key": "d",
+            "name": "Peek definition",
+            "icon": "symbol-function",
+            "type": "command",
+            "command": "editor.action.peekDefinition"
+          },
+          {
+            "key": "h",
+            "name": "Peek call hierarchy",
+            "icon": "type-hierarchy",
+            "type": "command",
+            "command": "editor.showCallHierarchy"
+          },
+          {
+            "key": "i",
+            "name": "Peek implementations",
+            "icon": "symbol-module",
+            "type": "command",
+            "command": "editor.action.peekImplementation"
+          },
+          {
+            "key": "r",
+            "name": "Peek references",
+            "icon": "symbol-reference",
+            "type": "command",
+            "command": "editor.action.referenceSearch.trigger"
+          }
+        ]
+      }
+    ]
+  }
+]

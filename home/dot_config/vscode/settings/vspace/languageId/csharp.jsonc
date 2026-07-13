@@ -1,0 +1,262 @@
+[
+  {
+    "key": "languageId:csharp",
+    "name": "C#",
+    "type": "bindings",
+    "bindings": [
+      {
+        "key": "=",
+        "name": "+Format",
+        "icon": "list-flat",
+        "type": "bindings",
+        "bindings": [
+          {
+            "key": "=",
+            "name": "Format region or buffer",
+            "icon": "list-flat",
+            "type": "command",
+            "command": "editor.action.format"
+          },
+          {
+            "key": "b",
+            "name": "Format buffer",
+            "icon": "file",
+            "type": "command",
+            "command": "editor.action.formatDocument"
+          },
+          {
+            "key": "c",
+            "name": "Format changes",
+            "icon": "diff",
+            "type": "command",
+            "command": "editor.action.formatChanges"
+          },
+          {
+            "key": "s",
+            "name": "Format selection",
+            "icon": "selection",
+            "type": "command",
+            "command": "editor.action.formatSelection"
+          },
+          {
+            "key": "B",
+            "name": "+Format buffer with formatter",
+            "icon": "file",
+            "type": "command",
+            "command": "editor.action.formatDocument.multiple"
+          },
+          {
+            "key": "S",
+            "name": "+Format selection with formatter",
+            "icon": "selection",
+            "type": "command",
+            "command": "editor.action.formatSelection.multiple"
+          }
+        ]
+      },
+      {
+        "key": "b",
+        "name": "+Backend/OmniSharp",
+        "icon": "circuit-board",
+        "type": "bindings",
+        "bindings": [
+          {
+            "key": "o",
+            "name": "Show output",
+            "icon": "output",
+            "type": "command",
+            "command": "o.showOutput"
+          },
+          {
+            "key": "r",
+            "name": "Restart OmniSharp",
+            "icon": "server-process",
+            "type": "command",
+            "command": "o.restart"
+          },
+          {
+            "key": "s",
+            "name": "Select a project and start",
+            "icon": "project",
+            "type": "command",
+            "command": "o.pickProjectAndStart"
+          }
+        ]
+      },
+      {
+        "key": "d",
+        "name": "+Debug",
+        "icon": "bug",
+        "type": "bindings",
+        "bindings": [
+          {
+            "key": "l",
+            "name": "List process for attach",
+            "icon": "server-process",
+            "type": "command",
+            "command": "csharp.listProcess"
+          },
+          {
+            "key": "L",
+            "name": "List remote processes for attach",
+            "icon": "remote",
+            "type": "command",
+            "command": "csharp.listRemoteProcess"
+          }
+        ]
+      },
+      {
+        "key": "g",
+        "name": "+Go to",
+        "icon": "go-to-file",
+        "type": "bindings",
+        "bindings": [
+          {
+            "key": "d",
+            "name": "Go to definition",
+            "icon": "symbol-function",
+            "type": "command",
+            "command": "editor.action.revealDefinition"
+          },
+          {
+            "key": "e",
+            "name": "Go to errors/problems",
+            "icon": "error",
+            "type": "command",
+            "command": "workbench.action.problems.focus"
+          },
+          {
+            "key": "g",
+            "name": "Go to definition",
+            "icon": "symbol-function",
+            "type": "command",
+            "command": "editor.action.revealDefinition"
+          },
+          {
+            "key": "i",
+            "name": "Go to implementations",
+            "icon": "symbol-module",
+            "type": "command",
+            "command": "editor.action.goToImplementation"
+          },
+          {
+            "key": "r",
+            "name": "Go to references",
+            "icon": "symbol-reference",
+            "type": "command",
+            "command": "editor.action.goToReferences"
+          },
+          {
+            "key": "I",
+            "name": "Find implementations",
+            "icon": "symbol-module",
+            "type": "command",
+            "command": "references-view.findImplementations"
+          },
+          {
+            "key": "R",
+            "name": "Find references",
+            "icon": "symbol-reference",
+            "type": "command",
+            "command": "references-view.findReferences"
+          }
+        ]
+      },
+      {
+        "key": "p",
+        "name": "+Project",
+        "icon": "project",
+        "type": "bindings",
+        "bindings": [
+          {
+            "key": "r",
+            "name": "Restore project",
+            "icon": "clock",
+            "type": "command",
+            "command": "dotnet.restore.project"
+          },
+          {
+            "key": "R",
+            "name": "Restore all projects",
+            "icon": "clock",
+            "type": "command",
+            "command": "dotnet.restore.all"
+          }
+        ]
+      },
+      {
+        "key": "r",
+        "name": "+Refactor",
+        "icon": "edit",
+        "type": "bindings",
+        "bindings": [
+          {
+            "key": ".",
+            "name": "Quick fix",
+            "icon": "lightbulb-autofix",
+            "type": "command",
+            "command": "editor.action.quickFix"
+          },
+          {
+            "key": "r",
+            "name": "Rename symbol",
+            "icon": "symbol-keyword",
+            "type": "command",
+            "command": "editor.action.rename"
+          }
+        ]
+      },
+      {
+        "key": "t",
+        "name": "+Test",
+        "icon": "beaker",
+        "type": "bindings",
+        "bindings": [
+          {
+            "key": "d",
+            "name": "Debug test under cursor",
+            "icon": "testing-debug-icon",
+            "type": "command",
+            "command": "dotnet.test.debugTestsInContext"
+          },
+          {
+            "key": "t",
+            "name": "Run test under cursor",
+            "icon": "testing-run-icon",
+            "type": "command",
+            "command": "dotnet.test.runTestsInContext"
+          }
+        ]
+      },
+      {
+        "key": "G",
+        "name": "+Peek",
+        "icon": "eye",
+        "type": "bindings",
+        "bindings": [
+          {
+            "key": "d",
+            "name": "Peek definition",
+            "icon": "symbol-function",
+            "type": "command",
+            "command": "editor.action.peekDefinition"
+          },
+          {
+            "key": "i",
+            "name": "Peek implementations",
+            "icon": "symbol-module",
+            "type": "command",
+            "command": "editor.action.peekImplementation"
+          },
+          {
+            "key": "r",
+            "name": "Peek references",
+            "icon": "symbol-reference",
+            "type": "command",
+            "command": "editor.action.referenceSearch.trigger"
+          }
+        ]
+      }
+    ]
+  }
+]
