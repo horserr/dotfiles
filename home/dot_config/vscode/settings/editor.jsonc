@@ -129,5 +129,5 @@
   "editor.wordSeparators": "-`~!@#$%^&*()-=+[{]}\\|;:'\",.<>/?。，、；：！？「」『』“”‘’（）【】《》",
   "editor.wordWrap": "bounded",
   // use 'advance' for CJK characters
-  "editor.wrappingStrategy": "simple"
+  "editor.wrappingStrategy": "advanced"
 }

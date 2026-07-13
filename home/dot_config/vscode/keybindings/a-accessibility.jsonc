@@ -23,7 +23,14 @@
   // - comments
   {
     "key": "alt+o",
-    "command": "editor.action.accessibleView",
+    // workbench.action.terminal.focusAccessibleBuffer
+    "command": "runCommands",
+    "args": {
+      "commands": [
+        "editor.action.accessibleView",
+        "editor.action.toggleWordWrap"
+      ]
+    },
     "when": "!(accessibilityHelpIsShown || accessibleViewIsShown)"
   },
   {
