@@ -161,7 +161,7 @@
             "name": "Close pined editors",
             "icon": "x",
             "type": "command",
-            "command": "git.closeAllDiffEditors"
+            "command": "workbench.action.closeActivePinnedEditor"
           },
           {
             "key": "m",

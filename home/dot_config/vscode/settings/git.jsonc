@@ -51,7 +51,7 @@
   "git.openAfterClone": "whenNoFolderOpen",
   // UPLIFTING open diff editor when clicking
   "git.openDiffOnClick": true,
-  "git.openRepositoryInParentFolders": "prompt",
+  "git.openRepositoryInParentFolders": "always",
   "git.optimisticUpdate": true,
   // UPLIFTING WORKSPACE
   "git.postCommitCommand": "none",

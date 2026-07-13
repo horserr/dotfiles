@@ -1,5 +1,5 @@
 {
-  "gpt-token-counter-live.defaultModelFamily": "gemini",
+  "gpt-token-counter-live.defaultModelFamily": "openai",
   "gpt-token-counter-live.enabledFilePatterns": ["*.md", "*.txt"],
   "gpt-token-counter-live.statusBarDisplayTemplate": "Token: {count}"
 }

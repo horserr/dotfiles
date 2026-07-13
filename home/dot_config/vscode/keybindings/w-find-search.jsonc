@@ -47,14 +47,4 @@
     "command": "editor.action.replaceOne",
     "when": "editorFocus && findWidgetVisible"
   }
-  /*   {
-    "key": "ctrl+alt+t",
-    "command": "editor.actions.findWithArgs",
-    "args": {
-      "searchString": "TODO",
-      "isRegex": false,
-      "matchCase": true,
-      "wholeWord": true
-    }
-  } */
 ]

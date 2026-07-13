@@ -30,7 +30,7 @@
     "when": "!inputFocus && (notificationToastsVisible || notificationFocus)"
   },
   {
-   "key": "shift+j",
+    "key": "shift+j",
     "command": "workbench.action.setNotificationsPosition.bottomRight",
     "when": "!inputFocus && (notificationToastsVisible || notificationFocus)"
   },
@@ -78,9 +78,5 @@
     "key": "shift+g",
     "command": "notifications.focusLastToast",
     "when": "notificationFocus"
-  },
-  {
-    "key": "",
-    "command": "workbench.action.chat.resetGrowthSession"
   }
 ]

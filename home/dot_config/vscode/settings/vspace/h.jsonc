@@ -5,15 +5,17 @@
     "icon": "question",
     "type": "bindings",
     "bindings": [
+      // space custom commands
       {
         "key": " ",
         "name": "open custom commands",
         "type": "command",
         "command": "commands.openAsQuickPick"
       },
+      // h help
       {
         "key": "h",
-        "name": "commands show help",
+        "name": "+Help",
         "type": "bindings",
         "bindings": [
           {
@@ -60,54 +62,40 @@
           }
         ]
       },
+      // l online
       {
-        "key": "f",
-        "name": "Open feature request",
+        "key": "l",
+        "name": "+Online",
         "icon": "keyboard",
-        "type": "command",
-        "command": "workbench.action.openRequestFeatureUrl"
+        "type": "bindings",
+        "bindings": [
+          // f feature request
+          {
+            "key": "f",
+            "name": "Open feature request",
+            "icon": "keyboard",
+            "type": "command",
+            "command": "workbench.action.openRequestFeatureUrl"
+          },
+          // r open regex101
+          {
+            "key": "r",
+            "name": "Open regex101",
+            "icon": "book",
+            "type": "command",
+            "command": "vscode.open",
+            "args": "https://regex101.com/"
+          }
+        ]
       },
-      {
-        "key": "a",
-        "name": "show accessiblility help",
-        "icon": "keyboard",
-        "type": "command",
-        "command": "editor.action.accessibilityHelp"
-      },
-      {
-        "key": "k",
-        "name": "Open key bindings editor",
-        "icon": "keyboard",
-        "type": "command",
-        "command": "workbench.action.openGlobalKeybindings"
-      },
-      {
-        "key": "u",
-        "name": "Open user settings",
-        "icon": "keyboard",
-        "type": "command",
-        "command": "workbench.action.openSettingsJson"
-      },
-      {
-        "key": "w",
-        "name": "Open workspace settings",
-        "icon": "keyboard",
-        "type": "command",
-        "command": "workbench.action.openWorkspaceSettingsFile"
-      },
-      {
-        "key": "r",
-        "name": "Open remote settings",
-        "icon": "keyboard",
-        "type": "command",
-        "command": "workbench.action.openRemoteSettingsFile"
-      },
+      // t +trust
       {
         "key": "t",
         "name": "+Trust",
         "icon": "extension-workspace-trust",
         "type": "bindings",
         "bindings": [
+          // w wordspace trust
           {
             "key": "w",
             "name": "Configure workspace trust",
@@ -115,6 +103,15 @@
             "type": "command",
             "command": "workbench.trust.manage"
           },
+          // r unsafe repository
+          {
+            "key": "r",
+            "name": "mange unsafe repository",
+            "icon": "workspace-trusted",
+            "type": "command",
+            "command": "git.manageUnsafeRepositories"
+          },
+          // d domain trust
           {
             "key": "d",
             "name": "Configure domain trust",
@@ -124,41 +121,85 @@
           }
         ]
       },
-
-      // ui settings
+      // s setting
       {
-        "key": ",",
-        "name": "+Settings alternative interface(default)",
+        "key": "s",
+        "name": "+Settings",
         "icon": "settings",
         "type": "bindings",
         "bindings": [
+          // u user json setting
           {
             "key": "u",
-            "name": "Open user settings",
+            "name": "Open user json settings",
+            "icon": "keyboard",
+            "type": "command",
+            "command": "workbench.action.openSettingsJson"
+          },
+          // user ui setting
+          {
+            "key": "U",
+            "name": "Open user settings (UI)",
             "icon": "settings",
             "type": "command",
             "command": "workbench.action.openGlobalSettings"
           },
+          // s default json setting
           {
             "key": "s",
-            "name": "Open default system settings",
+            "name": "Open system(default) settings json",
             "icon": "keyboard",
             "type": "command",
             "command": "workbench.action.openRawDefaultSettings"
           },
+          // w workspace setting
+          {
+            "key": "w",
+            "name": "Open workspace settings",
+            "icon": "keyboard",
+            "type": "command",
+            "command": "workbench.action.openWorkspaceSettingsFile"
+          },
+          // r remote setting
+          {
+            "key": "r",
+            "name": "Open remote settings",
+            "icon": "keyboard",
+            "type": "command",
+            "command": "workbench.action.openRemoteSettingsFile"
+          }
+        ]
+      },
+      // k keybinding
+      {
+        "key": "k",
+        "name": "+Keybindings",
+        "icon": "keybindings-record-keys",
+        "type": "bindings",
+        "bindings": [
+          // e keybinding editor
+          {
+            "key": "e",
+            "name": "Open key bindings editor",
+            "icon": "keyboard",
+            "type": "command",
+            "command": "workbench.action.openGlobalKeybindings"
+          },
+          // k user keybindings
           {
             "key": "k",
+            "name": "Open user key bindings JSON",
+            "icon": "json",
+            "type": "command",
+            "command": "workbench.action.openGlobalKeybindingsFile"
+          },
+          // K default keybindings
+          {
+            "key": "K",
             "name": "Open default key bindings JSON",
             "icon": "json",
             "type": "command",
             "command": "workbench.action.openDefaultKeybindingsFile"
-          },
-          {
-            "key": "K",
-            "name": "Open global key bindings JSON",
-            "icon": "json",
-            "type": "command",
-            "command": "workbench.action.openGlobalKeybindingsFile"
           }
         ]
       },

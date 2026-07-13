@@ -1,0 +1,17 @@
+[
+  // - notification.chatSummarizeNotification
+  // - notification.markAsDone
+  // - notification.markAsRead
+  // - notification.openOnGitHub
+  // - notifications.configureNotificationsViewlet
+  // - notifications.loadMore
+  // - notifications.markPullRequestsAsDone
+  // - notifications.markPullRequestsAsRead
+  // - notifications.refresh
+  // - notifications.sortByPriority
+  // - notifications.sortByTimestamp
+  // - notifications:github.focus
+  // - notifications:github.removeView
+  // - notifications:github.resetViewLocation
+  // - notifications:github.toggleVisibility
+]
