@@ -121,11 +121,17 @@
       "command": "chezmoi docker run --rm ${input:docker} ${input:github_user}",
       "detail": "test chezmoi in an ephemeral docker container, you can also use `docker exec` command.\n reference: https://www.chezmoi.io/reference/commands/docker"
     },
+    // vscode list extension
     {
       "label": "extension-list",
       "type": "shell",
       "command": "code --list-extensions",
       "detail": "show extension list"
+    },
+    {
+      "label": "Terminate All Tasks",
+      "command": "echo ${input:terminate}",
+      "type": "shell"
     }
   ],
   "presentation": {
@@ -148,8 +154,15 @@
       "type": "promptString",
       "description": "please enter GitHub username",
       "default": "horserr"
+    },
+    {
+      "id": "terminate",
+      "type": "command",
+      "command": "workbench.action.tasks.terminate",
+      "args": "terminateAll"
     }
   ],
+
   "windows": {
     "options": {
       "shell": {
