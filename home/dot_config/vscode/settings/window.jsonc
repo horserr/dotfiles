@@ -17,7 +17,8 @@
   "window.newWindowDimensions": "default",
   "window.newWindowProfile": "Default",
   "window.openFilesInNewWindow": "default",
-  "window.openFoldersInNewWindow": "on",
+  // default to open recent project in empty workspace unless not empty
+  "window.openFoldersInNewWindow": "default",
   // Dictates what happens when you launch VS Code from your terminal or desktop shortcut without specifying a file or folder path.
   "window.openWithoutArgumentsInNewWindow": "on",
   "window.restoreFullscreen": false,
