@@ -85,6 +85,15 @@
             "type": "command",
             "command": "vscode.open",
             "args": "https://regex101.com/"
+          },
+          // s snippet generator
+          {
+            "key": "s",
+            "name": "Open snippet generator",
+            "icon": "book",
+            "type": "command",
+            "command": "vscode.open",
+            "args": "https://snippet-generator.app/?description=&tabtrigger=&snippet=&mode=vscode"
           }
         ]
       },
@@ -211,6 +220,14 @@
         "type": "bindings",
         "bindings": [
           {
+            "key": ",",
+            "name": "Open chezmoi document",
+            "icon": "book",
+            "type": "command",
+            "command": "vscode.open",
+            "args": "https://www.chezmoi.io/reference"
+          },
+          {
             "key": "a",
             "name": "Open accessible help document",
             "icon": "book",
@@ -272,6 +289,32 @@
             "type": "command",
             "command": "vscode.open",
             "args": "https://github.com/wraith13/vscode-schemas"
+          },
+          // t vscode tasks
+          {
+            "key": "t",
+            "name": "Open vscode tasks document",
+            "icon": "getting-started-step-checked",
+            "type": "command",
+            "command": "vscode.open",
+            "args": "https://code.visualstudio.com/docs/debugtest/tasks#_custom-tasks"
+          },
+          {
+            "key": "T",
+            "name": "Open vscode tasks json schema document",
+            "icon": "getting-started-step-checked",
+            "type": "command",
+            "command": "vscode.open",
+            "args": "https://code.visualstudio.com/docs/reference/tasks-appendix#_schema-for-tasksjson"
+          },
+          // g vscode glob reference
+          {
+            "key": "g",
+            "name": "Open vscode glob pattern reference",
+            "icon": "globe",
+            "type": "command",
+            "command": "vscode.open",
+            "args": "https://code.visualstudio.com/docs/editor/glob-patterns"
           }
         ]
       }
