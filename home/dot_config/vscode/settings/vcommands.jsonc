@@ -62,6 +62,27 @@
         ]
       }
     },
+    "Reveal Line Middle": {
+      "command": "revealLine",
+      "args": {
+        "lineNumber": "${lineNumber}",
+        "at": "center"
+      }
+    },
+    "Reveal Line Top": {
+      "command": "revealLine",
+      "args": {
+        "lineNumber": "${lineNumber}",
+        "at": "top"
+      }
+    },
+    "Reveal Line Bottom": {
+      "command": "revealLine",
+      "args": {
+        "lineNumber": "${lineNumber}",
+        "at": "bottom"
+      }
+    },
     "Search For Selected Text": {
       "command": "commands.openExternal",
       "args": "https://www.google.com/search?q=${selectedText}"

@@ -580,9 +580,9 @@
         "icon": "arrow-down",
         "type": "bindings",
         "bindings": [
-          // d remove current file
+          // D remove current file
           {
-            "key": "d",
+            "key": "D",
             "name": "remove current file from git",
             "icon": "arrow-down",
             "type": "command",

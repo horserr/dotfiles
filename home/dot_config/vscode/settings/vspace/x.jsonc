@@ -7,29 +7,6 @@
     "icon": "symbol-text",
     "type": "bindings",
     "bindings": [
-      // x snippet
-      {
-        "key": "x",
-        "name": "+Snippets",
-        "icon": "symbol-snippet",
-        "type": "bindings",
-        "bindings": [
-          {
-            "key": " ",
-            "name": "Configure user snippets",
-            "icon": "symbol-snippet",
-            "type": "command",
-            "command": "workbench.action.openSnippets"
-          },
-          {
-            "key": "x",
-            "name": "fill file with snippets",
-            "icon": "symbol-snippet",
-            "type": "command",
-            "command": "workbench.action.populateFileFromSnippet"
-          }
-        ]
-      },
       // o open
       {
         "key": "o",
@@ -50,20 +27,6 @@
             "icon": "link-external",
             "type": "command",
             "command": "editor.action.openLink"
-          },
-          {
-            "key": "r",
-            "name": "reopen with",
-            "icon": "symbol-snippet",
-            "type": "command",
-            "command": "workbench.action.reopenWithEditor"
-          },
-          {
-            "key": "t",
-            "name": "reopen with text editor",
-            "icon": "symbol-snippet",
-            "type": "command",
-            "command": "workbench.action.reopenTextEditor"
           }
         ]
       },
@@ -327,7 +290,7 @@
           }
         ]
       },
-      // z fold
+      // z fold/cursor move
       {
         "key": "z",
         "name": "+Fold",
@@ -573,7 +536,7 @@
           },
           // scroll
           {
-            "key": "k",
+            "key": "j",
             "name": "scroll half page up",
             "icon": "x",
             "type": "transient",
@@ -585,21 +548,21 @@
             },
             "bindings": [
               {
-                "key": "k",
+                "key": "j",
                 "name": "scroll line up",
                 "icon": "x",
                 "type": "command",
                 "command": "scrollLineUp"
               },
               {
-                "key": "j",
+                "key": "k",
                 "name": "scroll line down",
                 "icon": "x",
                 "type": "command",
                 "command": "scrollLineDown"
               },
               {
-                "key": "K",
+                "key": "J",
                 "name": "scroll half page up",
                 "icon": "x",
                 "type": "command",
@@ -611,7 +574,7 @@
                 }
               },
               {
-                "key": "J",
+                "key": "K",
                 "name": "scroll half page down",
                 "icon": "x",
                 "type": "command",
@@ -626,7 +589,7 @@
           },
           // scroll
           {
-            "key": "j",
+            "key": "k",
             "name": "scroll half page down",
             "icon": "x",
             "type": "transient",
@@ -638,21 +601,21 @@
             },
             "bindings": [
               {
-                "key": "k",
+                "key": "j",
                 "name": "scroll line up",
                 "icon": "x",
                 "type": "command",
                 "command": "scrollLineUp"
               },
               {
-                "key": "j",
+                "key": "k",
                 "name": "scroll line down",
                 "icon": "x",
                 "type": "command",
                 "command": "scrollLineDown"
               },
               {
-                "key": "K",
+                "key": "J",
                 "name": "scroll half page up",
                 "icon": "x",
                 "type": "command",
@@ -664,7 +627,7 @@
                 }
               },
               {
-                "key": "J",
+                "key": "K",
                 "name": "scroll half page down",
                 "icon": "x",
                 "type": "command",
@@ -682,37 +645,28 @@
             "key": "b",
             "name": "+Bring",
             "icon": "x",
-            "type": "bindings",
+            "type": "transient",
             "bindings": [
               {
                 "key": "m",
                 "name": "bring cursor to middle of screen",
                 "icon": "x",
                 "type": "command",
-                "command": "vim.remap",
-                "args": {
-                  "after": ["z", "z"]
-                }
+                "command": "Reveal Line Middle"
               },
               {
-                "key": "j",
+                "key": "k",
                 "name": "bring cursor to top of screen",
                 "icon": "x",
                 "type": "command",
-                "command": "vim.remap",
-                "args": {
-                  "after": ["z", "t"]
-                }
+                "command": "Reveal Line Bottom"
               },
               {
                 "key": "j",
                 "name": "bring cursor to bottom of screen",
                 "icon": "x",
                 "type": "command",
-                "command": "vim.remap",
-                "args": {
-                  "after": ["z", "b"]
-                }
+                "command": "Reveal Line Top"
               }
             ]
           },

@@ -1,10 +1,34 @@
 [
   {
     "key": "i",
-    "name": "+Insert",
-    "icon": "add",
+    "name": "+Insert/Snippet",
+    "icon": "symbol-snippet",
     "type": "bindings",
     "bindings": [
+      // space configure snippet
+      {
+        "key": " ",
+        "name": "Configure user snippets",
+        "icon": "debug-configure",
+        "type": "command",
+        "command": "workbench.action.openSnippets"
+      },
+      // i insert snippet
+      {
+        "key": "i",
+        "name": "insert snippet",
+        "icon": "insert",
+        "type": "command",
+        "command": "editor.action.insertSnippet"
+      },
+      // f fill with snippet
+      {
+        "key": "f",
+        "name": "fill file with snippets",
+        "icon": "circle-large-filled",
+        "type": "command",
+        "command": "workbench.action.populateFileFromSnippet"
+      },
       {
         "key": "j",
         "name": "Insert line below",
@@ -18,13 +42,6 @@
         "icon": "arrow-up",
         "type": "command",
         "command": "editor.action.insertLineBefore"
-      },
-      {
-        "key": "s",
-        "name": "Insert snippet",
-        "icon": "symbol-snippet",
-        "type": "command",
-        "command": "editor.action.insertSnippet"
       }
     ]
   }
