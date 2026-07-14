@@ -251,6 +251,14 @@
             "args": "https://code.visualstudio.com/docs/editing/userdefinedsnippets#_variables"
           },
           {
+            "key": "S",
+            "name": "Open VSCode snippet grammar Documentation",
+            "icon": "symbol-snippet",
+            "type": "command",
+            "command": "vscode.open",
+            "args": "https://code.visualstudio.com/docs/editing/userdefinedsnippets#_grammar"
+          },
+          {
             "key": "V",
             "name": "Open VspaceCode Documentation",
             "icon": "book",

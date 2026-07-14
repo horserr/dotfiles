@@ -1,22 +1,10 @@
 {
-  "setting schema wrapper": {
-    "prefix": "wrap with setting schema",
-    "body": [
-      "{",
-      "  \"\\$schema\": \"vscode://schemas/settings/user\",",
-      "$TM_SELECTED_TEXT",
-      "}"
-    ],
-    "description": "wrap selection with setting schema",
-    "include": "**/vscode/settings/**/*.jsonc",
-    "isFileTemplate": true
-  },
   "Extract Multiple Command ID From Selection": {
     "prefix": "cmd-clean",
     "body": [
       "${TM_SELECTED_TEXT/^.*?\"command\"\\s*:\\s*\"([^\"]+)\".*$/$1/gm}"
     ],
-    "include": "**/{vscode,.vscode}/**/*.{json,jsonc}{.tmpl,}",
+    "include": "**/{vscode,.vscode}/**/*.{json,jsonc}{,.tmpl}",
     "description": "Extracts the multiple command IDs from editor selection. It is recommended to first use 'select all occurance', and then paste all selected lines into a new untitled file, and select all and then invoke this snippet."
   },
   "Extract Command ID from Clipboard": {
@@ -24,7 +12,7 @@
     "body": [
       "${CLIPBOARD/^.*?\"command\"\\s*:\\s*\"([^\"]+)\".*$/$1/gs}"
     ],
-    "include": "**/{vscode,.vscode}/**/*.{json,jsonc}{.tmpl,}",
+    "include": "**/{vscode,.vscode}/**/*.{json,jsonc}{,.tmpl}",
     "description": "Extracts the command ID from a copied VS Code keybinding JSON block. If no match is found, output all of them, and only match the first one"
   }
 }

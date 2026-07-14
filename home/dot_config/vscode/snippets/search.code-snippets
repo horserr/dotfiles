@@ -10,12 +10,12 @@
     matchWholeWord
     isCaseSensitive */
   "search-editor-new": {
-    "prefix": "search editor",
+    "prefix": "search-editor",
     "body": [
       "\"command\": \"search.action.openNewEditor\",",
       "\"args\": {",
       "  // support varialbe substitution",
-      "  \"query\": \"${1:$TM_CURRENT_WORD}\",",
+      "  \"query\": \"${1:\\$TM_CURRENT_WORD}\",",
       "  \"triggerSearch\": true,",
       "  \"focusResults\": false,",
       "  \"location\": \"${2|reuse,new|}\", // reuse or new",
@@ -36,6 +36,47 @@
       "} $0"
     ],
     "include": "**/{vscode,.vscode}/**/*.{json,jsonc}{,.tmpl}",
-    "description": "defines the vspacecode command"
+    "description": "new search editor with sample args, this command support variable substitution.\n link: https: //code.visualstudio.com/api/references/commands#commands:~:text=search.action.openNewEditor"
+  },
+  "find with args": {
+    "prefix": "search-find-with-args",
+    "body": [
+      "\"command\": \"editor.action.fineWithArgs\",",
+      "\"args\": {",
+      "  \"searchString\": \"$0\",",
+      "  \"replaceString\": \"\",",
+      "",
+      "  \"isRegexp\": true,",
+      "  \"isCaseSensitive\": false,",
+      "  \"matchWholeWord\": false,",
+      "  \"findInSelection\": false,",
+      "",
+      "  \"preserveCase\": false,",
+      "}"
+    ],
+    "description": "this command does not support variable substitution. link: https: //code.visualstudio.com/api/references/commands#commands:~:text=editor.actions.findWithArgs"
+  },
+  "search": {
+    "prefix": "search-view",
+    "body": [
+      "\"command\": \"workbench.action.findInFiles\",",
+      "\"args\": {",
+      "  // support varialbe substitution",
+      "  \"query\": \"${1:\\$TM_CURRENT_WORD}\",",
+      "  \"isRegexp\": true,",
+      "  \"isCaseSensitive\": false,",
+      "  \"matchWholeWord\": true,",
+      "  // support variable substitution",
+      "  \"filesToInclude\": \"\",",
+      "  // support variable substitution",
+      "  \"filesToExclude\": \"\",",
+      "  \"showIncludesExcludes\": false,",
+      "  \"useExcludeSettingsAndIgnoreFiles\": true,",
+      "  \"contextLines\": 2,",
+      "  \"triggerSearch\": true,",
+      "  \"focusResults\": true",
+      "}$0"
+    ],
+    "description": "open search view with args, this command support variable substitution. link: https://code.visualstudio.com/api/references/commands#commands:~:text=workbench.action.findInFiles"
   }
 }
