@@ -1,5 +1,5 @@
 {
-  "setting schema filler": {
+  "setting schema wrapper": {
     "prefix": "wrap with setting schema",
     "body": [
       "{",
@@ -7,7 +7,7 @@
       "$TM_SELECTED_TEXT",
       "}"
     ],
-    "description": "fill file with setting schema",
+    "description": "wrap selection with setting schema",
     "include": "**/vscode/settings/**/*.jsonc",
     "isFileTemplate": true
   },

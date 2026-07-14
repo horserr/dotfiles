@@ -4,4 +4,11 @@
     "body": "$UUID",
     "description": "Insert UUID"
   },
+  "Clean Selected Text": {
+    "prefix": "clean",
+    "body": [
+      "${TM_SELECTED_TEXT/^[\\s]+|[,;]?$//gvm}"
+    ],
+    "description": "remove front whitespace and end comma or semicolon in selected lines"
+  },
 }
