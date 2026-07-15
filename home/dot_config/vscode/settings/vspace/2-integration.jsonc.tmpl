@@ -24,13 +24,13 @@
         "type": "command",
         "command": "workbench.action.quickOpenWithModes"
       },
-      // g gistpad
+      // m merge editor action
       {
-        "key": "g",
-        "name": "+GistPad",
-        "icon": "gist",
+        "key": "m",
+        "name": "+Merge",
+        "icon": "git-merge",
         "type": "bindings",
-        "bindings": {{ template "integration" (dict "GLOBAL" $ "fileName" "gistpad.jsonc") }}
+        "bindings": {{ template "integration" (dict "GLOBAL" $ "fileName" "action-merge.jsonc") }}
       },
       // e explorer
       {
