@@ -1,5 +1,4 @@
 {
-  "lifeline.clock.format": "h:mm A",
   "workbench.activityBar.location": "bottom",
   "workbench.browser.newTabPlacement": "window",
   "workbench.colorCustomizations": {
@@ -13,7 +12,10 @@
     // "editorBracketHighlight.unexpectedBracket.foreground": "#db6165"
   },
   "workbench.commandPalette.showAskInChat": false,
-  "workbench.diffEditorAssociations": {},
+  // link: https://code.visualstudio.com/docs/languages/markdown#_use-the-markdown-preview-only-for-diffs
+  "workbench.diffEditorAssociations": {
+    "*.md": "vscode.markdown.preview.editor"
+  },
   // "workbench.editor.titleScrollbarSizing": "large",
   "workbench.editor.centeredLayoutAutoResize": false,
   "workbench.editor.centeredLayoutFixedWidth": false,
@@ -27,10 +29,10 @@
   "workbench.editor.highlightModifiedTabs": true,
   "workbench.editor.labelFormat": "default",
   // limit the number of opened tabs
-  "workbench.editor.limit.enabled": true,
-  "workbench.editor.limit.excludeDirty": true,
-  "workbench.editor.limit.perEditorGroup": true,
-  "workbench.editor.limit.value": 6,
+  "workbench.editor.limit.enabled": false,
+  // "workbench.editor.limit.excludeDirty": true,
+  // "workbench.editor.limit.perEditorGroup": true,
+  // "workbench.editor.limit.value": 6,
   "workbench.editor.navigationScope": "editorGroup",
   //////////// NOTE: hide editor tabs
   // "workbench.editor.showTabs": "single",
@@ -48,6 +50,7 @@
   "workbench.editor.showIcons": false,
   // don't show tab index
   "workbench.editor.showTabIndex": false,
+  "workbench.editor.splitInGroupLayout": "vertical",
   // control split behavior
   "workbench.editor.splitSizing": "auto",
   // don't show close button

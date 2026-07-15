@@ -128,17 +128,21 @@
       "url": "vscode://schemas/tasks"
     }
   ],
-  "workbench.diffEditorAssociations": {},
+  "workbench.diffEditorAssociations": {
+    "*.md": "vscode.markdown.preview.editor"
+  },
   // workspace tab label customization
   "workbench.editor.customLabels.patterns": {
+    "*/.vscode/**": "${filename}(main).${extname}",
     "**/git/**": "${filename}(git)",
     "**/vscode/*.json*": "${filename}(vsc)",
-    "**/vscode/*/**/*.json*": "${filename}(${dirname})",
+    "**/vscode/*/**/*.json*": "${filename}(${dirname})"
   },
   "workbench.editor.showTabs": "multiple",
   "workbench.editorAssociations": {
     "*.copilotmd": "vscode.markdown.preview.editor"
   },
+  "git.blame.editorDecoration.enabled": false,
   // vspacecode dynamic workspace integratiion
   "vspacecode.bindingOverrides": [
     {
