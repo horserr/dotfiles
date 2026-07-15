@@ -1,6 +1,126 @@
 {
-  "markdown.preview.breaks": true,
+  "[markdown]": {
+    "bracketLens.mode": "manual",
+    "diffEditor.ignoreTrimWhitespace": false,
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    // "editor.fontFamily": "LXGW WenKai Mono",
+    // "editor.fontSize": 19,
+    // "editor.indentSize": "tabSize",
+    "editor.letterSpacing": 0.8,
+    "editor.lineHeight": 1.3,
+    "editor.quickSuggestions": {
+      "comments": "off",
+      "other": "off",
+      "strings": "off"
+    },
+    "editor.renderWhitespace": "all",
+    "editor.tabSize": 4,
+    "editor.unicodeHighlight.ambiguousCharacters": false,
+    "editor.unicodeHighlight.invisibleCharacters": false,
+    "editor.wordWrap": "on",
+    "editor.wrappingStrategy": "advanced"
+  },
+  "markdown-preview-github-styles.colorTheme": "auto",
+  // WORKSPACE
+  "markdown.copyFiles.destination": {
+    "**/*": "${documentDirName}/images/${documentBaseName}/${fileName}"
+  },
+  "markdown.copyFiles.overwriteBehavior": "nameIncrementally",
+  "markdown.editor.drop.copyIntoWorkspace": "mediaFiles",
+  "markdown.editor.drop.enabled": "smart",
+  "markdown.editor.filePaste.audioSnippet": "<audio controls src=\"${src}\" title=\"${title}\"></audio>",
+  "markdown.editor.filePaste.videoSnippet": "<video controls src=\"${src}\" title=\"${title}\"></video>",
+  "markdown.editor.pasteUrlAsFormattedLink.enabled": "smartWithSelection",
+  /***********************
+   * MARKDOWN ALL IN ONE *
+   ***********************/
+  "markdown.extension.bold.indicator": "**",
+  "markdown.extension.completion.enabled": true,
+  "markdown.extension.completion.respectVscodeSearchExclude": true,
+  // WORKSPACE
+  "markdown.extension.completion.root": "",
+  // WORKSPACE SIGNIFICANT not recommend
+  "markdown.extension.katex.macros": {},
+  "markdown.extension.list.indentationSize": "inherit",
+  "markdown.extension.list.toggle.candidate-markers": [
+    "-",
+    "*",
+    "+",
+    "1.",
+    "1)"
+  ],
+  "markdown.extension.orderedList.marker": "ordered",
+  "markdown.extension.preview.autoShowPreviewToSide": false,
+  "markdown.extension.print.absoluteImgPath": true,
+  // SIGNIFICANT
+  "markdown.extension.print.imgToBase64": false,
+  "markdown.extension.print.onFileSave": false,
+  "markdown.extension.print.pureHtml": false,
+  // code block print theme
+  "markdown.extension.print.theme": "light",
+  // todo
+  "markdown.extension.syntax.plainTheme": true,
+  "markdown.extension.tableFormatter.delimiterRowNoPadding": false,
+  // Normalize table indentation to closest multiple of configured editor tab size.
+  "markdown.extension.tableFormatter.normalizeIndentation": true,
+  // Apply a border around a [code span](https://spec.commonmark.org/0.29/#code-spans).
+  "markdown.extension.theming.decoration.renderCodeSpan": true,
+  "markdown.extension.theming.decoration.renderHardLineBreak": true,
+  "markdown.extension.theming.decoration.renderLink": true,
+  "markdown.extension.theming.decoration.renderParagraph": true,
+  "markdown.extension.theming.decoration.renderStrikethrough": true,
+  "markdown.extension.theming.decoration.renderTrailingSpace": true,
+  // WORKSPACE
+  "markdown.extension.toc.levels": "1..6",
+  // WORKSPACE
+  "markdown.extension.toc.omittedFromToc": {},
+  // WORKSPACE
+  "markdown.extension.toc.orderedList": false,
+  "markdown.extension.toc.plaintext": false,
+  // WORKSPACE Use `-`, `*`, or `+` in the table of contents (for **unordered** list).
+  "markdown.extension.toc.unorderedList.marker": "-",
+  "markdown.extension.toc.updateOnSave": true,
+  "markdown.links.openLocation": "beside",
+  "markdown.math.enabled": true,
+  // WORKSPACE SIGNIFICANT not recommend
+  "markdown.math.macros": {},
+  "markdown.occurrencesHighlight.enabled": true,
+  "markdown.preferredMdPathExtensionStyle": "auto",
+  // SIGNIFICANT
+  "markdown.preview.breaks": false,
+  "markdown.preview.doubleClickToSwitchToEditor": true,
+  "markdown.preview.fontFamily": "-apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif",
   "markdown.preview.fontSize": 16,
-  "markdown.preview.lineHeight": 1.4,
-  "markdown.preview.typographer": true
+  "markdown.preview.frontMatter": "codeBlock",
+  "markdown.preview.lineHeight": 1.5,
+  "markdown.preview.linkify": true,
+  "markdown.preview.markEditorSelection": true,
+  "markdown.preview.openMarkdownLinks": "inEditor",
+  "markdown.preview.scrollEditorWithPreview": true,
+  "markdown.preview.scrollPreviewWithEditor": true,
+  "markdown.preview.typographer": true,
+  "markdown.server.log": "off",
+  // WORKSPACE
+  "markdown.styles": [],
+  "markdown.suggest.paths.includeWorkspaceHeaderCompletions": "onDoubleHash",
+  "markdown.trace.server": "off",
+  "markdown.updateLinksOnFileMove.enabled": "prompt",
+  // WORKSPACE
+  "markdown.updateLinksOnFileMove.include": [
+    "**/*.{md,mkd,mdwn,mdown,markdown,markdn,mdtxt,mdtext,workbook}",
+    "**/*.{jpg,jpe,jpeg,png,bmp,gif,ico,webp,avif,tiff,svg,mp4}"
+  ],
+  "markdown.validate.enabled": true,
+  "markdown.validate.fileLinks.markdownFragmentLinks": "inherit",
+  "markdown.validate.fragmentLinks.enabled": "warning",
+  // WORKSPACE
+  "markdown.validate.ignoredLinks": [
+    // ignore insite routing
+    "^/[^/]",
+    "/assests/**/*.svg",
+    // ignore dynamic substitution
+    ".*\\${.*}.*"
+  ],
+  "markdown.validate.referenceLinks.enabled": "error",
+  "markdown.validate.unusedLinkDefinitions.enabled": "hint"
 }
