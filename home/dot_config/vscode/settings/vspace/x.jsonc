@@ -201,6 +201,30 @@
           }
         ]
       },
+      // c copy selection to new untitle file
+      {
+        "key": "c",
+        "name": "copy selection to new untitle file",
+        "icon": "notebook-copy",
+        "type": "commands",
+        "commands": [
+          "editor.action.clipboardCopyAction",
+          "workbench.action.files.newUntitledFile",
+          "editor.action.clipboardPasteAction"
+        ]
+      },
+      // m move selection to new untitle file
+      {
+        "key": "m",
+        "name": "move selection to new untitle file",
+        "icon": "move",
+        "type": "commands",
+        "commands": [
+          "editor.action.clipboardCutAction",
+          "workbench.action.files.newUntitledFile",
+          "editor.action.clipboardPasteAction"
+        ]
+      },
       // v smart selection
       {
         "key": "v",
