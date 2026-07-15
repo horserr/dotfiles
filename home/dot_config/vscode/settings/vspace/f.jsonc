@@ -288,13 +288,26 @@
         "icon": "file-add",
         "type": "command",
         "bindings": [
+          // n new
           {
             "key": "n",
-            "name": "new untitled file left",
+            "name": "new untitled file",
             "icon": "folder-opened",
             "type": "command",
             "command": "workbench.action.files.newUntitledFile"
           },
+          // N new with language picker
+          {
+            "key": "N",
+            "name": "new untitled file with languange picker",
+            "icon": "folder-opened",
+            "type": "commands",
+            "commands": [
+              "workbench.action.files.newUntitledFile",
+              "workbench.action.editor.changeLanguageMode"
+            ]
+          },
+          // h new to left
           {
             "key": "h",
             "name": "new untitled file left",
@@ -305,6 +318,7 @@
               "workbench.action.moveEditorToLeftGroup"
             ]
           },
+          // k new to above
           {
             "key": "k",
             "name": "new untitled file above",
@@ -315,6 +329,7 @@
               "workbench.action.moveEditorToAboveGroup"
             ]
           },
+          // j new to below
           {
             "key": "j",
             "name": "new untitled file below",
@@ -325,6 +340,7 @@
               "workbench.action.moveEditorToBelowGroup"
             ]
           },
+          // new to right
           {
             "key": "l",
             "name": "new untitled file right",
@@ -388,6 +404,7 @@
             "icon": "window",
             "type": "bindings",
             "bindings": [
+              // h copy file to left editor group
               {
                 "key": "h",
                 "name": "copy file left",
@@ -395,6 +412,7 @@
                 "type": "command",
                 "command": "workbench.action.splitEditorLeft"
               },
+              // j copy file to down editor group
               {
                 "key": "j",
                 "name": "copy file below",
@@ -402,6 +420,7 @@
                 "type": "command",
                 "command": "workbench.action.splitEditorDown"
               },
+              // copy file to up editor group
               {
                 "key": "k",
                 "name": "copy file up",
@@ -409,6 +428,7 @@
                 "type": "command",
                 "command": "workbench.action.splitEditorUp"
               },
+              // copy file to right group
               {
                 "key": "l",
                 "name": "copy file right",
@@ -418,6 +438,7 @@
               }
             ]
           },
+          // h copy file to left editor group
           {
             "key": "h",
             "name": "copy file left",
@@ -425,6 +446,7 @@
             "type": "command",
             "command": "workbench.action.splitEditorToLeftGroup"
           },
+          // j copy file to below editor group
           {
             "key": "j",
             "name": "copy file below",
@@ -432,6 +454,7 @@
             "type": "command",
             "command": "workbench.action.splitEditorToBelowGroup"
           },
+          // k copy file to up editor group
           {
             "key": "k",
             "name": "copy file up",
@@ -439,6 +462,7 @@
             "type": "command",
             "command": "workbench.action.splitEditorToAboveGroup"
           },
+          // l copy file to right editor group
           {
             "key": "l",
             "name": "copy file right",
@@ -446,6 +470,15 @@
             "type": "command",
             "command": "workbench.action.splitEditorToRightGroup"
           },
+          // i copy file to previous editor group
+          {
+            "key": "i",
+            "name": "Move file into recent/previous editor group",
+            "icon": "extensions-pre-release",
+            "type": "command",
+            "command": "workbench.action.splitEditorToPreviousGroup"
+          },
+          // w copy file to new window
           {
             "key": "w",
             "name": "copy active file in new window",

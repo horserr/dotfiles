@@ -12,6 +12,7 @@
         "type": "command",
         "command": "workbench.action.focusPreviousGroup"
       },
+      // , list editor group
       {
         "key": ",",
         "name": "List Recent files across editor groups",

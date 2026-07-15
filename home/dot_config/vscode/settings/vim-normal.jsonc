@@ -37,6 +37,12 @@
       "commands": ["editor.action.formatDocument"]
     },
     {
+      // hard wrap
+      // textWidth limit is set by "vim.textwidth": 80,
+      "before": ["g", "Q"],
+      "after": ["g", "q"]
+    },
+    {
       // quick fix
       "before": ["g", "."],
       "commands": ["editor.action.quickFix"]

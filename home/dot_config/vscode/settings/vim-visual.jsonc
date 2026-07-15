@@ -104,14 +104,14 @@
     {
       // camelCaseMotion
       "before": ["w"],
-      // "after": ["<leader>", "w"]
-      "commands": ["cursorWordPartRight"]
+      "after": ["<leader>", "w"]
+      // "commands": ["cursorWordPartRight"]
     },
     {
       // camelCaseMotion
       "before": ["b"],
-      // "after": ["<leader>", "b"]
-      "commands": ["cursorWordPartLeft"]
+      "after": ["<leader>", "b"]
+      // "commands": ["cursorWordPartLeft"]
     },
     {
       // visual line end

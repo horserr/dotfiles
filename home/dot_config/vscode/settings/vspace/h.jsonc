@@ -220,19 +220,11 @@
         "type": "bindings",
         "bindings": [
           {
-            "key": ",",
-            "name": "Open chezmoi document",
+            "key": " ",
+            "name": "search in browser bookmard",
             "icon": "book",
             "type": "command",
-            "command": "vscode.open",
-            "args": "https://www.chezmoi.io/reference"
-          },
-          {
-            "key": "a",
-            "name": "Open accessible help document",
-            "icon": "book",
-            "type": "command",
-            "command": "editor.action.accessibilityHelp"
+            "command": "browser-bookmark.search"
           },
           {
             "key": "v",
@@ -267,7 +259,7 @@
           },
           {
             "key": "w",
-            "name": "Open when clause Documentation",
+            "name": "Open vscode when clause Documentation",
             "icon": "book",
             "type": "command",
             "command": "vscode.open",
@@ -298,6 +290,15 @@
             "command": "vscode.open",
             "args": "https://github.com/wraith13/vscode-schemas"
           },
+          // open github flavored markdown
+          {
+            "key": "m",
+            "name": "Open github flavored markdown spec",
+            "icon": "getting-started-step-checked",
+            "type": "command",
+            "command": "vscode.open",
+            "args": "https://github.github.com/gfm/"
+          },
           // t vscode tasks
           {
             "key": "t",
@@ -309,7 +310,7 @@
           },
           {
             "key": "T",
-            "name": "Open vscode tasks json schema document",
+            "name": "Open vscode vscode tasks json schema document",
             "icon": "getting-started-step-checked",
             "type": "command",
             "command": "vscode.open",

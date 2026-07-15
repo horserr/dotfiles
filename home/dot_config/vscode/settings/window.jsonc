@@ -24,7 +24,7 @@
   "window.restoreFullscreen": false,
   "window.restoreWindows": "none",
   "window.systemColorTheme": "auto",
-  "window.title": "${dirty}😉${rootNameShort}${separator}${activeEditorShort}",
+  "window.title": "${dirty}🌿${activeRepositoryBranchName} ${rootNameShort}😉${activeEditorShort}🏔️${activeEditorState}${separator}${profileName}${separator}${remoteName}",
   "window.titleBarStyle": "custom",
   "window.titleSeparator": " 📍 ",
   "window.zoomLevel": 1.0,
