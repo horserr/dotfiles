@@ -1,0 +1,59 @@
+{
+  "breadcrumbs.filePath": "on",
+  // When enabled breadcrumbs show `array`-symbols.
+  "breadcrumbs.showArrays": true,
+  // When enabled breadcrumbs show `boolean`-symbols.
+  "breadcrumbs.showBooleans": true,
+  // When enabled breadcrumbs show `class`-symbols.
+  "breadcrumbs.showClasses": true,
+  // When enabled breadcrumbs show `constant`-symbols.
+  "breadcrumbs.showConstants": true,
+  // When enabled breadcrumbs show `constructor`-symbols.
+  "breadcrumbs.showConstructors": true,
+  // When enabled breadcrumbs show `enumMember`-symbols.
+  "breadcrumbs.showEnumMembers": true,
+  // When enabled breadcrumbs show `enum`-symbols.
+  "breadcrumbs.showEnums": true,
+  // When enabled breadcrumbs show `event`-symbols.
+  "breadcrumbs.showEvents": true,
+  // When enabled breadcrumbs show `field`-symbols.
+  "breadcrumbs.showFields": true,
+  // When enabled breadcrumbs show `file`-symbols.
+  "breadcrumbs.showFiles": true,
+  // When enabled breadcrumbs show `function`-symbols.
+  "breadcrumbs.showFunctions": true,
+  // When enabled breadcrumbs show `interface`-symbols.
+  "breadcrumbs.showInterfaces": true,
+  // When enabled breadcrumbs show `key`-symbols.
+  "breadcrumbs.showKeys": true,
+  // When enabled breadcrumbs show `method`-symbols.
+  "breadcrumbs.showMethods": true,
+  // When enabled breadcrumbs show `module`-symbols.
+  "breadcrumbs.showModules": true,
+  // When enabled breadcrumbs show `namespace`-symbols.
+  "breadcrumbs.showNamespaces": true,
+  // When enabled breadcrumbs show `null`-symbols.
+  "breadcrumbs.showNull": true,
+  // When enabled breadcrumbs show `number`-symbols.
+  "breadcrumbs.showNumbers": true,
+  // When enabled breadcrumbs show `object`-symbols.
+  "breadcrumbs.showObjects": true,
+  // When enabled breadcrumbs show `operator`-symbols.
+  "breadcrumbs.showOperators": true,
+  // When enabled breadcrumbs show `package`-symbols.
+  "breadcrumbs.showPackages": true,
+  // When enabled breadcrumbs show `property`-symbols.
+  "breadcrumbs.showProperties": true,
+  // When enabled breadcrumbs show `string`-symbols.
+  "breadcrumbs.showStrings": true,
+  // When enabled breadcrumbs show `struct`-symbols.
+  "breadcrumbs.showStructs": true,
+  // When enabled breadcrumbs show `typeParameter`-symbols.
+  "breadcrumbs.showTypeParameters": true,
+  // When enabled breadcrumbs show `variable`-symbols.
+  "breadcrumbs.showVariables": true,
+  "breadcrumbs.symbolPath": "last",
+  // The separator used when copying the breadcrumb symbol path.
+  "breadcrumbs.symbolPathSeparator": ".",
+  "breadcrumbs.symbolSortOrder": "position"
+}
