@@ -1,26 +1,68 @@
 {
+  // accept suggestion using other characters
+  "editor.acceptSuggestionOnCommitCharacter": false,
   "editor.acceptSuggestionOnEnter": "smart",
   "editor.accessibilityPageSize": 15,
-  "editor.accessibilitySupport": "off",
+  "editor.accessibilitySupport": "auto",
   "editor.allowVariableFontsInAccessibilityMode": true,
+  // SIGNIFICANT
   "editor.autoIndentOnPaste": true,
-  "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
+  "editor.bracketPairColorization.independentColorPoolPerBracketType": false,
+  // SIGNIFICANT
+  "editor.codeActions.triggerOnFocusChange": false,
+  // WORKSPACE SIGNIFICANT, this setting is related to files.autoSave and editor.codeActions.triggerOnFocusChange
+  // 'explicit' means to 'explicitly' invoke file.save command either by typing or clicking
   "editor.codeActionsOnSave": {
-    // refer to https://www.byteplus.com/en/topic/513795?title=vscode-editor-codeactionsonsave-a-complete-guide
     "source.fixAll": "explicit",
-    "source.organizeImports": "explicit"
+    "source.organizeImports": "explicit",
+    "source.sortImports": "always"
   },
   "editor.codeActionWidget.includeNearbyQuickFixes": true,
-  "editor.codeLensFontSize": 15,
+  "editor.codeActionWidget.showHeaders": true,
+  "editor.codeLens": true,
+  "editor.codeLensFontSize": 0,
+  "editor.colorDecoratorsActivatedOn": "clickAndHover",
+  // SIGNIFICANT enable column selection by default
+  "editor.columnSelection": true,
   "editor.copyWithSyntaxHighlighting": true,
   "editor.cursorBlinking": "smooth",
   "editor.cursorSmoothCaretAnimation": "on",
-  "editor.cursorSurroundingLines": 5,
-  "editor.definitionLinkOpensInPeek": true,
+  // SIGNIFICANT set a big number to force the cursor in the screen center
+  "editor.cursorSurroundingLines": 6,
+  // can use mouse to click on surrounding area
+  "editor.cursorSurroundingLinesStyle": "default",
+  "editor.defaultColorDecorators": "auto",
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  // Controls whether the Go to Definition mouse gesture always opens the peek widget.
+  "editor.definitionLinkOpensInPeek": false,
   "editor.detectIndentation": true,
+  // SIGNIFICANT WORKSPACE Configures the preferred type of edit to use when dropping content.
+  // This is an ordered list of edit kinds. The first available edit of a preferred kind will be used.
+  "editor.dropIntoEditor.preferences": [
+    "image.markdown", // 1st Choice: Turn images into Markdown syntax
+    "image.html", // 2nd Choice: Turn images into HTML tags if Markdown isn't supported
+    "text.insertFilePath" // 3rd Choice: Just paste the file path if it's not an image
+  ],
+  // show drop seletor widget
+  "editor.dropIntoEditor.showDropSelector": "afterDrop",
+  // really SIGNIFICANT link: https://code.visualstudio.com/updates/v1_101#_edit-context
+  // this setting is related to editor.wordSegmenterLocales
+  "editor.editContext": true,
+  // Controls whether copying without a selection copies the current line.
+  "editor.emptySelectionClipboard": true,
+  // "editor.experimentalGpuAcceleration": "on",
+  // Scrolling speed multiplier when pressing `Alt`.
+  "editor.fastScrollSensitivity": 5,
+  // Controls whether the Find Widget should add extra lines on top of the editor. When true, you can scroll beyond the first line when the Find Widget is visible.
+  "editor.find.addExtraSpaceOnTop": false,
+  // Controls the condition for turning on Find in Selection automatically.
   "editor.find.autoFindInSelection": "multiline",
+  "editor.find.closeOnResult": false,
   "editor.find.cursorMoveOnType": true,
+  "editor.find.findOnType": true,
+  // Controls whether the search string in the Find Widget is seeded from the editor selection.
   "editor.find.seedSearchStringFromSelection": "selection",
+  // SIGNIFICANT WORKSPACE
   "editor.foldingImportsByDefault": true,
   "editor.foldingStrategy": "indentation",
   "editor.fontFamily": "Cascadia Code, FiraCode Nerd Font, LXGW Neo XiHei, 江西拙楷, 杨任东竹石体 Heavy, Consolas, Microsoft YaHei",
@@ -29,53 +71,180 @@
   // Editor settings
   "editor.fontSize": 17,
   "editor.fontVariations": true,
+  // SIGNIFICANT
   "editor.formatOnPaste": true,
-  // "prettier.requireConfig": true,
+  // SIGNIFICANT WORKSPACE can work with editor.codeActionsOnSave
+  "editor.formatOnSave": false,
+  "editor.formatOnSaveMode": "modificationsIfAvailable",
+  // Controls whether the editor should automatically format the line after typing.
   "editor.formatOnType": true,
+  // SIGNIFICANT WORKSPACE LANGUAGEID
+  "editor.gotoLocation.alternativeDeclarationCommand": "editor.action.goToReferences",
+  // SIGNIFICANT WORKSPACE LANGUAGEID
+  "editor.gotoLocation.alternativeDefinitionCommand": "editor.action.goToReferences",
+  // SIGNIFICANT WORKSPACE LANGUAGEID
+  "editor.gotoLocation.alternativeImplementationCommand": "",
+  // SIGNIFICANT WORKSPACE LANGUAGEID
+  "editor.gotoLocation.alternativeReferenceCommand": "",
+  // SIGNIFICANT WORKSPACE LANGUAGEID
+  "editor.gotoLocation.alternativeTypeDefinitionCommand": "editor.action.goToReferences",
+  // SIGNIFICANT
+  "editor.gotoLocation.multipleDeclarations": "peek",
+  // SIGNIFICANT
+  "editor.gotoLocation.multipleDefinitions": "peek",
+  // SIGNIFICANT
+  "editor.gotoLocation.multipleImplementations": "peek",
+  // SIGNIFICANT
+  "editor.gotoLocation.multipleReferences": "peek",
+  // SIGNIFICANT
+  "editor.gotoLocation.multipleTypeDefinitions": "peek",
   "editor.guides.bracketPairs": "active",
   "editor.guides.indentation": true,
-  "editor.hideCursorInOverviewRuler": true,
+  // don't hide cursor in scroll bar
+  "editor.hideCursorInOverviewRuler": false,
+  "editor.hover.delay": 300,
+  // can use modifier to show hover
+  "editor.hover.enabled": "on",
+  // Controls the delay in milliseconds after which the hover is hidden. Requires `editor.hover.sticky` to be enabled.
+  "editor.hover.hidingDelay": 500,
+  // Controls whether the hover should remain visible when mouse is moved over it.
+  "editor.hover.sticky": true,
   "editor.indentSize": "tabSize",
+  // Make scrolling inertial - mostly useful with touchpad on linux.
+  "editor.inertialScroll": true,
   "editor.inlayHints.enabled": "offUnlessPressed",
+  "editor.inlayHints.fontFamily": "",
   "editor.inlayHints.fontSize": 15,
+  "editor.inlayHints.maximumLength": 43,
   "editor.inlayHints.padding": true,
   "editor.inlineSuggest.edits.showCollapsed": true,
   "editor.inlineSuggest.showToolbar": "always",
+  "editor.inlineSuggest.suppressSuggestions": false,
   "editor.insertSpaces": true,
+  // SIGNIFICANT
+  "editor.language.colorizedBracketPairs": [
+    ["<", ">"],
+    ["[", "]"],
+    ["(", ")"],
+    ["{", "}"],
+    ["《", "》"],
+    ["【", "】"]
+  ],
+  // SIGNIFICANT format
+  "editor.letterSpacing": 0,
   "editor.lineHeight": 1.45,
   "editor.lineNumbers": "off",
+  // SIGNIFICANT auto rename tag
   "editor.linkedEditing": true,
+  // PERFORMANCE
+  "editor.maxTokenizationLineLength": 10000,
+  "editor.minimap.autohide": "none",
   "editor.minimap.enabled": true,
+  // MARK SIGNIFICANT Defines the regular expression used to find section headers in comments. The regex must contain a named match group `label` (written as `(?<label>.+)`) that encapsulates the section header, otherwise it will not work. Optionally you can include another match group named `separator`. Use \n in the pattern to match multi-line headers.
+  "editor.minimap.markSectionHeaderRegex": "\\bMARK:\\s*(?<separator>-?)\\s*(?<label>.*)$",
+  "editor.minimap.maxColumn": 120,
+  // render as block
+  "editor.minimap.renderCharacters": false,
+  "editor.minimap.scale": 1,
   "editor.minimap.sectionHeaderFontSize": 12,
   "editor.minimap.showSlider": "always",
+  "editor.minimap.side": "left",
+  "editor.minimap.size": "proportional",
+  // middle mouse
+  "editor.mouseMiddleClickAction": "default",
+  "editor.mouseWheelScrollSensitivity": 1,
+  // don't mouse wheel zoom
+  "editor.mouseWheelZoom": false,
+  // PERFORMANCE
+  "editor.multiCursorLimit": 10000,
+  // Merge multiple cursors when they are overlapping.
+  "editor.multiCursorMergeOverlapping": true,
+  // SIGNIFICANT
+  "editor.multiCursorModifier": "alt",
+  // SIGNIFICANT Controls pasting when the line count of the pasted text matches the cursor count.
+  //  - spread: Each cursor pastes a single line of the text.
+  //  - full: Each cursor pastes the full text.
+  "editor.multiCursorPaste": "spread",
   "editor.occurrencesHighlight": "singleFile",
   "editor.occurrencesHighlightDelay": 300,
+  "editor.overtypeCursorStyle": "block-outline",
+  "editor.overviewRulerBorder": false,
   "editor.parameterHints.enabled": true,
-  // "editor.tabCompletion": "onlySnippets",
-  // "triggercharac",
+  // SIGNIFICANT
+  "editor.pasteAs.preferences": [],
+  // SIGNIFICANT
+  "editor.peekWidgetDefaultFocus": "tree",
   "editor.quickSuggestions": {
-    "comments": true,
-    "other": true,
+    "comments": "on",
+    "other": "on",
     "strings": true
   },
   "editor.quickSuggestionsDelay": 100,
   "editor.renderControlCharacters": true,
+  // Render last line number when the file ends with a newline.
+  // this setting is related to 'files.insertFinalNewline'
+  "editor.renderFinalNewline": "off",
+  "editor.renderLineHighlight": "all",
+  "editor.renderLineHighlightOnlyWhenFocus": false,
+  // SIGNIFICANT
   "editor.renderWhitespace": "selection",
-  "editor.rulers": [80, 120],
+  "editor.roundedSelection": true,
+  "editor.rulers": [
+    {
+      "color": "#f8c8e7c2",
+      "column": 80
+    },
+    {
+      "color": "#eabefdca",
+      "column": 120
+    }
+  ],
+  "editor.scrollbar.horizontalScrollbarSize": 10,
+  // When set, the horizontal scrollbar will not increase the size of the editor's content.
+  "editor.scrollbar.ignoreHorizontalScrollbarInContentHeight": false,
+  // Controls whether clicks scroll by page or jump to click position.
+  "editor.scrollbar.scrollByPage": false,
+  "editor.scrollbar.vertical": "auto",
+  "editor.scrollbar.verticalScrollbarSize": 10,
+  // Controls the number of extra characters beyond which the editor will scroll horizontally.
+  "editor.scrollBeyondLastColumn": 8,
+  // Scroll only along the predominant axis when scrolling both vertically and horizontally at the same time. Prevents horizontal drift when scrolling vertically on a trackpad.
+  "editor.scrollPredominantAxis": true,
+  "editor.selectionHighlightMaxLength": 200,
+  // Controls whether the editor should highlight selection matches that span multiple lines.
+  "editor.selectionHighlightMultiline": false,
   // enable semanticHighlighting by default
   "editor.semanticHighlighting.enabled": true,
+  "editor.showFoldingControls": "mouseover",
+  "editor.smartSelect.selectLeadingAndTrailingWhitespace": true,
+  "editor.smartSelect.selectSubwords": true,
   "editor.smoothScrolling": true,
+  "editor.snippets.codeActions.enabled": true,
   "editor.snippetSuggestions": "inline", // the sorting order of snippet within quick suggestions
+  "editor.stablePeek": false,
   "editor.stickyScroll.enabled": false,
   "editor.suggest.insertMode": "insert",
   "editor.suggest.localityBonus": true,
+  // SIGNIFICANT
+  "editor.suggest.matchOnWordStartOnly": true,
+  // SIGNIFICANT
   "editor.suggest.preview": true,
-  "editor.suggestFontSize": 16,
-  //////////// IngelliSense ////////////////////////////////////////////////////
+  // Controls whether a suggestion is selected when the widget shows. Note that this only applies to automatically triggered suggestions (`editor.quickSuggestions` and `editor.suggestOnTriggerCharacters`) and that a suggestion is always selected when explicitly invoked, e.g via `Ctrl+Space`.
+  "editor.suggest.selectionMode": "always",
+  // share suggestion
+  "editor.suggest.shareSuggestSelections": true,
+  // SIGNIFICANT don't display suggest when editing snippet
+  "editor.suggest.snippetsPreventQuickSuggestions": true,
+  "editor.suggestFontSize": 0,
+  "editor.suggestLineHeight": 0,
   "editor.suggestOnTriggerCharacters": true,
+  // SIGNIFICANT
   "editor.suggestSelection": "recentlyUsedByPrefix",
-  "editor.tabCompletion": "on",
+  "editor.tabCompletion": "onlySnippets",
+  // Controls whether the editor receives tabs or defers them to the workbench for navigation.
+  "editor.tabFocusMode": false,
   "editor.tabSize": 2,
+  // SIGNIFICANT
   "editor.tokenColorCustomizations": {
     // vscode command: editor.action.inspectTMScopes
     "textMateRules": [
@@ -121,13 +290,34 @@
     //   ]
     // }
   },
+  // SIGNIFICANT
+  "editor.trimWhitespaceOnDelete": true,
+  "editor.unfoldOnClickAfterEndOfLine": true,
+  // SIGNIFICANT WORKSPACE Defines allowed characters that are not being highlighted.
+  "editor.unicodeHighlight.allowedCharacters": {},
+  // Unicode characters that are common in allowed locales are not being highlighted.
+  "editor.unicodeHighlight.allowedLocales": {
+    "_os": true,
+    "_vscode": true,
+    "zh-cn": true
+  },
   "editor.unicodeHighlight.nonBasicASCII": false,
-  "editor.wordBasedSuggestions": "matchingDocuments",
+  // Spaces and tabs are inserted and deleted in alignment with tab stops.
+  "editor.useTabStops": true,
+  // SIGNIFICANT
+  "editor.wordBasedSuggestions": "allDocuments",
+  // Controls the word break rules used for Chinese/Japanese/Korean (CJK) text.
+  "editor.wordBreak": "normal",
   /*   move words withing CJK characters
   @link https://github.com/microsoft/vscode/issues/50045 */
-  "editor.wordSegmenterLocales": ["zh-CN"],
+  "editor.wordSegmenterLocales": ["zh-CN", "zh-Hant-TW"],
   "editor.wordSeparators": "-`~!@#$%^&*()-=+[{]}\\|;:'\",.<>/?。，、；：！？「」『』“”‘’（）【】《》",
   "editor.wordWrap": "bounded",
+  "editor.wordWrapColumn": 90,
+  // SIGNIFICANT
+  "editor.wrappingIndent": "deepIndent",
+  // SIGNIFICANT LANGUAGEID
+  "editor.wrapOnEscapedLineFeeds": false,
   // use 'advance' for CJK characters
   "editor.wrappingStrategy": "advanced"
 }
