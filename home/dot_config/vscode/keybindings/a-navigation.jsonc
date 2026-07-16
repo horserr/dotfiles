@@ -21,21 +21,6 @@
     // "when": "!terminalFocus && !codeActionMenuVisible && !inQuickOpen && !suggestWidgetVisible && !parameterHintsVisible && !isInDiffEditor"
     "when": "!codeActionMenuVisible && !inQuickOpen && !suggestWidgetVisible && !parameterHintsVisible && !isInDiffEditor"
   },
-  {
-    "key": "ctrl+j",
-    "command": "workbench.action.terminal.focusNext",
-    "when": "terminalFocus && !terminalEditorFocus && !suggestWidgetVisible"
-  },
-  {
-    "key": "ctrl+h",
-    "command": "workbench.action.terminal.focusPreviousPane",
-    "when": "terminalFocus && terminalSplitPaneActive && !terminalEditorFocus && !suggestWidgetVisible"
-  },
-  {
-    "key": "ctrl+l",
-    "command": "workbench.action.terminal.focusNextPane",
-    "when": "terminalFocus && terminalSplitPaneActive && !terminalEditorFocus && !suggestWidgetVisible"
-  }
 
   // cannot set keybidings for webview, use custom css and js instead
   // {

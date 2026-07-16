@@ -1,8 +1,24 @@
 [
+  {
+    "key": "ctrl+j",
+    "command": "workbench.action.terminal.focusNext",
+    "when": "terminalFocus && !terminalEditorFocus && !suggestWidgetVisible"
+  },
+  {
+    "key": "ctrl+h",
+    "command": "workbench.action.terminal.focusPreviousPane",
+    "when": "terminalFocus && terminalSplitPaneActive && !terminalEditorFocus && !suggestWidgetVisible"
+  },
+  {
+    "key": "ctrl+l",
+    "command": "workbench.action.terminal.focusNextPane",
+    "when": "terminalFocus && terminalSplitPaneActive && !terminalEditorFocus && !suggestWidgetVisible"
+  }
   // ctrl+shift+j toggle terminal
   {
     "key": "ctrl+shift+j",
-    "command": "workbench.action.terminal.toggleTerminal"
+    "command": "workbench.action.terminal.toggleTerminal",
+    "systemWide": true
   },
   // terminal native vspacecode
   {
