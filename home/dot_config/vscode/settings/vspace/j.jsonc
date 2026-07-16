@@ -1,27 +1,193 @@
 [
-  // editor.closeCallHierarchy
-  // editor.closeTypeHierarchy
+  // note, sometimes 'go to' commands will display a peek widget this behavior is related to 'editor.definitionLinkOpensInPeek'
+  // todo goto folding range
+  // todo goto selection anchor
+  // "command": "javascript.goToProjectConfig"
+  // "command": "jupyter.interactive.goToCode"
+  // "command": "typescript.goToProjectConfig"
   {
     "key": "j",
     "name": "+Jump/Join",
     "icon": "gather",
     "type": "bindings",
+    // editor.closeCallHierarchy
+    // editor.closeTypeHierarchy
     "bindings": [
+      // space goto symbol
       {
-        "key": "j",
+        "key": " ",
+        "name": "Jump to symbol in buffer",
+        "icon": "symbol-class",
+        "type": "command",
+        "command": "workbench.action.gotoSymbol"
+      },
+      // b focus breadcrumbs
+      {
+        "key": "b",
         "name": "focus editor breadcrumbs",
         "icon": "clock",
         "type": "command",
         "command": "breadcrumbs.focusAndSelect"
       },
+      // j goto
       {
-        "key": "n",
-        "name": "+Find Match",
-        "icon": "clock",
-        "type": "command",
-        "command": "breadcrumbs.focusAndSelect"
+        "key": "j",
+        "name": "+Goto",
+        "icon": "references",
+        "type": "bindings",
+        "bindings": [
+          // d goto definition
+          {
+            "key": "d",
+            "name": "goto definition",
+            "icon": "go-to-editing-session",
+            "type": "command",
+            "command": "editor.action.revealDefinition"
+          },
+          // i goto implementation
+          {
+            "key": "i",
+            "name": "goto implementation",
+            "icon": "references",
+            "type": "command",
+            "command": "editor.action.goToImplementation"
+          },
+          // r goto reference
+          {
+            "key": "r",
+            "name": "goto reference",
+            "icon": "references",
+            "type": "command",
+            "command": "editor.action.goToReferences"
+          },
+          // c goto declaration
+          {
+            "key": "c",
+            "name": "goto declaration",
+            "icon": "references",
+            "type": "command",
+            "command": "editor.action.goToDeclaration"
+          },
+          // t goto type definition
+          {
+            "key": "t",
+            "name": "goto type definition",
+            "icon": "references",
+            "type": "command",
+            "command": "editor.action.goToTypeDefinition"
+          },
+          // s goto source definition
+          {
+            "key": "s",
+            "name": "goto source definition",
+            "icon": "references",
+            "type": "conditional",
+            "bindings": [
+              {
+                "key": "languageId:typescript",
+                "name": "goto source definition",
+                "icon": "references",
+                "type": "conditional",
+                "command": "typescript.goToSourceDefinition"
+              }
+            ]
+          }
+        ]
       },
-      // open quick diff
+      // k peek
+      {
+        "key": "k",
+        "name": "+Peek",
+        "icon": "references",
+        "type": "bindings",
+        "bindings": [
+          // d peek definition
+          {
+            "key": "d",
+            "name": "peek definition",
+            "icon": "go-to-editing-session",
+            "type": "command",
+            "command": "editor.action.peekDefinition"
+          },
+          // i peek implementation
+          {
+            "key": "i",
+            "name": "peek implementation",
+            "icon": "references",
+            "type": "command",
+            "command": "editor.action.peekImplementation"
+          },
+          // r peek reference
+          {
+            "key": "r",
+            "name": "peek reference",
+            "icon": "references",
+            "type": "command",
+            // "command": "editor.action.showReferences" no effect
+            // "command": "editor.action.findReferences" cause error
+            "command": "editor.action.referenceSearch.trigger"
+          },
+          // h peek call hierarchy
+          {
+            "key": "h",
+            "name": "peek call hierarcy",
+            "icon": "references",
+            "type": "command",
+            "command": "editor.showCallHierarchy"
+          },
+          // c declaration
+          {
+            "key": "c",
+            "name": "peek declaration",
+            "icon": "references",
+            "type": "command",
+            // todo editor.action.revealDeclaration
+            "command": "editor.action.peekDeclaration"
+          },
+          // t peek type definition
+          {
+            "key": "t",
+            "name": "peek type definition",
+            "icon": "references",
+            "type": "command",
+            "command": "editor.action.peekTypeDefinition"
+          },
+          // T peek type hierarchy
+          {
+            "key": "T",
+            "name": "peek type hierarcy",
+            "icon": "references",
+            "type": "command",
+            "command": "editor.showTypeHierarchy"
+          }
+        ]
+      },
+      // s symbol group by type
+      {
+        "key": "s",
+        "name": "goto symbol, grouping with type",
+        "icon": "project",
+        "type": "command",
+        "command": "workbench.action.quickOpen",
+        "args": "@:"
+      },
+      // S workspace symbols
+      {
+        "key": "S",
+        "name": "Jump to symbol in project",
+        "icon": "project",
+        "type": "command",
+        "command": "workbench.action.showAllSymbols"
+      },
+      // l goto line
+      {
+        "key": "l",
+        "name": "goto line",
+        "icon": "debug-line-by-line",
+        "type": "command",
+        "command": "workbench.action.gotoLine"
+      },
+      // x open quick diff
       {
         "key": "x",
         "name": "open quick diff",
@@ -41,26 +207,46 @@
           ]
         }
       },
+      // n goto next symbol
       {
-        "key": " ",
-        "name": "Jump to symbol in buffer",
-        "icon": "symbol-class",
-        "type": "command",
-        "command": "workbench.action.gotoSymbol"
+        "key": "n",
+        "name": "+goto next symbol(definition)",
+        "icon": "arrow-down",
+        "type": "transient",
+        "command": "editor.gotoNextSymbolFromResult",
+        "bindings": [
+          {
+            "key": "n",
+            "name": "+goto next symbol (definition)",
+            "icon": "arrow-down",
+            "type": "command",
+            "command": "editor.gotoNextSymbolFromResult"
+          }
+        ]
       },
+      // N goto next symbol selection/highlight
       {
-        "key": "s",
-        "name": "Jump to symbol in project",
-        "icon": "project",
-        "type": "command",
-        "command": "workbench.action.showAllSymbols"
-      },
-      {
-        "key": "r",
-        "name": "Search all references",
-        "icon": "references",
-        "type": "command",
-        "command": "editor.action.referenceSearch.trigger"
+        "key": "N",
+        "name": "+goto next symbol(selection/highlight)",
+        "icon": "arrow-down",
+        "type": "transient",
+        "command": "editor.action.wordHighlight.next",
+        "bindings": [
+          {
+            "key": "n",
+            "name": "+goto next symbol (selection/highlight)",
+            "icon": "arrow-down",
+            "type": "command",
+            "command": "editor.action.wordHighlight.next"
+          },
+          {
+            "key": "N",
+            "name": "+goto previous symbol (selection/highlight)",
+            "icon": "arrow-up",
+            "type": "command",
+            "command": "editor.action.wordHighlight.prev"
+          }
+        ]
       }
     ]
   }

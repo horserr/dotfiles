@@ -1,0 +1,65 @@
+[
+  //   "command": "revealReference",
+  {
+    "key": "ctrl+j",
+    "command": "goToNextReference",
+    // when focus reference list
+    "when": "referenceSearchVisible && listFocus"
+  },
+  {
+    "key": "ctrl+j",
+    "command": "goToNextReferenceFromEmbeddedEditor",
+    // when focus reference editor
+    "when": "inReferenceSearchEditor"
+  },
+  {
+    "key": "ctrl+j",
+    "command": "togglePeekWidgetFocus",
+    // when not focus reference widget but editor
+    "when": "referenceSearchVisible && !listFocus && !inReferenceSearchEditor"
+  },
+  {
+    "key": "ctrl+k",
+    "command": "goToPreviousReference",
+    // when focus reference list
+    "when": "(referenceSearchVisible && listFocus) || inReferenceSearchEditor"
+  },
+  {
+    "key": "ctrl+k",
+    "command": "goToPreviousReferenceFromEmbeddedEditor",
+    // when focus reference editor
+    "when": "inReferenceSearchEditor"
+  },
+  {
+    "key": "ctrl+l",
+    "command": "togglePeekWidgetFocus",
+    "when": "inReferenceSearchEditor"
+  },
+  {
+    "key": "ctrl+h",
+    "command": "togglePeekWidgetFocus",
+    "when": "referenceSearchVisible && listFocus"
+  },
+  {
+    // list.select corresponding keybinding also support this
+    "key": "o",
+    "command": "openReference",
+    "when": "listFocus && referenceSearchVisible && !inputFocus && !treeElementCanCollapse && !treeElementCanExpand && !treestickyScrollFocused"
+  },
+  {
+    "key": "shift+o",
+    "command": "openReferenceToSide",
+    "when": "listFocus && referenceSearchVisible && !inputFocus && !treeElementCanCollapse && !treeElementCanExpand && !treestickyScrollFocused"
+  },
+  {
+    "key": "shift+l",
+    "command": "openReferenceToSide",
+    "when": "listFocus && referenceSearchVisible && !inputFocus && !treeElementCanCollapse && !treeElementCanExpand && !treestickyScrollFocused"
+  },
+  {
+    "key": "escape",
+    // "command": "closeReferenceSearchEditor", same effect
+    "command": "closeReferenceSearch",
+    "when": "vim.mode== 'Normal' && (editorTextFocus || !inputFocus) && referenceSearchVisible && !config.editor.stablePeek"
+  }
+]
