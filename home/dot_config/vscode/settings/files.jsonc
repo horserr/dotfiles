@@ -1,4 +1,5 @@
 {
+  // WORKSPACE
   "files.associations": {
     ".chezmoiignore": "gitignore",
     "*.svg": "html",
@@ -9,8 +10,18 @@
     "*.wxss": "css"
   },
   "files.autoGuessEncoding": true,
+  // SIGNIFICANT
   "files.autoSave": "onFocusChange",
-  "files.insertFinalNewline": true,
+  "files.autoSaveWhenNoErrors": true,
+  "files.autoSaveWorkspaceFilesOnly": true,
+  "files.defaultLanguage": "${activeEditorLanguage}",
+  // Default path for file dialogs, overriding user's home path. Only used in the absence of a context-specific path, such as most recently opened file or folder.
+  "files.dialog.defaultPath": "",
+  // really SIGNIFICANT
+  "files.enableTrash": true,
+  "files.encoding": "utf8",
+  "files.eol": "auto",
+  // WORKSPACE SIGNIFICANT
   "files.exclude": {
     "**/__pycache__": true,
     "**/.DS_Store": true,
@@ -21,20 +32,31 @@
     "**/.venv": true,
     "**/Thumbs.db": true
   },
+  // SIGNIFICANT
+  "files.hotExit": "onExitAndWindowClose",
+  // formatting
+  "files.insertFinalNewline": true,
+  // SIGNIFICANT Timeout in milliseconds after which file participants for create, rename, and delete are cancelled. Use `0` to disable participants.
+  "files.participants.timeout": 60000,
+  "files.readonlyExclude": {},
   "files.readonlyFromPermissions": true,
-  "files.readonlyInclude": {
-    "**/.cargo/git/checkouts/**/*.rs": true,
-    "**/.cargo/registry/src/**/*.rs": true,
-    "**/lib/rustlib/src/rust/library/**/*.rs": true
-  },
+  // WORKSPACE
+  "files.readonlyInclude": {},
+  "files.saveConflictResolution": "askUser",
   "files.simpleDialog.enable": true,
+  "files.trimFinalNewlines": true,
+  // formatting
   "files.trimTrailingWhitespace": true,
+  "files.trimTrailingWhitespaceInRegexAndStrings": true,
+  // SIGNIFICANT WORKSPACE
   "files.watcherExclude": {
     "**/.git/objects/**": true,
     "**/.git/subtree-cache/**": true,
+    "**/.pixi/envs/**": true,
     "**/.venv/**": true,
     "**/node_modules/*/**": true,
-    "**/venv/**": true,
-    "**/.pixi/envs/**": true
-  }
+    "**/venv/**": true
+  },
+  // WORKSPACE Configure extra paths to watch for changes inside the workspace. By default, all workspace folders will be watched recursively, except for folders that are symbolic links. You can explicitly add absolute or relative paths to support watching folders that are symbolic links. Relative paths will be resolved to an absolute path using the currently opened workspace.
+  "files.watcherInclude": []
 }
