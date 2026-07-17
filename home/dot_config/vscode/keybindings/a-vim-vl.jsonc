@@ -1,0 +1,15 @@
+[
+  {
+    // vspacecode -> line/selection
+    "key": "shift+l",
+    "command": "runCommands",
+    "args": {
+      "commands": [
+        "vspacecode.space",
+        { "command": "whichkey.triggerKey", "args": "x" },
+        { "command": "whichkey.triggerKey", "args": "l" }
+      ]
+    },
+    "when": "editorTextFocus && vim.mode == 'VisualLine'"
+  }
+]

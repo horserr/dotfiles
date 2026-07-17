@@ -205,15 +205,6 @@
       "commands": ["editor.action.moveLinesUpAction"]
     },
     {
-      // vspacecode -> line/selection
-      "before": ["L"],
-      "commands": [
-        "vspacecode.space",
-        { "command": "whichkey.triggerKey", "args": "x" },
-        { "command": "whichkey.triggerKey", "args": "l" }
-      ]
-    },
-    {
       // fold -> vspacecode
       "before": ["z"],
       "commands": [
