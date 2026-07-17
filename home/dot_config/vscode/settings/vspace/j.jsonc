@@ -1,6 +1,5 @@
 [
   // note, sometimes 'go to' commands will display a peek widget this behavior is related to 'editor.definitionLinkOpensInPeek'
-  // todo goto folding range
   // todo goto selection anchor
   // "command": "javascript.goToProjectConfig"
   // "command": "jupyter.interactive.goToCode"
@@ -209,6 +208,7 @@
       },
       // n goto next symbol
       {
+        // link: https://stackoverflow.com/questions/78743365/how-does-peek-less-navigation-work-if-goto-location-multiple-definitions-is
         "key": "n",
         "name": "+goto next symbol(definition)",
         "icon": "arrow-down",
@@ -245,6 +245,39 @@
             "icon": "arrow-up",
             "type": "command",
             "command": "editor.action.wordHighlight.prev"
+          }
+        ]
+      },
+      // z goto fold
+      {
+        "key": "z",
+        "name": "+Goto fold",
+        "icon": "fold",
+        "type": "transient",
+        "bindings": [
+          // h go up folding
+          {
+            "key": "h",
+            "name": "goto up folding",
+            "icon": "arrow-circle-left",
+            "type": "command",
+            "command": "editor.gotoParentFold"
+          },
+          // j goto next folding
+          {
+            "key": "j",
+            "name": "goto next folding",
+            "icon": "arrow-circle-down",
+            "type": "command",
+            "command": "editor.gotoNextFold"
+          },
+          // k goto previous folding
+          {
+            "key": "k",
+            "name": "goto previous folding",
+            "icon": "arrow-circle-up",
+            "type": "command",
+            "command": "editor.gotoPreviousFold"
           }
         ]
       }

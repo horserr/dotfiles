@@ -695,59 +695,6 @@
             ]
           },
           {
-            "key": "u",
-            "name": "goto up folding",
-            "icon": "x",
-            "type": "command",
-            "command": "editor.gotoParentFold"
-          },
-          {
-            "key": "n",
-            "name": "goto next folding",
-            "icon": "x",
-            "type": "transient",
-            "command": "editor.gotoNextFold",
-            "bindings": [
-              {
-                "key": "n",
-                "name": "goto next folding",
-                "icon": "x",
-                "type": "command",
-                "command": "editor.gotoNextFold"
-              },
-              {
-                "key": "N",
-                "name": "goto previous folding",
-                "icon": "x",
-                "type": "command",
-                "command": "editor.gotoPreviousFold"
-              }
-            ]
-          },
-          {
-            "key": "N",
-            "name": "goto previous folding",
-            "icon": "x",
-            "type": "transient",
-            "command": "editor.gotoPreviousFold",
-            "bindings": [
-              {
-                "key": "n",
-                "name": "goto next folding",
-                "icon": "x",
-                "type": "command",
-                "command": "editor.gotoNextFold"
-              },
-              {
-                "key": "N",
-                "name": "goto previous folding",
-                "icon": "x",
-                "type": "command",
-                "command": "editor.gotoPreviousFold"
-              }
-            ]
-          },
-          {
             "key": "?",
             "name": "Search keybindings",
             "icon": "keyboard",
