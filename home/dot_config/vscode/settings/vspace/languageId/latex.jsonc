@@ -5,42 +5,6 @@
     "type": "bindings",
     "bindings": [
       {
-        "key": "=",
-        "name": "+Format",
-        "icon": "list-flat",
-        "type": "bindings",
-        "bindings": [
-          {
-            "key": "=",
-            "name": "Format region or buffer",
-            "icon": "list-flat",
-            "type": "command",
-            "command": "editor.action.format"
-          },
-          {
-            "key": "b",
-            "name": "Format buffer",
-            "icon": "file",
-            "type": "command",
-            "command": "editor.action.formatDocument"
-          },
-          {
-            "key": "c",
-            "name": "Format changes",
-            "icon": "diff",
-            "type": "command",
-            "command": "editor.action.formatChanges"
-          },
-          {
-            "key": "s",
-            "name": "Format selection",
-            "icon": "selection",
-            "type": "command",
-            "command": "editor.action.formatSelection"
-          }
-        ]
-      },
-      {
         "key": "b",
         "name": "+Backend",
         "icon": "circuit-board",
