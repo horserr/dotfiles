@@ -13,12 +13,203 @@
         "type": "command",
         "command": "workbench.action.openSnippets"
       },
+      // , type shortcut
+      {
+        "key": ",",
+        "name": "+Type shotcut",
+        "icon": "ports-forwarded-with-process-icon",
+        "type": "bindings",
+        "bindings": [
+          {
+            "key": " ",
+            "name": "trigger suggestion",
+            "icon": "terminal-symbol-inline-suggestion",
+            "type": "command",
+            "command": "editor.action.triggerSuggest"
+          },
+          {
+            "key": ".",
+            "name": "comma",
+            "icon": "terminal-symbol-inline-suggestion",
+            "type": "command",
+            "command": "editor.action.insertSnippet",
+            "args": { "snippet": "," }
+          },
+          {
+            "key": "/",
+            "name": "insert snippets",
+            "icon": "terminal-symbol-inline-suggestion",
+            "type": "command",
+            "command": "editor.action.insertSnippet"
+          },
+          {
+            "key": "f",
+            "name": "parentheses",
+            "icon": "terminal-symbol-inline-suggestion",
+            "type": "command",
+            "command": "editor.action.insertSnippet",
+            "args": { "snippet": "($0)" }
+          },
+          {
+            "key": "v",
+            "name": "brace",
+            "icon": "terminal-symbol-inline-suggestion",
+            "type": "command",
+            "command": "editor.action.insertSnippet",
+            "args": { "snippet": "{$0}" }
+          },
+          {
+            "key": "b",
+            "name": "bracket",
+            "icon": "terminal-symbol-inline-suggestion",
+            "type": "command",
+            "command": "editor.action.insertSnippet",
+            "args": { "snippet": "[$0]" }
+          },
+          {
+            "key": "a",
+            "name": "plus",
+            "icon": "terminal-symbol-inline-suggestion",
+            "type": "command",
+            "command": "editor.action.insertSnippet",
+            "args": { "snippet": "+" }
+          },
+          {
+            "key": "s",
+            "name": "minus",
+            "icon": "terminal-symbol-inline-suggestion",
+            "type": "command",
+            "command": "editor.action.insertSnippet",
+            "args": { "snippet": "-" }
+          },
+          {
+            "key": "e",
+            "name": "equal",
+            "icon": "terminal-symbol-inline-suggestion",
+            "type": "command",
+            "command": "editor.action.insertSnippet",
+            "args": { "snippet": "=" }
+          },
+          {
+            "key": "d",
+            "name": "underscore",
+            "icon": "terminal-symbol-inline-suggestion",
+            "type": "command",
+            "command": "editor.action.insertSnippet",
+            "args": { "snippet": "_" }
+          },
+          {
+            "key": "t",
+            "name": "tilde",
+            "icon": "terminal-symbol-inline-suggestion",
+            "type": "command",
+            "command": "editor.action.insertSnippet",
+            "args": { "snippet": "~" }
+          },
+          {
+            "key": "g",
+            "name": "pipe",
+            "icon": "terminal-symbol-inline-suggestion",
+            "type": "command",
+            "command": "editor.action.insertSnippet",
+            "args": { "snippet": "|" }
+          },
+          {
+            "key": "r",
+            "name": "backslash",
+            "icon": "terminal-symbol-inline-suggestion",
+            "type": "command",
+            "command": "editor.action.insertSnippet",
+            "args": { "snippet": "\\" }
+          },
+          {
+            "key": "w",
+            "name": "backtick",
+            "icon": "terminal-symbol-inline-suggestion",
+            "type": "command",
+            "command": "editor.action.insertSnippet",
+            "args": { "snippet": "`" }
+          },
+          {
+            "key": ",",
+            "name": "suggest",
+            "icon": "terminal-symbol-inline-suggestion",
+            "type": "bindings",
+            "bindings": [
+              {
+                "key": " ",
+                "name": "trigger parameter hint",
+                "icon": "terminal-symbol-inline-suggestion",
+                "type": "command",
+                "command": "editor.action.triggerParameterHints"
+              },
+              {
+                "key": "b",
+                "name": "insert sequent brackets",
+                "icon": "terminal-symbol-inline-suggestion",
+                "type": "command",
+                "command": "editor.action.insertSnippet",
+                "args": { "snippet": "[$1][$2]$0" }
+              },
+              {
+                "key": "e",
+                "name": "insert equal marks",
+                "icon": "terminal-symbol-inline-suggestion",
+                "type": "conditional",
+                "bindings": [
+                  {
+                    "key": "languageId:javascript",
+                    "name": "suggest",
+                    "icon": "terminal-symbol-inline-suggestion",
+                    "type": "command",
+                    "command": "editor.action.insertSnippet",
+                    "args": { "snippet": "===" }
+                  },
+                  {
+                    "key": "languageId:javascriptreact",
+                    "name": "suggest",
+                    "icon": "terminal-symbol-inline-suggestion",
+                    "type": "command",
+                    "command": "editor.action.insertSnippet",
+                    "args": { "snippet": "===" }
+                  },
+                  {
+                    "key": "languageId:typescript",
+                    "name": "suggest",
+                    "icon": "terminal-symbol-inline-suggestion",
+                    "type": "command",
+                    "command": "editor.action.insertSnippet",
+                    "args": { "snippet": "===" }
+                  },
+                  {
+                    "key": "languageId:typescriptreact",
+                    "name": "suggest",
+                    "icon": "terminal-symbol-inline-suggestion",
+                    "type": "command",
+                    "command": "editor.action.insertSnippet",
+                    "args": { "snippet": "===" }
+                  },
+                  {
+                    "key": "",
+                    "name": "suggest",
+                    "icon": "terminal-symbol-inline-suggestion",
+                    "type": "command",
+                    "command": "editor.action.insertSnippet",
+                    "args": { "snippet": "==" }
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
       // i insert snippet
       {
         "key": "i",
         "name": "insert snippet",
         "icon": "insert",
         "type": "command",
+        // "command": "editor.action.showSnippets" same effect
         "command": "editor.action.insertSnippet"
       },
       // f fill with snippet
