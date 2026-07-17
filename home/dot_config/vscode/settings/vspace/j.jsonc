@@ -25,8 +25,8 @@
         "key": "b",
         "name": "focus editor breadcrumbs",
         "icon": "clock",
-        "type": "command",
-        "command": "breadcrumbs.focusAndSelect"
+        "type": "commands",
+        "commands": ["breadcrumbs.toggleToOn", "breadcrumbs.focusAndSelect"]
       },
       // j goto
       {

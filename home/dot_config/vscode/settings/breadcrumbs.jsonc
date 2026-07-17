@@ -1,4 +1,6 @@
 {
+  // default to turn off breadcrumb
+  "breadcrumbs.enabled": false,
   "breadcrumbs.filePath": "on",
   // When enabled breadcrumbs show `array`-symbols.
   "breadcrumbs.showArrays": true,

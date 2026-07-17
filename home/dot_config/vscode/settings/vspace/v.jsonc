@@ -527,6 +527,7 @@
             "name": "Toggle breadcrumbs",
             "icon": "tools",
             "type": "command",
+            // "command": "breadcrumbs.toggleFromEditorTitle" same effect
             "command": "breadcrumbs.toggle"
           },
           // p toggle separate pinned tabs
