@@ -137,6 +137,14 @@
         "icon": "settings",
         "type": "bindings",
         "bindings": [
+          // , all settings
+          {
+            "key": ",",
+            "name": "display all settings",
+            "icon": "keyboard",
+            "type": "command",
+            "command": "blitz.editSetting"
+          },
           // u user json setting
           {
             "key": "u",

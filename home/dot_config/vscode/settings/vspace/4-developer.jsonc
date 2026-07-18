@@ -87,6 +87,14 @@
             "icon": "keyboard",
             "type": "command",
             "command": "workbench.action.clearRecentFiles"
+          },
+          // s clear search history
+          {
+            "key": "s",
+            "name": "clear search history",
+            "icon": "search-stop",
+            "type": "command",
+            "command": "search.action.clearHistory"
           }
         ]
       },

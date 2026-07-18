@@ -7,15 +7,15 @@
     "type": "command",
     "command": "search.action.restrictSearchToFolder"
   },
-  // S find in folder
+  // S find in workspace
   {
-    "key": "s",
+    "key": "S",
     "name": "find in workspace",
     "icon": "zap",
     "type": "command",
     "command": "filesExplorer.findInWorkspace"
   },
-  // s find in folder
+  // a new file
   {
     "key": "a",
     "name": "new file",
@@ -31,6 +31,7 @@
     "type": "command",
     "command": "deleteFile"
   },
+  // x cut file
   {
     "key": "x",
     "name": "cut file",
@@ -38,7 +39,7 @@
     "type": "command",
     "command": "filesExplorer.cut"
   },
-  //
+  // r rename file
   {
     "key": "r",
     "name": "rename file",
@@ -46,13 +47,15 @@
     "type": "command",
     "command": "renameFile"
   },
+  // v reveal in file os
   {
-    "key": "R",
+    "key": "v",
     "name": "reveal in file os",
     "icon": "zap",
     "type": "command",
     "command": "revealFileInOS"
   },
+  // y copy file
   {
     "key": "y",
     "name": "copy file",
@@ -60,6 +63,7 @@
     "type": "command",
     "command": "filesExplorer.copy"
   },
+  // p paste file
   {
     "key": "p",
     "name": "paste file",

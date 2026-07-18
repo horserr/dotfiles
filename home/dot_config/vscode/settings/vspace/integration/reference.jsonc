@@ -1,0 +1,21 @@
+[
+  // references-view.clear
+  // references-view.clearHistory
+  // references-view.copy
+  // references-view.copyAll
+  // references-view.copyPath
+  // references-view.findImplementations
+  // references-view.pickFromHistory
+  // references-view.refind
+  // references-view.refresh
+  // references-view.removeCallItem
+  // references-view.removeReferenceItem
+  // references-view.removeTypeItem
+  // references-view.showIncomingCalls
+  // references-view.showOutgoingCalls
+  // references-view.showSubtypes
+  // references-view.showSupertypes
+  // references-view.showTypeHierarchy
+  // references-view.tree.focus
+  // references-view.tree.resetViewLocation
+]

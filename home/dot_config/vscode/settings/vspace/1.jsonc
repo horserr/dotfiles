@@ -6,15 +6,13 @@
     "type": "command",
     "command": "workbench.action.showCommands"
   },
+  // tab repeat recent command
   {
     "key": "\t",
-    "name": "Last buffer",
-    "icon": "go-to-file",
-    "type": "commands",
-    "commands": [
-      "workbench.action.quickOpenPreviousRecentlyUsedEditorInGroup",
-      "list.select"
-    ]
+    "name": "repeat recent command",
+    "icon": "redo",
+    "type": "command",
+    "commands":"whichkey.repeatMostRecent"
   },
   {
     "key": "*",

@@ -4,6 +4,100 @@
     "name": "+Test",
     "icon": "settings",
     "type": "bindings",
-    "bindings": []
+    "bindings": [
+      {
+        "key": "t",
+        "name": "+Test",
+        "icon": "beaker",
+        "type": "bindings",
+        "bindings": [
+          {
+            "key": "t",
+            "name": "+Test",
+            "icon": "beaker",
+            "type": "bindings",
+            "bindings": [
+              {
+                "key": "a",
+                "name": "Run all tests",
+                "icon": "beaker",
+                "type": "command",
+                "command": "testing.runAll"
+              },
+              {
+                "key": "b",
+                "name": "Run current test file",
+                "icon": "file",
+                "type": "command",
+                "command": "testing.runCurrentFile"
+              },
+              {
+                "key": "r",
+                "name": "Re-run failed tests",
+                "icon": "close",
+                "type": "command",
+                "command": "testing.reRunFailTests"
+              },
+              {
+                "key": "t",
+                "name": "Select and run test",
+                "icon": "list-unordered",
+                "type": "command",
+                "command": "testing.runSelected"
+              },
+              {
+                "key": "A",
+                "name": "Debug all tests",
+                "icon": "bug",
+                "type": "command",
+                "command": "testing.debugAll"
+              },
+              {
+                "key": "T",
+                "name": "Select and debug test",
+                "icon": "debug-alt",
+                "type": "command",
+                "command": "testing.debugSelected"
+              }
+            ]
+          },
+          {
+            "key": "c",
+            "name": "Clear test results",
+            "icon": "trash",
+            "type": "command",
+            "command": "testing.clearTestResults"
+          },
+          {
+            "key": "d",
+            "name": "Debug test at cursor",
+            "icon": "testing-debug-icon",
+            "type": "command",
+            "command": "testing.debugTestAtCursor"
+          },
+          {
+            "key": "f",
+            "name": "Run failed tests",
+            "icon": "testing-failed-icon",
+            "type": "command",
+            "command": "testing.reRunFailTests"
+          },
+          {
+            "key": "r",
+            "name": "Run tests",
+            "icon": "run-all",
+            "type": "command",
+            "command": "testing.runAll"
+          },
+          {
+            "key": "t",
+            "name": "Run test at cursor",
+            "icon": "testing-run-icon",
+            "type": "command",
+            "command": "testing.runTestAtCursor"
+          }
+        ]
+      }
+    ]
   }
 ]

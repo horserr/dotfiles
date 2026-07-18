@@ -20,6 +20,7 @@
         "icon": "ports-forwarded-with-process-icon",
         "type": "bindings",
         "bindings": [
+          // trigger suggestion
           {
             "key": " ",
             "name": "trigger suggestion",
@@ -27,6 +28,15 @@
             "type": "command",
             "command": "editor.action.triggerSuggest"
           },
+          // < insert clipboard
+          {
+            "key": "<",
+            "name": "insert clipboard",
+            "icon": "terminal-symbol-inline-suggestion",
+            "type": "command",
+            "command": "editor.action.clipboardPasteAction"
+          },
+          // . insert comma
           {
             "key": ".",
             "name": "comma",
@@ -35,6 +45,7 @@
             "command": "editor.action.insertSnippet",
             "args": { "snippet": "," }
           },
+          // / insert snippet
           {
             "key": "/",
             "name": "insert snippets",
@@ -42,6 +53,7 @@
             "type": "command",
             "command": "editor.action.insertSnippet"
           },
+          // f parentheses
           {
             "key": "f",
             "name": "parentheses",
@@ -50,6 +62,7 @@
             "command": "editor.action.insertSnippet",
             "args": { "snippet": "($0)" }
           },
+          // v brace
           {
             "key": "v",
             "name": "brace",
@@ -58,6 +71,7 @@
             "command": "editor.action.insertSnippet",
             "args": { "snippet": "{$0}" }
           },
+          // b bracket
           {
             "key": "b",
             "name": "bracket",
@@ -66,6 +80,7 @@
             "command": "editor.action.insertSnippet",
             "args": { "snippet": "[$0]" }
           },
+          // a plus
           {
             "key": "a",
             "name": "plus",
@@ -74,6 +89,7 @@
             "command": "editor.action.insertSnippet",
             "args": { "snippet": "+" }
           },
+          // s minus
           {
             "key": "s",
             "name": "minus",
@@ -82,6 +98,7 @@
             "command": "editor.action.insertSnippet",
             "args": { "snippet": "-" }
           },
+          // e equal
           {
             "key": "e",
             "name": "equal",
@@ -90,6 +107,7 @@
             "command": "editor.action.insertSnippet",
             "args": { "snippet": "=" }
           },
+          // d underscore
           {
             "key": "d",
             "name": "underscore",
@@ -98,6 +116,7 @@
             "command": "editor.action.insertSnippet",
             "args": { "snippet": "_" }
           },
+          // t tilde
           {
             "key": "t",
             "name": "tilde",
@@ -106,6 +125,7 @@
             "command": "editor.action.insertSnippet",
             "args": { "snippet": "~" }
           },
+          // g pipe
           {
             "key": "g",
             "name": "pipe",
@@ -114,6 +134,7 @@
             "command": "editor.action.insertSnippet",
             "args": { "snippet": "|" }
           },
+          // r backslash
           {
             "key": "r",
             "name": "backslash",
@@ -122,6 +143,7 @@
             "command": "editor.action.insertSnippet",
             "args": { "snippet": "\\" }
           },
+          // w backtick
           {
             "key": "w",
             "name": "backtick",
@@ -136,6 +158,7 @@
             "icon": "terminal-symbol-inline-suggestion",
             "type": "bindings",
             "bindings": [
+              // space paramenter hint
               {
                 "key": " ",
                 "name": "trigger parameter hint",
@@ -143,14 +166,16 @@
                 "type": "command",
                 "command": "editor.action.triggerParameterHints"
               },
+              // b sequential brackets
               {
                 "key": "b",
-                "name": "insert sequent brackets",
+                "name": "insert sequential brackets",
                 "icon": "terminal-symbol-inline-suggestion",
                 "type": "command",
                 "command": "editor.action.insertSnippet",
                 "args": { "snippet": "[$1][$2]$0" }
               },
+              // e equal marks
               {
                 "key": "e",
                 "name": "insert equal marks",

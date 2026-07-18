@@ -28,12 +28,24 @@
         ]
       },
       {
+        "key": "\t",
+        "name": "Last file",
+        "icon": "go-to-file",
+        "type": "commands",
+        "commands": [
+          "workbench.action.quickOpenPreviousRecentlyUsedEditorInGroup",
+          "list.select"
+        ]
+      },
+      // ' toggle split in editor
+      {
         "key": "'",
         "name": "toggle split in editor",
         "icon": "versions",
         "type": "command",
         "command": "workbench.action.toggleSplitEditorInGroup"
       },
+      // r replace editor
       {
         "key": "r",
         "name": "replace editor",
@@ -44,6 +56,7 @@
           "workbench.action.quickOpen"
         ]
       },
+      // space quick open file from history
       {
         "key": " ",
         "name": "Quick open file/folder from recent history",
@@ -51,6 +64,7 @@
         "type": "command",
         "command": "workbench.action.openPreviousEditorFromHistory"
       },
+      // o quick open file
       {
         "key": "o",
         "name": "Quick open file",
@@ -83,6 +97,7 @@
           }
         ]
       },
+      // , files in editor group
       {
         "key": ",",
         "name": "active files in current editor group",
@@ -129,6 +144,7 @@
           }
         ]
       },
+      // d close file
       {
         "key": "d",
         "name": "Close current active buffer",
@@ -186,6 +202,7 @@
           }
         ]
       },
+      // u reopen file
       {
         "key": "u",
         "name": "Reopen closed file",
@@ -350,6 +367,18 @@
               "workbench.action.files.newUntitledFile",
               "workbench.action.moveEditorToRightGroup"
             ]
+          },
+          // w new untitled file window
+          {
+            "key": "w",
+            "name": "new untitled file new window",
+            "icon": "folder-opened",
+            "type": "commands",
+            "commands": [
+              "workbench.action.files.newUntitledFile",
+              "workbench.action.moveEditorToNewWindow",
+              "workbench.action.focusActiveEditorGroup"
+            ]
           }
         ]
       },
@@ -390,7 +419,7 @@
           }
         ]
       },
-      // copy
+      // c file copy
       {
         "key": "c",
         "name": "+copy active file",
@@ -554,7 +583,7 @@
           }
         ]
       },
-      // move tab
+      // < move tab left
       {
         "key": "<",
         "name": "Move tab left",
@@ -578,6 +607,7 @@
           }
         ]
       },
+      // > move tab right
       {
         "key": ">",
         "name": "Move tab right",
@@ -601,28 +631,38 @@
           }
         ]
       },
-      // compare
+      // x compare
       {
         "key": "x",
         "name": "+Compare",
         "icon": "window",
         "type": "bindings",
         "bindings": [
-          // workbench.files.action.compareWithSaved
+          // f compare with file
           {
-            "key": "x",
+            "key": "f",
             "name": "+Compare active file with",
             "icon": "diff",
             "type": "command",
             "command": "workbench.files.action.compareFileWith"
           },
+          // c compare with clipboard
           {
-            "key": " ",
+            "key": "c",
             "name": "Compare active file with clipboard",
             "icon": "clippy",
             "type": "command",
             "command": "workbench.files.action.compareWithClipboard"
           },
+          // s compare with clipboard
+          {
+            "key": "s",
+            "name": "Compare active file with saved version",
+            "icon": "clippy",
+            "type": "command",
+            "command": "workbench.files.action.compareWithSaved"
+          },
+          // n compare with new untitle file
           {
             "key": "n",
             "name": "Compare active file with untitle file",

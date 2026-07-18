@@ -139,7 +139,7 @@
   // PERFORMANCE
   "editor.maxTokenizationLineLength": 10000,
   "editor.minimap.autohide": "none",
-  "editor.minimap.enabled": true,
+  "editor.minimap.enabled": false,
   // MARK SIGNIFICANT Defines the regular expression used to find section headers in comments. The regex must contain a named match group `label` (written as `(?<label>.+)`) that encapsulates the section header, otherwise it will not work. Optionally you can include another match group named `separator`. Use \n in the pattern to match multi-line headers.
   "editor.minimap.markSectionHeaderRegex": "\\bMARK:\\s*(?<separator>-?)\\s*(?<label>.*)$",
   "editor.minimap.maxColumn": 120,

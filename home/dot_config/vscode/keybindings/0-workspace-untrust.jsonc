@@ -1,0 +1,7 @@
+[
+  {
+    "key": "shift+space",
+    "command": "workbench.trust.manage",
+    "when": "!isWorkspaceTrusted"
+  }
+]
