@@ -13,12 +13,12 @@
     "**/tmp": true
   },
   "search.experimental.closedNotebookRichContentResults": true,
-  "search.followSymlinks": true,
-  "search.mode": "newEditor",
+  "search.followSymlinks": false,
+  "search.mode": "view",
   "search.quickAccess.preserveInput": true,
   "search.quickOpen.history.filterSortOrder": "recency",
   "search.quickOpen.includeHistory": true,
-  "search.quickOpen.includeSymbols": true,
+  "search.quickOpen.includeSymbols": false,
   // use prior search configuration
   "search.searchEditor.defaultNumberOfContextLines": null,
   "search.searchEditor.doubleClickBehaviour": "goToLocation",

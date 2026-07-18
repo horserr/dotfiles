@@ -18,27 +18,45 @@
     "type": "bindings",
     "bindings": [
       {
-        "key": "s",
-        "name": "find in current file, open find widget",
-        "icon": "terminal",
-        "type": "command",
-        // actions.findWithSelection
-        "command": "actions.find"
-      },
-      {
         "key": " ",
-        "name": "quick open with modes",
+        "name": "quick text search",
         "icon": "terminal",
         "type": "command",
         "command": "workbench.action.quickTextSearch"
       },
+      // s search view
       {
-        "key": "a",
-        "name": "select all hightligt, select all occurrence of find match",
-        "icon": "collection-small",
+        "key": "s",
+        "name": "open search view",
+        "icon": "selection",
         "type": "command",
-        "command": "editor.action.selectHighlights"
+        "command": "workbench.action.findInFiles"
       },
+      // , find in current file
+      {
+        "key": ",",
+        "name": "find in current file, open find widget",
+        "icon": "terminal",
+        "type": "bindings",
+        "bindings": [
+          {
+            "key": ",",
+            "name": "find in current file, open find widget",
+            "icon": "terminal",
+            "type": "command",
+            // actions.findWithSelection
+            "command": "actions.find"
+          },
+          {
+            "key": "S",
+            "name": "Fuzzy search with selection in current buffer",
+            "icon": "selection",
+            "type": "command",
+            "command": "fuzzySearch.activeTextEditorWithCurrentSelection"
+          }
+        ]
+      },
+      // e open search editor
       {
         "key": "e",
         "name": "open search editor",
@@ -46,42 +64,8 @@
         "type": "commands",
         "commands": [
           "search.action.openNewEditor",
-          "workbench.action.moveEditorToRightGroup",
-          "workbench.action.search.toggleQueryDetails"
-        ]
-      },
-      {
-        "key": "s",
-        "name": "Fuzzy search in current buffer",
-        "icon": "file",
-        "type": "command",
-        "command": "fuzzySearch.activeTextEditorWithCurrentSelection"
-      },
-      {
-        "key": "v",
-        "name": "open search view",
-        "icon": "selection",
-        "type": "commands",
-        "commands": [
-          "editor.action.addSelectionToNextFindMatch",
-          "workbench.action.findInFiles"
-        ]
-      },
-      {
-        "key": "R",
-        "name": "Search all references in side bar",
-        "icon": "references",
-        "type": "command",
-        "command": "references-view.find"
-      },
-      {
-        "key": "S",
-        "name": "Fuzzy search with selection in current buffer",
-        "icon": "selection",
-        "type": "commands",
-        "commands": [
-          "editor.action.addSelectionToNextFindMatch",
-          "fuzzySearch.activeTextEditorWithCurrentSelection"
+          "workbench.action.moveEditorToRightGroup"
+          // "workbench.action.search.toggleQueryDetails"
         ]
       }
     ]

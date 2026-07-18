@@ -29,6 +29,9 @@
   // workbench.action.terminal.hideSuggestWidget
   // workbench.action.terminal.hideSuggestWidgetAndNavigateHistory
   // workbench.action.terminal.resetSuggestWidgetSize
+
+  // selectFirstSuggestion
+// selectLastSuggestion
   {
     "key": "ctrl+j",
     "command": "selectNextSuggestion",
@@ -37,6 +40,16 @@
   {
     "key": "ctrl+k",
     "command": "selectPrevSuggestion",
+    "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
+  },
+  {
+    "key": "ctrl+d",
+    "command": "selectNextPageSuggestion",
+    "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
+  },
+  {
+    "key": "ctrl+u",
+    "command": "selectPrevPageSuggestion",
     "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
   },
   {

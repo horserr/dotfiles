@@ -201,6 +201,14 @@
           }
         ]
       },
+      // select all occurrence
+      {
+        "key": "a",
+        "name": "select all hightligt, select all occurrence of find match",
+        "icon": "collection-small",
+        "type": "command",
+        "command": "editor.action.selectHighlights"
+      },
       // c copy selection to new untitle file
       {
         "key": "c",
@@ -359,8 +367,13 @@
                 "key": "C",
                 "name": "manual folding with selection",
                 "icon": "x",
-                "type": "command",
-                "command": "editor.createFoldingRangeFromSelection"
+                "type": "commands",
+                "commands": [
+                  "editor.createFoldingRangeFromSelection",
+                  "extension.vim_up",
+                  "extension.vim_escape",
+                  "extension.vim_down"
+                ]
               },
               // x fold other exclude current
               {

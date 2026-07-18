@@ -2,14 +2,11 @@
   "workbench.activityBar.location": "bottom",
   "workbench.browser.newTabPlacement": "window",
   "workbench.colorCustomizations": {
-    // editor bracket color customization
-    // "editorBracketHighlight.foreground1": "#5caeef",
-    // "editorBracketHighlight.foreground2": "#dfb976",
-    // "editorBracketHighlight.foreground3": "#c172d9",
-    // "editorBracketHighlight.foreground4": "#4fb1bc",
-    // "editorBracketHighlight.foreground5": "#97c26c",
-    // "editorBracketHighlight.foreground6": "#abb2c0",
-    // "editorBracketHighlight.unexpectedBracket.foreground": "#db6165"
+    // NOTE: use this command to view current theme color workbench.action.generateColorTheme
+    "[Catppuccin Mocha]": {
+      "editor.lineHighlightBackground": "#7a3d944e",
+      "minimapSlider.background": "#8400ff3e"
+    }
   },
   "workbench.commandPalette.showAskInChat": false,
   // link: https://code.visualstudio.com/docs/languages/markdown#_use-the-markdown-preview-only-for-diffs
@@ -70,11 +67,11 @@
   "workbench.list.horizontalScrolling": false,
   "workbench.list.mouseWheelScrollSensitivity": 1,
   "workbench.list.multiSelectModifier": "ctrlCmd",
+  "workbench.list.openMode": "singleClick",
   "workbench.list.scrollByPage": true,
   "workbench.list.smoothScrolling": true,
   // @link: https://github.com/microsoft/vscode/issues/68233#issuecomment-466475928
   "workbench.list.typeNavigationMode": "trigger",
-
   "workbench.navigationControl.enabled": false,
   "workbench.notifications.position": "top-right",
   "workbench.panel.showLabels": false,
@@ -85,6 +82,6 @@
   "workbench.secondarySideBar.showLabels": false,
   "workbench.startupEditor": "none",
   "workbench.statusBar.visible": true,
-  "workbench.tree.stickyScrollMaxItemCount": 4,
-  "workbench.tree.enableStickyScroll": true
+  "workbench.tree.enableStickyScroll": false,
+  "workbench.tree.stickyScrollMaxItemCount": 4
 }

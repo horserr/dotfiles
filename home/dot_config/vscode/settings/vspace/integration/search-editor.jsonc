@@ -1,0 +1,156 @@
+[
+  // space select all matches
+  {
+    "key": " ",
+    "name": "select all search matches",
+    "icon": "x",
+    "type": "command",
+    "command": "selectAllSearchEditorMatches"
+  },
+  // f +Focus
+  {
+    "key": "f",
+    "name": "+Focus",
+    "icon": "x",
+    "type": "bindings",
+    "bindings": [
+      {
+        "key": "f",
+        "name": "focus search text box",
+        "icon": "x",
+        "type": "command",
+        "command": "search.action.focusQueryEditorWidget"
+      },
+      {
+        "key": "x",
+        "name": "focus files to exclude",
+        "icon": "x",
+        "type": "command",
+        "command": "search.action.focusFilesToExclude"
+      },
+      {
+        "key": "i",
+        "name": "focus files to exclude",
+        "icon": "x",
+        "type": "command",
+        "command": "search.action.focusFilesToInclude"
+      }
+    ]
+  },
+  // a apply change
+  {
+    "key": "a",
+    "name": "apply changes",
+    "icon": "x",
+    "type": "command",
+    "command": "searchEditorApplyChanges.apply"
+  },
+  // t toggle query details
+  {
+    "key": "t",
+    "name": "toggle query details",
+    "icon": "x",
+    "type": "command",
+    "command": "workbench.action.search.toggleQueryDetails"
+  },
+  // d delete result of current file
+  {
+    "key": "d",
+    "name": "delete results of current file",
+    "icon": "x",
+    "type": "command",
+    "command": "search.searchEditor.action.deleteFileResults"
+  },
+  {
+    "key": "j",
+    "name": "focus next search result",
+    "icon": "x",
+    "type": "transient",
+    "command": "search.action.focusNextSearchResult",
+    "bindings": [
+      {
+        "key": "j",
+        "name": "focus next search result",
+        "icon": "x",
+        "type": "command",
+        "command": "search.action.focusNextSearchResult"
+      },
+      {
+        "key": "k",
+        "name": "focus previous search result",
+        "icon": "x",
+        "type": "command",
+        "command": "search.action.focusPreviousSearchResult"
+      }
+    ]
+  },
+  {
+    "key": "k",
+    "name": "focus previous search result",
+    "icon": "x",
+    "type": "command",
+    "command": "search.action.focusPreviousSearchResult",
+    "bindings": [
+      {
+        "key": "j",
+        "name": "focus next search result",
+        "icon": "x",
+        "type": "command",
+        "command": "search.action.focusNextSearchResult"
+      },
+      {
+        "key": "k",
+        "name": "focus previous search result",
+        "icon": "x",
+        "type": "command",
+        "command": "search.action.focusPreviousSearchResult"
+      }
+    ]
+  },
+  // r rerun search
+  {
+    "key": "r",
+    "name": "rerun search",
+    "icon": "x",
+    "type": "command",
+    "command": "rerunSearchEditorSearch"
+  },
+  // q clear search editor
+  {
+    "key": "q",
+    "name": "clear search editor",
+    "icon": "x",
+    "type": "command",
+    "command": "cleanSearchEditorState"
+  },
+  // l change context lines
+  {
+    "key": "l",
+    "name": "change context lines",
+    "icon": "x",
+    "type": "transient",
+    "bindings": [
+      {
+        "key": "l",
+        "name": "toggle context lines",
+        "icon": "activate-breakpoints",
+        "type": "command",
+        "command": "toggleSearchEditorContextLines"
+      },
+      {
+        "key": "k",
+        "name": "add more",
+        "icon": "add",
+        "type": "command",
+        "command": "increaseSearchEditorContextLines"
+      },
+      {
+        "key": "j",
+        "name": "less",
+        "icon": "chrome-minimize",
+        "type": "command",
+        "command": "decreaseSearchEditorContextLines"
+      }
+    ]
+  }
+]

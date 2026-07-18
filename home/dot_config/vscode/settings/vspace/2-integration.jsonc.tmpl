@@ -40,6 +40,53 @@
         "type": "bindings",
         "bindings": {{ template "integration" (dict "GLOBAL" $ "fileName" "explorer.jsonc") }}
       },
+      // s search
+      {
+        "key": "s",
+        "name": "+Search",
+        "icon": "zap",
+        "type": "bindings",
+        "bindings": [
+          // s search view
+          {
+            "key": "s",
+            "name": "search view",
+            "icon": "zap",
+            "type": "bindings",
+            "bindings": {{ template "integration" (dict "GLOBAL" $ "fileName" "search-replace.jsonc") }}
+          },
+          {
+            "key": "e",
+            "name": "search editor",
+            "icon": "zap",
+            "type": "bindings",
+            "bindings": {{ template "integration" (dict "GLOBAL" $ "fileName" "search-editor.jsonc") }}
+          },
+        ]
+      },
+      // localHistory
+      {
+        "key": "h",
+        "name": "+History",
+        "icon": "versions",
+        "type": "bindings",
+        "bindings": [
+          {
+            "key": "m",
+            "name": "select for compare",
+            "icon": "split-vertical",
+            "type": "command",
+            "command": "workbench.action.localHistory.selectForCompare"
+          },
+          {
+            "key": "M",
+            "name": "compare with selected",
+            "icon": "split-vertical",
+            "type": "command",
+            "command": "workbench.action.localHistory.compareWithSelected"
+          }
+        ]
+      },
       // * misc
       {
         "key": "*",

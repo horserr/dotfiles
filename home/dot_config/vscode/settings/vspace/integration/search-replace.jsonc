@@ -1,0 +1,175 @@
+[
+  // - "search.action.searchWithAI"
+  // - search.action.getSearchResults this command is mainly for copilot to retrieve search results
+
+  // no effect "command": "search.action.revealInSideBar"
+  // list command already cover these two commands "search.action.openResult" "search.action.openResultToSide"
+
+  // r replace
+  {
+    "key": "r",
+    "name": "+Replace",
+    "icon": "replace",
+    "type": "bindings",
+    "bindings": [
+      // r replace
+      {
+        "key": "r",
+        "name": "replace",
+        "icon": "find-replace",
+        "type": "command",
+        // "command": "search.action.replaceAllInFile"
+        // "command": "search.action.replaceAllInFolder"
+        "command": "search.action.replace"
+      },
+      // a replace all
+      {
+        "key": "a",
+        "name": "replace all",
+        "icon": "replace-all",
+        "type": "command",
+        "command": "search.action.replaceAll"
+      }
+    ]
+  },
+  // d remove result
+  {
+    "key": "d",
+    "name": "remove result",
+    "icon": "remove-close",
+    "type": "command",
+    "command": "search.action.remove"
+  },
+  // z collapse or expand
+  {
+    "key": "z",
+    "name": "+Collapse/Expand",
+    "icon": "collapse-all",
+    "type": "bindings",
+    "bindings": [
+      // c collapse search results
+      {
+        "key": "c",
+        "name": "collapse search results",
+        "icon": "collapse-all",
+        "type": "command",
+        "command": "search.action.collapseSearchResults"
+      },
+      {
+        "key": "o",
+        "name": "expand search results",
+        "icon": "expand-all",
+        "type": "command",
+        "command": "search.action.expandSearchResults"
+      },
+      {
+        "key": "r",
+        "name": "expand recursively",
+        "icon": "expand-all",
+        "type": "command",
+        "command": "search.action.expandRecursively"
+      }
+    ]
+  },
+  // y copy
+  {
+    "key": "y",
+    "name": "collapse search results",
+    "icon": "collapse-all",
+    "type": "bindings",
+    "bindings": [
+      // y copy match
+      {
+        "key": "y",
+        "name": "copy current search results",
+        "icon": "ports-copy-address-icon",
+        "type": "command",
+        "command": "search.action.copyMatch"
+      },
+      // a copy all
+      {
+        "key": "a",
+        "name": "copy all",
+        "icon": "copy",
+        "type": "command",
+        "command": "search.action.copyAll"
+      },
+      // p copy path
+      {
+        "key": "p",
+        "name": "copy path",
+        "icon": "notebook-copy",
+        "type": "command",
+        "command": "search.action.copyPath"
+      }
+    ]
+  },
+  // i include
+  {
+    "key": "i",
+    "name": "+Include",
+    "icon": "test-results-icon",
+    "type": "bindings",
+    "bindings": [
+      // t include file type
+      {
+        "key": "t",
+        "name": "include file type",
+        "icon": "test-results-icon",
+        "type": "command",
+        "command": "search.action.includeFileTypeInSearch"
+      },
+      // f restrict in folder
+      {
+        "key": "f",
+        "name": "restrict search in folder",
+        "icon": "test-results-icon",
+        "type": "command",
+        "command": "search.action.restrictSearchToFolder"
+      }
+    ]
+  },
+  // x exclude
+  {
+    "key": "x",
+    "name": "+Exclude",
+    "icon": "exclude",
+    "type": "bindings",
+    "bindings": [
+      // x exclude file
+      {
+        "key": "x",
+        "name": "exclude result",
+        "icon": "extensions-clear-search-results",
+        "type": "command",
+        "command": "search.action.excludeFromSearch"
+      },
+      // t exclude file type
+      {
+        "key": "t",
+        "name": "exclude file type",
+        "icon": "symbol-type-parameter",
+        "type": "command",
+        "command": "search.action.excludeFileTypeFromSearch"
+      }
+    ]
+  },
+  // e open in search editor
+  {
+    "key": "e",
+    "name": "open results in search editor, can further search inside selected folder",
+    "icon": "zap",
+    "type": "command",
+    "command": "search.action.openInEditor",
+    "args": { "focusResults": true }
+  },
+  // E search editor side
+  {
+    "key": "E",
+    "name": "open results in (side) search editor, can further search inside selected folder",
+    "icon": "zap",
+    "type": "command",
+    "command": "search.action.openNewEditorToSide",
+    "args": { "focusResults": true }
+  }
+]

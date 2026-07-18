@@ -14,7 +14,8 @@
   },
   {
     "key": "ctrl+j",
-    "command": "togglePeekWidgetFocus",
+    "command": "runCommands",
+    "args": { "commands": ["togglePeekWidgetFocus", "togglePeekWidgetFocus"] },
     // when not focus reference widget but editor
     "when": "referenceSearchVisible && !listFocus && !inReferenceSearchEditor"
   },

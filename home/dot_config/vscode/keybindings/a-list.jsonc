@@ -25,28 +25,74 @@
     "command": "list.find",
     "when": "listFocus && !inputFocus && !treestickyScrollFocused"
   },
-  // t t toggle filter on type, "workbench.list.defaultFindMode": "filter",
   {
-    "key": "t t",
-    "command": "list.toggleFilterOnType",
+    "key": "t",
+    "command": "whichkey.show",
+    "args": [
+      // t toggle filter on type, "workbench.list.defaultFindMode": "filter",
+      {
+        "key": "t",
+        "name": "toggle filter on type",
+        "icon": "filter",
+        "type": "command",
+        "command": "list.toggleFilterOnType"
+      },
+      // f toggle fuzzy search or continguous search, "workbench.list.defaultFindMatchType": "fuzzy",
+      {
+        "key": "f",
+        "name": "fuzzy search",
+        "icon": "filter",
+        "type": "command",
+        "command": "list.toggleFindMode"
+      }
+    ],
     "when": "listFocus && treeFindOpen && !inputFocus && !treestickyScrollFocused"
   },
-  // t f toggle fuzzy search or continguous search, "workbench.list.defaultFindMatchType": "fuzzy",
   {
-    "key": "t f",
-    "command": "list.toggleFindMode",
-    "when": "listFocus && treeFindOpen && !inputFocus && !treestickyScrollFocused"
+    "key": "t",
+    "command": "whichkey.show",
+    "args": [
+      // s toggle sticky scroll, "workbench.tree.enableStickyScroll": true
+      {
+        "key": "s",
+        "name": "toggle sticky sroll",
+        "icon": "filter",
+        "type": "command",
+        "command": "tree.toggleStickyScroll"
+      }
+    ],
+    "when": "listFocus && !treeFindOpen && !inputFocus && !treestickyScrollFocused"
   },
-  // t s toggle sticky scrool, "workbench.tree.enableStickyScroll": true
   {
-    "key": "t s",
-    "command": "tree.toggleStickyScroll",
-    "when": "listFocus && !inputFocus"
-  },
-  // h h collapse
-  {
-    "key": "h h",
-    "command": "list.collapse",
+    "key": "h",
+    "command": "whichkey.show",
+    "args": [
+      // h collapse
+      {
+        "key": "h",
+        "name": "collapse",
+        "icon": "collapse-all-compact",
+        "type": "command",
+        "command": "list.collapse"
+      },
+      // r collapse recursively
+      // this command recursively collapse all folders under the selection/highlight
+      {
+        "key": "r",
+        "name": "collapse",
+        "icon": "collapse-all-compact",
+        "type": "command",
+        "command": "list.collapseAllToFocus"
+      },
+      // a collapse all
+      {
+        "key": "a",
+        "name": "collapse all",
+        "icon": "collapse-all-compact",
+        "type": "command",
+        "command": "list.collapseAll"
+      }
+    ],
     "when": "listFocus && !inputFocus && !treestickyScrollFocused"
   },
   /*   shift+h hover
@@ -54,19 +100,6 @@
   {
     "key": "shift+h",
     "command": "list.showHover",
-    "when": "listFocus && !inputFocus && !treestickyScrollFocused"
-  },
-  // h r collapse all
-  {
-    // this command recursively collapse all folders under the selection/highlight
-    "key": "h r",
-    "command": "list.collapseAllToFocus",
-    "when": "listFocus && !inputFocus && !treestickyScrollFocused"
-  },
-  // h a collapse all
-  {
-    "key": "h a",
-    "command": "list.collapseAll",
     "when": "listFocus && !inputFocus && !treestickyScrollFocused"
   },
   // l expand
@@ -112,28 +145,46 @@
     "when": "listFocus && !inputFocus && !treestickyScrollFocused"
   },
   // note: don't understand the purpose of 'focus any' commands, but leave them here for completion
-  // n j focus any down
   {
-    "key": "n j",
-    "command": "list.focusAnyDown",
-    "when": "listFocus && !inputFocus && !treestickyScrollFocused"
-  },
-  // n h focus any first
-  {
-    "key": "n h",
-    "command": "list.focusAnyFirst",
-    "when": "listFocus && !inputFocus && !treestickyScrollFocused"
-  },
-  // n l focus any last
-  {
-    "key": "n l",
-    "command": "list.focusAnyLast",
-    "when": "listFocus && !inputFocus && !treestickyScrollFocused"
-  },
-  // n k focus any up
-  {
-    "key": "n k",
-    "command": "list.focusAnyUp",
+    "key": "n",
+    "command": "whichkey.showTransient",
+    "args": {
+      "title": "focus any...",
+      "bindings": [
+        // j any down
+        {
+          "key": "j",
+          "name": "collapse",
+          "icon": "collapse-all-compact",
+          "type": "command",
+          "command": "list.focusAnyDown"
+        },
+        // k any up
+        {
+          "key": "k",
+          "name": "collapse",
+          "icon": "collapse-all-compact",
+          "type": "command",
+          "command": "list.focusAnyUp"
+        },
+        // h any first
+        {
+          "key": "h",
+          "name": "collapse",
+          "icon": "collapse-all-compact",
+          "type": "command",
+          "command": "list.focusAnyFirst"
+        },
+        // l focus any last
+        {
+          "key": "l",
+          "name": "collapse",
+          "icon": "collapse-all-compact",
+          "type": "command",
+          "command": "list.focusAnyLast"
+        }
+      ]
+    },
     "when": "listFocus && !inputFocus && !treestickyScrollFocused"
   },
   // g focus first

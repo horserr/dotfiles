@@ -1,11 +1,4 @@
 {
-  // #region fold
-  // zR(reduce) unfold all
-  // zM(more) fold all
-  // zc(close) fold current
-  // zo(open) unfold current
-  // zO unfold current and beyond
-  // #endregion
   /*   easy motion
   search character <leader><leader> s <char>
   Search n-character <leader><leader> / <char>... <CR>
@@ -35,6 +28,12 @@
       // original is hardwrap at the given length
       "before": ["g", "q"],
       "commands": ["editor.action.formatDocument"]
+    },
+    {
+      // goto definition aside
+      // original is goto definition
+      "before": ["g", "d"],
+      "commands": ["editor.action.revealDefinitionAside"]
     },
     {
       // hard wrap

@@ -1,0 +1,302 @@
+[
+  /**********************************************
+   * ASSUME SEARCH VIEW IS INSIDE AUXILIARY BAR *
+   **********************************************/
+  // open search editor
+  // workbench.action.toggleSearchOnType
+  // addCursorsAtSearchResults
+
+  // characteristic when clauses:
+
+  // "searchViewletFocus": true,
+  // "view": "workbench.view.search",
+  // searchViewletVisible
+  // "patternIncludesInputBoxFocus": false,
+  // "patternExcludesInputBoxFocus": false,
+  // "replaceActive": true,
+  // "searchInputBoxFocus": false,
+  // "replaceInputBoxFocus": false,
+  // "viewHasSearchPattern": true,
+  // "viewHasReplacePattern": false,
+  // "viewHasFilePattern": true,
+  // 1. "searchResultHeaderFocused": false
+  // What it tracks: Whether the header row of a specific file in the search results is currently highlighted/focused.The false state means: Your cursor or highlight bar is not sitting on a file name header row (e.g., src/index.js). Instead, it is either in an input box, inside a specific matching code line, or somewhere else entirely.
+  // 2. "matchFocus": false
+  // What it tracks: Whether a specific, individual line of matching code within the search results is highlighted/focused.The false state means: Your cursor is not selecting any of the actual text matches or code lines found inside the files.
+  // 3. "searchState": 0
+  // searchState 0 'idle' 1 'searching' 2 'has results'
+  // What it tracks: The active progress status of the search engine.The 0 state means: The search panel is Idle. There is no search currently running, no keywords are being processed, and no results are being held in the UI.
+  {
+    "key": "ctrl+j",
+    "command": "search.focus.nextInputBox",
+    "when": "inputBoxFocus && searchViewletFocus"
+  },
+  {
+    "key": "ctrl+j",
+    "command": "search.action.focusSearchList",
+    "when": "inputBoxFocus && replaceActive && replaceInputBoxFocus && searchViewletFocus"
+  },
+  {
+    "key": "ctrl+j",
+    "command": "runCommands",
+    // don't automatically open results in editor
+    "args": {
+      "commands": ["search.action.focusSearchList", "list.toggleSelection"]
+    },
+    "when": "inputBoxFocus && !replaceActive && searchInputBoxFocus && searchViewletFocus"
+  },
+  {
+    "key": "ctrl+k",
+    "command": "search.focus.previousInputBox",
+    "when": "inputBoxFocus && searchViewletFocus"
+  },
+  {
+    "key": "ctrl+k",
+    "command": "search.action.focusSearchFromResults",
+    "when": "listFocus && searchViewletFocus"
+  },
+  // toggle view list or tree
+  {
+    "key": "ctrl+l",
+    "command": "search.action.viewAsTree",
+    "when": "searchInputBoxFocus && !inTreeView && searchViewletFocus"
+  },
+  {
+    "key": "ctrl+l",
+    "command": "search.action.viewAsList",
+    "when": "searchInputBoxFocus && inTreeView && searchViewletFocus"
+  },
+  // toggle replace input box on and off
+  {
+    "key": "ctrl+k",
+    "command": "closeReplaceInFilesWidget",
+    "when": "searchInputBoxFocus && replaceActive && searchViewletFocus"
+  },
+  {
+    "key": "ctrl+k",
+    "command": "workbench.action.replaceInFiles",
+    "when": "searchInputBoxFocus && !replaceActive && searchViewletFocus"
+  },
+  // this is the default keybinding
+  // {
+  //   "key": "escape",
+  //   "command": "search.action.cancel",
+  //   "when": "listFocus && searchViewletVisible && !inputFocus && !treestickyScrollFocused && searchState != '0'"
+  // },
+  {
+    "key": "escape",
+    "command": "search.action.clearSearchResults",
+    "when": "searchInputBoxFocus && searchViewletFocus && hasSearchResult"
+  },
+  // search viewlet native vspacecode, when result list focus
+  {
+    "key": "v",
+    "command": "whichkey.show",
+    "args": [
+      {
+        "key": " ",
+        "name": "+View Common",
+        "icon": "x",
+        "type": "command",
+        "command": "runCommands",
+        "args": {
+          "commands": [
+            "vspacecode.space",
+            { "command": "whichkey.triggerKey", "args": "v" }
+          ]
+        }
+      },
+      {
+        "key": "v",
+        "name": "+View specific",
+        "icon": "x",
+        "type": "command",
+        "command": "runCommands",
+        "args": {
+          "commands": [
+            "vspacecode.space",
+            { "command": "whichkey.triggerKey", "args": "/" },
+            { "command": "whichkey.triggerKey", "args": "s" },
+            { "command": "whichkey.triggerKey", "args": "s" }
+          ]
+        }
+      },
+      // f focus
+      {
+        "key": "f",
+        "name": "+Focus",
+        "icon": "debug-stackframe-focused",
+        "type": "bindings",
+        "bindings": [
+          {
+            "key": "f",
+            "name": "focus query",
+            "icon": "debug-stackframe-focused",
+            "type": "command",
+            "command": "search.action.focusSearchFromResults"
+          },
+          {
+            "key": "j",
+            "name": "focus next result",
+            "icon": "debug-stackframe-focused",
+            "type": "transient",
+            "command": "search.action.focusNextSearchResult",
+            "bindings": [
+              {
+                "key": "j",
+                "name": "focus next result",
+                "icon": "debug-stackframe-focused",
+                "type": "command",
+                "command": "search.action.focusNextSearchResult"
+              },
+              {
+                "key": "k",
+                "name": "focus previous result",
+                "icon": "debug-stackframe-focused",
+                "type": "command",
+                "command": "search.action.focusPreviousSearchResult"
+              }
+            ]
+          },
+          {
+            "key": "k",
+            "name": "focus previous result",
+            "icon": "debug-stackframe-focused",
+            "type": "transient",
+            "command": "search.action.focusPreviousSearchResult",
+            "bindings": [
+              {
+                "key": "j",
+                "name": "focus next result",
+                "icon": "debug-stackframe-focused",
+                "type": "command",
+                "command": "search.action.focusNextSearchResult"
+              },
+              {
+                "key": "k",
+                "name": "focus previous result",
+                "icon": "debug-stackframe-focused",
+                "type": "command",
+                "command": "search.action.focusPreviousSearchResult"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "when": "searchViewletFocus && listFocus && !inputFocus"
+  },
+  {
+    "key": "shift+space",
+    "command": "whichkey.show",
+    "args": [
+      // space view common
+      {
+        "key": " ",
+        "name": "+View Common",
+        "icon": "x",
+        "type": "command",
+        "command": "runCommands",
+        "args": {
+          "commands": [
+            "vspacecode.space",
+            { "command": "whichkey.triggerKey", "args": "v" }
+          ]
+        }
+      },
+      // r refresh search result
+      {
+        "key": "r",
+        "name": "refresh search result",
+        "icon": "refresh",
+        "type": "command",
+        "command": "search.action.refreshSearchResults"
+      },
+      // v view
+      {
+        "key": "v",
+        "name": "+View",
+        "icon": "zap",
+        "type": "bindings",
+        "bindings": [
+          // l view as list
+          {
+            "key": "l",
+            "name": "view as list",
+            "icon": "list-flat",
+            "type": "command",
+            "command": "search.action.viewAsList"
+          },
+          // t view as tree
+          {
+            "key": "t",
+            "name": "view as tree",
+            "icon": "tree-filter-on-type-on",
+            "type": "command",
+            "command": "search.action.viewAsTree"
+          }
+        ]
+      },
+      // e search editor
+      {
+        "key": "e",
+        "name": "+Search Editor",
+        "icon": "search-new-editor",
+        "type": "command",
+        "command": "search.action.openNewEditor",
+        "args": { "focusResults": true }
+      },
+      // t toggle
+      {
+        "key": "t",
+        "name": "+Toggle",
+        "icon": "debug-stackframe-focused",
+        "type": "bindings",
+        "bindings": [
+          // c case
+          {
+            "key": "c",
+            "name": "toggle case sensitive",
+            "icon": "case-sensitive",
+            "type": "command",
+            "command": "toggleSearchCaseSensitive"
+          },
+          // w whole word
+          {
+            "key": "w",
+            "name": "toggle whole word",
+            "icon": "whole-word",
+            "type": "command",
+            "command": "toggleSearchWholeWord"
+          },
+          // r regex
+          {
+            "key": "r",
+            "name": "toggle regex",
+            "icon": "regex",
+            "type": "command",
+            "command": "toggleSearchRegex"
+          },
+          // p toggle preserve case
+          {
+            "key": "p",
+            "name": "toggle preserve case",
+            "icon": "preserve-case",
+            "type": "command",
+            "command": "toggleSearchPreserveCase"
+          },
+          // t toggle detail
+          {
+            "key": "t",
+            "name": "toggle detail",
+            "icon": "search-details",
+            "type": "command",
+            "command": "workbench.action.search.toggleQueryDetails"
+          }
+          // todo add other command for ui
+        ]
+      }
+    ],
+    "when": "searchViewletFocus"
+  }
+]
