@@ -1,6 +1,17 @@
 [
   // editor.action.transpose
   // editor.action.transposeLetters
+  // editor.action.inPlaceReplace.down: replace with next value
+  // editor.action.inPlaceReplace.up: replace with previous value
+  // default:compositionEnd
+  // default:compositionStart
+  // default:compositionType
+  // default:cut
+  // default:paste
+  // default:redo
+  // default:replacePreviousChar
+  // default:type
+  // default:undo
   {
     "key": "x",
     "name": "+Text",
@@ -200,14 +211,6 @@
             "command": "editor.action.trimTrailingWhitespace"
           }
         ]
-      },
-      // select all occurrence
-      {
-        "key": "a",
-        "name": "select all hightligt, select all occurrence of find match",
-        "icon": "collection-small",
-        "type": "command",
-        "command": "editor.action.selectHighlights"
       },
       // c copy selection to new untitle file
       {

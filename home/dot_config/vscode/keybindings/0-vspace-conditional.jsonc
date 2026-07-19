@@ -12,7 +12,7 @@
     // use shift+space in sidebar, regardless of whether input is focused or not
     "key": "shift+space",
     "command": "vspacecode.space",
-    "when": "!editorFocus && !whichkeyActive && !terminalFocus"
+    "when": "!editorFocus && !whichkeyActive"
   },
   /************************************
    * CONDITIONAL TRIGGER KEY BINDINGS *

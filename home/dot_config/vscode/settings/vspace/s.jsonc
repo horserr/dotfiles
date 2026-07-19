@@ -3,20 +3,16 @@
   // addCursorsAtSearchResults
   // editor.action.setSelectionAnchor
   // editor.action.selectAll
-  // editor.action.selectAllMatches
   // editor.action.selectEditor
   // editor.action.selectFromAnchorToCursor
-  // editor.action.selectHighlights
-  // editor.action.selectToBracket
   // editor.actions.findWithArgs
-
-  // workbench.action.replaceInFiles
   {
     "key": "s",
     "name": "+Search",
     "icon": "search",
     "type": "bindings",
     "bindings": [
+      // space quick text search
       {
         "key": " ",
         "name": "quick text search",
@@ -24,35 +20,153 @@
         "type": "command",
         "command": "workbench.action.quickTextSearch"
       },
-      // s search view
+      // v search view
       {
-        "key": "s",
+        "key": "v",
         "name": "open search view",
-        "icon": "selection",
+        "icon": "search",
         "type": "command",
         "command": "workbench.action.findInFiles"
       },
-      // , find in current file
+      // s find in current file
       {
-        "key": ",",
-        "name": "find in current file, open find widget",
-        "icon": "terminal",
+        "key": "s",
+        "name": "find",
+        "icon": "find-filter",
+        "type": "command",
+        // actions.findWithSelection
+        "command": "actions.find"
+      },
+      // d close find widget
+      {
+        "key": "d",
+        "name": "close find widget",
+        "icon": "close",
+        "type": "command",
+        "command": "closeFindWidget"
+      },
+      // f fuzzy search in current file
+      {
+        "key": "f",
+        "name": "Fuzzy search with selection in current buffer",
+        "icon": "search-fuzzy",
+        "type": "command",
+        "command": "fuzzySearch.activeTextEditorWithCurrentSelection"
+      },
+      // x selection
+      {
+        "key": "x",
+        "name": "+Selection",
+        "icon": "selection",
         "type": "bindings",
         "bindings": [
+          // x select all occurrence
+          {
+            "key": "x",
+            "name": "select all hightligt, select all occurrence of find match",
+            "icon": "collection-small",
+            "type": "command",
+            "command": "editor.action.selectHighlights"
+          },
+          // o select to bracket
+          {
+            "key": "o",
+            "name": "select in bracket",
+            "icon": "bracket",
+            "type": "command",
+            "command": "editor.action.selectToBracket"
+          },
+          // a select all matches
+          {
+            "key": "a",
+            "name": "select all matches",
+            "icon": "bracket",
+            "type": "command",
+            "command": "editor.action.selectAllMatches"
+          },
+          // , add selection
           {
             "key": ",",
-            "name": "find in current file, open find widget",
-            "icon": "terminal",
+            "name": "+Add selection, not recommend to use. vim.visual mode already cover this",
+            "icon": "selection",
+            "type": "transient",
+            "bindings": [
+              // n add selection to next find match
+              {
+                "key": "n",
+                "name": "add selection to next find match",
+                "icon": "marker-navigation-next",
+                "type": "command",
+                "command": "editor.action.addSelectionToNextFindMatch"
+              },
+              {
+                "key": "N",
+                "name": "add selection to previous find match",
+                "icon": "marker-navigation-previous",
+                "type": "command",
+                "command": "editor.action.addSelectionToPreviousFindMatch"
+              },
+              {
+                "key": "m",
+                "name": "move selection to next find match",
+                "icon": "bracket",
+                "type": "command",
+                "command": "editor.action.moveSelectionToNextFindMatch"
+              },
+              {
+                "key": "M",
+                "name": "move selection to next find match",
+                "icon": "move",
+                "type": "command",
+                "command": "editor.action.moveSelectionToPreviousFindMatch"
+              },
+              {
+                "key": "M",
+                "name": "move selection to next find match",
+                "icon": "move",
+                "type": "command",
+                "command": "editor.action.moveSelectionToPreviousFindMatch"
+              },
+              {
+                "key": "j",
+                "name": "focus next cursor",
+                "icon": "inline-suggestion-hints-next",
+                "type": "command",
+                "command": "editor.action.focusNextCursor"
+              },
+              {
+                "key": "k",
+                "name": "focus previous cursor",
+                "icon": "inline-suggestion-hints-previous",
+                "type": "command",
+                "command": "editor.action.focusPreviousCursor"
+              }
+            ]
+          }
+        ]
+      },
+      // g goto find match
+      {
+        "key": "g",
+        "name": "+Goto find match",
+        "icon": "go-to-file",
+        "type": "transient",
+        "bindings": [
+          {
+            "key": "j",
+            "name": "next find match",
+            "icon": "marker-navigation-next",
             "type": "command",
-            // actions.findWithSelection
-            "command": "actions.find"
+            // editor.action.nextSelectionMatchFindAction: this command don't need to select word or open find widget
+            "command": "editor.action.nextMatchFindAction"
           },
           {
-            "key": "S",
-            "name": "Fuzzy search with selection in current buffer",
-            "icon": "selection",
+            "key": "k",
+            "name": "previous find match",
+            "icon": "marker-navigation-previous",
             "type": "command",
-            "command": "fuzzySearch.activeTextEditorWithCurrentSelection"
+            // editor.action.previousMatchFindAction
+            "command": "editor.action.previousSelectionMatchFindAction"
           }
         ]
       },

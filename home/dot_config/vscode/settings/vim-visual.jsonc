@@ -29,16 +29,11 @@
     {
       // multi-cursor move selection
       "before": ["m"],
-      // editor.action.nextMatchFindAction: this command needs to open find widget
-      // editor.action.nextSelectionMatchFindAction: this command don't need to select word or open find widget
-      // this command is suited for multi-cursor mode
       "commands": ["editor.action.moveSelectionToNextFindMatch"]
     },
     {
       // multi-cursor move selection
       "before": ["M"],
-      // editor.action.previousMatchFindAction
-      // editor.action.previousSelectionMatchFindAction
       "commands": ["editor.action.moveSelectionToPreviousFindMatch"]
     },
     {

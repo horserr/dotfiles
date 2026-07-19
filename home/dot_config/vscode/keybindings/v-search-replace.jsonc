@@ -32,9 +32,14 @@
     "when": "inputBoxFocus && searchViewletFocus"
   },
   {
+    // when focus replace input box, ctrl+j directly move focus to search list, no need to pass through include and exclude input box
     "key": "ctrl+j",
-    "command": "search.action.focusSearchList",
-    "when": "inputBoxFocus && replaceActive && replaceInputBoxFocus && searchViewletFocus"
+    "command": "runCommands",
+    // don't automatically open results in editor
+    "args": {
+      "commands": ["search.action.focusSearchList", "list.toggleSelection"]
+    },
+    "when": "replaceActive && replaceInputBoxFocus && searchViewletFocus"
   },
   {
     "key": "ctrl+j",
@@ -43,7 +48,7 @@
     "args": {
       "commands": ["search.action.focusSearchList", "list.toggleSelection"]
     },
-    "when": "inputBoxFocus && !replaceActive && searchInputBoxFocus && searchViewletFocus"
+    "when": "!replaceActive && searchInputBoxFocus && searchViewletFocus"
   },
   {
     "key": "ctrl+k",
@@ -292,8 +297,12 @@
             "icon": "search-details",
             "type": "command",
             "command": "workbench.action.search.toggleQueryDetails"
-          }
-          // todo add other command for ui
+          },
+          // todo add other commands
+          // what a pity: https://github.com/microsoft/vscode/issues/131437
+          // toggle use exclude setting and ignore file
+          // toggle search only in changed files
+          // toggle search only in open editors
         ]
       }
     ],

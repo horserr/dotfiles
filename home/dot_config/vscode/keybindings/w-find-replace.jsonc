@@ -1,0 +1,133 @@
+[
+  {
+    // whether being find or replace input box focused, press ctrl+j to return focus to editor
+    "key": "ctrl+j",
+    "command": "workbench.action.focusActiveEditorGroup",
+    "when": "findWidgetFocused"
+  },
+  {
+    // when find input box focus, press ctrl+k to open or focus replace input box
+    "key": "ctrl+k",
+    "command": "editor.action.startFindReplaceAction",
+    "when": "findInputFocussed"
+  },
+  {
+    // when replace input box focus, press ctrl+k to focus find input box
+    "key": "ctrl+k",
+    "command": "actions.find",
+    "when": "replaceInputFocussed"
+  },
+  {
+    "key": "shift+space",
+    "command": "whichkey.show",
+    "args": [
+      {
+        "key": "r",
+        "name": "replace one",
+        "icon": "replace",
+        "type": "command",
+        "command": "editor.action.replaceOne"
+      },
+      // R replace all
+      {
+        "key": "R",
+        "name": "replace all",
+        "icon": "find-replace-all",
+        "type": "command",
+        "command": "editor.action.replaceAll"
+      },
+      // g goto
+      {
+        "key": "g",
+        "name": "goto match",
+        "icon": "replace",
+        "type": "command",
+        "command": "editor.action.goToMatchFindAction",
+        // todo fix
+        "exit": true
+      },
+      {
+        "key": "j",
+        "name": "next",
+        "icon": "marker-navigation-next",
+        "type": "command",
+        "command": "runCommands",
+        "args": {
+          "commands": [
+            "editor.action.nextMatchFindAction",
+            "vspacecode.space",
+            { "command": "whichkey.triggerKey", "args": "s" },
+            { "command": "whichkey.triggerKey", "args": "g" }
+          ]
+        }
+      },
+      {
+        "key": "k",
+        "name": "previous",
+        "icon": "marker-navigation-next",
+        "type": "command",
+        "command": "runCommands",
+        "args": {
+          "commands": [
+            "editor.action.previousSelectionMatchFindAction",
+            "vspacecode.space",
+            { "command": "whichkey.triggerKey", "args": "s" },
+            { "command": "whichkey.triggerKey", "args": "g" }
+          ]
+        }
+      },
+      // x select
+      {
+        "key": "x",
+        "name": "+Select",
+        "icon": "selection",
+        "type": "command",
+        "command": "runCommands",
+        "args": {
+          "commands": [
+            "vspacecode.space",
+            { "command": "whichkey.triggerKey", "args": "s" },
+            { "command": "whichkey.triggerKey", "args": "x" }
+          ]
+        }
+      }
+    ],
+    "when": "editorFocus && findWidgetVisible"
+  },
+  // default keybinding
+  {
+    // unbind
+    "key": "escape",
+    "command": "-closeFindWidget",
+    "when": "editorFocus && findWidgetVisible && !isComposing"
+  }
+  // {
+  //   "key": "escape",
+  //   "command": "closeFindWidget",
+  //   "when": "findWidgetFocused && !isComposing"
+  // }
+]
+
+//////////////////
+//////////////////
+// workbench.action.terminal.searchWorkspace
+// workbench.action.terminal.focusFind
+// workbench.action.terminal.findNext
+// workbench.action.terminal.findPrevious
+//////////////////
+//   "key": "escape",
+//   "command": "closeFindWidget",
+//   "command": "workbench.action.terminal.hideFind",
+//////////////////
+//   "key": "alt+c",
+//   "command": "toggleFindCaseSensitive",
+//   "command": "workbench.action.terminal.toggleFindCaseSensitive",
+//////////////////
+//   "key": "alt+r",
+//   "command": "toggleFindRegex",
+//   "command": "workbench.action.terminal.toggleFindRegex",
+//////////////////
+//   "key": "alt+w",
+//   "command": "toggleFindWholeWord",
+//   "command": "workbench.action.terminal.toggleFindWholeWord",
+//////////////////
