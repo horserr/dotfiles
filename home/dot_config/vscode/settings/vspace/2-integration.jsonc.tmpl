@@ -11,13 +11,6 @@
     "type": "bindings",
     "bindings": [
       {
-        "key": "y",
-        "name": "yazi",
-        "icon": "search",
-        "type": "command",
-        "command": "yazi-vscode.toggle"
-      },
-      {
         "key": " ",
         "name": "quick open with modes",
         "icon": "terminal",
@@ -39,6 +32,14 @@
         "icon": "zap",
         "type": "bindings",
         "bindings": {{ template "integration" (dict "GLOBAL" $ "fileName" "explorer.jsonc") }}
+      },
+      // c compare editor
+      {
+        "key": "c",
+        "name": "+Compare editor",
+        "icon": "zap",
+        "type": "bindings",
+        "bindings": {{ template "integration" (dict "GLOBAL" $ "fileName" "compare-editor.jsonc") }}
       },
       // s search
       {
