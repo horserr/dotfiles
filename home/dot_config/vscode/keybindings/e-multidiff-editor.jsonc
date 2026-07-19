@@ -1,32 +1,15 @@
 [
-  // multiDiffEditor.collapseAll
-  // multiDiffEditor.expandAll
   {
     "key": "escape",
-    "command": "whichkey.show",
-    "args": [
-      {
-        "key": "o",
-        "name": "open file",
-        "icon": "x",
-        "type": "command",
-        "command": "multiDiffEditor.goToFile"
-      },
-      {
-        "key": "k",
-        "name": "goto previous change",
-        "icon": "x",
-        "type": "command",
-        "command": "multiDiffEditor.goToPreviousChange"
-      },
-      {
-        "key": "j",
-        "name": "goto next unhandle conflict",
-        "icon": "x",
-        "type": "command",
-        "command": "multiDiffEditor.goToNextChange"
-      }
-    ],
+    "command": "runCommands",
+    "args": {
+      "commands": [
+        "vspacecode.space",
+        { "command": "whichkey.triggerKey", "args": "/" },
+        { "command": "whichkey.triggerKey", "args": "c" },
+        { "command": "whichkey.triggerKey", "args": "m" }
+      ]
+    },
     "when": "activeEditor == 'multiDiffEditor' && editorTextFocus && (vim.mode =~ /normal/i) && !editorHasMultipleSelections && !editorHasSelection"
   }
 ]

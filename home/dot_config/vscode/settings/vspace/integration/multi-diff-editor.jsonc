@@ -1,0 +1,77 @@
+[
+  {
+    "key": "o",
+    "name": "open file",
+    "icon": "x",
+    "type": "command",
+    "command": "multiDiffEditor.goToFile"
+  },
+  {
+    "key": "k",
+    "name": "goto previous change",
+    "icon": "marker-navigation-previous",
+    "type": "transient",
+    "command": "multiDiffEditor.goToPreviousChange",
+    "bindings": [
+      {
+        "key": "k",
+        "name": "goto previous change",
+        "icon": "marker-navigation-previous",
+        "type": "command",
+        "command": "multiDiffEditor.goToPreviousChange"
+      },
+      {
+        "key": "j",
+        "name": "goto next unhandle conflict",
+        "icon": "marker-navigation-next",
+        "type": "command",
+        "command": "multiDiffEditor.goToNextChange"
+      }
+    ]
+  },
+  {
+    "key": "j",
+    "name": "goto next unhandle conflict",
+    "icon": "marker-navigation-next",
+    "type": "transient",
+    "command": "multiDiffEditor.goToNextChange",
+    "bindings": [
+      {
+        "key": "k",
+        "name": "goto previous change",
+        "icon": "marker-navigation-previous",
+        "type": "command",
+        "command": "multiDiffEditor.goToPreviousChange"
+      },
+      {
+        "key": "j",
+        "name": "goto next unhandle conflict",
+        "icon": "marker-navigation-next",
+        "type": "command",
+        "command": "multiDiffEditor.goToNextChange"
+      }
+    ]
+  },
+  {
+    "key": "z",
+    "name": "+Fold/Unfold",
+    "icon": "fold",
+    "type": "bindings",
+    "bindings": [
+      {
+        "key": "o",
+        "name": "expand all",
+        "icon": "expand-all",
+        "type": "command",
+        "command": "multiDiffEditor.expandAll"
+      },
+      {
+        "key": "c",
+        "name": "collapse all",
+        "icon": "collapse-all",
+        "type": "command",
+        "command": "multiDiffEditor.collapseAll"
+      }
+    ]
+  }
+]

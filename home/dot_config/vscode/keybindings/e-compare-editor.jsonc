@@ -30,6 +30,7 @@
       "commands": [
         "vspacecode.space",
         { "command": "whichkey.triggerKey", "args": "/" },
+        { "command": "whichkey.triggerKey", "args": "c" },
         { "command": "whichkey.triggerKey", "args": "c" }
       ]
     },

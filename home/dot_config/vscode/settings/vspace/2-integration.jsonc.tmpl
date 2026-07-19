@@ -39,7 +39,22 @@
         "name": "+Compare editor",
         "icon": "zap",
         "type": "bindings",
-        "bindings": {{ template "integration" (dict "GLOBAL" $ "fileName" "compare-editor.jsonc") }}
+        "bindings": [
+          {
+            "key": "c",
+            "name": "+Compare editor",
+            "icon": "zap",
+            "type": "bindings",
+            "bindings": {{ template "integration" (dict "GLOBAL" $ "fileName" "compare-editor.jsonc") }}
+          },
+          {
+            "key": "m",
+            "name": "+Multi diff editor",
+            "icon": "zap",
+            "type": "bindings",
+            "bindings": {{ template "integration" (dict "GLOBAL" $ "fileName" "multi-diff-editor.jsonc") }}
+          },
+        ]
       },
       // s search
       {
