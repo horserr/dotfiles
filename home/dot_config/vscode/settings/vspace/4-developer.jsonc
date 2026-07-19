@@ -24,9 +24,8 @@
       // workbench.action.pauseSocketWriting
       // workbench.action.generateColorTheme
       // developer.showCurrentFileAsReleaseNotes
-
       {
-        "key": ",",
+        "key": " ",
         "name": "show all developer commands",
         "icon": "keyboard",
         "type": "command",
@@ -40,49 +39,127 @@
         "type": "command",
         "command": "workbench.action.toggleDevTools"
       },
+      // r reload
       {
-        "key": "t",
-        "name": "Inspect editor token",
-        "icon": "keyboard",
-        "type": "command",
-        "command": "editor.action.inspectTMScopes"
+        "key": "r",
+        "name": "+Reload",
+        "icon": "refresh",
+        "type": "bindings",
+        "bindings": [
+          {
+            "key": "r",
+            "name": "Reload window",
+            "icon": "refresh",
+            "type": "command",
+            "command": "workbench.action.reloadWindow"
+          },
+          {
+            "key": "R",
+            "name": "Reload window with extensions disabled",
+            "icon": "refresh",
+            "type": "command",
+            "command": "workbench.action.reloadWindowWithExtensionsDisabled"
+          }
+        ]
       },
+      // i inspect
+      {
+        "key": "i",
+        "name": "+Inspect",
+        "icon": "inspect",
+        "type": "bindings",
+        "bindings": [
+          // t inspect editor token
+          {
+            "key": "t",
+            "name": "Inspect editor token",
+            "icon": "keyboard",
+            "type": "command",
+            "command": "editor.action.inspectTMScopes"
+          },
+          // k inspect context key
+          {
+            "key": "k",
+            "name": "inspect context key(when clause)",
+            "icon": "keyboard",
+            "type": "commands",
+            "commands": [
+              // "workbench.action.toggleDevTools",
+              "workbench.action.inspectContextKeys"
+            ]
+          },
+          // K toggle keyboard troubleshooting
+          {
+            "key": "K",
+            "name": "toggle keybindings logging for troubleshooting",
+            "icon": "keyboard",
+            "type": "command",
+            "command": "workbench.action.toggleKeybindingsLog"
+          }
+        ]
+      },
+      // s show
       {
         "key": "s",
-        "name": "Show startup performance",
-        "icon": "keyboard",
-        "type": "command",
-        "command": "perfview.show"
+        "name": "+Show",
+        "icon": "search-show-context",
+        "type": "bindings",
+        "bindings": [
+          {
+            "key": "s",
+            "name": "Show startup performance",
+            "icon": "keyboard",
+            "type": "command",
+            "command": "perfview.show"
+          },
+          {
+            "key": "p",
+            "name": "Show process",
+            "icon": "keyboard",
+            "type": "command",
+            "command": "workbench.action.openProcessExplorer"
+          },
+          // m inspect keymapping
+          {
+            "key": "m",
+            "name": "inspect keymapping",
+            "icon": "keyboard",
+            "type": "command",
+            "command": "workbench.action.inspectKeyMappings"
+          },
+          // m inspect keymapping json
+          {
+            "key": "M",
+            "name": "inspect keymapping json",
+            "icon": "keyboard",
+            "type": "command",
+            "command": "workbench.action.inspectKeyMappingsJSON"
+          }
+        ]
       },
+      // x clear
       {
-        "key": "p",
-        "name": "Show process",
-        "icon": "keyboard",
-        "type": "command",
-        "command": "workbench.action.openProcessExplorer"
-      },
-      {
-        "key": "C",
+        "key": "x",
         "name": "clear recent commands",
         "icon": "keyboard",
         "type": "bindings",
         "bindings": [
           {
-            "key": "C",
+            "key": "c",
             "name": "clear recent commands",
             "icon": "keyboard",
             "type": "command",
             "command": "workbench.action.clearCommandHistory"
           },
           {
-            "key": "E",
+            "key": "e",
             "name": "clear recent open & open editor history & reopen editor history",
             "icon": "keyboard",
             "type": "command",
             "command": "workbench.action.clearEditorHistory"
           },
           {
-            "key": "R",
+            "key": "w",
             "name": "clear recent workspace",
             "icon": "keyboard",
             "type": "command",
@@ -98,78 +175,55 @@
           }
         ]
       },
+      // o open
       {
-        "key": "U",
-        "name": "Open User folder",
-        "icon": "keyboard",
-        "type": "command",
-        "command": "workbench.action.revealUserDataFolder"
-      },
-      {
-        "key": "P",
-        "name": "Open profile folder",
-        "icon": "keyboard",
-        "type": "command",
-        "command": "workbench.action.revealUserDataFolder"
-      },
-      // log
-      {
-        "key": "l",
-        "name": "+Log",
+        "key": "o",
+        "name": "+Open",
+        "icon": "open-preview",
         "type": "bindings",
         "bindings": [
           {
-            "key": "l",
-            "name": "Set Log level",
+            "key": "u",
+            "name": "Open User folder",
             "icon": "keyboard",
             "type": "command",
-            "command": "workbench.action.setLogLevel"
+            "command": "workbench.action.revealUserDataFolder"
+          },
+          {
+            "key": "p",
+            "name": "Open profile folder",
+            "icon": "keyboard",
+            "type": "command",
+            "command": "workbench.action.revealUserDataFolder"
+          },
+          {
+            "key": "f",
+            "name": "Open extensions folders",
+            "icon": "keyboard",
+            "type": "command",
+            "command": "workbench.extensions.action.openExtensionsFolder"
           },
           {
             "key": "s",
-            "name": "show logs",
-            "icon": "keyboard",
+            "name": "open setting sync folder",
             "type": "command",
-            "command": "workbench.action.showLogs"
+            "command": "workbench.userData.actions.openSyncBackupsFolder"
           }
         ]
       },
-      // key
+      // k key
       {
         "key": "k",
         "name": "+Keyboard",
         "type": "bindings",
         "bindings": [
+          // a define keybinding, can only be used inside keybinding json file
           {
-            "key": "k",
-            "name": "inspect context key(when clause)",
-            "icon": "keyboard",
-            "type": "commands",
-            "commands": [
-              "workbench.action.toggleDevTools",
-              "workbench.action.inspectContextKeys"
-            ]
-          },
-          {
-            "key": "m",
-            "name": "inspect keymapping",
+            "key": "a",
+            "name": "define keybinding",
             "icon": "keyboard",
             "type": "command",
-            "command": "workbench.action.inspectKeyMappings"
-          },
-          {
-            "key": "M",
-            "name": "inspect keymapping json",
-            "icon": "keyboard",
-            "type": "command",
-            "command": "workbench.action.inspectKeyMappingsJSON"
-          },
-          {
-            "key": "t",
-            "name": "toggle keybindings logging for troubleshooting",
-            "icon": "keyboard",
-            "type": "command",
-            "command": "workbench.action.toggleKeybindingsLog"
+            "command": "editor.action.defineKeybinding"
           }
         ]
       },
@@ -192,13 +246,6 @@
             "icon": "keyboard",
             "type": "command",
             "command": "workbench.action.restartExtensionHost"
-          },
-          {
-            "key": "f",
-            "name": "Open extensions folders",
-            "icon": "keyboard",
-            "type": "command",
-            "command": "workbench.extensions.action.openExtensionsFolder"
           },
           {
             "key": "v",
@@ -232,12 +279,6 @@
             ]
           }
         ]
-      },
-      {
-        "key": "s",
-        "name": "open setting sync folder",
-        "type": "command",
-        "command": "workbench.userData.actions.openSyncBackupsFolder"
       },
       {
         "key": "n",
