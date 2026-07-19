@@ -5,6 +5,7 @@
     "icon": "project",
     "type": "bindings",
     "bindings": [
+      // space frequent used project
       {
         "key": " ",
         "name": "(custom)open dotfiles folder in vscode",
@@ -12,50 +13,9 @@
         "command": "commands.openFolder",
         "args": "${userHome}/.config/.dotfiles/"
       },
+      // , continue working on
       {
-        "key": "a",
-        "name": "add folder to workspace",
-        "icon": "clock",
-        "type": "command",
-        "command": "workbench.action.addRootFolder"
-      },
-      {
-        "key": "n",
-        "name": "Open new empty workspace",
-        "icon": "empty-window",
-        "type": "command",
-        "command": "workbench.action.newWindow"
-      },
-      {
-        "key": "r",
-        "name": "Open recent folders/files",
-        "icon": "clock",
-        "type": "command",
-        "command": "workbench.action.openRecent"
-      },
-      {
-        "key": "c",
-        "name": "Duplicate workspace in new window",
-        "icon": "window",
-        "type": "command",
-        "command": "workbench.action.duplicateWorkspaceInNewWindow"
-      },
-      {
-        "key": "s",
-        "name": "save workspace",
-        "icon": "multiple-windows",
-        "type": "command",
-        "command": "workbench.action.saveWorkspaceAs"
-      },
-      {
-        "key": "d",
-        "name": "remove folder from workspace",
-        "icon": "x",
-        "type": "command",
-        "command": "workbench.action.removeRootFolder"
-      },
-      {
-        "key": "c",
+        "key": ",",
         "name": "continue working on",
         "icon": "clock",
         "type": "bindings",
@@ -76,12 +36,80 @@
           }
         ]
       },
+      // a add folder to workspace
+      {
+        "key": "a",
+        "name": "add folder to workspace",
+        "icon": "clock",
+        "type": "command",
+        // "command": "workbench.action.files.openFolderViaWorkspace" same effect
+        "command": "workbench.action.addRootFolder"
+      },
+      // n new empty workspace
+      {
+        "key": "n",
+        "name": "Open new empty workspace",
+        "icon": "empty-window",
+        "type": "command",
+        "command": "workbench.action.newWindow"
+      },
+      // r recent project
+      {
+        "key": "r",
+        "name": "Open recent folders/files",
+        "icon": "clock",
+        "type": "command",
+        "command": "workbench.action.openRecent"
+      },
+      // c duplicte workspace
+      {
+        "key": "c",
+        "name": "Duplicate workspace in new window",
+        "icon": "window",
+        "type": "command",
+        "command": "workbench.action.duplicateWorkspaceInNewWindow"
+      },
+      // s save workspace
+      {
+        "key": "s",
+        "name": "save workspace",
+        "icon": "multiple-windows",
+        "type": "command",
+        "command": "workbench.action.saveWorkspaceAs"
+      },
+      // d remove
+      {
+        "key": "d",
+        "name": "remove folder from workspace",
+        "icon": "x",
+        "type": "bindings",
+        "bindings": [
+          // d remove folder from workspace
+          {
+            "key": "d",
+            "name": "remove folder from workspace",
+            "icon": "x",
+            "type": "command",
+            "command": "workbench.action.removeRootFolder"
+          },
+          // r close remote connection
+          {
+            "key": "r",
+            "name": "close remote connection",
+            "icon": "folder-opened",
+            "type": "command",
+            "command": "workbench.action.remote.close"
+          }
+        ]
+      },
+      // o open project
       {
         "key": "o",
         "name": "open project",
         "icon": "clock",
         "type": "bindings",
         "bindings": [
+          // f open current file in new workspace
           {
             "key": "f",
             "name": "opened current file in new window as workspace",
@@ -89,66 +117,45 @@
             "type": "bindings",
             "command": "workbench.action.files.showOpenedFileInNewWindow"
           },
+          // F open current folder in new workspace
           {
             "key": "F",
-            "name": "open file in new window as workspace",
+            "name": "open current folder in new workspace",
             "icon": "folder-opened",
-            "type": "command",
-            "command": "workbench.action.files.openFileInNewWindow"
+            "type": "commands",
+            "commands": [
+              "workbench.action.files.openFileFolderInNewWindow"
+              // don't work??
+              // "workbench.action.acceptSelectedQuickOpenItem"
+            ]
           },
+          // o open with picker
           {
             "key": "o",
-            "name": "open folder in new window as workspace",
-            "icon": "folder-opened",
-            "type": "command",
-            "command": "workbench.action.files.openFolderInNewWindow"
-          },
-          {
-            "key": "O",
-            "name": "open file/folder in new window",
-            "icon": "folder-opened",
+            "name": "select file or folder to open in new workspace in new window",
+            "icon": "notebook-kernel-select",
             "type": "command",
             "command": "workbench.action.files.openFileFolderInNewWindow"
+            // "command": "workbench.action.files.openFileInNewWindow"
+            // "command": "workbench.action.files.openFolderInNewWindow"
           },
-          {
-            "key": "w",
-            "name": "open folder via workspace",
-            "icon": "folder-opened",
-            "type": "command",
-            "command": "workbench.action.files.openFolderViaWorkspace"
-          },
+          // r open github remote
           {
             "key": "r",
             "name": "open github repo without cloning",
-            "icon": "arrow-down",
+            "icon": "github",
             "type": "command",
             "command": "remoteHub.openRepository"
           }
         ]
       },
+      // O show remote menu
       {
-        //   workbench.view.remote
-        // workbench.action.remote.showMenu
         "key": "O",
-        "name": "open remote",
-        "icon": "clock",
+        "name": "show remote menu",
+        "icon": "folder-opened",
         "type": "bindings",
-        "bindings": [
-          {
-            "key": "O",
-            "name": "show remote menu",
-            "icon": "folder-opened",
-            "type": "bindings",
-            "command": "workbench.action.remote.showMenu"
-          },
-          {
-            "key": "d",
-            "name": "close remote connection",
-            "icon": "folder-opened",
-            "type": "command",
-            "command": "workbench.action.remote.close"
-          }
-        ]
+        "command": "workbench.action.remote.showMenu"
       }
     ]
   }
