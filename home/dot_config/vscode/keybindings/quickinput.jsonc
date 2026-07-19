@@ -1,35 +1,93 @@
 [
-  // workbench.action.quickPickManyToggle
-  // quickInput.accept
-  // quickInput.acceptInBackground
+  // UNSET
   // quickInput.first
-  // quickInput.hide
   // quickInput.last
-  // quickInput.next
-  // quickInput.nextSeparator
-  // quickInput.nextSeparatorWithQuickAccessFallback
-  // quickInput.pageNext
-  // quickInput.pagePrevious
-  // quickInput.previous
-  // quickInput.previousSeparator
-  // quickInput.previousSeparatorWithQuickAccessFallback
-  // quickInput.toggleCheckbox
-  // quickInput.toggleHover
-  /*   {
-    "key": "ctrl+space",
-    "command": "quickInput.toggleHover",
-    "when": "inQuickInput && quickInputType == 'quickPick' || inQuickInput && quickInputType == 'quickTree'"
-  } */
+  // workbench.action.alignQuickInputCenter
+  // workbench.action.alignQuickInputTop
+  // workbench.action.quickOpenNavigateNext
+  // workbench.action.quickOpenNavigatePrevious
   {
     "key": "ctrl+j",
-    // workbench.action.quickOpenNavigateNext
-    "command": "workbench.action.quickOpenSelectNext",
-    "when": "inQuickOpen"
+    // workbench.action.quickOpenSelectNext
+    "command": "quickInput.next",
+    "when": "inQuickInput"
   },
   {
     "key": "ctrl+k",
-    // workbench.action.quickOpenNavigatePrevious
-    "command": "workbench.action.quickOpenSelectPrevious",
-    "when": "inQuickOpen"
+    // workbench.action.quickOpenSelectPrevious
+    "command": "quickInput.previous",
+    "when": "inQuickInput && inputFocus"
+  },
+  {
+    // return focus from list to input box
+    "key": "ctrl+k",
+    "command": "workbench.action.focusQuickOpen",
+    "when": "inQuickOpen && listFocus "
+  },
+  {
+    "key": "ctrl+n",
+    "command": "quickInput.nextSeparatorWithQuickAccessFallback",
+    // "command": "quickInput.nextSeparator",
+    "when": "inQuickInput"
+  },
+  {
+    "key": "ctrl+p",
+    "command": "quickInput.previousSeparatorWithQuickAccessFallback",
+    // "command": "quickInput.previousSeparator",
+    "when": "inQuickInput"
+  },
+  {
+    "key": "ctrl+d",
+    "command": "quickInput.pageNext",
+    "when": "inQuickInput"
+  },
+  {
+    "key": "ctrl+u",
+    "command": "quickInput.pagePrevious",
+    "when": "inQuickInput"
+  },
+  {
+    "key": "ctrl+l",
+    // "command": "workbench.action.alternativeAcceptSelectedQuickOpenItem", Equivalent command but quick input is more general
+    "command": "quickInput.acceptInBackground",
+    "when": "(cursorAtEndOfQuickInputBox || !inputFocus) && quickInputType == 'quickPick' && inQuickInput"
+  },
+  {
+    "key": "l",
+    "command": "quickInput.acceptInBackground",
+    "when": "!inputFocus && listFocus && !(treeElementCanExpand || treeElementHasChild) && quickInputType == 'quickPick' && inQuickInput"
+  },
+  {
+    "key": "ctrl+h",
+    "command": "workbench.action.quickInputBack",
+    "when": "inQuickInput"
+  },
+  {
+    "key": "shift+space",
+    "command": "quickInput.toggleCheckbox",
+    "when": "inQuickInput"
+  },
+  {
+    "key": "ctrl+a",
+    "command": "workbench.action.quickPickManyToggle",
+    "when": "inQuickInput"
+  },
+  {
+    "key": "shift+h",
+    "command": "quickInput.toggleHover",
+    "when": "(cursorAtEndOfQuickInputBox || !inputFocus) && (quickInputType == 'quickPick' || quickInputType == 'quickTree') && inQuickInput"
   }
+  // default keybinding
+  // {
+  //   "key": "enter",
+  // workbench.action.acceptSelectedQuickOpenItem
+  //   "command": "quickInput.accept",
+  //   "when": "inQuickInput && !isComposing && quickInputType != 'quickWidget'"
+  // },
+  // { "key": "escape", "command": "quickInput.hide", "when": "inQuickInput" }
+  // {
+  //   "key": "escape",
+  //   "command": "workbench.action.closeQuickOpen",
+  //   "when": "inQuickOpen"
+  // }
 ]
