@@ -1,30 +1,4 @@
 [
-  // git.repositories.checkout
-  // git.repositories.checkoutDetached
-  // git.repositories.compareRef
-  // git.repositories.copyBranchName
-  // git.repositories.copyCommitHash
-  // git.repositories.copyStashName
-  // git.repositories.copyTagName
-  // git.repositories.createBranch
-  // git.repositories.createFrom
-  // git.repositories.createTag
-  // git.repositories.createWorktree
-  // git.repositories.deleteBranch
-  // git.repositories.deleteTag
-  // git.repositories.deleteWorktree
-  // git.repositories.merge
-  // git.repositories.openWorktree
-  // git.repositories.openWorktreeInNewWindow
-  // git.repositories.rebase
-  // git.repositories.stashApply
-  // git.repositories.stashCopyBranchName
-  // git.repositories.stashDrop
-  // git.repositories.stashPop
-  // git.repositories.stashView
-  // git.repositories.worktreeCopyBranchName
-  // git.repositories.worktreeCopyCommitHash
-  // git.repositories.worktreeCopyPath
   /*   {
     "key": "o",
     "name": "Close other repositories",
@@ -32,4 +6,372 @@
     "type": "command",
     "command": "git.closeOtherRepositories"
   } */
+  {
+    "key": "v",
+    "command": "whichkey.show",
+    "args": [
+      // space view common
+      {
+        "key": " ",
+        "name": "+View Common",
+        "icon": "x",
+        "type": "command",
+        "command": "runCommands",
+        "args": {
+          "commands": [
+            "vspacecode.space",
+            { "command": "whichkey.triggerKey", "args": "v" }
+          ]
+        }
+      },
+      // , terminal
+      {
+        "key": ",",
+        "name": "+Terminal",
+        "icon": "terminal",
+        "type": "bindings",
+        "bindings": [
+          {
+            "key": "i",
+            "name": "open in integrated terminal",
+            "icon": "terminal",
+            "type": "command",
+            "command": "scm.openInIntegratedTerminal"
+          },
+          {
+            "key": "x",
+            "name": "open in external terminal",
+            "icon": "link-external",
+            "type": "command",
+            "command": "scm.openInTerminal"
+          }
+        ]
+      },
+      // j checkout
+      {
+        "key": "j",
+        "name": "+Jump/Checkout",
+        "icon": "terminal",
+        "type": "bindings",
+        "bindings": [
+          // j checkout
+          {
+            "key": "j",
+            "name": "checkout",
+            "icon": "agent",
+            "type": "command",
+            "command": "git.repositories.checkout"
+          },
+          // d detach
+          {
+            "key": "d",
+            "name": "checkout detached",
+            "icon": "symbol-boolean",
+            "type": "command",
+            "command": "git.repositories.checkoutDetached"
+          }
+        ]
+      },
+      // v view
+      {
+        "key": "v",
+        "name": "+View",
+        "icon": "vr",
+        "type": "bindings",
+        "bindings": [
+          {
+            "key": "s",
+            "name": "selection mode singel",
+            "icon": "diff-single",
+            "type": "command",
+            "command": "workbench.scm.action.repositories.setSelectionMode.single"
+          },
+          {
+            "key": "m",
+            "name": "selection mode multiple",
+            "icon": "multiple-windows",
+            "type": "command",
+            "command": "workbench.scm.action.repositories.setSelectionMode.multiple"
+          },
+          // n sort by name
+          {
+            "key": "n",
+            "name": "sort by name",
+            "icon": "terminal-rename",
+            "type": "command",
+            "command": "workbench.scm.action.repositories.setSortKey.name"
+          },
+          // t sort by time
+          {
+            "key": "t",
+            "name": "sort by time",
+            "icon": "timeline-open",
+            "type": "command",
+            "command": "workbench.scm.action.repositories.setSortKey.discoveryTime"
+          },
+          // p sort by path
+          {
+            "key": "p",
+            "name": "sort by path",
+            "icon": "timeline-open",
+            "type": "command",
+            "command": "workbench.scm.action.repositories.setSortKey.path"
+          }
+        ]
+      },
+      // y copy
+      {
+        "key": "y",
+        "name": "+Copy",
+        "icon": "copy",
+        "type": "bindings",
+        "bindings": [
+          // n copy name
+          {
+            "key": "n",
+            "name": "copy name",
+            "icon": "diff-renamed",
+            "type": "command",
+            "command": "git.repositories.copyBranchName"
+          },
+          // y copy commit hash
+          {
+            "key": "y",
+            "name": "copy commit hash",
+            "icon": "git-commit",
+            "type": "command",
+            "command": "git.repositories.copyCommitHash"
+          },
+          // k copy stash name
+          {
+            "key": "k",
+            "name": "copy stash name",
+            "icon": "git-stash",
+            "type": "command",
+            "command": "git.repositories.copyStashName"
+          },
+          // t copy tag name
+          {
+            "key": "t",
+            "name": "copy tag name",
+            "icon": "tag",
+            "type": "command",
+            "command": "git.repositories.copyTagName"
+          }
+        ]
+      },
+      {
+        "key": "x",
+        "name": "compare",
+        "icon": "diff-renamed",
+        "type": "command",
+        "command": "git.repositories.compareRef"
+      },
+      {
+        "key": "m",
+        "name": "merge",
+        "icon": "merge",
+        "type": "command",
+        "command": "git.repositories.merge"
+      },
+      {
+        "key": "r",
+        "name": "rebase",
+        "icon": "redo",
+        "type": "command",
+        "command": "git.repositories.rebase"
+      },
+      // w worktree
+      {
+        "key": "w",
+        "name": "+Worktree",
+        "icon": "worktree",
+        "type": "bindings",
+        "bindings": [
+          {
+            "key": "a",
+            "name": "create worktree",
+            "icon": "add",
+            "type": "command",
+            "command": "git.repositories.createWorktree"
+          },
+          {
+            "key": "d",
+            "name": "delete worktree",
+            "icon": "chrome-minimize",
+            "type": "command",
+            "command": "git.repositories.deleteWorktree"
+          },
+          // y copy
+          {
+            "key": "y",
+            "name": "+Copy",
+            "icon": "copy",
+            "type": "bindings",
+            "bindings": [
+              // n copy name
+              {
+                "key": "n",
+                "name": "copy name",
+                "icon": "diff-renamed",
+                "type": "command",
+                "command": "git.repositories.worktreeCopyBranchName"
+              },
+              // y copy commit hash
+              {
+                "key": "y",
+                "name": "copy commit hash",
+                "icon": "git-commit",
+                "type": "command",
+                "command": "git.repositories.worktreeCopyCommitHash"
+              },
+              // p copy path
+              {
+                "key": "p",
+                "name": "copy path",
+                "icon": "git-stash",
+                "type": "command",
+                "command": "git.repositories.worktreeCopyPath"
+              }
+            ]
+          },
+          // o +Open
+          {
+            "key": "o",
+            "name": "+Open",
+            "icon": "open-preview",
+            "type": "bindings",
+            "bindings": [
+              // w open worktree in new window
+              {
+                "key": "w",
+                "name": "open worktree in new window",
+                "icon": "new-folder",
+                "type": "command",
+                "command": "git.repositories.openWorktreeInNewWindow"
+              },
+              // o open worktree
+              {
+                "key": "o",
+                "name": "open worktree",
+                "icon": "worktree-small",
+                "type": "command",
+                "command": "git.repositories.openWorktree"
+              }
+            ]
+          }
+        ]
+      },
+      // b +Branch
+      {
+        "key": "b",
+        "name": "+Branch",
+        "icon": "git-branch-staged-changes",
+        "type": "bindings",
+        "bindings": [
+          {
+            "key": "a",
+            "name": "create branch",
+            "icon": "git-branch-staged-changes",
+            "type": "command",
+            "command": "git.repositories.createBranch"
+          },
+          // b create from
+          {
+            "key": "b",
+            "name": "create from",
+            "icon": "git-branch",
+            "type": "command",
+            "command": "git.repositories.createFrom"
+          },
+          {
+            "key": "d",
+            "name": "delete branch",
+            "icon": "git-branch-staged-changes",
+            "type": "command",
+            "command": "git.repositories.deleteBranch"
+          }
+        ]
+      },
+      // t +Tag
+      {
+        "key": "t",
+        "name": "+Tag",
+        "icon": "git-branch-staged-changes",
+        "type": "bindings",
+        "bindings": [
+          {
+            "key": "a",
+            "name": "create tag",
+            "icon": "tag-add",
+            "type": "command",
+            "command": "git.repositories.createTag"
+          },
+          {
+            "key": "d",
+            "name": "delete tag",
+            "icon": "tag-remove",
+            "type": "command",
+            "command": "git.repositories.deleteTag"
+          }
+        ]
+      },
+      // k stash
+      {
+        "key": "k",
+        "name": "+Stash",
+        "icon": "git-stash",
+        "type": "bindings",
+        "bindings": [
+          // , view stash
+          {
+            "key": ",",
+            "name": "view stash",
+            "icon": "git-stash",
+            "type": "command",
+            "command": "git.repositories.stashView"
+          },
+          // p stash pop
+          {
+            "key": "p",
+            "name": "stash pop",
+            "icon": "git-stash",
+            "type": "command",
+            "command": "git.repositories.stashPop"
+          },
+          // d drop
+          {
+            "key": "d",
+            "name": "stash drop",
+            "icon": "git-stash",
+            "type": "command",
+            "command": "git.repositories.stashDrop"
+          },
+          // a apply
+          {
+            "key": "a",
+            "name": "stash apply",
+            "icon": "git-stash",
+            "type": "command",
+            "command": "git.repositories.stashApply"
+          },
+          // y stash copy branch name
+          {
+            "key": "y",
+            "name": "stash copy branch name",
+            "icon": "git-stash",
+            "type": "command",
+            "command": "git.repositories.stashCopyBranchName"
+          }
+        ]
+      }
+    ],
+    "when": "focusedView == 'workbench.scm.repositories'"
+  }
+  // workbench.scm.action.collapseAllRepositories
+  // workbench.scm.action.expandAllRepositories
+  // workbench.scm.action.focusNextInput
+  // workbench.scm.action.focusNextResourceGroup
+  // workbench.scm.action.focusPreviousInput
+  // workbench.scm.action.focusPreviousResourceGroup
 ]
