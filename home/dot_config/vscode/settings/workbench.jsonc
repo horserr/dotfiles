@@ -1,6 +1,15 @@
 {
+  // todo add browser settings
+  "workbench.activityBar.autoHide": true,
+  "workbench.activityBar.compact": true,
   "workbench.activityBar.location": "bottom",
+  "workbench.browser.enableRemoteProxy": false,
   "workbench.browser.newTabPlacement": "window",
+  "workbench.browser.openLocalhostLinks": true,
+  "workbench.browser.pageZoom": "Match Window",
+  "workbench.browser.searchEngine": "google",
+  "workbench.browser.showInTitleBar": true,
+  "workbench.cloudChanges.autoResume": "onReload",
   "workbench.colorCustomizations": {
     // NOTE: use this command to view current theme color workbench.action.generateColorTheme
     "[Catppuccin Mocha]": {
@@ -8,58 +17,134 @@
       "minimapSlider.background": "#8400ff3e"
     }
   },
+  "workbench.commandPalette.history": 50,
+  "workbench.commandPalette.preserveInput": false,
   "workbench.commandPalette.showAskInChat": false,
   // link: https://code.visualstudio.com/docs/languages/markdown#_use-the-markdown-preview-only-for-diffs
   "workbench.diffEditorAssociations": {
     "*.md": "vscode.markdown.preview.editor"
   },
-  // "workbench.editor.titleScrollbarSizing": "large",
+  "workbench.editor.alwaysShowEditorActions": false,
+  "workbench.editor.autoLockGroups": {
+    "agentSessionsWelcomePage": false,
+    "default": false,
+    "github-issues": false,
+    "imagePreview.previewEditor": false,
+    "jsProfileVisualizer.cpuprofile.table": false,
+    "jsProfileVisualizer.heapprofile.table": false,
+    "jsProfileVisualizer.heapsnapshot.table": false,
+    "jupyter-notebook": false,
+    "mainThreadWebview-browserPreview": true,
+    "mainThreadWebview-markdown.preview": false,
+    "mainThreadWebview-simpleBrowser.view": true,
+    "notebookOutputEditor": false,
+    "repl": false,
+    "terminalEditor": true,
+    "vscode.audioPreview": false,
+    "vscode.markdown.editor": false,
+    "vscode.videoPreview": false,
+    "workbench.editor.browser": false,
+    "workbench.editor.chatDebug": false,
+    "workbench.editor.chatSession": false,
+    "workbench.editor.processExplorer": true,
+    "workbench.editorinputs.searchEditorInput": false,
+    "workbench.editors.gettingStartedInput": false,
+    "workbench.input.interactive": false,
+    "zipViewer.GZipEdit": false,
+    "zipViewer.ZipEdit": false
+  },
   "workbench.editor.centeredLayoutAutoResize": false,
   "workbench.editor.centeredLayoutFixedWidth": false,
+  // automatically close empty group
   "workbench.editor.closeEmptyGroups": true,
+  // SIGNIFICANT
+  "workbench.editor.closeOnFileDelete": false,
+  "workbench.editor.customLabels.enabled": true,
   // WORKSPACE setting
   "workbench.editor.customLabels.patterns": {},
+  // WORKSPACE
+  "workbench.editor.defaultBinaryEditor": "",
+  "workbench.editor.doubleClickTabToToggleEditorGroupSizes": "expand",
+  // Controls if editors can be dragged out of the window to open them in a new window. Press and hold the `Alt` key while dragging to toggle this dynamically.
+  "workbench.editor.dragToOpenWindow": true,
   // move editor ection into title bar
   "workbench.editor.editorActionsLocation": "titleBar",
+  // Controls if the empty editor text hint should be visible in the editor.
+  "workbench.editor.empty.hint": "text",
   "workbench.editor.enablePreview": true,
+  "workbench.editor.enablePreviewFromCodeNavigation": true,
   "workbench.editor.enablePreviewFromQuickOpen": false,
+  // SIGNIFICANT
+  "workbench.editor.focusRecentEditorAfterClose": true,
   "workbench.editor.highlightModifiedTabs": true,
+  "workbench.editor.historyBasedLanguageDetection": true,
   "workbench.editor.labelFormat": "default",
+  "workbench.editor.languageDetectionHints": {
+    "notebookEditors": true,
+    "untitledEditors": true
+  },
   // limit the number of opened tabs
-  "workbench.editor.limit.enabled": false,
   // "workbench.editor.limit.excludeDirty": true,
+  // "workbench.editor.limit.excludeDirty": false,
   // "workbench.editor.limit.perEditorGroup": true,
   // "workbench.editor.limit.value": 6,
+  "workbench.editor.limit.enabled": false,
+  "workbench.editor.markdownDefaultEditorInAgentsWindow": true,
+  // Enables the use of mouse buttons four and five for commands 'Go Back' and 'Go Forward'.
+  "workbench.editor.mouseBackForwardToNavigate": true,
   "workbench.editor.navigationScope": "editorGroup",
-  //////////// NOTE: hide editor tabs
-  // "workbench.editor.showTabs": "single",
   "workbench.editor.openPositioning": "right",
+  "workbench.editor.openSideBySideDirection": "right",
   "workbench.editor.pinnedTabSizing": "shrink",
   "workbench.editor.pinnedTabsOnSeparateRow": true,
   // language detection
   "workbench.editor.preferHistoryBasedLanguageDetection": true,
-  // don't focus instead of opening another editor
+  "workbench.editor.preventPinnedEditorClose": "keyboardAndMouse",
+  // SIGNIFICANT
+  "workbench.editor.restoreEditors": true,
+  // SIGNIFICANT
+  "workbench.editor.restoreViewState": true,
+  // SIGNIFICANT don't focus instead of opening another editor
   "workbench.editor.revealIfOpen": false,
   "workbench.editor.scrollToSwitchTabs": true,
-  // don't use the recent view state
+  // don't share the recent view state between projects
   "workbench.editor.sharedViewState": false,
   // don't show icons
   "workbench.editor.showIcons": false,
   // don't show tab index
   "workbench.editor.showTabIndex": false,
+  //////////// NOTE: hide editor tabs
+  "workbench.editor.showTabs": "multiple",
   "workbench.editor.splitInGroupLayout": "vertical",
+  "workbench.editor.splitOnDragAndDrop": true,
   // control split behavior
   "workbench.editor.splitSizing": "auto",
   // don't show close button
   "workbench.editor.tabActionCloseVisibility": false,
+  "workbench.editor.tabActionUnpinVisibility": false,
   "workbench.editor.tabSizing": "shrink",
+  "workbench.editor.titleScrollbarSizing": "default",
+  "workbench.editor.untitled.labelFormat": "content",
+  // don't use modal editor
   "workbench.editor.useModal": "off",
+  // wrap tabs
+  "workbench.editor.wrapTabs": true,
   "workbench.editorAssociations": {
     "*.copilotmd": "vscode.markdown.preview.editor"
   },
+  // SIGNIFICANT large file confirmation
   "workbench.editorLargeFileConfirmation": 10,
+  "workbench.experimental.cloudChanges.partialMatches.enabled": true,
+  // SIGNIFICANT
+  "workbench.externalBrowser": "",
+  // SIGNIFICANT WORKSPACE Configure the opener to use for external URIs (http, https).
+  "workbench.externalUriOpeners": {},
+  // SIGNIFICANT
+  "workbench.hover.delay": 300,
+  "workbench.hover.reducedDelay": 300,
   "workbench.iconTheme": "catppuccin-latte",
   "workbench.layoutControl.enabled": false,
+  "workbench.layoutControl.type": "both",
   // WORKBENCH LIST
   "workbench.list.defaultFindMatchType": "fuzzy",
   "workbench.list.defaultFindMode": "filter",
@@ -72,16 +157,62 @@
   "workbench.list.smoothScrolling": true,
   // @link: https://github.com/microsoft/vscode/issues/68233#issuecomment-466475928
   "workbench.list.typeNavigationMode": "trigger",
+  "workbench.localHistory.enabled": true,
+  // SIGNIFICANT WORKSPACE
+  "workbench.localHistory.exclude": {},
+  "workbench.localHistory.maxFileEntries": 25,
+  "workbench.localHistory.maxFileSize": 256, // KB
+  // SIGNIFICANT
+  "workbench.localHistory.mergeWindow": 30, // seconds
+  // don't show navigation control
   "workbench.navigationControl.enabled": false,
   "workbench.notifications.position": "top-right",
+  "workbench.notifications.showInTitleBar": true,
+  "workbench.panel.defaultLocation": "bottom",
+  "workbench.panel.opensMaximized": "preserve",
   "workbench.panel.showLabels": false,
   "workbench.preferredDarkColorTheme": "Catppuccin Mocha",
   "workbench.preferredHighContrastColorTheme": "Default High Contrast",
   "workbench.preferredHighContrastLightColorTheme": "Default High Contrast Light",
   "workbench.preferredLightColorTheme": "Catppuccin Latte",
+  // SIGNIFICANT
+  "workbench.quickOpen.closeOnFocusLost": true,
+  "workbench.quickOpen.preserveInput": false,
+  "workbench.reduceMotion": "auto",
+  "workbench.reduceTransparency": "auto",
+  // Controls the hover feedback delay in milliseconds of the dragging area in between views/editors.
+  "workbench.sash.hoverDelay": 300,
+  // Controls the feedback area size in pixels of the dragging area in between views/editors. Set it to a larger value if you feel it's hard to resize views using the mouse.
+  "workbench.sash.size": 4,
+  // don't automatically show secondary sidebar
+  "workbench.secondarySideBar.defaultVisibility": "hidden",
+  // Controls whether the secondary side bar is enforced to always show maximized on startup and when there are no open editors, in layouts that support a maximized secondary side bar.
+  "workbench.secondarySideBar.forceMaximized": false,
   "workbench.secondarySideBar.showLabels": false,
+  "workbench.settings.alwaysShowAdvancedSettings": true,
+  // SIGNIFICANT
+  "workbench.settings.applyToAllProfiles": [],
+  "workbench.settings.editor": "json",
+  "workbench.settings.enableNaturalLanguageSearch": true,
+  "workbench.settings.openDefaultKeybindings": true,
+  "workbench.settings.openDefaultSettings": true,
+  "workbench.settings.useSplitJSON": true,
+  "workbench.shadows": true,
+  "workbench.sideBar.location": "left",
   "workbench.startupEditor": "none",
+  // When enabled, will show the watermark tips when no editor is open.
+  "workbench.tips.enabled": false,
+
   "workbench.statusBar.visible": true,
+  "workbench.tree.indent": 8,
+  "workbench.tree.renderIndentGuides": "onHover",
+  // SIGNIFICANT
+  "workbench.trustedDomains.promptInTrustedWorkspace": false,
+  // SIGNIFICANT WORKSPACE If an extension requests a hidden view to be shown, display a clickable status bar indicator instead.
+  "workbench.view.showQuietly": { "workbench.panel.output": true },
+
+  "workbench.view.alwaysShowHeaderActions": false,
+  // don't enable tree sticky scroll
   "workbench.tree.enableStickyScroll": false,
   "workbench.tree.stickyScrollMaxItemCount": 4
 }
