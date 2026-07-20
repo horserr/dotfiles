@@ -1,2 +1,157 @@
 [
+  {
+    "key": "v",
+    "command": "whichkey.show",
+    "args": [
+      // space view common
+      {
+        "key": " ",
+        "name": "+View Common",
+        "icon": "x",
+        "type": "command",
+        "command": "runCommands",
+        "args": {
+          "commands": [
+            "vspacecode.space",
+            { "command": "whichkey.triggerKey", "args": "v" }
+          ]
+        }
+      },
+      {
+        "key": "v",
+        "name": "+View",
+        "icon": "layout",
+        "type": "bindings",
+        "bindings": [
+          // workbench.scm.action.setListViewModeNavigation
+          // workbench.scm.action.setTreeViewModeNavigation
+          // l view as list
+          {
+            "key": "l",
+            "name": "view as list",
+            "icon": "list-filter",
+            "type": "command",
+            "command": "workbench.scm.action.setListViewMode"
+          },
+          {
+            "key": "t",
+            "name": "view as tree",
+            "icon": "list-tree",
+            "type": "command",
+            "command": "workbench.scm.action.setTreeViewMode"
+          },
+          {
+            "key": "n",
+            "name": "sort by name",
+            "icon": "terminal-rename",
+            "type": "command",
+            "command": "workbench.scm.action.setSortKey.name"
+          },
+          // p sort by path
+          {
+            "key": "p",
+            "name": "sort by path",
+            "icon": "pencil",
+            "type": "command",
+            "command": "workbench.scm.action.setSortKey.path"
+          },
+          // status
+          {
+            "key": "s",
+            "name": "sort by status",
+            "icon": "statusBar",
+            "type": "command",
+            "command": "workbench.scm.action.setSortKey.status"
+          }
+        ]
+      },
+      {
+        "key": "a",
+        "name": "stage file(s)",
+        "icon": "add",
+        "type": "command",
+        "command": "git.stageFile"
+      },
+      // o +Open
+      {
+        "key": "o",
+        "name": "+Open",
+        "icon": "add",
+        "type": "bindings",
+        "bindings": [
+          // o open file
+          {
+            "key": "o",
+            "name": "open file",
+            "icon": "open-preview",
+            "type": "command",
+            "command": "git.openFile"
+          },
+          // e open in explorer
+          {
+            "key": "e",
+            "name": "open in explorer",
+            "icon": "open-preview",
+            "type": "command",
+            "command": "git.revealInExplorer"
+          },
+          // x open changes
+          {
+            "key": "x",
+            "name": "open changes",
+            "icon": "compare-changes",
+            "type": "command",
+            "command": "git.openChange"
+          },
+          // X open HEAD file
+          {
+            "key": "X",
+            "name": "open HEAD file",
+            "icon": "open-preview",
+            "type": "command",
+            "command": "git.openHEADFile"
+          }
+        ]
+      },
+      // u undo/revert/unstage
+      {
+        "key": "u",
+        "name": "+Undo/Revert",
+        "icon": "notebook-revert",
+        "type": "bindings",
+        "bindings": [
+          {
+            "key": "u",
+            "name": "unstage file",
+            "icon": "add",
+            "type": "command",
+            // this command has no effect
+            "command": "git.unstageFile"
+          },
+          {
+            "key": "r",
+            "name": "revert file, discard changes",
+            "icon": "add",
+            "type": "command",
+            "command": "git.clean"
+          }
+        ]
+      }
+    ],
+    "when": "focusedView == 'workbench.scm'"
+  }
 ]
+
+// these commands are related to scm input box
+// scm.acceptInput
+// scm.clearInput
+// scm.clearValidation
+// scm.editor.triggerSetup
+// scm.forceViewNextCommit
+// scm.forceViewPreviousCommit
+// scm.input.triggerSetup
+// scm.openInIntegratedTerminal
+// scm.openInTerminal
+// scm.setActiveProvider
+// scm.viewNextCommit
+// scm.viewPreviousCommit
