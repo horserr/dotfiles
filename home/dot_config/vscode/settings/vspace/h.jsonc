@@ -1,4 +1,5 @@
 [
+  // no effect "workbench.action.url.openUrl",
   {
     "key": "h",
     "name": "+Help",
@@ -217,6 +218,14 @@
             "icon": "json",
             "type": "command",
             "command": "workbench.action.openDefaultKeybindingsFile"
+          },
+          // r default keybinding reference
+          {
+            "key": "r",
+            "name": "Open default key bindings reference(pdf)",
+            "icon": "defaultProfile-icon",
+            "type": "command",
+            "command": "workbench.action.keybindingsReference"
           }
         ]
       },

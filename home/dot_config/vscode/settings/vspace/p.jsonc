@@ -61,6 +61,15 @@
         "type": "command",
         "command": "workbench.action.openRecent"
       },
+      // R replace
+      {
+        "key": "R",
+        "name": "replace workspace",
+        "icon": "editor-layout",
+        "type": "command",
+        // "command": "workbench.action.files.openFolder"
+        "command": "workbench.action.files.openLocalFolder"
+      },
       // c duplicte workspace
       {
         "key": "c",
@@ -102,6 +111,14 @@
           }
         ]
       },
+      // x close workspace
+      {
+        "key": "x",
+        "name": "close workspace",
+        "icon": "auxiliarybar-close",
+        "type": "command",
+        "command": "workbench.action.closeFolder"
+      },
       // o open project
       {
         "key": "o",
@@ -136,6 +153,7 @@
             "icon": "notebook-kernel-select",
             "type": "command",
             "command": "workbench.action.files.openFileFolderInNewWindow"
+            // "command": "_files.pickFolderAndOpen",
             // "command": "workbench.action.files.openFileInNewWindow"
             // "command": "workbench.action.files.openFolderInNewWindow"
           },

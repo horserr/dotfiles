@@ -2,7 +2,7 @@
   "window.autoDetectColorScheme": true,
   "window.autoDetectHighContrast": true,
   // don't show input-box-like dialog
-  "window.commandCenter": true,
+  "window.commandCenter": false,
   "window.confirmBeforeClose": "never",
   "window.confirmSaveUntitledWorkspace": false,
   // window controls hidden, maximize, close icons

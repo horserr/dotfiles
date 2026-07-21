@@ -5,9 +5,10 @@
     "icon": "split-horizontal",
     "type": "bindings",
     "bindings": [
+      // w quick switch window
       {
         "key": "w",
-        "name": "Switch frame",
+        "name": "switch window",
         "icon": "multiple-windows",
         "type": "conditional",
         "bindings": [
@@ -27,12 +28,14 @@
           }
         ]
       },
+      // d close window
       {
         "key": "d",
         "name": "+Close Window",
         "icon": "x",
         "type": "bindings",
         "bindings": [
+          // d close current window
           {
             "key": "d",
             "name": "Close current window",
@@ -40,6 +43,7 @@
             "type": "command",
             "command": "workbench.action.closeWindow"
           },
+          // o close other window
           {
             "key": "o",
             "name": "Close other windows",
@@ -47,6 +51,7 @@
             "type": "command",
             "command": "workbench.action.closeOtherWindows"
           },
+          // a close all windows
           {
             "key": "a",
             "name": "Close all windows",
@@ -56,20 +61,7 @@
           }
         ]
       },
-      {
-        "key": "r",
-        "name": "Reload window",
-        "icon": "refresh",
-        "type": "command",
-        "command": "workbench.action.reloadWindow"
-      },
-      {
-        "key": "R",
-        "name": "Reload window with extensions disabled",
-        "icon": "refresh",
-        "type": "command",
-        "command": "workbench.action.reloadWindowWithExtensionsDisabled"
-      },
+      // , list window
       {
         "key": ",",
         "name": "List windows",
@@ -77,6 +69,7 @@
         "type": "command",
         "command": "workbench.action.quickSwitchWindow"
       },
+      // n new empty window
       {
         "key": "n",
         "name": "Open new empty window",

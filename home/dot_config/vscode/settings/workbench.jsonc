@@ -115,7 +115,7 @@
   "workbench.editor.showTabIndex": false,
   //////////// NOTE: hide editor tabs
   "workbench.editor.showTabs": "multiple",
-  "workbench.editor.splitInGroupLayout": "vertical",
+  "workbench.editor.splitInGroupLayout": "horizontal",
   "workbench.editor.splitOnDragAndDrop": true,
   // control split behavior
   "workbench.editor.splitSizing": "auto",
@@ -194,9 +194,9 @@
   "workbench.settings.applyToAllProfiles": [],
   "workbench.settings.editor": "json",
   "workbench.settings.enableNaturalLanguageSearch": true,
-  "workbench.settings.openDefaultKeybindings": true,
-  "workbench.settings.openDefaultSettings": true,
-  "workbench.settings.useSplitJSON": true,
+  "workbench.settings.openDefaultKeybindings": false,
+  "workbench.settings.openDefaultSettings": false,
+  "workbench.settings.useSplitJSON": false,
   "workbench.shadows": true,
   "workbench.sideBar.location": "left",
   "workbench.startupEditor": "none",
@@ -209,7 +209,9 @@
   // SIGNIFICANT
   "workbench.trustedDomains.promptInTrustedWorkspace": false,
   // SIGNIFICANT WORKSPACE If an extension requests a hidden view to be shown, display a clickable status bar indicator instead.
-  "workbench.view.showQuietly": { "workbench.panel.output": true },
+  "workbench.view.showQuietly": {
+    /*  "workbench.panel.output": true  */
+  },
 
   "workbench.view.alwaysShowHeaderActions": false,
   // don't enable tree sticky scroll

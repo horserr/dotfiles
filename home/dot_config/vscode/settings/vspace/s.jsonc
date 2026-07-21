@@ -66,6 +66,7 @@
             "name": "select all hightligt, select all occurrence of find match",
             "icon": "collection-small",
             "type": "command",
+            // "command": "editor.action.selectAllMatches"
             "command": "editor.action.selectHighlights"
           },
           // o select to bracket
@@ -76,18 +77,10 @@
             "type": "command",
             "command": "editor.action.selectToBracket"
           },
-          // a select all matches
-          {
-            "key": "a",
-            "name": "select all matches",
-            "icon": "bracket",
-            "type": "command",
-            "command": "editor.action.selectAllMatches"
-          },
           // , add selection
           {
             "key": ",",
-            "name": "+Add selection, not recommend to use. vim.visual mode already cover this",
+            "name": "+Add selection, not recommend to use. vim.visual mode already covers this",
             "icon": "selection",
             "type": "transient",
             "bindings": [

@@ -72,6 +72,28 @@
         "icon": "multiple-windows",
         "type": "command",
         "command": "workbench.action.output.show.terminal"
+      },
+      // log
+      {
+        "key": "l",
+        "name": "+Log",
+        "type": "bindings",
+        "bindings": [
+          {
+            "key": "l",
+            "name": "Set Log level",
+            "icon": "keyboard",
+            "type": "command",
+            "command": "workbench.action.setLogLevel"
+          },
+          {
+            "key": "s",
+            "name": "show logs",
+            "icon": "keyboard",
+            "type": "command",
+            "command": "workbench.action.showLogs"
+          }
+        ]
       }
       // workbench.action.setDefaultLogLevel
       // workbench.action.setLogLevel

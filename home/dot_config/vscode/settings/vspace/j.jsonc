@@ -1,16 +1,22 @@
 [
   // note, sometimes 'go to' commands will display a peek widget this behavior is related to 'editor.definitionLinkOpensInPeek'
-  // todo goto selection anchor
-  // "command": "javascript.goToProjectConfig"
-  // "command": "jupyter.interactive.goToCode"
-  // "command": "typescript.goToProjectConfig"
+
+  // ANCHOR: vscode vim already covers these
+  // editor.action.selectFromAnchorToCursor
+  // editor.action.setSelectionAnchor
+  // editor.action.goToSelectionAnchor
+
+  // UNSET
+  // editor.closeCallHierarchy
+  // editor.closeTypeHierarchy
+  // "javascript.goToProjectConfig"
+  // "jupyter.interactive.goToCode"
+  // "typescript.goToProjectConfig"
   {
     "key": "j",
     "name": "+Jump/Join",
     "icon": "gather",
     "type": "bindings",
-    // editor.closeCallHierarchy
-    // editor.closeTypeHierarchy
     "bindings": [
       // space goto symbol
       {
@@ -245,39 +251,6 @@
             "icon": "arrow-up",
             "type": "command",
             "command": "editor.action.wordHighlight.prev"
-          }
-        ]
-      },
-      // z goto fold
-      {
-        "key": "z",
-        "name": "+Goto fold",
-        "icon": "fold",
-        "type": "transient",
-        "bindings": [
-          // h go up folding
-          {
-            "key": "h",
-            "name": "goto up folding",
-            "icon": "arrow-circle-left",
-            "type": "command",
-            "command": "editor.gotoParentFold"
-          },
-          // j goto next folding
-          {
-            "key": "j",
-            "name": "goto next folding",
-            "icon": "arrow-circle-down",
-            "type": "command",
-            "command": "editor.gotoNextFold"
-          },
-          // k goto previous folding
-          {
-            "key": "k",
-            "name": "goto previous folding",
-            "icon": "arrow-circle-up",
-            "type": "command",
-            "command": "editor.gotoPreviousFold"
           }
         ]
       }

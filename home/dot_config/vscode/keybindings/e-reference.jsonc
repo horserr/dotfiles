@@ -1,42 +1,44 @@
 [
   //   "command": "revealReference",
   {
+    // when focus reference list, ctrl+j to navigate
     "key": "ctrl+j",
     "command": "goToNextReference",
-    // when focus reference list
     "when": "referenceSearchVisible && listFocus"
   },
   {
+    // when focus reference editor, ctrl+j to navigate
     "key": "ctrl+j",
     "command": "goToNextReferenceFromEmbeddedEditor",
-    // when focus reference editor
     "when": "inReferenceSearchEditor"
   },
   {
+    // when not focus reference widget but editor, ctrl+j to return focus to peek widget(reference)
     "key": "ctrl+j",
     "command": "runCommands",
     "args": { "commands": ["togglePeekWidgetFocus", "togglePeekWidgetFocus"] },
-    // when not focus reference widget but editor
     "when": "referenceSearchVisible && !listFocus && !inReferenceSearchEditor"
   },
   {
+    // when focus reference list, ctrl+k to navigate
     "key": "ctrl+k",
     "command": "goToPreviousReference",
-    // when focus reference list
     "when": "(referenceSearchVisible && listFocus) || inReferenceSearchEditor"
   },
   {
+    // when focus reference editor, ctrl+k to navigate
     "key": "ctrl+k",
     "command": "goToPreviousReferenceFromEmbeddedEditor",
-    // when focus reference editor
     "when": "inReferenceSearchEditor"
   },
   {
+    // when focus reference editor, ctrl+l to focus reference list
     "key": "ctrl+l",
     "command": "togglePeekWidgetFocus",
     "when": "inReferenceSearchEditor"
   },
   {
+    // when focus reference list, ctrl+l to focus reference editor
     "key": "ctrl+h",
     "command": "togglePeekWidgetFocus",
     "when": "referenceSearchVisible && listFocus"

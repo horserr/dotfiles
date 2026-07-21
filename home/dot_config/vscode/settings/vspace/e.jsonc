@@ -101,6 +101,7 @@
         "icon": "x",
         "type": "bindings",
         "bindings": [
+          // d close current group
           {
             "key": "d",
             "name": "Close editor groups",
@@ -108,6 +109,7 @@
             "type": "command",
             "command": "workbench.action.closeEditorsInGroup"
           },
+          // space close other group
           {
             "key": " ",
             "name": "Close other editor groups",
@@ -115,6 +117,7 @@
             "type": "command",
             "command": "workbench.action.closeEditorsInOtherGroups"
           },
+          // a close all group
           {
             "key": "a",
             "name": "Close all editor groups",
@@ -122,6 +125,7 @@
             "type": "command",
             "command": "workbench.action.closeAllGroups"
           },
+          // h close left editor group
           {
             "key": "h",
             "name": "close left editor groups",
@@ -132,6 +136,7 @@
               "workbench.action.closeEditorsInGroup"
             ]
           },
+          // j close below group
           {
             "key": "j",
             "name": "close below editor groups",
@@ -142,6 +147,7 @@
               "workbench.action.closeEditorsInGroup"
             ]
           },
+          // k close above group
           {
             "key": "k",
             "name": "close above editor groups",
@@ -152,6 +158,7 @@
               "workbench.action.closeEditorsInGroup"
             ]
           },
+          // l close right group
           {
             "key": "l",
             "name": "Close right editor group",
@@ -164,6 +171,7 @@
           }
         ]
       },
+      // L toggle editor group lock
       {
         "key": "L",
         "name": "Toggle editor group lock",
@@ -171,7 +179,7 @@
         "type": "command",
         "command": "workbench.action.toggleEditorGroupLock"
       },
-      // copy editor group
+      // c copy editor group
       {
         "key": "c",
         "name": "+Copy editor group",

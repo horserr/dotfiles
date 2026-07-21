@@ -12,7 +12,7 @@
     "name": "repeat recent command",
     "icon": "redo",
     "type": "command",
-    "commands":"whichkey.repeatMostRecent"
+    "commands":"whichkey.repeatRecent"
   },
   {
     "key": "*",

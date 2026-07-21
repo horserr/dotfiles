@@ -1,4 +1,7 @@
 [
   // - pr.dismissNotification
   // - pr.markAllCopilotNotificationsAsRead
+  // editor.action.nextCommentingRange
+  // editor.action.previousCommentingRange
+  // workbench.action.addComment
 ]

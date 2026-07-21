@@ -502,6 +502,7 @@
             "name": "focus tab",
             "icon": "x",
             "type": "commands",
+            "exit": true,
             "commands": [
               "workbench.action.terminal.focusTabs",
               "quickInput.hide"

@@ -1,0 +1,10 @@
+[
+  // notebook.cell.changeLanguage
+  // notebook.cell.chat.start
+  // notebook.cell.collapseCellInput
+  // notebook.cell.collapseCellOutput
+  // notebook.cell.expandCellInput
+  // notebook.cell.expandCellOutput
+  // notebook.cell.split
+  // notebook.cell.toggleOutputScrolling
+]

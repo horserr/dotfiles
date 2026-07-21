@@ -110,6 +110,13 @@
             "command": "editor.action.removeDuplicateLines"
           },
           {
+            "key": "r",
+            "name": "reverse lines",
+            "icon": "notebook-revert",
+            "type": "command",
+            "command": "editor.action.reverseLines"
+          },
+          {
             "key": "s",
             "name": "Sort lines in ascending order",
             "icon": "chevron-left",
@@ -348,6 +355,14 @@
             "icon": "x",
             "type": "command",
             "command": "editor.toggleFold"
+          },
+          // , goto bracket
+          {
+            "key": ",",
+            "name": "goto bracket",
+            "icon": "bracket",
+            "type": "command",
+            "command": "editor.action.jumpToBracket"
           },
           // c fold/close
           {
@@ -710,12 +725,38 @@
               }
             ]
           },
+          // g goto fold
           {
-            "key": "?",
-            "name": "Search keybindings",
-            "icon": "keyboard",
-            "type": "command",
-            "command": "whichkey.searchBindings"
+            "key": "g",
+            "name": "+Goto fold",
+            "icon": "fold",
+            "type": "transient",
+            "bindings": [
+              // h go up folding
+              {
+                "key": "h",
+                "name": "goto up folding",
+                "icon": "arrow-circle-left",
+                "type": "command",
+                "command": "editor.gotoParentFold"
+              },
+              // j goto next folding
+              {
+                "key": "j",
+                "name": "goto next folding",
+                "icon": "arrow-circle-down",
+                "type": "command",
+                "command": "editor.gotoNextFold"
+              },
+              // k goto previous folding
+              {
+                "key": "k",
+                "name": "goto previous folding",
+                "icon": "arrow-circle-up",
+                "type": "command",
+                "command": "editor.gotoPreviousFold"
+              }
+            ]
           }
         ]
       }

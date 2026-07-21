@@ -12,6 +12,14 @@
         "type": "command",
         "command": "markdown.togglePreview"
       },
+      // ' show preview to side
+      {
+        "key": "'",
+        "name": "show preview to side",
+        "icon": "preview",
+        "type": "command",
+        "command": "markdown.showPreviewToSide"
+      },
       {
         "key": "c",
         "name": "+Buffer commands",
