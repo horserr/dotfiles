@@ -7,8 +7,11 @@
     },
     {
       // multi-cursor end of each line
-      "before": ["A"],
-      "commands": ["editor.action.insertCursorAtEndOfEachLineSelected"]
+      "before": ["<C-v>"],
+      "commands": [
+        "editor.action.insertCursorAtEndOfEachLineSelected",
+        "extension.vim_escape"
+      ]
     },
     {
       // press v again to enter line selection

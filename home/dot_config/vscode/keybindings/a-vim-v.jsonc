@@ -1,0 +1,29 @@
+[
+  {
+    // vspacecode -> line/selection
+    "key": "shift+l",
+    "command": "runCommands",
+    "args": {
+      "commands": [
+        "vspacecode.space",
+        { "command": "whichkey.triggerKey", "args": "x" },
+        { "command": "whichkey.triggerKey", "args": "l" }
+      ]
+    },
+    "when": "editorTextFocus && vim.mode == 'VisualLine'"
+  },
+  {
+    // when in vim visual block mode, press ctrl+v again to
+    // enter multi-cursor mode or end of each line
+    "key": "ctrl+v",
+    "command": "runCommands",
+    "args": {
+      "commands": [
+        { "command": "vim.remap", "args": { "after": ["A", "<C-o>"] } }
+        // { "command": "vim.remap", "args": { "after": ["A", "<C-c>"] } }
+        // { "command": "vim.remap", "args": { "after": ["A", "<C-[>"] } }
+      ]
+    },
+    "when": "editorTextFocus && vim.mode == 'VisualBlock'"
+  }
+]
