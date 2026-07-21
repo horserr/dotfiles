@@ -1,9 +1,0 @@
-{
-  "[magit]": {
-    "editor.lineNumbers": "off",
-    "editor.minimap.enabled": false,
-    "editor.renderWhitespace": "none"
-  },
-  "magit.display-buffer-function": "other-column",
-  "magit.forge-enabled": true
-}
