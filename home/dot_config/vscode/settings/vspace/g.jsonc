@@ -2,7 +2,6 @@
   // git.close close repository
   // git.closeOtherRepositories
   // git.compareWithWorkspace
-  // git.openFile
   // git.viewCommit
 
   // git.acceptMerge
@@ -78,6 +77,88 @@
           }
         ]
       },
+      // s status
+      {
+        "key": "s",
+        "name": "Status",
+        "icon": "preview",
+        "type": "command",
+        "command": "workbench.view.scm"
+      },
+      // l log
+      {
+        "key": "l",
+        "name": "log",
+        "icon": "log-in",
+        "type": "command",
+        "command": "timeline.focus"
+      },
+      // L log graph
+      {
+        "key": "L",
+        "name": "log graph",
+        "icon": "log-in",
+        "type": "command",
+        "command": "workbench.scm.history.focus"
+      },
+      // view repo
+      {
+        "key": "v",
+        "name": "view repo",
+        "icon": "vira-logo",
+        "type": "command",
+        "command": "workbench.scm.repositories.focus"
+      },
+      // c commit
+      {
+        "key": "c",
+        "name": "+Commit",
+        "icon": "source-control",
+        "type": "bindings",
+        "bindings": [
+          {
+            "key": "c",
+            "name": "commit",
+            "icon": "arrow-down",
+            "type": "command",
+            // "command": "git.commit"
+            "command": "git.commitStaged"
+          },
+          {
+            "key": "m",
+            "name": "commit amend",
+            "icon": "arrow-down",
+            "type": "command",
+            "command": "git.commitAmend"
+          },
+          {
+            "key": "a",
+            "name": "commit all",
+            "icon": "arrow-down",
+            "type": "command",
+            "command": "git.commitAll"
+          }
+          // git.commitAllAmend
+          // git.commitAllAmendNoVerify
+          // git.commitAllNoVerify
+          // git.commitAllSigned
+          // git.commitAllSignedNoVerify
+          // git.commitAmendNoVerify
+          // git.commitEmpty
+          // git.commitEmptyNoVerify
+          // git.commitMessageAccept
+          // git.commitMessageDiscard
+          // git.commitNoVerify
+          // git.commitSigned
+          // git.commitSignedNoVerify
+          // git.commitStaged
+          // git.commitStagedAmend
+          // git.commitStagedAmendNoVerify
+          // git.commitStagedNoVerify
+          // git.commitStagedSigned
+          // git.commitStagedSignedNoVerify
+        ]
+      },
       // a add / stage
       {
         "key": "a",
@@ -91,12 +172,11 @@
             "name": "stage current file",
             "icon": "arrow-down",
             "type": "command",
-            // "command": "git.stage"
-            "command": "magit.stage-file"
+            "command": "git.stage"
           },
-          // a stage selected lines
+          // space stage selected lines
           {
-            "key": "a",
+            "key": " ",
             "name": "stage the selected lines",
             "icon": "file",
             "type": "command",
@@ -110,29 +190,38 @@
             "type": "command",
             "command": "git.diff.stageHunk"
           },
-          // space stage all tracked
+          // space stage
           {
-            "key": " ",
-            "name": "stage all tracked files",
-            "icon": "arrow-down",
-            "type": "command",
-            "command": "git.stageAllTracked"
-          },
-          // u staged all untracked
-          {
-            "key": "u",
-            "name": "stage all untracked files",
-            "icon": "arrow-down",
-            "type": "command",
-            "command": "git.stageAllUntracked"
-          },
-          // stage all merged-conflicting files
-          {
-            "key": "m",
-            "name": "stage all merged files",
-            "icon": "arrow-down",
-            "type": "command",
-            "command": "git.stageAllMerge"
+            "key": "a",
+            "name": "+Stage All",
+            "icon": "notebook-kernel-select",
+            "type": "bindings",
+            "bindings": [
+              // space stage all tracked
+              {
+                "key": " ",
+                "name": "stage all tracked files",
+                "icon": "arrow-down",
+                "type": "command",
+                "command": "git.stageAllTracked"
+              },
+              // u staged all untracked
+              {
+                "key": "u",
+                "name": "stage all untracked files",
+                "icon": "arrow-down",
+                "type": "command",
+                "command": "git.stageAllUntracked"
+              },
+              // stage all merged-conflicting files
+              {
+                "key": "m",
+                "name": "stage all merged files",
+                "icon": "arrow-down",
+                "type": "command",
+                "command": "git.stageAllMerge"
+              }
+            ]
           }
         ]
       },
@@ -149,13 +238,11 @@
             "name": "unstage current file",
             "icon": "arrow-down",
             "type": "command",
-            // this command has no effect
-            // "command": "git.unstageFile"
             "command": "git.unstage"
           },
-          // u unstage selected line
+          // space unstage selected line
           {
-            "key": "u",
+            "key": " ",
             "name": "unstage selected lines",
             "icon": "arrow-down",
             "type": "command",
@@ -186,14 +273,6 @@
             "command": "git.unstageAll"
           }
         ]
-      },
-      // c commit
-      {
-        "key": "c",
-        "name": "+Commit",
-        "icon": "source-control",
-        "type": "command",
-        "command": "magit.commit"
       },
       // p push
       {
@@ -303,36 +382,6 @@
           }
         ]
       },
-      // f fetch
-      {
-        "key": "f",
-        "name": "+Fetch",
-        "icon": "source-control",
-        "type": "bindings",
-        "bindings": [
-          {
-            "key": "f",
-            "name": "fetch",
-            "icon": "arrow-down",
-            "type": "command",
-            "command": "git.fetch"
-          },
-          {
-            "key": "a",
-            "name": "fetch all",
-            "icon": "arrow-down",
-            "type": "command",
-            "command": "git.fetchAll"
-          },
-          {
-            "key": "p",
-            "name": "fetch prune",
-            "icon": "arrow-down",
-            "type": "command",
-            "command": "git.fetchPrune"
-          }
-        ]
-      },
       // j jump, switch, checkout
       {
         "key": "j",
@@ -346,14 +395,6 @@
             "icon": "arrow-down",
             "type": "command",
             "command": "git.checkout"
-          },
-          {
-            "key": "w",
-            "name": "switch to another worktree",
-            "icon": "arrow-down",
-            "type": "command",
-            // "command": "git.openWorktree"
-            "command": "git.openWorktreeInNewWindow"
           },
           {
             "key": "d",
@@ -492,13 +533,31 @@
         "icon": "arrow-down",
         "type": "bindings",
         "bindings": [
+          // a worktree add
           {
-            "key": "w",
+            "key": "a",
             "name": "worktree add",
             "icon": "arrow-down",
             "type": "command",
             "command": "git.createWorktree"
           },
+          // j switch worktree
+          {
+            "key": "j",
+            "name": "switch to another worktree",
+            "icon": "arrow-down",
+            "type": "command",
+            "command": "git.openWorktreeInNewWindow"
+          },
+          // r worktree replace
+          {
+            "key": "r",
+            "name": "replace worktree",
+            "icon": "replace",
+            "type": "command",
+            "command": "git.openWorktree"
+          },
+          // M worktree migrate
           {
             // link: https://github.com/microsoft/vscode-docs/blob/main/release-notes/v1_104.md#preview-and-migrate-git-worktree-changes
             "key": "M",
@@ -508,6 +567,7 @@
             "command": "git.migrateWorktreeChanges"
             // when encounter migrate conflicts, use git.openWorktreeMergeEditor
           },
+          // d worktree delete
           {
             "key": "d",
             "name": "worktree delete",
@@ -515,6 +575,7 @@
             "type": "command",
             "command": "git.deleteWorktree"
           },
+          // m worktree merge
           {
             "key": "m",
             "name": "worktree merge",
@@ -637,31 +698,34 @@
         "icon": "file",
         "type": "bindings",
         "bindings": [
+          // , stash view list
           {
-            "key": "v",
-            "name": "stash view",
-            "icon": "diff",
+            "key": ",",
+            "name": "stash view list",
+            "icon": "git-stash",
             "type": "command",
             "command": "git.stashView"
           },
+          // K stash all tracked
+          {
+            "key": "K",
+            "name": "stash all tracked",
+            "icon": "git-stash",
+            "type": "command",
+            "command": "git.stash"
+          },
+          // s stash staged
           {
             "key": "s",
             "name": "stash staged",
-            "icon": "diff",
+            "icon": "git-stash",
             "type": "command",
             "command": "git.stashStaged"
           },
           {
-            "key": "k",
-            "name": "stash all tracked",
-            "icon": "diff",
-            "type": "command",
-            "command": "git.stash"
-          },
-          {
             "key": "u",
             "name": "stash all tracked and untracked, no ignored",
-            "icon": "diff",
+            "icon": "git-stash",
             "type": "command",
             "command": "git.stashIncludeUntracked"
           },
@@ -794,29 +858,35 @@
           }
         ]
       },
-      // b blame
+      // f fetch
       {
-        "key": "b",
-        "name": "Blame file",
-        "icon": "file",
-        "type": "command",
-        "command": "magit.blame-file"
-      },
-      // m magit
-      {
-        "key": "m",
-        "name": "Magit dispatch",
-        "icon": "repo",
-        "type": "command",
-        "command": "magit.dispatch"
-      },
-      // s status
-      {
-        "key": "s",
-        "name": "Status",
-        "icon": "preview",
-        "type": "command",
-        "command": "magit.status"
+        "key": "f",
+        "name": "+Fetch",
+        "icon": "source-control",
+        "type": "bindings",
+        "bindings": [
+          {
+            "key": "f",
+            "name": "fetch",
+            "icon": "arrow-down",
+            "type": "command",
+            "command": "git.fetch"
+          },
+          {
+            "key": "a",
+            "name": "fetch all",
+            "icon": "arrow-down",
+            "type": "command",
+            "command": "git.fetchAll"
+          },
+          {
+            "key": "p",
+            "name": "fetch prune",
+            "icon": "arrow-down",
+            "type": "command",
+            "command": "git.fetchPrune"
+          }
+        ]
       }
     ]
   }

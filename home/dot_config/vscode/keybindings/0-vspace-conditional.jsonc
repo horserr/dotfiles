@@ -1,4 +1,9 @@
 [
+  {
+    "key": "shift+/",
+    "command": "whichkey.searchBindings",
+    "when": "whichkeyVisible"
+  },
   /**************
    * VSPACECODE *
    **************/

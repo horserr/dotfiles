@@ -1,0 +1,268 @@
+[
+  // todo use whichkey.register to refactor this setting menu
+  // github.timeline.openOnGitHub
+  // remoteHub.timeline.compareWithSelected
+  // remoteHub.timeline.copyCommitId
+  // remoteHub.timeline.copyCommitMessage
+  // remoteHub.timeline.openDiff
+  // remoteHub.timeline.openOnAzureRepos
+  // remoteHub.timeline.openOnGitHub
+  // remoteHub.timeline.selectForCompare
+  // workbench.action.localHistory.compareWithFile
+  // workbench.action.localHistory.compareWithPrevious
+  // workbench.action.localHistory.compareWithSelected
+  // workbench.action.localHistory.create
+  // workbench.action.localHistory.delete
+  // workbench.action.localHistory.deleteAll
+  // workbench.action.localHistory.open
+  // workbench.action.localHistory.rename
+  // workbench.action.localHistory.restore
+  // workbench.action.localHistory.restoreViaEditor
+  // workbench.action.localHistory.restoreViaPicker
+  // workbench.action.localHistory.revealInOS
+  // workbench.action.localHistory.selectForCompare
+  {
+    "key": "v",
+    "command": "whichkey.show",
+    "args": [
+      // space view common
+      {
+        "key": " ",
+        "name": "+View Common",
+        "icon": "x",
+        "type": "command",
+        "command": "runCommands",
+        "args": {
+          "commands": [
+            "vspacecode.space",
+            { "command": "whichkey.triggerKey", "args": "v" }
+          ]
+        }
+      },
+      // r refresh
+      {
+        "key": "r",
+        "name": "timeline refresh",
+        "icon": "refresh",
+        "type": "command",
+        "command": "timeline.refresh"
+      },
+      {
+        "key": "f",
+        "name": "toggle follow active editor",
+        "icon": "person-follow",
+        "type": "command",
+        "command": "timeline.toggleFollowActiveEditor"
+      },
+      {
+        "key": "v",
+        "name": "toggle visibility",
+        "icon": "chat-view-icon",
+        "type": "command",
+        "command": "timeline.toggleVisibility"
+      },
+      {
+        "key": "g",
+        "name": "toggle exclude git",
+        "icon": "history",
+        "type": "command",
+        "command": "timeline.toggleExcludeSource:git-history"
+      },
+      {
+        "key": "l",
+        "name": "toggle exclude local history",
+        "icon": "history",
+        "type": "command",
+        "command": "timeline.toggleExcludeSource:timeline.localHistory"
+      },
+      // x compare
+      {
+        "key": "x",
+        "name": "+Compare",
+        "icon": "compare-changes",
+        "type": "bindings",
+        "bindings": [
+          {
+            "key": "o",
+            "name": "open change",
+            "icon": "compare-changes",
+            "type": "command",
+            "command": "git.timeline.openDiff"
+          },
+          {
+            "key": "x",
+            "name": "select for compare",
+            "icon": "person-follow",
+            "type": "command",
+            "command": "git.timeline.selectForCompare"
+          },
+          {
+            "key": "X",
+            "name": "compare with selected",
+            "icon": "chat-view-icon",
+            "type": "command",
+            "command": "git.timeline.compareWithSelected"
+          }
+        ]
+      },
+      // o open
+      {
+        "key": "o",
+        "name": "open change",
+        "icon": "compare-changes",
+        "type": "command",
+        "command": "git.timeline.viewCommit"
+      },
+      // y copy
+      {
+        "key": "y",
+        "name": "+Copy",
+        "icon": "copy",
+        "type": "bindings",
+        "bindings": [
+          {
+            "key": "y",
+            "name": "copy commit id",
+            "icon": "issue-draft",
+            "type": "command",
+            "command": "git.timeline.copyCommitId"
+          },
+          {
+            "key": "m",
+            "name": "copy commit message",
+            "icon": "extensions-info-message",
+            "type": "command",
+            "command": "git.timeline.copyCommitMessage"
+          }
+        ]
+      }
+    ],
+    // "when": "timelineFocused && timelineItem =~ /git/"
+    "when": "timelineFocused"
+  },
+  // {
+  //   "key": "v",
+  //   "command": "whichkey.show",
+  //   "args": [
+  //     // space view common
+  //     {
+  //       "key": " ",
+  //       "name": "+View Common",
+  //       "icon": "x",
+  //       "type": "command",
+  //       "command": "runCommands",
+  //       "args": {
+  //         "commands": [
+  //           "vspacecode.space",
+  //           { "command": "whichkey.triggerKey", "args": "v" }
+  //         ]
+  //       }
+  //     },
+  //     // r refresh
+  //     {
+  //       "key": "r",
+  //       "name": "timeline refresh",
+  //       "icon": "refresh",
+  //       "type": "command",
+  //       "command": "timeline.refresh"
+  //     },
+  //     {
+  //       "key": "f",
+  //       "name": "toggle follow active editor",
+  //       "icon": "person-follow",
+  //       "type": "command",
+  //       "command": "timeline.toggleFollowActiveEditor"
+  //     },
+  //     {
+  //       "key": "v",
+  //       "name": "toggle visibility",
+  //       "icon": "chat-view-icon",
+  //       "type": "command",
+  //       "command": "timeline.toggleVisibility"
+  //     },
+  //     {
+  //       "key": "g",
+  //       "name": "toggle exclude git",
+  //       "icon": "history",
+  //       "type": "command",
+  //       "command": "timeline.toggleExcludeSource:git-history"
+  //     },
+  //     {
+  //       "key": "l",
+  //       "name": "toggle exclude local history",
+  //       "icon": "history",
+  //       "type": "command",
+  //       "command": "timeline.toggleExcludeSource:timeline.localHistory"
+  //     },
+  //     // x compare
+  //     {
+  //       "key": "x",
+  //       "name": "+Compare",
+  //       "icon": "compare-changes",
+  //       "type": "bindings",
+  //       "bindings": [
+  //         {
+  //           "key": "f",
+  //           "name": "compare with file",
+  //           "icon": "person-follow",
+  //           "type": "command",
+  //           "command": "workbench.action.localHistory.compareWithFile"
+  //         },
+  //         {
+  //           "key": "p",
+  //           "name": "compare with previous",
+  //           "icon": "inline-suggestion-hints-previous",
+  //           "type": "command",
+  //           "command": "workbench.action.localHistory.compareWithPrevious"
+  //         },
+  //         {
+  //           "key": "x",
+  //           "name": "select for compare",
+  //           "icon": "inline-suggestion-hints-previous",
+  //           "type": "command",
+  //           "command": "workbench.action.localHistory.selectForCompare"
+  //         },
+  //         {
+  //           "key": "X",
+  //           "name": "compare with selected",
+  //           "icon": "inline-suggestion-hints-previous",
+  //           "type": "command",
+  //           "command": "workbench.action.localHistory.compareWithSelected"
+  //         }
+  //       ]
+  //     },
+  //     // o open
+  //     {
+  //       "key": "o",
+  //       "name": "open change",
+  //       "icon": "compare-changes",
+  //       "type": "command",
+  //       "command": "git.timeline.viewCommit"
+  //     },
+  //     // y copy
+  //     {
+  //       "key": "y",
+  //       "name": "+Copy",
+  //       "icon": "copy",
+  //       "type": "bindings",
+  //       "bindings": [
+  //         {
+  //           "key": "y",
+  //           "name": "copy commit id",
+  //           "icon": "issue-draft",
+  //           "type": "command",
+  //           "command": "git.timeline.copyCommitId"
+  //         },
+  //         {
+  //           "key": "m",
+  //           "name": "copy commit message",
+  //           "icon": "extensions-info-message",
+  //           "type": "command",
+  //           "command": "git.timeline.copyCommitMessage"
+  //         }
+  //       ]
+  //     }
+  //   ],
+  //   "when": "timelineFocused && timelineItem =~ /localHistory\\b/"
+  // }
+]

@@ -105,13 +105,46 @@
         "type": "command",
         "command": "workbench.action.showEditorsInActiveGroup"
       },
-      // v reveal in file explorer
+      // v +Reveal
       {
         "key": "v",
-        "name": "reveal current file in explorer",
-        "icon": "list-tree",
-        "type": "command",
-        "command": "workbench.files.action.showActiveFileInExplorer"
+        "name": "+Reveal",
+        "icon": "preview",
+        "type": "bindings",
+        "bindings": [
+          // v reveal in file explorer
+          {
+            "key": "v",
+            "name": "reveal current file in explorer",
+            "icon": "explorer-view-icon",
+            "type": "command",
+            "command": "workbench.files.action.showActiveFileInExplorer"
+          },
+          // t reveal timeline
+          {
+            "key": "t",
+            "name": "reveal timeline",
+            "icon": "timeline-open",
+            "type": "command",
+            "command": "timeline.focus"
+          },
+          // y reveal in yazi
+          {
+            "key": "y",
+            "name": "reveal current file in yazi",
+            "icon": "terminal-symbol-flag",
+            "type": "command",
+            "command": "yazi-vscode.toggle"
+          },
+          //  x reveal in external
+          {
+            "key": "x",
+            "name": "reveal current file in os explorer",
+            "icon": "remote-explorer",
+            "type": "command",
+            "command": "workbench.action.files.revealActiveFileInWindows"
+          }
+        ]
       },
       // R toggle read only
       {
@@ -120,6 +153,36 @@
         "icon": "case-sensitive",
         "type": "command",
         "command": "workbench.action.files.toggleActiveEditorReadonlyInSession"
+      },
+      // H history
+      {
+        "key": "H",
+        "name": "+History",
+        "icon": "history",
+        "type": "bindings",
+        "bindings": [
+          {
+            "key": "H",
+            "name": "view history",
+            "icon": "bookmark",
+            "type": "command",
+            "command": "timeline.focus"
+          },
+          {
+            "key": "m",
+            "name": "mark history",
+            "icon": "bookmark",
+            "type": "command",
+            "command": "workbench.action.localHistory.create"
+          },
+          {
+            "key": "r",
+            "name": "retore history",
+            "icon": "chrome-restore",
+            "type": "command",
+            "command": "workbench.action.localHistory.restoreViaPicker"
+          }
+        ]
       },
       // p toggle pin file
       {
@@ -218,14 +281,6 @@
         "type": "command",
         "command": "workbench.action.editor.changeLanguageMode"
       },
-      // I change indentation, tab display size
-      {
-        "key": "I",
-        "name": "change indentation, tab display size",
-        "icon": "code",
-        "type": "command",
-        "command": "editor.action.changeTabDisplaySize"
-      },
       // e +Encoding
       {
         "key": "e",
@@ -258,9 +313,9 @@
         "icon": "code",
         "type": "command",
         "bindings": [
-          // workbench.action.toggleAutoSave
           // workbench.action.files.saveFiles
           // workbench.action.files.saveLocalFile
+          // workbench.action.files.saveWithoutFormatting
           {
             "key": "s",
             "name": "save file",
@@ -268,6 +323,7 @@
             "type": "command",
             "command": "workbench.action.files.save"
           },
+          // , save as
           {
             "key": ",",
             "name": "save as",
@@ -275,6 +331,7 @@
             "type": "command",
             "command": "workbench.action.files.saveAs"
           },
+          // a save all
           {
             "key": "a",
             "name": "save all files",
@@ -282,6 +339,7 @@
             "type": "command",
             "command": "workbench.action.files.saveAll"
           },
+          // save files in current editor group
           {
             "key": "e",
             "name": "save files in current editor group",
@@ -289,12 +347,21 @@
             "type": "command",
             "command": "workbench.files.action.saveAllInGroup"
           },
+          // q quit file withouth prompt save message
           {
             "key": "q",
-            "name": "quit file without prompt save message",
+            "name": "quit file without prompt save message, useful for manually instead of automatically saving file",
             "icon": "code",
             "type": "command",
             "command": "workbench.action.editor.revertAndCloseActiveEditor"
+          },
+          // t toggle auto save
+          {
+            "key": "t",
+            "name": "toggle auto save",
+            "icon": "save",
+            "type": "command",
+            "command": "workbench.action.toggleAutoSave"
           }
         ]
       },
@@ -382,7 +449,7 @@
           }
         ]
       },
-      // copy file path
+      // y copy file path
       {
         "key": "y",
         "name": "+Yank",
@@ -401,21 +468,8 @@
             "name": "Copy path of active file",
             "icon": "list-selection",
             "type": "command",
+            // workbench.action.files.copyPathOfActiveFile
             "command": "copyFilePath"
-          },
-          {
-            "key": "Y",
-            "name": "Copy relative path of active file with line",
-            "icon": "list-selection",
-            "type": "command",
-            "command": "vspacecode.copyRelativePathWithLine"
-          },
-          {
-            "key": "P",
-            "name": "Copy path of active file with line",
-            "icon": "list-selection",
-            "type": "command",
-            "command": "vspacecode.copyPathWithLine"
           }
         ]
       },

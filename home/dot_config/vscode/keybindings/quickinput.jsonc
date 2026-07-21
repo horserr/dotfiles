@@ -16,13 +16,7 @@
     "key": "ctrl+k",
     // workbench.action.quickOpenSelectPrevious
     "command": "quickInput.previous",
-    "when": "inQuickInput && inputFocus"
-  },
-  {
-    // return focus from list to input box
-    "key": "ctrl+k",
-    "command": "workbench.action.focusQuickOpen",
-    "when": "inQuickOpen && listFocus "
+    "when": "inQuickInput"
   },
   {
     "key": "ctrl+n",
@@ -63,9 +57,16 @@
     "when": "inQuickInput"
   },
   {
+    // when input box focus, use shift+space to toggle checkout box
     "key": "shift+space",
     "command": "quickInput.toggleCheckbox",
-    "when": "inQuickInput"
+    "when": "inQuickInput && inputFocus"
+  },
+  {
+    // when input box not focus, simply use space to toggle checkout box
+    "key": "space",
+    "command": "quickInput.toggleCheckbox",
+    "when": "inQuickInput && !inputFocus"
   },
   {
     "key": "ctrl+a",
@@ -75,7 +76,8 @@
   {
     "key": "shift+h",
     "command": "quickInput.toggleHover",
-    "when": "(cursorAtEndOfQuickInputBox || !inputFocus) && (quickInputType == 'quickPick' || quickInputType == 'quickTree') && inQuickInput"
+    // "when": "(cursorAtEndOfQuickInputBox || !inputFocus) && (quickInputType == 'quickPick' || quickInputType == 'quickTree') && inQuickInput"
+    "when": "!inputFocus && (quickInputType == 'quickPick' || quickInputType == 'quickTree') && inQuickInput"
   }
   // default keybinding
   // {

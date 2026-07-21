@@ -72,6 +72,14 @@
         "type": "command",
         "command": "git.stageFile"
       },
+      // e open in explorer
+      {
+        "key": "e",
+        "name": "open in explorer",
+        "icon": "open-preview",
+        "type": "command",
+        "command": "git.revealInExplorer"
+      },
       // o +Open
       {
         "key": "o",
@@ -79,22 +87,6 @@
         "icon": "add",
         "type": "bindings",
         "bindings": [
-          // o open file
-          {
-            "key": "o",
-            "name": "open file",
-            "icon": "open-preview",
-            "type": "command",
-            "command": "git.openFile"
-          },
-          // e open in explorer
-          {
-            "key": "e",
-            "name": "open in explorer",
-            "icon": "open-preview",
-            "type": "command",
-            "command": "git.revealInExplorer"
-          },
           // x open changes
           {
             "key": "x",
@@ -103,9 +95,9 @@
             "type": "command",
             "command": "git.openChange"
           },
-          // X open HEAD file
+          // h open HEAD file
           {
-            "key": "X",
+            "key": "h",
             "name": "open HEAD file",
             "icon": "open-preview",
             "type": "command",
@@ -126,7 +118,8 @@
             "icon": "add",
             "type": "command",
             // this command has no effect
-            "command": "git.unstageFile"
+            // "command": "git.unstageFile"
+            "command": "git.unstageChange"
           },
           {
             "key": "r",
@@ -136,6 +129,14 @@
             "command": "git.clean"
           }
         ]
+      },
+      // z collapse
+      {
+        "key": "z",
+        "name": "collapse all",
+        "icon": "collapse-all",
+        "type": "command",
+        "command": "workbench.scm.action.collapseAll"
       }
     ],
     "when": "focusedView == 'workbench.scm'"
