@@ -1,10 +1,208 @@
 [
-  // git.graph.checkout
-  // git.graph.checkoutDetached
-  // git.graph.cherryPick
-  // git.graph.compareRef
-  // git.graph.compareWithMergeBase
-  // git.graph.compareWithRemote
-  // git.graph.deleteBranch
-  // git.graph.deleteTag
+  {
+    "key": "v",
+    "command": "whichkey.show",
+    "args": [
+      // space view common
+      {
+        "key": " ",
+        "name": "+View Common",
+        "icon": "x",
+        "type": "command",
+        "command": "runCommands",
+        "args": {
+          "commands": [
+            "vspacecode.space",
+            { "command": "whichkey.triggerKey", "args": "v" }
+          ]
+        }
+      },
+      {
+        "key": "v",
+        "name": "+View",
+        "icon": "open-preview",
+        "type": "bindings",
+        "bindings": [
+          {
+            "key": "l",
+            "name": "view as list",
+            "icon": "list-flat",
+            "type": "command",
+            "command": "workbench.scm.action.graph.setListViewMode"
+          },
+          {
+            "key": "t",
+            "name": "view as tree",
+            "icon": "tree-filter-on-type-off",
+            "type": "command",
+            "command": "workbench.scm.action.graph.setTreeViewMode"
+          },
+          {
+            "key": "p",
+            "name": "pick reference",
+            "icon": "references",
+            "type": "command",
+            "command": "workbench.scm.action.graph.pickHistoryItemRefs"
+          },
+          {
+            "key": "r",
+            "name": "pick repository",
+            "icon": "repo",
+            "type": "command",
+            "command": "workbench.scm.action.graph.pickRepository"
+          }
+        ]
+      },
+      {
+        "key": "c",
+        "name": "+Chat/Copilot",
+        "icon": "copilot",
+        "type": "bindings",
+        "bindings": [
+          {
+            "key": "a",
+            "name": "add item to chat",
+            "icon": "file-add",
+            "type": "command",
+            "command": "workbench.scm.action.graph.addHistoryItemToChat"
+          },
+          {
+            "key": "c",
+            "name": "add change to chat",
+            "icon": "copilot-large",
+            "type": "command",
+            "command": "workbench.scm.action.graph.addHistoryItemChangeToChat"
+          },
+          {
+            "key": "s",
+            "name": "summarize history item",
+            "icon": "copilot-snooze",
+            "type": "command",
+            "command": "workbench.scm.action.graph.summarizeHistoryItem"
+          }
+        ]
+      },
+      {
+        "key": "g",
+        "name": "goto current item",
+        "icon": "debug-step-out",
+        "type": "command",
+        "command": "workbench.scm.action.graph.revealCurrentHistoryItem"
+      },
+      {
+        "key": "p",
+        "name": "cherry pick",
+        "icon": "debug-step-out",
+        "type": "command",
+        "command": "git.graph.cherryPick"
+      },
+      {
+        "key": "r",
+        "name": "refresh",
+        "icon": "refresh",
+        "type": "command",
+        "command": "workbench.scm.action.graph.refresh"
+      },
+      {
+        "key": "o",
+        "name": "open file",
+        "icon": "refresh",
+        "type": "bindings",
+        "bindings": [
+          {
+            "key": "o",
+            "name": "open file",
+            "icon": "refresh",
+            "type": "command",
+            "command": "workbench.scm.action.graph.openFile"
+          },
+          {
+            "key": "x",
+            "name": "view changes",
+            "icon": "compare-changes",
+            "type": "command",
+            "command": "workbench.scm.action.graph.viewChanges"
+          }
+        ]
+      },
+      {
+        "key": "j",
+        "name": "+Jump/Checkout",
+        "icon": "x",
+        "type": "bindings",
+        "bindings": [
+          {
+            "key": "j",
+            "name": "checkout",
+            "icon": "x",
+            "type": "command",
+            "command": "git.graph.checkout"
+          },
+          {
+            "key": "d",
+            "name": "checkout detached",
+            "icon": "x",
+            "type": "command",
+            "command": "git.graph.checkoutDetached"
+          }
+        ]
+      },
+      {
+        "key": "d",
+        "name": "+Delete",
+        "icon": "x",
+        "type": "bindings",
+        "bindings": [
+          {
+            "key": "b",
+            "name": "delete branch",
+            "icon": "x",
+            "type": "command",
+            "command": "git.graph.deleteBranch"
+          },
+          {
+            "key": "t",
+            "name": "delete tag",
+            "icon": "x",
+            "type": "command",
+            "command": "git.graph.deleteTag"
+          }
+        ]
+      },
+      {
+        "key": "x",
+        "name": "+Compare",
+        "icon": "x",
+        "type": "bindings",
+        "bindings": [
+          {
+            "key": "x",
+            "name": "compare references",
+            "icon": "x",
+            "type": "command",
+            "command": "git.graph.compareRef"
+          },
+          {
+            "key": "m",
+            "name": "compare merge base",
+            "icon": "x",
+            "type": "command",
+            "command": "git.graph.compareWithMergeBase"
+          },
+          {
+            "key": "r",
+            "name": "compare with remote",
+            "icon": "x",
+            "type": "command",
+            "command": "git.graph.compareWithRemote"
+          }
+        ]
+      }
+    ],
+    "when": "focusedView == 'workbench.scm.history'"
+  }
 ]
+
+// workbench.scm.action.graph.setTreeViewMode
+// workbench.scm.action.setTreeViewMode
+// workbench.scm.action.setTreeViewModeNavigation
