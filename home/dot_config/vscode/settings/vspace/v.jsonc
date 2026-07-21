@@ -1,6 +1,4 @@
 [
-  // todo remove view
-  // move view
   {
     "key": "v",
     "name": "+view",
@@ -21,46 +19,6 @@
             "icon": "chevron-up",
             "type": "command",
             "command": "workbench.action.customizeLayout"
-          },
-          // v editor layout
-          {
-            "key": "v",
-            "name": "open editor layout view",
-            "icon": "layout",
-            "type": "command",
-            "command": "layouts_list.focus"
-          },
-          // s save layout
-          {
-            "key": "s",
-            "name": "layout save",
-            "icon": "layout",
-            "type": "command",
-            "command": "layouts_list.focus"
-          },
-          // u update editor layout
-          {
-            "key": "u",
-            "name": "update editor layout",
-            "icon": "layout",
-            "type": "command",
-            "command": "editorLayout.update"
-          },
-          // o open editor layout
-          {
-            "key": "o",
-            "name": "open editor layout",
-            "icon": "layout",
-            "type": "command",
-            "command": "editorLayout.open"
-          },
-          // d delete editor layout
-          {
-            "key": "d",
-            "name": "delete editor layout",
-            "icon": "layout",
-            "type": "command",
-            "command": "editorLayout.remove"
           },
           // ' toggle editor group layout
           {
@@ -549,6 +507,7 @@
                 "key": "",
                 "name": "Show editor tabs",
                 "type": "command",
+                // workbench.action.showEditorTab
                 "command": "workbench.action.showMultipleEditorTabs"
               },
               {
@@ -569,6 +528,14 @@
               "editor.action.toggleStickyScroll",
               "notebook.action.toggleNotebookStickyScroll"
             ]
+          },
+          // I change indentation, tab display size
+          {
+            "key": "I",
+            "name": "change indentation, tab display size",
+            "icon": "code",
+            "type": "command",
+            "command": "editor.action.changeTabDisplaySize"
           }
         ]
       },
