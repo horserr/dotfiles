@@ -1,6 +1,10 @@
 [
-  // UNSET vim.showQuickpickCmdLine
-
+  {
+    // when status bar not shown, use vim quick pick command line instead
+    "key": "shift+;",
+    "command": "vim.showQuickpickCmdLine",
+    "when": "(inZenMode || !config.workbench.statusBar.visible) && editorTextFocus && vim.mode == 'Normal'"
+  },
   // fix inline chat
   {
     // remove origin vim escape function
