@@ -65,8 +65,7 @@
   // SIGNIFICANT WORKSPACE
   "editor.foldingImportsByDefault": true,
   "editor.foldingStrategy": "indentation",
-  "editor.fontFamily": "Cascadia Code, FiraCode Nerd Font, LXGW Neo XiHei, 江西拙楷, 杨任东竹石体 Heavy, Consolas, Microsoft YaHei",
-  // "editor.fontLigatures": "'ss01','ss02','ss03','ss04','ss05','ss06','zero','onum'",
+  "editor.fontFamily": "Cascadia Code, FiraCode Nerd Font, 江西拙楷, 杨任东竹石体 Heavy, Consolas, Microsoft YaHei, monospace",
   "editor.fontLigatures": true,
   // Editor settings
   "editor.fontSize": 17,
@@ -244,20 +243,92 @@
   // Controls whether the editor receives tabs or defers them to the workbench for navigation.
   "editor.tabFocusMode": false,
   "editor.tabSize": 2,
-  // SIGNIFICANT
+  "editor.semanticTokenColorCustomizations": {
+    "rules": {
+      // vscode://schemas/token-styling
+      "interface": {
+        "bold": true
+      },
+      "function": {
+        "bold": true
+      },
+      "keyword": {
+        "italic": true
+      },
+      "property": {
+        "italic": true
+      },
+      "*.static": {
+        "bold": true
+      },
+      "enumMember": {
+        // foreground
+        // background
+        "fontStyle": "bold underline"
+      },
+      // *.abstract
+      // *.async
+      // *.declaration
+      // *.deprecated
+      // *.documentation
+      // *.modification
+      // *.readonly
+      // *.static
+      // ^(\\w+[-_\\w+]*|\\*)(\\.\\w+[-_\\w+]*)*(:\\w+[-_\\w+]*)?$
+      // class
+      // comment
+      // decorator
+      // enum
+      // enumMember
+      // event
+      // function
+      // interface
+      // keyword
+      // label
+      // macro
+      // member
+      // method
+      // namespace
+      // number
+      // operator
+      // parameter
+      // property
+      // regexp
+      // string
+      // struct
+      // style
+      // tomlArrayKey
+      // tomlTableKey
+      // type
+      // typeParameter
+      // variable
+    }
+  },
+  // SIGNIFICANT related setting: workbench.colorCustomizations
   "editor.tokenColorCustomizations": {
     // vscode command: editor.action.inspectTMScopes
+    // link: https://github.com/subframe7536/vscode-theme-maple#italic-style-on-keywords
     "textMateRules": [
       {
         "scope": [
           "comment",
+          "constant.language.null",
+          "constant.language.nullptr",
+          "constant.language.undefined",
           "constant", //String, Number, Boolean…, this, super
+          "keyword.control",
+          "keyword.function",
+          "keyword.operator.borrow.and.rust",
+          "keyword.operator.new",
           "keyword", //import, export, return…
           "markup.italic",
           "meta.selector",
+          "meta.type keyword.operator.expression.keyof",
+          "meta.type keyword.operator.expression.typeof",
           "storage.modifier", //static keyword
-          "storage.type",
           "storage.type.class.js", //class keyword
+          "storage.type",
+          "variable.language.this",
           "variable.language"
         ],
         "settings": {
@@ -297,11 +368,11 @@
   "editor.unicodeHighlight.allowedCharacters": {},
   // Unicode characters that are common in allowed locales are not being highlighted.
   "editor.unicodeHighlight.allowedLocales": {
-    "_os": true,
-    "_vscode": true,
-    "zh-cn": true
+    // "_os": true,
+    "_vscode": true
+    // "zh-cn": true
   },
-  "editor.unicodeHighlight.nonBasicASCII": false,
+  "editor.unicodeHighlight.nonBasicASCII": true,
   // Spaces and tabs are inserted and deleted in alignment with tab stops.
   "editor.useTabStops": true,
   // SIGNIFICANT
@@ -319,5 +390,5 @@
   // SIGNIFICANT LANGUAGEID
   "editor.wrapOnEscapedLineFeeds": false,
   // use 'advance' for CJK characters
-  "editor.wrappingStrategy": "advanced"
+  "editor.wrappingStrategy": "simple"
 }

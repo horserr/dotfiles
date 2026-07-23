@@ -69,9 +69,9 @@
         "icon": "inspect",
         "type": "bindings",
         "bindings": [
-          // t inspect editor token
+          // e inspect editor token
           {
-            "key": "t",
+            "key": "e",
             "name": "Inspect editor token",
             "icon": "keyboard",
             "type": "command",
@@ -88,9 +88,9 @@
               "workbench.action.inspectContextKeys"
             ]
           },
-          // K toggle keyboard troubleshooting
+          // t toggle keyboard troubleshooting
           {
-            "key": "K",
+            "key": "t",
             "name": "toggle keybindings logging for troubleshooting",
             "icon": "keyboard",
             "type": "command",
@@ -105,19 +105,46 @@
         "icon": "search-show-context",
         "type": "bindings",
         "bindings": [
+          // * schemas
           {
-            "key": "s",
-            "name": "Show startup performance",
-            "icon": "keyboard",
+            "key": "*",
+            "name": "show all vscode json schemas",
+            "icon": "extensions-verified-publisher",
             "type": "command",
-            "command": "perfview.show"
+            "command": "sysinfo-vscode.showSchema"
           },
+          // T theme
+          {
+            "key": "T",
+            "name": "generate current color theme",
+            "icon": "symbol-color",
+            "type": "command",
+            "command": "workbench.action.generateColorTheme"
+          },
+          // p Performance
           {
             "key": "p",
-            "name": "Show process",
-            "icon": "keyboard",
-            "type": "command",
-            "command": "workbench.action.openProcessExplorer"
+            "name": "+Performance",
+            "icon": "debug-gripper",
+            "type": "bindings",
+            "bindings": [
+              // s startup performance
+              {
+                "key": "s",
+                "name": "Show startup performance",
+                "icon": "keyboard",
+                "type": "command",
+                "command": "perfview.show"
+              },
+              // p process
+              {
+                "key": "p",
+                "name": "Show process",
+                "icon": "keyboard",
+                "type": "command",
+                "command": "workbench.action.openProcessExplorer"
+              }
+            ]
           },
           // m inspect keymapping
           {
