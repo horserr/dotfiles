@@ -137,11 +137,11 @@
       "before": ["s"],
       "commands": ["editor.action.surroundWithSnippet"]
     },
-    {
-      // format selection
-      "before": ["g", "q"],
-      "commands": ["editor.action.formatSelection"]
-    },
+    // {
+    //   // format selection
+    //   "before": ["g", "q"],
+    //   "commands": ["editor.action.formatSelection"]
+    // },
     {
       "before": [",", "m"],
       "commands": [
