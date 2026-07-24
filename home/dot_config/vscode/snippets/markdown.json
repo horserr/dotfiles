@@ -1,70 +1,76 @@
 {
-	"Insert 2 cols table": {
-		"prefix": "2 cols table",
-		"body": [
-			"|${0:title} |  |",
-			"| - | - |",
-			"|   |   |"
-		],
-		"description": "Insert a 2 cols table"
-	},
-	"Insert 3 cols table": {
-		"prefix": "3 col table",
-		"body": [
-			"| title |     |     |",
-			"| ----- | --- | --- |",
-			"|       |     |     |"
-		],
-		"description": "Insert a 3 cols table"
-	},
-	"Github Note callout": {
-		"prefix": "note callout",
-		"body": [
-			"> [!NOTE]",
-			"> $TM_SELECTED_TEXT",
-			"${1:> ${2:Highlights information that users should take into account, even when skimming.}}",
-			"$0"
-		],
-		"description": "Github flavored NOTE callout"
-	},
-	"Github Tip callout": {
-		"prefix": "tip callout",
-		"body": [
-			"> [!TIP]",
-			"> $TM_SELECTED_TEXT",
-			"${1:> ${2:Optional information to help a user be more successful.}}",
-			"$0"
-		],
-		"description": "Github flavored TIP callout"
-	},
-	"Github Important callout": {
-		"prefix": "important callout",
-		"body": [
-			"> [!IMPORTANT]",
-			"> $TM_SELECTED_TEXT",
-			"${1:> ${2:Critical information for users to know before continuing.}}",
-			"$0"
-		],
-		"description": "Github flavored IMPORTANT callout"
-	},
-	"Github Caution callout": {
-		"prefix": "caution callout",
-		"body": [
-			"> [!CAUTION]",
-			"> $TM_SELECTED_TEXT",
-			"${1:> ${2:Information that users need to be careful about.}}",
-			"$0"
-		],
-		"description": "Github flavored CAUTION callout"
-	},
-	"Github Warning callout": {
-		"prefix": "warning callout",
-		"body": [
-			"> [!WARNING]",
-			"> $TM_SELECTED_TEXT",
-			"${1:> ${2:Serious information that users must read to avoid significant consequences.}}",
-			"$0"
-		],
-		"description": "Github flavored WARNING callout"
-	}
+  "insert image tag": {
+    "prefix": "tag-image",
+    "body": ["<img alt=\"$0\" src=\"$1\" width=40%/>"],
+    "description": "html image tag for markdown"
+  },
+  "collapsable summary": {
+    "prefix": "details and summary",
+    "body": [
+      "<details>",
+      "  <summary>$0</summary>",
+      "  $TM_SELECTED_TEXT",
+      "</details>"
+    ],
+    "description": "html details and summary tags for markdown"
+  },
+  "Insert 3 cols table": {
+    "prefix": "3 col table",
+    "body": [
+      "| title |     |     |",
+      "| ----- | --- | --- |",
+      "|       |     |     |"
+    ],
+    "description": "Insert a 3 cols table"
+  },
+  "Github Note callout": {
+    "prefix": "note callout",
+    "body": [
+      "> [!NOTE]",
+      "> $TM_SELECTED_TEXT",
+      "${1:> ${2:Highlights information that users should take into account, even when skimming.}}",
+      "$0"
+    ],
+    "description": "Github flavored NOTE callout"
+  },
+  "Github Tip callout": {
+    "prefix": "tip callout",
+    "body": [
+      "> [!TIP]",
+      "> $TM_SELECTED_TEXT",
+      "${1:> ${2:Optional information to help a user be more successful.}}",
+      "$0"
+    ],
+    "description": "Github flavored TIP callout"
+  },
+  "Github Important callout": {
+    "prefix": "important callout",
+    "body": [
+      "> [!IMPORTANT]",
+      "> $TM_SELECTED_TEXT",
+      "${1:> ${2:Critical information for users to know before continuing.}}",
+      "$0"
+    ],
+    "description": "Github flavored IMPORTANT callout"
+  },
+  "Github Caution callout": {
+    "prefix": "caution callout",
+    "body": [
+      "> [!CAUTION]",
+      "> $TM_SELECTED_TEXT",
+      "${1:> ${2:Information that users need to be careful about.}}",
+      "$0"
+    ],
+    "description": "Github flavored CAUTION callout"
+  },
+  "Github Warning callout": {
+    "prefix": "warning callout",
+    "body": [
+      "> [!WARNING]",
+      "> $TM_SELECTED_TEXT",
+      "${1:> ${2:Serious information that users must read to avoid significant consequences.}}",
+      "$0"
+    ],
+    "description": "Github flavored WARNING callout"
+  }
 }
