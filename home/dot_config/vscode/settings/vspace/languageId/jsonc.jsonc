@@ -1,0 +1,29 @@
+{
+  "key": "languageId:jsonc",
+  "name": "jsonc",
+  "icon": "tools",
+  "type": "bindings",
+  "bindings": [
+    {
+      "key": "v",
+      "name": "json validate",
+      "icon": "symbol-struct",
+      "type": "command",
+      "command": "json.validate"
+    },
+    {
+      "key": "s",
+      "name": "json sort",
+      "icon": "sort-precedence",
+      "type": "command",
+      "command": "json.sort"
+    },
+    {
+      "key": "r",
+      "name": "clear json cache",
+      "icon": "notifications-clear",
+      "type": "command",
+      "command": "json.clearCache"
+    }
+  ]
+}
