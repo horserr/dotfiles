@@ -1,0 +1,20 @@
+[
+  // markdown.extension.onBackspaceKey
+  // markdown.extension.onCopyLineDown
+  // markdown.extension.onCopyLineUp
+  // markdown.extension.onCtrlEnterKey
+  // markdown.extension.onEnterKey
+  // markdown.extension.onIndentLines
+  // markdown.extension.onMoveLineDown
+  // markdown.extension.onMoveLineUp
+  // markdown.extension.onOutdentLines
+  // markdown.extension.onShiftEnterKey
+  // markdown.extension.onShiftTabKey
+  // markdown.extension.onTabKey
+  {
+    "key": "shift+space",
+    // markdown.reopenAsSource
+    "command": "markdown.showSource",
+    "when": "activeWebviewPanelId == 'markdown.preview'"
+  }
+]

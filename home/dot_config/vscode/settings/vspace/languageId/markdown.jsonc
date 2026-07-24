@@ -1,56 +1,285 @@
 [
+  // markdown.extension.editing.paste
+  // markdown.api.reloadPlugins
+  // markdown.api.render
+  // vscodeMarkdownLanguageservice.open
+  // vscodeMarkdownLanguageservice.rename
+
+  // Unset
+  // toggle tasklist
+  // markdown.extension.checkTaskList
+
+  // markdown-table-editor.editTable
+  // markdowntable.csvToTable
+  // markdowntable.format
+  // markdowntable.moveLeft
+  // markdowntable.moveRight
+  // markdowntable.nextCell
+  // markdowntable.nextCellWithoutFormat
+  // markdowntable.prevCell
+  // markdowntable.prevCellWithoutFormat
+  // markdowntable.tsvToTable
   {
     "key": "languageId:markdown",
     "name": "Markdown",
     "icon": "tools",
     "type": "bindings",
     "bindings": [
+      // , preview
       {
         "key": ",",
-        "name": "Toggle markdown preview",
-        "icon": "tools",
-        "type": "command",
-        "command": "markdown.togglePreview"
-      },
-      // ' show preview to side
-      {
-        "key": "'",
         "name": "show preview to side",
         "icon": "preview",
-        "type": "command",
-        "command": "markdown.showPreviewToSide"
+        "type": "commands",
+        // markdown.showLockedPreviewToSide
+        // "command": "markdown.showPreviewToSide"
+        "commands": [
+          "markdown.showPreview",
+          "workbench.action.moveEditorToRightGroup",
+          "workbench.action.focusNextGroup"
+        ]
       },
+      // f format
       {
-        "key": "c",
-        "name": "+Buffer commands",
-        "icon": "file",
+        "key": "f",
+        "name": "pangu format, add space between Chinese and English",
+        "icon": "sparkle",
+        "type": "command",
+        "command": "pangu.format"
+      },
+      // s surround
+      {
+        "key": "s",
+        "name": "+Surround",
+        "icon": "surround-with",
         "type": "bindings",
         "bindings": [
+          // s vim surround
           {
-            "key": "e",
-            "name": "Export to HTML",
+            "key": "s",
+            "name": "vim surround tag (visual mode)",
+            "icon": "surround-with",
+            "type": "command",
+            "command": "vim.remap",
+            "args": {
+              "after": ["S", "t"]
+            }
+          },
+          // u surround underline
+          {
+            "key": "u",
+            "name": "surround underline",
+            "icon": "surround-with",
+            "type": "command",
+            "command": "markdown.extension.editing._wrapBy",
+            "args": {
+              "before": "<u>",
+              "after": "</u>"
+            }
+          },
+          // k surround keyboard
+          {
+            "key": "k",
+            "name": "surround keyboard",
+            "icon": "surround-with",
+            "type": "command",
+            "command": "markdown.extension.editing._wrapBy",
+            "args": {
+              "before": "<kbd>",
+              "after": "</kbd>"
+            }
+          },
+          // i surround italic
+          {
+            "key": "i",
+            "name": "surround italic",
+            "icon": "italic",
+            "type": "command",
+            "command": "markdown.extension.editing.toggleItalic"
+          },
+          // c surround inline code
+          {
+            "key": "c",
+            "name": "surround inline code",
+            "icon": "code",
+            "type": "command",
+            "command": "markdown.extension.editing.toggleCodeSpan"
+          },
+          // b surround bold
+          {
+            "key": "b",
+            "name": "surround bold",
+            "icon": "bold",
+            "type": "command",
+            "command": "markdown.extension.editing.toggleBold"
+          },
+          // x strikethrough
+          {
+            "key": "x",
+            "name": "surround strikethrough",
+            "icon": "remove",
+            "type": "command",
+            "command": "markdown.extension.editing.toggleStrikethrough"
+          },
+          // b code block
+          {
+            "key": "b",
+            "name": "surround code block",
             "icon": "file-code",
             "type": "command",
-            "command": "markdown.extension.printToHtml"
+            "command": "markdown.extension.editing.toggleCodeBlock"
           },
+          // m surround math
           {
-            "key": "p",
-            "name": "Open preview to the side",
-            "icon": "open-preview",
-            "type": "command",
-            "command": "markdown.showPreviewToSide"
-          },
-          {
-            "key": "P",
-            "name": "Open preview in current group",
-            "icon": "preview",
-            "type": "command",
-            "command": "markdown.showPreview"
+            "key": "m",
+            "name": "+surround Math",
+            "icon": "symbol-operator",
+            "type": "bindings",
+            "bindings": [
+              {
+                "key": "m",
+                "name": "surround math inline",
+                "icon": "symbol-operator",
+                "type": "command",
+                "command": "markdown.extension.editing._wrapBy",
+                "args": {
+                  "before": "$",
+                  "after": "$"
+                }
+              },
+              {
+                "key": "b",
+                "name": "surround math block",
+                "icon": "symbol-function",
+                "type": "command",
+                "command": "markdown.extension.editing._wrapBy",
+                "args": {
+                  "before": "\n$$\n",
+                  "after": "\n$$\n"
+                }
+              }
+            ]
           }
         ]
       },
+      // i +Insert
+      {
+        "key": "i",
+        "name": "+Insert",
+        "icon": "insert",
+        "type": "bindings",
+        "bindings": [
+          // c insert citation
+          {
+            "key": "c",
+            "name": "insert citation",
+            "icon": "quote",
+            "type": "command",
+            "command": "markdownAcademicPreview.insertCitation"
+          },
+          // t insert tasklist
+          {
+            "key": "t",
+            "name": "insert tasklist",
+            "icon": "better-todo-tree",
+            "type": "command",
+            "command": "markdown.extension.editing._wrapBy",
+            "args": {
+              "before": "- [ ] ",
+              "after": ""
+            }
+          },
+          {
+            "key": "p",
+            "name": "insert picture from workspace",
+            "icon": "graph-scatter",
+            "type": "command",
+            "command": "markdown.editor.insertImageFromWorkspace"
+          },
+          {
+            "key": "f",
+            "name": "insert file from workspace",
+            "icon": "file-add",
+            "type": "command",
+            "command": "markdown.editor.insertLinkFromWorkspace"
+          },
+          // l insert list
+          {
+            "key": "l",
+            "name": "insert list",
+            "icon": "list-unordered",
+            "type": "command",
+            "command": "markdown.extension.editing.toggleList"
+          }
+        ]
+      },
+      // t +Table
       {
         "key": "t",
+        "name": "+Table",
+        "icon": "table",
+        "type": "bindings",
+        "bindings": [
+          // l +Table layout
+          {
+            "key": "l",
+            "name": "+Table layout",
+            "icon": "layout",
+            "type": "bindings",
+            "bindings": [
+              // c align center
+              {
+                "key": "c",
+                "name": "table align center",
+                "icon": "centerLayoutIcon",
+                "type": "command",
+                "command": "markdowntable.alignCenter"
+              },
+              {
+                "key": "h",
+                "name": "table align left",
+                "icon": "auxiliarybar-left-layout-icon",
+                "type": "command",
+                "command": "markdowntable.alignLeft"
+              },
+              {
+                "key": "l",
+                "name": "table align right",
+                "icon": "layout-sidebar-right",
+                "type": "command",
+                "command": "markdowntable.alignRight"
+              }
+            ]
+          },
+          {
+            "key": "a",
+            "name": "+Insert/Add",
+            "icon": "add",
+            "type": "transient",
+            "bindings": [
+              // h insert left
+              {
+                "key": "h",
+                "name": "table insert left",
+                "icon": "arrow-left",
+                "type": "command",
+                "command": "markdowntable.insertLeft"
+              },
+              // l insert right
+              {
+                "key": "l",
+                "name": "table insert right",
+                "icon": "arrow-right",
+                "type": "command",
+                "command": "markdowntable.insertRight"
+              }
+            ]
+          }
+        ]
+      },
+      // T TOC
+      {
+        "key": "T",
         "name": "+Table of Contents",
         "icon": "list-tree",
         "type": "bindings",
@@ -85,106 +314,120 @@
           }
         ]
       },
+      // v +View
       {
-        "key": "x",
-        "name": "+Text",
-        "icon": "symbol-text",
+        "key": "v",
+        "name": "+View",
+        "icon": "preview",
         "type": "bindings",
         "bindings": [
           {
-            "key": "[",
+            "key": "r",
+            "name": "refresh",
+            "icon": "list-tree",
+            "type": "command",
+            "command": "markdown.preview.refresh"
+          },
+          {
+            "key": "t",
+            "name": "markdown content security trust",
+            "icon": "terminal-secure",
+            "type": "command",
+            "command": "markdown.showPreviewSecuritySelector"
+          },
+          // l toggle lock
+          {
+            "key": "l",
+            "name": "toggle preview lock",
+            "icon": "lock",
+            "type": "command",
+            "command": "markdown.preview.toggleLock"
+          },
+          {
+            "key": "p",
+            "name": "open as preview",
+            "icon": "preview",
+            "type": "command",
+            // "command": "markdown.reopenAsPreview"
+            "command": "markdown.togglePreview"
+          },
+          {
+            "key": "r",
+            "name": "view file references",
+            "icon": "references",
+            "type": "command",
+            "command": "markdown.findAllFileReferences"
+          }
+        ]
+      },
+      // l decrease heading level
+      {
+        "key": "l",
+        "name": "Decrease Heading level",
+        "icon": "chevron-left",
+        "type": "transient",
+        "command": "markdown.extension.editing.toggleHeadingDown",
+        "bindings": [
+          {
+            "key": "l",
             "name": "Decrease Heading level",
             "icon": "chevron-left",
-            "type": "transient",
-            "command": "markdown.extension.editing.toggleHeadingDown",
-            "bindings": [
-              {
-                "key": "[",
-                "name": "Decrease Heading level",
-                "icon": "chevron-left",
-                "type": "command",
-                "command": "markdown.extension.editing.toggleHeadingDown"
-              },
-              {
-                "key": "]",
-                "name": "Increase Heading level",
-                "icon": "chevron-right",
-                "type": "command",
-                "command": "markdown.extension.editing.toggleHeadingUp"
-              }
-            ]
+            "type": "command",
+            "command": "markdown.extension.editing.toggleHeadingDown"
           },
           {
-            "key": "]",
+            "key": "h",
             "name": "Increase Heading level",
             "icon": "chevron-right",
-            "type": "transient",
-            "command": "markdown.extension.editing.toggleHeadingUp",
-            "bindings": [
-              {
-                "key": "[",
-                "name": "Decrease Heading level",
-                "icon": "chevron-left",
-                "type": "command",
-                "command": "markdown.extension.editing.toggleHeadingDown"
-              },
-              {
-                "key": "]",
-                "name": "Increase Heading level",
-                "icon": "chevron-right",
-                "type": "command",
-                "command": "markdown.extension.editing.toggleHeadingUp"
-              }
-            ]
+            "type": "command",
+            "command": "markdown.extension.editing.toggleHeadingUp"
+          }
+        ]
+      },
+      // h increase heading level
+      {
+        "key": "h",
+        "name": "Increase Heading level",
+        "icon": "chevron-right",
+        "type": "transient",
+        "command": "markdown.extension.editing.toggleHeadingUp",
+        "bindings": [
+          {
+            "key": "l",
+            "name": "Decrease Heading level",
+            "icon": "chevron-left",
+            "type": "command",
+            "command": "markdown.extension.editing.toggleHeadingDown"
           },
           {
-            "key": "`",
-            "name": "Toggle inline code",
-            "icon": "code",
+            "key": "h",
+            "name": "Increase Heading level",
+            "icon": "chevron-right",
             "type": "command",
-            "command": "markdown.extension.editing.toggleCodeSpan"
+            "command": "markdown.extension.editing.toggleHeadingUp"
+          }
+        ]
+      },
+      // x export
+      {
+        "key": "x",
+        "name": "+Export",
+        "icon": "export",
+        "type": "bindings",
+        "bindings": [
+          {
+            "key": "x",
+            "name": "Export to HTML",
+            "icon": "file-code",
+            "type": "command",
+            "command": "markdown.extension.printToHtml"
           },
           {
             "key": "b",
-            "name": "Toggle bold",
-            "icon": "bold",
-            "type": "command",
-            "command": "markdown.extension.editing.toggleBold"
-          },
-          {
-            "key": "i",
-            "name": "Toggle italic",
-            "icon": "italic",
-            "type": "command",
-            "command": "markdown.extension.editing.toggleItalic"
-          },
-          {
-            "key": "l",
-            "name": "Toggle list",
-            "icon": "list-unordered",
-            "type": "command",
-            "command": "markdown.extension.editing.toggleList"
-          },
-          {
-            "key": "m",
-            "name": "Toggle math",
-            "icon": "symbol-operator",
-            "type": "command",
-            "command": "markdown.extension.editing.toggleMath"
-          },
-          {
-            "key": "s",
-            "name": "Toggle strikethrough",
-            "icon": "remove",
-            "type": "command",
-            "command": "markdown.extension.editing.toggleStrikethrough"
-          },
-          {
-            "key": "~",
-            "name": "Toggle code block",
+            "name": "Export to HTML, batch",
             "icon": "file-code",
             "type": "command",
-            "command": "markdown.extension.editing.toggleCodeBlock"
+            "command": "markdown.extension.printToHtmlBatch"
           }
         ]
       }

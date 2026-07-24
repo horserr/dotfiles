@@ -1,9 +1,4 @@
 {
-	"select lines to list": {
-		"prefix": "selection to list",
-		"body": [ "${TM_SELECTED_TEXT/^.+$/- $0/g}" ],
-		"description": "add - to each selected lines"
-	},
 	"Insert 2 cols table": {
 		"prefix": "2 cols table",
 		"body": [

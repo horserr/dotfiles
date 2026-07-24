@@ -39,29 +39,16 @@
       "before": ["M"],
       "commands": ["editor.action.moveSelectionToPreviousFindMatch"]
     },
-    {
-      // multi-cursor move focus
-      "before": [","],
-      "commands": ["editor.action.focusNextCursor"]
-    },
-    {
-      // multi-cursor move focus
-      "before": ["."],
-      "commands": ["editor.action.focusPreviousCursor"]
-    },
-    {
-      // same with normal mode
-      // jump to next siblings
-      // the original g. is looping through edit history, but the above gi does already cover it.
-      "before": ["g", "."],
-      "commands": ["editor.gotoNextFold"]
-    },
-    {
-      // same with normal mode
-      // jump to previous siblings
-      "before": ["g", ","],
-      "commands": ["editor.gotoPreviousFold"]
-    },
+    // {
+    //   // multi-cursor move focus
+    //   "before": [","],
+    //   "commands": ["editor.action.focusNextCursor"]
+    // },
+    // {
+    //   // multi-cursor move focus
+    //   "before": ["."],
+    //   "commands": ["editor.action.focusPreviousCursor"]
+    // },
     {
       // vspacecode -> line/selection
       "before": ["u"],
@@ -117,13 +104,18 @@
       "after": ["g", "$"]
     },
     {
+      // shorthand for vim surround
+      "before": ["s"],
+      "after": ["S"]
+    },
+    {
+      "before": [","],
+      "commands": ["editor.action.surroundWithSnippet"]
+    },
+    {
       // visual line begin
       "before": ["H"],
       "after": ["g", "^"]
-    },
-    {
-      "before": ["<leader>", "E"],
-      "commands": ["editor.action.refactor"]
     },
     {
       "before": [">"],
@@ -133,57 +125,11 @@
       "before": ["<"],
       "commands": ["editor.action.outdentLines"]
     },
-    {
-      "before": ["s"],
-      "commands": ["editor.action.surroundWithSnippet"]
-    },
     // {
     //   // format selection
     //   "before": ["g", "q"],
     //   "commands": ["editor.action.formatSelection"]
     // },
-    {
-      "before": [",", "m"],
-      "commands": [
-        {
-          "args": {
-            "snippet": "$${TM_SELECTED_TEXT}$"
-          },
-          "command": "editor.action.insertSnippet"
-        }
-      ]
-    },
-    {
-      "before": [",", "M"],
-      "commands": [
-        {
-          "args": {
-            "snippet": "$$${TM_SELECTED_TEXT}$$"
-          },
-          "command": "editor.action.insertSnippet"
-        }
-      ]
-    },
-    {
-      "before": [",", "b"],
-      "commands": ["markdown.extension.editing.toggleBold"]
-    },
-    {
-      "before": [",", "i"],
-      "commands": ["markdown.extension.editing.toggleItalic"]
-    },
-    {
-      "before": [",", "c"],
-      "commands": ["markdown.extension.editing.toggleCodeSpan"]
-    },
-    {
-      "before": [",", "C"],
-      "commands": ["markdown.extension.editing.toggleCodeBlock"]
-    },
-    {
-      "before": [",", "t"],
-      "commands": ["markdown.extension.checkTaskList"]
-    },
     {
       // shortcuts for easymotion
       // jump to any char

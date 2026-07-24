@@ -210,10 +210,64 @@
       // d close file
       {
         "key": "d",
-        "name": "Close current active buffer",
+        "name": "+Close file",
         "icon": "x",
         "type": "bindings",
         "bindings": [
+          // e close current file in other editor group
+          // useful for closing webview editor, such as markdown preview
+          {
+            "key": "e",
+            "name": "+Close current file in other editor group",
+            "icon": "close-all",
+            "type": "bindings",
+            "bindings": [
+              {
+                "key": "h",
+                "name": "close active file in left editor group",
+                "icon": "layout-sidebar-left-dock",
+                "type": "commands",
+                "commands": [
+                  "workbench.action.focusLeftGroup",
+                  "workbench.action.closeActiveEditor",
+                  "workbench.action.focusNextGroup"
+                ]
+              },
+              {
+                "key": "j",
+                "name": "close active file in below editor group",
+                "icon": "layout-panel-dock",
+                "type": "commands",
+                "commands": [
+                  "workbench.action.focusBelowGroup",
+                  "workbench.action.closeActiveEditor",
+                  "workbench.action.focusNextGroup"
+                ]
+              },
+              {
+                "key": "k",
+                "name": "close active file in above editor group",
+                "icon": "layout-panel-justify",
+                "type": "commands",
+                "commands": [
+                  "workbench.action.focusAboveGroup",
+                  "workbench.action.closeActiveEditor",
+                  "workbench.action.focusNextGroup"
+                ]
+              },
+              {
+                "key": "l",
+                "name": "close active file in right editor group",
+                "icon": "layout-sidebar-left-dock",
+                "type": "commands",
+                "commands": [
+                  "workbench.action.focusRightGroup",
+                  "workbench.action.closeActiveEditor",
+                  "workbench.action.focusNextGroup"
+                ]
+              }
+            ]
+          },
           {
             "key": " ",
             "name": "Close other tabs in current editor group",
