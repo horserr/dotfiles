@@ -1,9 +1,98 @@
 # TODO
 
-1. wsl中需要安装socat来配合windows上的npiperelay
+- vscode debugging practice
+- todo outline view, find all reference view, rename symbol
+  - github codespace
+  - cloud change
+- custom ui with css and js
+- script cat to create scripts for open vscode dev or vscode clone from source graph web
+
+- add chrome, edge browser policy
+- vscode cli: https://code.visualstudio.com/docs/configure/command-line
+- windows virtual desktop https://github.com/FuPeiJiang/VD.ahk
+
+remote explorer
+GitHub codespace
+
+learn jq to sort and extract json file
+
+配置latex wsl 搭建
+通过 yazi 来管理文件
+尝试本地配置大模型
+之后删除 wsl。再尝试安装并使用 latex
+添加 vd.ahk： https://github.com/FuPeiJiang/VD.ahk
+使用 git submodule 添加 uia 和 vd 库
+了解：https://github.com/GorvGoyl/Autohotkey-Scripts-Windows，尝试添加几个
+了解 GitHub actions 和 codespace，尝试创建 my awesome list
+
+servy to manage services
+
+ssh reverse tunnel
+ZMODEM (sz 命令） 回传
+
+```js
+(function () {
+  // Wait for the Webview DOM to load completely
+  window.addEventListener("DOMContentLoaded", () => {
+    window.addEventListener(
+      "keydown",
+      (event) => {
+        // Ignore shortcuts if the user is typing in an input box inside the webview
+        if (
+          event.target.tagName === "INPUT" ||
+          event.target.tagName === "TEXTAREA" ||
+          event.target.isContentEditable
+        ) {
+          return;
+        }
+
+        const scrollStep = 50; // Pixels to scroll
+
+        switch (event.key.toLowerCase()) {
+          case "j":
+            window.scrollBy({ top: scrollStep, behavior: "auto" });
+            event.preventDefault();
+            break;
+          case "k":
+            window.scrollBy({ top: -scrollStep, behavior: "auto" });
+            event.preventDefault();
+            break;
+          case "h":
+            window.scrollBy({ left: -scrollStep, behavior: "auto" });
+            event.preventDefault();
+            break;
+          case "l":
+            window.scrollBy({ left: scrollStep, behavior: "auto" });
+            event.preventDefault();
+            break;
+          case "d":
+            window.scrollBy({
+              top: window.innerHeight * 0.5,
+              behavior: "auto",
+            });
+            event.preventDefault();
+            break;
+          case "u":
+            window.scrollBy({
+              top: -window.innerHeight * 0.5,
+              behavior: "auto",
+            });
+            event.preventDefault();
+            break;
+        }
+      },
+      true,
+    ); // Use capturing phase to intercept events early
+  });
+})();
+```
+
+---
+
+1. wsl 中需要安装 socat 来配合 windows 上的 npiperelay
 2. 根据是否在国外进行换源操作
 3. 配置 age 来 签名
-4. 设置windows上的gpg key用于 git commit 签名。
+4. 设置 windows 上的 gpg key 用于 git commit 签名。
 5. 使用 pre-commit 配合 chezmoi verify
 
 ## install apps
@@ -75,7 +164,7 @@ powershell admin:
 Set-NetFirewallHyperVVMSetting -Name '{40E0AC32-46A5-438A-A0B2-2B479E8F2E90}' -DefaultInboundAction Allow
 ```
 
-## 与wsl共享 ssh/gpg key
+## 与 wsl 共享 ssh/gpg key
 
 [Sharing Git credentials with your container](https://code.visualstudio.com/remote/advancedcontainers/sharing-git-credentials)
 
@@ -84,10 +173,6 @@ Set-NetFirewallHyperVVMSetting -Name '{40E0AC32-46A5-438A-A0B2-2B479E8F2E90}' -D
 Open gpedit.msc
 Navigate to Computer Configuration > Administrative Templates > Windows Components > Windows Sandbox
 Disable "Allow vGPU sharing for Windows Sandbox"
-
-## VSpaceCode
-
-those settings is largely adapted from https://gist.github.com/macintacos/d63b7057cee0638e7ccfcdd6d1b7f662
 
 ### error: CreateInstance/CreateVm/ConfigureNetworking/0x8007054f
 

@@ -97,9 +97,9 @@
             "type": "command",
             "command": "markdown.extension.editing.toggleItalic"
           },
-          // c surround inline code
+          // l surround inline code
           {
-            "key": "c",
+            "key": "l",
             "name": "surround inline code",
             "icon": "code",
             "type": "command",
@@ -121,13 +121,18 @@
             "type": "command",
             "command": "markdown.extension.editing.toggleStrikethrough"
           },
-          // b code block
+          // c code block
           {
-            "key": "b",
+            "key": "c",
             "name": "surround code block",
             "icon": "file-code",
             "type": "command",
             "command": "markdown.extension.editing.toggleCodeBlock"
+            // "command": "markdown.extension.editing._wrapBy",
+            // "args": {
+            //   "before": "```\n",
+            //   "after": "\n```"
+            // }
           },
           // m surround math
           {
