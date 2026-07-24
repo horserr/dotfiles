@@ -6,7 +6,6 @@
 .pixi/
 
 .inputrc
-.bashrc
 .profile
 .zshrc
 {{ end }}
