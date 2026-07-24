@@ -1,128 +1,100 @@
 {
-  // nyxt browser https://nyxt.atlas.engineer/
   // msys2
-  // email https://github.com/pimalaya/himalaya
   "winapps": {
     "scoop": {
-      "extras": [
-        "servy",
-        "altsnap",
-        "sumatrapdf",
-        "calibre",
-        "exhyperv",
-        "wiztree",
-        "quicklook",
-        "zotero",
-        "tailscale",
-        "Windhawk",
-        "npiperelay",
-        "potplayer",
-        "qbittorrent",
-        "flow-launcher",
-        "clash-verge-rev",
-        "tor-browser",
-        "revouninstaller",
-        "wireshark",
-        "obs-studio",
-        "ventoy",
-        "wechat",
-        "unigetui",
-        "qq-nt"
-      ],
+      "extras": [],
+      "nerd-fonts": ["Maple-Mono", "Maple-Mono-NF-CN"],
       "main": [
-        "carapace",
-        "tldr",
-        "gh",
-        "uv",
-        "delta",
-        "trippy",
-        "less",
-        "chezmoi",
-        "starship",
-        "python",
-        "fd",
-        "ripgrep",
-        "nodejs",
-        "rclone",
-        "scoop-search",
-        // "yt-dlp",
-        "aria2",
-        "pandoc",
         "7zip",
-        "nmap",
-        "ffmpeg",
-        "zoxide",
-        "bt",
-        "iperf3",
-        "fzf",
+        "aria2",
         "bat",
-        "everything-cli",
+        "bt",
+        "carapace",
+        "chezmoi",
+        "delta",
         "edit",
-        "yazi",
+        "everything-cli",
+        "fd",
+        "ffmpeg",
+        "fzf",
+        "imagemagick",
+        "iperf3",
         "jq",
+        "less",
+        "nmap",
+        "nodejs",
+        "pandoc",
         "poppler",
-        "imagemagick"
+        "python",
+        "rclone",
+        "ripgrep",
+        "scoop-search",
+        "starship",
+        "tldr",
+        "trippy",
+        "uv",
+        "yazi",
+        "zoxide"
+        // "gh",
+        // "yt-dlp",
       ]
     },
     "winget": {
       "normal": [
-        // auto dark mode
-        "ArminOsaj.AutoDarkMode",
-        // vivaldi.vivaldi
-        "vivaldi.vivaldi",
-        // thunder bird
-        // "Molilla.Thunderbird",
-        // twinkletray
-        "xanderfrangos.twinkletray",
-        // adobe creative cloud
         "Adobe.CreativeCloud",
-        // remote desktop
-        "Microsoft.WindowsApp",
-        // SSHFS
-        "SSHFS-Win.SSHFS-Win",
-        // WinFsp
-        "WinFsp.WinFsp",
-        //EventLogExpert
-        "Microsoft.EventLogExpert",
-        // WinDbg
-        "Microsoft.WinDbg",
-        //Suite
-        "Microsoft.Sysinternals.Suite",
-        //LinkShellExtension
-        "HermannSchinagl.LinkShellExtension",
-        //WMIExplorer
-        "vinaypamnani.WMIExplorer",
-        //LittleBigMouse
-        "mgth.LittleBigMouse",
-        //Powershell Preview
-        "Microsoft.PowerShell.Preview",
-        //everything
-        "voidtools.Everything.Alpha",
-        //Git
-        "Git.Git",
-        //RaspberryPiImager
-        "RaspberryPiFoundation.RaspberryPiImager",
-        //GHUB
-        "Logitech.GHUB",
-        //OptionsPlus
-        "Logitech.OptionsPlus",
-        //usbipd-win
-        "dorssel.usbipd-win",
-        //QQMusic
-        "Tencent.QQMusic",
-        //AutoHotkey
+        "aelassas.Servy",
+        "albertony.npiperelay",
+        "AltSnap.AltSnap",
+        "AntibodySoftware.WizTree",
+        "ArminOsaj.AutoDarkMode",
         "AutoHotkey.AutoHotkey",
-        //VisualStudioCode
-        "Microsoft.VisualStudioCode",
-        // msvc build tools
+        "calibre.calibre",
+        "ClashVergeRev.ClashVergeRev",
+        "Daum.PotPlayer",
+        "DigitalScholar.Zotero",
+        "dorssel.usbipd-win",
+        "Flow-Launcher.Flow-Launcher",
+        "Git.Git",
+        "HermannSchinagl.LinkShellExtension",
+        "Justsenger.ExHyperV",
+        "Logitech.GHUB",
+        "Logitech.OptionsPlus",
+        "MartiCliment.UniGetUI",
+        "mgth.LittleBigMouse",
+        "Microsoft.EventLogExpert",
+        "Microsoft.PowerShell.Preview",
+        "Microsoft.Sysinternals.Suite",
         "Microsoft.VisualStudio.BuildTools",
-        //Windows Terminal Preview
-        "Microsoft.WindowsTerminal.Preview"
+        "Microsoft.VisualStudioCode",
+        "Microsoft.WinDbg",
+        "Microsoft.WindowsApp",
+        "Microsoft.WindowsTerminal.Preview",
+        "OBSProject.OBSStudio",
+        "qBittorrent.qBittorrent.Beta",
+        "QL-Win.QuickLook",
+        "RamenSoftware.Windhawk",
+        "RaspberryPiFoundation.RaspberryPiImager",
+        "RevoUninstaller.RevoUninstaller",
+        "SSHFS-Win.SSHFS-Win",
+        "SumatraPDF.SumatraPDF",
+        "Tailscale.Tailscale",
+        "Tencent.QQ.NT",
+        "Tencent.QQMusic",
+        "Tencent.WeChat.Universal",
+        "TorProject.TorBrowser",
+        "Ventoy.Ventoy",
+        "vinaypamnani.WMIExplorer",
+        "vivaldi.vivaldi",
+        "voidtools.Everything.Alpha",
+        "WinFsp.WinFsp",
+        "WiresharkFoundation.Wireshark",
+        "xanderfrangos.twinkletray"
+        // "Molilla.Thunderbird",
       ],
       "store": [
-        "XP8CBJ40XLBWKX", // docker desktop
         "9NZ3KLHXDJP5", // Ubuntu 24.04LTS
-        "9PKR34TNCV07" // Kali Linux
+        "9PKR34TNCV07", // Kali Linux
+        "XP8CBJ40XLBWKX" // docker desktop
       ]
     }
   }

@@ -143,3 +143,5 @@ set mark-symlinked-directories on
 
 # vscode shell integration
 [[ "$TERM_PROGRAM" == "vscode" ]] && . "$(code --locate-shell-integration-path bash)"
+# starship
+eval "$(starship init bash)"
