@@ -1,0 +1,17 @@
+{
+  "$help": "https://catppuccin.com/palette/",
+  "catppuccin.accentColor": "maroon",
+  "catppuccin.boldKeywords": true,
+  "catppuccin.bracketMode": "dimmed",
+  // Custom color overrides. Assign your own hex codes to palette colors. See [the docs](https://github.com/catppuccin/vscode#override-palette-colors) for reference.
+  "catppuccin.colorOverrides": {},
+  // Customize UI colors. Map `workbench.colorCustomizations` to palette colors. See [the docs](https://github.com/catppuccin/vscode#use-palette-colors-on-workbench-elements-ui) for reference.
+  "catppuccin.customUIColors": {},
+  "catppuccin.extraBordersEnabled": true,
+  // Controls whether to use *italics* for comments.
+  "catppuccin.italicComments": true,
+  // Controls whether to use *italics* for keywords.
+  "catppuccin.italicKeywords": true,
+  // Controls whether to sync the currently active Catppuccin flavor with the [Catppuccin Icon Pack](https://github.com/catppuccin/vscode-icons)
+  "catppuccin.syncWithIconPack": true
+}
