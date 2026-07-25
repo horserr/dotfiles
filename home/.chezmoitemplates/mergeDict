@@ -28,9 +28,8 @@
     {{- fail (printf "Unknown file type: %s" $fileName) -}}
   {{- end -}}
 
-  {{- /* $cleanedContent = omit $fileContent "$schema" */ -}}
-  {{- /* $mergedDict = merge $mergedDict $cleanedContent */ -}}
-  {{- $mergedDict = merge $mergedDict $fileContent -}}
+  {{- $cleanedContent = omit $fileContent "$schema" "$help" -}}
+  {{- $mergedDict = merge $mergedDict $cleanedContent -}}
 {{- end -}}
 
 {{- if eq (len $mergedDict) 0 -}}
