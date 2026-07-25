@@ -70,6 +70,32 @@
         "icon": "keyboard",
         "type": "bindings",
         "bindings": [
+          // l code search
+          {
+            "key": "l",
+            "name": "+Code search",
+            "icon": "search",
+            "type": "bindings",
+            "bindings": [
+              {
+                "key": "g",
+                "name": "github search",
+                "icon": "github-alt",
+                "type": "command",
+                "command": "vscode.open",
+                "args": "https://github.com/search"
+              },
+              // source graph search
+              {
+                "key": "s",
+                "name": "source graph code search",
+                "icon": "skip",
+                "type": "command",
+                "command": "vscode.open",
+                "args": "https://sourcegraph.com/search"
+              }
+            ]
+          },
           // f feature request
           {
             "key": "f",
@@ -307,14 +333,33 @@
             "command": "vscode.open",
             "args": "https://github.com/wraith13/vscode-schemas"
           },
-          // open github flavored markdown
+          // m +Markdown
           {
             "key": "m",
-            "name": "Open github flavored markdown spec",
-            "icon": "getting-started-step-checked",
-            "type": "command",
-            "command": "vscode.open",
-            "args": "https://github.github.com/gfm/"
+            "name": "+Markdown",
+            "icon": "markdown",
+            "type": "bindings",
+            "bindings": [
+              // g github flavored markdown spec
+              {
+                "key": "g",
+                "name": "Open github flavored markdown spec",
+                "icon": "markdown",
+                "type": "command",
+                "command": "vscode.open",
+                "args": "https://github.github.com/gfm/"
+              },
+              // m open markdown it sample
+              {
+                "key": "m",
+                "name": "open markdown it sample",
+                "icon": "markdown",
+                "type": "command",
+                "command": "vscode.open",
+                // "args": "https://markdown-it.github.io/"
+                "args": "https://shd101wyy.github.io/markdown-preview-enhanced/#/markdown-basics"
+              }
+            ]
           },
           // t vscode tasks
           {

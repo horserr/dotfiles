@@ -5,7 +5,8 @@
   // TOGGLE can set 'all'
   "git.autofetch": true,
   "git.autofetchPeriod": 180, // every 3mins
-  "git.autorefresh": false,
+  // enable auto refresh
+  "git.autorefresh": true,
   "git.autoRepositoryDetection": true,
   // SIGNIFICANT
   "git.autoStash": true,
@@ -53,7 +54,7 @@
   "git.openDiffOnClick": true,
   "git.openRepositoryInParentFolders": "always",
   "git.optimisticUpdate": true,
-  // UPLIFTING WORKSPACE
+  // UPLIFTING WORKSPACE postCommitCommand
   "git.postCommitCommand": "none",
   "git.promptToSaveFilesBeforeCommit": "staged",
   "git.promptToSaveFilesBeforeStash": "always",

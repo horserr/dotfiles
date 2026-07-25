@@ -31,7 +31,7 @@
   // workbench.action.terminal.resetSuggestWidgetSize
 
   // selectFirstSuggestion
-// selectLastSuggestion
+  // selectLastSuggestion
   {
     "key": "ctrl+j",
     "command": "selectNextSuggestion",

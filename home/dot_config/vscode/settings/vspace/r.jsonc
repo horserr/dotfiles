@@ -1,8 +1,8 @@
 [
   {
     "key": "r",
-    "name": "Refactor/Run",
-    "icon": "clock",
+    "name": "+Run",
+    "icon": "run",
     "type": "bindings",
     "bindings": [
       {

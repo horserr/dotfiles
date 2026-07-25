@@ -245,7 +245,7 @@
         // terminal.toggleVisibility
         "bindings": [
           {
-            "key": "i",
+            "key": "n",
             "name": "open cwd in integrated terminal",
             "icon": "terminal",
             "type": "command",
@@ -255,11 +255,26 @@
             }
           },
           {
-            "key": "x",
+            "key": "N",
             "name": "Open cwd in external terminal",
             "icon": "terminal-cmd",
             "type": "command",
             "command": "openInTerminal"
+          },
+          {
+            "key": "i",
+            "name": "Open workspace root in integrated terminal",
+            "icon": "terminal",
+            "type": "command",
+            // "command": "workbench.action.terminal.new"
+            "command": "workbench.action.terminal.newInActiveWorkspace"
+          },
+          {
+            "key": "I",
+            "name": "Open worksapce root in external terminal",
+            "icon": "terminal-cmd",
+            "type": "command",
+            "command": "workbench.action.terminal.openNativeConsole"
           },
           {
             "key": "s",
@@ -276,21 +291,6 @@
             "icon": "defaultProfile-icon",
             "type": "command",
             "command": "workbench.action.terminal.newWithProfile"
-          },
-          {
-            "key": "r",
-            "name": "Open workspace root in integrated terminal",
-            "icon": "terminal",
-            "type": "command",
-            // "command": "workbench.action.terminal.new"
-            "command": "workbench.action.terminal.newInActiveWorkspace"
-          },
-          {
-            "key": "R",
-            "name": "Open worksapce root in external terminal",
-            "icon": "terminal-cmd",
-            "type": "command",
-            "command": "workbench.action.terminal.openNativeConsole"
           },
           {
             "key": "e",

@@ -1,7 +1,32 @@
 {
-  "better-todo-tree.general.statusBar": "current file",
+  // examples: https://github.com/FanaticPythoner/better-todo-tree/wiki/Configuration-Examples#multiline-regexs
+  "$help": "https://github.com/FanaticPythoner/better-todo-tree",
+  "better-todo-tree.filtering.ignoreGitSubmodules": true,
+  // Polling interval in seconds for automatic tree refresh after repository changes. Set to `0` to disable.
+  "better-todo-tree.general.automaticGitRefreshInterval": 0,
+  // Create a debug channel in the Output view.
+  "better-todo-tree.general.debug": false,
+  // Path to use when exporting the tree. Environment variables will be expanded, e.g `${HOME}` and the path is passed through strftime (see <https://github.com/samsonjs/strftime>). Set the extension to `.json` to export as a JSON record.
+  "better-todo-tree.general.exportPath": "~/better-todo-tree-%Y%m%d-%H%M.json",
+  // Periodic refresh interval (in minutes) for automatically refreshing the tree. Set to '0' to disable.
+  "better-todo-tree.general.periodicRefreshInterval": 0,
+  "better-todo-tree.general.revealBehaviour": "start of todo",
+  // Editor schemes to find TODOs in. To find TODOs in settings files, for instance, add `vscode-userdata` or for output windows, add `output`.
+  "better-todo-tree.general.schemes": [
+    "file",
+    "ssh",
+    "untitled",
+    "vscode-notebook-cell"
+  ],
+  "better-todo-tree.general.showActivityBarBadge": true,
+
   "better-todo-tree.general.showIconsInsteadOfTagsInStatusBar": true,
+  "better-todo-tree.general.showScanningProgress": "status bar",
+
+  "better-todo-tree.general.statusBar": "current file",
   "better-todo-tree.general.statusBarClickBehaviour": "toggle highlights",
+
+  // Allows similar tags to be grouped under the same type, e.g. `{ "FIX": ["FIXME","FIXIT"] }`. *Note: All tags must also be in the `better-todo-tree.general.tags` tag list. If a tag group is defined, custom highlights apply to the group, not the tags within the group.*
   "better-todo-tree.general.tagGroups": {
     "FIXME": ["FIXME", "FIXIT", "FIX"]
   },
@@ -12,9 +37,10 @@
     "FIXME",
     "FIX",
     "FIXIT",
-    "XXX"
+    "XXX",
+    "[ ]",
+    "[x]"
   ],
-  "better-todo-tree.general.showActivityBarBadge": true,
   "better-todo-tree.highlights.customHighlight": {
     "TODO": {
       "background": "#8FBCBB",
@@ -35,7 +61,6 @@
   "better-todo-tree.highlights.enabled": true,
   "better-todo-tree.highlights.highlightDelay": 300,
   "better-todo-tree.highlights.useColourScheme": true,
-  "better-todo-tree.filtering.ignoreGitSubmodules": true,
-  "better-todo-tree.tree.buttons.export": true,
-  "better-todo-tree.regex.regexCaseSensitive": false
+  "better-todo-tree.regex.regexCaseSensitive": false,
+  "better-todo-tree.tree.buttons.export": true
 }

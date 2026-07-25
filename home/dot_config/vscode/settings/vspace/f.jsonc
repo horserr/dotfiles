@@ -161,19 +161,20 @@
         "icon": "history",
         "type": "bindings",
         "bindings": [
+          // H mark history
           {
             "key": "H",
-            "name": "view history",
-            "icon": "bookmark",
-            "type": "command",
-            "command": "timeline.focus"
-          },
-          {
-            "key": "m",
             "name": "mark history",
             "icon": "bookmark",
             "type": "command",
             "command": "workbench.action.localHistory.create"
+          },
+          {
+            "key": "v",
+            "name": "view history",
+            "icon": "bookmark",
+            "type": "command",
+            "command": "timeline.focus"
           },
           {
             "key": "r",

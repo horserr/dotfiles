@@ -1,0 +1,38 @@
+[
+  {
+    "key": "l",
+    "name": "+Refactor",
+    "icon": "refactor-preview-view-icon",
+    "type": "bindings",
+    "bindings": [
+      {
+        "key": "r",
+        "name": "Refactor",
+        "icon": "edit",
+        "type": "command",
+        "command": "editor.action.refactor"
+      },
+      {
+        "key": "i",
+        "name": "Organize Imports",
+        "icon": "selection",
+        "type": "command",
+        "command": "editor.action.organizeImports"
+      },
+      {
+        "key": "e",
+        "name": "Edit symbol",
+        "icon": "edit",
+        "type": "command",
+        "command": "editor.action.rename"
+      },
+      {
+        "key": "w",
+        "name": "Delete trailing whitespace",
+        "icon": "whitespace",
+        "type": "command",
+        "command": "editor.action.trimTrailingWhitespace"
+      }
+    ]
+  }
+]

@@ -248,6 +248,54 @@
                     "args": { "snippet": "==" }
                   }
                 ]
+              },
+              {
+                "key": "n",
+                "name": "!= insert not equal marks",
+                "icon": "symbol-key",
+                "type": "conditional",
+                "bindings": [
+                  {
+                    "key": "languageId:javascript",
+                    "name": "suggest",
+                    "icon": "symbol-key",
+                    "type": "command",
+                    "command": "editor.action.insertSnippet",
+                    "args": { "snippet": "!==" }
+                  },
+                  {
+                    "key": "languageId:javascriptreact",
+                    "name": "suggest",
+                    "icon": "symbol-key",
+                    "type": "command",
+                    "command": "editor.action.insertSnippet",
+                    "args": { "snippet": "!==" }
+                  },
+                  {
+                    "key": "languageId:typescript",
+                    "name": "suggest",
+                    "icon": "symbol-key",
+                    "type": "command",
+                    "command": "editor.action.insertSnippet",
+                    "args": { "snippet": "!==" }
+                  },
+                  {
+                    "key": "languageId:typescriptreact",
+                    "name": "suggest",
+                    "icon": "symbol-key",
+                    "type": "command",
+                    "command": "editor.action.insertSnippet",
+                    "args": { "snippet": "!==" }
+                  },
+                  {
+                    "key": "",
+                    "name": "suggest",
+                    "icon": "symbol-key",
+                    "type": "command",
+                    "command": "editor.action.insertSnippet",
+                    "args": { "snippet": "!=" }
+                  }
+                ]
               }
             ]
           }

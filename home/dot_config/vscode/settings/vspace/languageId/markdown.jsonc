@@ -20,6 +20,12 @@
   // markdowntable.prevCellWithoutFormat
   // markdowntable.tsvToTable
   {
+    // extensions include
+    // ncukondo.vscode-markdown-academic-preview
+    // shd101wyy.markdown-preview-enhanced
+    // TakumiI.markdowntable
+    // xlthu.Pangu-Markdown
+    // yzhang.markdown-all-in-one
     "key": "languageId:markdown",
     "name": "Markdown",
     "icon": "tools",
