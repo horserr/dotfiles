@@ -1,0 +1,120 @@
+{
+  "$help": "https://shd101wyy.github.io/markdown-preview-enhanced",
+  "markdown-preview-enhanced.alwaysShowBacklinksInPreview": true,
+  "markdown-preview-enhanced.automaticallyShowPreviewOfMarkdownBeingEdited": false,
+  "markdown-preview-enhanced.breakOnSingleNewLine": true,
+  "markdown-preview-enhanced.chromePath": "",
+  "markdown-preview-enhanced.codeBlockTheme": "auto.css",
+  // WORKSPACE A list of file name patterns (e.g., `*.note.md`) to exclude from the `automaticallyShowPreviewOfMarkdownBeingEdited` feature. Files whose names match any of these patterns won't trigger the automatic preview. Supports `*` as a wildcard. Matching is performed against the file's basename (not full path) and is case-insensitive.
+  "markdown-preview-enhanced.disableAutoPreviewForFilePatterns": [],
+  // A list of URI schemes (e.g., `vscode-notebook-cell`) to exclude from the `automaticallyShowPreviewOfMarkdownBeingEdited` feature. Files matching these schemes won't trigger the automatic preview.
+  "markdown-preview-enhanced.disableAutoPreviewForUriSchemes": [
+    "vscode-notebook-cell"
+  ],
+  "markdown-preview-enhanced.enableCriticMarkupSyntax": true,
+  "markdown-preview-enhanced.enableEmojiSyntax": true,
+  "markdown-preview-enhanced.enableExtendedTableSyntax": true,
+  "markdown-preview-enhanced.enableHTML5Embed": true,
+  "markdown-preview-enhanced.enableImageLightbox": true,
+  "markdown-preview-enhanced.enableLinkify": true,
+  // Enable this option will hide unnecessary UI elements in preview unless your mouse is over it.
+  "markdown-preview-enhanced.enablePreviewZenMode": false,
+  // Enables executing code chunks and importing javascript files.
+  // ⚠️ Please use this feature with caution because it may put your security at risk! Your machine can get hacked if someone makes you open a markdown with malicious code while script execution is enabled.
+  "markdown-preview-enhanced.enableScriptExecution": false,
+  // Enable Obsidian-style #tag syntax. Renders `#tag-name` (and nested `#parent/child`) as clickable pill-shaped anchors. Click a tag to open VS Code's "Search in Files" pre-filled with the tag.
+  "markdown-preview-enhanced.enableTagSyntax": true,
+  // Enable smartypants and other sweet transforms.
+  "markdown-preview-enhanced.enableTypographer": true,
+  // Enable Wiki Link syntax support. More information can be found at https://help.github.com/articles/adding-links-to-wikis/
+  "markdown-preview-enhanced.enableWikiLinkSyntax": true,
+  "markdown-preview-enhanced.frontMatterRenderingOption": "table",
+  // Hide the default VSCode markdown preview extension buttons. Restarting the editor is required to make this config take effect.
+  "markdown-preview-enhanced.hideDefaultVSCodeMarkdownPreviewButtons": true,
+  // HTML attributes to pass to audio tags.
+  "markdown-preview-enhanced.HTML5EmbedAudioAttributes": "controls preload=\"metadata\" width=\"320\"",
+  // When true embed media with http:// schema in URLs. When false ignore and don't embed them.
+  "markdown-preview-enhanced.HTML5EmbedIsAllowedHttp": false,
+  //  Enables video/audio embed with ![]() syntax (default).
+  "markdown-preview-enhanced.HTML5EmbedUseImageSyntax": true,
+  // Enables video/audio embed with []() syntax.
+  "markdown-preview-enhanced.HTML5EmbedUseLinkSyntax": false,
+  // HTML attributes to pass to video tags.
+  "markdown-preview-enhanced.HTML5EmbedVideoAttributes": "controls preload=\"metadata\" width=\"320\" height=\"240\"",
+  // When using Image Helper to copy images, by default images will be copied to root image folder path '/assets'
+  "markdown-preview-enhanced.imageFolderPath": "/assets",
+  // You can choose different image uploader to upload image
+  "markdown-preview-enhanced.imageUploader": "imgur",
+  // jsDelivr CDN host. Example values: `cdn.jsdelivr.net`, `fastly.jsdelivr.net`, `gcore.jsdelivr.net`, `testingcf.jsdelivr.net`
+  "markdown-preview-enhanced.jsdelivrCdnHost": "cdn.jsdelivr.net",
+  // The URL of the Kroki server to use.
+  "markdown-preview-enhanced.krokiServer": "https://kroki.io",
+  // Default latex engine for Pandoc export and latex code chunk.
+  "markdown-preview-enhanced.latexEngine": "pdflatex",
+  "markdown-preview-enhanced.liveUpdate": true,
+  "markdown-preview-enhanced.liveUpdateDebounceMs": 300,
+  "markdown-preview-enhanced.markdownFileExtensions": [
+    ".md",
+    ".markdown",
+    ".mdown",
+    ".mkdn",
+    ".mkd",
+    ".rmd",
+    ".qmd",
+    ".mdx"
+  ],
+  // Markdown parser/renderer to use. 'markdown-it' (default) is the built-in renderer. 'pandoc' uses Pandoc (requires Pandoc installed; not available in VS Code web). 'markdown_yo' uses a high-performance WASM renderer (or native binary when markdownYoBinaryPath is set; experimental).
+  //  - markdown-it: Built-in markdown-it renderer (default).
+  //  - pandoc: Render via Pandoc. Requires Pandoc to be installed. Not available in VS Code web.
+  //  - markdown_yo: High-performance renderer (experimental). Uses WASM by default, or a native binary when markdownYoBinaryPath is set. markdown-it is still used for token-based operations.
+  "markdown-preview-enhanced.markdownParser": "markdown_yo",
+  "markdown-preview-enhanced.markdownYoBinaryPath": "",
+  "markdown-preview-enhanced.mathBlockDelimiters": [
+    ["$$", "$$"],
+    ["\\[", "\\]"]
+  ],
+  "markdown-preview-enhanced.mathInlineDelimiters": [
+    ["$", "$"],
+    ["\\(", "\\)"]
+  ],
+  "markdown-preview-enhanced.mathRenderingOnlineService": "https://latex.codecogs.com/gif.latex",
+  // Choose the Math expression rendering method here. You can also disable math rendering if you want by choosing 'None'.
+  "markdown-preview-enhanced.mathRenderingOption": "KaTeX",
+  // Mermaid theme, you can choose one from ["mermaid.css", "mermaid.dark.css", "mermaid.forest.css"]
+  "markdown-preview-enhanced.mermaidTheme": "default",
+  // Args passed to pandoc command e.g. ["--smart", "--filter=/bin/exe"] Please use long argument names.
+  "markdown-preview-enhanced.pandocArguments": [],
+  // The pandoc markdown flavor you want
+  "markdown-preview-enhanced.pandocMarkdownFlavor": "markdown-raw_tex+tex_math_single_backslash",
+  // Pandoc executable path
+  "markdown-preview-enhanced.pandocPath": "pandoc",
+  "markdown-preview-enhanced.plantumlServer": "",
+  "markdown-preview-enhanced.previewColorScheme": "editorColorScheme",
+  "markdown-preview-enhanced.previewMode": "Single Preview",
+  "markdown-preview-enhanced.previewTheme": "newsprint.css",
+  // Whether to print background for file export or not. If set to `false`, then `github-light` preview theme will be used. You can also set `print_background` in front-matter for individual files.
+  "markdown-preview-enhanced.printBackground": false,
+  // Accepted protocols for links.
+  "markdown-preview-enhanced.protocolsWhiteList": "http://, https://, atom://, file://, mailto:, tel:",
+  // Args passed to puppeteer.launch({args: $puppeteerArgs})
+  "markdown-preview-enhanced.puppeteerArgs": [],
+  // Puppeteer waits for a certain timeout in milliseconds before the document export.
+  "markdown-preview-enhanced.puppeteerWaitForTimeout": 0,
+  "markdown-preview-enhanced.scrollSync": true,
+  // If checked, we use GitHub style piped wiki links, i.e. [[linkText|wikiLink]]. Otherwise, we use [[wikiLink|linkText]] as the original Wikipedia style.
+  "markdown-preview-enhanced.useGitHubStylePipedLink": true,
+  // When enabled, the context menu in preview inherits VS Code's theme colors and font instead of the default styling.
+  "markdown-preview-enhanced.useVSCodeThemeForContextMenu": true,
+  // How bare-filename wiki links (e.g. `[[Note]]`) are resolved to a file path.
+  //
+  // - `relative` — resolve relative to the current note's directory (default).
+  // - `shortest` — search all notes by filename, preferring the shortest unique path (with same-directory tiebreaking). Obsidian-style.
+  // - `absolute` — resolve from the notebook/workspace root.
+  //
+  // Links starting with `/` always resolve from the notebook root regardless of this setting.
+  "markdown-preview-enhanced.wikiLinkResolution": "relative",
+  // The file extension for the link in wikilink if the link does not have an extension.
+  "markdown-preview-enhanced.wikiLinkTargetFileExtension": ".md",
+  // The case for the file name in wikilink. If the value is `none`, then the file name will not be changed. Otherwise, the file name will be transformed to the specified case. You can read https://www.npmjs.com/package/case-anything for more details.
+  "markdown-preview-enhanced.wikiLinkTargetFileNameChangeCase": "kebabCase"
+}
