@@ -1,0 +1,60 @@
+{
+  "$help": "https://github.com/SlySherZ/vscode-comment-box",
+
+  "[python]": {
+    "commentBox.styles": {
+      "defaultStyle": {
+        "commentStartToken": "",
+        "commentEndToken": "##",
+        "leftEdgeToken": "# ",
+        "rightEdgeToken": " #",
+        "topEdgeToken": "#",
+        "bottomEdgeToken": "#",
+        "topRightToken": "##",
+        "bottomLeftToken": "##"
+      }
+    }
+  },
+
+  // link: https://github.com/SlySherZ/vscode-comment-box#style-settings
+  "commentBox.styles": {
+    "defaultStyle": {
+      "capitalize": true,
+      "ignoreInnerIndentation": false,
+      "ignoreOuterIndentation": false,
+      "removeEmptyLines": false,
+      "textAlignment": "left"
+    },
+    "live on the edge": {
+      "commentStartToken": "/*",
+      "commentEndToken": "*/",
+      "leftEdgeToken": " |",
+      "rightEdgeToken": "|",
+      "topEdgeToken": "=",
+      "bottomEdgeToken": "=",
+      "topRightToken": "+",
+      "bottomLeftToken": " +",
+      "fillingToken": "~-"
+    }
+    // basedOn
+    // bottomEdgeToken
+    // bottomLeftToken
+    // boxWidth
+    // capitalize
+    // commentEndToken
+    // commentStartToken
+    // extendSelection
+    // fillingToken
+    // hidden
+    // ignoreInnerIndentation
+    // ignoreOuterIndentation
+    // leftEdgeToken
+    // maxEndColumn
+    // removeEmptyLines
+    // rightEdgeToken
+    // textAlignment
+    // topEdgeToken
+    // topRightToken
+    // wordWrap
+  }
+}
