@@ -1,0 +1,20 @@
+{
+  "emojisense.emojiDecoratorsEnabled": true,
+  // Controls which languages emojisense is active in. You can also customize emojisense settings per language.
+  // To enable emojisense for all languages, use "*": true
+  "emojisense.languages": {
+    "git-commit": true,
+    "markdown": true,
+    "plaintext": {
+      "emojiDecoratorsEnabled": false,
+      "markupCompletionsEnabled": false
+    },
+    "scminput": true
+  },
+  // Enable completions that insert emoji markup, i.e. `::smile_cat` -> `:smile_cat:`
+  "emojisense.markupCompletionsEnabled": true,
+  // Should emoji completions automatically be shown when you type a colon?
+  "emojisense.showOnColon": true,
+  // Enable completions that insert emoji as unicode, i.e. `:smile_cat:` -> 😸
+  "emojisense.unicodeCompletionsEnabled": false
+}
