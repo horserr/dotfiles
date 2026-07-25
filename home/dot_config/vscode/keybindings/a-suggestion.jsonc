@@ -56,7 +56,7 @@
     "key": "ctrl+l",
     // "command": "toggleSuggestionFocus",
     "command": "toggleSuggestionDetails",
-    "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
+    "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && !inSnippetMode && textInputFocus"
   }
   // copilot inline suggestion (ghost test)
 

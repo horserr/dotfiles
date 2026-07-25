@@ -1,0 +1,33 @@
+[
+  // acceptSnippet
+  {
+    "key": "tab",
+    "command": "-jumpToNextSnippetPlaceholder",
+    "when": "hasNextTabstop &&inSnippetMode && textInputFocus"
+  },
+  {
+    "key": "ctrl+l",
+    "command": "jumpToNextSnippetPlaceholder",
+    "when": "hasNextTabstop && inSnippetMode && textInputFocus"
+  },
+  {
+    "key": "ctrl+h",
+    "command": "jumpToPrevSnippetPlaceholder",
+    "when": "hasPrevTabstop && inSnippetMode && textInputFocus || inSnippetChoice"
+  },
+  {
+    "key": "escape",
+    "command": "-leaveSnippet",
+    "when": "inSnippetMode && textInputFocus"
+  },
+  {
+    "key": "",
+    "command": "editor.action.showSnippets"
+  }
+  // default keybinding
+  // {
+  //   "key": "tab",
+  //   "command": "insertSnippet",
+  //   "when": "editorTextFocus && hasSnippetCompletions && !editorTabMovesFocus && !inSnippetMode"
+  // },
+]
