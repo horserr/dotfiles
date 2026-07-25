@@ -1,0 +1,22 @@
+{
+  "$help": "https://github.com/davidanson/markdownlint",
+  // markdownlint configuration object.
+  "markdownlint.config": {},
+  // Path to a configuration file that defines the base configuration.
+  "markdownlint.configFile": null,
+  // Array of paths for custom rules to include when linting.
+  "markdownlint.customRules": [],
+  // Makes it easier to focus while typing by hiding issues on or near the current line.
+  "markdownlint.focusMode": false,
+  // Array of glob expressions to include or ignore when linting a workspace with the "lintWorkspace" command.
+  "markdownlint.lintWorkspaceGlobs": [
+    "**/*.{md,mkd,mdwn,mdown,markdown,markdn,mdtxt,mdtext,workbook}",
+    "!**/*.code-search",
+    "!**/bower_components",
+    "!**/node_modules",
+    "!**/.git",
+    "!**/vendor"
+  ],
+  // Run the linter on save ("onSave") or on type ("onType").
+  "markdownlint.run": "onType"
+}
