@@ -1,4 +1,77 @@
 {
+  // todo add admotion https://shd101wyy.github.io/markdown-preview-enhanced/#/markdown-basics?id=admonition
+  "critic mark addition": {
+    "prefix": "critic-add",
+    "body": ["{++$TM_SELECTED_TEXT++}$0"],
+    "description": "critic mark addition"
+  },
+  "critic mark deletion": {
+    "prefix": "critic-deletion",
+    "body": ["{--$TM_SELECTED_TEXT--}$0"],
+    "description": "critic mark addition"
+  },
+  "critic mark substitution": {
+    "prefix": "critic-substitution-replace",
+    // "body": ["{~~$TM_SELECTED_TEXT~>$1~~}$0"],
+    "body": ["${TM_SELECTED_TEXT/(.*)\\s+(\\S+)/{~~$1~>$2~~}/}$0"],
+    "description": "critic mark substitution/replace, prefill last word as substitution and the others to be substitute."
+  },
+  "critic mark comment": {
+    "prefix": "critic-comment",
+    "body": ["{>>$TM_SELECTED_TEXT<<}$0"],
+    "description": "critic mark comment"
+  },
+  "critic mark highlight": {
+    "prefix": "critic-highlight",
+    "body": ["{==$TM_SELECTED_TEXT==}$0"],
+    "description": "critic mark highlight"
+  },
+  "superscript": {
+    "prefix": "superscript",
+    // "body": ["$TM_SELECTED_TEXT^$1^$0"],
+    "body": ["${TM_SELECTED_TEXT/(.*)(\\S)/$1^$2^/}$0"],
+    "description": "superscript, prefilling the last number of letter"
+  },
+  "subscript": {
+    "prefix": "subscript",
+    // "body": ["H~2~O"],
+    "body": ["${TM_SELECTED_TEXT/(.*)(\\S)(\\S)/$1~$2~$3/}$0"],
+    "description": "subscript"
+  },
+  "footnote": {
+    "prefix": "footnote",
+    "body": ["[^${1:1}]: $TM_SELECTED_TEXT"],
+    "description": "surround with footnote"
+  },
+  "abbreviation": {
+    "prefix": "abbreviation",
+    "body": ["*[$TM_SELECTED_TEXT]: $0"],
+    "description": "surround with abbreviation"
+  },
+  "highlight": {
+    "prefix": "highlight",
+    "body": ["==$TM_SELECTED_TEXT=="],
+    "description": "surround with italic"
+  },
+  "keyboard": {
+    "prefix": "tag-keyboard",
+    "body": ["<kbd>$TM_SELECTED_TEXT</kbd>"],
+    "description": "surround with keyboard"
+  },
+  "wikilink": {
+    "prefix": "wikilink",
+    "body": [
+      "${2:!}[[${1:${TM_SELECTED_TEXT/(\\S+).*/${1:/capitalize}/}}|$TM_SELECTED_TEXT]]$0"
+    ],
+    "description": "Surround with wikilink, using the first word as display text, making the display text as optional. Exclamation mark ! means embedding."
+  },
+  "wikilink with identifier": {
+    "prefix": "wikilink-identifier",
+    "body": [
+      "${5:!}[[$TM_SELECTED_TEXT${1:#${2:Heading}}${3:^${4:block_id}}]]$0"
+    ],
+    "description": "Surround with wikilink, with heading and block id, can also link to current document. Exclamation mark ! means embedding."
+  },
   "insert image tag": {
     "prefix": "tag-image",
     "body": ["<img alt=\"$0\" src=\"$1\" width=40%/>"],
@@ -23,54 +96,14 @@
     ],
     "description": "Insert a 3 cols table"
   },
-  "Github Note callout": {
-    "prefix": "note callout",
+  "Github style callout": {
+    "prefix": "callout",
     "body": [
-      "> [!NOTE]",
+      ">[!${1|NOTE,TIP,IMPORTANT,WARNING,CAUTIION,danger,abstract,success,question,failure,bug,example,quote|}]",
       "> $TM_SELECTED_TEXT",
-      "${1:> ${2:Highlights information that users should take into account, even when skimming.}}",
+      "${2:> ${3:Highlights information that users should take into account, even when skimming.}}",
       "$0"
     ],
-    "description": "Github flavored NOTE callout"
-  },
-  "Github Tip callout": {
-    "prefix": "tip callout",
-    "body": [
-      "> [!TIP]",
-      "> $TM_SELECTED_TEXT",
-      "${1:> ${2:Optional information to help a user be more successful.}}",
-      "$0"
-    ],
-    "description": "Github flavored TIP callout"
-  },
-  "Github Important callout": {
-    "prefix": "important callout",
-    "body": [
-      "> [!IMPORTANT]",
-      "> $TM_SELECTED_TEXT",
-      "${1:> ${2:Critical information for users to know before continuing.}}",
-      "$0"
-    ],
-    "description": "Github flavored IMPORTANT callout"
-  },
-  "Github Caution callout": {
-    "prefix": "caution callout",
-    "body": [
-      "> [!CAUTION]",
-      "> $TM_SELECTED_TEXT",
-      "${1:> ${2:Information that users need to be careful about.}}",
-      "$0"
-    ],
-    "description": "Github flavored CAUTION callout"
-  },
-  "Github Warning callout": {
-    "prefix": "warning callout",
-    "body": [
-      "> [!WARNING]",
-      "> $TM_SELECTED_TEXT",
-      "${1:> ${2:Serious information that users must read to avoid significant consequences.}}",
-      "$0"
-    ],
-    "description": "Github flavored WARNING callout"
+    "description": "Github flavored callout"
   }
 }

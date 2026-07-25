@@ -15,6 +15,7 @@
       "strings": "on"
     },
     "editor.renderWhitespace": "all",
+    "editor.indentSize": "tabSize",
     "editor.tabSize": 4,
     "editor.unicodeHighlight.allowedCharacters": {},
     // Unicode characters that are common in allowed locales are not being highlighted.
@@ -74,7 +75,8 @@
   "markdown.extension.theming.decoration.renderHardLineBreak": true,
   "markdown.extension.theming.decoration.renderLink": false,
   "markdown.extension.theming.decoration.renderParagraph": true,
-  "markdown.extension.theming.decoration.renderStrikethrough": true,
+  // turn this off for critic substitution
+  "markdown.extension.theming.decoration.renderStrikethrough": false,
   "markdown.extension.theming.decoration.renderTrailingSpace": true,
   // WORKSPACE
   "markdown.extension.toc.levels": "1..6",
@@ -117,7 +119,7 @@
     "**/*.{jpg,jpe,jpeg,png,bmp,gif,ico,webp,avif,tiff,svg,mp4}"
   ],
   // use markdown lint instead
-  "markdown.validate.enabled": false,
+  "markdown.validate.enabled": false
   // "markdown.validate.fileLinks.markdownFragmentLinks": "inherit",
   // "markdown.validate.fragmentLinks.enabled": "warning",
   // // WORKSPACE

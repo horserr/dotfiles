@@ -91,7 +91,7 @@
   "markdown-preview-enhanced.plantumlServer": "",
   "markdown-preview-enhanced.previewColorScheme": "editorColorScheme",
   "markdown-preview-enhanced.previewMode": "Single Preview",
-  "markdown-preview-enhanced.previewTheme": "newsprint.css",
+  "markdown-preview-enhanced.previewTheme": "vscode.css",
   // Whether to print background for file export or not. If set to `false`, then `github-light` preview theme will be used. You can also set `print_background` in front-matter for individual files.
   "markdown-preview-enhanced.printBackground": false,
   // Accepted protocols for links.
