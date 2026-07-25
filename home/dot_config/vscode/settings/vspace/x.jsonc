@@ -18,6 +18,116 @@
     "icon": "symbol-text",
     "type": "bindings",
     "bindings": [
+      // x selection
+      {
+        "key": "x",
+        "name": "+Selection",
+        "icon": "selection",
+        "type": "bindings",
+        "bindings": [
+          // x select all occurrence
+          {
+            "key": "x",
+            "name": "select all hightligt, select all occurrence of find match",
+            "icon": "collection-small",
+            "type": "command",
+            // "command": "editor.action.selectAllMatches"
+            "command": "editor.action.selectHighlights"
+          },
+          // o select to bracket
+          {
+            "key": "o",
+            "name": "select in bracket",
+            "icon": "bracket",
+            "type": "command",
+            "command": "editor.action.selectToBracket"
+          },
+          // c copy selection to new untitle file
+          {
+            "key": "c",
+            "name": "copy selection to new untitle file",
+            "icon": "notebook-copy",
+            "type": "commands",
+            "commands": [
+              "editor.action.clipboardCopyAction",
+              "workbench.action.files.newUntitledFile",
+              "editor.action.clipboardPasteAction"
+            ]
+          },
+          // m move selection to new untitle file
+          {
+            "key": "m",
+            "name": "move selection to new untitle file",
+            "icon": "move",
+            "type": "commands",
+            "commands": [
+              "editor.action.clipboardCutAction",
+              "workbench.action.files.newUntitledFile",
+              "editor.action.clipboardPasteAction"
+            ]
+          }
+          // , add selection
+          //  not recommend to use. vim.visual mode already covers this
+          // {
+          //   "key": ",",
+          //   "name": "+Add selection",
+          //   "icon": "selection",
+          //   "type": "transient",
+          //   "bindings": [
+          //     // n add selection to next find match
+          //     {
+          //       "key": "n",
+          //       "name": "add selection to next find match",
+          //       "icon": "marker-navigation-next",
+          //       "type": "command",
+          //       "command": "editor.action.addSelectionToNextFindMatch"
+          //     },
+          //     {
+          //       "key": "N",
+          //       "name": "add selection to previous find match",
+          //       "icon": "marker-navigation-previous",
+          //       "type": "command",
+          //       "command": "editor.action.addSelectionToPreviousFindMatch"
+          //     },
+          //     {
+          //       "key": "m",
+          //       "name": "move selection to next find match",
+          //       "icon": "bracket",
+          //       "type": "command",
+          //       "command": "editor.action.moveSelectionToNextFindMatch"
+          //     },
+          //     {
+          //       "key": "M",
+          //       "name": "move selection to next find match",
+          //       "icon": "move",
+          //       "type": "command",
+          //       "command": "editor.action.moveSelectionToPreviousFindMatch"
+          //     },
+          //     {
+          //       "key": "M",
+          //       "name": "move selection to next find match",
+          //       "icon": "move",
+          //       "type": "command",
+          //       "command": "editor.action.moveSelectionToPreviousFindMatch"
+          //     },
+          //     {
+          //       "key": "j",
+          //       "name": "focus next cursor",
+          //       "icon": "inline-suggestion-hints-next",
+          //       "type": "command",
+          //       "command": "editor.action.focusNextCursor"
+          //     },
+          //     {
+          //       "key": "k",
+          //       "name": "focus previous cursor",
+          //       "icon": "inline-suggestion-hints-previous",
+          //       "type": "command",
+          //       "command": "editor.action.focusPreviousCursor"
+          //     }
+          //   ]
+          // },
+        ]
+      },
       // o open
       {
         "key": "o",
@@ -38,6 +148,65 @@
             "icon": "link-external",
             "type": "command",
             "command": "editor.action.openLink"
+          }
+        ]
+      },
+      // c comment box
+      {
+        "key": "c",
+        "name": "+Comment Box",
+        "icon": "comment-draft",
+        "type": "bindings",
+        "bindings": [
+          {
+            "key": "c",
+            "name": "add comment box",
+            "icon": "comment-add",
+            "type": "command",
+            "command": "commentBox.add"
+          },
+          {
+            "key": "u",
+            "name": "update comment box",
+            "icon": "comment-discussion-sparkle",
+            "type": "command",
+            "command": "commentBox.update"
+          },
+          {
+            "key": "d",
+            "name": "remove comment box",
+            "icon": "comment-unresolved",
+            "type": "command",
+            "command": "commentBox.remove"
+          },
+          {
+            "key": " ",
+            "name": "+Using style",
+            "icon": "image-carousel-editor-label-icon",
+            "type": "bindings",
+            "bindings": [
+              {
+                "key": "c",
+                "name": "add comment box using style",
+                "icon": "comment-add",
+                "type": "command",
+                "command": "commentBox.addUsingStyle"
+              },
+              {
+                "key": "d",
+                "name": "remove comment box using style",
+                "icon": "comment-discussion-quote",
+                "type": "command",
+                "command": "commentBox.removeUsingStyle"
+              },
+              {
+                "key": "u",
+                "name": "updarte comment box using style",
+                "icon": "comment-discussion-sparkle",
+                "type": "command",
+                "command": "commentBox.updateUsingStyle"
+              }
+            ]
           }
         ]
       },
@@ -180,67 +349,6 @@
               "editor.action.indentUsingTabs"
             ]
           }
-        ]
-      },
-      // r refactor
-      {
-        "key": "r",
-        "name": "+Refactor",
-        "icon": "refactor-preview-view-icon",
-        "type": "bindings",
-        "bindings": [
-          {
-            "key": "r",
-            "name": "Refactor",
-            "icon": "edit",
-            "type": "command",
-            "command": "editor.action.refactor"
-          },
-          {
-            "key": "i",
-            "name": "Organize Imports",
-            "icon": "selection",
-            "type": "command",
-            "command": "editor.action.organizeImports"
-          },
-          {
-            "key": "e",
-            "name": "Edit symbol",
-            "icon": "edit",
-            "type": "command",
-            "command": "editor.action.rename"
-          },
-          {
-            "key": "w",
-            "name": "Delete trailing whitespace",
-            "icon": "whitespace",
-            "type": "command",
-            "command": "editor.action.trimTrailingWhitespace"
-          }
-        ]
-      },
-      // c copy selection to new untitle file
-      {
-        "key": "c",
-        "name": "copy selection to new untitle file",
-        "icon": "notebook-copy",
-        "type": "commands",
-        "commands": [
-          "editor.action.clipboardCopyAction",
-          "workbench.action.files.newUntitledFile",
-          "editor.action.clipboardPasteAction"
-        ]
-      },
-      // m move selection to new untitle file
-      {
-        "key": "m",
-        "name": "move selection to new untitle file",
-        "icon": "move",
-        "type": "commands",
-        "commands": [
-          "editor.action.clipboardCutAction",
-          "workbench.action.files.newUntitledFile",
-          "editor.action.clipboardPasteAction"
         ]
       },
       // v smart selection
