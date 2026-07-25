@@ -1,0 +1,20 @@
+{
+  // Tailscale
+  // Show files and directories with names that start with a period.
+  "tailscale.fileExplorer.showDotFiles": true,
+
+  // Time in milliseconds between automatic refreshes of the node explorer. A value of 0 disables automatic refreshing.
+  "tailscale.nodeExplorer.refreshInterval": 5000,
+
+  // Enable/disable notification to serve new ports over Tailscale Funnel.
+  "tailscale.portDiscovery.enabled": false,
+
+  // An absolute path to the `tailscaled` unix socket. By default, the extension looks for the default path based on the platform.
+  "tailscale.socketPath": null,
+
+  // The connection timeout for SSH connections in milliseconds.
+  "tailscale.ssh.connectionTimeout": 30000,
+
+  // Default username for SSH connections.
+  "tailscale.ssh.defaultUsername": null
+}
