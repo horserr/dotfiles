@@ -1,5 +1,58 @@
 {
   // todo add admotion https://shd101wyy.github.io/markdown-preview-enhanced/#/markdown-basics?id=admonition
+  "insert list": {
+    "prefix": "prepend list",
+    // "body": ["${TM_SELECTED_TEXT/.+/• $0/g}"],
+    // ?: means non-capturing group
+    // first group captures indentation
+    // (second) group is ignored for detecting existing list mark
+    // second group captures the rest without trailing whitespaces
+    "body": ["${TM_SELECTED_TEXT/(\\s*)(?:-\\s+)?(.+)\\s?/$1- $2/g}"],
+    "description": "add list mark, preserving the indentation. support multi line"
+  },
+  "insert quote": {
+    "prefix": "prepend quote",
+    // ?: means non-capturing group
+    "body": ["${TM_SELECTED_TEXT/(\\s*)(?:>\\s+)?(.+)\\s?/$1> $2/g}"],
+    "description": "add quote mark, preserving the indentation. support multi line"
+  },
+  "insert class": {
+    "prefix": "insert class",
+    "body": ["{$TM_SELECTED_TEXT}$0"],
+    "description": "insert class name"
+  },
+  "insert tag": {
+    "prefix": "insert tag",
+    "body": ["$TM_SELECTED_TEXT"],
+    "description": "insert tag name"
+  },
+  "append block id": {
+    "prefix": "append block id",
+    "body": ["$TM_CURRENT_LINE ^$1"],
+    "description": "append block id"
+  },
+  "insert tasklist": {
+    "prefix": "prepend toggle tasklist",
+    // ?: means non-capturing group
+    //format      ::= '$' int | '${' int '}'
+    // | '${' int ':' '/upcase' | '/downcase' | '/capitalize' | '/camelcase' | '/pascalcase' | '/snakecase' | '/kebabcase' '}'
+    // | '${' int ':+' if '}'
+    // | '${' int ':?' if ':' else '}'
+    // | '${' int ':-' else '}' | '${' int ':' else '}'
+    // first group captures indentation
+    // second group captures unchecked list
+    // third group captures checked list
+    // note: second and thrid group are exclusive, given that checked and unchecked are unlikely to appear together
+    // fourth group captures the reset without trailing whitespaces
+    // the result is constructed conditionally based on second and third group
+
+    // test: switch between - and ,
+    // "body": ["${TM_SELECTED_TEXT/(\\s*)(-\\s+)?(,\\s+)?(.+)\\s?/$1${2:?, :- }${3:+- }$4/g}"],
+    "body": [
+      "${TM_SELECTED_TEXT/(\\s*)(- \\[ \\]\\s+)?(- \\[x\\]\\s+)?(.+)\\s?/$1${2:?- [x] :- [ ] }${3:+- [ ] }$4/g}"
+    ],
+    "description": "add tasklist mark, preserving the indentation. support multi line, also support toggle tasklist"
+  },
   "critic mark addition": {
     "prefix": "critic-add",
     "body": ["{++$TM_SELECTED_TEXT++}$0"],
