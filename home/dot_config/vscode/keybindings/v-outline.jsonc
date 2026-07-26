@@ -1,0 +1,81 @@
+[
+  {
+    "key": "v",
+    "command": "whichkey.show",
+    "args": [
+      {
+        "key": " ",
+        "name": "+View Common",
+        "icon": "x",
+        "type": "command",
+        "command": "runCommands",
+        "args": {
+          "commands": [
+            "vspacecode.space",
+            { "command": "whichkey.triggerKey", "args": "v" }
+          ]
+        }
+      },
+      // outline.filterOnType
+      {
+        "key": "z",
+        "name": "+Fold/Unfold",
+        "icon": "fold",
+        "type": "bindings",
+        "bindings": [
+          {
+            "key": "c",
+            "name": "fold",
+            "icon": "fold",
+            "type": "command",
+            "command": "outline.collapse"
+          },
+          {
+            "key": "o",
+            "name": "unfold",
+            "icon": "unfold",
+            "type": "command",
+            "command": "outline.expand"
+          }
+        ]
+      },
+      {
+        "key": "f",
+        "name": "follow cursor",
+        "icon": "person-follow",
+        "type": "command",
+        "command": "outline.followCursor"
+      },
+      {
+        "key": "s",
+        "name": "+Sort",
+        "icon": "person-follow",
+        "type": "bindings",
+        "bindings": [
+          {
+            "key": "k",
+            "name": "sort by kind",
+            "icon": "thinking",
+            "type": "command",
+            "command": "outline.sortByKind"
+          },
+          {
+            "key": "n",
+            "name": "sort by name",
+            "icon": "terminal-rename",
+            "type": "command",
+            "command": "outline.sortByName"
+          },
+          {
+            "key": "p",
+            "name": "sort by position",
+            "icon": "notifications-position",
+            "type": "command",
+            "command": "outline.sortByPosition"
+          }
+        ]
+      }
+    ],
+    "when": "focusedView == 'outline' && !inputFocus"
+  }
+]

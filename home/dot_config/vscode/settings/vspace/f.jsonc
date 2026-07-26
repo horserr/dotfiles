@@ -120,6 +120,14 @@
             "type": "command",
             "command": "workbench.files.action.showActiveFileInExplorer"
           },
+          // o outline view
+          {
+            "key": "o",
+            "name": "reveal outlien view of current file",
+            "icon": "outline-view-icon",
+            "type": "command",
+            "command": "outline.focus"
+          },
           // t reveal timeline
           {
             "key": "t",
