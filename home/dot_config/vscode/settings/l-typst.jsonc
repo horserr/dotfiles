@@ -1,0 +1,31 @@
+{
+  "$help": "https://myriad-dreamin.github.io/tinymist/config/vscode.html",
+  "[typst]": {
+    "editor.defaultFormatter": "myriad-dreamin.tinymist",
+    "editor.padding.bottom": 0,
+    "editor.language.colorizedBracketPairs": [
+      ["<", ">"],
+      ["[", "]"],
+      ["(", ")"],
+      ["{", "}"]
+      // ["《", "》"],
+      // ["【", "】"]
+    ],
+    "editor.unicodeHighlight.allowedCharacters": {},
+    // Unicode characters that are common in allowed locales are not being highlighted.
+    "editor.unicodeHighlight.allowedLocales": {
+      "_os": true,
+      "_vscode": true,
+      "zh-cn": true
+    },
+    "editor.unicodeHighlight.ambiguousCharacters": false,
+    "editor.unicodeHighlight.invisibleCharacters": true,
+    "editor.unicodeHighlight.nonBasicASCII": false,
+    "editor.wordWrap": "on",
+    "editor.foldingStrategy": "auto",
+    "editor.wrappingStrategy": "advanced"
+  },
+  "tinymist.preview.cursorIndicator": true,
+  "tinymist.preview.scrollSync": "onSelectionChange",
+  "tinymist.statusBarFormat": "{compileStatusIcon} {wordCount} [{fileName}]"
+}

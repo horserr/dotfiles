@@ -1,0 +1,87 @@
+{
+	"code": {
+		"prefix": "code",
+		"body": [
+			"`$TM_SELECTED_TEXT`",
+		],
+		"description": "surround code"
+	},
+	"code block": {
+		"prefix": "code block",
+		"body": [
+			"```example",
+			"$TM_SELECTED_TEXT",
+			"```",
+		],
+		"description": "surround code block"
+	},
+	"bold": {
+		"prefix": "bold",
+		"body": [
+			"*$TM_SELECTED_TEXT*",
+		],
+		"description": "surround bold"
+	},
+	"italic": {
+		"prefix": "italic",
+		"body": [
+			"${TM_SELECTED_TEXT/.*/_$0_/}",
+		],
+		"description": "surround italic"
+	},
+	"quote": {
+		"prefix": "quote",
+		"body": [
+			"#quote[",
+			"$TM_SELECTED_TEXT",
+			"]",
+		],
+		"description": "surround quote"
+	},
+	"quote block": {
+		"prefix": "quote-block",
+		"body": [
+			"#quote(block: true)[",
+			"$TM_SELECTED_TEXT",
+			"]",
+		],
+		"description": "surround quote block"
+	},
+	"image figure": {
+		"prefix": "figure-image",
+		"body": [
+			"#figure(",
+			"  image(\"x.jpeg\"),",
+			"  caption: [photo],",
+			")"
+		],
+		"description": "insert image figure"
+	},
+	"link": {
+		"prefix": "link",
+		"body": [
+			"#link(\"https://example.com\")[$TM_SELECTED_TEXT]",
+		],
+		"description": "surrond selection with link"
+	},
+	"simple link": {
+		"prefix": "email link",
+		"body": [
+			"#link(\"$TM_SELECTED_TEXT\")",
+		],
+		"description": "surrond selection with simple link"
+	},
+	"datetime": {
+		"prefix": "datetime",
+		// first group captures year: 4 digits
+		// second group captures the date delimiter
+		// third group captures month: 1 or 2 digits
+		// fourth group captures day: 1 or 2 digits
+		// fifth group captures hour
+		// sixth group captures minute
+		"body": [
+			"${TM_SELECTED_TEXT/(\\d{4})([.\\/])(\\d{1,2})\\2(\\d{1,2}\\s+(\\d{1,2}):(\\d{1,2}))/#datetime(year: $1, month: $3, day: $4${5:+, hour: }$5${6:+, minute: }$6)/}",
+		],
+		"description": "transform selection to datetime, optionally add hour and minute"
+	}
+}
