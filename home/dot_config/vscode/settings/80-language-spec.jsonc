@@ -45,10 +45,6 @@
   "[sql]": {
     "editor.defaultFormatter": "dbcode.dbcode"
   },
-  "[typst]": {
-    "editor.defaultFormatter": "myriad-dreamin.tinymist",
-    "editor.padding.bottom": 0
-  },
   "[xml, wsb]": {
     "editor.defaultFormatter": "redhat.vscode-xml"
   },

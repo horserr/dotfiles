@@ -2,9 +2,12 @@
   "[markdown]": {
     "bracketLens.mode": "on-save",
     "diffEditor.ignoreTrimWhitespace": false,
+    "editor.bracketPairColorization.enabled": false,
     "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.foldingStrategy": "auto",
     "editor.fontFamily": "STDongGuanTi, LXGW WenKai, jiangxizhuokai",
     "editor.fontSize": 19,
+    "editor.indentSize": "tabSize",
     "editor.letterSpacing": 0.8,
     "editor.lineHeight": 1.6,
     "editor.padding.bottom": 30,
@@ -15,7 +18,6 @@
       "strings": "on"
     },
     "editor.renderWhitespace": "all",
-    "editor.indentSize": "tabSize",
     "editor.tabSize": 4,
     "editor.unicodeHighlight.allowedCharacters": {},
     // Unicode characters that are common in allowed locales are not being highlighted.
@@ -24,9 +26,9 @@
       "_vscode": true,
       "zh-cn": true
     },
-    "editor.unicodeHighlight.nonBasicASCII": false,
     "editor.unicodeHighlight.ambiguousCharacters": false,
     "editor.unicodeHighlight.invisibleCharacters": true,
+    "editor.unicodeHighlight.nonBasicASCII": false,
     "editor.wordWrap": "on",
     "editor.wrappingStrategy": "advanced"
   },
@@ -97,7 +99,7 @@
   // SIGNIFICANT
   "markdown.preview.breaks": false,
   "markdown.preview.doubleClickToSwitchToEditor": true,
-  "markdown.preview.fontFamily": "-apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif",
+  "markdown.preview.fontFamily": "STDongGuanTi, -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif",
   "markdown.preview.fontSize": 16,
   "markdown.preview.frontMatter": "codeBlock",
   "markdown.preview.lineHeight": 1.5,
