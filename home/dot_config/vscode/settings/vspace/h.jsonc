@@ -70,6 +70,13 @@
         "icon": "keyboard",
         "type": "bindings",
         "bindings": [
+          {
+            "key": " ",
+            "name": "search in browser bookmard",
+            "icon": "book",
+            "type": "command",
+            "command": "browser-bookmark.search"
+          },
           // l code search
           {
             "key": "l",
@@ -262,13 +269,6 @@
         "icon": "book",
         "type": "bindings",
         "bindings": [
-          {
-            "key": " ",
-            "name": "search in browser bookmard",
-            "icon": "book",
-            "type": "command",
-            "command": "browser-bookmark.search"
-          },
           {
             "key": "v",
             "name": "Open VSCode variables for debug and tasks Documentation",

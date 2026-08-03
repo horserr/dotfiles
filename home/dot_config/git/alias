@@ -1,6 +1,7 @@
 # code: language=ini
 [alias]
 	repo = clone --depth 1 --filter=blob:none --sparse
+	mirror = clone --mirror
 	shallow-repo = clone --depth
 	partial-repo = clone --filter=blob:none --no-checkout
 	set-partial = "!f() { git config remote.$1.partialclonefilter blob:none; }; f"

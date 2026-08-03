@@ -65,7 +65,7 @@
   // SIGNIFICANT WORKSPACE
   "editor.foldingImportsByDefault": true,
   "editor.foldingStrategy": "indentation",
-  "editor.fontFamily": "Cascadia Code, FiraCode Nerd Font, 江西拙楷, 杨任东竹石体 Heavy, Consolas, Microsoft YaHei, monospace",
+  "editor.fontFamily": "Cascadia Code, FiraCode Nerd Font, STDongGuanTi, 江西拙楷, 杨任东竹石体 Heavy, Consolas, Microsoft YaHei, monospace",
   "editor.fontLigatures": true,
   // Editor settings
   "editor.fontSize": 17,
@@ -122,12 +122,10 @@
   "editor.insertSpaces": true,
   // SIGNIFICANT
   "editor.language.colorizedBracketPairs": [
-    ["<", ">"],
+    // ["<", ">"],
     ["[", "]"],
     ["(", ")"],
-    ["{", "}"],
-    ["《", "》"],
-    ["【", "】"]
+    ["{", "}"]
   ],
   // SIGNIFICANT format
   "editor.letterSpacing": 0,
@@ -265,7 +263,7 @@
         // foreground
         // background
         "fontStyle": "bold underline"
-      },
+      }
       // *.abstract
       // *.async
       // *.declaration

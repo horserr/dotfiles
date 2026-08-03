@@ -1,6 +1,5 @@
 # TODO
 
-- vscode debugging practice
 - todo outline view, find all reference view, rename symbol
   - github codespace
   - cloud change
@@ -8,11 +7,12 @@
 - script cat to create scripts for open vscode dev or vscode clone from source graph web
 
 - add chrome, edge browser policy
-- vscode cli: https://code.visualstudio.com/docs/configure/command-line
-- windows virtual desktop https://github.com/FuPeiJiang/VD.ahk
+- [vscode cli](https://code.visualstudio.com/docs/configure/command-line)
+- [windows virtual desktop](https://github.com/FuPeiJiang/VD.ahk)
 
 remote explorer
 GitHub codespace
+github actions automatically add star for better search.
 
 learn jq to sort and extract json file
 
@@ -20,7 +20,6 @@ learn jq to sort and extract json file
 通过 yazi 来管理文件
 尝试本地配置大模型
 之后删除 wsl。再尝试安装并使用 latex
-添加 vd.ahk： https://github.com/FuPeiJiang/VD.ahk
 使用 git submodule 添加 uia 和 vd 库
 了解：https://github.com/GorvGoyl/Autohotkey-Scripts-Windows，尝试添加几个
 了解 GitHub actions 和 codespace，尝试创建 my awesome list
@@ -29,6 +28,14 @@ servy to manage services
 
 ssh reverse tunnel
 ZMODEM (sz 命令） 回传
+
+移除recent items "C:\Users\ASUSCosmos\AppData\Roaming\Microsoft\Windows\Recent"
+
+theme folder
+C:\Users\ASUSCosmos\AppData\Roaming\Microsoft\Windows\Themes
+
+word templates
+C:\Users\ASUSCosmos\AppData\Roaming\Microsoft\Templates
 
 ```js
 (function () {

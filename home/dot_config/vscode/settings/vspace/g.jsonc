@@ -197,9 +197,17 @@
             "icon": "notebook-kernel-select",
             "type": "bindings",
             "bindings": [
-              // space stage all tracked
+              // a stage all files
               {
-                "key": " ",
+                "key": "a",
+                "name": "stage all files, tracked and untracked",
+                "icon": "check-all",
+                "type": "commands",
+                "commands": ["git.stageAllTracked", "git.stageAllUntracked"]
+              },
+              // t space stage all tracked
+              {
+                "key": "t",
                 "name": "stage all tracked files",
                 "icon": "arrow-down",
                 "type": "command",

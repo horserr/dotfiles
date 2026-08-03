@@ -67,7 +67,7 @@
 	"simple link": {
 		"prefix": "email link",
 		"body": [
-			"#link(\"$TM_SELECTED_TEXT\")",
+			"#link(\"mailto:$TM_SELECTED_TEXT\")",
 		],
 		"description": "surrond selection with simple link"
 	},
@@ -77,10 +77,11 @@
 		// second group captures the date delimiter
 		// third group captures month: 1 or 2 digits
 		// fourth group captures day: 1 or 2 digits
-		// fifth group captures hour
-		// sixth group captures minute
+		// fifth group makes hour and minute optional
+		// sixth group captures hour
+		// seventh group captures minute
 		"body": [
-			"${TM_SELECTED_TEXT/(\\d{4})([.\\/])(\\d{1,2})\\2(\\d{1,2}\\s+(\\d{1,2}):(\\d{1,2}))/#datetime(year: $1, month: $3, day: $4${5:+, hour: }$5${6:+, minute: }$6)/}",
+			"${TM_SELECTED_TEXT/(\\d{4})([.\\/])(\\d{1,2})\\2(\\d{1,2})(\\s+(\\d{1,2}):(\\d{1,2}))?/#datetime(year: $1, month: $3, day: $4${6:+, hour: }$6${7:+, minute: }$7)/}",
 		],
 		"description": "transform selection to datetime, optionally add hour and minute"
 	}

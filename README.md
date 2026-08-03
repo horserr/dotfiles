@@ -43,6 +43,12 @@ after installing
   scoop bucket add extras
   ```
 
+## compress docker date vhdx
+
+```pwsh
+Optimize-VHD -Path "$env:LOCALAPPDATA\Docker\wsl\DockerDesktopWSL\disk\docker_data.vhdx" -Mode Full
+```
+
 ## change apt source
 
 ### Ubuntu 24 之前的方式，直接修改 `/etc/apt/source.list`

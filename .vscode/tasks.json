@@ -15,10 +15,10 @@
     // test mouse master
     {
       "label": "test mouse master",
-      // "type": "shell",
-      "type": "process",
-      // "command": "start mousemaster.exe",
-      "command": "mousemaster.exe",
+      "type": "shell",
+      // "type": "process",
+      "command": "start mousemaster.exe",
+      // "command": "mousemaster.exe",
       "detail": "temporarily test mouse master",
       "options": { "cwd": "${env:USERPROFILE}/.config/mousemaster" },
       "dependsOn": ["apply"],

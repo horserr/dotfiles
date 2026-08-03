@@ -161,14 +161,14 @@
     {
       // shortcuts for easymotion
       // jump to any char
-      "before": ["f"],
+      "before": ["f", "f"],
       // "after": ["<leader>", "<leader>", "s"]
       "after": ["<leader>", "<leader>", "<leader>", "b", "d", "w"]
     },
     {
       // shortcuts for easymotion
       // jump to start of line
-      "before": ["g", "'"],
+      "before": ["f", "j"],
       "after": ["<leader>", "<leader>", "<leader>", "b", "d", "j", "k"]
     },
     /*     {

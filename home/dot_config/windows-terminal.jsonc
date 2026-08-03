@@ -126,7 +126,7 @@
   "copyFormatting": "all",
   "copyOnSelect": true,
   "defaultInputScope": "alphanumericHalfWidth",
-  "defaultProfile": "{47302f9c-1ac4-566c-aa3e-8cf29889d6ab}",
+  "defaultProfile": "{130f44eb-5af9-49db-94c5-40319671a76a}",
   "disableAnimations": false,
   "disabledProfileSources": [
     "Windows.Terminal.Azure",
@@ -330,7 +330,8 @@
       "experimental.rightClickContextMenu": false,
       "font": {
         "cellHeight": "1.3",
-        "face": "CaskaydiaCove Nerd Font",
+        // "face": "CaskaydiaCove Nerd Font",
+        "face": "Maple Mono NF CN",
         "features": {
           // https://learn.microsoft.com/en-us/typography/opentype/spec/featurelist
           "calt": 1, // 开启上下文替换（连字的基础）
@@ -448,6 +449,30 @@
     ]
   },
   "schemes": [
+    {
+      // link: https://github.com/subframe7536/vscode-theme-maple#windows-terminal
+      "name": "Maple Dark",
+      "selectionBackground": "#cbd5e1",
+      "cursorColor": "#cbd5e1",
+      "background": "#1e1e1f",
+      "foreground": "#cbd5e1",
+      "brightBlack": "#666666",
+      "brightBlue": "#a8e0ff",
+      "brightCyan": "#bafffe",
+      "brightGreen": "#bdf8c7",
+      "brightPurple": "#ebe5ff",
+      "brightRed": "#ffc4c4",
+      "brightWhite": "#ffffff",
+      "brightYellow": "#ffe8b9",
+      "black": "#333333",
+      "blue": "#8fc7ff",
+      "cyan": "#a1e8e5",
+      "green": "#a4dfae",
+      "purple": "#d2ccff",
+      "red": "#edabab",
+      "white": "#f3f2f2",
+      "yellow": "#eecfa0"
+    },
     {
       // rose-pine
       "background": "#191724",

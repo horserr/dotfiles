@@ -5,6 +5,7 @@
 
   // catppuccin-icons list: https://github.com/catppuccin/vscode-icons/tree/main/icons/mocha
   // Files with the `spec.ts` extension will have the `typescript-test` icon.
+  "chat.disableAIFeatures": true,
   "catppuccin-icons.associations.extensions": {
     "extension-list.yaml": "juce",
     "json.tmpl": "json",
@@ -138,7 +139,6 @@
     "**/vscode/*.json*": "${filename}(vsc)",
     "**/vscode/*/**/*.json*": "${filename}(${dirname})"
   },
-  "workbench.editor.showTabs": "multiple",
   "workbench.editorAssociations": {
     "*.copilotmd": "vscode.markdown.preview.editor"
   },
@@ -230,5 +230,7 @@
         }
       ]
     }
-  ]
+  ],
+  // Controls whether the editor will also delete the next line's indentation whitespace when deleting a newline.
+  "workbench.experimental.modernUI": true
 }
