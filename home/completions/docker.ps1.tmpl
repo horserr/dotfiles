@@ -1,0 +1,6 @@
+{{- if lookPath "docker" -}}
+if (-not(Get-Module -ListAvailable -Name "DockerCompletion")) {
+  Install-Module DockerCompletion -Force
+}
+Import-Module DockerCompletion
+{{- end -}}

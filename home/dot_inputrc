@@ -1,3 +1,12 @@
+set menu-complete-display-prefix on
+# tab key for menu completion
+
+# Source - https://stackoverflow.com/a/12045476
+# Posted by John Wordsworth, modified by community. See post 'Timeline' for change history
+
+TAB: menu-complete
+"\e[Z": menu-complete-backward
+
 # copied from: github.com/mathiasbynens/dotfiles/blob/main/.inputrc
 
 set editing-mode vi
@@ -20,10 +29,10 @@ set mark-symlinked-directories on
 set match-hidden-files off
 
 # Show all autocomplete results at once
-set page-completions off
+set page-completions on
 
 # If there are more than 200 possible completions for a word, ask to show them all
-set completion-query-items 200
+set completion-query-items 20
 
 # Show extra file information when completing, like `ls -F` does
 set visible-stats on

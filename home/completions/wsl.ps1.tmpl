@@ -1,0 +1,6 @@
+{{- if lookPath "wsl" -}}
+if (-not(Get-Module -ListAvailable -Name "WSLTabCompletion")) {
+  Install-Module -Name WSLTabCompletion -Force
+}
+Import-Module WSLTabCompletion
+{{- end -}}

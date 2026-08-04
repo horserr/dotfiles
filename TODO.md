@@ -1,8 +1,10 @@
 # TODO
 
-- todo outline view, find all reference view, rename symbol
-  - github codespace
-  - cloud change
+- docker and container tools
+
+- find all reference view, rename symbol
+- github codespace
+- cloud change
 - custom ui with css and js
 - script cat to create scripts for open vscode dev or vscode clone from source graph web
 
@@ -11,7 +13,6 @@
 - [windows virtual desktop](https://github.com/FuPeiJiang/VD.ahk)
 
 remote explorer
-GitHub codespace
 github actions automatically add star for better search.
 
 learn jq to sort and extract json file

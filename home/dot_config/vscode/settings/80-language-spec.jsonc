@@ -8,7 +8,7 @@
     /* cannot set here     "editor.wordWrapColumn": 80,
     "editor.wordWrap": "bounded" // this setting file cannot display this bounded wrap effect */
   },
-  "[ini]": {
+  "[ini][toml]": {
     "editor.defaultFormatter": "tamasfe.even-better-toml"
   },
   "[json]": {
@@ -23,6 +23,9 @@
   },
   "[prolog]": {
     "editor.defaultFormatter": "AmauryRabouan.new-vsc-prolog"
+  },
+  "[dockerfile]": {
+    "editor.defaultFormatter": "ms-azuretools.vscode-containers"
   },
   "[python]": {
     "editor.codeActionsOnSave": {

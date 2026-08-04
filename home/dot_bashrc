@@ -120,12 +120,8 @@ if [ -f "$HOME/.local/bin/env" ]; then
     . "$HOME/.local/bin/env"
 fi
 
-if command -v pixi; then
-    eval "$(pixi completion --shell bash)"
-fi
-
-export RUSTUP_DIST_SERVER="https://rsproxy.cn"
-export RUSTUP_UPDATE_ROOT="https://rsproxy.cn/rustup"
+# export RUSTUP_DIST_SERVER="https://rsproxy.cn"
+# export RUSTUP_UPDATE_ROOT="https://rsproxy.cn/rustup"
 
 function y() {
 	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
@@ -145,3 +141,24 @@ set mark-symlinked-directories on
 [[ "$TERM_PROGRAM" == "vscode" ]] && . "$(code --locate-shell-integration-path bash)"
 # starship
 eval "$(starship init bash)"
+
+# if command -v "carapace" &> /dev/null; then
+    # link: https://carapace-sh.github.io/carapace-bin/setup.html#bash
+    # export CARAPACE_BRIDGES='zsh,fish,bash,inshellisense' # optional
+    # source <(carapace _carapace)
+# fi
+
+if [ -d ~/completions ]; then
+  for file in ~/completions/*.bash; do
+    if [ -f "$file" ]; then
+      # extract cmd name
+      cmd=$(basename "$file" .bash)
+
+      if command -v "$cmd" &> /dev/null; then
+        source "$file"
+      fi
+    fi
+  done
+fi
+
+set -o vi
