@@ -4,9 +4,38 @@
   "version": "2.0.0",
   "tasks": [
     {
-      "label": "echo",
+      "label": "start mouse master",
       "type": "shell",
-      "command": "echo Hello"
+      // "type": "process",
+      "command": "start mousemaster.exe",
+      // "command": "mousemaster.exe",
+      "detail": "temporarily test mouse master",
+      "options": { "cwd": "${env:USERPROFILE}/.config/mousemaster" },
+      "group": "test",
+      "icon": { "id": "key" },
+      "runOptions": { "instanceLimit": 1, "instancePolicy": "prompt" },
+      "presentation": {
+        "echo": true,
+        "reveal": "silent",
+        "focus": false,
+        "panel": "shared",
+        "showReuseMessage": true,
+        "clear": false
+      }
     }
-  ]
+  ],
+  "windows": {
+    "options": {
+      "shell": {
+        "executable": "pwsh",
+        "args": ["-NoProfile", "-c"]
+      },
+      "env": {
+        "http_proxy": "http://localhost:7897",
+        "https_proxy": "http://localhost:7897",
+        "HTTP_PROXY": "http://localhost:7897",
+        "HTTPS_PROXY": "http://localhost:7897"
+      }
+    }
+  }
 }

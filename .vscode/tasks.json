@@ -12,31 +12,6 @@
 
   // state
   "tasks": [
-    // test mouse master
-    {
-      "label": "test mouse master",
-      "type": "shell",
-      // "type": "process",
-      "command": "start mousemaster.exe",
-      // "command": "mousemaster.exe",
-      "detail": "temporarily test mouse master",
-      "options": { "cwd": "${env:USERPROFILE}/.config/mousemaster" },
-      "dependsOn": ["apply"],
-      "group": "test",
-      "icon": { "id": "key" },
-      "runOptions": { "instanceLimit": 1, "instancePolicy": "prompt" }
-      // "isBackground": true,
-      // "problemMatcher": {
-      //   "pattern": {
-      //     "regexp": "."
-      //   },
-      //   "background": {
-      //     "activeOnStart": true,
-      //     "beginsPattern": ".*",
-      //     "endsPattern": "ready in" // 2. 匹配到这个关键词时，VS Code 会认为服务已就绪
-      //   }
-      // }
-    },
     // apply
     {
       "label": "apply",
