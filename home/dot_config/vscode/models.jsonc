@@ -1,0 +1,63 @@
+[
+  {
+    "name": "Deep Seek",
+    "vendor": "customendpoint",
+    "apiKey": "${input:chat.lm.secret.ea41823}",
+    "apiType": "chat-completions",
+    "models": [
+      {
+        "id": "deepseek-v4-flash",
+        "name": "ds-v4-flash",
+        "url": "https://api.deepseek.com",
+        "toolCalling": true,
+        "vision": false,
+        "maxInputTokens": 128000,
+        "maxOutputTokens": 16000
+      },
+      {
+        "id": "deepseek-v4-pro",
+        "name": "ds-v4-pro",
+        "url": "https://api.deepseek.com",
+        "toolCalling": true,
+        "vision": false,
+        "maxInputTokens": 128000,
+        "maxOutputTokens": 16000
+      }
+    ]
+  },
+  {
+    "name": "Qwen",
+    "vendor": "customendpoint",
+    "apiKey": "${input:chat.lm.secret.4f761796}",
+    "apiType": "chat-completions",
+    "models": [
+      {
+        "id": "qwen3.7-flash",
+        "name": "qwen3.7-flash",
+        "url": "https://dashscope.aliyuncs.com/compatible-mode/v1",
+        "toolCalling": true,
+        "vision": false,
+        "maxInputTokens": 128000,
+        "maxOutputTokens": 16000
+      },
+      {
+        "id": "qwen3.7-plus",
+        "name": "qwen3.7-plus",
+        "url": "https://dashscope.aliyuncs.com/compatible-mode/v1",
+        "toolCalling": true,
+        "vision": false,
+        "maxInputTokens": 128000,
+        "maxOutputTokens": 16000
+      },
+      {
+        "id": "qwen3.5-omni-plus",
+        "name": "v-qwen3.5-omni-plus",
+        "url": "https://dashscope.aliyuncs.com/compatible-mode/v1",
+        "toolCalling": false,
+        "vision": true,
+        "maxInputTokens": 128000,
+        "maxOutputTokens": 16000
+      }
+    ]
+  }
+]

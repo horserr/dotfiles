@@ -168,6 +168,11 @@ $mappings = @{
     target = "$dotConfigPath\vscode\tasks.json"
     desc   = "VSCode tasks"
   }
+  # VSCode chat models
+  "$env:APPDATA\Code\User\chatLanguageModels.json" = @{
+    target = "$dotConfigPath\vscode\model"
+    desc   = "VSCode chat language models"
+  }
 }
 
 # ============================================================================
