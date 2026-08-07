@@ -92,7 +92,7 @@
         "icon": "log-in",
         "type": "bindings",
         "bindings": [
-          // - lineHistory.openLineHistory
+          // f log file
           {
             "key": "f",
             "name": "log file",
@@ -100,12 +100,23 @@
             "type": "command",
             "command": "timeline.focus"
           },
+          // l log line
           {
+            // ext: thimo.line-history
             "key": "l",
             "name": "log line",
             "icon": "log-in",
             "type": "command",
             "command": "lineHistory.show"
+          },
+          // p pickaxe
+          {
+            // ext: gass.git-log-pickaxe
+            "key": "p",
+            "name": "log pickaxe (current file)",
+            "icon": "piano",
+            "type": "command",
+            "command": "gitLogPickaxe.search"
           }
         ]
       },
