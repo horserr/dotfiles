@@ -1,0 +1,55 @@
+[
+  {
+    "key": "v",
+    "command": "whichkey.show",
+    "args": [
+      // - lineHistory.view.removeView
+      // - lineHistory.view.resetViewLocation
+      // - lineHistory.view.toggleVisibility
+
+      // space view common
+      {
+        "key": " ",
+        "name": "+View Common",
+        "icon": "x",
+        "type": "command",
+        "command": "runCommands",
+        "args": {
+          "commands": [
+            "vspacecode.space",
+            { "command": "whichkey.triggerKey", "args": "v" }
+          ]
+        }
+      },
+      {
+        "key": "r",
+        "name": "refresh",
+        "icon": "layout",
+        "type": "bindings",
+        "command": "lineHistory.refresh"
+      },
+      {
+        "key": "o",
+        "name": "open commit",
+        "icon": "open-editors-view-icon",
+        "type": "bindings",
+        "command": "lineHistory.openCommit"
+      },
+      {
+        "key": "y",
+        "name": "copy commit",
+        "icon": "hubot",
+        "type": "bindings",
+        "command": "lineHistory.copyCommit"
+      },
+      {
+        "key": "f",
+        "name": "open file",
+        "icon": "file-binary",
+        "type": "bindings",
+        "command": "lineHistory.openRevision"
+      }
+    ],
+    "when": "lineHistory.view.active && lineHistory.view"
+  }
+]

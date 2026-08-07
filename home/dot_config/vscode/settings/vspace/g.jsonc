@@ -90,8 +90,24 @@
         "key": "l",
         "name": "log",
         "icon": "log-in",
-        "type": "command",
-        "command": "timeline.focus"
+        "type": "bindings",
+        "bindings": [
+          // - lineHistory.openLineHistory
+          {
+            "key": "f",
+            "name": "log file",
+            "icon": "log-in",
+            "type": "command",
+            "command": "timeline.focus"
+          },
+          {
+            "key": "l",
+            "name": "log line",
+            "icon": "log-in",
+            "type": "command",
+            "command": "lineHistory.show"
+          }
+        ]
       },
       // L log graph
       {
@@ -104,10 +120,25 @@
       // view repo
       {
         "key": "v",
-        "name": "view repo",
+        "name": "+View",
         "icon": "vira-logo",
-        "type": "command",
-        "command": "workbench.scm.repositories.focus"
+        "type": "bindings",
+        "bindings": [
+          {
+            "key": "r",
+            "name": "view repo",
+            "icon": "vira-logo",
+            "type": "command",
+            "command": "workbench.scm.repositories.focus"
+          },
+          {
+            "key": "l",
+            "name": "view line history",
+            "icon": "vira-logo",
+            "type": "command",
+            "command": "lineHistory.view.focus"
+          }
+        ]
       },
       // c commit
       {
