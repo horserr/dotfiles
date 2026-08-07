@@ -179,6 +179,13 @@
             "command": "workbench.action.clearCommandHistory"
           },
           {
+            "key": "a",
+            "name": "clear profile association",
+            "icon": "notebook-clear",
+            "type": "command",
+            "command": "workbench.profiles.actions.resetWorkspaces"
+          },
+          {
             "key": "e",
             "name": "clear recent open & open editor history & reopen editor history",
             "icon": "keyboard",
@@ -186,7 +193,7 @@
             "command": "workbench.action.clearEditorHistory"
           },
           {
-            "key": "w",
+            "key": "r",
             "name": "clear recent workspace",
             "icon": "keyboard",
             "type": "command",
@@ -199,6 +206,56 @@
             "icon": "search-stop",
             "type": "command",
             "command": "search.action.clearHistory"
+          },
+          {
+            "key": "w",
+            "name": "+clear workspace storage",
+            "icon": "workspace-trust-editor-folder-picker",
+            "type": "bindings",
+            "bindings": [
+              {
+                "key": "v",
+                "name": "view workspace storage",
+                "icon": "open-preview",
+                "type": "command",
+                "command": "workspace-storage-cleanup.show"
+              },
+              {
+                "key": " ",
+                "name": "remove large storage",
+                "icon": "debug-remove-config",
+                "type": "command",
+                "command": "workbench.action.removeLargeStorageDatabaseEntries"
+              },
+              {
+                "key": "e",
+                "name": "remove empty workspace",
+                "icon": "debug-remove-config",
+                "type": "command",
+                "command": "workspace-storage-cleanup.run-empty"
+              },
+              {
+                "key": "b",
+                "name": "remove broken workspace",
+                "icon": "debug-remove-config",
+                "type": "command",
+                "command": "workspace-storage-cleanup.run-broken"
+              },
+              {
+                "key": "m",
+                "name": "remove missing workspace",
+                "icon": "debug-remove-config",
+                "type": "command",
+                "command": "workspace-storage-cleanup.run-folder-missing"
+              },
+              {
+                "key": "r",
+                "name": "remove remote storage",
+                "icon": "debug-remove-config",
+                "type": "command",
+                "command": "workspace-storage-cleanup.run-remote"
+              }
+            ]
           }
         ]
       },
@@ -235,6 +292,12 @@
             "name": "open setting sync folder",
             "type": "command",
             "command": "workbench.userData.actions.openSyncBackupsFolder"
+          },
+          {
+            "key": "c",
+            "name": "open chat storage folder",
+            "type": "command",
+            "command": "workbench.action.chat.openStorageFolder"
           }
         ]
       },
