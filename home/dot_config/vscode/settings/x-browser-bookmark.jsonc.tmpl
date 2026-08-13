@@ -1,0 +1,11 @@
+{
+  // jackiotyu.browser-bookmark
+  "$help": "https://github.com/jackiotyu/vscode-browser-bookmark",
+  "browser-bookmark.defaultOpenWith": "external",
+  "browser-bookmark.internalBrowserOpenCommand": "simpleBrowser.api.open",
+  // use vivaldi bookmarks
+  // vivaldi:about, inside profile path
+  {{- $localData := env "LOCALAPPDATA" -}}
+  {{- $vivaldiBookmark := joinPath $localData "Vivaldi/User Data/Default/Bookmarks" }}
+  "browser-bookmark.path.chrome": {{ $vivaldiBookmark | quote }}
+}
