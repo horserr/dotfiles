@@ -1,4 +1,10 @@
 [
+  // when empty editor group open terminal in editor group
+  {
+    "key": ",",
+    "command": "workbench.action.createTerminalEditor",
+    "when": "activeEditorGroupEmpty"
+  },
   {
     "key": "ctrl+j",
     "command": "workbench.action.terminal.focusNext",
@@ -14,11 +20,25 @@
     "command": "workbench.action.terminal.focusNextPane",
     "when": "terminalFocus && terminalSplitPaneActive && !terminalEditorFocus && !suggestWidgetVisible"
   },
-  // ctrl+shift+j toggle terminal
+  // ctrl+shift+j scroll down
   {
     "key": "ctrl+shift+j",
-    "command": "workbench.action.terminal.toggleTerminal",
-    "systemWide": true
+    "command": "workbench.action.terminal.scrollDown",
+  },
+  // ctrl+shift+k scroll up
+  {
+    "key": "ctrl+shift+k",
+    "command": "workbench.action.terminal.scrollUp",
+  },
+  // ctrl+shift+l scroll next command
+  {
+    "key": "ctrl+shift+l",
+    "command": "workbench.action.terminal.scrollToNextCommand",
+  },
+  // ctrl+shift+h scroll previous command
+  {
+    "key": "ctrl+shift+h",
+    "command": "workbench.action.terminal.scrollToPreviousCommand",
   },
   // terminal native vspacecode
   {
