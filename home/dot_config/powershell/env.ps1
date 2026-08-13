@@ -34,3 +34,7 @@ $PostStartTask = {
 }
 
 Register-EngineEvent -SourceIdentifier PowerShell.OnIdle -MaxTriggerCount 1 -Action $PostStartTask | Out-Null
+
+function Test-CommandExists ($CommandName) {
+    return [bool](Get-Command -Name $CommandName -ErrorAction SilentlyContinue)
+}

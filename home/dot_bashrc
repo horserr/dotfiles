@@ -142,11 +142,11 @@ set mark-symlinked-directories on
 # starship
 eval "$(starship init bash)"
 
-# if command -v "carapace" &> /dev/null; then
+if command -v "carapace" &> /dev/null; then
     # link: https://carapace-sh.github.io/carapace-bin/setup.html#bash
-    # export CARAPACE_BRIDGES='zsh,fish,bash,inshellisense' # optional
-    # source <(carapace _carapace)
-# fi
+    export CARAPACE_BRIDGES='zsh,fish,bash,inshellisense' # optional
+    source <(carapace _carapace)
+fi
 
 if [ -d ~/completions ]; then
   for file in ~/completions/*.bash; do
@@ -162,3 +162,7 @@ if [ -d ~/completions ]; then
 fi
 
 set -o vi
+
+if command -v "direnv" &> /dev/null; then
+    eval "$(direnv hook bash)"
+fi
