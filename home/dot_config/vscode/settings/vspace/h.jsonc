@@ -294,13 +294,6 @@
             "args": "https://code.visualstudio.com/docs/editing/userdefinedsnippets#_grammar"
           },
           {
-            "key": "V",
-            "name": "Open VspaceCode Documentation",
-            "icon": "book",
-            "type": "command",
-            "command": "vspacecode.openDocumentationUrl"
-          },
-          {
             "key": "w",
             "name": "Open vscode when clause Documentation",
             "icon": "book",
@@ -316,14 +309,6 @@
             "command": "vscode.open",
             "args": "https://code.visualstudio.com/api/references/commands#commands"
           },
-          {
-            "key": "C",
-            "name": "Open commands Documentation",
-            "icon": "book",
-            "type": "command",
-            "command": "vscode.open",
-            "args": "https://github.com/usernamehw/vscode-commands/blob/master/README.md"
-          },
           // s json schema
           {
             "key": "s",
@@ -332,34 +317,6 @@
             "type": "command",
             "command": "vscode.open",
             "args": "https://github.com/wraith13/vscode-schemas"
-          },
-          // m +Markdown
-          {
-            "key": "m",
-            "name": "+Markdown",
-            "icon": "markdown",
-            "type": "bindings",
-            "bindings": [
-              // g github flavored markdown spec
-              {
-                "key": "g",
-                "name": "Open github flavored markdown spec",
-                "icon": "markdown",
-                "type": "command",
-                "command": "vscode.open",
-                "args": "https://github.github.com/gfm/"
-              },
-              // m open markdown it sample
-              {
-                "key": "m",
-                "name": "open markdown it sample",
-                "icon": "markdown",
-                "type": "command",
-                "command": "vscode.open",
-                // "args": "https://markdown-it.github.io/"
-                "args": "https://shd101wyy.github.io/markdown-preview-enhanced/#/markdown-basics"
-              }
-            ]
           },
           // t vscode tasks
           {

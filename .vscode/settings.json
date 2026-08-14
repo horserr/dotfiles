@@ -5,7 +5,7 @@
 
   // catppuccin-icons list: https://github.com/catppuccin/vscode-icons/tree/main/icons/mocha
   // Files with the `spec.ts` extension will have the `typescript-test` icon.
-  "chat.disableAIFeatures": true,
+  "chat.disableAIFeatures": false,
   "catppuccin-icons.associations.extensions": {
     "extension-list.yaml": "juce",
     "json.tmpl": "json",
@@ -227,6 +227,103 @@
             "excludeSettingAndIgnoreFiles": true,
             "showIncludesExcludes": false
           }
+        }
+      ]
+    },
+    {
+      "keys": ["h", "d"],
+      "name": "+Doc/Manual",
+      "type": "bindings",
+      "bindings": [
+        {
+          "key": "v",
+          "name": "Open VSCode variables for debug and tasks Documentation",
+          "icon": "book",
+          "type": "command",
+          "command": "vscode.open",
+          "args": "https://code.visualstudio.com/docs/reference/variables-reference"
+        },
+        {
+          "key": "s",
+          "name": "Open VSCode snippet variable Documentation",
+          "icon": "symbol-snippet",
+          "type": "command",
+          "command": "vscode.open",
+          "args": "https://code.visualstudio.com/docs/editing/userdefinedsnippets#_variables"
+        },
+        {
+          "key": "S",
+          "name": "Open VSCode snippet grammar Documentation",
+          "icon": "symbol-snippet",
+          "type": "command",
+          "command": "vscode.open",
+          "args": "https://code.visualstudio.com/docs/editing/userdefinedsnippets#_grammar"
+        },
+        {
+          "key": "V",
+          "name": "Open VspaceCode Documentation",
+          "icon": "book",
+          "type": "command",
+          "command": "vspacecode.openDocumentationUrl"
+        },
+        {
+          "key": "w",
+          "name": "Open vscode when clause Documentation",
+          "icon": "book",
+          "type": "command",
+          "command": "vscode.open",
+          "args": "https://code.visualstudio.com/api/references/when-clause-contexts#available-context-keys"
+        },
+        {
+          "key": "c",
+          "name": "Open vscode built-in commands Documentation",
+          "icon": "book",
+          "type": "command",
+          "command": "vscode.open",
+          "args": "https://code.visualstudio.com/api/references/commands#commands"
+        },
+        {
+          "key": "C",
+          "name": "Open commands Documentation",
+          "icon": "book",
+          "type": "command",
+          "command": "vscode.open",
+          "args": "https://github.com/usernamehw/vscode-commands/blob/master/README.md"
+        },
+        // s json schema
+        {
+          "key": "s",
+          "name": "Open vscode json schemas",
+          "icon": "getting-started-step-checked",
+          "type": "command",
+          "command": "vscode.open",
+          "args": "https://github.com/wraith13/vscode-schemas"
+        },
+        // t vscode tasks
+        {
+          "key": "t",
+          "name": "Open vscode tasks document",
+          "icon": "getting-started-step-checked",
+          "type": "command",
+          "command": "vscode.open",
+          "args": "https://code.visualstudio.com/docs/debugtest/tasks#_custom-tasks"
+        },
+        {
+          "key": "T",
+          "name": "Open vscode vscode tasks json schema document",
+          "icon": "getting-started-step-checked",
+          "type": "command",
+          "command": "vscode.open",
+          "args": "https://code.visualstudio.com/docs/reference/tasks-appendix#_schema-for-tasksjson"
+        },
+        // g vscode glob reference
+        {
+          "key": "g",
+          "name": "Open vscode glob pattern reference",
+          "icon": "globe",
+          "type": "command",
+          "command": "vscode.open",
+          "args": "https://code.visualstudio.com/docs/editor/glob-patterns"
         }
       ]
     }
