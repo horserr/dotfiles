@@ -6,7 +6,7 @@
   "window.confirmBeforeClose": "never",
   "window.confirmSaveUntitledWorkspace": false,
   // window controls hidden, maximize, close icons
-  "window.controlsStyle": "hidden",
+  "window.controlsStyle": "custom",
   // unless in full screen, the window title is displayed
   "window.customTitleBarVisibility": "windowed",
   "window.density.editorTabHeight": "compact",

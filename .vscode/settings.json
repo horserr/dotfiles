@@ -14,6 +14,16 @@
     "ps1.tmpl": "powershell",
     "toml.tmpl": "toml"
   },
+  "myExtension.bindings": [
+    {
+      "key": "g",
+      "name": "Open vscode glob pattern reference",
+      "icon": "globe",
+      "type": "command",
+      "command": "vscode.open",
+      "args": "https://code.visualstudio.com/docs/editor/glob-patterns"
+    }
+  ],
   // Files with the name `vite.config.ts` will have the `vite` icon.
   "catppuccin-icons.associations.files": {
     ".chezmoi.toml.tmpl": "api-blueprint",
@@ -235,6 +245,14 @@
       "name": "+Doc/Manual",
       "type": "bindings",
       "bindings": [
+        {
+          "key": " ",
+          "name": "try",
+          "icon": "book",
+          "type": "command",
+          "command": "whichkey.show",
+          "args": "myExtension.bindings"
+        },
         {
           "key": "v",
           "name": "Open VSCode variables for debug and tasks Documentation",

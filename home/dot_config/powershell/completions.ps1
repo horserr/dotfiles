@@ -5,6 +5,7 @@ Set-PSReadlineKeyHandler -Key Tab -Function MenuComplete
 #  todo
 carapace _carapace | Out-String | Invoke-Expression
 
+Import-Module PSFzf
 
 # $modules = @("WSLTabCompletion", "DockerCompletion", "posh-cargo")
 

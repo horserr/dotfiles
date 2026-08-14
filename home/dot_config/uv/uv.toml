@@ -7,26 +7,26 @@ url = "https://pypi.org/simple/"
 default = true
 
 # 设置备选镜像源
-[[index]]
-name = "nju"
-url = "https://mirrors.nju.edu.cn/pypi/web/simple/"
+# [[index]]
+# name = "nju"
+# url = "https://mirrors.nju.edu.cn/pypi/web/simple/"
 
-[[index]]
-name = "aliyun"
-url = "https://mirrors.aliyun.com/pypi/simple/"
+# [[index]]
+# name = "aliyun"
+# url = "https://mirrors.aliyun.com/pypi/simple/"
 
-[[index]]
-name = "ustc"
-url = "https://mirrors.ustc.edu.cn/pypi/simple/"
+# [[index]]
+# name = "ustc"
+# url = "https://mirrors.ustc.edu.cn/pypi/simple/"
 
-[[index]]
-name = "tuna"
-url = "https://mirrors.tuna.tsinghua.edu.cn/pypi/web/simple/"
+# [[index]]
+# name = "tuna"
+# url = "https://mirrors.tuna.tsinghua.edu.cn/pypi/web/simple/"
 
-[[index]]
-name = "tencent"
-url = "https://mirrors.cloud.tencent.com/pypi/simple/"
+# [[index]]
+# name = "tencent"
+# url = "https://mirrors.cloud.tencent.com/pypi/simple/"
 
-[[index]]
-name = "nvidia"
-url = "https://pypi.nvidia.cn/"
+# [[index]]
+# name = "nvidia"
+# url = "https://pypi.nvidia.cn/"

@@ -1,6 +1,11 @@
 # TODO
 
+learn direnv, fzf
+try to use register to show menu
+
 - docker and container tools
+- fzf menu completion
+- chat commands
 
 - find all reference view, rename symbol
 - github codespace
@@ -19,7 +24,6 @@ learn jq to sort and extract json file
 
 配置latex wsl 搭建
 通过 yazi 来管理文件
-尝试本地配置大模型
 之后删除 wsl。再尝试安装并使用 latex
 使用 git submodule 添加 uia 和 vd 库
 了解：https://github.com/GorvGoyl/Autohotkey-Scripts-Windows，尝试添加几个

@@ -1,4 +1,5 @@
 {
+  // FanaticPythoner.better-todo-tree
   // examples: https://github.com/FanaticPythoner/better-todo-tree/wiki/Configuration-Examples#multiline-regexs
   "$help": "https://github.com/FanaticPythoner/better-todo-tree",
   "better-todo-tree.filtering.ignoreGitSubmodules": true,

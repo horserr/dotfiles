@@ -23,8 +23,8 @@
 	# log
 	l = log --pretty=oneline --name-status --abbrev-commit --no-merges
 	la = log --all --pretty=oneline --graph --abbrev-commit --no-merges
-	# log filter
-	lf = log --pretty=oneline --name-status --abbrev-commit --no-merges --follow --diff-filter
+	# log filter, usage: git lf D -- **Dockerfile: find commits of removing dockerfile
+	lf = log --pretty=oneline --name-status --abbrev-commit --no-merges --diff-filter
 	lfollow = log --pretty=oneline --name-status --abbrev-commit --follow
 	# log conflicted commit messages
 	lm = log --oneline --left-right --merge

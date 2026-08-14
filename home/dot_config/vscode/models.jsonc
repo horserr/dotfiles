@@ -59,5 +59,14 @@
         "maxOutputTokens": 16000
       }
     ]
+  },
+  {
+    "name": "DeepSeek",
+    "vendor": "deepseek",
+    "settings": {
+      "deepseek-v4-flash": {
+        "reasoningEffort": "low"
+      }
+    }
   }
 ]

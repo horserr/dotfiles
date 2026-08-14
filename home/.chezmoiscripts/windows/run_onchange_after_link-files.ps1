@@ -138,7 +138,7 @@ $mappings = @{
   }
 
   # SumatraPDF
-  "$scoopPersistPath\sumatrapdf\SumatraPDF-settings.txt" = @{
+  "$env:LOCALAPPDATA\SumatraPDF\SumatraPDF-settings.txt" = @{
     target = "$dotConfigPath\sumatrapdf\settings.txt"
     desc   = "SumatraPDF Settings"
   }

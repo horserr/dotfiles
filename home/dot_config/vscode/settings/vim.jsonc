@@ -61,7 +61,7 @@
   // "vim.easymotionDimBackground": true,
   "vim.easymotionDimColor": "#637A34",
   "vim.easymotionIncSearchForegroundColor": "#7fbf00",
-  "vim.easymotionKeys": "asdfghjklwertyuiocbvnm,",
+  "vim.easymotionKeys": "asdfghjklwertyuiocbvnm",
   "vim.easymotionMarkerBackgroundColor": "#FFD710", // Example: Gold background for markers
   "vim.easymotionMarkerForegroundColorOneChar": "#35AB7F", // Example: Black text for one-character markers
   "vim.easymotionMarkerForegroundColorTwoCharFirst": "#28CFE0", // Example: Black text for one-character markers

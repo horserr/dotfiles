@@ -45,7 +45,7 @@
         // "command": "workbench.action.files.openFolderViaWorkspace" same effect
         "command": "workbench.action.addRootFolder"
       },
-      // n new empty workspace
+      // n new empty workspace with project picker
       {
         "key": "n",
         "name": "Open new empty workspace",

@@ -1,6 +1,8 @@
 {
   "chat.agent.maxRequests": 200,
   "chat.agent.thinking.collapsedTools": "withThinking",
+  // default to use deepseek
+  "chat.defaultModel": "Deepseek V4 Flash",
   "chat.disableAIFeatures": false,
   // copilot chat settings
   "chat.editor.fontSize": 17,

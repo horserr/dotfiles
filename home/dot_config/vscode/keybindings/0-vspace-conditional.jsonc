@@ -1,9 +1,34 @@
 [
+  // shift+/ ? to search commands
   {
     "key": "shift+/",
     "command": "whichkey.searchBindings",
     "when": "whichkeyVisible"
   },
+  // cannot do this
+  // {
+  //   // when no other editor groups and current editor group is empty, which represents the initial state, use which key to register commands
+  //   "key": "space",
+  //   "command": "runCommands",
+  //   "args": {
+  //     "commands": [
+  //       {
+  //         "command": "setContext",
+  //         "args": { "hello": true }
+  //       },
+  //       {
+  //         "command": "whichkey.register",
+  //         "args": {
+  //           "bindings": ["myExtension", "bindings"],
+  //           "overrides": ["myExtension", "bindingOverrides"],
+  //           "title": "My menu"
+  //         }
+  //       },
+  //       "vspacecode.space"
+  //     ]
+  //   },
+  //   "when": "!hello"
+  // },
   /**************
    * VSPACECODE *
    **************/
