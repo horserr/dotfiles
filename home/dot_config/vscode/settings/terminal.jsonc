@@ -30,7 +30,6 @@
   // default behavior is that terminal intercepts all keybindins. Commands in this list surpress this behavior
   // link: https://code.visualstudio.com/docs/terminal/advanced#_keyboard-shortcuts-and-the-shell
   "terminal.integrated.commandsToSkipShell": [
-    "vspacecode.space",
     "whichkey.show",
     "editor.action.accessibleView",
     "workbench.action.terminal.fontZoomIn",

@@ -41,7 +41,7 @@
     "command": "runCommands",
     "args": {
       "commands": [
-        "vspacecode.space",
+        "whichkey.show",
         { "command": "whichkey.triggerKey", "args": "/" },
         { "command": "whichkey.triggerKey", "args": "s" },
         { "command": "whichkey.triggerKey", "args": "e" }

@@ -26,9 +26,9 @@
     {
       "before": [","],
       "commands": [
-        "vspacecode.space",
+        "whichkey.show",
         { "command": "whichkey.triggerKey", "args": "i" },
-        { "command": "whichkey.triggerKey", "args": "," },
+        { "command": "whichkey.triggerKey", "args": "," }
       ]
     }
   ]

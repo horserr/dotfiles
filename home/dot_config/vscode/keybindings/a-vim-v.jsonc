@@ -1,11 +1,11 @@
 [
   {
-    // vspacecode -> line/selection
+    // whichkey -> line/selection
     "key": "shift+l",
     "command": "runCommands",
     "args": {
       "commands": [
-        "vspacecode.space",
+        "whichkey.show",
         { "command": "whichkey.triggerKey", "args": "x" },
         { "command": "whichkey.triggerKey", "args": "l" }
       ]

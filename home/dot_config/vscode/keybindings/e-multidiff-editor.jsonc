@@ -4,7 +4,7 @@
     "command": "runCommands",
     "args": {
       "commands": [
-        "vspacecode.space",
+        "whichkey.show",
         { "command": "whichkey.triggerKey", "args": "/" },
         { "command": "whichkey.triggerKey", "args": "c" },
         { "command": "whichkey.triggerKey", "args": "m" }

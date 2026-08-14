@@ -2,14 +2,13 @@ vscode-local:
   - adamraichu.zip-viewer
   - albert.tabout
   - alefragnani.bookmarks
-  - anteprimorac.html-end-tag-labels
+  - alexandernanberg.horizon-theme-vscode
+  - alexnho.a-touch-of-lilac-theme
   - astral-sh.ty
+  - bedirt.gpt-token-counter-live
   - bierner.emojisense
   - bierner.markdown-emoji
-  - bierner.markdown-footnotes
-  - bierner.markdown-mermaid
   - bierner.markdown-preview-github-styles
-  - bierner.markdown-yaml-preamble
   - catppuccin.catppuccin-vsc
   - catppuccin.catppuccin-vsc-icons
   - charliermarsh.ruff
@@ -17,37 +16,39 @@ vscode-local:
   - code-nature.nilesoft-shell-file-formatter
   - codezombiech.gitignore
   - ctc.vscode-tree-extension
-  - ctf0.save-editors-layout
   - dakara.dakara-foldplus
   - dautroc.yazi-vscode
+  - davidanson.vscode-markdownlint
   - davidnussio.vscode-jq-playground
   - dbcode.dbcode
   - docker.docker
   - editorconfig.editorconfig
   - eliostruyf.vscode-demo-time
   - esbenp.prettier-vscode
+  - fanaticpythoner.better-todo-tree
   - fflaten.windowssandbox-configuration
   - fill-labs.dependi
-  - foam.foam-vscode
+  - gass.git-log-pickaxe
   - gediminaszlatkus.ctags-companion
   - github.codespaces
   - github.github-vscode-theme
   - github.remotehub
   - github.vscode-github-actions
   - github.vscode-pull-request-github
-  - gruntfuggly.todo-tree
-  - huggingface.huggingface-vscode-chat
+  - gokturksm.nebula-pandas
   - igorjrd.cslpreview
   - iliazeus.vscode-ansi
-  - jacobdufault.fuzzy-search
+  - j4rviscmd.cursor-auto-hide
+  - jackiotyu.browser-bookmark
   - jakearl.search-editor-apply-changes
-  - jdinhlife.gruvbox
   - johnny-zhao.oai-compatible-copilot
   - johnpapa.vscode-peacock
+  - jonathanharty.gruvbox-material-icon-theme
+  - jonsmithers.open-in-vim
   - jq-syntax-highlighting.jq-syntax-highlighting
-  - kahole.magit
   - karyfoundation.comment
-  - littensy.charmed-icons
+  - kbysiec.vscode-search-everywhere
+  - kelvin.vscode-sshfs
   - marcinjachmann.vscode-eincolor
   - mark-wiemer.vscode-autohotkey-plus-plus
   - mechatroner.rainbow-csv
@@ -63,7 +64,6 @@ vscode-local:
   - ms-python.python
   - ms-python.vscode-pylance
   - ms-python.vscode-python-envs
-  - ms-toolsai.jupyter-keymap
   - ms-toolsai.tensorboard
   - ms-vscode-remote.remote-containers
   - ms-vscode-remote.remote-ssh
@@ -74,40 +74,52 @@ vscode-local:
   - ms-vscode.remote-explorer
   - ms-vscode.remote-repositories
   - ms-vscode.vscode-github-issue-notebooks
-  - mutantdino.resourcemonitor
+  - ms-vscode.vscode-serial-monitor
+  - myriad-dreamin.tinymist
+  - natizyskunk.sftp
   - ncukondo.vscode-markdown-academic-preview
-  - ncukondo.vscode-pandoc-citation-preview
-  - notzaki.pandocciter
+  - nexmoe.monitor-pro
   - nur.script
   - octop162.markdown-table-editor
   - phoenisx.cssvar
   - pishu.epub-editor
   - redhat.vscode-xml
   - redhat.vscode-yaml
-  - renan-r-santos.pixi-code
   - rimuruchan.vscode-fix-checksums-next
   - rioj7.command-variable
-  - sakethkanchi.kitty-vscode-theme
+  - rioj7.complete-from-file
+  - rioj7.extra-context
+  - rioj7.html-related-links
+  - rioj7.line-completion
+  - rioj7.my-code-actions
+  - rioj7.regex-text-gen
+  - rioj7.replace-on
+  - rioj7.select-by
+  - rioj7.vscode-recently-used
+  - rioj7.whenfile
   - samuelcolvin.jinjahtml
+  - silverservers.vscode-bloat-cleaner
   - slysherz.comment-box
   - subframe7536.custom-ui-style
+  - subframe7536.theme-maple
   - tailscale.vscode-tailscale
   - takumii.markdowntable
   - tamasfe.even-better-toml
-  - this-fifo.natty
+  - thimo.line-history
   - tock.vscode-css-custom-properties
   - tomrijndorp.find-it-faster
   - typespec.typespec-vscode
-  - tyriar.sort-lines
   - uctakeoff.vscode-counter
   - usernamehw.commands
   - vira.vsc-vira-theme
+  - vizards.deepseek-v4-for-copilot
   - vscode-icons-team.vscode-icons
   - vscodevim.vim
-  - vsls-contrib.gistfs
-  - vspacecode.vspacecode
   - vspacecode.whichkey
-  - webldavi.tail-theme
+  - wraith13.blitz
+  - wraith13.bracket-lens
+  - wraith13.sysinfo-vscode
+  - xlthu.pangu-markdown
   - yellpika.latex-input
   - yoshi389111.markdown-table-rainbow
   - yzhang.markdown-all-in-one

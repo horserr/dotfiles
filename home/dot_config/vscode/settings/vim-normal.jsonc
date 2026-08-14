@@ -225,17 +225,17 @@
       "commands": ["editor.action.triggerParameterHints"]
     },
     {
-      // fold -> vspacecode
+      // fold -> whichkey
       "before": ["z"],
       "commands": [
-        "vspacecode.space",
+        "whichkey.show",
         { "command": "whichkey.triggerKey", "args": "x" },
         { "command": "whichkey.triggerKey", "args": "z" }
       ]
     },
     {
       "before": ["<space>"],
-      "commands": ["vspacecode.space"]
+      "commands": ["whichkey.show"]
     }
   ]
 }

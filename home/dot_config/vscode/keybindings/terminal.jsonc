@@ -23,30 +23,30 @@
   // ctrl+shift+j scroll down
   {
     "key": "ctrl+shift+j",
-    "command": "workbench.action.terminal.scrollDown",
+    "command": "workbench.action.terminal.scrollDown"
   },
   // ctrl+shift+k scroll up
   {
     "key": "ctrl+shift+k",
-    "command": "workbench.action.terminal.scrollUp",
+    "command": "workbench.action.terminal.scrollUp"
   },
   // ctrl+shift+l scroll next command
   {
     "key": "ctrl+shift+l",
-    "command": "workbench.action.terminal.scrollToNextCommand",
+    "command": "workbench.action.terminal.scrollToNextCommand"
   },
   // ctrl+shift+h scroll previous command
   {
     "key": "ctrl+shift+h",
-    "command": "workbench.action.terminal.scrollToPreviousCommand",
+    "command": "workbench.action.terminal.scrollToPreviousCommand"
   },
-  // terminal native vspacecode
+  // terminal native whichkey
   {
     "key": "shift+space",
     "command": "runCommands",
     "args": {
       "commands": [
-        "vspacecode.space",
+        "whichkey.show",
         { "command": "whichkey.triggerKey", "args": "," }
       ]
     },

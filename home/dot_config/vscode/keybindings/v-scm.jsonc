@@ -12,7 +12,7 @@
         "command": "runCommands",
         "args": {
           "commands": [
-            "vspacecode.space",
+            "whichkey.show",
             { "command": "whichkey.triggerKey", "args": "v" }
           ]
         }

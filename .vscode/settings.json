@@ -14,16 +14,6 @@
     "ps1.tmpl": "powershell",
     "toml.tmpl": "toml"
   },
-  "myExtension.bindings": [
-    {
-      "key": "g",
-      "name": "Open vscode glob pattern reference",
-      "icon": "globe",
-      "type": "command",
-      "command": "vscode.open",
-      "args": "https://code.visualstudio.com/docs/editor/glob-patterns"
-    }
-  ],
   // Files with the name `vite.config.ts` will have the `vite` icon.
   "catppuccin-icons.associations.files": {
     ".chezmoi.toml.tmpl": "api-blueprint",
@@ -153,8 +143,8 @@
     "*.copilotmd": "vscode.markdown.preview.editor"
   },
   "git.blame.editorDecoration.enabled": false,
-  // vspacecode dynamic workspace integratiion
-  "vspacecode.bindingOverrides": [
+  // whichkey dynamic workspace integratiion
+  "whichkey.bindingOverrides": [
     {
       "keys": ["/", "/"],
       "name": "+Search with options",
@@ -246,20 +236,20 @@
       "type": "bindings",
       "bindings": [
         {
-          "key": " ",
-          "name": "try",
-          "icon": "book",
-          "type": "command",
-          "command": "whichkey.show",
-          "args": "myExtension.bindings"
-        },
-        {
           "key": "v",
           "name": "Open VSCode variables for debug and tasks Documentation",
           "icon": "book",
           "type": "command",
           "command": "vscode.open",
           "args": "https://code.visualstudio.com/docs/reference/variables-reference"
+        },
+        {
+          "key": "V",
+          "name": "Open whichkey Documentation",
+          "icon": "book",
+          "type": "command",
+          "command": "vscode.open",
+          "args": "https://vspacecode.github.io/docs/whichkey/reference"
         },
         {
           "key": "s",
@@ -276,13 +266,6 @@
           "type": "command",
           "command": "vscode.open",
           "args": "https://code.visualstudio.com/docs/editing/userdefinedsnippets#_grammar"
-        },
-        {
-          "key": "V",
-          "name": "Open VspaceCode Documentation",
-          "icon": "book",
-          "type": "command",
-          "command": "vspacecode.openDocumentationUrl"
         },
         {
           "key": "w",

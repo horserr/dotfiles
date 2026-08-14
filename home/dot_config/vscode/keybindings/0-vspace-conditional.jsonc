@@ -24,24 +24,24 @@
   //           "title": "My menu"
   //         }
   //       },
-  //       "vspacecode.space"
+  //       "whichkey.show"
   //     ]
   //   },
   //   "when": "!hello"
   // },
   /**************
-   * VSPACECODE *
+   * whichkey *
    **************/
   {
     "key": "space",
-    "command": "vspacecode.space",
+    "command": "whichkey.show",
     // "when": "activeEditorGroupEmpty && focusedView == '' && !whichkeyActive && !inputFocus"
     "when": "!editorTextFocus && !inputFocus && !listFocus && !whichkeyActive"
   },
   {
     // use shift+space in sidebar, regardless of whether input is focused or not
     "key": "shift+space",
-    "command": "vspacecode.space",
+    "command": "whichkey.show",
     "when": "!editorFocus && !whichkeyActive"
   },
   /************************************

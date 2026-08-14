@@ -55,7 +55,7 @@
         "args": {
           "commands": [
             "editor.action.nextMatchFindAction",
-            "vspacecode.space",
+            "whichkey.show",
             { "command": "whichkey.triggerKey", "args": "s" },
             { "command": "whichkey.triggerKey", "args": "g" }
           ]
@@ -70,7 +70,7 @@
         "args": {
           "commands": [
             "editor.action.previousSelectionMatchFindAction",
-            "vspacecode.space",
+            "whichkey.show",
             { "command": "whichkey.triggerKey", "args": "s" },
             { "command": "whichkey.triggerKey", "args": "g" }
           ]
@@ -85,7 +85,7 @@
         "command": "runCommands",
         "args": {
           "commands": [
-            "vspacecode.space",
+            "whichkey.show",
             { "command": "whichkey.triggerKey", "args": "s" },
             { "command": "whichkey.triggerKey", "args": "x" }
           ]

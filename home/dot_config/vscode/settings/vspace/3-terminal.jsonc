@@ -24,10 +24,10 @@
     "bindings": [
       {
         "key": " ",
-        "name": "Return to vspacecode",
+        "name": "Return to whichkey",
         "icon": "quick-input-back",
         "type": "command",
-        "command": "vspacecode.space"
+        "command": "whichkey.show"
       },
       // , scroll
       {
