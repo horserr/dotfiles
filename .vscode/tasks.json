@@ -12,23 +12,6 @@
 
   // state
   "tasks": [
-    // apply
-    {
-      "label": "apply",
-      "type": "shell",
-      "command": "chezmoi apply",
-      "detail": "apply dotfiles modifications",
-      "runOptions": {
-        "instanceLimit": 1,
-        "instancePolicy": "terminateOldest",
-        "runOn": "folderOpen"
-      },
-      "icon": { "id": "ai-customization-plugin" },
-      "group": {
-        "kind": "build",
-        "isDefault": true
-      }
-    },
     {
       "label": "show-data",
       "type": "shell",
