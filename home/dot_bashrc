@@ -166,3 +166,7 @@ set -o vi
 if command -v "direnv" &> /dev/null; then
     eval "$(direnv hook bash)"
 fi
+
+if command -v "git" &> /dev/null; then
+    alias g='git'
+fi
