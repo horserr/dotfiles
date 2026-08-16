@@ -1,6 +1,6 @@
 [
   {
-    "key": "shift+space",
+    "key": "space",
     "command": "workbench.trust.manage",
     "when": "!isWorkspaceTrusted"
   }

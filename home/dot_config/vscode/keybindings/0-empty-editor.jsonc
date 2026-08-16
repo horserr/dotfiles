@@ -1,0 +1,13 @@
+[
+  // when empty editor group open terminal in editor group
+  {
+    "key": ",",
+    "command": "workbench.action.createTerminalEditor",
+    "when": "activeEditorGroupEmpty"
+  },
+  {
+    "key": "n",
+    "command": "workbench.action.files.newUntitledFile",
+    "when": "activeEditorGroupEmpty && !inputFocus"
+  }
+]

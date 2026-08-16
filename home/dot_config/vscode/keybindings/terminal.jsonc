@@ -1,10 +1,4 @@
 [
-  // when empty editor group open terminal in editor group
-  {
-    "key": ",",
-    "command": "workbench.action.createTerminalEditor",
-    "when": "activeEditorGroupEmpty"
-  },
   {
     "key": "ctrl+j",
     "command": "workbench.action.terminal.focusNext",
