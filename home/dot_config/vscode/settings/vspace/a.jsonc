@@ -1,85 +1,80 @@
 [
-  // workbench.action.openProfile.Default
-  // workbench.action.openProfile.Leetcode
-  // workbench.action.openProfile.Web
   {
     "key": "a",
-    "name": "+Profile",
-    "icon": "defaultProfile-icon",
+    "name": "+Azure",
+    "icon": "azure",
     "type": "bindings",
     "bindings": [
-      {
-        "key": "a",
-        "name": "switch profile",
-        "type": "command",
-        "command": "workbench.profiles.actions.switchProfile"
-      },
-      {
-        "key": "o",
-        "name": "new window with profile",
-        "type": "command",
-        "bindings": [
-          {
-            "key": "o",
-            "name": "new window with profile",
-            "type": "command",
-            "command": "workbench.profiles.actions.newWindowWithProfile"
-          },
-          {
-            "key": "d",
-            "name": "new window with default profile",
-            "type": "command",
-            "command": "workbench.action.openProfile.Default"
-          }
-        ]
-      },
-      {
-        "key": " ",
-        "name": "open profile ui interfact",
-        "type": "command",
-        "command": "workbench.profiles.actions.manageProfiles"
-      },
-      {
-        "key": "d",
-        "name": "delete profile",
-        "type": "command",
-        "command": "workbench.profiles.actions.deleteProfile"
-      },
-      {
-        "key": "t",
-        "name": "temporary profile",
-        "type": "command",
-        "command": "workbench.profiles.actions.createTemporaryProfile"
-      },
-      {
-        "key": "n",
-        "name": "new profile",
-        "type": "command",
-        "command": "workbench.profiles.actions.createProfile"
-      },
-      {
-        "key": "c",
-        "name": "copy current profile",
-        "type": "command",
-        "command": "workbench.profiles.actions.createFromCurrentProfile"
-      },
-      {
-        "key": "y",
-        "name": "export profile",
-        "type": "command",
-        "command": "workbench.profiles.actions.exportProfile"
-      },
-      {
-        "key": "x",
-        "name": "clean up profiles",
-        "type": "command",
-        "command": "workbench.profiles.actions.cleanupProfiles"
-      },
+      // r registry
       {
         "key": "r",
-        "name": "reset profile association",
-        "type": "command",
-        "command": "workbench.profiles.actions.resetWorkspaces"
+        "name": "+Registry",
+        "type": "bindings",
+        "bindings": [
+          // b build image
+          {
+            "key": "b",
+            "name": "build image",
+            "icon": "azure",
+            "type": "command",
+            "command": "vscode-containers.registries.azure.buildImage"
+          },
+          // u untag image
+          {
+            "key": "u",
+            "name": "untag image",
+            "icon": "azure",
+            "type": "command",
+            "command": "vscode-containers.registries.azure.untagImage"
+          },
+          // a create registry
+          {
+            "key": "a",
+            "name": "create registry",
+            "icon": "azure",
+            "type": "command",
+            "command": "vscode-containers.registries.azure.createRegistry"
+          },
+          // d delete
+          {
+            "key": "d",
+            "name": "+Delte",
+            "icon": "azure",
+            "type": "bindings",
+            "bindings": [
+              {
+                "key": "d",
+                "name": "delete registry",
+                "icon": "azure",
+                "type": "command",
+                "command": "vscode-containers.registries.azure.deleteRegistry"
+              },
+              {
+                "key": "r",
+                "name": "delete repository",
+                "icon": "azure",
+                "type": "command",
+                "command": "vscode-containers.registries.azure.deleteRepository"
+              }
+            ]
+          },
+          // o open in portal
+          {
+            "key": "o",
+            "name": "open registry in portal",
+            "icon": "azure",
+            "type": "command",
+            "command": "vscode-containers.registries.azure.openInPortal"
+          },
+          // i inspect registry properties
+          {
+            "key": "i",
+            "name": "inspect registry properties",
+            "icon": "azure",
+            "type": "command",
+            "command": "vscode-containers.registries.azure.viewProperties"
+          }
+        ]
       }
     ]
   }
