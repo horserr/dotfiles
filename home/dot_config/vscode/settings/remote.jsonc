@@ -1,14 +1,45 @@
 {
+  // dev container can also be customized "dev.containers.defaultExtensions"
   "remote.defaultExtensionsIfInstalledLocally": [
-    "astral-sh.ty",
     "albert.TabOut",
-    "fill-labs.dependi",
-    "FanaticPythoner.better-todo-tree",
+    "astral-sh.ty",
+    "chrislajoie.vscode-modelines",
+    "codezombiech.gitignore",
+    "dakara.dakara-foldplus",
+    "dautroc.yazi-vscode",
+    "docker.docker",
+    "EditorConfig.EditorConfig",
     "esbenp.prettier-vscode",
-    "dakara.dakara-foldplus"
+    "FanaticPythoner.better-todo-tree",
+    "gass.git-log-pickaxe",
+    "github.vscode-github-actions",
+    "jonsmithers.open-in-vim",
+    "mechatroner.rainbow-csv",
+    "ms-azuretools.vscode-containers",
+    "nexmoe.monitor-pro",
+    "Nur.script",
+    "redhat.vscode-yaml",
+    "rioj7.line-completion",
+    "rioj7.my-code-actions",
+    "rioj7.regex-text-gen",
+    "rioj7.replace-on",
+    "SilverServers.vscode-bloat-cleaner",
+    "tamasfe.even-better-toml",
+    "thimo.line-history",
+    "Vizards.deepseek-v4-for-copilot",
+    "yzhang.markdown-all-in-one",
+    "zh9528.file-size"
   ],
-  // SIGNIFICANT 本地下载并安装
+
+  // Base URL for downloading the VS Code server. The path `/commit:{commit}/server-{platform}/{quality}` will be appended to this URL. Platforms include `linux-x64`, `linux-armhf`, `linux-arm64`, `linux-alpine`, and `alpine-arm64`. Quality is `stable` or `insider`.
+  "remote.serverDownloadBaseUrl": "https://update.code.visualstudio.com",
+
+  // Local folder for downloading and caching VS Code server archives. The archives will be stored as `{downloadFolder}/{commit}/vscode-server-{platform}[-{quality}].tar.gz`. Platforms include `linux-x64`, `linux-armhf`, `linux-arm64`, `linux-alpine`, and `alpine-arm64`. Quality is `stable` or `insider`. The `-{quality}` suffix is omitted for `stable`. The default is in the system's temp folder.
+  "remote.serverDownloadFolder": "",
+
+  // SIGNIFICANT
   "remote.downloadExtensionsLocally": true,
+
   // 调整extension的类型
   "remote.extensionKind": {
     // "pub.name": ["ui"]
@@ -34,10 +65,9 @@
       "onAutoForward": "notify"
     }
   },
+
   // 恢复之前 port 分配情况
   "remote.restoreForwardedPorts": true,
-  // vscode server默认安装路径
-  "remote.serverDownloadFolder": "",
   // 允许局域网中的其他设备访问
   "remote.SSH.bindHost": {},
   "remote.SSH.connectTimeout": 300,
@@ -58,7 +88,7 @@
   "remote.SSH.httpProxy": "",
   "remote.SSH.httpsProxy": "",
   // 本地下载，再通过ssh传输到服务器，避免远程服务器无法访问外网
-  "remote.SSH.localServerDownload": "always",
+  "remote.SSH.localServerDownload": "auto",
   "remote.SSH.logLevel": "debug",
   "remote.SSH.maxReconnectionAttempts": 5,
   // ？自动开启远程终端

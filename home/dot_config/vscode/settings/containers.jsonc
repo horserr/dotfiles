@@ -1,56 +1,240 @@
 {
+  // The command to run after cloning the dotfiles repository. Defaults to run the first file of `install.sh`, `install`, `bootstrap.sh`, `bootstrap`, `setup.sh` and `setup` found in the dotfiles repository's root folder.
+  "dotfiles.installCommand": "install.sh",
+
+  // URL of a dotfiles Git repository (e.g., https://github.com/owner/repository.git) or owner/repository of a GitHub repository.
+  "dotfiles.repository": "horserr/dotfiles",
+
+  // The path to clone the dotfiles repository to. Defaults to `~/dotfiles`.
+  "dotfiles.targetPath": "~/.config/.dotfiles",
+
+  // Command templates for container attach commands.
+  "containers.commands.attach": "${containerCommand} exec -it ${containerId} ${shellCommand}",
+
+  // Command template(s) for container build commands.
+  "containers.commands.build": "${containerCommand} build --pull --rm -f \"${dockerfile}\" -t ${tag} \"${context}\"",
+
+  // Command templates for compose down commands.
+  "containers.commands.composeDown": [
+    {
+      "label": "Compose Down",
+      "template": "${composeCommand} ${configurationFile} down"
+    }
+  ],
+
+  // Command templates for compose down (subset) commands.
+  "containers.commands.composeDownSubset": [
+    {
+      "label": "Compose Down",
+      "template": "${composeCommand} ${profileList} ${configurationFile} down ${serviceList}"
+    }
+  ],
+
+  // Command templates for compose up commands.
+  "containers.commands.composeUp": [
+    {
+      "label": "Compose Up",
+      "template": "${composeCommand} ${configurationFile} up ${detached} ${build}"
+    }
+  ],
+
+  // Command templates for compose up (subset) commands.
+  "containers.commands.composeUpSubset": [
+    {
+      "label": "Compose Up",
+      "template": "${composeCommand} ${profileList} ${configurationFile} up ${detached} ${build} ${serviceList}"
+    }
+  ],
+
+  // Command templates for container logs commands.
+  "containers.commands.logs": "${containerCommand} logs --tail 1000 -f ${containerId}",
+
+  // Command templates for container run commands.
+  "containers.commands.run": "${containerCommand} run --rm -d ${exposedPorts} ${tag}",
+
+  // Command templates for container run (interactive) commands.
+  "containers.commands.runInteractive": "${containerCommand} run --rm -it ${exposedPorts} ${tag}",
+
+  // Set to true to include --build option when compose command is invoked
+  "containers.composeBuild": true,
+
+  // Set to true to include --d (detached) option when compose command is invoked
+  "containers.composeDetached": true,
+
+  // Which container client to use. If not specified, Docker will be used. Changing requires a restart to take effect.
+  // can be podman
+  "containers.containerClient": "",
+
+  // Any secondary properties to display for a container (an array). Possible elements include: ContainerId, ContainerName, CreatedTime, FullTag, ImageId, Networks, Ports, Registry, RegistryAndPath, Repository, RepositoryName, RepositoryNameShort, RepositoryNameAndTag, State, Status, and Tag
+  "containers.containers.description": [
+    "ContainerName",
+    "Status",
+    "Networks",
+    "Ports"
+  ],
+
+  // The property to use to group containers in Containers view: ContainerId, ContainerName, CreatedTime, FullTag, ImageId, Networks, Ports, Registry, RegistryAndPath, Repository, RepositoryName, RepositoryNameShort, RepositoryNameAndTag, State, Status, Tag, or None
+  "containers.containers.groupBy": "Compose Project Name",
+
+  // The items will be grouped by the value of this container label (e.g. `com.microsoft.created-by`)
+  "containers.containers.groupByLabel": "",
+
+  // The primary property to display for a container: ContainerId, ContainerName, CreatedTime, FullTag, ImageId, Networks, Ports, Registry, RegistryAndPath, Repository, RepositoryName, RepositoryNameShort, RepositoryNameAndTag, State, Status, or Tag
+  "containers.containers.label": "FullTag",
+
+  // The property to use to sort containers in the Containers view: CreatedTime, CreatedTimeReverse, Label, or LabelReverse
+  "containers.containers.sortBy": "CreatedTime",
+
+  // Any secondary properties to display for a Docker context (an array). Possible elements include: Name, Description and DockerEndpoint
+  "containers.contexts.description": ["DockerEndpoint", "Description"],
+
+  // The primary property to display for a Docker context: Name, Description or DockerEndpoint
+  "containers.contexts.label": "Name",
+
+  // Show current Docker context in the status bar
+  "containers.contexts.showInStatusBar": false,
+
+  // Whether or not to enable the Compose Language Service. Changing requires a restart to take effect.
+  "containers.enableComposeLanguageService": true,
+
+  // Environment variables that will be applied to all VS Code terminals and to all background processes started by the Container Tools extension. Use for variables like `DOCKER_HOST`, etc.
+  "containers.environment": {},
+
+  // Build context PATH to pass to container build command.
+  "containers.imageBuildContextPath": "",
+
+  // Check for outdated base images once per Visual Studio Code session
+  "containers.images.checkForOutdatedImages": true,
+
+  // Any secondary properties to display for a container image (an array). Possible elements include: CreatedTime, FullTag, ImageId, Registry, RegistryAndPath, Repository, RepositoryName, RepositoryNameShort, RepositoryNameAndTag, Tag, and Size
+  "containers.images.description": ["CreatedTime"],
+
+  // The property to use to group images in Container Images view: CreatedTime, FullTag, ImageId, None, Registry, RegistryAndPath, Repository, RepositoryName, RepositoryNameShort, RepositoryNameAndTag, or Tag
+  "containers.images.groupBy": "Repository",
+
+  // The primary property to display for a image: CreatedTime, FullTag, ImageId, Registry, RegistryAndPath, Repository, RepositoryName, RepositoryNameShort, RepositoryNameAndTag, Tag, or Size
+  "containers.images.label": "Tag",
+
+  // The property to use to sort images in Container Images view: CreatedTime, CreatedTimeReverse, Label, LabelReverse, Size, or SizeReverse
+  "containers.images.sortBy": "CreatedTime",
+
+  // Any secondary properties to display for a container network (an array). Possible elements include CreatedTime, NetworkDriver, NetworkId, and NetworkName
+  "containers.networks.description": ["NetworkDriver", "CreatedTime"],
+
+  // The property to use to group networks in Container Networks view: CreatedTime, NetworkDriver, NetworkId, NetworkName, or None
+  "containers.networks.groupBy": "None",
+
+  // The primary property to display for a container network: CreatedTime, NetworkDriver, NetworkId, or NetworkName
+  "containers.networks.label": "NetworkName",
+
+  // Show the built-in networks in the explorer.
+  "containers.networks.showBuiltInNetworks": true,
+
+  // The property to use to sort networks in Container Networks view: CreatedTime, CreatedTimeReverse, Label, or LabelReverse
+  "containers.networks.sortBy": "CreatedTime",
+
+  // Which container orchestrator client to use. If not specified, Docker Compose will be used. Changing requires a restart to take effect.
+  "containers.orchestratorClient": "",
+
+  // Prompt for registry selection if the image is not explicitly tagged.
+  "containers.promptForRegistryWhenPushingImages": true,
+
+  // SIGNIFICANT WORKSPACE
+  // The path to use for scaffolding templates. for generating dockerfile docker compose and docker ignore
+  "containers.scaffolding.templatePath": "",
+
+  // Set to true to prompt to switch from "UI" extension mode to "Workspace" extension mode if an operation is not supported in UI mode.
+  "containers.showRemoteWorkspaceWarning": true,
+
+  // Set to true to truncate long image and container registry paths in Container Images view
+  "containers.truncateLongRegistryPaths": true,
+
+  // Maximum length of a registry paths displayed in Container Images view, including ellipsis. The truncateLongRegistryPaths setting must be set to true for truncateMaxLength setting to be effective.
+  "containers.truncateMaxLength": 15,
+
+  // Any secondary properties to display for a container volume (an array). Possible values include CreatedTime and VolumeName
+  "containers.volumes.description": ["CreatedTime"],
+
+  // The property to use to group volumes in Container Volumes view: CreatedTime, VolumeName, or None
+  "containers.volumes.groupBy": "None",
+
+  // The primary property to display for a container volume: CreatedTime or VolumeName
+  "containers.volumes.label": "VolumeName",
+
+  // The property to use to sort volumes in the Container Volumes view: CreatedTime, CreatedTimeReverse, Label, or LabelReverse
+  "containers.volumes.sortBy": "CreatedTime",
+
+  // SIGNIFICANT for inspecting volume
+  // Docker image to use as the bootstrap container for cloning repositories into Docker volumes, and for inspect and recovery containers. When set, this image is used directly instead of building from the built-in Dockerfile. The image must include the Docker and Git CLIs, and optionally SSH, Git LFS and Node.js. When Node.js is not installed, it will be added from a VS Code Server download matching the architecture.
   "dev.containers.bootstrapImage": "",
+
+  // Automatically pull the bootstrap image before starting the bootstrap container. Only applies when a custom bootstrap image is configured.
   "dev.containers.bootstrapImagePull": true,
-  // "dotfiles.installCommand": "chezmoi init --source ~/.config/.dotfiles && chezmoi apply",
-  // "dotfiles.installCommand": "install.sh",
-  // "dotfiles.repository": "horserr/dotfiles-linux",
-  // "dotfiles.targetPath": "~/.config/.dotfiles",
+
+  // Controls whether a Docker volume should be used to cache the VS Code server and extensions.
   "dev.containers.cacheVolume": true,
+
+  // use chezmoi to manage all dotfiles
+  // Controls whether the Git configuration (`~/.gitconfig`) should be copied into the container. This is done after installing any `dotfiles.repository` and will not overwrite an existing Git configuration file.
   "dev.containers.copyGitConfig": false,
+
+  // refer to "remote.defaultExtensionsIfInstalledLocally" for default remote extensions
   "dev.containers.defaultExtensions": [
-    "albert.TabOut",
     "astral-sh.ty",
     "charliermarsh.ruff",
-    "fill-labs.dependi",
-    "FanaticPythoner.better-todo-tree",
-    "TakumiI.markdowntable",
-    "esbenp.prettier-vscode",
-    "dakara.dakara-foldplus",
-    "bierner.markdown-mermaid",
-    "tamasfe.even-better-toml",
-    "mutantdino.resourcemonitor",
-    "yzhang.markdown-all-in-one",
-    "chrislajoie.vscode-modelines",
-    "octop162.markdown-table-editor",
-    "yoshi389111.markdown-table-rainbow",
-    "fabiospampinato.vscode-open-in-github",
-    "bierner.markdown-preview-github-styles"
+    "MarcinJachmann.vscode-eincolor"
   ],
   "dev.containers.defaultFeatures": {},
-  // UPLIFTING 自动使用 credential 管理器
+  // Controls whether a credential helper should be registered as the `credStore` in the Docker configuration (`~/.docker/config.json`) of dev containers. This will not overwrite an existing `credStore` entry in the configuration file.
   "dev.containers.dockerCredentialHelper": true,
+  // Docker (or Podman or WSLc) executable name or path.
+  "dev.containers.dockerPath": "docker",
+
   // SIGNIFICANT wsl 中与docker desktop (docker daemon) 的 socket 文件路径
-  // 与 docker-in-docker 的配置有关
+  // Docker socket path. Used, e.g., when connecting to a Dev Container with the devcontainer.json in a Docker Volume.
   "dev.containers.dockerSocketPath": "/var/run/docker.sock",
+
   // UPLIFTING 使用 wsl 中的 docker 命令
-  // turn this setting off, not automatically start wsl in the background
+  // CAUTION: turn this setting off, not automatically start wsl in the background
   "dev.containers.executeInWSL": false,
+
   // UPLIFTING 使用默认的 wsl distro
   "dev.containers.executeInWSLDistro": "",
+
   // SIGNIFICANT
+  // Mount the Git worktree common dir for Git operations to work in the container. This requires the worktree to be created with relative paths (`git worktree add --relative-paths`).
+  "dev.containers.experimentalMountGitWorktreeCommonDir": true,
+
+  // REALLY SIGNIFICANT
+  // Controls whether services in WSL (SSH agent, GPG agent, X display, Wayland display) are forwarded into the container. This setting has no effect on other platforms than Windows.
+  // this setting enables using WSL ssh agent inside docker container without explicitly setting up
   "dev.containers.forwardWSLServices": true,
+
+  // Where to write the configuration for the Git credential helper.
   "dev.containers.gitCredentialHelperConfigLocation": "global",
-  // UPLIFTING 关闭 GitHub CLI
-  "dev.containers.githubCLILoginWithToken": false,
-  // SIGNIFICANT 默认使用全部 GPU
-  "dev.containers.gpuAvailability": "all",
+
+  // Controls whether GitHub CLI login with a token from the local GitHub CLI should be enabled in the Dev Container.
+  "dev.containers.githubCLILoginWithToken": true,
+
+  // Controls whether a devcontainer-lock.json should be written.
+  "dev.containers.lockfile": true,
+
   "dev.containers.logLevel": "debug",
-  // UPLIFTING 自动转发 WayLand
+
+  // REALLY SIGNIFICANT
+  // Controls whether a Wayland socket, if one exists, should be mounted into the Dev Container.
+  // for developing GUI application
   "dev.containers.mountWaylandSocket": true,
-  // 如果 docker daemon 没有开启，自动打开
+
+  // SIGNIFICANT
+  // Optimistically attempt to start docker if the daemon is not already running.
   "dev.containers.optimisticallyLaunchDocker": true,
+
+  // WORKSPACE
   // link: https://code.visualstudio.com/docs/devcontainers/create-dev-container#_alternative-repository-configuration-folders
   "dev.containers.repositoryConfigurationPaths": [],
+
   // SIGNIFICANT
+  // The consistency level used for the workspace mount (existing containers must be rebuilt to take effect).
   "dev.containers.workspaceMountConsistency": "cached"
 }
