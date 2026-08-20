@@ -1,7 +1,7 @@
 [
   {
-    "key": "space",
+    "key": "shift+space",
     "command": "workbench.trust.manage",
-    "when": "!isWorkspaceTrusted"
+    "when": "!isWorkspaceTrusted && workspaceFolderCount >= 1"
   }
 ]

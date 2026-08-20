@@ -1,12 +1,55 @@
 {
+  // Specify a list of extensions that are allowed to use. This helps maintain a secure and consistent development environment by restricting the use of unauthorized extensions. For more information on how to configure this setting, please visit the [Configure Allowed Extensions](https://aka.ms/vscode/enterprise/extensions/allowed) section.
+  // "extensions.allowed": "*",
+
   "extensions.allowOpenInModalEditor": true,
   "extensions.autoCheckUpdates": true,
   "extensions.autoUpdate": "on",
+
+  // Controls the delay in hours after an extension update is published before it is automatically installed. Only applies when `extensions.autoUpdate` is set to `on`. This delay helps avoid installing potentially problematic updates immediately after release.
+  "extensions.autoUpdateDelay": 2,
+
+  // When enabled, editors with extension details will be automatically closed upon navigating away from the Extensions View.
+  "extensions.closeExtensionDetailsOnViewChange": false,
+
+  // When an extension is listed here, a confirmation prompt will not be shown when that extension handles a URI.
+  "extensions.confirmedUriHandlerExtensionIds": [],
+
+  // Configure an extension to execute in a different extension host process.
   "extensions.experimental.affinity": {
-    "usernamehw.commands": 2,
     //Caveats: One issue with using the affinity setting is that each time you update your settings file, the Vim plugin will reload, which can take a few seconds. https://github.com/VSCodeVim/Vim#:~:text=VSCodeVim%20is%20too%20slow
     "vscodevim.vim": 1,
-    "VSpaceCode.whichkey": 2
+    "VSpaceCode.whichkey": 2,
+    "usernamehw.commands": 2
   },
-  "extensions.supportUntrustedWorkspaces": {}
+
+  // SIGNIFICANT for better startup experience
+  // When enabled, extensions which declare the `onStartupFinished` activation event will be activated after a timeout.
+  "extensions.experimental.deferredStartupFinishedActivation": true,
+
+  // When enabled, extensions can be searched for via Quick Access and report issues from there.
+  "extensions.experimental.issueQuickAccess": false,
+
+  // WORKSPACE
+  // When enabled, the notifications for extension recommendations will not be shown.
+  "extensions.ignoreRecommendations": false,
+
+  // Override the Agents window support of an extension. Extensions using `true` will be enabled in the Agents window even when they would otherwise be disabled.
+  "extensions.supportAgentsWindow": {
+    "VSpaceCode.whichkey": true,
+    "Vizards.deepseek-v4-for-copilot": true
+  },
+
+  // When enabled, Node.js navigator object is exposed on the global scope.
+  "extensions.supportNodeGlobalNavigator": true,
+
+  // Override the untrusted workspace support of an extension. Extensions using `true` will always be enabled. Extensions using `limited` will always be enabled, and the extension will hide functionality that requires trust. Extensions using `false` will only be enabled only when the workspace is trusted.
+  "extensions.supportUntrustedWorkspaces": {
+    "VSpaceCode.whichkey": {
+      "supported": true
+    }
+  },
+
+  // Override the virtual workspaces support of an extension.
+  "extensions.supportVirtualWorkspaces": {}
 }
