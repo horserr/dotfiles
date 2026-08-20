@@ -1,0 +1,99 @@
+[
+  {
+    "key": "c",
+    "name": "+Chat/Copilot",
+    "icon": "copilot",
+    "type": "bindings",
+    "bindings": [
+      // g generate
+      {
+        "key": "g",
+        "name": "+Generate",
+        "icon": "game",
+        "type": "bindings",
+        "bindings": [
+          // i generate instruction
+          {
+            "key": "i",
+            "name": "generate instruction",
+            "icon": "ai-customization-instructions",
+            "type": "command",
+            "command": "workbench.command.new.instructions"
+          },
+          // o generate on-demand instruction
+          {
+            "key": "o",
+            "name": "generate on-demand instruction",
+            "icon": "ai-customization-instructions",
+            "type": "command",
+            "command": "workbench.action.chat.generateOnDemandInstructions"
+          },
+          // a geneate custom agent
+          {
+            "key": "a",
+            "name": "generate custom agent",
+            "icon": "agent",
+            "type": "command",
+            "command": "workbench.action.chat.generateAgent"
+          },
+          // k generate dev contianer configuration
+          {
+            "key": "k",
+            "name": "generate dev container configuration",
+            "icon": "ai-customization-instructions",
+            "type": "command",
+            "command": "github.copilot.devcontainer.generateDevContainerConfig"
+          },
+          // h generate hook
+          {
+            "key": "h",
+            "name": "generate hook",
+            "icon": "ai-customization-hook",
+            "type": "command",
+            "command": "workbench.action.chat.generateHook"
+          },
+          // s skill
+          {
+            "key": "s",
+            "name": "generate skill",
+            "icon": "ai-customization-skill",
+            "type": "command",
+            "command": "workbench.action.chat.generateSkill"
+          },
+          // p prompt
+          {
+            "key": "p",
+            "name": "generate prompt",
+            "icon": "ai-customization-prompt",
+            "type": "command",
+            "command": "workbench.action.chat.generatePrompt"
+          },
+          // t inline test
+          {
+            "key": "t",
+            "name": "generate inline test",
+            "icon": "ai-customization-hook",
+            "type": "command",
+            "command": "github.copilot.debug.generateInlineEditTests"
+          }
+        ]
+      },
+      {
+        "key": "*",
+        "name": "+Misc",
+        "icon": "desktop-download",
+        "type": "bindings",
+        "bindings": [
+          {
+            "key": "i",
+            "name": "inspect copilot context",
+            "icon": "search-show-context",
+            "type": "command",
+            "command": "github.copilot.debug.showContextInspectorView"
+          }
+        ]
+      }
+    ]
+  }
+]
+// github.copilot.debug.generateSTest
