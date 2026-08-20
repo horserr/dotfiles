@@ -4,6 +4,27 @@
   "version": "2.0.0",
   "tasks": [
     {
+      "label": "git check file attribute",
+      "type": "shell",
+      "command": "git",
+      "args": ["check-attr", "-a", "${relativeFile}"],
+      "detail": "git check file attibutes",
+      "runOptions": {
+        "instanceLimit": 1,
+        "instancePolicy": "terminateOldest",
+        "runOn": "folderOpen"
+      },
+      "icon": { "id": "graph-scatter" },
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared",
+        "showReuseMessage": true,
+        "clear": false
+      }
+    },
+    {
       "label": "docker desktop start",
       "type": "shell",
       "command": "docker",
