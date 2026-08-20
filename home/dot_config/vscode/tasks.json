@@ -25,6 +25,48 @@
       }
     },
     {
+      "label": "git turn file executable",
+      "type": "shell",
+      "command": "git",
+      "args": ["update-index", "--chmod=+x", "${relativeFile}"],
+      "detail": "git make file attibutes",
+      "runOptions": {
+        "instanceLimit": 1,
+        "instancePolicy": "terminateOldest",
+        "runOn": "folderOpen"
+      },
+      "icon": { "id": "notebook-execute-above" },
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared",
+        "showReuseMessage": true,
+        "clear": false
+      }
+    },
+    {
+      "label": "git test file is executable",
+      "type": "shell",
+      "command": "git",
+      "args": ["is-x", "${relativeFile}"],
+      "detail": "git test file is executable or not",
+      "runOptions": {
+        "instanceLimit": 1,
+        "instancePolicy": "terminateOldest",
+        "runOn": "folderOpen"
+      },
+      "icon": { "id": "test-view-icon" },
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared",
+        "showReuseMessage": true,
+        "clear": false
+      }
+    },
+    {
       "label": "docker desktop start",
       "type": "shell",
       "command": "docker",
@@ -77,6 +119,21 @@
         "runOn": "folderOpen"
       },
       "icon": { "id": "ai-customization-plugin" },
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": true,
+        "panel": "shared",
+        "showReuseMessage": true,
+        "clear": true
+      }
+    },
+    {
+      "label": "update",
+      "type": "shell",
+      "command": "chezmoi update",
+      "detail": "update source state and then apply the newest change",
+      "icon": { "id": "testing-update-profiles" },
       "presentation": {
         "echo": true,
         "reveal": "always",
