@@ -1,0 +1,1087 @@
+[
+  {
+    "key": "k",
+    "name": "+Remote",
+    "icon": "archive",
+    "type": "bindings",
+    "bindings": [
+      // space remote
+      {
+        "key": " ",
+        "name": "+Open remote",
+        "icon": "desktop-download",
+        "type": "command",
+        "command": "workbench.action.remote.showMenu"
+      },
+      // k dev containers
+      {
+        "key": "k",
+        "name": "+Dev containers",
+        "icon": "desktop-download",
+        "type": "bindings",
+        "bindings": [
+          // a attach
+          {
+            "key": "a",
+            "name": "attach in new window",
+            "icon": "clippy",
+            "type": "command",
+            // remote-containers.attachToAppleContainer
+            // "command": "remote-containers.attachToK8sContainer"
+            "command": "remote-containers.attachToRunningContainer"
+          },
+          // l log
+          {
+            "key": "l",
+            "name": "+Log",
+            "icon": "dialog-info",
+            "type": "bindings",
+            "bindings": [
+              // l show container log
+              {
+                "key": "l",
+                "name": "show container log",
+                "icon": "dialog-info",
+                "type": "command",
+                // "command": "remote-containers.revealLogTerminal" same effect
+                "command": "remote-containers.showContainerLog"
+              },
+              // L previous log
+              {
+                "key": "L",
+                "name": "show previous container log",
+                "icon": "dialog-info",
+                "type": "command",
+                "command": "remote-containers.openLastLogFile"
+              },
+              // * show all dev container log
+              {
+                "key": "*",
+                "name": "show all dev containers logs",
+                "icon": "dialog-info",
+                "type": "command",
+                "command": "remote-containers.openLogFile"
+              }
+            ]
+          },
+          // b build
+          {
+            "key": "b",
+            "name": "+Build",
+            "icon": "build",
+            "type": "bindings",
+            "bindings": [
+              // remote-containers.rebuildNoCacheAndReopenInContainer
+
+              // b rebuild container
+              {
+                "key": "b",
+                "name": "rebuild container",
+                "icon": "dialog-info",
+                "type": "command",
+                "command": "remote-containers.rebuildContainer"
+              },
+              {
+                "key": "o",
+                "name": "rebuild and reopen in container",
+                "icon": "dialog-info",
+                "type": "command",
+                "command": "remote-containers.rebuildAndReopenInContainer"
+              },
+              {
+                "key": "x",
+                "name": "rebuild without cache",
+                "icon": "dialog-info",
+                "type": "command",
+                "command": "remote-containers.rebuildContainerNoCache"
+              }
+            ]
+          },
+          // d clean
+          {
+            "key": "d",
+            "name": "+Clean/remove",
+            "icon": "clear-all",
+            "type": "bindings",
+            "bindings": [
+              {
+                "key": "d",
+                "name": "clean dev containers",
+                "icon": "clear-all",
+                "type": "command",
+                "command": "remote-containers.cleanUpDevContainers"
+              },
+              {
+                "key": "v",
+                "name": "clean dev volumes",
+                "icon": "clear-all",
+                "type": "command",
+                "command": "remote-containers.pruneVolumes"
+              }
+            ]
+          },
+          // o open
+          {
+            "key": "o",
+            "name": "+Open in dev container",
+            "icon": "open-in-window",
+            "type": "bindings",
+            "bindings": [
+              // o reopen in container
+              {
+                "key": "o",
+                "name": "reopen or switch",
+                "icon": "issue-reopened",
+                "type": "conditional",
+                "bindings": [
+                  {
+                    "key": "when:remoteConnectionState == 'connected' && remoteName == 'dev-container'",
+                    "name": "switch dev container, useful for monorepo containing multiple devcontainer.json files",
+                    "icon": "issue-reopened",
+                    "type": "command",
+                    "command": "remote-containers.switchContainer"
+                  },
+                  {
+                    "key": "",
+                    "name": "reopen in container",
+                    "icon": "issue-reopened",
+                    "type": "command",
+                    "command": "remote-containers.reopenInContainer"
+                  }
+                ]
+              },
+              // f open folder in dev container
+              {
+                "key": "f",
+                "name": "choose folder to open in dev container",
+                "icon": "remote-explorer-documentation",
+                "type": "command",
+                // remote-containers.openWorkspace same effect
+                "command": "remote-containers.openFolder"
+              },
+              {
+                "key": "v",
+                "name": "choose volume to open in dev container",
+                "icon": "remote-explorer-documentation",
+                "type": "command",
+                // "remote-containers.inspectInBasicDevContainer" no effect this command
+                "command": "remote-containers.inspectVolume"
+              }
+            ]
+          },
+          // i init
+          {
+            "key": "i",
+            "name": "+init",
+            "icon": "new-collection",
+            "type": "bindings",
+            "bindings": [
+              // space the overall menu
+              {
+                "key": " ",
+                "name": "container menu",
+                "icon": "clippy",
+                "type": "command",
+                "command": "remote-containers.newContainer"
+              },
+              // i create dev container
+              {
+                "key": "i",
+                "name": "new empty dev container",
+                "icon": "clippy",
+                "type": "command",
+                "command": "remote-containers.createDevContainer"
+              },
+              {
+                "key": "p",
+                "name": "checkout pr in container",
+                "icon": "clippy",
+                "type": "command",
+                // remote-containers.openPullRequestInVolume
+                "command": "remote-containers.checkoutPRInVolume"
+              },
+              {
+                "key": "c",
+                "name": "clone in unique",
+                "icon": "array",
+                "type": "command",
+                // "command": "remote-containers.cloneInVolume" this command has problem
+                "command": "remote-containers.openRepositoryInUniqueVolume"
+              },
+              {
+                "key": "n",
+                "name": "clone in named volume",
+                "icon": "array",
+                "type": "command",
+                "command": "remote-containers.openRepositoryInVolume"
+              }
+            ]
+          },
+          // s settings
+          {
+            "key": "s",
+            "name": "+Setting",
+            "icon": "settings",
+            "type": "bindings",
+            "bindings": [
+              // s setting file
+              {
+                "key": "s",
+                "name": "edit dev container json file",
+                "icon": "clippy",
+                "type": "command",
+                // "command": "remote-containers.editDevContainerJSON"
+                "command": "remote-containers.openDevContainerFile"
+              },
+              // c create configuration file
+              {
+                "key": "c",
+                "name": "create dev container json file",
+                "icon": "clippy",
+                "type": "command",
+                "command": "remote-containers.createDevContainerFile"
+              },
+              // x features
+              {
+                "key": "x",
+                "name": "dev container feature",
+                "icon": "file-add",
+                "type": "command",
+                "command": "remote-containers.configureContainerFeatures"
+              },
+              // l label port
+              {
+                "key": "l",
+                "name": "dev container label port",
+                "icon": "ports-view-icon",
+                "type": "command",
+                "command": "remote-containers.labelPortAndUpdateConfig"
+              },
+              // g generate
+              {
+                "key": "g",
+                "name": "+Generate",
+                "icon": "clippy",
+                "type": "bindings",
+                "bindings": [
+                  // g generate dev contianer configuration using copilot
+                  {
+                    "key": "g",
+                    "name": "generate dev container configuration",
+                    "icon": "ai-customization-instructions",
+                    "type": "command",
+                    "command": "github.copilot.devcontainer.generateDevContainerConfig"
+                  },
+                  // f generate docker file and docker compose
+                  {
+                    "key": "f",
+                    "name": "generate docker and docker compose",
+                    "icon": "clippy",
+                    "type": "command",
+                    "command": "vscode-containers.configure"
+                  },
+                  // c generate docker compose
+                  {
+                    "key": "c",
+                    "name": "generate docker compose",
+                    "icon": "clippy",
+                    "type": "command",
+                    "command": "vscode-containers.configureCompose"
+                  },
+                  // s generate sample
+                  {
+                    "key": "s",
+                    "name": "generate dev container sample",
+                    "icon": "clippy",
+                    "type": "command",
+                    "command": "remote-containers.trySample"
+                  },
+                  // d generate debug setting
+                  {
+                    "key": "d",
+                    "name": "vscode-containers.debugging.initializeForDebugging",
+                    "icon": "debug",
+                    "type": "command",
+                    "command": "remote-containers.trySample"
+                  }
+                ]
+              },
+              // f open attached configuration file
+              // this command only has effect after attaching common docker container. similar to workspace setting.
+              {
+                "key": "f",
+                "name": "open attached container configuration file",
+                "icon": "clippy",
+                "type": "command",
+                "command": "remote-containers.openAttachDevContainerFile"
+              },
+              // F this command only has effect after attaching docker compose, which achieves stability during recreation.
+              {
+                "key": "F",
+                "name": "open attached compose configuration file",
+                "icon": "clippy",
+                "type": "command",
+                "command": "remote-containers.openAttachConfigByNameFile"
+              },
+              // r reset notification preference
+              {
+                "key": "r",
+                "name": "reset dev container notification preference",
+                "icon": "clippy",
+                "type": "commands",
+                "commands": [
+                  "remote-containers.showRecoveryContainerNotificationReset",
+                  "remote-containers.showReopenInContainerNotificationReset"
+                ]
+              },
+              // t test dev container connections
+              {
+                "key": "t",
+                "name": "test dev container connections",
+                "icon": "clippy",
+                "type": "commands",
+                "commands": "remote-containers.testConnection"
+              }
+            ]
+          }
+        ]
+      },
+      // o open
+      {
+        "key": "o",
+        "name": "+Reopen in...",
+        "icon": "open-in-window",
+        "type": "bindings",
+        "bindings": [
+          // c reopen in container
+          {
+            "key": "c",
+            "name": "reopen in container",
+            "icon": "issue-reopened",
+            "type": "command",
+            "command": "remote-containers.reopenInContainer"
+          },
+          // l reopen locally
+          {
+            "key": "l",
+            "name": "reopen locally",
+            "icon": "remote-explorer-documentation",
+            "type": "command",
+            "command": "remote-containers.reopenLocally"
+          },
+          // w reopen in wsl
+          {
+            "key": "w",
+            "name": "reopen in wsl",
+            "icon": "remote-explorer-documentation",
+            "type": "command",
+            "command": "remote-containers.reopenInWSL"
+          },
+          // s ssh
+          {
+            "key": "s",
+            "name": "reopen in ssh",
+            "icon": "remote-explorer-documentation",
+            "type": "command",
+            "command": "remote-containers.reopenInSSH"
+          },
+          // t tunnel
+          {
+            "key": "t",
+            "name": "reopen in tunnel",
+            "icon": "remote-explorer-documentation",
+            "type": "command",
+            "command": "remote-containers.reopenInTunnel"
+          }
+        ]
+      },
+      // h help
+      {
+        "key": "h",
+        "name": "+Help",
+        "icon": "heart",
+        "type": "bindings",
+        "bindings": [
+          {
+            "key": "v",
+            "name": "vscode dev container doc",
+            "icon": "remote-explorer-documentation",
+            "type": "command",
+            "command": "remote-containers.getHelp"
+          },
+          {
+            "key": "x",
+            "name": "docker context help documnet",
+            "icon": "remote-explorer-documentation",
+            "type": "command",
+            "command": "vscode-containers.contexts.help"
+          },
+          {
+            "key": "h",
+            "name": "dev container reference doc",
+            "icon": "remote-explorer-documentation",
+            "type": "command",
+            "command": "vscode.open",
+            "args": "https://containers.dev/implementors/json_reference"
+          }
+        ]
+      },
+      // todo
+      // s ssh
+      {
+        "key": "s",
+        "name": "+SSH",
+        "icon": "remote",
+        "type": "bindings",
+        "bindings": [
+          {
+            "key": "i",
+            "name": "inspect images",
+            "icon": "remote-explorer-documentation",
+            "type": "command",
+            "command": "vscode-containers.images.inspect"
+          }
+        ]
+      },
+      // * misc
+      {
+        "key": "*",
+        "name": "+Misc",
+        "icon": "remote-explorer-documentation",
+        "type": "bindings",
+        "bindings": [
+          {
+            "key": "i",
+            "name": "+Install",
+            "icon": "remote-explorer-documentation",
+            "type": "bindings",
+            "bindings": [
+              {
+                "key": "d",
+                "name": "install docker",
+                "icon": "remote-explorer-documentation",
+                "type": "command",
+                "command": "remote-containers.installDocker"
+              },
+              {
+                "key": "w",
+                "name": "install docker in wsl",
+                "icon": "remote-explorer-documentation",
+                "type": "command",
+                "command": "remote-containers.installDocker"
+              },
+              {
+                "key": "i",
+                "name": "install dev container cli",
+                "icon": "remote-explorer-documentation",
+                "type": "command",
+                "command": "remote-containers.installUserCLI"
+              }
+            ]
+          }
+        ]
+      },
+      // x context
+      {
+        "key": "x",
+        "name": "+Context",
+        "icon": "share-window",
+        "type": "bindings",
+        "bindings": [
+          // i inspect docker context
+          {
+            "key": "i",
+            "name": "inspect docker context",
+            "icon": "remote-explorer-documentation",
+            "type": "command",
+            "command": "vscode-containers.contexts.inspect"
+          },
+          // u use docker context
+          {
+            "key": "u",
+            "name": "use docker context",
+            "icon": "debug-pause",
+            "type": "command",
+            "command": "vscode-containers.contexts.use"
+          },
+          // d remove
+          {
+            "key": "d",
+            "name": "remove/delete docker context",
+            "icon": "remote-explorer-documentation",
+            "type": "command",
+            "command": "vscode-containers.contexts.remove"
+          }
+        ]
+      },
+      // c container
+      {
+        "key": "c",
+        "name": "+Container",
+        "icon": "share-window",
+        "type": "bindings",
+        "bindings": [
+          // c compose
+          {
+            "key": "c",
+            "name": "+Compose",
+            "icon": "browser",
+            "type": "bindings",
+            "bindings": [
+              // r compose run
+              {
+                "key": "r",
+                "name": "+compose run",
+                "icon": "tasklist",
+                "type": "bindings",
+                "bindings": [
+                  // r compose start
+                  {
+                    "key": "r",
+                    "name": "compose start",
+                    "icon": "run",
+                    "type": "command",
+                    "command": "vscode-containers.containers.composeGroup.start"
+                  },
+                  // R compose restart
+                  {
+                    "key": "R",
+                    "name": "compose restart",
+                    "icon": "extension-restart-required",
+                    "type": "command",
+                    "command": "vscode-containers.containers.composeGroup.restart"
+                  },
+                  // x compose stop
+                  {
+                    "key": "x",
+                    "name": "compose stop",
+                    "icon": "stop",
+                    "type": "command",
+                    "command": "vscode-containers.containers.composeGroup.stop"
+                  }
+                ]
+              },
+              // k compose up
+              {
+                "key": " ",
+                "name": "compose up with selection",
+                "icon": "run",
+                "type": "command",
+                //  "vscode-containers.containers.composeGroup.start" no effect
+                "command": "vscode-containers.compose.up.subset"
+              },
+              // j compose down with selection
+              {
+                "key": "j",
+                "name": "compose down with selection",
+                "icon": "debug-remove-config",
+                "type": "command",
+                // "command": "vscode-containers.containers.composeGroup.down"
+                "command": "vscode-containers.compose.down.subset"
+              },
+              {
+                "key": "i",
+                "name": "compose inspect log",
+                "icon": "inspect",
+                "type": "command",
+                "command": "vscode-containers.containers.composeGroup.logs"
+              }
+            ]
+          },
+          // i inspect container
+          {
+            "key": "i",
+            "name": "inspect container",
+            "icon": "inspect",
+            "type": "command",
+            "command": "vscode-containers.containers.inspect"
+          },
+          // j stop container
+          {
+            "key": "j",
+            "name": "stop container",
+            "icon": "stop",
+            "type": "command",
+            "command": "vscode-containers.containers.stop"
+          },
+          // k start container
+          {
+            "key": "k",
+            "name": "start container",
+            "icon": "stop",
+            "type": "command",
+            "command": "vscode-containers.containers.start"
+          },
+          // r restart container
+          {
+            "key": "r",
+            "name": "restart container",
+            "icon": "stop",
+            "type": "command",
+            "command": "vscode-containers.containers.restart"
+          },
+          // d remove container
+          {
+            "key": "d",
+            "name": "remove container",
+            "icon": "stop",
+            "type": "command",
+            "command": "vscode-containers.containers.remove"
+          },
+          // a attach shell
+          {
+            "key": "a",
+            "name": "attach shell",
+            "icon": "terminal-powershell",
+            "type": "command",
+            "command": "vscode-containers.containers.attachShell"
+          },
+          // o open ports in browser
+          {
+            "key": "o",
+            "name": "open port in browser",
+            "icon": "browser",
+            "type": "command",
+            "command": "vscode-containers.containers.browse"
+          },
+          // x prune containers
+          {
+            "key": "x",
+            "name": "prune containers",
+            "icon": "browser",
+            "type": "command",
+            "command": "vscode-containers.containers.prune"
+          },
+          // l container log
+          {
+            "key": "l",
+            "name": "Container Log",
+            "icon": "browser",
+            "type": "command",
+            "command": "vscode-containers.containers.viewLogs"
+          },
+          // s statistics
+          {
+            "key": "s",
+            "name": "container statistics",
+            "icon": "browser",
+            "type": "command",
+            "command": "vscode-containers.containers.stats"
+          }
+        ]
+      },
+      // n network
+      {
+        "key": "n",
+        "name": "+Network",
+        "icon": "magnet",
+        "type": "bindings",
+        "bindings": [
+          // i inspect network
+          {
+            "key": "i",
+            "name": "inspect network",
+            "icon": "remote-explorer-documentation",
+            "type": "command",
+            "command": "vscode-containers.networks.inspect"
+          },
+          // a add/create network
+          {
+            "key": "a",
+            "name": "add/create network",
+            "icon": "remote-explorer-documentation",
+            "type": "command",
+            "command": "vscode-containers.networks.create"
+          },
+          // d remove network
+          {
+            "key": "d",
+            "name": "remove network",
+            "icon": "remote-explorer-documentation",
+            "type": "command",
+            "command": "vscode-containers.networks.remove"
+          },
+          // x prune
+          {
+            "key": "x",
+            "name": "prune network",
+            "icon": "remote-explorer-documentation",
+            "type": "command",
+            "command": "vscode-containers.networks.prune"
+          }
+        ]
+      },
+      // v volume
+      {
+        "key": "v",
+        "name": "+Volume/View",
+        "icon": "chrome-restore",
+        "type": "bindings",
+        "bindings": [
+          // v view
+          {
+            "key": "v",
+            "name": "+View",
+            "icon": "remote-explorer-documentation",
+            "type": "bindings",
+            "bindings": [
+              // , refresh view
+              {
+                "key": ",",
+                "name": "refresh view",
+                "icon": "refresh",
+                "type": "commands",
+                "commands": [
+                  "vscode-containers.containers.refresh",
+                  "vscode-containers.contexts.refresh",
+                  "vscode-containers.images.refresh",
+                  "vscode-containers.networks.refresh",
+                  "vscode-containers.registries.refresh",
+                  "vscode-containers.volumes.refresh"
+                ]
+              },
+              // v focus volume view
+              {
+                "key": "v",
+                "name": "focus volume view",
+                "icon": "remote-explorer-documentation",
+                "type": "command",
+                "command": "vscode-containers.views.volumes.focus"
+              },
+              // x docker context view
+              {
+                "key": "x",
+                "name": "focus docker context view",
+                "icon": "remote-explorer-documentation",
+                "type": "command",
+                "command": "vscode-containers.views.dockerContexts.focus"
+              },
+              // c container view
+              {
+                "key": "c",
+                "name": "focus container view",
+                "icon": "inspect",
+                "type": "command",
+                "command": "vscode-containers.views.containers.focus"
+              },
+              // n focus network view
+              {
+                "key": "n",
+                "name": "focus network view",
+                "icon": "remote-explorer-documentation",
+                "type": "command",
+                "command": "vscode-containers.views.networks.focus"
+              },
+              // i focus image view
+              {
+                "key": "i",
+                "name": "focus image view",
+                "icon": "remote-explorer-documentation",
+                "type": "command",
+                "command": "vscode-containers.views.images.focus"
+              },
+              // r focus registry view
+              {
+                "key": "r",
+                "name": "focus registry view",
+                "icon": "remote-explorer-documentation",
+                "type": "command",
+                "command": "vscode-containers.views.registries.focus"
+              }
+            ]
+          },
+          // i inspect volume
+          {
+            "key": "i",
+            "name": "inspect volumes",
+            "icon": "remote-explorer-documentation",
+            "type": "command",
+            "command": "vscode-containers.volumes.inspect"
+          },
+          // d remove volume
+          {
+            "key": "d",
+            "name": "remove volumes",
+            "icon": "remove-close",
+            "type": "command",
+            "command": "vscode-containers.volumes.remove"
+          },
+          // x prune volumes
+          {
+            "key": "x",
+            "name": "prune volume",
+            "icon": "breakpoints-remove-all",
+            "type": "command",
+            "command": "vscode-containers.volumes.prune"
+          }
+        ]
+      },
+      // i Image
+      {
+        "key": "i",
+        "name": "+Image",
+        "icon": "developer-tools",
+        "type": "bindings",
+        "bindings": [
+          // remote-containers.inspectDockerResource
+          // i inspect image
+          {
+            "key": "i",
+            "name": "inspect images",
+            "icon": "remote-explorer-documentation",
+            "type": "command",
+            "command": "vscode-containers.images.inspect"
+          },
+          // b build images
+          {
+            "key": "b",
+            "name": "build images",
+            "icon": "build",
+            "type": "command",
+            "command": "vscode-containers.images.build"
+          },
+          // d remove image
+          {
+            "key": "d",
+            "name": "remove/delete images",
+            "icon": "build",
+            "type": "command",
+            "command": "vscode-containers.images.remove"
+          },
+          // t tag image
+          {
+            "key": "t",
+            "name": "tag images",
+            "icon": "tag",
+            "type": "command",
+            "command": "vscode-containers.images.tag"
+          },
+          // r run
+          {
+            "key": "r",
+            "name": "+Run",
+            "icon": "build",
+            "type": "bindings",
+            "bindings": [
+              // r run
+              {
+                "key": "r",
+                "name": "run",
+                "icon": "build",
+                "type": "command",
+                "command": "vscode-containers.images.run"
+              },
+              // i run interactively
+              {
+                "key": "r",
+                "name": "run",
+                "icon": "build",
+                "type": "command",
+                "command": "vscode-containers.images.runInteractive"
+              },
+              // z run azure cli
+              {
+                "key": "z",
+                "name": "run",
+                "icon": "build",
+                "type": "command",
+                "command": "vscode-containers.images.runAzureCli"
+              }
+            ]
+          },
+          // p pull/push
+          {
+            "key": "p",
+            "name": "+Pull/Push",
+            "icon": "repo-pull",
+            "type": "bindings",
+            "bindings": [
+              // p pull images
+              {
+                "key": "p",
+                "name": "pull images",
+                "icon": "repo-pull",
+                "type": "command",
+                "command": "vscode-containers.images.pull"
+              },
+              // P push images
+              {
+                "key": "P",
+                "name": "Push images",
+                "icon": "repo-push",
+                "type": "command",
+                "command": "vscode-containers.images.push"
+              }
+            ]
+          },
+          // x prune images
+          {
+            "key": "x",
+            "name": "prune images",
+            "icon": "breakpoints-remove-all",
+            "type": "command",
+            "command": "vscode-containers.images.prune"
+          }
+        ]
+      },
+      // r registry
+      {
+        "key": "r",
+        "name": "+Registry",
+        "icon": "chrome-restore",
+        "type": "bindings",
+        "bindings": [
+          // i inspect registry
+          {
+            "key": "i",
+            "name": "inspect registry",
+            "icon": "remote-explorer-documentation",
+            "type": "command",
+            "command": "vscode-containers.registries.inspectRemoteImageManifest"
+          },
+          // l login
+          {
+            "key": "l",
+            "name": "login registry",
+            "icon": "log-in",
+            "type": "command",
+            "command": "vscode-containers.registries.logInToContainerCli"
+          },
+          // L logout
+          {
+            "key": "L",
+            "name": "logout registry",
+            "icon": "log-out",
+            "type": "command",
+            "command": "vscode-containers.registries.logOutOfContainerCli"
+          },
+          // a add/connect registry
+          {
+            "key": "a",
+            "name": "add/connect registry",
+            "icon": "remote-explorer-documentation",
+            "type": "command",
+            // vscode-containers.registries.reconnectRegistry
+            "command": "vscode-containers.registries.connectRegistry"
+          },
+          // d disconnect registry
+          {
+            "key": "d",
+            "name": "remove/disconnect registry",
+            "icon": "debug-disconnect",
+            "type": "command",
+            "command": "vscode-containers.registries.disconnectRegistry"
+          },
+          // D delete image
+          {
+            "key": "D",
+            "name": "delete registry image",
+            "icon": "notebook-delete-cell",
+            "type": "command",
+            "command": "vscode-containers.registries.deleteImage"
+          },
+          // o open docker hub
+          {
+            "key": "o",
+            "name": "open registry in browser",
+            "icon": "browser",
+            "type": "command",
+            "command": "vscode-containers.registries.dockerHub.openInBrowser"
+          },
+          // p pull image
+          {
+            "key": "p",
+            "name": "pull registry image",
+            "icon": "repo-pull",
+            "type": "command",
+            "command": "vscode-containers.registries.pullImage"
+          },
+          // P pull repository
+          {
+            "key": "p",
+            "name": "pull registry repository",
+            "icon": "repo",
+            "type": "command",
+            "command": "vscode-containers.registries.pullRepository"
+          },
+          // y +Copy
+          {
+            "key": "y",
+            "name": "+Copy",
+            "icon": "browser",
+            "type": "bindings",
+            "bindings": [
+              // t copy registry image tag
+              {
+                "key": "t",
+                "name": "copy registry image tag",
+                "icon": "tag",
+                "type": "command",
+                "command": "vscode-containers.registries.copyRemoteFullTag"
+              },
+              // d copy digest
+              {
+                "key": "d",
+                "name": "copy registry image digest",
+                "icon": "diff-ignored",
+                "type": "command",
+                "command": "vscode-containers.registries.copyImageDigest"
+              }
+            ]
+          }
+        ]
+      },
+      // , misc
+      {
+        "key": ",",
+        "name": "+Misc",
+        "icon": "symbol-misc",
+        "type": "bindings",
+        "bindings": [
+          // vscode-containers.openDockerDownloadPage
+          // vscode-containers.openUrl
+          // remote-containers.addExtensionToConfig
+
+          // r choose container run time
+          {
+            "key": "r",
+            "name": "choose container run time",
+            "icon": "remote-explorer-documentation",
+            "type": "command",
+            "command": "vscode-containers.chooseContainerRuntime"
+          },
+          // k start docker desktop
+          {
+            "key": "k",
+            "name": "start docker desktop",
+            "icon": "debug-start",
+            "type": "command",
+            "command": "workbench.action.tasks.runTask",
+            "args": "docker desktop start"
+          },
+          // j stop docker desktop
+          {
+            "key": "j",
+            "name": "stop docker desktop",
+            "icon": "debug-stop",
+            "type": "command",
+            "command": "workbench.action.tasks.runTask",
+            "args": "docker desktop stop"
+          },
+          /* X system prune
+          All stopped containers.
+          All networks not used by at least one container.
+          All dangling images (images without a tag).
+          All dangling build caches. */
+          {
+            "key": "X",
+            "name": "system prune",
+            "icon": "remote-explorer-documentation",
+            "type": "command",
+            "command": "vscode-containers.pruneSystem"
+          }
+        ]
+      }
+    ]
+  }
+]

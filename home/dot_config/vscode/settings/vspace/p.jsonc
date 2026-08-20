@@ -166,14 +166,6 @@
             "command": "remoteHub.openRepository"
           }
         ]
-      },
-      // O show remote menu
-      {
-        "key": "O",
-        "name": "show remote menu",
-        "icon": "folder-opened",
-        "type": "bindings",
-        "command": "workbench.action.remote.showMenu"
       }
     ]
   }

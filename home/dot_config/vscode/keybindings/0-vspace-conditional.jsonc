@@ -58,6 +58,17 @@
     "when": "whichkeyVisible && sideBySideEditorActive"
   },
   {
+    // for switching devcontainer or reopen locally
+    // link: k k o o
+    "key": "o",
+    "command": "whichkey.triggerKey",
+    "args": {
+      "key": "o",
+      "when": "remoteConnectionState == 'connected' && remoteName == 'dev-container'"
+    },
+    "when": "whichkeyVisible && remoteConnectionState == 'connected' && remoteName == 'dev-container'"
+  },
+  {
     // for detecting whether this current editor tab in pinned or not
     "key": "p",
     "command": "whichkey.triggerKey",
