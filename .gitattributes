@@ -1,3 +1,8 @@
 * text=auto
-home/dot_docker/** text eol=lf
+
+home/dot_docker/**/*.json text eol=lf
+home/dot_docker/**/*.yaml text eol=lf
+home/dot_docker/**/*.yml text eol=lf
+
 home/dot_config/windows-terminal.jsonc text eol=lf
+*Dockerfile* text eol=lf
