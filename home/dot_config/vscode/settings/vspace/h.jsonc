@@ -179,13 +179,36 @@
             "type": "command",
             "command": "blitz.editSetting"
           },
-          // u user json setting
+          // space default json setting
           {
-            "key": "u",
-            "name": "Open user json settings",
+            "key": " ",
+            "name": "Open system(default) settings json",
             "icon": "keyboard",
             "type": "command",
-            "command": "workbench.action.openSettingsJson"
+            "command": "workbench.action.openRawDefaultSettings"
+          },
+          // s user json setting
+          {
+            "key": "s",
+            "name": "Open user json settings",
+            "icon": "keyboard",
+            "type": "conditional",
+            "bindings": [
+              {
+                "key": "when:remoteName",
+                "name": "Open remote settings",
+                "icon": "keyboard",
+                "type": "command",
+                "command": "workbench.action.openRemoteSettingsFile"
+              },
+              {
+                "key": "",
+                "name": "Open user json settings",
+                "icon": "keyboard",
+                "type": "command",
+                "command": "workbench.action.openSettingsJson"
+              }
+            ]
           },
           // user ui setting
           {
@@ -195,14 +218,6 @@
             "type": "command",
             "command": "workbench.action.openGlobalSettings"
           },
-          // s default json setting
-          {
-            "key": "s",
-            "name": "Open system(default) settings json",
-            "icon": "keyboard",
-            "type": "command",
-            "command": "workbench.action.openRawDefaultSettings"
-          },
           // w workspace setting
           {
             "key": "w",
@@ -210,14 +225,6 @@
             "icon": "keyboard",
             "type": "command",
             "command": "workbench.action.openWorkspaceSettingsFile"
-          },
-          // r remote setting
-          {
-            "key": "r",
-            "name": "Open remote settings",
-            "icon": "keyboard",
-            "type": "command",
-            "command": "workbench.action.openRemoteSettingsFile"
           }
         ]
       },
@@ -228,6 +235,14 @@
         "icon": "keybindings-record-keys",
         "type": "bindings",
         "bindings": [
+          // space default keybindings
+          {
+            "key": " ",
+            "name": "Open default key bindings JSON",
+            "icon": "json",
+            "type": "command",
+            "command": "workbench.action.openDefaultKeybindingsFile"
+          },
           // e keybinding editor
           {
             "key": "e",
@@ -243,14 +258,6 @@
             "icon": "json",
             "type": "command",
             "command": "workbench.action.openGlobalKeybindingsFile"
-          },
-          // K default keybindings
-          {
-            "key": "K",
-            "name": "Open default key bindings JSON",
-            "icon": "json",
-            "type": "command",
-            "command": "workbench.action.openDefaultKeybindingsFile"
           },
           // r default keybinding reference
           {

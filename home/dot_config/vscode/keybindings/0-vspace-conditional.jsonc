@@ -69,7 +69,19 @@
     "when": "whichkeyVisible && remoteConnectionState == 'connected' && remoteName == 'dev-container'"
   },
   {
+    // for open remote or local user setting json file
+    // link: h s s
+    "key": "s",
+    "command": "whichkey.triggerKey",
+    "args": {
+      "key": "s",
+      "when": "remoteName"
+    },
+    "when": "whichkeyVisible && remoteName"
+  },
+  {
     // for detecting whether this current editor tab in pinned or not
+    // link: f p
     "key": "p",
     "command": "whichkey.triggerKey",
     "args": {
@@ -79,6 +91,8 @@
     "when": "whichkeyVisible && activeEditorIsPinned"
   },
   {
+    // for toggle editor tab visibility
+    // link: v e t
     "key": "t",
     "command": "whichkey.triggerKey",
     "args": {
@@ -89,6 +103,7 @@
   },
   {
     // for detecting whether this windows are subordinate to main window
+    // link: w w
     "key": "w",
     "command": "whichkey.triggerKey",
     "args": {
@@ -99,6 +114,7 @@
   },
   {
     // for detecting whether split editor in current tab
+    // link: v , '
     "key": "'",
     "command": "whichkey.triggerKey",
     "args": {
