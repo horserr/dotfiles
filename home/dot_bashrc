@@ -139,8 +139,11 @@ set mark-symlinked-directories on
 
 # vscode shell integration
 [[ "$TERM_PROGRAM" == "vscode" ]] && . "$(code --locate-shell-integration-path bash)"
+
 # starship
-eval "$(starship init bash)"
+if command -v "starship" &> /dev/null; then
+    eval "$(starship init bash)"
+fi
 
 if command -v "carapace" &> /dev/null; then
     # link: https://carapace-sh.github.io/carapace-bin/setup.html#bash

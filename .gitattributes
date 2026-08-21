@@ -6,3 +6,5 @@ home/dot_docker/**/*.yml text eol=lf
 
 home/dot_config/windows-terminal.jsonc text eol=lf
 *Dockerfile* text eol=lf
+dot_bashrc text eol=lf
+dot_inputrc text eol=lf
