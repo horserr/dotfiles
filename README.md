@@ -51,6 +51,17 @@ Optimize-VHD -Path "$env:LOCALAPPDATA\Docker\wsl\DockerDesktopWSL\disk\docker_da
 
 ## crlf to lf EOL encoding
 
+using git or dos2unix
+
+```sh
+# first commit .gitattributes
+git add .
+git commit
+
+git rm --cached -r .
+git reset --hard
+```
+
 ```sh
 sudo find . -type f -not -path '*/.git/*' -exec dos2unix {} \;
 ```
