@@ -1,6 +1,7 @@
 {{/* code: language=toml */}}
 
-{{- $isPersonal := promptBoolOnce . "personal" "Is this a personal computer" false -}}
+{{- /* Checks if running interactively, which is not the case for GitHub Codespaces */ -}}
+{{- $interactive := stdinIsATTY -}}
 
 {{- $isLinux := eq .chezmoi.os "linux" -}}
 
@@ -14,7 +15,24 @@
 {{- $isMOSH := ne (env "MOSH_SSH_CONNECTION") "" -}}
 
 {{- $isCodeSpaces := ne (env "CODESPACES") "" -}}
-{{- $isRemoteContainer := ne (env "REMOTE_CONTAINERS_IPC") "" -}}
+{{- $isDevContainer := or (ne (env "REMOTE_CONTAINERS") "") (ne (env "DEVCONTAINER") "") -}}
+
+{{- if $interactive -}}
+{{-   writeToStdout "💡 Tip: you can re-enter your name and email with `chezmoi init --data=false`.\n" -}}
+{{- end -}}
+
+{{- $isPersonal := false -}}
+{{- if or $isCodeSpaces $isDevContainer -}}
+{{-   $isPersonal = true -}}
+{{- end -}}
+
+{{- if $interactive -}}
+    {{- if or $isCodeSpaces $isDevContainer -}}
+        {{- $isPersonal = true -}}
+    {{- else -}}
+        {{- $isPersonal = promptBoolOnce . "personal" "Is this a personal computer" false -}}
+    {{- end -}}
+{{- end -}}
 
 sourceDir = "~/.config/.dotfiles"
 
@@ -25,8 +43,8 @@ sourceDir = "~/.config/.dotfiles"
     isLinux = {{ $isLinux }}
     isWindows = {{ $isWindows }}
     isDocker = {{ $isDocker }}
-    isEphemeral = {{ or $isDocker $isCodeSpaces $isRemoteContainer }}
-    isRemote = {{ or $isSSH $isMOSH $isCodeSpaces $isRemoteContainer }}
+    isEphemeral = {{ or $isDocker $isCodeSpaces $isDevContainer }}
+    isRemote = {{ or $isSSH $isMOSH $isCodeSpaces $isDevContainer }}
 
 [interpreters.ps1]
     command = """
