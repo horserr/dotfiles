@@ -1,22 +1,86 @@
-// For format details, see https://aka.ms/devcontainer.json. For config options, see the
-// README at: https://github.com/devcontainers/templates/tree/main/src/ubuntu
 {
-	"name": "Ubuntu",
-	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
-	"image": "mcr.microsoft.com/devcontainers/base:resolute"
+  "name": "DOTFILES",
+  // Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
+  "image": "mcr.microsoft.com/devcontainers/base:resolute",
+  // "build": {
+  //   "context": "..",
+  //   "dockerfile": "./Dockerfile",
+  //   "network": "host",
+  //   "args": {
+  //     "APT_MIRROR": "http://mirrors.nju.edu.cn/ubuntu/"
+  //   }
+  // },
 
-	// Features to add to the dev container. More info: https://containers.dev/features.
-	// "features": {},
+  "runArgs": ["--network=host"],
+  "containerEnv": {
+    "GITHUB_USERNAME": "horserr",
+    "GH_TOKEN": "${localEnv:GH_TOKEN}",
+    "GITHUB_ACCESS_TOKEN": "${localEnv:GH_TOKEN}"
+  },
 
-	// Use 'forwardPorts' to make a list of ports inside the container available locally.
-	// "forwardPorts": [],
+  // Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
+  // "remoteUser": "root"
+  "remoteUser": "vscode",
+  // change workspace folder
+  "workspaceFolder": "/home/vscode/.config/.dotfiles",
+  "workspaceMount": "source=${localWorkspaceFolder},target=/home/vscode/.config/.dotfiles,type=bind,consistency=cached",
 
-	// Use 'postCreateCommand' to run commands after the container is created.
-	// "postCreateCommand": "uname -a",
+  "mounts": [
+    // apt Docker volume
+    // "source=apt-cache-archive,target=/var/cache/apt/archives,type=volume",
+    // "source=apt-cache-lists,target=/var/lib/apt/lists,type=volume"
+  ],
+  // Features to add to the dev container. More info: https://containers.dev/features.
+  // "features": {},
 
-	// Configure tool-specific properties.
-	// "customizations": {},
+  // Use 'forwardPorts' to make a list of ports inside the container available locally.
+  // "forwardPorts": [],
 
-	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
-	// "remoteUser": "root"
+  // Configure tool-specific properties.
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "files.eol": "\n"
+        // "terminal.integrated.defaultProfile.linux": "fish",
+        // do not need this setting for host network
+        // "http.useLocalProxyConfiguration": false,
+      },
+      "extensions": []
+    }
+  },
+
+  // A command string or list of command arguments to run on the host machine during initialization, including during container creation and on subsequent starts. The command may run more than once during a given session.
+  // ⚠️ The command is run wherever the source code is located on the host. For cloud services, this is in the cloud.
+  // todo
+  // "initializeCommand": "chezmoi apply",
+
+  // This command is the first of three (along with updateContentCommand and postCreateCommand) that finalizes container setup when a dev container is created. It and subsequent commands execute inside the container immediately after it has started for the first time.
+  // useful for basic or global environment changing
+  // only has system information, no user information
+  // this command optionally changes apt mirror
+  "onCreateCommand": "${containerWorkspaceFolder}/.devcontainer/onCreate.sh -m http://mirrors.nju.edu.cn/ubuntu/",
+
+  // This command is the second of three that finalizes container setup when a dev container is created. It executes inside the container after onCreateCommand whenever new content is available in the source tree during the creation process.
+  // It will execute at least once, but cloud services will also periodically execute the command to refresh cached or prebuilt containers. Like cloud services using onCreateCommand, it can only take advantage of repository and org scoped secrets or permissions.
+  // can obtain project file
+  // usefule for installing project dependencies, such as npm install
+  // "updateContentCommand": "npm install"
+
+  // This command is the last of three that finalizes container setup when a dev container is created. It happens after updateContentCommand and once the dev container has been assigned to a user for the first time.
+  // Cloud services can use this command to take advantage of user specific secrets and permissions.
+  // has user information
+  // usefule for customizations and clone private repo
+  // initialize chezmoi and apply
+  "postCreateCommand": "${containerWorkspaceFolder}/.devcontainer/postCreate.sh"
+
+  // A command to run each time the container is successfully started.
+  // useful for starting daemon
+  // "postStartCommand": "",
+
+  // A command to run each time a tool has successfully attached to the container.
+  // useful for session specific settings or dev watcher, such as npm run dev
+  // "postAttachCommand" :""
+
+  // An enum that specifies the command any tool should wait for before connecting. Defaults to updateContentCommand. This allows you to use onCreateCommand or updateContentCommand for steps that must happen before devcontainer.json supporting tools connect while still using postCreateCommand for steps that can happen behind the scenes afterwards.
+  // "waitFor" :""
 }

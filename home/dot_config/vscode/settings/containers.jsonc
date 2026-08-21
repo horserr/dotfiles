@@ -5,7 +5,8 @@
     "charliermarsh.ruff",
     "docker.docker",
     "FanaticPythoner.better-todo-tree",
-    "MarcinJachmann.vscode-eincolor"
+    "MarcinJachmann.vscode-eincolor",
+    "nexmoe.monitor-pro"
   ],
   "dev.containers.defaultFeatures": {},
   // Controls whether a credential helper should be registered as the `credStore` in the Docker configuration (`~/.docker/config.json`) of dev containers. This will not overwrite an existing `credStore` entry in the configuration file.

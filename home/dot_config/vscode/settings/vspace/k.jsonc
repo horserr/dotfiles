@@ -71,8 +71,6 @@
             "icon": "build",
             "type": "bindings",
             "bindings": [
-              // remote-containers.rebuildNoCacheAndReopenInContainer
-
               // b rebuild container
               {
                 "key": "b",
@@ -81,12 +79,21 @@
                 "type": "command",
                 "command": "remote-containers.rebuildContainer"
               },
+              // o rebuild and reopen in container
               {
                 "key": "o",
                 "name": "rebuild and reopen in container",
                 "icon": "dialog-info",
                 "type": "command",
                 "command": "remote-containers.rebuildAndReopenInContainer"
+              },
+              // O rebuild without cache and reopen
+              {
+                "key": "O",
+                "name": "rebuild without cache and reopen",
+                "icon": "compass-active",
+                "type": "command",
+                "command": "remote-containers.rebuildNoCacheAndReopenInContainer"
               },
               {
                 "key": "x",

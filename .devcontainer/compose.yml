@@ -6,8 +6,8 @@ services:
       dockerfile: Dockerfile
       network: host
       args:
-        # APT_MIRROR: https://mirrors.tuna.tsinghua.edu.cn/ubuntu/
-        APT_MIRROR: https://mirrors.nju.edu.cn/ubuntu/
+        # APT_MIRROR: http://mirrors.tuna.tsinghua.edu.cn/ubuntu/
+        APT_MIRROR: http://mirrors.nju.edu.cn/ubuntu/
     # command: sleep infinity
     # entrypoint: ["/bin/bash", "-c", "sleep infinity"]
     entrypoint: bash
