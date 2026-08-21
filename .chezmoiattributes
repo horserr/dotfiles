@@ -1,3 +1,0 @@
-home/dot_docker/** eol=lf
-home/dot_config/windows-terminal.jsonc eol=lf
-home/dot_config/sumatrapdf/*.txt text eol=crlf utf8bom=never

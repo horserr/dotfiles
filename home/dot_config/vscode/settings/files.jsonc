@@ -20,7 +20,7 @@
   // really SIGNIFICANT
   "files.enableTrash": true,
   "files.encoding": "utf8",
-  "files.eol": "auto",
+  "files.eol": "\n",
   // WORKSPACE SIGNIFICANT
   "files.exclude": {
     "**/__pycache__": true,
