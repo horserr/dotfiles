@@ -75,6 +75,22 @@
             "command": "vscode-containers.registries.azure.viewProperties"
           }
         ]
+      },
+      {
+        "key": "d",
+        "name": "+Deploy",
+        "icon": "debug-console-evaluation-input",
+        "type": "bindings",
+        "bindings": [
+          {
+            "key": "d",
+            "name": "deploy to container app",
+            "icon": "view-pane-container-collapsed",
+            "type": "command",
+            // vscode-containers.registries.deployImageToAzure similar command but not recommend for modern developer
+            "command": "vscode-containers.registries.deployImageToAca"
+          }
+        ]
       }
     ]
   }

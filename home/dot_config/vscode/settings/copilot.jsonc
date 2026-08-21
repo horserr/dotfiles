@@ -1,4 +1,6 @@
 {
+  "inlineChat.defaultModel": "DeepSeek V4 Flash (deepseek)",
+
   "chat.agent.maxRequests": 200,
   "chat.agent.thinking.collapsedTools": "withThinking",
   // default to use deepseek

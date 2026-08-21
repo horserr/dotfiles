@@ -38,19 +38,27 @@
     "type": "bindings",
     "bindings": [
       {
+        "key": "o",
+        "name": "open logs",
+        "icon": "multiple-windows",
+        "type": "command",
+        "command": "workbench.action.openLogFile"
+      },
+      // v output view
+      {
+        "key": "v",
+        "name": "output view",
+        "icon": "output",
+        "type": "command",
+        "command": "workbench.action.output.toggleOutput"
+      },
+      {
         // use git.commandsToLog setting to log git commands stdout to output panel
         "key": "g",
         "name": "view git output",
         "icon": "multiple-windows",
         "type": "command",
         "command": "git.showOutput"
-      },
-      {
-        "key": "o",
-        "name": "open logs",
-        "icon": "multiple-windows",
-        "type": "command",
-        "command": "workbench.action.openLogFile"
       },
       {
         "key": "F",

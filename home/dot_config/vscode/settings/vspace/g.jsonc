@@ -46,15 +46,15 @@
           // i init
           {
             "key": "i",
-            "name": "init repo",
+            "name": "init repo with git ignore",
             "icon": "file",
-            "type": "command",
-            "command": "git.init"
+            "type": "commands",
+            "commands": ["git.init", "gitignore.addgitignore"]
           },
           // x add to git ignore
           {
             "key": "x",
-            "name": "add to git ignore",
+            "name": "add file to git ignore",
             "icon": "diff-ignored",
             "type": "command",
             "command": "git.ignore"
@@ -67,10 +67,17 @@
             "type": "command",
             "command": "git.clone"
           },
+          {
+            "key": "C",
+            "name": "clone in container",
+            "icon": "array",
+            "type": "command",
+            "command": "remote-containers.cloneInVolume"
+          },
           // r recursively clone
           {
             "key": "r",
-            "name": "init repo",
+            "name": "recursively clone repo",
             "icon": "file",
             "type": "command",
             "command": "git.cloneRecursive"

@@ -1,10 +1,122 @@
 [
+  // targetsContainers.focus
+  // targetsContainers.resetViewLocation
   {
     "key": "v",
     "name": "+view",
     "icon": "info",
     "type": "bindings",
     "bindings": [
+      // space all views & view containers
+      {
+        "key": " ",
+        "name": "+Views",
+        "icon": "comment",
+        "type": "command",
+        "bindings": [
+          {
+            "key": " ",
+            "name": "view",
+            "icon": "preview",
+            "type": "command",
+            "command": "workbench.action.openView"
+          },
+          {
+            "key": "e",
+            "name": "view explorer",
+            "icon": "source-control",
+            "type": "command",
+            "command": "workbench.view.explorer"
+          },
+          {
+            "key": "c",
+            "name": "Show container view",
+            "icon": "source-control",
+            "type": "command",
+            "command": "workbench.view.extension.containersView"
+          },
+          {
+            "key": "p",
+            "name": "Show problem",
+            "icon": "error",
+            "type": "command",
+            "command": "workbench.actions.view.problems"
+            // workbench.action.problems.focus
+          },
+          {
+            "key": "r",
+            "name": "Show remote explorer",
+            "icon": "remote-explorer",
+            "type": "command",
+            "command": "workbench.view.remote"
+          },
+          {
+            "key": "t",
+            "name": "Show test",
+            "icon": "beaker",
+            "type": "command",
+            "command": "workbench.view.extension.test"
+          },
+          {
+            "key": "x",
+            "name": "Show installed extensions",
+            "icon": "extensions",
+            "type": "command",
+            "command": "workbench.extensions.action.installedExtensions"
+          }
+        ]
+      },
+      // v change view/editor size
+      {
+        "key": "v",
+        "name": "Shrink window",
+        "icon": "remove",
+        "type": "transient",
+        "bindings": [
+          {
+            "key": "j",
+            "name": "decrease view height",
+            "icon": "remove",
+            "type": "command",
+            "command": "workbench.action.decreaseViewHeight"
+          },
+          {
+            "key": "k",
+            "name": "increase view height",
+            "icon": "add",
+            "type": "command",
+            "command": "workbench.action.increaseViewHeight"
+          },
+          {
+            "key": "l",
+            "name": "increase view width",
+            "icon": "add",
+            "type": "command",
+            "command": "workbench.action.increaseViewWidth"
+          },
+          {
+            "key": "h",
+            "name": "decrease view width",
+            "icon": "remove",
+            "type": "command",
+            "command": "workbench.action.decreaseViewWidth"
+          },
+          {
+            "key": ",",
+            "name": "decrease view size",
+            "icon": "remove",
+            "type": "command",
+            "command": "workbench.action.decreaseViewSize"
+          },
+          {
+            "key": ".",
+            "name": "increase view size",
+            "icon": "remove",
+            "type": "command",
+            "command": "workbench.action.increaseViewSize"
+          }
+        ]
+      },
       // , editor group layout
       {
         "key": ",",
@@ -307,130 +419,6 @@
           "workbench.action.closeSidebar",
           "workbench.action.closePanel",
           "workbench.action.closeAuxiliaryBar"
-        ]
-      },
-      // v change view/editor size
-      {
-        "key": "v",
-        "name": "Shrink window",
-        "icon": "remove",
-        "type": "transient",
-        "bindings": [
-          {
-            "key": "j",
-            "name": "decrease view height",
-            "icon": "remove",
-            "type": "command",
-            "command": "workbench.action.decreaseViewHeight"
-          },
-          {
-            "key": "k",
-            "name": "increase view height",
-            "icon": "add",
-            "type": "command",
-            "command": "workbench.action.increaseViewHeight"
-          },
-          {
-            "key": "l",
-            "name": "increase view width",
-            "icon": "add",
-            "type": "command",
-            "command": "workbench.action.increaseViewWidth"
-          },
-          {
-            "key": "h",
-            "name": "decrease view width",
-            "icon": "remove",
-            "type": "command",
-            "command": "workbench.action.decreaseViewWidth"
-          },
-          {
-            "key": ",",
-            "name": "decrease view size",
-            "icon": "remove",
-            "type": "command",
-            "command": "workbench.action.decreaseViewSize"
-          },
-          {
-            "key": ".",
-            "name": "increase view size",
-            "icon": "remove",
-            "type": "command",
-            "command": "workbench.action.increaseViewSize"
-          }
-        ]
-      },
-      // space all views & view containers
-      {
-        "key": " ",
-        "name": "+Views",
-        "icon": "comment",
-        "type": "command",
-        "bindings": [
-          {
-            "key": " ",
-            "name": "view",
-            "icon": "preview",
-            "type": "command",
-            "command": "workbench.action.openView"
-          },
-          {
-            "key": "e",
-            "name": "view explorer",
-            "icon": "source-control",
-            "type": "command",
-            "command": "workbench.view.explorer"
-          },
-          {
-            "key": "g",
-            "name": "toggle Show source control",
-            "icon": "source-control",
-            "type": "command",
-            "command": "workbench.view.scm"
-          },
-          {
-            "key": "c",
-            "name": "Show container view",
-            "icon": "source-control",
-            "type": "command",
-            "command": "workbench.view.extension.containersView"
-          },
-          {
-            "key": "o",
-            "name": "Show output",
-            "icon": "output",
-            "type": "command",
-            "command": "workbench.action.output.toggleOutput"
-          },
-          {
-            "key": "p",
-            "name": "Show problem",
-            "icon": "error",
-            "type": "command",
-            "command": "workbench.actions.view.problems"
-            // workbench.action.problems.focus
-          },
-          {
-            "key": "r",
-            "name": "Show remote explorer",
-            "icon": "remote-explorer",
-            "type": "command",
-            "command": "workbench.view.remote"
-          },
-          {
-            "key": "t",
-            "name": "Show test",
-            "icon": "beaker",
-            "type": "command",
-            "command": "workbench.view.extension.test"
-          },
-          {
-            "key": "x",
-            "name": "Show installed extensions",
-            "icon": "extensions",
-            "type": "command",
-            "command": "workbench.extensions.action.installedExtensions"
-          }
         ]
       },
       // e file/editor view components
