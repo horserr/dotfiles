@@ -51,8 +51,7 @@
 
   // A command string or list of command arguments to run on the host machine during initialization, including during container creation and on subsequent starts. The command may run more than once during a given session.
   // ⚠️ The command is run wherever the source code is located on the host. For cloud services, this is in the cloud.
-  // todo
-  // "initializeCommand": "chezmoi apply",
+  "initializeCommand": "chezmoi verify && chezmoi apply --force",
 
   // This command is the first of three (along with updateContentCommand and postCreateCommand) that finalizes container setup when a dev container is created. It and subsequent commands execute inside the container immediately after it has started for the first time.
   // useful for basic or global environment changing
