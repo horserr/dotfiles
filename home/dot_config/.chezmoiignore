@@ -1,19 +1,19 @@
 fish/
 
-{{- if not .isLinux }}
-{{- if .isPersonal }}
+{{ if not .isLinux }}
+{{ if .isPersonal }}
 homebrew/
 yazi/
 {{ end }}
 tmux/
-{{- end }}
+{{ end }}
 
-{{- if not .isWindows -}}
-vscode/**
-sumatrapdf/**
+{{ if not .isWindows }}
+vscode/
+sumatrapdf/
 .docker/
 powershell/
 mousemaster/
 
 windows-terminal.jsonc
-{{ end -}}
+{{ end }}

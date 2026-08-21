@@ -49,13 +49,10 @@ after installing
 Optimize-VHD -Path "$env:LOCALAPPDATA\Docker\wsl\DockerDesktopWSL\disk\docker_data.vhdx" -Mode Full
 ```
 
-## change apt source
+## crlf to lf EOL encoding
 
-### Ubuntu 24 之前的方式，直接修改 `/etc/apt/source.list`
-
-```bash
-sudo cp /etc/apt/sources.list /etc/apt/sources.list.bak
-sudo vim /etc/apt/sources.list
+```sh
+sudo find . -type f -not -path '*/.git/*' -exec dos2unix {} \;
 ```
 
 ## use URLProtocol.exe to create url protocol for cat catch

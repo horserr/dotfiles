@@ -21,7 +21,7 @@
   {{- else if hasSuffix "jsonc" . -}}
     {{- /* merge normal jsonc file */ -}}
     {{- $fileContent = include . | fromJsonc -}}
-  {{- else if hasSuffix "jsonc" . -}}
+  {{- else if hasSuffix "json" . -}}
     {{- /* merge normal json file */ -}}
     {{- $fileContent = include . | fromJson -}}
   {{- else -}}

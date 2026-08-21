@@ -1,6 +1,7 @@
 {
-  // todo add browser settings
-  "workbench.activityBar.autoHide": true,
+  // todo add workbench browser settings
+  // "workbench.activityBar.autoHide": true,
+  "workbench.activityBar.autoHide": false,
   "workbench.activityBar.compact": true,
   "workbench.activityBar.location": "bottom",
   "workbench.browser.enableRemoteProxy": false,
@@ -216,5 +217,7 @@
   "workbench.view.alwaysShowHeaderActions": false,
   // don't enable tree sticky scroll
   "workbench.tree.enableStickyScroll": false,
-  "workbench.tree.stickyScrollMaxItemCount": 4
+  "workbench.tree.stickyScrollMaxItemCount": 4,
+
+  "workbench.experimental.modernUI": true
 }

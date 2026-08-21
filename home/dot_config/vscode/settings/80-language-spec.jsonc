@@ -54,7 +54,7 @@
   "[yaml]": {
     "editor.defaultFormatter": "redhat.vscode-yaml"
   },
-
+  "[log]": { "editor.wordWrap": "off" },
   /*******
    * CSS *
    *******/

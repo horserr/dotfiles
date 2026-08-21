@@ -13,11 +13,11 @@
   {{- $relPath := trimPrefix (joinPath $.GLOBAL.chezmoi.sourceDir "/") . -}}
 
   {{- if hasSuffix "jsonc.tmpl" . -}}
-    {{- /* merge template */ -}}
+    {{- /* merge jsonc template */ -}}
     {{- $fileContent = includeTemplate $relPath $.GLOBAL | fromJsonc -}}
   {{- else if hasSuffix "json.tmpl" . -}}
     {{- /* merge json template */ -}}
-    {{- $fileContent = include . | fromJson -}}
+    {{- $fileContent = includeTemplate $relPath $.GLOBAL | fromJson -}}
   {{- else if hasSuffix "jsonc" . -}}
     {{- /* merge normal jsonc file */ -}}
     {{- $fileContent = include . | fromJsonc -}}

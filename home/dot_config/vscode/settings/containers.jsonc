@@ -1,4 +1,16 @@
 {
+  // refer to "remote.defaultExtensionsIfInstalledLocally" for default remote extensions
+  "dev.containers.defaultExtensions": [
+    "astral-sh.ty",
+    "charliermarsh.ruff",
+    "docker.docker",
+    "FanaticPythoner.better-todo-tree",
+    "MarcinJachmann.vscode-eincolor"
+  ],
+  "dev.containers.defaultFeatures": {},
+  // Controls whether a credential helper should be registered as the `credStore` in the Docker configuration (`~/.docker/config.json`) of dev containers. This will not overwrite an existing `credStore` entry in the configuration file.
+  "dev.containers.dockerCredentialHelper": true,
+
   // The command to run after cloning the dotfiles repository. Defaults to run the first file of `install.sh`, `install`, `bootstrap.sh`, `bootstrap`, `setup.sh` and `setup` found in the dotfiles repository's root folder.
   "dotfiles.installCommand": "install.sh",
 
@@ -178,15 +190,6 @@
   // Controls whether the Git configuration (`~/.gitconfig`) should be copied into the container. This is done after installing any `dotfiles.repository` and will not overwrite an existing Git configuration file.
   "dev.containers.copyGitConfig": false,
 
-  // refer to "remote.defaultExtensionsIfInstalledLocally" for default remote extensions
-  "dev.containers.defaultExtensions": [
-    "astral-sh.ty",
-    "charliermarsh.ruff",
-    "MarcinJachmann.vscode-eincolor"
-  ],
-  "dev.containers.defaultFeatures": {},
-  // Controls whether a credential helper should be registered as the `credStore` in the Docker configuration (`~/.docker/config.json`) of dev containers. This will not overwrite an existing `credStore` entry in the configuration file.
-  "dev.containers.dockerCredentialHelper": true,
   // Docker (or Podman or WSLc) executable name or path.
   "dev.containers.dockerPath": "docker",
 

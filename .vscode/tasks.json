@@ -19,22 +19,15 @@
       "detail": "show chezmoi parsed data",
       "group": "none"
     },
-    // execute template
     {
       "label": "execute template",
       "type": "shell",
       "command": "chezmoi execute-template -f ${file} | less -RFX",
       "detail": "execute current tmpl file",
       "group": "test",
-      "icon": { "id": "chip" }
-    },
-    // update
-    {
-      "label": "update",
-      "type": "shell",
-      "command": "chezmoi update",
-      "detail": "update source state and then apply the newest change",
-      "group": "build"
+      "icon": {
+        "id": "chip"
+      }
     },
     {
       "label": "show-config",
@@ -79,12 +72,11 @@
       "command": "chezmoi docker run --rm ${input:docker} ${input:github_user}",
       "detail": "test chezmoi in an ephemeral docker container, you can also use `docker exec` command.\n reference: https://www.chezmoi.io/reference/commands/docker"
     },
-    // vscode list extension
     {
       "label": "extension-list",
       "type": "shell",
       "command": "code --list-extensions",
-      "detail": "show extension list"
+      "detail": "show vscode extension list"
     },
     {
       "label": "Terminate All Tasks",
