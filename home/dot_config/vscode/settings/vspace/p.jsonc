@@ -42,7 +42,6 @@
         "name": "add folder to workspace",
         "icon": "clock",
         "type": "command",
-        // "command": "workbench.action.files.openFolderViaWorkspace" same effect
         "command": "workbench.action.addRootFolder"
       },
       // n new empty workspace with project picker
@@ -141,6 +140,41 @@
         "icon": "clock",
         "type": "bindings",
         "bindings": [
+          // "command": "_files.pickFolderAndOpen",
+          // "command": "workbench.action.files.openFileInNewWindow"
+          // "command": "workbench.action.files.openFolderInNewWindow"
+
+          // o open with picker
+          {
+            "key": "o",
+            "name": "open project/folder",
+            "icon": "notebook-kernel-select",
+            "type": "conditional",
+            "bindings": [
+              {
+                "key": "when:isWeb",
+                "name": "open folder via browser file system api",
+                "icon": "issue-reopened",
+                "type": "command",
+                "command": "workbench.action.files.openFolderViaWorkspace"
+              },
+              {
+                "key": "",
+                "name": "select file or folder to open in new workspace in new window",
+                "icon": "notebook-kernel-select",
+                "type": "command",
+                "command": "workbench.action.files.openFileFolderInNewWindow"
+              }
+            ]
+          },
+          // r open github remote
+          {
+            "key": "r",
+            "name": "open github repo without cloning",
+            "icon": "github",
+            "type": "command",
+            "command": "remoteHub.openRepository"
+          },
           // f open current file in new workspace
           {
             "key": "f",
@@ -160,25 +194,6 @@
               // don't work??
               // "workbench.action.acceptSelectedQuickOpenItem"
             ]
-          },
-          // o open with picker
-          {
-            "key": "o",
-            "name": "select file or folder to open in new workspace in new window",
-            "icon": "notebook-kernel-select",
-            "type": "command",
-            "command": "workbench.action.files.openFileFolderInNewWindow"
-            // "command": "_files.pickFolderAndOpen",
-            // "command": "workbench.action.files.openFileInNewWindow"
-            // "command": "workbench.action.files.openFolderInNewWindow"
-          },
-          // r open github remote
-          {
-            "key": "r",
-            "name": "open github repo without cloning",
-            "icon": "github",
-            "type": "command",
-            "command": "remoteHub.openRepository"
           }
         ]
       }

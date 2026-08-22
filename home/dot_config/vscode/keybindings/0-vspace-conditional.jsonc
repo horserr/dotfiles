@@ -82,6 +82,17 @@
     },
     "when": "whichkeyVisible && remoteConnectionState == 'connected' && remoteName == 'dev-container'"
   },
+  {
+    // for open folder inside vscode web
+    // link: p o o
+    "key": "o",
+    "command": "whichkey.triggerKey",
+    "args": {
+      "key": "o",
+      "when": "isWeb"
+    },
+    "when": "whichkeyVisible && isWeb"
+  },
   // p
   {
     // for detecting whether this current editor tab in pinned or not
