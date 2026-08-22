@@ -81,6 +81,13 @@
         "type": "command",
         "command": "workbench.action.output.show.terminal"
       },
+      {
+        "key": "s",
+        "name": "open ssh logs",
+        "icon": "remote-explorer-documentation",
+        "type": "command",
+        "command": "opensshremotes.showLog"
+      },
       // log
       {
         "key": "l",

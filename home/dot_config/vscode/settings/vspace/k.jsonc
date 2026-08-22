@@ -199,6 +199,7 @@
                 "type": "command",
                 "command": "remote-containers.createDevContainer"
               },
+              // p checkout pr in devcontainer
               {
                 "key": "p",
                 "name": "checkout pr in container",
@@ -433,7 +434,6 @@
           }
         ]
       },
-      // todo
       // s ssh
       {
         "key": "s",
@@ -441,48 +441,82 @@
         "icon": "remote",
         "type": "bindings",
         "bindings": [
+          // don't understand
+          // opensshremotes.openWebUI
+          // opensshremotes.showDetails
+
+          // n connect
           {
-            "key": "i",
-            "name": "inspect images",
-            "icon": "remote-explorer-documentation",
+            "key": "n",
+            "name": "connect host new empty window",
+            "icon": "debug-connected",
             "type": "command",
-            "command": "vscode-containers.images.inspect"
-          }
-        ]
-      },
-      // * misc
-      {
-        "key": "*",
-        "name": "+Misc",
-        "icon": "remote-explorer-documentation",
-        "type": "bindings",
-        "bindings": [
+            "command": "opensshremotes.openEmptyWindow"
+          },
+          // s connect host in current window
           {
-            "key": "i",
-            "name": "+Install",
-            "icon": "remote-explorer-documentation",
+            "key": "s",
+            "name": "connect host in current window",
+            "icon": "debug-connected",
+            "type": "command",
+            "command": "opensshremotes.openEmptyWindowInCurrentWindow"
+          },
+          // a add host
+          {
+            "key": "a",
+            "name": "add host",
+            "icon": "diff-added",
+            "type": "command",
+            "command": "opensshremotes.addNewSshHost"
+          },
+          // o open configuration file
+          {
+            "key": "o",
+            "name": "open host configuration file",
+            "icon": "remote-explorer",
+            "type": "command",
+            "command": "opensshremotes.openConfigFile"
+          },
+          // x clean
+          {
+            "key": "x",
+            "name": "clear ssh previous connection",
+            "icon": "remote-explorer",
+            "type": "command",
+            "command": "opensshremotes.clearAllSessionHints"
+          },
+          // k kill service
+          {
+            "key": "k",
+            "name": "+Kill service",
+            "icon": "remote-explorer",
             "type": "bindings",
             "bindings": [
+              // opensshremotes.cleanDevBox
+
+              // k cill current service
               {
-                "key": "d",
-                "name": "install docker",
-                "icon": "remote-explorer-documentation",
+                "key": "k",
+                "name": "kill/remove current service",
+                "icon": "remote-explorer",
                 "type": "command",
-                "command": "remote-containers.installDocker"
+                "command": "opensshremotes.cleanCurrentRemoteServer"
               },
+              // space select remote service to kill
               {
-                "key": "w",
-                "name": "install docker in wsl",
-                "icon": "remote-explorer-documentation",
+                "key": " ",
+                "name": "select remote service to kill/remove",
+                "icon": "remote-explorer",
                 "type": "command",
-                "command": "remote-containers.installDocker"
+                "command": "opensshremotes.cleanRemoteServer"
               },
+              // r reset local server
               {
-                "key": "i",
-                "name": "install dev container cli",
-                "icon": "remote-explorer-documentation",
+                "key": "r",
+                "name": "reset local server",
+                "icon": "redo",
                 "type": "command",
-                "command": "remote-containers.installUserCLI"
+                "command": "opensshremotes.cleanLocalServer"
               }
             ]
           }
@@ -831,38 +865,6 @@
         "type": "bindings",
         "bindings": [
           // remote-containers.inspectDockerResource
-          // i inspect image
-          {
-            "key": "i",
-            "name": "inspect images",
-            "icon": "remote-explorer-documentation",
-            "type": "command",
-            "command": "vscode-containers.images.inspect"
-          },
-          // b build images
-          {
-            "key": "b",
-            "name": "build images",
-            "icon": "build",
-            "type": "command",
-            "command": "vscode-containers.images.build"
-          },
-          // d remove image
-          {
-            "key": "d",
-            "name": "remove/delete images",
-            "icon": "build",
-            "type": "command",
-            "command": "vscode-containers.images.remove"
-          },
-          // t tag image
-          {
-            "key": "t",
-            "name": "tag images",
-            "icon": "tag",
-            "type": "command",
-            "command": "vscode-containers.images.tag"
-          },
           // r run
           {
             "key": "r",
@@ -880,21 +882,45 @@
               },
               // i run interactively
               {
-                "key": "r",
-                "name": "run",
+                "key": "i",
+                "name": "run interactively",
                 "icon": "build",
                 "type": "command",
                 "command": "vscode-containers.images.runInteractive"
-              },
-              // z run azure cli
-              {
-                "key": "z",
-                "name": "run",
-                "icon": "build",
-                "type": "command",
-                "command": "vscode-containers.images.runAzureCli"
               }
             ]
+          },
+          // b build images
+          {
+            "key": "b",
+            "name": "build images",
+            "icon": "build",
+            "type": "command",
+            "command": "vscode-containers.images.build"
+          },
+          // d remove image
+          {
+            "key": "d",
+            "name": "remove/delete images",
+            "icon": "notebook-delete-cell",
+            "type": "command",
+            "command": "vscode-containers.images.remove"
+          },
+          // i inspect image
+          {
+            "key": "i",
+            "name": "inspect images",
+            "icon": "remote-explorer-documentation",
+            "type": "command",
+            "command": "vscode-containers.images.inspect"
+          },
+          // t tag image
+          {
+            "key": "t",
+            "name": "tag images",
+            "icon": "tag",
+            "type": "command",
+            "command": "vscode-containers.images.tag"
           },
           // p pull/push
           {
@@ -1049,6 +1075,44 @@
           // vscode-containers.openUrl
           // remote-containers.addExtensionToConfig
 
+          // x install local extensions
+          {
+            "key": "x",
+            "name": "installl local extensions",
+            "icon": "extensions",
+            "type": "command",
+            "command": "workbench.extensions.installLocalExtensions"
+          },
+          // i install
+          {
+            "key": "i",
+            "name": "+Install",
+            "icon": "remote-explorer-documentation",
+            "type": "bindings",
+            "bindings": [
+              {
+                "key": "d",
+                "name": "install docker",
+                "icon": "remote-explorer-documentation",
+                "type": "command",
+                "command": "remote-containers.installDocker"
+              },
+              {
+                "key": "w",
+                "name": "install docker in wsl",
+                "icon": "remote-explorer-documentation",
+                "type": "command",
+                "command": "remote-containers.installDocker"
+              },
+              {
+                "key": "i",
+                "name": "install dev container cli",
+                "icon": "remote-explorer-documentation",
+                "type": "command",
+                "command": "remote-containers.installUserCLI"
+              }
+            ]
+          },
           // r choose container run time
           {
             "key": "r",

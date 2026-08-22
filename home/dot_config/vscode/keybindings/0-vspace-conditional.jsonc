@@ -47,6 +47,7 @@
   /************************************
    * CONDITIONAL TRIGGER KEY BINDINGS *
    ************************************/
+  // f
   {
     // for detecting whether split editor in current tab
     "key": "f",
@@ -57,6 +58,19 @@
     },
     "when": "whichkeyVisible && sideBySideEditorActive"
   },
+  // n
+  {
+    // for opening new empty workspace when connecting remote host with ssh
+    // link: p n
+    "key": "n",
+    "command": "whichkey.triggerKey",
+    "args": {
+      "key": "n",
+      "when": "remoteConnectionState == 'connected' && remoteName == 'ssh-remote'"
+    },
+    "when": "whichkeyVisible && remoteConnectionState == 'connected' && remoteName == 'ssh-remote'"
+  },
+  // o
   {
     // for switching devcontainer or reopen locally
     // link: k k o o
@@ -68,17 +82,7 @@
     },
     "when": "whichkeyVisible && remoteConnectionState == 'connected' && remoteName == 'dev-container'"
   },
-  {
-    // for open remote or local user setting json file
-    // link: h s s
-    "key": "s",
-    "command": "whichkey.triggerKey",
-    "args": {
-      "key": "s",
-      "when": "remoteName"
-    },
-    "when": "whichkeyVisible && remoteName"
-  },
+  // p
   {
     // for detecting whether this current editor tab in pinned or not
     // link: f p
@@ -90,6 +94,19 @@
     },
     "when": "whichkeyVisible && activeEditorIsPinned"
   },
+  // s
+  {
+    // for open remote or local user setting json file
+    // link: h s s
+    "key": "s",
+    "command": "whichkey.triggerKey",
+    "args": {
+      "key": "s",
+      "when": "remoteName"
+    },
+    "when": "whichkeyVisible && remoteName"
+  },
+  // t
   {
     // for toggle editor tab visibility
     // link: v e t
@@ -101,6 +118,7 @@
     },
     "when": "whichkeyVisible && editorTabsVisible"
   },
+  // w
   {
     // for detecting whether this windows are subordinate to main window
     // link: w w
@@ -112,6 +130,7 @@
     },
     "when": "whichkeyVisible && (isAuxiliaryWindow || isAuxiliaryWindowFocusedContext)"
   },
+  // '
   {
     // for detecting whether split editor in current tab
     // link: v , '

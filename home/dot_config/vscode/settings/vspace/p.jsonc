@@ -50,8 +50,23 @@
         "key": "n",
         "name": "Open new empty workspace",
         "icon": "empty-window",
-        "type": "command",
-        "command": "workbench.action.newWindow"
+        "type": "conditional",
+        "bindings": [
+          {
+            "key": "when:remoteConnectionState == 'connected' && remoteName == 'ssh-remote'",
+            "name": "Open new empty workspace on current remote host",
+            "icon": "empty-window",
+            "type": "command",
+            "command": "opensshremotes.openEmptyWindowOnCurrentHost"
+          },
+          {
+            "key": "",
+            "name": "Open new empty workspace",
+            "icon": "empty-window",
+            "type": "command",
+            "command": "workbench.action.newWindow"
+          }
+        ]
       },
       // r recent project
       {

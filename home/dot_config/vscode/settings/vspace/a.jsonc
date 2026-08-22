@@ -5,6 +5,14 @@
     "icon": "azure",
     "type": "bindings",
     "bindings": [
+      // z run azure cli
+      {
+        "key": "z",
+        "name": "run",
+        "icon": "build",
+        "type": "command",
+        "command": "vscode-containers.images.runAzureCli"
+      },
       // r registry
       {
         "key": "r",
