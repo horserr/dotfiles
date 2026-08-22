@@ -13,8 +13,11 @@ Host *
   ControlPersist 1m
   {{ end }}
 
-Host local
+Host container
   HostName localhost
+  User root
+  Port 2222
+  ForwardAgent yes
 
 {{ if .isPersonal }}
 {{ include "dot_ssh/config.d/platform_config" }}
@@ -26,17 +29,6 @@ Host termux
   Port 8022
   ForwardAgent yes
 {{- end }}
-
-Host Nvidia
-  HostName nvidia-desktop
-  User nvidia
-  ForwardAgent yes
-
-Host horserr
-  HostName nvidia-desktop
-  User horserr
-  ForwardAgent yes
-
 
 # 基本连接：Host、HostName、User、Port
 # 密钥与代理：IdentityFile、IdentitiesOnly、AddKeysToAgent、IdentityAgent、ForwardAgent
