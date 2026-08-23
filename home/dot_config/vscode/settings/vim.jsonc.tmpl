@@ -46,8 +46,12 @@
   "vim.autoindent": true,
   "vim.autoSwitchInputMethod.defaultIM": "1033",
   "vim.autoSwitchInputMethod.enable": true,
-  "vim.autoSwitchInputMethod.obtainIMCmd": "C:\\Users\\ASUSCosmos\\.local\\bin\\im-select.exe",
-  "vim.autoSwitchInputMethod.switchIMCmd": "C:\\Users\\ASUSCosmos\\.local\\bin\\im-select.exe {im}",
+  {{- $im := lookPath "im-select" -}}
+  {{- if not $im -}}
+    {{- $im = joinPath .chezmoi.homeDir ".local" "bin" "im-select.exe" -}}
+  {{- end -}}
+  "vim.autoSwitchInputMethod.obtainIMCmd": {{ $im | quote }},
+  "vim.autoSwitchInputMethod.switchIMCmd": {{ $im | printf "%s {im}" | quote }},
   // Vim settings
   "vim.camelCaseMotion.enable": true,
   "vim.cursorStylePerMode.insert": "line-thin",

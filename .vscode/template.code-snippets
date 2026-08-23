@@ -7,6 +7,14 @@
     "description": "git function template",
     "include": "**/home/dot_config/git/alias"
   },
+  "tmpl comment": {
+    "prefix": "comment",
+    "body": [
+      "{{-/* $TM_SELECTED_TEXT -*/}}",
+    ],
+    "description": "surround with tmpl comment",
+    "include": "**/*.tmpl"
+  },
   "tmpl if by os": {
     "prefix": "tmpl-if-os",
     "body": [

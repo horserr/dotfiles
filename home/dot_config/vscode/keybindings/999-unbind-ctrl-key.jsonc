@@ -192,8 +192,7 @@
   },
   {
     "key": "ctrl+k ctrl+k",
-    "command": "-editor.action.defineKeybinding",
-    "when": "resource == 'vscode-userdata:/c%3A/Users/ASUSCosmos/AppData/Roaming/Code/User/keybindings.json'"
+    "command": "-editor.action.defineKeybinding"
   },
   {
     "key": "ctrl+k ctrl+a",

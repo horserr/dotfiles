@@ -363,9 +363,6 @@
   "github:login.canMove": true,
   "github:login.defaultViewLocation": true,
   "github:reposInReviewMode": [],
-  "github:reposNotInReviewMode": [
-    "file:///c%3A/Users/ASUSCosmos/.config/.dotfiles"
-  ],
   "github:stateValidated": true,
   "github:unviewedFiles": [],
   "github:viewedFiles": [],
