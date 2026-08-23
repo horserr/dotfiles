@@ -443,6 +443,153 @@
             "command": "workbench.profiles.actions.resetWorkspaces"
           }
         ]
+      },
+      // , setting sync/cloud change
+      {
+        // related setting:
+        //   settingsSync.ignoredExtensions
+        //   settingsSync.ignoredSettings
+        "key": ",",
+        "name": "+Settint sync/Cloud change",
+        "icon": "sync",
+        "type": "bindings",
+        "bindings": [
+          // workbench.userDataSync.actions.showLog
+
+          // space configure setting sync
+          {
+            "key": " ",
+            "name": "configure setting sync",
+            "icon": "extensions-manage",
+            "type": "command",
+            "command": "workbench.userDataSync.actions.configure"
+          },
+          // . manage setting sync
+          {
+            "key": ".",
+            "name": "manage setting sync",
+            "icon": "extensions-manage",
+            "type": "command",
+            "command": "workbench.userDataSync.actions.manage"
+          },
+          // , setting sync now
+          {
+            "key": ",",
+            "name": "setting sync now",
+            "icon": "sync",
+            "type": "command",
+            "command": "workbench.userDataSync.actions.syncNow"
+          },
+          // v view setting sync
+          {
+            "key": "v",
+            "name": "view setting sync",
+            "icon": "sync",
+            "type": "bindings",
+            "command": "workbench.userDataSync.actions.showSyncedData",
+            "bindings": [
+              {
+                "key": "c",
+                "name": "focus conflict view",
+                "icon": "git-branch-conflicts",
+                "type": "command",
+                "command": "workbench.views.sync.conflicts.focus"
+              },
+              {
+                "key": ".",
+                "name": "focus setting sync developer view",
+                "icon": "developer-tools",
+                "type": "command",
+                "command": "workbench.views.sync.externalActivity.focus"
+              },
+              {
+                "key": "l",
+                "name": "focus setting sync local view",
+                "icon": "developer-tools",
+                "type": "command",
+                "command": "workbench.views.sync.localActivity.focus"
+              },
+              {
+                "key": "r",
+                "name": "focus setting sync remote view",
+                "icon": "remote",
+                "type": "command",
+                "command": "workbench.views.sync.remoteActivity.focus"
+              },
+              {
+                "key": "m",
+                "name": "focus setting sync machine view",
+                "icon": "remote",
+                "type": "command",
+                "command": "workbench.views.sync.machines.focus"
+              },
+              {
+                "key": "t",
+                "name": "focus setting sync trouble shooting view",
+                "icon": "bug",
+                "type": "command",
+                "command": "workbench.views.sync.troubleshoot.focus"
+              }
+            ]
+          },
+          // * misc
+          {
+            "key": "*",
+            "name": "+Misc",
+            "icon": "sync",
+            "type": "bindings",
+            "bindings": [
+              // space download setting sync
+              {
+                "key": " ",
+                "name": "download setting sync",
+                "icon": "download",
+                "type": "command",
+                "command": "workbench.userDataSync.actions.downloadSyncActivity"
+              },
+              // m merge
+              {
+                "key": "m",
+                "name": "accept setting sync merge",
+                "icon": "download",
+                "type": "command",
+                "command": "workbench.userDataSync.actions.acceptMerges"
+              },
+              // c show conflict
+              {
+                "key": "c",
+                "name": "show setting sync conflict",
+                "icon": "git-branch-conflicts",
+                "type": "command",
+                "command": "workbench.userDataSync.actions.showConflicts"
+              }
+            ]
+          },
+          // t toggle setting sync
+          {
+            "key": "t",
+            "name": "toggle setting sync",
+            "icon": "activate-breakpoints",
+            "type": "bindings",
+            "bindings": [
+              {
+                // "key": "when:syncEnabled",
+                "key": "j",
+                "name": "turn off setting sync",
+                "icon": "sync",
+                "type": "command",
+                "command": "workbench.userDataSync.actions.turnOff"
+              },
+              {
+                "key": "k",
+                "name": "toggle setting sync",
+                "icon": "sync",
+                "type": "command",
+                "command": "workbench.userDataSync.actions.turnOn"
+              }
+            ]
+          }
+        ]
       }
     ]
   }
