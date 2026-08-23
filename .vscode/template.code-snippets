@@ -10,7 +10,7 @@
   "tmpl comment": {
     "prefix": "comment",
     "body": [
-      "{{-/* $TM_SELECTED_TEXT -*/}}",
+      "{{- /* $TM_SELECTED_TEXT */ -}}",
     ],
     "description": "surround with tmpl comment",
     "include": "**/*.tmpl"
