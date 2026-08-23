@@ -1,10 +1,13 @@
 {
   "settingsSync.ignoredExtensions": ["leetcode.vscode-leetcode"],
   "settingsSync.ignoredSettings": [
+    "-files.dialog.defaultPath",
+    "-remote.tunnels.access.hostNameOverride",
     "-vim.autoSwitchInputMethod.defaultIM",
     "-vim.autoSwitchInputMethod.obtainIMCmd",
     "-vim.autoSwitchInputMethod.switchIMCmd",
     "-window.zoomLevel",
-    "-files.dialog.defaultPath"
+    "remote.SSH.httpProxy",
+    "remote.SSH.httpsProxy"
   ]
 }

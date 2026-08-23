@@ -1,4 +1,25 @@
 {
+  // REALLY SIGNIFICANT
+  // Set the 'http_proxy' environment variable.  This will be set for install and launch of the remote VS Code Server. Provide a string to set for all hosts, or an object with per-host configuration. Kill existing server on the remote for this setting to take effect.
+  // "remote.SSH.httpProxy": "",
+
+  // REALLY SIGNIFICANT
+  // Set the 'https_proxy' environment variable.  This will be set for install and launch of the remote VS Code Server. Provide a string to set for all hosts, or an object with per-host configuration. Kill existing server on the remote for this setting to take effect.
+  // "remote.SSH.httpsProxy": "",
+
+  // SIGNIFICANT
+  // note: sshd should allow AllowStreamLocalForwarding
+  // disable this, or there will be a local terminal pop out setting up socket file when connecting via the remote ssh
+  // When true, the remote VS Code server will listen on a socket path instead of opening a port. Only valid for Linux and macOS remotes. After toggling this setting, run the command "Kill VS Code Server on Host..." for it to take effect. Requires OpenSSH 6.7+. Disables the "local server" connection multiplexing mode. Requires `AllowStreamLocalForwarding` to be enabled for the SSH server.
+  "remote.SSH.remoteServerListenOnSocket": true,
+
+  // SIGNIFICANT
+  // When enabled extensions are downloaded locally and installed on remote.
+  "remote.downloadExtensionsLocally": true,
+
+  // Execute the script at the provided path on **your local machine** before attempting an SSH connection. Provide a single string value to configure for all hosts, or provide an object with per-host configuration.  On Windows provide a **.ps1** script and on macOS/linux provide an executable **.sh** script.
+  "remote.SSH.preconnect": "",
+
   // dev container can also be customized "dev.containers.defaultExtensions"
   "remote.defaultExtensionsIfInstalledLocally": [
     "albert.TabOut",
@@ -13,6 +34,7 @@
     "FanaticPythoner.better-todo-tree",
     "gass.git-log-pickaxe",
     "github.vscode-github-actions",
+    "iliazeus.vscode-ansi",
     "johnny-zhao.oai-compatible-copilot",
     "jonsmithers.open-in-vim",
     "mechatroner.rainbow-csv",
@@ -30,89 +52,198 @@
     "tamasfe.even-better-toml",
     "thimo.line-history",
     "Vizards.deepseek-v4-for-copilot",
+    "wraith13.blitz",
+    "wraith13.sysinfo-vscode",
     "yzhang.markdown-all-in-one",
     "zh9528.file-size"
   ],
 
-  // Base URL for downloading the VS Code server. The path `/commit:{commit}/server-{platform}/{quality}` will be appended to this URL. Platforms include `linux-x64`, `linux-armhf`, `linux-arm64`, `linux-alpine`, and `alpine-arm64`. Quality is `stable` or `insider`.
-  "remote.serverDownloadBaseUrl": "https://update.code.visualstudio.com",
+  "remote.SSH.defaultExtensions": [
+    "nexmoe.monitor-pro",
+    "FanaticPythoner.better-todo-tree",
+    "fill-labs.dependi"
+  ],
 
-  // Local folder for downloading and caching VS Code server archives. The archives will be stored as `{downloadFolder}/{commit}/vscode-server-{platform}[-{quality}].tar.gz`. Platforms include `linux-x64`, `linux-armhf`, `linux-arm64`, `linux-alpine`, and `alpine-arm64`. Quality is `stable` or `insider`. The `-{quality}` suffix is omitted for `stable`. The default is in the system's temp folder.
-  "remote.serverDownloadFolder": "",
-
-  // SIGNIFICANT
-  "remote.downloadExtensionsLocally": true,
-
-  // 调整extension的类型
+  // Override the kind of an extension. `ui` extensions are installed and run on the local machine while `workspace` extensions are run on the remote. By overriding an extension's default kind using this setting, you specify if that extension should be installed and enabled locally or remotely.
   "remote.extensionKind": {
     // "pub.name": ["ui"]
   },
-  // SIGNIFICANT listen并自动转发port
+
+  // A map of the remote hostname to the platform for that remote. The hostname may include a star '*' to wildcard match. Valid values: `linux`, `macOS`, `windows`. Note - this setting will soon be required when `remote.SSH.useLocalServer` is disabled, so it is currently being autopopulated for successful connections, but is not currently used.
+  "remote.SSH.remotePlatform": { "*": "linux" },
+
+  /*********
+   * PORTS *
+   *********/
+  // When enabled, new running processes are detected and ports that they listen on are automatically forwarded. Disabling this setting will not prevent all ports from being forwarded. Even when disabled, extensions will still be able to cause ports to be forwarded, and opening some URLs will still cause ports to forwarded. Also see `remote.autoForwardPortsSource`.
+  "remote.autoForwardPorts": true,
+
+  // The number of auto forwarded ports that will trigger the switch from `process` to `hybrid` when automatically forwarding ports and `remote.autoForwardPortsSource` is set to `process` by default. Set to `0` to disable the fallback. When `remote.autoForwardPortsFallback` hasn't been configured, but `remote.autoForwardPortsSource` has, `remote.autoForwardPortsFallback` will be treated as though it's set to `0`.
+  "remote.autoForwardPortsFallback": 20,
+
+  // SIGNIFICANT
+  // Sets the source from which ports are automatically forwarded when `remote.autoForwardPorts` is true. When `remote.autoForwardPorts` is false, `remote.autoForwardPortsSource` will be used to find information about ports that have already been forwarded. On Windows and macOS remotes, the `process` and `hybrid` options have no effect and `output` will be used.
+  //  - process: Ports will be automatically forwarded when discovered by watching for processes that are started and include a port.
+  //  - output: Ports will be automatically forwarded when discovered by reading terminal and debug output. Not all processes that use ports will print to the integrated terminal or debug console, so some ports will be missed. Ports forwarded based on output will not be "un-forwarded" until reload or until the port is closed by the user in the Ports view.
+  //  - hybrid: Ports will be automatically forwarded when discovered by reading terminal and debug output. Not all processes that use ports will print to the integrated terminal or debug console, so some ports will be missed. Ports will be "un-forwarded" by watching for processes that listen on that port to be terminated.
+  "remote.autoForwardPortsSource": "hybrid",
+
+  // SIGNIFICANT autoforward port when clicking http://localhost:... in terminal
+  // Controls whether local URLs with a port will be forwarded when opened from the terminal and the debug console.
   "remote.forwardOnOpen": true,
-  // SIGNIFICANT 只有本机能够访问，避免局域网中的设备访问
+
+  // Specifies the local host name that will be used for port forwarding.
   "remote.localPortHost": "localhost",
-  // 其他port的统一设置
+
+  // SIGNIFICANT catch-all rule for those not specify in remote.portsAttributes
+  // Set default properties that are applied to all ports that don't get properties from the setting `remote.portsAttributes`. For example:
+  //
+  // ```
+  // {
+  //   "onAutoForward": "ignore"
+  // }
+  // ```
   "remote.otherPortsAttributes": {},
-  // port的自定义设置
+
+  // Set properties that are applied when a specific port number is forwarded. For example:
+  //
+  // ```
+  // "3000": {
+  //   "label": "Application"
+  // },
+  // "40000-55000": {
+  //   "onAutoForward": "ignore"
+  // },
+  // ".+\\/server.js": {
+  //  "onAutoForward": "openPreview"
+  // }
+  // ```
   "remote.portsAttributes": {
-    "3000": {
-      "label": "Frontend",
-      "onAutoForward": "openPreview"
+    "443": {
+      "protocol": "https"
     },
-    "5432": {
-      "label": "PostgreSQL",
-      "onAutoForward": "silent"
-    },
-    "8080": {
-      "label": "Backend",
-      "onAutoForward": "notify"
+    "8443": {
+      "protocol": "https"
     }
   },
 
-  // 恢复之前 port 分配情况
+  // SIGNIFICANT
+  // Restores the ports you forwarded in a workspace.
   "remote.restoreForwardedPorts": true,
-  // 允许局域网中的其他设备访问
-  "remote.SSH.bindHost": {},
-  "remote.SSH.connectTimeout": 300,
-  "remote.SSH.defaultExtensions": [
-    "esbenp.prettier-vscode",
-    "tamasfe.even-better-toml"
-  ],
-  // agent forwarding
-  "remote.SSH.enableAgentForwarding": true,
-  // 允许本地机器访问远程内网
-  "remote.SSH.enableDynamicForwarding": true,
-  // 避免调用ssh config中定义的命令
-  "remote.SSH.enableRemoteCommand": false,
-  // ssh自动转发X11，Windows上需要配合使用VcXsrv
-  "remote.SSH.enableX11Forwarding": true,
-  // 已经使用了agent forwarding，这个设置基本不用
-  "remote.SSH.externalSSH_ASKPASS": false,
-  "remote.SSH.httpProxy": "",
-  "remote.SSH.httpsProxy": "",
-  // 本地下载，再通过ssh传输到服务器，避免远程服务器无法访问外网
-  "remote.SSH.localServerDownload": "auto",
-  "remote.SSH.logLevel": "debug",
-  "remote.SSH.maxReconnectionAttempts": 5,
-  // ？自动开启远程终端
-  "remote.SSH.permitPtyAllocation": true,
-  // SIGNIFICANT 连接前本机运行脚本
-  // "remote.SSH.preconnect": "~/preconnect.ps1",
-  "remote.SSH.preconnect": "",
-  // port range 避免 port 冲突
+
+  // A list of ports to forward when the connection is established.
+  "remote.SSH.defaultForwardedPorts": [],
+
+  // A range of **local** ports preferred to utilize for the SSH tunnel connection. If no free port is found in range, an error will be thrown. Valid ranges of the form `number-number` such as `4000-5000`; it's expected the first number will be lower than the next.
   "remote.SSH.preferredLocalPortRange": "",
-  "remote.SSH.reconnectionGraceTime": null,
-  // SIGNIFICANT使用socket文件通信
-  "remote.SSH.remoteServerListenOnSocket": true,
+
+  // A map of the remote hostname to a range of ports you'd prefer the server to connect to on launch on the **remote** machine. If no free port is found in range, an error will be thrown. Valid ranges of the form `number-number` such as `4000-5000`; it's expected the first number will be lower than the next.
   "remote.SSH.serverPickPortsFromRange": {},
-  // 不使用 .curlrc 和 .wgetrc
+
+  /**********
+   * TUNNEL *
+   **********/
+  // The name under which the remote tunnel access is registered. If not set, the host name is used.
+  "remote.tunnels.access.hostNameOverride": "",
+
+  // Prevent this computer from sleeping when remote tunnel access is turned on.
+  "remote.tunnels.access.preventSleep": true,
+
+  // Enable Microsoft account authentication for agent host tunnels. When disabled, only GitHub authentication is used.
+  "remote.tunnels.access.enableMicrosoftAuth": true,
+
+  /*******
+   * SSH *
+   *******/
+  // REALLY SIGNIFICANT
+  // Configures the host the VS Code server will bind to on the remote server. It defaults to IPv4 localhost and should only need modification in advanced cases.
+  // As the comment notes, you should only modify this in advanced network environments. Common reasons to change it include:
+  //   IPv6-Only Networks:
+  //     If your remote server completely disables IPv4 and exclusively uses IPv6, the default 127.0.0.1 will fail to bind. You would change this to "::" (IPv6 localhost) or "[::1]".
+  //   Multi-Tenant / Shared Containers:
+  //     If your SSH configuration routes traffic through a specific local network interface card (NIC) or a custom container bridge, you may need to force it to bind to a specific internal private IP (e.g., 10.0.0.5).
+  //   Exposing the Server (Dangerous):
+  //     Setting this to "0.0.0.0" makes the VS Code Server listen on all network interfaces. Anyone who knows your server's public IP and the random port VS Code is running on could potentially attempt to intercept your connection.
+  "remote.SSH.bindHost": {},
+
+  // WORKSAPCE
+  // The absolute file path to a custom SSH config file.
+  "remote.SSH.configFile": "",
+
+  // Specifies the timeout in seconds used for the SSH command that connects to the remote.
+  "remote.SSH.connectTimeout": 15,
+
+  // REALLY SIGNIFICANT
+  // Enable fixing the remote environment so that the SSH config option `ForwardAgent` will take effect as expected from VS Code's remote extension host.
+  "remote.SSH.enableAgentForwarding": true,
+
+  // SIGNIFICANT
+  // Whether to use SSH dynamic forwarding to allow setting up new port tunnels over an existing SSH connection. When this is used, a password only needs to be entered once for each remote window.
+  "remote.SSH.enableDynamicForwarding": true,
+
+  // **Experimental:** Enable using RemoteCommands from ssh config entries. This is only enabled if `remote.SSH.useLocalServer` is enabled as well and the remote you are trying to connect to is not listed under the `remote.SSH.remotePlatform` setting.
+  "remote.SSH.enableRemoteCommand": true,
+
+  // REALLY SIGNIFICANT
+  // Enable fixing the remote environment so that the SSH config option `ForwardX11` will take effect as expected from VS Code's remote extension host.
+  "remote.SSH.enableX11Forwarding": true,
+
+  // REALLY SIGNIFICANT
+  // **Experimental:** In local server mode (enabled with `remote.SSH.useLocalServer`) Remote - SSH uses SSH_ASKPASS to set VS Code as the application to handle authentication requests; this makes prompts for input show up inside VS Code. However, if you have an external application to handle authentication, such as an YubiKey, you may want to set SSH_ASKPASS to your application instead. If you enable this setting then Remote - SSH won't override your existing SSH_ASKPASS value if one exists.
+  "remote.SSH.externalSSH_ASKPASS": false,
+
+  // Whether the extension can download the VS Code Server on the client and transfer it to the host with scp, instead of downloading it on the host.
+  "remote.SSH.localServerDownload": "auto",
+
+  // note: lockfile is a way to prevent simultaneously modifying a file
+  // Whether to keep lockfiles in `/tmp` instead of in the server's install folder. Useful for connecting to hosts which have issues with locking, such as hosts with a home directory using NFS or another distributed filesystem.
+  "remote.SSH.lockfilesInTmp": true,
+
+  "remote.SSH.logLevel": "debug",
+
+  // The maximum number of times to attempt reconnection. Use 0 to disallow reconnection, and `null` to use the maximum of 8.
+  "remote.SSH.maxReconnectionAttempts": null,
+
+  // An absolute path to the SSH executable. When empty, it will use "ssh" on the path or in common install locations.
+  "remote.SSH.path": "",
+
+  // turn this on for strict sshd configuration, as some sshd configuration doesn't allow non-interactive ssh session
+  // Permits the system to allocate a pseudo-terminal for the SSH connection (by omitting the '-T' SSH connection flag). This setting is disabled by default and may be enabled to support specific use-cases.
+  "remote.SSH.permitPtyAllocation": false,
+
+  // REALLY SIGNIFICANT
+  // The grace time in **seconds** to wait before terminating the remote server when the client disconnects. Leave empty to use VS Code defaults. The remote VS Code server must be restarted for this setting to take effect.  _Currently supports only linux remotes._
+  // default is 3 hour
+  "remote.SSH.reconnectionGraceTime": 86400, // 24 hours
+
+  // DEBUG
+  // Always reveal the SSH login terminal.
+  "remote.SSH.showLoginTerminal": false,
+
+  // SIGNIFICANT
+  // Respect configuration from remote environment's 'curlrc' and 'wgetrc' files (placed in their respective default locations).  Enabling this setting may be useful in certain cases (i.e: proxy configuration) but can interfere with this extension's operation. Setting may be ignored on platforms that do not support the necessary flags (i.e: busybox).
   "remote.SSH.useCurlAndWgetConfigurationFiles": false,
-  // 如遇到问题，开启wsl debug模式
-  "remote.WSL.debug": false,
+
+  // Uses the a new bootstrapping mode when connecting to a server. Can be toggled off in the event of connection issues.
+  "remote.SSH.useExecServer": true,
+
+  // Whether to use `flock` for creating lockfiles on Linux remotes instead of `ln`. By default, we use `flock` on Linux remotes and `ln` on macOS.
+  "remote.SSH.useFlock": true,
+
+  // Enables a mode for connecting using a single connection shared between windows and across window reloads. This makes it faster to open new windows and reduces the number of times a password needs to be entered.
+  "remote.SSH.useLocalServer": true,
+
+  /*******
+   * WSL *
+   *******/
+  //  DEBUG
+	// If set, the output in the WSL log shows debug information.
+  "remote.WSL.debug": true,
   // ？ 在 wsl 中避免通过脚本启动vscode
   "remote.WSL.experimental.scriptLessStartup": true,
   // SIGNIFICANT 继承shell中的环境变量
   "remote.WSL.useShellEnvironment": true,
+
   /*********************
    * GITHUB REPOSITORY *
    *********************/
@@ -128,5 +259,17 @@
   "remoteHub.staging.enabled": true,
   "remoteHub.staging.smart": true,
   "remoteHub.switchToCreatedBranch": "prompt",
-  "remoteHub.uncommittedChangesOnEntry": "promptIfBehind"
+  "remoteHub.uncommittedChangesOnEntry": "promptIfBehind",
+
+  /**********
+   * SERVER *
+   **********/
+  // Base URL for downloading the VS Code server. The path `/commit:{commit}/server-{platform}/{quality}` will be appended to this URL. Platforms include `linux-x64`, `linux-armhf`, `linux-arm64`, `linux-alpine`, and `alpine-arm64`. Quality is `stable` or `insider`.
+  "remote.serverDownloadBaseUrl": "https://update.code.visualstudio.com",
+
+  // Local folder for downloading and caching VS Code server archives. The archives will be stored as `{downloadFolder}/{commit}/vscode-server-{platform}[-{quality}].tar.gz`. Platforms include `linux-x64`, `linux-armhf`, `linux-arm64`, `linux-alpine`, and `alpine-arm64`. Quality is `stable` or `insider`. The `-{quality}` suffix is omitted for `stable`. The default is in the system's temp folder.
+  "remote.serverDownloadFolder": "",
+
+  // A map of remote host to absolute path where the VS Code server will be installed. By default the server is installed in the home directory of every remote. **Note**: By changing this setting you may need to clean up other installations of `.vscode-server` on your remote that isn't in the path you've configured.
+  "remote.SSH.serverInstallPath": {}
 }
