@@ -5,13 +5,556 @@
     "icon": "archive",
     "type": "bindings",
     "bindings": [
-      // space remote
+      // space containers
       {
         "key": " ",
-        "name": "+Open remote",
-        "icon": "desktop-download",
-        "type": "command",
-        "command": "workbench.action.remote.showMenu"
+        "name": "+Container Tools",
+        "icon": "remote-explorer-review-issues",
+        "type": "bindings",
+        "bindings": [
+          // space view
+          {
+            "key": " ",
+            "name": "+View",
+            "icon": "remote-explorer-documentation",
+            "type": "bindings",
+            "bindings": [
+              // , refresh view
+              {
+                "key": ",",
+                "name": "refresh view",
+                "icon": "refresh",
+                "type": "commands",
+                "commands": [
+                  "vscode-containers.containers.refresh",
+                  "vscode-containers.contexts.refresh",
+                  "vscode-containers.images.refresh",
+                  "vscode-containers.networks.refresh",
+                  "vscode-containers.registries.refresh",
+                  "vscode-containers.volumes.refresh"
+                ]
+              },
+              // v focus volume view
+              {
+                "key": "v",
+                "name": "focus volume view",
+                "icon": "remote-explorer-documentation",
+                "type": "command",
+                "command": "vscode-containers.views.volumes.focus"
+              },
+              // x docker context view
+              {
+                "key": "x",
+                "name": "focus docker context view",
+                "icon": "remote-explorer-documentation",
+                "type": "command",
+                "command": "vscode-containers.views.dockerContexts.focus"
+              },
+              // c container view
+              {
+                "key": "c",
+                "name": "focus container view",
+                "icon": "inspect",
+                "type": "command",
+                "command": "vscode-containers.views.containers.focus"
+              },
+              // n focus network view
+              {
+                "key": "n",
+                "name": "focus network view",
+                "icon": "remote-explorer-documentation",
+                "type": "command",
+                "command": "vscode-containers.views.networks.focus"
+              },
+              // i focus image view
+              {
+                "key": "i",
+                "name": "focus image view",
+                "icon": "remote-explorer-documentation",
+                "type": "command",
+                "command": "vscode-containers.views.images.focus"
+              },
+              // r focus registry view
+              {
+                "key": "r",
+                "name": "focus registry view",
+                "icon": "remote-explorer-documentation",
+                "type": "command",
+                "command": "vscode-containers.views.registries.focus"
+              }
+            ]
+          },
+          // c container
+          {
+            "key": "c",
+            "name": "+Container",
+            "icon": "share-window",
+            "type": "bindings",
+            "bindings": [
+              // c compose
+              {
+                "key": "c",
+                "name": "+Compose",
+                "icon": "browser",
+                "type": "bindings",
+                "bindings": [
+                  // r compose run
+                  {
+                    "key": "r",
+                    "name": "+compose run",
+                    "icon": "tasklist",
+                    "type": "bindings",
+                    "bindings": [
+                      // r compose start
+                      {
+                        "key": "r",
+                        "name": "compose start",
+                        "icon": "run",
+                        "type": "command",
+                        "command": "vscode-containers.containers.composeGroup.start"
+                      },
+                      // R compose restart
+                      {
+                        "key": "R",
+                        "name": "compose restart",
+                        "icon": "extension-restart-required",
+                        "type": "command",
+                        "command": "vscode-containers.containers.composeGroup.restart"
+                      },
+                      // x compose stop
+                      {
+                        "key": "x",
+                        "name": "compose stop",
+                        "icon": "stop",
+                        "type": "command",
+                        "command": "vscode-containers.containers.composeGroup.stop"
+                      }
+                    ]
+                  },
+                  // k compose up
+                  {
+                    "key": " ",
+                    "name": "compose up with selection",
+                    "icon": "run",
+                    "type": "command",
+                    //  "vscode-containers.containers.composeGroup.start" no effect
+                    "command": "vscode-containers.compose.up.subset"
+                  },
+                  // j compose down with selection
+                  {
+                    "key": "j",
+                    "name": "compose down with selection",
+                    "icon": "debug-remove-config",
+                    "type": "command",
+                    // "command": "vscode-containers.containers.composeGroup.down"
+                    "command": "vscode-containers.compose.down.subset"
+                  },
+                  {
+                    "key": "i",
+                    "name": "compose inspect log",
+                    "icon": "inspect",
+                    "type": "command",
+                    "command": "vscode-containers.containers.composeGroup.logs"
+                  }
+                ]
+              },
+              // i inspect container
+              {
+                "key": "i",
+                "name": "inspect container",
+                "icon": "inspect",
+                "type": "command",
+                "command": "vscode-containers.containers.inspect"
+              },
+              // j stop container
+              {
+                "key": "j",
+                "name": "stop container",
+                "icon": "stop",
+                "type": "command",
+                "command": "vscode-containers.containers.stop"
+              },
+              // k start container
+              {
+                "key": "k",
+                "name": "start container",
+                "icon": "stop",
+                "type": "command",
+                "command": "vscode-containers.containers.start"
+              },
+              // r restart container
+              {
+                "key": "r",
+                "name": "restart container",
+                "icon": "stop",
+                "type": "command",
+                "command": "vscode-containers.containers.restart"
+              },
+              // d remove container
+              {
+                "key": "d",
+                "name": "remove container",
+                "icon": "stop",
+                "type": "command",
+                "command": "vscode-containers.containers.remove"
+              },
+              // a attach shell
+              {
+                "key": "a",
+                "name": "attach shell",
+                "icon": "terminal-powershell",
+                "type": "command",
+                "command": "vscode-containers.containers.attachShell"
+              },
+              // o open ports in browser
+              {
+                "key": "o",
+                "name": "open port in browser",
+                "icon": "browser",
+                "type": "command",
+                "command": "vscode-containers.containers.browse"
+              },
+              // x prune containers
+              {
+                "key": "x",
+                "name": "prune containers",
+                "icon": "browser",
+                "type": "command",
+                "command": "vscode-containers.containers.prune"
+              },
+              // l container log
+              {
+                "key": "l",
+                "name": "Container Log",
+                "icon": "browser",
+                "type": "command",
+                "command": "vscode-containers.containers.viewLogs"
+              },
+              // s statistics
+              {
+                "key": "s",
+                "name": "container statistics",
+                "icon": "browser",
+                "type": "command",
+                "command": "vscode-containers.containers.stats"
+              }
+            ]
+          },
+          // n network
+          {
+            "key": "n",
+            "name": "+Network",
+            "icon": "magnet",
+            "type": "bindings",
+            "bindings": [
+              // i inspect network
+              {
+                "key": "i",
+                "name": "inspect network",
+                "icon": "remote-explorer-documentation",
+                "type": "command",
+                "command": "vscode-containers.networks.inspect"
+              },
+              // a add/create network
+              {
+                "key": "a",
+                "name": "add/create network",
+                "icon": "remote-explorer-documentation",
+                "type": "command",
+                "command": "vscode-containers.networks.create"
+              },
+              // d remove network
+              {
+                "key": "d",
+                "name": "remove network",
+                "icon": "remote-explorer-documentation",
+                "type": "command",
+                "command": "vscode-containers.networks.remove"
+              },
+              // x prune
+              {
+                "key": "x",
+                "name": "prune network",
+                "icon": "remote-explorer-documentation",
+                "type": "command",
+                "command": "vscode-containers.networks.prune"
+              }
+            ]
+          },
+          // v volume
+          {
+            "key": "v",
+            "name": "+Volume/View",
+            "icon": "chrome-restore",
+            "type": "bindings",
+            "bindings": [
+              // i inspect volume
+              {
+                "key": "i",
+                "name": "inspect volumes",
+                "icon": "remote-explorer-documentation",
+                "type": "command",
+                "command": "vscode-containers.volumes.inspect"
+              },
+              // d remove volume
+              {
+                "key": "d",
+                "name": "remove volumes",
+                "icon": "remove-close",
+                "type": "command",
+                "command": "vscode-containers.volumes.remove"
+              },
+              // x prune volumes
+              {
+                "key": "x",
+                "name": "prune volume",
+                "icon": "breakpoints-remove-all",
+                "type": "command",
+                "command": "vscode-containers.volumes.prune"
+              }
+            ]
+          },
+          // i Image
+          {
+            "key": "i",
+            "name": "+Image",
+            "icon": "developer-tools",
+            "type": "bindings",
+            "bindings": [
+              // remote-containers.inspectDockerResource
+              // r run
+              {
+                "key": "r",
+                "name": "+Run",
+                "icon": "build",
+                "type": "bindings",
+                "bindings": [
+                  // r run
+                  {
+                    "key": "r",
+                    "name": "run",
+                    "icon": "build",
+                    "type": "command",
+                    "command": "vscode-containers.images.run"
+                  },
+                  // i run interactively
+                  {
+                    "key": "i",
+                    "name": "run interactively",
+                    "icon": "build",
+                    "type": "command",
+                    "command": "vscode-containers.images.runInteractive"
+                  }
+                ]
+              },
+              // b build images
+              {
+                "key": "b",
+                "name": "build images",
+                "icon": "build",
+                "type": "command",
+                "command": "vscode-containers.images.build"
+              },
+              // d remove image
+              {
+                "key": "d",
+                "name": "remove/delete images",
+                "icon": "notebook-delete-cell",
+                "type": "command",
+                "command": "vscode-containers.images.remove"
+              },
+              // i inspect image
+              {
+                "key": "i",
+                "name": "inspect images",
+                "icon": "remote-explorer-documentation",
+                "type": "command",
+                "command": "vscode-containers.images.inspect"
+              },
+              // t tag image
+              {
+                "key": "t",
+                "name": "tag images",
+                "icon": "tag",
+                "type": "command",
+                "command": "vscode-containers.images.tag"
+              },
+              // p pull/push
+              {
+                "key": "p",
+                "name": "+Pull/Push",
+                "icon": "repo-pull",
+                "type": "bindings",
+                "bindings": [
+                  // p pull images
+                  {
+                    "key": "p",
+                    "name": "pull images",
+                    "icon": "repo-pull",
+                    "type": "command",
+                    "command": "vscode-containers.images.pull"
+                  },
+                  // P push images
+                  {
+                    "key": "P",
+                    "name": "Push images",
+                    "icon": "repo-push",
+                    "type": "command",
+                    "command": "vscode-containers.images.push"
+                  }
+                ]
+              },
+              // x prune images
+              {
+                "key": "x",
+                "name": "prune images",
+                "icon": "breakpoints-remove-all",
+                "type": "command",
+                "command": "vscode-containers.images.prune"
+              }
+            ]
+          },
+          // r registry
+          {
+            "key": "r",
+            "name": "+Registry",
+            "icon": "chrome-restore",
+            "type": "bindings",
+            "bindings": [
+              // i inspect registry
+              {
+                "key": "i",
+                "name": "inspect registry",
+                "icon": "remote-explorer-documentation",
+                "type": "command",
+                "command": "vscode-containers.registries.inspectRemoteImageManifest"
+              },
+              // l login
+              {
+                "key": "l",
+                "name": "login registry",
+                "icon": "log-in",
+                "type": "command",
+                "command": "vscode-containers.registries.logInToContainerCli"
+              },
+              // L logout
+              {
+                "key": "L",
+                "name": "logout registry",
+                "icon": "log-out",
+                "type": "command",
+                "command": "vscode-containers.registries.logOutOfContainerCli"
+              },
+              // a add/connect registry
+              {
+                "key": "a",
+                "name": "add/connect registry",
+                "icon": "remote-explorer-documentation",
+                "type": "command",
+                // vscode-containers.registries.reconnectRegistry
+                "command": "vscode-containers.registries.connectRegistry"
+              },
+              // d disconnect registry
+              {
+                "key": "d",
+                "name": "remove/disconnect registry",
+                "icon": "debug-disconnect",
+                "type": "command",
+                "command": "vscode-containers.registries.disconnectRegistry"
+              },
+              // D delete image
+              {
+                "key": "D",
+                "name": "delete registry image",
+                "icon": "notebook-delete-cell",
+                "type": "command",
+                "command": "vscode-containers.registries.deleteImage"
+              },
+              // o open docker hub
+              {
+                "key": "o",
+                "name": "open registry in browser",
+                "icon": "browser",
+                "type": "command",
+                "command": "vscode-containers.registries.dockerHub.openInBrowser"
+              },
+              // p pull image
+              {
+                "key": "p",
+                "name": "pull registry image",
+                "icon": "repo-pull",
+                "type": "command",
+                "command": "vscode-containers.registries.pullImage"
+              },
+              // P pull repository
+              {
+                "key": "p",
+                "name": "pull registry repository",
+                "icon": "repo",
+                "type": "command",
+                "command": "vscode-containers.registries.pullRepository"
+              },
+              // y +Copy
+              {
+                "key": "y",
+                "name": "+Copy",
+                "icon": "browser",
+                "type": "bindings",
+                "bindings": [
+                  // t copy registry image tag
+                  {
+                    "key": "t",
+                    "name": "copy registry image tag",
+                    "icon": "tag",
+                    "type": "command",
+                    "command": "vscode-containers.registries.copyRemoteFullTag"
+                  },
+                  // d copy digest
+                  {
+                    "key": "d",
+                    "name": "copy registry image digest",
+                    "icon": "diff-ignored",
+                    "type": "command",
+                    "command": "vscode-containers.registries.copyImageDigest"
+                  }
+                ]
+              }
+            ]
+          },
+          // x context
+          {
+            "key": "x",
+            "name": "+Context",
+            "icon": "share-window",
+            "type": "bindings",
+            "bindings": [
+              // i inspect docker context
+              {
+                "key": "i",
+                "name": "inspect docker context",
+                "icon": "remote-explorer-documentation",
+                "type": "command",
+                "command": "vscode-containers.contexts.inspect"
+              },
+              // u use docker context
+              {
+                "key": "u",
+                "name": "use docker context",
+                "icon": "debug-pause",
+                "type": "command",
+                "command": "vscode-containers.contexts.use"
+              },
+              // d remove
+              {
+                "key": "d",
+                "name": "remove/delete docker context",
+                "icon": "remote-explorer-documentation",
+                "type": "command",
+                "command": "vscode-containers.contexts.remove"
+              }
+            ]
+          }
+        ]
       },
       // k dev containers
       {
@@ -134,6 +677,14 @@
             "icon": "open-in-window",
             "type": "bindings",
             "bindings": [
+              // space remote
+              {
+                "key": " ",
+                "name": "+Open remote",
+                "icon": "desktop-download",
+                "type": "command",
+                "command": "workbench.action.remote.showMenu"
+              },
               // o reopen in container
               {
                 "key": "o",
@@ -522,548 +1073,6 @@
           }
         ]
       },
-      // x context
-      {
-        "key": "x",
-        "name": "+Context",
-        "icon": "share-window",
-        "type": "bindings",
-        "bindings": [
-          // i inspect docker context
-          {
-            "key": "i",
-            "name": "inspect docker context",
-            "icon": "remote-explorer-documentation",
-            "type": "command",
-            "command": "vscode-containers.contexts.inspect"
-          },
-          // u use docker context
-          {
-            "key": "u",
-            "name": "use docker context",
-            "icon": "debug-pause",
-            "type": "command",
-            "command": "vscode-containers.contexts.use"
-          },
-          // d remove
-          {
-            "key": "d",
-            "name": "remove/delete docker context",
-            "icon": "remote-explorer-documentation",
-            "type": "command",
-            "command": "vscode-containers.contexts.remove"
-          }
-        ]
-      },
-      // c container
-      {
-        "key": "c",
-        "name": "+Container",
-        "icon": "share-window",
-        "type": "bindings",
-        "bindings": [
-          // c compose
-          {
-            "key": "c",
-            "name": "+Compose",
-            "icon": "browser",
-            "type": "bindings",
-            "bindings": [
-              // r compose run
-              {
-                "key": "r",
-                "name": "+compose run",
-                "icon": "tasklist",
-                "type": "bindings",
-                "bindings": [
-                  // r compose start
-                  {
-                    "key": "r",
-                    "name": "compose start",
-                    "icon": "run",
-                    "type": "command",
-                    "command": "vscode-containers.containers.composeGroup.start"
-                  },
-                  // R compose restart
-                  {
-                    "key": "R",
-                    "name": "compose restart",
-                    "icon": "extension-restart-required",
-                    "type": "command",
-                    "command": "vscode-containers.containers.composeGroup.restart"
-                  },
-                  // x compose stop
-                  {
-                    "key": "x",
-                    "name": "compose stop",
-                    "icon": "stop",
-                    "type": "command",
-                    "command": "vscode-containers.containers.composeGroup.stop"
-                  }
-                ]
-              },
-              // k compose up
-              {
-                "key": " ",
-                "name": "compose up with selection",
-                "icon": "run",
-                "type": "command",
-                //  "vscode-containers.containers.composeGroup.start" no effect
-                "command": "vscode-containers.compose.up.subset"
-              },
-              // j compose down with selection
-              {
-                "key": "j",
-                "name": "compose down with selection",
-                "icon": "debug-remove-config",
-                "type": "command",
-                // "command": "vscode-containers.containers.composeGroup.down"
-                "command": "vscode-containers.compose.down.subset"
-              },
-              {
-                "key": "i",
-                "name": "compose inspect log",
-                "icon": "inspect",
-                "type": "command",
-                "command": "vscode-containers.containers.composeGroup.logs"
-              }
-            ]
-          },
-          // i inspect container
-          {
-            "key": "i",
-            "name": "inspect container",
-            "icon": "inspect",
-            "type": "command",
-            "command": "vscode-containers.containers.inspect"
-          },
-          // j stop container
-          {
-            "key": "j",
-            "name": "stop container",
-            "icon": "stop",
-            "type": "command",
-            "command": "vscode-containers.containers.stop"
-          },
-          // k start container
-          {
-            "key": "k",
-            "name": "start container",
-            "icon": "stop",
-            "type": "command",
-            "command": "vscode-containers.containers.start"
-          },
-          // r restart container
-          {
-            "key": "r",
-            "name": "restart container",
-            "icon": "stop",
-            "type": "command",
-            "command": "vscode-containers.containers.restart"
-          },
-          // d remove container
-          {
-            "key": "d",
-            "name": "remove container",
-            "icon": "stop",
-            "type": "command",
-            "command": "vscode-containers.containers.remove"
-          },
-          // a attach shell
-          {
-            "key": "a",
-            "name": "attach shell",
-            "icon": "terminal-powershell",
-            "type": "command",
-            "command": "vscode-containers.containers.attachShell"
-          },
-          // o open ports in browser
-          {
-            "key": "o",
-            "name": "open port in browser",
-            "icon": "browser",
-            "type": "command",
-            "command": "vscode-containers.containers.browse"
-          },
-          // x prune containers
-          {
-            "key": "x",
-            "name": "prune containers",
-            "icon": "browser",
-            "type": "command",
-            "command": "vscode-containers.containers.prune"
-          },
-          // l container log
-          {
-            "key": "l",
-            "name": "Container Log",
-            "icon": "browser",
-            "type": "command",
-            "command": "vscode-containers.containers.viewLogs"
-          },
-          // s statistics
-          {
-            "key": "s",
-            "name": "container statistics",
-            "icon": "browser",
-            "type": "command",
-            "command": "vscode-containers.containers.stats"
-          }
-        ]
-      },
-      // n network
-      {
-        "key": "n",
-        "name": "+Network",
-        "icon": "magnet",
-        "type": "bindings",
-        "bindings": [
-          // i inspect network
-          {
-            "key": "i",
-            "name": "inspect network",
-            "icon": "remote-explorer-documentation",
-            "type": "command",
-            "command": "vscode-containers.networks.inspect"
-          },
-          // a add/create network
-          {
-            "key": "a",
-            "name": "add/create network",
-            "icon": "remote-explorer-documentation",
-            "type": "command",
-            "command": "vscode-containers.networks.create"
-          },
-          // d remove network
-          {
-            "key": "d",
-            "name": "remove network",
-            "icon": "remote-explorer-documentation",
-            "type": "command",
-            "command": "vscode-containers.networks.remove"
-          },
-          // x prune
-          {
-            "key": "x",
-            "name": "prune network",
-            "icon": "remote-explorer-documentation",
-            "type": "command",
-            "command": "vscode-containers.networks.prune"
-          }
-        ]
-      },
-      // v volume
-      {
-        "key": "v",
-        "name": "+Volume/View",
-        "icon": "chrome-restore",
-        "type": "bindings",
-        "bindings": [
-          // v view
-          {
-            "key": "v",
-            "name": "+View",
-            "icon": "remote-explorer-documentation",
-            "type": "bindings",
-            "bindings": [
-              // , refresh view
-              {
-                "key": ",",
-                "name": "refresh view",
-                "icon": "refresh",
-                "type": "commands",
-                "commands": [
-                  "vscode-containers.containers.refresh",
-                  "vscode-containers.contexts.refresh",
-                  "vscode-containers.images.refresh",
-                  "vscode-containers.networks.refresh",
-                  "vscode-containers.registries.refresh",
-                  "vscode-containers.volumes.refresh"
-                ]
-              },
-              // v focus volume view
-              {
-                "key": "v",
-                "name": "focus volume view",
-                "icon": "remote-explorer-documentation",
-                "type": "command",
-                "command": "vscode-containers.views.volumes.focus"
-              },
-              // x docker context view
-              {
-                "key": "x",
-                "name": "focus docker context view",
-                "icon": "remote-explorer-documentation",
-                "type": "command",
-                "command": "vscode-containers.views.dockerContexts.focus"
-              },
-              // c container view
-              {
-                "key": "c",
-                "name": "focus container view",
-                "icon": "inspect",
-                "type": "command",
-                "command": "vscode-containers.views.containers.focus"
-              },
-              // n focus network view
-              {
-                "key": "n",
-                "name": "focus network view",
-                "icon": "remote-explorer-documentation",
-                "type": "command",
-                "command": "vscode-containers.views.networks.focus"
-              },
-              // i focus image view
-              {
-                "key": "i",
-                "name": "focus image view",
-                "icon": "remote-explorer-documentation",
-                "type": "command",
-                "command": "vscode-containers.views.images.focus"
-              },
-              // r focus registry view
-              {
-                "key": "r",
-                "name": "focus registry view",
-                "icon": "remote-explorer-documentation",
-                "type": "command",
-                "command": "vscode-containers.views.registries.focus"
-              }
-            ]
-          },
-          // i inspect volume
-          {
-            "key": "i",
-            "name": "inspect volumes",
-            "icon": "remote-explorer-documentation",
-            "type": "command",
-            "command": "vscode-containers.volumes.inspect"
-          },
-          // d remove volume
-          {
-            "key": "d",
-            "name": "remove volumes",
-            "icon": "remove-close",
-            "type": "command",
-            "command": "vscode-containers.volumes.remove"
-          },
-          // x prune volumes
-          {
-            "key": "x",
-            "name": "prune volume",
-            "icon": "breakpoints-remove-all",
-            "type": "command",
-            "command": "vscode-containers.volumes.prune"
-          }
-        ]
-      },
-      // i Image
-      {
-        "key": "i",
-        "name": "+Image",
-        "icon": "developer-tools",
-        "type": "bindings",
-        "bindings": [
-          // remote-containers.inspectDockerResource
-          // r run
-          {
-            "key": "r",
-            "name": "+Run",
-            "icon": "build",
-            "type": "bindings",
-            "bindings": [
-              // r run
-              {
-                "key": "r",
-                "name": "run",
-                "icon": "build",
-                "type": "command",
-                "command": "vscode-containers.images.run"
-              },
-              // i run interactively
-              {
-                "key": "i",
-                "name": "run interactively",
-                "icon": "build",
-                "type": "command",
-                "command": "vscode-containers.images.runInteractive"
-              }
-            ]
-          },
-          // b build images
-          {
-            "key": "b",
-            "name": "build images",
-            "icon": "build",
-            "type": "command",
-            "command": "vscode-containers.images.build"
-          },
-          // d remove image
-          {
-            "key": "d",
-            "name": "remove/delete images",
-            "icon": "notebook-delete-cell",
-            "type": "command",
-            "command": "vscode-containers.images.remove"
-          },
-          // i inspect image
-          {
-            "key": "i",
-            "name": "inspect images",
-            "icon": "remote-explorer-documentation",
-            "type": "command",
-            "command": "vscode-containers.images.inspect"
-          },
-          // t tag image
-          {
-            "key": "t",
-            "name": "tag images",
-            "icon": "tag",
-            "type": "command",
-            "command": "vscode-containers.images.tag"
-          },
-          // p pull/push
-          {
-            "key": "p",
-            "name": "+Pull/Push",
-            "icon": "repo-pull",
-            "type": "bindings",
-            "bindings": [
-              // p pull images
-              {
-                "key": "p",
-                "name": "pull images",
-                "icon": "repo-pull",
-                "type": "command",
-                "command": "vscode-containers.images.pull"
-              },
-              // P push images
-              {
-                "key": "P",
-                "name": "Push images",
-                "icon": "repo-push",
-                "type": "command",
-                "command": "vscode-containers.images.push"
-              }
-            ]
-          },
-          // x prune images
-          {
-            "key": "x",
-            "name": "prune images",
-            "icon": "breakpoints-remove-all",
-            "type": "command",
-            "command": "vscode-containers.images.prune"
-          }
-        ]
-      },
-      // r registry
-      {
-        "key": "r",
-        "name": "+Registry",
-        "icon": "chrome-restore",
-        "type": "bindings",
-        "bindings": [
-          // i inspect registry
-          {
-            "key": "i",
-            "name": "inspect registry",
-            "icon": "remote-explorer-documentation",
-            "type": "command",
-            "command": "vscode-containers.registries.inspectRemoteImageManifest"
-          },
-          // l login
-          {
-            "key": "l",
-            "name": "login registry",
-            "icon": "log-in",
-            "type": "command",
-            "command": "vscode-containers.registries.logInToContainerCli"
-          },
-          // L logout
-          {
-            "key": "L",
-            "name": "logout registry",
-            "icon": "log-out",
-            "type": "command",
-            "command": "vscode-containers.registries.logOutOfContainerCli"
-          },
-          // a add/connect registry
-          {
-            "key": "a",
-            "name": "add/connect registry",
-            "icon": "remote-explorer-documentation",
-            "type": "command",
-            // vscode-containers.registries.reconnectRegistry
-            "command": "vscode-containers.registries.connectRegistry"
-          },
-          // d disconnect registry
-          {
-            "key": "d",
-            "name": "remove/disconnect registry",
-            "icon": "debug-disconnect",
-            "type": "command",
-            "command": "vscode-containers.registries.disconnectRegistry"
-          },
-          // D delete image
-          {
-            "key": "D",
-            "name": "delete registry image",
-            "icon": "notebook-delete-cell",
-            "type": "command",
-            "command": "vscode-containers.registries.deleteImage"
-          },
-          // o open docker hub
-          {
-            "key": "o",
-            "name": "open registry in browser",
-            "icon": "browser",
-            "type": "command",
-            "command": "vscode-containers.registries.dockerHub.openInBrowser"
-          },
-          // p pull image
-          {
-            "key": "p",
-            "name": "pull registry image",
-            "icon": "repo-pull",
-            "type": "command",
-            "command": "vscode-containers.registries.pullImage"
-          },
-          // P pull repository
-          {
-            "key": "p",
-            "name": "pull registry repository",
-            "icon": "repo",
-            "type": "command",
-            "command": "vscode-containers.registries.pullRepository"
-          },
-          // y +Copy
-          {
-            "key": "y",
-            "name": "+Copy",
-            "icon": "browser",
-            "type": "bindings",
-            "bindings": [
-              // t copy registry image tag
-              {
-                "key": "t",
-                "name": "copy registry image tag",
-                "icon": "tag",
-                "type": "command",
-                "command": "vscode-containers.registries.copyRemoteFullTag"
-              },
-              // d copy digest
-              {
-                "key": "d",
-                "name": "copy registry image digest",
-                "icon": "diff-ignored",
-                "type": "command",
-                "command": "vscode-containers.registries.copyImageDigest"
-              }
-            ]
-          }
-        ]
-      },
       // , misc
       {
         "key": ",",
@@ -1152,6 +1161,63 @@
             "command": "vscode-containers.pruneSystem"
           }
         ]
+      },
+      // t tunnel
+      {
+        "key": "t",
+        "name": "+Tunnel",
+        "icon": "briefcase",
+        "type": "bindings",
+        "bindings": [
+          // p ports
+          {
+            "key": "p",
+            "name": "+Ports",
+            "icon": "close",
+            "type": "bindings",
+            "bindings": [
+              // p forward a port
+              {
+                "key": "p",
+                "name": "forward a port",
+                "icon": "forward",
+                "type": "command",
+                "command": "remote.tunnel.forwardCommandPalette"
+              },
+              // y copy forward port address
+              {
+                "key": "y",
+                "name": "copy forwarded port address",
+                "icon": "forward",
+                "type": "command",
+                "command": "remote.tunnel.copyAddressCommandPalette"
+              },
+              // d close unused ports
+              {
+                "key": "d",
+                "name": "close unused ports",
+                "icon": "ports-stop-forward-icon",
+                "type": "command",
+                "command": "workbench.remote.action.closeUnusedPorts"
+              },
+              // v focus port view
+              {
+                "key": "v",
+                "name": "focus port view",
+                "icon": "debug-stackframe-focused",
+                "type": "command",
+                "command": "remote.tunnel.copyAddressCommandPalette"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "d",
+        "name": "close remote connection",
+        "icon": "close",
+        "type": "command",
+        "command": "workbench.action.remote.close"
       }
     ]
   }
