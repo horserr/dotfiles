@@ -1,26 +1,18 @@
-# code: language=ssh_config
-Host *
-  StrictHostKeyChecking ask
-  HashKnownHosts yes      # 隐藏我去过哪儿，更安全
-  AddKeysToAgent yes      # 只要解开一次，这阵子就别再问我密码
+# ssh config: https://man7.org/linux/man-pages/man5/ssh_config.5.html
 
-  ServerAliveInterval 30
-  ServerAliveCountMax 3   # 3 次无响应则断开
+# file permission: only read and write by the user
+# chmod 600 ~/.ssh/config
 
-  {{ if not .isWindows }}
-  ControlMaster auto    # 自动启用连接复用
-  ControlPath ~/.ssh/master_%h_%p_%r  # 复用连接的 socket 文件路径
-  ControlPersist 1m
-  {{ end }}
+# the cascading rule is: First Match Wins
+
+# this config file is also read by sftp, rsync, scp
+
+########################
 
 Host container
   HostName localhost
   User root
   Port 2222
-  ForwardAgent yes
-
-{{ if .isPersonal }}
-{{ include "dot_ssh/config.d/platform_config" }}
 
 # need to turn on tailscale
 Host termux
@@ -28,7 +20,18 @@ Host termux
   User u0_a737
   Port 8022
   ForwardAgent yes
-{{- end }}
+
+Host *
+  StrictHostKeyChecking ask
+  HashKnownHosts yes      # 隐藏我去过哪儿，更安全
+  AddKeysToAgent yes      # 只要解开一次，这阵子就别再问我密码
+
+  ServerAliveInterval 60
+  ServerAliveCountMax 3
+
+  # ControlMaster auto    # 自动启用连接复用
+  # ControlPath ~/.ssh/master_%h_%p_%r  # 复用连接的 socket 文件路径
+  # ControlPersist 1m
 
 # 基本连接：Host、HostName、User、Port
 # 密钥与代理：IdentityFile、IdentitiesOnly、AddKeysToAgent、IdentityAgent、ForwardAgent

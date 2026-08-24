@@ -42,7 +42,7 @@
     "dot_cloud-init": "folder_azure-pipelines",
     "dot_config": "folder_drizzle-orm",
     "dot_docker": "folder_docker",
-    "dot_ssh": "folder_security",
+    "private_dot_ssh": "folder_security",
     "dot_vim": "vim",
     "dot_vscode-server": "folder_vscode",
     "fish": "folder_roblox",
@@ -75,6 +75,8 @@
     "*.properties.tmpl": "properties",
     "*.ps1.tmpl": "powershell",
     "*.toml.tmpl": "toml",
+    "**/git/*config*": "ini",
+    "**/private_dot_ssh/**/*config*": "ssh_config",
     "dot_bashrc": "shellscript",
     "dot_gitconfig": "ini",
     "dot_ideavimrc": "Vimscript",
@@ -85,7 +87,6 @@
     "refs/vscode-commands.txt": true,
     "refs/when-clause-sample.json": true
   },
-  "saveEditorLayout.list": [],
   "json.validate.enable": true,
   "json.schemaDownload.enable": false,
   "json.schemas": [
@@ -136,6 +137,7 @@
   "workbench.editor.customLabels.patterns": {
     "*/.vscode/**": "${filename}(main).${extname}",
     "**/git/**": "${filename}(git)",
+    "**/private_dot_ssh/**": "${filename}(ssh)",
     "**/vscode/*.json*": "${filename}(vsc)",
     "**/vscode/*/**/*.json*": "${filename}(${dirname})"
   },
