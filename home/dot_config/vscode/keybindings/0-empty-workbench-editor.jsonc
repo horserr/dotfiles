@@ -19,13 +19,73 @@
    *******************/
   // replace current window with wsl
   {
-    "key": "w",
-    "command": "remote-wsl.connect",
-    "when": "workbenchState == 'empty' && remoteName != 'wsl' &&  && !inputFocus"
-  // recent workspace
-  {
-    "key": "r",
-    "command": "workbench.action.openRecent",
-    "when": "workbenchState == 'empty' &&  && !inputFocus"
+    "key": "space",
+    "command": "whichkey.show",
+    "args": [
+      // space pick wsl distro to open
+      {
+        "key": " ",
+        "name": "MENU",
+        "icon": "",
+        "type": "command",
+        "command": "runCommands",
+        "args": {
+          "commands": [
+            "whichkey.show"
+            // { "command": "whichkey.triggerKey", "args": "v" }
+          ]
+        }
+      },
+      // r recent workspace
+      {
+        "key": "r",
+        "name": "recent workspace",
+        "icon": "file-directory",
+        "type": "command",
+        "command": "workbench.action.openRecent"
+      },
+      // w WSL
+      {
+        "key": "w",
+        "name": "+WSL",
+        "icon": "terminal-linux",
+        "type": "bindings",
+        "bindings": [
+          // w open in wsl
+          {
+            "key": "w",
+            "name": "open in wsl ",
+            "icon": "terminal-linux",
+            "type": "command",
+            "command": "remote-wsl.connect"
+          },
+          // space connect with distro
+          {
+            "key": " ",
+            "name": "open in wsl with distro picker",
+            "icon": "terminal-linux",
+            "type": "command",
+            "command": "remote-wsl.connectUsingDistro"
+          }
+        ]
+      },
+      // s ssh
+      {
+        "key": "s",
+        "name": "connect ssh",
+        "icon": "remote-explorer-view-icon",
+        "type": "command",
+        "command": "opensshremotes.openEmptyWindowInCurrentWindow"
+      },
+      // d close window
+      {
+        "key": "d",
+        "name": "close window",
+        "icon": "close",
+        "type": "command",
+        "command": "workbench.action.closeWindow"
+      }
+    ],
+    "when": "workbenchState == 'empty' && !inputFocus"
   }
 ]

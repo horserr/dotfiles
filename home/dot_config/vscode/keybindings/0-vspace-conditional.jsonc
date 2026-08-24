@@ -36,7 +36,7 @@
     "key": "space",
     "command": "whichkey.show",
     // "when": "activeEditorGroupEmpty && focusedView == '' && !whichkeyActive && !inputFocus"
-    "when": "!editorTextFocus && !inputFocus && !listFocus && !whichkeyActive"
+    "when": "!editorTextFocus && !inputFocus && !listFocus && !whichkeyActive && workbenchState != 'empty'"
   },
   {
     // use shift+space in sidebar, regardless of whether input is focused or not
