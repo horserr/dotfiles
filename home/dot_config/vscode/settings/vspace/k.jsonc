@@ -11,76 +11,72 @@
         "name": "+Container Tools",
         "icon": "remote-explorer-review-issues",
         "type": "bindings",
+        "command": "vscode-containers.views.containers.focus",
         "bindings": [
-          // space view
+          // space compose
           {
             "key": " ",
-            "name": "+View",
-            "icon": "remote-explorer-documentation",
+            "name": "+Compose",
+            "icon": "browser",
             "type": "bindings",
             "bindings": [
-              // , refresh view
-              {
-                "key": ",",
-                "name": "refresh view",
-                "icon": "refresh",
-                "type": "commands",
-                "commands": [
-                  "vscode-containers.containers.refresh",
-                  "vscode-containers.contexts.refresh",
-                  "vscode-containers.images.refresh",
-                  "vscode-containers.networks.refresh",
-                  "vscode-containers.registries.refresh",
-                  "vscode-containers.volumes.refresh"
-                ]
-              },
-              // v focus volume view
-              {
-                "key": "v",
-                "name": "focus volume view",
-                "icon": "remote-explorer-documentation",
-                "type": "command",
-                "command": "vscode-containers.views.volumes.focus"
-              },
-              // x docker context view
-              {
-                "key": "x",
-                "name": "focus docker context view",
-                "icon": "remote-explorer-documentation",
-                "type": "command",
-                "command": "vscode-containers.views.dockerContexts.focus"
-              },
-              // c container view
-              {
-                "key": "c",
-                "name": "focus container view",
-                "icon": "inspect",
-                "type": "command",
-                "command": "vscode-containers.views.containers.focus"
-              },
-              // n focus network view
-              {
-                "key": "n",
-                "name": "focus network view",
-                "icon": "remote-explorer-documentation",
-                "type": "command",
-                "command": "vscode-containers.views.networks.focus"
-              },
-              // i focus image view
-              {
-                "key": "i",
-                "name": "focus image view",
-                "icon": "remote-explorer-documentation",
-                "type": "command",
-                "command": "vscode-containers.views.images.focus"
-              },
-              // r focus registry view
+              // r compose run
               {
                 "key": "r",
-                "name": "focus registry view",
-                "icon": "remote-explorer-documentation",
+                "name": "+compose run",
+                "icon": "tasklist",
+                "type": "bindings",
+                "bindings": [
+                  // r compose start
+                  {
+                    "key": "r",
+                    "name": "compose start",
+                    "icon": "run",
+                    "type": "command",
+                    "command": "vscode-containers.containers.composeGroup.start"
+                  },
+                  // R compose restart
+                  {
+                    "key": "R",
+                    "name": "compose restart",
+                    "icon": "extension-restart-required",
+                    "type": "command",
+                    "command": "vscode-containers.containers.composeGroup.restart"
+                  },
+                  // x compose stop
+                  {
+                    "key": "x",
+                    "name": "compose stop",
+                    "icon": "stop",
+                    "type": "command",
+                    "command": "vscode-containers.containers.composeGroup.stop"
+                  }
+                ]
+              },
+              // k compose up
+              {
+                "key": " ",
+                "name": "compose up with selection",
+                "icon": "run",
                 "type": "command",
-                "command": "vscode-containers.views.registries.focus"
+                //  "vscode-containers.containers.composeGroup.start" no effect
+                "command": "vscode-containers.compose.up.subset"
+              },
+              // j compose down with selection
+              {
+                "key": "j",
+                "name": "compose down with selection",
+                "icon": "debug-remove-config",
+                "type": "command",
+                // "command": "vscode-containers.containers.composeGroup.down"
+                "command": "vscode-containers.compose.down.subset"
+              },
+              {
+                "key": "i",
+                "name": "compose inspect log",
+                "icon": "inspect",
+                "type": "command",
+                "command": "vscode-containers.containers.composeGroup.logs"
               }
             ]
           },
@@ -91,73 +87,6 @@
             "icon": "share-window",
             "type": "bindings",
             "bindings": [
-              // c compose
-              {
-                "key": "c",
-                "name": "+Compose",
-                "icon": "browser",
-                "type": "bindings",
-                "bindings": [
-                  // r compose run
-                  {
-                    "key": "r",
-                    "name": "+compose run",
-                    "icon": "tasklist",
-                    "type": "bindings",
-                    "bindings": [
-                      // r compose start
-                      {
-                        "key": "r",
-                        "name": "compose start",
-                        "icon": "run",
-                        "type": "command",
-                        "command": "vscode-containers.containers.composeGroup.start"
-                      },
-                      // R compose restart
-                      {
-                        "key": "R",
-                        "name": "compose restart",
-                        "icon": "extension-restart-required",
-                        "type": "command",
-                        "command": "vscode-containers.containers.composeGroup.restart"
-                      },
-                      // x compose stop
-                      {
-                        "key": "x",
-                        "name": "compose stop",
-                        "icon": "stop",
-                        "type": "command",
-                        "command": "vscode-containers.containers.composeGroup.stop"
-                      }
-                    ]
-                  },
-                  // k compose up
-                  {
-                    "key": " ",
-                    "name": "compose up with selection",
-                    "icon": "run",
-                    "type": "command",
-                    //  "vscode-containers.containers.composeGroup.start" no effect
-                    "command": "vscode-containers.compose.up.subset"
-                  },
-                  // j compose down with selection
-                  {
-                    "key": "j",
-                    "name": "compose down with selection",
-                    "icon": "debug-remove-config",
-                    "type": "command",
-                    // "command": "vscode-containers.containers.composeGroup.down"
-                    "command": "vscode-containers.compose.down.subset"
-                  },
-                  {
-                    "key": "i",
-                    "name": "compose inspect log",
-                    "icon": "inspect",
-                    "type": "command",
-                    "command": "vscode-containers.containers.composeGroup.logs"
-                  }
-                ]
-              },
               // i inspect container
               {
                 "key": "i",
@@ -638,6 +567,7 @@
                 "type": "command",
                 "command": "remote-containers.rebuildNoCacheAndReopenInContainer"
               },
+              // x rebuild without cache
               {
                 "key": "x",
                 "name": "rebuild without cache",
@@ -677,14 +607,6 @@
             "icon": "open-in-window",
             "type": "bindings",
             "bindings": [
-              // space remote
-              {
-                "key": " ",
-                "name": "+Open remote",
-                "icon": "desktop-download",
-                "type": "command",
-                "command": "workbench.action.remote.showMenu"
-              },
               // o reopen in container
               {
                 "key": "o",
@@ -912,6 +834,14 @@
         "icon": "open-in-window",
         "type": "bindings",
         "bindings": [
+          // space remote
+          {
+            "key": " ",
+            "name": "+Open remote",
+            "icon": "desktop-download",
+            "type": "command",
+            "command": "workbench.action.remote.showMenu"
+          },
           // c reopen in container
           {
             "key": "c",
@@ -996,21 +926,21 @@
           // opensshremotes.openWebUI
           // opensshremotes.showDetails
 
-          // n connect
+          // f open configuration file
           {
-            "key": "n",
+            "key": "f",
+            "name": "open host configuration file",
+            "icon": "remote-explorer",
+            "type": "command",
+            "command": "opensshremotes.openConfigFile"
+          },
+          // o connect
+          {
+            "key": "o",
             "name": "connect host new empty window",
             "icon": "debug-connected",
             "type": "command",
             "command": "opensshremotes.openEmptyWindow"
-          },
-          // s connect host in current window
-          {
-            "key": "s",
-            "name": "connect host in current window",
-            "icon": "debug-connected",
-            "type": "command",
-            "command": "opensshremotes.openEmptyWindowInCurrentWindow"
           },
           // a add host
           {
@@ -1019,14 +949,6 @@
             "icon": "diff-added",
             "type": "command",
             "command": "opensshremotes.addNewSshHost"
-          },
-          // o open configuration file
-          {
-            "key": "o",
-            "name": "open host configuration file",
-            "icon": "remote-explorer",
-            "type": "command",
-            "command": "opensshremotes.openConfigFile"
           },
           // x clean
           {
@@ -1212,6 +1134,7 @@
           }
         ]
       },
+      // d close remote connection
       {
         "key": "d",
         "name": "close remote connection",
