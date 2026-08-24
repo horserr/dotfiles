@@ -1,0 +1,26 @@
+[
+  /**********************
+   * EMPTY EDITOR GROUP *
+   **********************/
+  // terminal editor group
+  {
+    "key": ",",
+    "command": "workbench.action.createTerminalEditor",
+    "when": "activeEditorGroupEmpty && !inputFocus"
+  },
+  // new untitled file
+  {
+    "key": "n",
+    "command": "workbench.action.files.newUntitledFile",
+    "when": "activeEditorGroupEmpty && !inputFocus"
+  },
+  /*******************
+   * EMPTY WORKBENCH *
+   *******************/
+  // replace current window with wsl
+  {
+    "key": "w",
+    "command": "remote-wsl.connect",
+    "when": "workbenchState == 'empty' && remoteName != 'wsl' &&  && !inputFocus"
+  }
+]
