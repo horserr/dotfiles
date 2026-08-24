@@ -1,0 +1,3 @@
+{{ if not .isWSL -}}
+server-env-startup
+{{- end -}}

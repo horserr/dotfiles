@@ -1,0 +1,4 @@
+#!/bin/sh
+
+# link: https://code.visualstudio.com/docs/remote/wsl#_advanced-environment-setup-script
+# useful for settign up vscode server proxy: https://code.visualstudio.com/docs/remote/wsl#_im-behind-a-proxy-and-have-connectivity-issues

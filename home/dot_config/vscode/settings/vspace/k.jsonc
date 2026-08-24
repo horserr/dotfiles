@@ -610,7 +610,7 @@
               // o reopen in container
               {
                 "key": "o",
-                "name": "reopen or switch",
+                "name": "reopen in devcontainer or switch",
                 "icon": "issue-reopened",
                 "type": "conditional",
                 "bindings": [

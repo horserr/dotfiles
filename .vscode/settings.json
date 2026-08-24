@@ -128,6 +128,11 @@
     {
       "fileMatch": ["**/vscode/tasks.json"],
       "url": "vscode://schemas/tasks"
+    },
+    // remote server settings
+    {
+      "fileMatch": ["**/dot_vscode-server/**/settings.json"],
+      "url": "vscode://schemas/settings/machine"
     }
   ],
   "workbench.diffEditorAssociations": {
