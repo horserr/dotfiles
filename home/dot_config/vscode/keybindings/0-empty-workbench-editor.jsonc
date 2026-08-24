@@ -22,5 +22,10 @@
     "key": "w",
     "command": "remote-wsl.connect",
     "when": "workbenchState == 'empty' && remoteName != 'wsl' &&  && !inputFocus"
+  // recent workspace
+  {
+    "key": "r",
+    "command": "workbench.action.openRecent",
+    "when": "workbenchState == 'empty' &&  && !inputFocus"
   }
 ]
