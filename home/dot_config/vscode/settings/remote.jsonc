@@ -241,9 +241,11 @@
   //  DEBUG
   // If set, the output in the WSL log shows debug information.
   "remote.WSL.debug": false,
-  // ？ 在 wsl 中避免通过脚本启动vscode
+
+	// If set, the WSL extension will not use a script to start the server in WSL. This is an experimental feature to allow running in distros that have interop disabled.
   "remote.WSL.experimental.scriptLessStartup": true,
-  // SIGNIFICANT 继承shell中的环境变量
+
+	// If set, the WSL windows gets the environment from the shell it was opened from.
   "remote.WSL.useShellEnvironment": true,
 
   /*********************
