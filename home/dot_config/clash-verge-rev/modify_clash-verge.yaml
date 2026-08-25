@@ -1,5 +1,5 @@
 chezmoi:modify-template
-{{- $base := include "dot_config/clash-verge-rev/function.yml" | fromYaml }}
+{{- $base := include "dot_config/clash-verge-rev/clash-verge.yml" | fromYaml }}
 {{- $rawStdin := index .chezmoi "stdin" | default "" -}}
 {{- $override := $rawStdin | fromYaml | default dict -}}
 

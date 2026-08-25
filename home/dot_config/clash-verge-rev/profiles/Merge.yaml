@@ -1,1 +1,9 @@
+# todo make schema local
 # yaml-language-server: $schema=https://unpkg.com/meta-json-schema/schemas/clash-verge-merge-json-schema.json
+
+# reference:https://www.clashverge.dev/guide/extend.html
+# NOTE
+# v1.7.x 版本的 Merge配置 改名为 扩展配置 ，且prepend/append功能移动至订阅右键菜单中的可视化编辑器中实现（例如：prepend-rules移动至订阅右键菜单的 编辑规则 中的 prepend）。扩展配置仅用于配置项覆写/合并。
+# v1.7.x 版本的 Script配置 改名为 扩展脚本 。
+# v1.6.x 版本请参考 Script配置。
+# therefore, prepend-rules and append-rules are no longer valid. In such case, use custom script instead.
