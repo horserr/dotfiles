@@ -162,6 +162,26 @@
         "showReuseMessage": true,
         "clear": false
       }
+    },
+    {
+      "label": "generate project tree",
+      "type": "shell",
+      "command": "tree -a",
+      "windows": {
+        // for ascii character
+        // "command": "tree /f /a"
+        "command": "tree /f"
+      },
+      "detail": "generate project tree",
+      "icon": { "id": "key" },
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": true,
+        "panel": "shared",
+        "showReuseMessage": true,
+        "clear": false
+      }
     }
   ],
   "windows": {
