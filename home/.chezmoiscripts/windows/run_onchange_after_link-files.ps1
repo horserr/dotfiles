@@ -123,14 +123,6 @@ $mappings = @{
     desc   = "Windows Terminal Preview"
   }
 
-  # nushell
-  (
-    "$env:APPDATA\nushell"
-  ) = @{
-    target = "$dotConfigPath\nushell"
-    desc   = "nushell"
-  }
-
   # Microsoft Word Template
   "$env:APPDATA\Microsoft\Templates\normal.dotm" = @{
     target = "$env:OneDrive\Resource\Other\Office\Word\Normal.dotm"
@@ -141,6 +133,12 @@ $mappings = @{
   "$env:LOCALAPPDATA\SumatraPDF\SumatraPDF-settings.txt" = @{
     target = "$dotConfigPath\sumatrapdf\settings.txt"
     desc   = "SumatraPDF Settings"
+  }
+
+  # clash verge rev
+  "$env:AppData\io.github.clash-verge-rev.clash-verge-rev" = @{
+    target = "$dotConfigPath\clash-verge-rev"
+    desc   = "clash verge rev Settings"
   }
 
   # VSCode Settings

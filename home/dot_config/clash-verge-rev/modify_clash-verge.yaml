@@ -1,0 +1,24 @@
+chezmoi:modify-template
+{{- $base := include "dot_config/clash-verge-rev/function.yml" | fromYaml }}
+{{- $rawStdin := index .chezmoi "stdin" | default "" -}}
+{{- $override := $rawStdin | fromYaml | default dict -}}
+
+{{- if or (empty $rawStdin) (empty $override) -}}
+
+{{ $base | toYaml }}
+
+{{- else -}}
+
+  {{- $mergedRules := concat (index $base "rules" | default (list)) (hasKey $override "rules" | ternary (index $override "rules") (list)) | uniq -}}
+  {{- $mergedProxies := concat (index $base "proxies" | default (list)) (hasKey $override "proxies" | ternary (index $override "proxies") (list)) | uniq -}}
+  {{- $mergedProxyGroups := concat (index $base "proxy-groups" | default (list)) (hasKey $override "proxy-groups" | ternary (index $override "proxy-groups") (list)) | uniq -}}
+
+  {{- $final := merge $override $base }}
+
+  {{- $_ := set $final "rules" $mergedRules -}}
+  {{- $_ := set $final "proxies" $mergedProxies -}}
+  {{- $_ := set $final "proxy-groups" $mergedProxyGroups -}}
+
+{{ $final | toYaml }}
+
+{{- end -}}
