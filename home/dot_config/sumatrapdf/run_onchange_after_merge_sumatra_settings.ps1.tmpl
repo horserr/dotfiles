@@ -1,0 +1,33 @@
+{{- $sourceDir := joinPath .chezmoi.sourceDir (.chezmoi.sourceFile | dir) -}}
+{{- $targetDir := .chezmoi.targetFile | dir -}}
+
+{{- $sourceBaseSettingPath := joinPath $sourceDir "base.txt" -}}
+
+# SumatraPDF base setting Hash: {{ include $sourceBaseSettingPath | sha256sum }}
+
+{{ $targetBaseSettingPath := joinPath $targetDir "base.txt" }}
+{{ $targetMergedPath := joinPath $targetDir "settings.txt" }}
+
+Set-StrictMode -Version Latest
+$ErrorActionPreference = "Stop"
+
+Write-Host '{{ $targetBaseSettingPath }}'
+$baseSettingPath = '{{ $targetBaseSettingPath }}'
+$mergedSettingPath = '{{ $targetMergedPath }}'
+$identifier = "# You're not expected to change those manually"
+
+$contentBase = Get-Content -Path $baseSettingPath -Raw
+$contentToMerge = Get-Content -Path $mergedSettingPath -Raw
+
+# Find the identifier and capture it ALONG with everything after it
+$escapedId = [regex]::Escape($identifier)
+if ($contentToMerge -match "(?s)($escapedId.*)") {
+    $toMerge = $Matches[1] # This now contains the identifier + everything after it
+
+    # Merge content and overwrite the target file
+    $finalContent = $contentBase + "`r`n" + $toMerge
+    Set-Content -Path $mergedSettingPath -Value $finalContent -NoNewline
+    Write-Host "Merge successful! Updated: $mergedSettingPath" -ForegroundColor Green
+} else {
+    Write-Error "Identifier '$identifier' not found in $mergedSettingPath"
+}
