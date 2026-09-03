@@ -18,10 +18,10 @@ menu_icon: monochrome
 collapse_navbar: false
 sysproxy_tray_icon: false
 tun_tray_icon: false
-enable_tun_mode: true
+enable_tun_mode: false
 enable_auto_launch: false
 enable_silent_start: true
-enable_system_proxy: true
+enable_system_proxy: false
 enable_proxy_guard: true
 enable_bypass_check: true
 enable_dns_settings: true

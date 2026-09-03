@@ -1,15 +1,99 @@
 # TODO
 
-learn direnv, fzf
-try to use register to show menu
+chezmoi age add ssh key settings
 
-- docker and container tools
+remote explorer
+
+rebuild wsl and config ssh
+ssh -G to print out everything for the config
+`ssh -G work`
+
+use chezmoi to manage ssh public and private key
+
+try using vscode ssh forwarding without explicitly setting ssh agent forwarding
+try to use reverse tunnel to push git repo
+
+try linux gui x forwarding on windows
+
+ssh keygen
+ssh-keygen -R hostname
+
+ssh add
+
+那怎么通过 ssh 在远程电脑上推送代码到托管平台上，我知道可以通过 agent forward 来实现
+
+```ini
+Host my-remote-server
+    HostName 192.168.1.50
+    User ubuntu
+    # Forward remote port 2222 to GitHub's SSH port 22 via your laptop
+    RemoteForward 2222 github.com:22
+```
+
+```console
+# 1. SSH into your server
+ssh my-remote-server
+
+# 2. Go to your project folder
+cd /path/to/remote/repo
+
+# 3. Change the git remote URL to point to the forwarded port
+git remote set-url origin ssh://git@127.0.0.1:2222/username/repo.git
+
+# 4. Push your code safely
+git push origin main
+```
+
+windows start ssh agent service
+
+sudo systemctl status ssh or sudo systemctl status sshd
+
+```pwsh
+# 1. 将 ssh-agent 服务设置为自动启动
+Set-Service -Name ssh-agent -StartupType Automatic
+
+# 2. 立即启动该服务
+Start-Service ssh-agent
+```
+
+// note: sshd should allow AllowStreamLocalForwarding
+
+ssh settings and sftp, sshfs
+
+fix ssh key error and ssh file permission
+try nix and devbox
+
+了解 ssh server configuration
+
+use cloud init to create wsl profile
+
+remote explorer view commands
+github codespace
+ssh wsl tunnel commands and settings
+
+where is sumatrapdf?
+
+add bookmark extensions
+
+add setting sync and cloud change
+
+fzf, yazi
+
+vscode debug
+
+ports
+add clash verge configuration
+如何区分vscode 创建的 dev container 名称
+
+learn bash
+
+- how to organize bashrc
+  devcontainer to test chezmoi in docker
+
 - fzf menu completion
 - chat commands
 
 - find all reference view, rename symbol
-- github codespace
-- cloud change
 - custom ui with css and js
 - script cat to create scripts for open vscode dev or vscode clone from source graph web
 

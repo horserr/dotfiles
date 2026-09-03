@@ -2,7 +2,7 @@
   // msys2
   "winapps": {
     "scoop": {
-      "extras": [],
+      "extras": ["age"],
       "nerd-fonts": ["Maple-Mono", "Maple-Mono-NF-CN"],
       "main": [
         "7zip",
@@ -49,6 +49,7 @@
         "AntibodySoftware.WizTree",
         "ArminOsaj.AutoDarkMode",
         "AutoHotkey.AutoHotkey",
+        "Balena.Etcher",
         "calibre.calibre",
         "ClashVergeRev.ClashVergeRev",
         "Daum.PotPlayer",

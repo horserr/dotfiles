@@ -92,7 +92,7 @@
   "terminal.integrated.lineHeight": 1.2,
   "terminal.integrated.localEchoEnabled": "auto",
   "terminal.integrated.localEchoLatencyThreshold": 30,
-  "terminal.integrated.localEchoStyle": "underlined",
+  "terminal.integrated.localEchoStyle": "dim",
   // UPLIFTING 先显示打出来的字符，而不是先传输再显示，提升响应速度，但是避免复杂 TUI 应用
   "terminal.integrated.localEchoExcludePrograms": [
     "vim",

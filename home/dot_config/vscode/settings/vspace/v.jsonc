@@ -28,12 +28,68 @@
             "type": "command",
             "command": "workbench.view.explorer"
           },
+          // , refresh view
+          {
+            "key": ",",
+            "name": "refresh container tools view",
+            "icon": "refresh",
+            "type": "commands",
+            "commands": [
+              "vscode-containers.containers.refresh",
+              "vscode-containers.contexts.refresh",
+              "vscode-containers.images.refresh",
+              "vscode-containers.networks.refresh",
+              "vscode-containers.registries.refresh",
+              "vscode-containers.volumes.refresh"
+            ]
+          },
+          // v focus volume view
+          {
+            "key": "v",
+            "name": "focus volume view",
+            "icon": "remote-explorer-documentation",
+            "type": "command",
+            "command": "vscode-containers.views.volumes.focus"
+          },
+          // X docker context view
+          {
+            "key": "X",
+            "name": "focus docker context view",
+            "icon": "remote-explorer-documentation",
+            "type": "command",
+            "command": "vscode-containers.views.dockerContexts.focus"
+          },
+          // c container view
           {
             "key": "c",
-            "name": "Show container view",
-            "icon": "source-control",
+            "name": "focus container view",
+            "icon": "inspect",
             "type": "command",
-            "command": "workbench.view.extension.containersView"
+            "command": "vscode-containers.views.containers.focus"
+          },
+          // n focus network view
+          {
+            "key": "n",
+            "name": "focus network view",
+            "icon": "remote-explorer-documentation",
+            "type": "command",
+            "command": "vscode-containers.views.networks.focus"
+          },
+          // i focus image view
+          {
+            "key": "i",
+            "name": "focus image view",
+            "icon": "remote-explorer-documentation",
+            "type": "command",
+            "command": "vscode-containers.views.images.focus"
+          },
+          // r focus registry view
+          {
+            "key": "r",
+            "name": "focus registry view",
+            "icon": "remote-explorer-documentation",
+            "type": "command",
+            "command": "vscode-containers.views.registries.focus"
           },
           {
             "key": "p",
@@ -42,20 +98,6 @@
             "type": "command",
             "command": "workbench.actions.view.problems"
             // workbench.action.problems.focus
-          },
-          {
-            "key": "r",
-            "name": "Show remote explorer",
-            "icon": "remote-explorer",
-            "type": "command",
-            "command": "workbench.view.remote"
-          },
-          {
-            "key": "t",
-            "name": "Show test",
-            "icon": "beaker",
-            "type": "command",
-            "command": "workbench.view.extension.test"
           },
           {
             "key": "x",

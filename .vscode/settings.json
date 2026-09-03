@@ -88,7 +88,7 @@
     "refs/when-clause-sample.json": true
   },
   "json.validate.enable": true,
-  "json.schemaDownload.enable": false,
+  "json.schemaDownload.enable": true,
   "json.schemas": [
     // user settings
     {
@@ -135,6 +135,15 @@
       "url": "vscode://schemas/settings/machine"
     }
   ],
+  "yaml.schemas": {
+    "https://unpkg.com/meta-json-schema/schemas/meta-json-schema.json": [
+      "**/clash-verge-rev/config.yaml",
+      "**/clash-verge-rev/profiles/*.yaml"
+    ],
+    "https://unpkg.com/meta-json-schema/schemas/clash-verge-merge-json-schema.json": [
+      "**/clash-verge-rev/profiles/Merge.yaml"
+    ]
+  },
   "workbench.diffEditorAssociations": {
     "*.md": "vscode.markdown.preview.editor"
   },
@@ -332,6 +341,15 @@
           "type": "command",
           "command": "vscode.open",
           "args": "https://code.visualstudio.com/docs/editor/glob-patterns"
+        },
+        // p chezmoi prefix
+        {
+          "key": "p",
+          "name": "Open chezmoi prefix pattern reference",
+          "icon": "references",
+          "type": "command",
+          "command": "vscode.open",
+          "args": "https://www.chezmoi.io/reference/source-state-attributes/"
         }
       ]
     }

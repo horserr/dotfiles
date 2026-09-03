@@ -70,12 +70,22 @@
         "icon": "keyboard",
         "type": "bindings",
         "bindings": [
+          // l search browser bookmarks
           {
             "key": " ",
             "name": "search in browser bookmard",
             "icon": "book",
             "type": "command",
             "command": "browser-bookmark.search"
+          },
+          // . vscode dev
+          {
+            "key": ".",
+            "name": "open vscode dev",
+            "icon": "vscode-outline",
+            "type": "command",
+            "command": "vscode.open",
+            "args": "https://vscode.dev"
           },
           // l code search
           {

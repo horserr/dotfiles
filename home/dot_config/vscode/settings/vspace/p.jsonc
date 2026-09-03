@@ -67,9 +67,17 @@
           }
         ]
       },
-      // r replace
+      // r recent project
       {
         "key": "r",
+        "name": "Open recent folders/files",
+        "icon": "clock",
+        "type": "command",
+        "command": "workbench.action.openRecent"
+      },
+      // R replace
+      {
+        "key": "R",
         "name": "replace workspace",
         "icon": "editor-layout",
         "type": "command",
