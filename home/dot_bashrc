@@ -222,3 +222,7 @@ if command -v "ssh" &> /dev/null; then
     # ssh background running
     alias sshf="$sshCommand -f"
 fi
+
+if [ -d "$HOME/.local/bin" ]; then
+    export PATH="$PATH:$HOME/.local/bin"
+fi
