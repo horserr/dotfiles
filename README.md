@@ -9,8 +9,12 @@ This repo is adapted from: [twpayne's dotfiles](https://github.com/twpayne/dotfi
 There are two ways to initialize:
 
 1. ```sh
-    sh -c "$(curl -fsLS https://get.chezmoi.io)" -- -b $HOME/.local/bin
-   chezmoi init --source=~/.config/.dotfiles --apply horserr
+    mkdir -p ~/.local/bin
+    cd ~/.local/bin
+
+   sh -c "$(curl -fsLS https://get.chezmoi.io)" -- init --source=~/.config/.dotfiles --apply horserr
+
+   cd -
    ```
 
 2. ```sh
