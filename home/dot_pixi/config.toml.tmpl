@@ -1,5 +1,6 @@
 default-channels = ["pytorch", "nvidia", "conda-forge"]
 
+{{ if .needMirror }}
 [mirrors]
 # https://help.mirrorz.org/anaconda/
 "https://conda.anaconda.org/conda-forge" = [
@@ -23,6 +24,7 @@ default-channels = ["pytorch", "nvidia", "conda-forge"]
 ]
 "https://pypi.nvidia.com/" = ["https://pypi.nvidia.cn"]
 "https://download.pytorch.org" = ["https://mirrors.nju.edu.cn/pytorch"]
+{{ end }}
 
 [pypi-config]
 # Main index url

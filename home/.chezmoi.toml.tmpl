@@ -34,6 +34,9 @@
     {{- end -}}
 {{- end -}}
 
+{{- /* ipapi ISO (e.g. CN, HK, US, JP) */ -}}
+{{- $country := output "curl" "-s" "--max-time" "2" "https://ipapi.co/country/" | trim -}}
+
 sourceDir = "~/.config/.dotfiles"
 
 [data]
@@ -45,6 +48,7 @@ sourceDir = "~/.config/.dotfiles"
     isDocker = {{ $isDocker }}
     isEphemeral = {{ or $isDocker $isCodeSpaces $isDevContainer }}
     isRemote = {{ or $isSSH $isMOSH $isCodeSpaces $isDevContainer }}
+    needMirror = {{ eq $country "CN" }}
 
 [interpreters.ps1]
     command = """

@@ -6,8 +6,12 @@
     }
   },
   "experimental": false,
+  {{ if .needMirror }}
   "registry-mirrors": [
     "https://35rtko0a.mirror.aliyuncs.com",
     "https://docker.m.daocloud.io"
   ]
+  {{ else }}
+  "registry-mirrors": []
+  {{ end }}
 }
