@@ -1,4 +1,4 @@
-Host web-*
-    User www-data
-    IdentityFile ~/.ssh/web_server_key
-    Port 22
+Host work
+    HostName user1-system-product-name.tail46c3d6.ts.net
+    User lyz
+    IdentityFile ~/.ssh/work

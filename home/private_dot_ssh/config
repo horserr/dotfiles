@@ -9,6 +9,8 @@
 
 ########################
 
+Include ~/.ssh/config.d/*_config
+
 Host container
   HostName localhost
   User root
@@ -22,16 +24,25 @@ Host termux
   ForwardAgent yes
 
 Host *
+  IdentityFile ~/.ssh/id_ed25519
+
   StrictHostKeyChecking ask
-  HashKnownHosts yes      # 隐藏我去过哪儿，更安全
-  AddKeysToAgent yes      # 只要解开一次，这阵子就别再问我密码
+
+  # don't show host in plain text
+  HashKnownHosts yes
+
+  # automaticlly add keys, and remove after 1 day
+  AddKeysToAgent 1d
+
+  # try (optionally from ssh agent) keys, specified in this configuration file, without the whole set of keys (stored in ssh agent).
+  IdentitiesOnly yes
 
   ServerAliveInterval 60
   ServerAliveCountMax 3
 
   # ControlMaster auto    # 自动启用连接复用
-  # ControlPath ~/.ssh/master_%h_%p_%r  # 复用连接的 socket 文件路径
-  # ControlPersist 1m
+  # ControlPath ~/.ssh/sockets/master_%h_%p_%r.sock  # 复用连接的 socket 文件路径
+  # ControlPersist 10m
 
 # 基本连接：Host、HostName、User、Port
 # 密钥与代理：IdentityFile、IdentitiesOnly、AddKeysToAgent、IdentityAgent、ForwardAgent
