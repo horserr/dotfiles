@@ -76,3 +76,9 @@ sudo find . -type f -not -path '*/.git/*' -exec dos2unix {} \;
 
 - [link](https://o2bmm.gitbook.io/cat-catch/docs/m3u8dl)
 - protocol name: m3u8dl
+
+## test git commit signing
+
+```sh
+git log --show-signature -1
+```

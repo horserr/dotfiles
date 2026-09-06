@@ -1,4 +1,4 @@
-# adapted from: https://github.com/mathiasbynens/dotfiles/blob/main/.gitconfig
+# ref: https://git-scm.com/docs/git-config#_configuration_file
 
 #******************
 #* CORE AND BASIC *
@@ -12,7 +12,9 @@
 	# [default] space-before-tab: looks for spaces before tabs at the beginning of a line
 
 	{{ if .isWindows }}
-		sshCommand = "C:/Windows/System32/OpenSSH/ssh.exe"
+	sshCommand = C:/Windows/System32/OpenSSH/ssh.exe
+	# don't care abbout file mode on Windows
+	filemode = false
 	{{ end }}
 	whitespace = space-before-tab,-indent-with-non-tab,trailing-space
 	# Speed up commands involving untracked files such as `git status`.
@@ -20,8 +22,8 @@
 	untrackedCache = true
 	ignoreCase = false
 [user]
-	name = horserr
-	email = 112157036+horserr@users.noreply.github.com
+	# fool-proof, guarantee user email is explicitly set
+	useConfigOnly = true
   signingkey = ~/.ssh/id_ed25519_signing.pub
 [init]
 	defaultBranch = main
@@ -120,17 +122,21 @@
 	recurse = true
 	# auto detect fetch jobs
 	fetchJobs = 0
+
 #******************
 #* URL SHORTHANDS *
 #******************
-[url "git@github.com:"]
+[url "https://github.com/horserr/"]
+	insteadOf = "::"
+[url "github.com:horserr/"]
+	pushInsteadOf = "::"
+
+[url "https://github.com/"]
 	insteadOf = "gh:"
-	pushInsteadOf = "github:"
-	pushInsteadOf = "git://github.com/"
-[url "git://github.com/"]
-	insteadOf = "github:"
+[url "github.com:"]
+	pushInsteadOf = "gh:"
+
 [url "git@gist.github.com:"]
-	insteadOf = "gst:"
 	pushInsteadOf = "gist:"
 	pushInsteadOf = "git://gist.github.com/"
 [url "git://gist.github.com/"]
@@ -154,24 +160,28 @@
 	changed = green
 	untracked = cyan
 
+
+# ref: https://git-scm.com/docs/git-config#_conditional_includes
+# [includeIf "hasconfig:remote.*.url:::"]
+[include]
+	path = personal.conf
+
+# [includeIf "gitdir/i:work/"]
+[includeIf "gitdir:~/WORK/"]
+	path = work.conf
+[includeIf "hasconfig:remote.*.url:::WORK"]
+	path = work.conf
+
 [include]
 	path = alias
 
-# GitHub 用个人邮箱
-[includeIf "hasconfig:remote.*.url:https://github.com/**"]
-    path = ~/.gitconfig-personal
-
-# 公司 GitLab 用公司邮箱
-[includeIf "hasconfig:remote.*.url:https://gitlab.company.com/**"]
-    path = ~/.gitconfig-work
-
 {{ if lookPath "delta" -}}
 [core]
-    pager = delta
-		autocrlf = input
+	pager = delta
+	autocrlf = input
 [interactive]
-    diffFilter = delta --color-only
+	diffFilter = delta --color-only
 [delta]
-    navigate = true  # use n and N to move between diff sections
-    dark = true      # or light = true, or omit for auto-detection
+	navigate = true  # use n and N to move between diff sections
+	# dark = true      # or light = true, or omit for auto-detection
 {{ end -}}

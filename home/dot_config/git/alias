@@ -2,12 +2,14 @@
 [alias]
 	repo = clone --depth 1 --filter=blob:none --sparse
 	mirror = clone --mirror
-	shallow-repo = clone --depth
-	partial-repo = clone --filter=blob:none --no-checkout
+	shallow = clone --depth
+	partial = clone --filter=blob:none --no-checkout
 	set-partial = "!f() { git config remote.$1.partialclonefilter blob:none; }; f"
 	w = worktree
 	# used for worktree sparse checkout
 	wemp = worktree add --no-checkout
+	# set worktree config
+	wconf = config extensions.worktreeConfig true
 	# sparce checkout is similar to **view**
 	v = sparse-checkout
 	vdown = sparse-checkout disable
@@ -261,6 +263,8 @@
 	unshallow = fetch --unshallow
 
 	conf = config --global --edit
+	# list all config
+	confls = config --list --show-origin --show-scope
 	confl = config --local --edit
 	confsub = "!f() { \
 			MODFILE=\"$(git rev-parse --show-toplevel)/.gitmodules\"; \
