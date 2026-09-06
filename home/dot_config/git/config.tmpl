@@ -39,6 +39,14 @@
 	lineNumber = true
 [gpg]
 	format = ssh
+
+[gpg "ssh"]
+	allowedSignersFile = ~/.ssh/allowed_signers
+{{ if .isWindows }}
+	# specify the path for git to signing commits and tags
+	program = C:/Windows/System32/OpenSSH/ssh-keygen.exe
+{{ end }}
+
 [branch]
 	# Show most recently changed branches first.
 	sort = -committerdate
