@@ -11,7 +11,6 @@
         "name": "+Container Tools",
         "icon": "remote-explorer-review-issues",
         "type": "bindings",
-        "command": "vscode-containers.views.containers.focus",
         "bindings": [
           // space compose
           {
@@ -19,11 +18,12 @@
             "name": "+Compose",
             "icon": "browser",
             "type": "bindings",
+            "command": "vscode-containers.views.containers.focus",
             "bindings": [
               // r compose run
               {
                 "key": "r",
-                "name": "+compose run",
+                "name": "+Run",
                 "icon": "tasklist",
                 "type": "bindings",
                 "bindings": [
@@ -55,7 +55,7 @@
               },
               // k compose up
               {
-                "key": " ",
+                "key": "k",
                 "name": "compose up with selection",
                 "icon": "run",
                 "type": "command",
@@ -86,6 +86,7 @@
             "name": "+Container",
             "icon": "share-window",
             "type": "bindings",
+            "command": "vscode-containers.views.containers.focus",
             "bindings": [
               // i inspect container
               {
@@ -175,6 +176,7 @@
             "name": "+Network",
             "icon": "magnet",
             "type": "bindings",
+            "command": "vscode-containers.views.networks.focus",
             "bindings": [
               // i inspect network
               {
@@ -216,6 +218,7 @@
             "name": "+Volume/View",
             "icon": "chrome-restore",
             "type": "bindings",
+            "command": "vscode-containers.views.volumes.focus",
             "bindings": [
               // i inspect volume
               {
@@ -249,6 +252,7 @@
             "name": "+Image",
             "icon": "developer-tools",
             "type": "bindings",
+            "command": "vscode-containers.views.images.focus",
             "bindings": [
               // remote-containers.inspectDockerResource
               // r run
@@ -349,6 +353,7 @@
             "name": "+Registry",
             "icon": "chrome-restore",
             "type": "bindings",
+            "command": "vscode-containers.views.registries.focus",
             "bindings": [
               // i inspect registry
               {
@@ -456,6 +461,7 @@
             "name": "+Context",
             "icon": "share-window",
             "type": "bindings",
+            "command": "vscode-containers.views.dockerContexts.focus",
             "bindings": [
               // i inspect docker context
               {
