@@ -1,4 +1,4 @@
-// reference: https://www.clashverge.dev/guide/script.html
+// ref: https://www.clashverge.dev/guide/script.html
 
 // two types of main entries
 // function main(config) {
@@ -6,7 +6,7 @@
 
 function main(config) {
   const prependRules = [
-    "PROCESS-NAME,ssh.exe,DIRECT",
+    // "PROCESS-NAME,ssh.exe,DIRECT",
     "PROCESS-NAME,Setup.exe,DIRECT",
     "PROCESS-NAME,QQMusic.exe,DIRECT",
     "DOMAIN-SUFFIX,hf.co,DIRECT",

@@ -226,3 +226,8 @@ fi
 if [ -d "$HOME/.pixi/bin" ]; then
     export PATH="$HOME/.pixi/bin:$PATH"
 fi
+
+alias setproxy="export http_proxy=http://127.0.0.1:7897 https_proxy=http://127.0.0.1:7897 HTTP_PROXY=http://127.0.0.1:7897 HTTPS_PROXY=http://127.0.0.1:7897"
+alias unsetproxy="unset http_proxy https_proxy HTTP_PROXY HTTPS_PROXY"
+
+alias unsetproxy="unset http_proxy https_proxy"
