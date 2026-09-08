@@ -348,6 +348,22 @@
 	# Find tags containing commit
 	ft = "!f() { git describe --always --contains $1; }; f"
 
+	proxy-on = "!f() { \
+		git config --global http.proxy socks5://127.0.0.1:7897 && \
+		git config --global https.proxy socks5://127.0.0.1:7897 && \
+		echo 'Git global proxy enabled.'; \
+	}; f"
+	proxy-off = "!f() { \
+		git config --global --unset http.proxy && \
+		git config --global --unset https.proxy && \
+		echo 'Git global proxy disabled.'; \
+	}; f"
+	proxy-status = "!f() { \
+		echo \"http.proxy  =\"; git config --global http.proxy; \
+		echo \"https.proxy =\"; git config --global https.proxy; \
+	}; f"
+
+
   # git log origin/main..HEAD  # show what is about to push
   # git log origin/main..      # for simplicity
 	# show remote <name>

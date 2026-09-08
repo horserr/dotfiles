@@ -211,12 +211,28 @@ if command -v "ssh" &> /dev/null; then
 
     alias sshkeyed="$sshKeyGenCommand -t ed25519 -C"
 
-    # ssh with pseudo terminal
+    # ssh no command
+    alias sshn="$sshCommand -N"
+    # ssh require tty, mainly for running sudo commands and visual program, such as vim, top, tmux
     alias ssht="$sshCommand -t"
     # ssh no pseudo terminal
     alias sshnt="$sshCommand -T"
     # ssh background running
     alias sshf="$sshCommand -f"
+    # ssh remove key
+    alias sshkeyd="$sshKeyGenCommand -R"
+
+    # ssh folder state reset
+    # link: https://linuxize.com/post/ssh-folder-files-and-permissions/#reset-ssh-permissions
+    ssh-mode-reset() {
+        chmod 700 ~/.ssh
+        find ~/.ssh -maxdepth 1 -type f -name 'id_*' ! -name '*.pub' -exec chmod 600 {} +
+        find ~/.ssh -maxdepth 1 -type f -name '*.pub' -exec chmod 644 {} +
+        for file in authorized_keys config; do
+            [ -e "$HOME/.ssh/$file" ] && chmod 600 "$HOME/.ssh/$file"
+        done
+        [ -e ~/.ssh/known_hosts ] && chmod 644 ~/.ssh/known_hosts
+    }
 fi
 
 if [ -d "$HOME/.local/bin" ]; then
@@ -230,4 +246,8 @@ fi
 alias setproxy="export http_proxy=http://127.0.0.1:7897 https_proxy=http://127.0.0.1:7897 HTTP_PROXY=http://127.0.0.1:7897 HTTPS_PROXY=http://127.0.0.1:7897"
 alias unsetproxy="unset http_proxy https_proxy HTTP_PROXY HTTPS_PROXY"
 
-alias unsetproxy="unset http_proxy https_proxy"
+if command -v "curl" &> /dev/null; then
+    alias connection="curl -I google.com"
+    alias cipinfo="curl ipinfo.io"
+    alias cifconfig="curl -4 ifconfig.me"
+fi

@@ -1,8 +1,7 @@
 Host work
-    HostName user1-system-product-name.tail46c3d6.ts.net
+    Tag WORK
     User lyz
-    IdentityFile ~/.ssh/work
     ForwardAgent yes
-    # map local port to remote. Thus, remote can use localhost:port to send package to this local machine. In this process, local machine acts as the proxy for the server.
-    # remotePort local:localPort
-    RemoteForward 7897 127.0.0.1:7897
+
+    HostName user1-system-product-name
+    CanonicalDomains tail46c3d6.ts.net

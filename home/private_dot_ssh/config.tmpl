@@ -1,57 +1,129 @@
 # ssh config: https://man7.org/linux/man-pages/man5/ssh_config.5.html
 
+# USE `ssh -G <host>` to display parsed configuration
+
 # file permission: only read and write by the user
 # chmod 600 ~/.ssh/config
+# [The ~/.ssh Folder: Files, Permissions, and Layout](https://linuxize.com/post/ssh-folder-files-and-permissions/)
+#
+# path	Purpose	Permissions
+# ~/.ssh/	The directory itself	700
+# ~/.ssh/id_ed25519, id_rsa	Private keys	600
+# ~/.ssh/id_ed25519.pub, id_rsa.pub	Public keys	644
+# ~/.ssh/authorized_keys	Public keys allowed to log in to this account	600
+# ~/.ssh/known_hosts	Host keys of servers you have connected to	644
+# ~/.ssh/config	Client config and per-host shortcuts	600
 
 # the cascading rule is: First Match Wins
+# canonicalize hostname cause a second run
+# Canonicalization 会触发一次“重新解析配置”的 pass，但不是递归解析。
+# 更准确地说：OpenSSH 通常是“第一轮解析 → 得到是否需要 canonicalization 的配置 → canonicalize hostname → 如果 hostname 发生了 canonicalization，则用新的 hostname 再解析一次配置”。
+# 第一轮已经得到的配置不会全部丢弃。 第二轮是在已有配置基础上继续处理，而且仍然遵守“每个参数第一次获得的值有效”的规则。
+# 因此，第一轮已经确定的参数，第二轮通常不能被新的 Host 配置覆盖。
 
 # this config file is also read by sftp, rsync, scp
 
+# tips: https://fmartingr.com/blog/2022/08/12/using-ssh-config-match-to-connect-to-a-host-using-multiple-ip-or-hostnames/
+
 ########################
 
-Include ~/.ssh/config.d/*_config
+Match all
+    StrictHostKeyChecking ask
+
+    # don't show host in plain text
+    HashKnownHosts yes
+
+    # automaticlly add keys, and remove after 1 day
+    # AddKeysToAgent 1d
+    AddKeysToAgent yes
+
+    # try (optionally from ssh agent) keys, specified in this configuration file, without the whole set of keys (stored in ssh agent).
+    IdentitiesOnly yes
+
+    ServerAliveInterval 60
+    ServerAliveCountMax 3
+
+    # note: HostName has priority over canonical hostname, so this setting should take effect only when HostName is missing
+    CanonicalizeHostname yes
+    CanonicalizeFallbackLocal yes
+
+    # use proxy to connect the remote
+{{ if .isWindows }}
+    # -S means SOCKS5
+    # ProxyCommand "C:/Program Files/Git/mingw64/bin/connect.exe" -S 127.0.0.1:7897 %h %p
+    # -H means HTTP
+    # ProxyCommand "C:/Program Files/Git/mingw64/bin/connect.exe" -H 127.0.0.1:7897 %h %p
+{{ else }}
+    # ProxyCommand nc -X 5 -x 127.0.0.1:7897 %h %p
+    # ControlMaster auto
+    # ControlPath ~/.ssh/sockets/%r@%h-%p
+    # ControlPersist 10m
+{{ end }}
+
+    ###########################
+    Include config.d/*_config
+    ###########################
 
 Host container
-  HostName localhost
-  User root
-  Port 2222
+    HostName localhost
+    User root
+    Port 2222
 
 # need to turn on tailscale
 Host termux
-  HostName samsung
-  User u0_a737
-  Port 8022
-  ForwardAgent yes
+    HostName samsung
+    User u0_a737
+    Port 8022
+    ForwardAgent yes
 
-Host *
-  IdentityFile ~/.ssh/id_ed25519
+{{ if .isWindows }}
+# match tailscale and test whether clash verge rev is running
+Match host *.*.ts.net exec "powershell -NoProfile -Command 'if (Test-NetConnection 127.0.0.1 -Port 7897 -InformationLevel Quiet) { exit 0 } else { exit 1 }'"
+    # open socks ports on remote
+    # remotePort (ip within local machine):localPort
+    # map local port to remote. Thus, remote can use localhost:port to send package to this local machine. In this process, local machine acts as the proxy for the server.
+    # note: by default, only loopback interface can access this port. To facilitate other interface, and thus allowing remote LAN to have access, change `GatewayPorts` in sshd configuration file
+    RemoteForward 7897 127.0.0.1:7897
 
-  StrictHostKeyChecking ask
+    # open ports on local
+    # locaPort (ip within remote machine):remotePort
+    # LocalForward
 
-  # don't show host in plain text
-  HashKnownHosts yes
+    # open ports on local
+    # localPort
+    # DynamicForward
 
-  # automaticlly add keys, and remove after 1 day
-  AddKeysToAgent 1d
+    # open ports on remote
+    # remotePort
+    # RemoteForward
+{{ end }}
 
-  # try (optionally from ssh agent) keys, specified in this configuration file, without the whole set of keys (stored in ssh agent).
-  IdentitiesOnly yes
+Match tagged WORK
+    IdentityFile ~/.ssh/work
+    Compression yes
+    ForwardX11 yes
+    ForwardX11Trusted yes
 
-  ServerAliveInterval 60
-  ServerAliveCountMax 3
+Match tagged PLATFORM
+    User git
+    PreferredAuthentications publickey
 
-  # ControlMaster auto    # 自动启用连接复用
-  # ControlPath ~/.ssh/sockets/master_%h_%p_%r.sock  # 复用连接的 socket 文件路径
-  # ControlPersist 10m
+    RequestTTY no
+    # RemoteCommand
+{{ if .isWindows }}
+    # ProxyCommand "C:/Program Files/Git/mingw64/bin/connect.exe" -S 127.0.0.1:7897 %h %p
+{{ else }}
+    # ProxyCommand nc -X 5 -x 127.0.0.1:7897 %h %p
+{{ end }}
 
-# 基本连接：Host、HostName、User、Port
-# 密钥与代理：IdentityFile、IdentitiesOnly、AddKeysToAgent、IdentityAgent、ForwardAgent
-# 跳板/代理：ProxyJump (JumpHost)、ProxyCommand
-# 保活：ServerAliveInterval、ServerAliveCountMax、TCPKeepAlive
-# 连接复用：ControlMaster、ControlPath、ControlPersist
-# 安全与日志：StrictHostKeyChecking、UserKnownHostsFile、HashKnownHosts、LogLevel
-# 算法与压缩：Ciphers、KexAlgorithms、HostKeyAlgorithms、Compression
-# 转发：LocalForward、RemoteForward、DynamicForward (SOCKS)
-# TTY/命令：RequestTTY、RemoteCommand、PermitLocalCommand、LocalCommand
-# 选择与拆分：Match、Include、CanonicalizeHostname、CanonicalDomains
-# 认证方式：PreferredAuthentications、GSSAPIAuthentication
+Match final
+    IdentityFile ~/.ssh/id_ed25519
+    ForwardAgent no
+
+    # CanonicalDomains tailab16c8.ts.net
+    CanonicalizeMaxDots 1
+    # CanonicalizePermittedCNAMEs *
+
+    AddressFamily any
+    RequestTTY yes
+    # RemoteCommand bash

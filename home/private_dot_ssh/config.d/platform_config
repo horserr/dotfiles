@@ -1,15 +1,14 @@
 Host github.com
+    Tag PLATFORM
     HostName github.com
-    User git
     IdentityFile ~/.ssh/id_ed25519_github
-    PreferredAuthentications publickey
 
 Host gitlab.com
+    Tag PLATFORM
     HostName gitlab.com
-    User git
     IdentityFile ~/.ssh/gitlab_rsa
 
 Host gitee.com
+    Tag PLATFORM
     HostName gitee.com
-    User git
     IdentityFile ~/.ssh/gitee_rsa
