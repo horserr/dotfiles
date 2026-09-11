@@ -1,0 +1,46 @@
+{
+  // Set the accent color used across the interface and icons.
+  "viraTheme.accent": "Teal",
+
+  // Adjust saturation of built-in accent colors across the interface and icons.
+  //  - soft: Softer, less saturated built-in accent colors.
+  //  - normal: Balanced built-in accent colors.
+  //  - vivid: More saturated built-in accent colors (default).
+  "viraTheme.accentIntensity": "vivid",
+
+  // Add more contrast to tabs by using a different background for the tabs bar
+  "viraTheme.contrastedTabs": false,
+
+  // The custom accent **will override** the `viraTheme.accent` color. Run clear accent command or manually remove the value.
+  "viraTheme.customAccent": "",
+
+  // Disable italic font style for selected syntax scopes.
+  "viraTheme.disableItalics": false,
+
+  // Apply accent color to open/expanded explorer folder icons. When off, open folders keep named glyphs without accent tint.
+  "viraTheme.folderAccentMode": true,
+
+  // Hide arrow icons in the file explorer.
+  "viraTheme.hidesExplorerArrows": true,
+
+  // Hide shadows across the interface for a completely flat look.
+  "viraTheme.hidesShadows": false,
+
+  // Show borders in some area of the editor
+  "viraTheme.showBorders": false,
+
+  // Render a solid background highlight for the active line instead of a border
+  "viraTheme.solidLineHighlight": false,
+
+  // Synchronize the product icon theme (Vira Solid / Vira Outline) with the outlined folder icons setting.
+  "viraTheme.syncProductIcons": true,
+
+  // Synchronize file icons themes with UI themes when switching themes.
+  "viraTheme.syncThemesAndIcons": true,
+
+  // Use outlined folder icons.
+  "viraTheme.useOutlinedIcons": true,
+
+  // Put the current tab indicator at the top instead of the bottom.
+  "viraTheme.useTopTabIndicator": true
+}
