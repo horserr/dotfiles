@@ -141,6 +141,12 @@ $mappings = @{
     desc   = "clash verge rev Settings"
   }
 
+  # auto dark mode
+  "$env:AppData\AutoDarkMode" = @{
+    target = "$dotConfigPath\auto-dark-mode"
+    desc   = "auto dark mode Settings"
+  }
+
   # VSCode Settings
   "$env:APPDATA\Code\User\settings.json" = @{
     target = "$dotConfigPath\vscode\settings.json"
