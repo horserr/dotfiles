@@ -1,0 +1,633 @@
+{
+  "[python]": {
+    "editor.codeActionsOnSave": {
+      "source.fixAll.ruff": "explicit",
+      "source.organizeImports.ruff": "explicit"
+    },
+    "editor.defaultFormatter": "charliermarsh.ruff",
+    "editor.foldingStrategy": "indentation",
+    "editor.formatOnSave": true,
+    "editor.indentSize": "tabSize",
+    "editor.insertSpaces": false, // use tab rather than space
+    "editor.tabSize": 4,
+    "editor.wordWrap": "bounded"
+  },
+
+  // Controls when to display information of selected interpreter in the status bar.
+  //  - never: Never display information.
+  //  - onPythonRelated: Only display information if Python-related files are opened.
+  //  - always: Always display information.
+  "python.interpreter.infoVisibility": "onPythonRelated",
+
+  // set ty as default language server
+  "python.languageServer": "None",
+
+  // Toggle Smart Send for the Python REPL. Smart Send enables sending the smallest runnable block of code to the REPL on Shift+Enter and moves the cursor accordingly.
+  "python.REPL.enableREPLSmartSend": true,
+
+  // Toggle to provide variables for the REPL variable view for the native REPL.
+  "python.REPL.provideVariables": true,
+
+  // Toggle to send code to Python REPL instead of the terminal on execution. Turning this on will change the behavior for both Smart Send and Run Selection/Line in the Context Menu.
+  "python.REPL.sendToNativeREPL": true,
+
+  // Activate Python Environment in the current Terminal on load of the Extension.
+  "python.terminal.activateEnvInCurrentTerminal": true,
+
+  // Activate Python Environment in all Terminals created.
+  "python.terminal.activateEnvironment": true,
+
+  // When executing a file in the terminal, whether to use execute in the file's directory, instead of the current open folder.
+  "python.terminal.executeInFileDir": false,
+
+  // When launching a python terminal, whether to focus the cursor on the terminal.
+  "python.terminal.focusAfterLaunch": true,
+
+  // Python launch arguments to use when executing a file in the terminal.
+  // ref: https://docs.python.org/3/using/cmdline.html
+  "python.terminal.launchArgs": [],
+
+  // Enable [shell integration](https://code.visualstudio.com/docs/terminal/shell-integration) for the terminals running python. Shell integration enhances the terminal experience by enabling command decorations, run recent command, improving accessibility among other things. Note: PyREPL (available in Python 3.13+) is automatically disabled when shell integration is enabled to avoid cursor indentation issues.
+  "python.terminal.shellIntegration.enabled": true,
+
+	// Enable auto run test discovery when saving a test file.
+	"python.testing.autoTestDiscoverOnSaveEnabled": true,
+
+	// Glob pattern used to determine which files are used by autoTestDiscoverOnSaveEnabled.
+	"python.testing.autoTestDiscoverOnSavePattern": "**/*.py",
+
+	// Optional working directory for tests.
+	"python.testing.cwd": null,
+
+	// Port number used for debugging of tests.
+	"python.testing.debugPort": 3000,
+
+	// Prompt to configure a test framework if potential tests directories are discovered.
+	"python.testing.promptToConfigure": true,
+
+	// Arguments passed in. Each argument is a separate item in the array.
+	"python.testing.pytestArgs": [],
+
+	// Enable testing using pytest.
+	"python.testing.pytestEnabled": true,
+
+	// Arguments passed in. Each argument is a separate item in the array.
+	"python.testing.unittestArgs": [
+		"-v",
+		"-s",
+		".",
+		"-p",
+		"*test*.py"
+	],
+
+	// Enable testing using unittest.
+	"python.testing.unittestEnabled": true,
+
+	// Enables the Python Environments extension. Requires window reload on change.
+  // don't use python environment extension
+	"python.useEnvironmentsExtension": false,
+
+	// Folders in your home directory to look into for virtual environments (supports pyenv, direnv and virtualenvwrapper by default).
+	"python.venvFolders": [],
+
+	// Path to folder with a list of Virtual Environments (e.g. ~/.pyenv, ~/Envs, ~/.virtualenvs).
+	"python.venvPath": "",
+
+  /******
+   * TY *
+   ******/
+  // Whether to include auto-import code completions in ty.
+  "ty.completions.autoImport": true,
+
+  // Add parentheses to function completions.
+  "ty.completions.completeFunctionParentheses": true,
+
+  // Inline JSON configuration for ty settings. Overrides settings in a configuration file. For example
+  //
+  // ```json
+  // {
+  //   "rules": {
+  //     "unresolved-reference": "ignore"
+  //   }
+  // }
+  // ```
+  "ty.configuration": null,
+
+  // Analysis scope for showing diagnostics.
+  //  - openFilesOnly: Analyzes and reports errors on only open files.
+  //  - workspace: Analyzes and reports errors on all files in the workspace.
+  //  - off: Turn all diagnostics off. Use ty as a language server only.
+  "ty.diagnosticMode": "openFilesOnly",
+
+  // Whether to disable all language services for ty like completions, hover, goto definition, etc.
+  "ty.disableLanguageServices": false,
+
+  // Control how ty uses uv.
+  //  - off: Do not use uv.
+  //  - scripts: Use uv to create environments for standalone scripts.
+  //  - on: Use uv to find projects and create environments for standalone scripts.
+  "ty.experimental.useUv": "on",
+
+  // Strategy for loading the `ty` executable.
+  //  - fromEnvironment: Look for `ty` using the configured interpreter or active Python environment. If neither is set, look for `ty` in the Python environment configured by `environment.python` or a local `.venv`. Fall back to `PATH`, then the bundled version.
+  //  - useBundled: Always use the bundled version of `ty`.
+  "ty.importStrategy": "useBundled",
+
+  // Whether to enable inlay hints for call argument names.
+  "ty.inlayHints.callArgumentNames": true,
+
+  // Whether to enable inlay hints for variable types.
+  "ty.inlayHints.variableTypes": true,
+
+  // Whether to show syntax error diagnostics.
+  "ty.showSyntaxErrors": true,
+
+  // Ruff
+
+  // Whether to display Quick Fix actions to disable rules via `noqa` suppression comments.
+  "ruff.codeAction.disableRuleComment": {
+    "enable": true
+  },
+
+  // Whether to display Quick Fix actions to autofix violations.
+  "ruff.codeAction.fixViolation": {
+    "enable": true
+  },
+
+  // Configuration overrides for Ruff. See [the documentation](https://docs.astral.sh/ruff/editors/settings/#configuration) for more details.
+  //
+  // **This setting is used only by the native server.**
+  "ruff.configuration": null,
+
+  // The preferred method of resolving configuration in the editor with local configuration from `.toml` files.
+  //
+  // **This setting is used only by the native server.**
+  //  - editorFirst: The default strategy - configuration set in the editor takes priority over configuration set in `.toml` files.
+  //  - filesystemFirst: An alternative strategy - configuration set in `.toml` files takes priority over configuration set in the editor.
+  //  - editorOnly: An alternative strategy - configuration set in `.toml` files is ignored entirely.
+  "ruff.configurationPreference": "editorFirst",
+
+  // Whether to enable the Ruff extension.
+  "ruff.enable": true,
+
+  // Set paths for the linter and formatter to ignore. See [the documentation](https://docs.astral.sh/ruff/settings/#lint_exclude) for more details.
+  //
+  // **This setting is used only by the native server.**
+  "ruff.exclude": null,
+
+  // Whether to register Ruff as capable of handling `source.fixAll` actions.
+  "ruff.fixAll": true,
+
+  // The backend to use for formatting.
+  //  - internal: Use Ruff's built-in formatter.
+  //  - uv: Use uv for formatting (requires uv >= 0.8.13)
+  "ruff.format.backend": "internal",
+
+  // Strategy for loading the `ruff` executable. `fromEnvironment` picks up Ruff from the environment, falling back to the bundled version if needed. `useBundled` uses the version bundled with the extension.
+  //  - fromEnvironment: Use `ruff` from environment, falling back to the bundled version if `ruff` is not found.
+  //  - useBundled: Always use the bundled version of `ruff`.
+  "ruff.importStrategy": "useBundled",
+
+  // Whether to enable linting. Set to `false` to use Ruff exclusively as a formatter.
+  "ruff.lint.enable": true,
+
+  // Enable additional rule codes on top of existing configuration, instead of overriding it. Use `ALL` to enable all rules.
+  //
+  // **This setting is used only by the native server.**
+  "ruff.lint.extendSelect": null,
+
+  // Set rule codes to disable. See [the documentation](https://docs.astral.sh/ruff/settings/#lint_ignore) for more details.
+  //
+  // **This setting is used only by the native server.**
+  "ruff.lint.ignore": null,
+
+  // Whether to use the native language server, [`ruff-lsp`](https://github.com/astral-sh/ruff-lsp) or automatically decide between the two based on the Ruff version and extension settings.
+  //  - on: Use the native language server. A warning will be displayed if deprecated settings are detected.
+  //  - off: Use [`ruff-lsp`](https://github.com/astral-sh/ruff-lsp). A warning will be displayed if settings specific to the native server are detected.
+  //  - auto: Automatically select between the native language server and [`ruff-lsp`](https://github.com/astral-sh/ruff-lsp) based on the following conditions:
+  // 1. If the Ruff version is >= `0.5.3`, use the native language server unless any deprecated settings are detected. In that case, show a warning and use [`ruff-lsp`](https://github.com/astral-sh/ruff-lsp) instead.
+  // 2. If the Ruff version is < `0.5.3`, use [`ruff-lsp`](https://github.com/astral-sh/ruff-lsp). A warning will be displayed if settings specific to the native server are detected.
+  //  - true: Same as `on`.
+  //  - false: Same as `off`.
+  "ruff.nativeServer": "auto",
+
+  // Whether to register Ruff as capable of handling `source.organizeImports` actions.
+  "ruff.organizeImports": true,
+
+  // Whether to show syntax error diagnostics.
+  "ruff.showSyntaxErrors": true,
+
+  // Pylance
+  // **Experimental.** When enabled, Pylance will automatically add the source root of every project declared via `python-envs.pythonProjects` to `extraPaths`, so cross-project imports between sub-projects of a monorepo resolve without configuring `extraPaths` manually. The source root is detected per project: a `src` directory if present, otherwise the project's parent directory when the project folder is itself a package (contains `__init__.py`), otherwise the project folder. Any `extraPaths` you configure are preserved.
+  "python.analysis.addExtraPathsForPythonProjects": true,
+
+  // Enable/disable AI-assisted code actions. Requires the Copilot Chat extension to be enabled.
+  "python.analysis.aiCodeActions": {
+    "implementAbstractClasses": true,
+    "generateSymbol": true,
+    "convertFormatString": true
+  },
+
+  // Enable/disable AI assistance to show copilot-generated summaries in the hover tooltip. This feature requires a GitHub Copilot Pro or Pro+ subscription.
+  "python.analysis.aiHoverSummaries": false,
+
+  // When typing a `{` in a string, automatically prefix the string with an `f`.
+  "python.analysis.autoFormatStrings": true,
+
+  // Enable auto-import completions.
+  "python.analysis.autoImportCompletions": true,
+
+  // Automatically adjust indentation based on language semantics when typing Python code.
+  "python.analysis.autoIndent": true,
+
+  // Automatically add common search paths like `src`.
+  "python.analysis.autoSearchPaths": true,
+
+  // Automatically add quote and line continuation characters when splitting strings.
+  "python.analysis.autoSplitStrings": true,
+
+  // Automatically translate Python docstrings in hover tooltips to your preferred language using GitHub Copilot. The target language is determined by the `github.copilot.chat.localeOverride` setting. **Note:** Enabling this feature may make hover tooltips display significantly slower due to the time required to call GitHub Copilot for translation.
+  "python.analysis.autoTranslateDocstrings": false,
+
+  // Add parentheses to function completions.
+  "python.analysis.completeFunctionParens": true,
+
+  // Analysis scope for showing diagnostics.
+  //  - openFilesOnly: Analyzes and reports errors on only open files.
+  //  - workspace: Analyzes and reports errors on all files in the workspace.
+  "python.analysis.diagnosticMode": "openFilesOnly",
+
+  // Allows a user to override the severity levels for individual diagnostics.
+  //
+  // Use the rule name as a key and one of `error`, `warning`, `information`, `none`, `true` (alias for `error`) or `false` (alias for `none`) as value. The default value shown for each diagnostic is the default when #python.analysis.typeCheckingMode# is set to `off`. See [here](https://github.com/microsoft/pyright/blob/main/docs/configuration.md#diagnostic-rule-defaults) for defaults for each type checking mode (`off`, `basic` and `strict`).
+  "python.analysis.diagnosticSeverityOverrides": {},
+
+  // Allows specifying a different type checker to use for diagnostics. Pylance will combine its results with this other server.
+  //  - Pylance: Use Pylance for diagnostics. (default)
+  //  - Pylance + Pyright: Use Pyright for diagnostics. Allows running a different Pyright than the one shipped with the Pylance extension.
+  //  - Pylance + Pyrefly: Use Pyrefly for diagnostics. Pylance will search for a pyrefly installation in your virtual environments or download it automatically. [Learn more](https://aka.ms/pyrefly-help).
+  "python.analysis.diagnosticsSource": "Pylance",
+
+  // Disable hint diagnostics with special hints for grayed-out or strike-through text.
+  "python.analysis.disableTaggedHints": false,
+
+  // Display diagnostics in English regardless of VS Code's display language.
+  "python.analysis.displayEnglishDiagnostics": false,
+
+  // Enable/disable async communication with internal Type Server. For internal use only, may cause Pylance to stop working.
+  "python.analysis.enableAsyncProgram": true,
+
+  // Enable/disable color picker in the editor for '#RRGGBB' and '#RRGGBBAA' strings.
+  "python.analysis.enableColorPicker": true,
+
+  // Enables Django support in Pylance. When enabled, Pylance detects Django projects and provides IntelliSense for ORM-generated model attributes (e.g. `objects`, reverse relations, and field descriptors) by merging virtual content into your source files via a file overlay. Requires a native binary that is only available on Windows (x64/ARM64), macOS (Apple Silicon), and Linux (x64/ARM64). On unsupported platforms (e.g. macOS x86) this setting is silently ignored. [Experimental].
+  "python.analysis.enableDjangoSupport": true,
+
+  // Enable/disable using an external Type Server. For internal use only, may cause Pylance to stop working.
+  "python.analysis.enableExternalTypeServer": false,
+
+  // Enable/disable experimental manged name context. For internal use only, may cause Pylance to stop working.
+  "python.analysis.enableMangleName": true,
+
+  // **Experimental.** Enable parallel indexing using a faster Rust-based out-of-process indexer for potentially faster indexing of large projects.
+  "python.analysis.enableParallelIndexing": true,
+
+  // Enables internal perf telemetry if telemetry is enabled in VS Code.
+  "python.analysis.enablePerfTelemetry": false,
+
+  // Enable/disable showing the notification that lets the user switch to Pyrefly as the diagnostics source.
+  "python.analysis.enablePyreflyNotification": false,
+
+  // Enables pytest support in Pylance.
+  "python.analysis.enablePytestSupport": true,
+
+  // Enable/disable extra telemetry for running code snippets. For internal use only, may cause Pylance to stop working.
+  "python.analysis.enableSnippetExtraTelemetry": false,
+
+  // Enable/disable the Quick Fix for troubleshooting missing imports. This Quick Fix requires the Python Environments extension to be installed and enabled.
+  "python.analysis.enableTroubleshootMissingImports": false,
+
+  // Paths of directories or files that should not be included. These override the include directories, allowing specific subdirectories to be excluded.
+  //
+  // Note that files in the exclude paths may still be included in the analysis if they are referenced (imported) by source files that are not excluded.
+  //
+  // Paths may contain wildcard characters `**` (a directory or multiple levels of directories), `*` (a sequence of zero or more characters), or `?` (a single character).
+  //
+  // If no exclude paths are specified, Pylance automatically excludes the following: `**/node_modules`, `**/__pycache__`, `.git` and any virtual environment directories. If the path contains a `${workspaceFolder:<workspaceName>}` variable, the glob pattern will only apply to the corresponding workspace in a multi-root workspace environment.
+  "python.analysis.exclude": [],
+
+  // Suppress diagnostics for library files such as standard library, site-packages, and typeshed files while continuing to show diagnostics for user-authored files.
+  "python.analysis.excludeLibraryDiagnostics": true,
+
+  // Allow using '.', '(' as commit characters when applicable.
+  "python.analysis.extraCommitChars": true,
+
+  // Additional import search resolution paths
+  "python.analysis.extraPaths": [],
+
+  // **Experimental.** A manual map of folder → `extraPaths`, applied to the per-project workspace folders created for `python-envs.pythonProjects`. Each key is a folder (absolute, or relative to the workspace folder) and each value is a list of paths (absolute, or relative to the workspace folder) added to `extraPaths` for files under that folder. Keys and values may use `${workspaceFolder}`, `${workspaceFolder:Name}`, `${env:HOME}`, `${env:USERNAME}`, `${env:VIRTUAL_ENV}`, and a leading `~`, where `${workspaceFolder}` resolves to the workspace folder that contains the project. Use this as a relief valve when automatic detection (`python.analysis.addExtraPathsForPythonProjects`) cannot infer the right roots — for example monorepos with non-standard layouts. These overrides are applied whether or not automatic detection is enabled.
+  "python.analysis.extraPathsForPythonProjects": {},
+
+  // Enable/disable running Find All References on the background thread. For internal use only, may cause Pylance to stop working.
+  "python.analysis.findRefsInBackgroundThread": true,
+
+  // source fixes to run in fix all.
+  "python.analysis.fixAll": [],
+
+  // Add type annotations when generating code. Defaults to `false` for type checking mode `off`, and `true` for other modes.
+  "python.analysis.generateWithTypeAnnotation": true,
+
+  // For string literals that look like module names, enables go to definition to go to the module.
+  "python.analysis.gotoDefinitionInStringLiteral": true,
+
+  // Enable/disable a CodeLens on methods that override a base-class member. Clicking it peeks the overridden declaration.
+  "python.analysis.gotoOverrideCodeLens": true,
+
+  // Paths of directories or files whose diagnostic output (errors and warnings) should be suppressed even if they are an included file or within the transitive closure of an included file.
+  //
+  // Paths may contain wildcard characters `**` (a directory or multiple levels of directories), `*` (a sequence of zero or more characters), or `?` (a single character).
+  //
+  // If the path contains a `${workspaceFolder:<workspaceName>}` variable, the glob pattern will only apply to the corresponding workspace in a multi-root workspace environment.
+  "python.analysis.ignore": [],
+
+  // Defines the default format for importing modules.
+  //  - absolute: Use absolute import format when creating new import statement.
+  //  - relative: Use relative import format when creating new import statement.
+  "python.analysis.importFormat": "absolute",
+
+  // Paths of directories or files that should be included. If no paths are specified, Pylance defaults to the workspace root directory.
+  //
+  // Paths may contain wildcard characters `**` (a directory or multiple levels of directories), `*` (a sequence of zero or more characters), or `?` (a single character).
+  //
+  // If the path contains a `${workspaceFolder:<workspaceName>}` variable, the glob pattern will only apply to the corresponding workspace in a multi-root workspace environment.
+  "python.analysis.include": [],
+
+  // Include alias symbols from user files. This will make alias symbols to show up in features such as `add import`, `auto import`
+  "python.analysis.includeAliasesFromUserFiles": true,
+
+  // Include symbols from `python.analysis.extraPaths` in Workspace Symbol search. This may slow down Workspace Symbol search. For non-`py.typed` libraries, only symbols exported via a package `__init__.py` `__all__` are included.
+  "python.analysis.includeExtraPathSymbolsInSymbolSearch": false,
+
+  // Include symbols from installed packages in the active virtual environment (site-packages) in Workspace Symbol search. This may slow down Workspace Symbol search. For non-`py.typed` libraries, only symbols exported via a package `__init__.py` `__all__` are included. The depth of sub-packages searched is controlled by `python.analysis.packageIndexDepths`; increase the `depth` for a package to include symbols from deeper sub-modules.
+  "python.analysis.includeVenvInWorkspaceSymbols": false,
+
+  // Enable indexing of installed third party libraries and user files for language features such as auto-import, add import, workspace symbols and etc.
+  "python.analysis.indexing": true,
+
+  // Enable/disable inlay hints for call argument names:
+  // ```python
+  // datetime('year='2019, 'month='10, 'day='27)
+  // ```
+  //
+  //  - off: Disable inlay hints for call argument names.
+  //  - partial: Enable inlay hints for positional-or-keyword arguments while ignoring positional-only and keyword-only.
+  //  - all: Enable inlay hints for positional-or-keyword and positional-only arguments while ignoring keyword-only.
+  "python.analysis.inlayHints.callArgumentNames": "partial",
+
+  // Enable/disable inlay hints for function return types:
+  // ```python
+  // def foo(x:int) '-> int':
+  // 	return x
+  // ```
+  //
+  "python.analysis.inlayHints.functionReturnTypes": true,
+
+  // Enable/disable inlay hints for pytest function parameter types:
+  // ```python
+  // def test_foo(my_fixture: 'str'):
+  // 	assert(my_fixture == 'foo')
+  // ```
+  //
+  "python.analysis.inlayHints.pytestParameters": true,
+
+  // Enable/disable inlay hints for variable types. Hints are not displayed for assignments of literals or constants:
+  // ```python
+  // foo':list[str]' = ["a"]
+  //
+  // ```
+  //
+  "python.analysis.inlayHints.variableTypes": true,
+
+  // Enable/disable automatic installation of the Python Dependency Remediation extension. For internal use only.
+  "python.analysis.installPythonDependencyRemediation": false,
+
+  // Select a predefined set of values for settings. Please check [this link](https://aka.ms/languageserver-mode) for more details.
+  //  - light: Set Pylance to do only essential work to make it light weight. See the link at the description to find out exactly what settings are set to what value.
+  //  - default: Leave Pylance with default settings.
+  //  - full: Enable most Pylance features by default. See the link at the description to find out exactly what settings are set to what value.
+  "python.analysis.languageServerMode": "default",
+
+  // Specifies the level of logging for the Output panel
+  "python.analysis.logLevel": "Information",
+
+  // Enable/disable logging of all Type Server Protocol (TSP) messages to the output console. For internal use only.
+  "python.analysis.logTypeServerMessages": false,
+
+  // Extra arguments to pass to a Node.js executable to use for running the language server when `python.analysis.nodeExecutable` is set. Default is `--max_old_space_size=8192`.
+  "python.analysis.nodeArguments": ["--max-old-space-size=8192"],
+
+  // Path to a Node.js executable to use for running the language server. If not specified, the language server will use the Node.js executable that ships with VS Code. If set to "auto", it will automatically download a version from [nodejs](https://nodejs.org/dist/). Set this option if you're having trouble with Pylance running out of memory. See [here](https://aka.ms/AApf7ox) for more information.
+  "python.analysis.nodeExecutable": "",
+
+  // Used to override how many levels under installed packages to index on a per package basis. By default, only top-level modules are indexed (depth = 1). To index submodules, increase depth by 1 for each level of submodule you want to index.
+  //
+  // If `depth` is set to `0`, the entry is treated as an *exclude prefix* and is removed from the index. Exclusions are module-boundary aware: `pydantic.v1` excludes `pydantic.v1` and `pydantic.v1.*`, but does not exclude `pydantic.v10`.
+  //
+  // Accepted values are:
+  // ```JSON
+  // {"name": "package name (str)",
+  //  "depth": "depth to scan (int)",
+  //  "includeAllSymbols": "whether to include all symbols (bool)"}
+  //
+  // ```
+  // If `includeAllSymbols` is set to `false`, only symbols in each package's `__all__` are included. When it's set to `true`, Pylance will index every module/top level symbol declarations in the file.
+  //
+  // Usage example:
+  // ```JSON
+  // [
+  // 	{"name": "sklearn", "depth": 2, "includeAllSymbols": true},
+  // 	{"name": "matplotlib", "depth": 3, "includeAllSymbols": false}
+  // ]
+  //
+  // ```
+  //
+  // Exclusion example:
+  // ```JSON
+  // [
+  // 	{"name": "ctypes", "depth": 0},
+  // 	{"name": "pydantic.v1", "depth": 0}
+  // ]
+  //
+  // ```
+  //
+  "python.analysis.packageIndexDepths": [
+    {
+      "name": "sklearn",
+      "depth": 2
+    },
+    {
+      "name": "matplotlib",
+      "depth": 2
+    },
+    {
+      "name": "scipy",
+      "depth": 2
+    },
+    {
+      "name": "django",
+      "depth": 4
+    },
+    {
+      "name": "flask",
+      "depth": 2
+    },
+    {
+      "name": "fastapi",
+      "depth": 2
+    },
+    {
+      "name": "torch",
+      "depth": 2
+    },
+    {
+      "name": "cuda",
+      "depth": 3,
+      "includeAllSymbols": true
+    }
+  ],
+
+  // Indices for all third party libraries will be persisted to disk.
+  "python.analysis.persistAllIndices": true,
+
+  // Specifies the version of Pyrefly to use for diagnostics. Minimum version allowed is 1.1.1. This setting is only used when `python.analysis.diagnosticsSource` is set to `Pylance + Pyrefly`.
+  //
+  // This value can be one of:
+  // - Empty (default) — automatically find or download the latest version
+  // - Version string (e.g. 1.1.1) — download and use that specific version
+  // - Path to a local pyrefly executable
+  "python.analysis.pyreflyVersion": "",
+
+  // Specifies the version of Pyright to use for diagnostics. Minimum value allowed is 1.1.397. This setting is only used when `python.analysis.diagnosticsSource` is set to `Pyright`.
+  //
+  // This value can be one of
+  // - Version string = i.e. 1.1.397
+  // - Path to a local pyright-langserver.js file (which also has to come from at least 1.1.397 or higher).
+  "python.analysis.pyrightVersion": "",
+
+  // Enable/disable references CodeLens in Python files.
+  "python.analysis.referencesCodeLens": true,
+
+  // Instead of relying on the shared stdlib.json indices for all Python versions, generate unique indices tailored to each workspace's specific Python version and platform. This regeneration process will affect performance, unlike using the prebuilt stdlib indices.
+  "python.analysis.regenerateStdLibIndices": false,
+
+  // Report extra telemetry [Experimental]. For internal use only, may cause Pylance to slow down.
+  "python.analysis.reportExtraTelemetry": false,
+
+  // Show only direct dependencies declared in `requirements.txt` or `pyproject.toml` in `auto import` suggestions, if they exist. This only affects `auto import` for completions. The `add import` code action will continue to show all possible imports.
+  "python.analysis.showOnlyDirectDependenciesInAutoImport": true,
+
+  // Path to directory containing custom type stub files.
+  "python.analysis.stubPath": "typings",
+
+  // Enable/disable support for all Python documents. This enables Pylance intellisense in other documents, like the terminal or diff views.
+  //
+  // [Experimental]. For internal use only, may cause Pylance to stop working.
+  "python.analysis.supportAllPythonDocuments": true,
+
+  // Enable/disable reStructuredText docstring generation. Templates appear after typing opening triple quotes or via code action inside empty docstrings.
+  "python.analysis.supportDocstringTemplate": true,
+
+  // Enable/disable support for reStructuredText in docstrings.
+  "python.analysis.supportRestructuredText": true,
+
+  // Type checking modes Basic, Standard, and Strict :
+  //
+  // | Feature                                  | Basic | Standard | Strict |
+  // |------------------------------------------|:-----:|:--------:|:------:|
+  // | Variable type mismatches                 |   ✅   |    ✅     |   ✅   |
+  // | Function return type checks              |   ✅   |    ✅     |   ✅   |
+  // | Type narrowing enforcement               |       |    ✅     |   ✅   |
+  // | Checking of `Any` type                   |       |    ✅     |   ✅   |
+  // | Private/protected access checks          |       |    ✅     |   ✅   |
+  // | Enforces stricter generics usage         |       |    ✅     |   ✅   |
+  // | Reports missing type annotations         |       |          |   ✅   |
+  // | Disallows `Any` type usage               |       |          |   ✅   |
+  // | Requires strict type compatibility       |       |          |   ✅   |
+  // | Enforces complete type coverage          |       |          |   ✅   |
+  //
+  // For more details, check the [Pyright documentation](https://microsoft.github.io/pyright/#/configuration?id=type-check-diagnostics-settings).
+  //  - off: Show diagnostics for invalid syntax, unresolved imports, undefined variables.
+  //  - basic: All rules from `off` + `basic` type checking rules.
+  //  - standard: All rules from `basic` + `standard` type checking rules.
+  //  - strict: All rules from `standard` + `strict` type checking rules.
+  "python.analysis.typeCheckingMode": "off",
+
+  // Analyze and report errors for functions and methods that have no type annotations for input parameters or return types. The default value for this setting is `true`.
+  "python.analysis.typeEvaluation.analyzeUnannotatedFunctions": true,
+
+  // [PEP 585](https://peps.python.org/pep-0585) indicates that aliases to types in standard collections that were introduced solely to support generics are deprecated as of Python 3.9. This switch controls whether these are treated as deprecated. This applies only when pythonVersion is 3.9 or newer. The default value for this setting is `false` but may be switched to `true` in the future.
+  "python.analysis.typeEvaluation.deprecateTypingAliases": true,
+
+  // Disables legacy behavior where `bytearray` and `memoryview` are considered subtypes of `bytes`. [PEP 688](https://peps.python.org/pep-0688/#no-special-meaning-for-bytes) deprecates this behavior, but this switch is provided to restore the older behavior. The default value for this setting is `true`.
+  "python.analysis.typeEvaluation.disableBytesTypePromotions": true,
+
+  // Enables a set of experimental (mostly undocumented) features that correspond to proposed or exploratory changes to the Python typing standard. These features will likely change or be removed, so they should not be used except for experimentation purposes. The default value for this setting is `false`.
+  "python.analysis.typeEvaluation.enableExperimentalFeatures": false,
+
+  // If enabled, code that is determined to be unreachable by type analysis is reported using a tagged hint. This setting does not affect code that is determined to be unreachable regardless of type analysis; such code is always reported as unreachable. This setting also has no effect when when using the command-line version of pyright because it never emits tagged hints for unreachable code.
+  "python.analysis.typeEvaluation.enableReachabilityAnalysis": true,
+
+  // [PEP 484](https://peps.python.org/pep-0484) defines support for `# type: ignore` comments. This switch enables or disables support for these comments. The default value for this setting is `true`. This does not affect `# pyright: ignore` comments.
+  "python.analysis.typeEvaluation.enableTypeIgnoreComments": true,
+
+  // When inferring the type of a dictionary’s keys and values, use strict type assumptions. For example, the expression
+  //
+  // ```python
+  // {'a': 1, 'b': 'a'}
+  // ```
+  //  could be inferred to be of type `dict[str, Any]` or `dict[str, int | str]`. If this setting is true, it will use the latter (stricter) type. The default value for this setting is `false`.
+  "python.analysis.typeEvaluation.strictDictionaryInference": true,
+
+  // When inferring the type of a list, use strict type assumptions. For example, the expression
+  //
+  // ```python
+  // [1, 'a', 3.4]
+  // ```
+  //  could be inferred to be of type `list[Any]` or `list[int | str | float]`. If this setting is true, it will use the latter (stricter) type. The default value for this setting is `false`.
+  "python.analysis.typeEvaluation.strictListInference": true,
+
+  // [PEP 484](https://peps.python.org/pep-0484) indicates that when a function parameter is assigned a default value of None, its type should implicitly be Optional even if the explicit type is not. When enabled, this rule requires that parameter type annotations use Optional explicitly in this case. The default value for this setting is `true`.
+  "python.analysis.typeEvaluation.strictParameterNoneValue": true,
+
+  // When inferring the type of a set, use strict type assumptions. For example, the expression
+  //
+  // ```python
+  // {1, 'a', 3.4}
+  // ```
+  //  could be inferred to be of type `set[Any]` or `set[int | str | float]`. If this setting is true, it will use the latter (stricter) type. The default value for this setting is `false`.
+  "python.analysis.typeEvaluation.strictSetInference": true,
+
+  // Arguments to pass to the type server. For internal use only, may cause Pylance to stop working.
+  "python.analysis.typeServerArguments": [],
+
+  // Path to a custom type server. For internal use only, may cause Pylance to stop working.
+  "python.analysis.typeServerExecutable": "",
+
+  // Paths to look for typeshed modules.
+  "python.analysis.typeshedPaths": [],
+
+  // Use library implementations to extract type information when type stub is not present.
+  "python.analysis.useLibraryCodeForTypes": true,
+
+  // **Experimental.** When enabled, Pylance will search for and use pyrightconfig.json or pyproject.toml files in subdirectories, creating virtual workspaces for each configuration. This allows different type-checking settings for different parts of your codebase.
+  "python.analysis.useNearestConfiguration": true,
+
+  // When enabled, Pylance will use a separate Python environment (interpreter) for each project declared via `python-envs.pythonProjects`, so that sub-projects in a single-root workspace are type checked against their own interpreter. Note: each sub-project may also need its own `extraPaths` configuration so that cross-project imports resolve correctly. To have Pylance configure these automatically, enable `python.analysis.addExtraPathsForPythonProjects`.
+  "python.analysis.usePerProjectEnvironments": false,
+
+  // When enabled, user-file indexing will follow files under symlinked folders in the workspace. Disable this to avoid slow workspace indexing in workspaces that contain symlinks into very large directory trees.
+  "python.analysis.userFileIndexFollowSymlinkedFolders": true,
+
+  // Maximum number of user files to index in the workspace. Indexing files is a performance-intensive task. Please use this setting to limit the number of files you want us to index. If you enter -1, we will index all files.
+  "python.analysis.userFileIndexingLimit": 2000
+}

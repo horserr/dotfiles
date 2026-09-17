@@ -27,17 +27,8 @@
   "[dockerfile]": {
     "editor.defaultFormatter": "ms-azuretools.vscode-containers"
   },
-  "[python]": {
-    "editor.codeActionsOnSave": {
-      "source.fixAll.ruff": "explicit",
-      "source.organizeImports.ruff": "explicit"
-    },
-    "editor.defaultFormatter": "charliermarsh.ruff",
-    "editor.formatOnSave": true,
-    "editor.indentSize": "tabSize",
-    "editor.insertSpaces": false, // use tab rather than space
-    "editor.tabSize": 4,
-    "editor.wordWrap": "on"
+  "[shellscript]": {
+    "editor.defaultFormatter": "mads-hartmann.bash-ide-vscode"
   },
   "[rust]": {
     "editor.defaultFormatter": "rust-lang.rust-analyzer"
@@ -74,66 +65,6 @@
    **************/
   "powershell.integratedConsole.showOnStartup": false,
   "powershell.integratedConsole.startInBackground": true,
-  /**********
-   * PYTHON *
-   **********/
-  "python-envs.terminal.autoActivationType": "shellStartup",
-  "python.analysis.autoFormatStrings": true,
-  // CONSERVATIVE 节省资源
-  "python.analysis.autoImportCompletions": false,
-  "python.analysis.cacheLSPData": true,
-  "python.analysis.completeFunctionParens": true,
-  // CONSERVATIVE
-  "python.analysis.diagnosticMode": "openFilesOnly",
-  // UPLIFTING
-  "python.analysis.diagnosticSeverityOverrides": {
-    "reportUnusedImport": "information"
-  },
-  "python.analysis.enableAsyncProgram": true,
-  // SIGNIFICANT
-  "python.analysis.enableParallelIndexing": true,
-  "python.analysis.enableTroubleshootMissingImports": true,
-  "python.analysis.exclude": [
-    "**/node_modules",
-    "**/venv",
-    "**/.git/**",
-    "**/venv/**",
-    "**/.venv/**",
-    "**/.pixi/**"
-  ],
-  "python.analysis.findRefsInBackgroundThread": true,
-  "python.analysis.generateWithTypeAnnotation": true,
-  "python.analysis.importFormat": "relative",
-  "python.analysis.includeAliasesFromUserFiles": true,
-  "python.analysis.inlayHints.callArgumentNames": "partial",
-  "python.analysis.inlayHints.functionReturnTypes": true,
-  "python.analysis.inlayHints.pytestParameters": true,
-  "python.analysis.inlayHints.variableTypes": false,
-  "python.analysis.languageServerMode": "light",
-  "python.analysis.logLevel": "Warning",
-  "python.analysis.referencesCodeLens": true,
-  "python.analysis.showOnlyDirectDependenciesInAutoImport": true,
-  "python.analysis.supportAllPythonDocuments": true,
-  "python.analysis.supportDocstringTemplate": true,
-  "python.analysis.typeCheckingMode": "basic",
-  "python.analysis.typeEvaluation.deprecateTypingAliases": true,
-  "python.analysis.typeEvaluation.disableBytesTypePromotions": true,
-  "python.analysis.typeEvaluation.enableExperimentalFeatures": true,
-  "python.analysis.typeEvaluation.enableReachabilityAnalysis": true,
-  "python.analysis.typeEvaluation.strictDictionaryInference": true,
-  "python.analysis.typeEvaluation.strictListInference": true,
-  "python.analysis.typeEvaluation.strictSetInference": true,
-  "python.analysis.useNearestConfiguration": true,
-  // 限制索引的文件数量，防止扫描整个硬盘
-  "python.analysis.userFileIndexingLimit": 1000,
-  "python.languageServer": "None",
-  /*****************************
-   * RUFF FORMATTER AND LINTER *
-   *****************************/
-  "ruff.configurationPreference": "filesystemFirst",
-  "ruff.enable": true,
-  "ruff.nativeServer": true,
-  "ruff.organizeImports": true,
   /********
    * RUST *
    ********/
@@ -150,16 +81,4 @@
   "tinymist.lint.when": "onType",
   "tinymist.preview.cursorIndicator": true,
   "tinymist.preview.invertColors": "auto",
-  /********************************
-   * TY -- PYTHON LANGUAGE SERVER *
-   ********************************/
-  "ty.completions.autoImport": true,
-  "ty.configuration": {
-    "rules": {
-      "unresolved-reference": "warn"
-    }
-  },
-  "ty.diagnosticMode": "openFilesOnly",
-  "ty.inlayHints.callArgumentNames": true,
-  "ty.inlayHints.variableTypes": true
 }

@@ -4,85 +4,111 @@
     "name": "Python",
     "type": "bindings",
     "bindings": [
+      // , execute file in terminal
       {
-        "key": "v",
-        "name": "+Virtualenv",
+        "key": ",",
+        "name": "Execute file in terminal",
+        "icon": "terminal",
+        "type": "command",
+        "command": "python.execInTerminal"
+      },
+      // < python repl
+      {
+        "key": "<",
+        "name": "Start REPL",
+        "icon": "repl",
+        "type": "bindings",
+        "bindings": [
+          {
+            "key": "<",
+            "name": "Start native REPL",
+            "icon": "repl",
+            "type": "command",
+            "command": "python.startNativeREPL"
+          },
+          {
+            "key": ",",
+            "name": "Start terminal REPL",
+            "icon": "repl",
+            "type": "command",
+            "command": "python.startREPL"
+          }
+        ]
+      },
+      // x execute selection
+      {
+        "key": "x",
+        "name": "Send line/selection to REPL",
+        "icon": "selection",
+        "type": "command",
+        // python.execSelectionInDjangoShell
+        "command": "python.execSelectionInTerminal"
+      },
+      // space select interpreter
+      {
+        "key": " ",
+        "name": "select interpreter",
         "icon": "package",
         "type": "command",
         "command": "python.setInterpreter"
+      },
+      // i initialize
+      {
+        "key": "i",
+        "name": "Initialize/create environment",
+        "icon": "chat-model-provider-gemini",
+        "type": "command",
+        "command": "python.createEnvironment"
+      },
+      // t configure test
+      {
+        "key": "t",
+        "name": "connfigure tests",
+        "icon": "test-view-icon",
+        "type": "command",
+        "command": "python.configureTests"
+      },
+      // * misc
+      {
+        "key": "*",
+        "name": "+Misc",
+        "icon": "debug-restart-frame",
+        "type": "bindings",
+        "bindings": [
+          // r restart server
+          {
+            "key": "r",
+            "name": "restart server",
+            "icon": "debug-restart-frame",
+            "type": "commands",
+            // "command": "python.analysis.restartLanguageServer"
+            // python.clearCacheAndReload
+            "commands": ["ty.restart", "ruff.restart"]
+          },
+          // x clear workspace interpreter setting
+          {
+            "key": "x",
+            "name": "clear workspace interpreter setting",
+            "icon": "debug-console-clear-all",
+            "type": "command",
+            "command": "python.clearWorkspaceInterpreter"
+          },
+          // i install jupyter
+          {
+            "key": "i",
+            "name": "Install jupyter",
+            "icon": "extensions-install-count",
+            "type": "command",
+            "command": "python.installJupyter"
+          }
+        ]
       },
       {
         "key": "b",
         "name": "+Backend",
         "icon": "circuit-board",
         "type": "bindings",
-        "bindings": [
-          {
-            "key": "o",
-            "name": "Show LSP output",
-            "icon": "output",
-            "type": "command",
-            "command": "python.viewLanguageServerOutput"
-          },
-          {
-            "key": "r",
-            "name": "Restart LSP",
-            "icon": "server-process",
-            "type": "command",
-            "command": "python.analysis.restartLanguageServer"
-          }
-        ]
-      },
-      {
-        "key": "c",
-        "name": "+Execute",
-        "icon": "play",
-        "type": "bindings",
-        "bindings": [
-          {
-            "key": "c",
-            "name": "Execute file in terminal",
-            "icon": "terminal",
-            "type": "command",
-            "command": "python.execInTerminal"
-          },
-          {
-            "key": "C",
-            "name": "Execute file in terminal",
-            "icon": "terminal",
-            "type": "command",
-            "command": "python.execInTerminal"
-          }
-        ]
-      },
-      {
-        "key": "s",
-        "name": "+REPL",
-        "icon": "repl",
-        "type": "bindings",
-        "bindings": [
-          {
-            "key": "i",
-            "name": "Start REPL",
-            "icon": "repl",
-            "type": "command",
-            "command": "python.startREPL"
-          },
-          {
-            "key": "l",
-            "name": "Send line/selection to REPL",
-            "icon": "selection",
-            "type": "command",
-            "command": "python.execSelectionInTerminal"
-          },
-          {
-            "key": "r",
-            "name": "Send line/selection to REPL",
-            "icon": "selection",
-            "type": "command",
-            "command": "python.execSelectionInTerminal"
-          }
-        ]
+        "bindings": []
       }
     ]
   }
