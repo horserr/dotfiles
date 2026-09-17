@@ -1,16 +1,26 @@
 [
+  // uv.searchPackage
   {
     "key": "languageId:python",
     "name": "Python",
     "type": "bindings",
     "bindings": [
-      // , execute file in terminal
+      // space select interpreter
+      {
+        "key": " ",
+        "name": "select interpreter",
+        "icon": "package",
+        "type": "command",
+        "command": "python.setInterpreter"
+      },
+      // , active virtual environment
       {
         "key": ",",
-        "name": "Execute file in terminal",
-        "icon": "terminal",
+        "name": "activate virtual environment",
+        "icon": "activate-breakpoints",
         "type": "command",
-        "command": "python.execInTerminal"
+        // uv.manageVirtualEnv this command creates virtual environment
+        "command": "uv.activateVirtualEnv"
       },
       // < python repl
       {
@@ -35,22 +45,40 @@
           }
         ]
       },
-      // x execute selection
+      // r run
       {
-        "key": "x",
-        "name": "Send line/selection to REPL",
-        "icon": "selection",
-        "type": "command",
-        // python.execSelectionInDjangoShell
-        "command": "python.execSelectionInTerminal"
-      },
-      // space select interpreter
-      {
-        "key": " ",
-        "name": "select interpreter",
-        "icon": "package",
-        "type": "command",
-        "command": "python.setInterpreter"
+        "key": "r",
+        "name": "+Run",
+        "icon": "run",
+        "type": "bindings",
+        "bindings": [
+          // r run file
+          {
+            "key": "r",
+            "name": "run/execute file in terminal",
+            "icon": "terminal",
+            "type": "command",
+            // "command": "python.execInTerminal"
+            "command": "uv.runScript"
+          },
+          // t run tool
+          {
+            "key": "r",
+            "name": "run tool",
+            "icon": "terminal",
+            "type": "command",
+            "command": "uv.runTool"
+          },
+          // x execute selection
+          {
+            "key": "x",
+            "name": "Send line/selection to REPL",
+            "icon": "selection",
+            "type": "command",
+            // python.execSelectionInDjangoShell
+            "command": "python.execSelectionInTerminal"
+          }
+        ]
       },
       // i initialize
       {
@@ -58,7 +86,83 @@
         "name": "Initialize/create environment",
         "icon": "chat-model-provider-gemini",
         "type": "command",
-        "command": "python.createEnvironment"
+        // "command": "python.createEnvironment"
+        "command": "uv.init"
+      },
+      // a add
+      {
+        "key": "a",
+        "name": "+Add",
+        "icon": "add-small",
+        "type": "bindings",
+        "bindings": [
+          // a add
+          {
+            "key": "a",
+            "name": "uv add",
+            "icon": "add",
+            "type": "command",
+            "command": "uv.add"
+          },
+          // d add dev
+          {
+            "key": "d",
+            "name": "uv add dev",
+            "icon": "add",
+            "type": "command",
+            "command": "uv.addDev"
+          },
+          // . add script dependency
+          {
+            "key": ".",
+            "name": "uv add script dependency",
+            "icon": "add",
+            "type": "commands",
+            "commands": ["uv.setPep723Interpreter", "uv.addScriptDependency"]
+          }
+        ]
+      },
+      // u upgrade
+      {
+        "key": "u",
+        "name": "Upgrade/Sync",
+        "icon": "getting-started-setup",
+        "type": "bindings",
+        "bindings": [
+          // s sync
+          {
+            "key": "s",
+            "name": "uv sync dependencies",
+            "icon": "getting-started-setup",
+            "type": "command",
+            "command": "uv.sync"
+          },
+          // u upgrade dependencies
+          {
+            "key": "u",
+            "name": "uv upgrade dependencies",
+            "icon": "getting-started-setup",
+            "type": "command",
+            // uv.upgrade this command is superseded
+            "command": "uv.upgradeDependencies"
+          }
+        ]
+      },
+      // l lock
+      {
+        "key": "l",
+        "name": "uv generate lock file",
+        "icon": "lock",
+        "type": "command",
+        "command": "uv.generateLock"
+      },
+      // d remove
+      {
+        "key": "d",
+        "name": "remove packages",
+        "icon": "remove",
+        "type": "command",
+        "command": "uv.removePackage"
       },
       // t configure test
       {
@@ -92,23 +196,65 @@
             "icon": "debug-console-clear-all",
             "type": "command",
             "command": "python.clearWorkspaceInterpreter"
-          },
-          // i install jupyter
-          {
-            "key": "i",
-            "name": "Install jupyter",
-            "icon": "extensions-install-count",
-            "type": "command",
-            "command": "python.installJupyter"
           }
         ]
       },
+      // p pin python
       {
-        "key": "b",
-        "name": "+Backend",
-        "icon": "circuit-board",
+        "key": "p",
+        "name": "pin python",
+        "icon": "pin",
+        "type": "command",
+        "command": "uv.pinPython"
+      },
+      // x clean cache
+      {
+        "key": "x",
+        "name": "clean uv cache",
+        "icon": "debug-remove-config",
+        "type": "command",
+        "command": "uv.cache.clean"
+      },
+      // I Install
+      {
+        "key": "I",
+        "name": "+Install",
+        "icon": "extensions-install-count",
         "type": "bindings",
-        "bindings": []
+        "bindings": [
+          // j instal jupyter extension
+          {
+            "key": "j",
+            "name": "Install jupyter extension",
+            "icon": "extensions-install-count",
+            "type": "command",
+            "command": "python.installJupyter"
+          },
+          // u install uv
+          {
+            "key": "u",
+            "name": "Install uv",
+            "icon": "extensions-install-count",
+            "type": "command",
+            "command": "uv.installUv"
+          },
+          // t install tools
+          {
+            "key": "t",
+            "name": "Install tools",
+            "icon": "extensions-install-count",
+            "type": "command",
+            "command": "uv.installTool"
+          },
+          // p install python
+          {
+            "key": "p",
+            "name": "Install python",
+            "icon": "python",
+            "type": "command",
+            "command": "uv.installPython"
+          }
+        ]
       }
     ]
   }

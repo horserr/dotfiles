@@ -24,6 +24,7 @@
   "remote.defaultExtensionsIfInstalledLocally": [
     "albert.TabOut",
     "astral-sh.ty",
+    "charliermarsh.ruff",
     "chrislajoie.vscode-modelines",
     "codezombiech.gitignore",
     "dakara.dakara-foldplus",
@@ -50,6 +51,7 @@
     "rioj7.WhenFile",
     "SilverServers.vscode-bloat-cleaner",
     "tamasfe.even-better-toml",
+    "the0807.uv-toolkit",
     "thimo.line-history",
     "Vizards.deepseek-v4-for-copilot",
     "wraith13.blitz",
@@ -242,10 +244,10 @@
   // If set, the output in the WSL log shows debug information.
   "remote.WSL.debug": false,
 
-	// If set, the WSL extension will not use a script to start the server in WSL. This is an experimental feature to allow running in distros that have interop disabled.
+  // If set, the WSL extension will not use a script to start the server in WSL. This is an experimental feature to allow running in distros that have interop disabled.
   "remote.WSL.experimental.scriptLessStartup": true,
 
-	// If set, the WSL windows gets the environment from the shell it was opened from.
+  // If set, the WSL windows gets the environment from the shell it was opened from.
   "remote.WSL.useShellEnvironment": true,
 
   /*********************

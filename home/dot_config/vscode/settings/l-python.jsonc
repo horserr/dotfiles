@@ -32,7 +32,7 @@
   "python.REPL.sendToNativeREPL": true,
 
   // Activate Python Environment in the current Terminal on load of the Extension.
-  "python.terminal.activateEnvInCurrentTerminal": true,
+  "python.terminal.activateEnvInCurrentTerminal": false,
 
   // Activate Python Environment in all Terminals created.
   "python.terminal.activateEnvironment": true,

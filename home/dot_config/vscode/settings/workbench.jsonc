@@ -144,6 +144,7 @@
   "workbench.hover.delay": 300,
   "workbench.hover.reducedDelay": 300,
   "workbench.iconTheme": "catppuccin-latte",
+  "workbench.productIconTheme": "viraOutline",
   "workbench.layoutControl.enabled": false,
   "workbench.layoutControl.type": "both",
   // WORKBENCH LIST
