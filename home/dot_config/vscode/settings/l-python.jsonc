@@ -19,8 +19,16 @@
   //  - always: Always display information.
   "python.interpreter.infoVisibility": "onPythonRelated",
 
-  // set ty as default language server
+  // Defines type of the language server.
+  //  - Default: Automatically select a language server: Pylance if installed and available, otherwise fallback to Jedi.
+  //  - Jedi: Use Jedi behind the Language Server Protocol (LSP) as a language server.
+  //  - Pylance: Use Pylance as a language server.
+  //  - None: Disable language server capabilities.
   "python.languageServer": "None",
+
+  // fix: Python extension loading...
+  // link: https://stackoverflow.com/questions/78886125/vscode-python-extension-loading-forever-saying-reactivating-terminals
+  "python.locator": "js",
 
   // Toggle Smart Send for the Python REPL. Smart Send enables sending the smallest runnable block of code to the REPL on Shift+Enter and moves the cursor accordingly.
   "python.REPL.enableREPLSmartSend": true,
@@ -50,48 +58,72 @@
   // Enable [shell integration](https://code.visualstudio.com/docs/terminal/shell-integration) for the terminals running python. Shell integration enhances the terminal experience by enabling command decorations, run recent command, improving accessibility among other things. Note: PyREPL (available in Python 3.13+) is automatically disabled when shell integration is enabled to avoid cursor indentation issues.
   "python.terminal.shellIntegration.enabled": true,
 
-	// Enable auto run test discovery when saving a test file.
-	"python.testing.autoTestDiscoverOnSaveEnabled": true,
+  // Enable auto run test discovery when saving a test file.
+  "python.testing.autoTestDiscoverOnSaveEnabled": true,
 
-	// Glob pattern used to determine which files are used by autoTestDiscoverOnSaveEnabled.
-	"python.testing.autoTestDiscoverOnSavePattern": "**/*.py",
+  // Glob pattern used to determine which files are used by autoTestDiscoverOnSaveEnabled.
+  "python.testing.autoTestDiscoverOnSavePattern": "**/*.py",
 
-	// Optional working directory for tests.
-	"python.testing.cwd": null,
+  // Optional working directory for tests.
+  "python.testing.cwd": null,
 
-	// Port number used for debugging of tests.
-	"python.testing.debugPort": 3000,
+  // Port number used for debugging of tests.
+  "python.testing.debugPort": 3000,
 
-	// Prompt to configure a test framework if potential tests directories are discovered.
-	"python.testing.promptToConfigure": true,
+  // Prompt to configure a test framework if potential tests directories are discovered.
+  "python.testing.promptToConfigure": true,
 
-	// Arguments passed in. Each argument is a separate item in the array.
-	"python.testing.pytestArgs": [],
+  // Arguments passed in. Each argument is a separate item in the array.
+  "python.testing.pytestArgs": [],
 
-	// Enable testing using pytest.
-	"python.testing.pytestEnabled": true,
+  // Enable testing using pytest.
+  "python.testing.pytestEnabled": true,
 
-	// Arguments passed in. Each argument is a separate item in the array.
-	"python.testing.unittestArgs": [
-		"-v",
-		"-s",
-		".",
-		"-p",
-		"*test*.py"
-	],
+  // Arguments passed in. Each argument is a separate item in the array.
+  "python.testing.unittestArgs": ["-v", "-s", ".", "-p", "*test*.py"],
 
-	// Enable testing using unittest.
-	"python.testing.unittestEnabled": true,
+  // Enable testing using unittest.
+  "python.testing.unittestEnabled": true,
 
-	// Enables the Python Environments extension. Requires window reload on change.
+  // Enables the Python Environments extension. Requires window reload on change.
   // don't use python environment extension
-	"python.useEnvironmentsExtension": false,
+  "python.useEnvironmentsExtension": false,
 
-	// Folders in your home directory to look into for virtual environments (supports pyenv, direnv and virtualenvwrapper by default).
-	"python.venvFolders": [],
+  // Folders in your home directory to look into for virtual environments (supports pyenv, direnv and virtualenvwrapper by default).
+  "python.venvFolders": [],
 
-	// Path to folder with a list of Virtual Environments (e.g. ~/.pyenv, ~/Envs, ~/.virtualenvs).
-	"python.venvPath": "",
+  // Path to folder with a list of Virtual Environments (e.g. ~/.pyenv, ~/Envs, ~/.virtualenvs).
+  "python.venvPath": "",
+
+  /***********
+   * PYREFLY *
+   ***********/
+  // Path to a pyrefly.toml or pyproject.toml configuration file. When set, the LSP will use this config for all files in your workspace instead of the default Pyrefly config-finding logic. Prefer to use default logic wherever possible.
+  "python.pyrefly.configPath": "",
+
+  // Controls the scope of Pyrefly's diagnostic analysis. When set to 'openFilesOnly', diagnostics are only provided for files that are currently open in the editor. When set to 'workspace', diagnostics are computed and published for all files in the workspace.
+  "python.pyrefly.diagnosticMode": "openFilesOnly",
+
+  // Disable specific language services. Set individual services to true to disable them.
+  "python.pyrefly.disabledLanguageServices": {},
+
+  // If true, Pyrefly will not provide other IDE services like completions, hover, definition, etc. To control type errors, see `python.pyrefly.typeCheckingMode` and `python.pyrefly.disableTypeErrors`.
+  "python.pyrefly.disableLanguageServices": false,
+
+  // If true, Pyrefly will not provide diagnostics for files in this workspace.
+  "python.pyrefly.disableTypeErrors": false,
+
+  // Enable Pyrefly's Run/Test CodeLens actions for Python files.
+  "python.pyrefly.runnableCodeLens": true,
+
+  // If true (default), Pyrefly will stream diagnostics as they become available during recheck, providing incremental feedback. Set to false to only publish diagnostics after the full recheck completes.
+  "python.pyrefly.streamDiagnostics": true,
+
+  // If true, Pyrefly will sync notebook documents with the language server. Set to false to disable notebook support.
+  "python.pyrefly.syncNotebooks": true,
+
+  // [Preset](https://pyrefly.org/en/docs/configuration/#preset) to use for files not covered by a `pyrefly.toml`. The default `auto` migrates a nearby mypy/pyright config when present, otherwise uses `basic`.
+  "python.pyrefly.typeCheckingMode": "auto",
 
   /******
    * TY *
@@ -314,7 +346,12 @@
   // Paths may contain wildcard characters `**` (a directory or multiple levels of directories), `*` (a sequence of zero or more characters), or `?` (a single character).
   //
   // If no exclude paths are specified, Pylance automatically excludes the following: `**/node_modules`, `**/__pycache__`, `.git` and any virtual environment directories. If the path contains a `${workspaceFolder:<workspaceName>}` variable, the glob pattern will only apply to the corresponding workspace in a multi-root workspace environment.
-  "python.analysis.exclude": [],
+  "python.analysis.exclude": [
+    "**/node_modules",
+    "**/.venv",
+    "**/venv",
+    "**/__pycache__"
+  ],
 
   // Suppress diagnostics for library files such as standard library, site-packages, and typeshed files while continuing to show diagnostics for user-authored files.
   "python.analysis.excludeLibraryDiagnostics": true,

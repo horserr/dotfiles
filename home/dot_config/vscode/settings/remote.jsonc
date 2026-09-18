@@ -23,7 +23,6 @@
   // dev container can also be customized "dev.containers.defaultExtensions"
   "remote.defaultExtensionsIfInstalledLocally": [
     "albert.TabOut",
-    "astral-sh.ty",
     "charliermarsh.ruff",
     "chrislajoie.vscode-modelines",
     "codezombiech.gitignore",
@@ -32,13 +31,14 @@
     "docker.docker",
     "EditorConfig.EditorConfig",
     "esbenp.prettier-vscode",
-    "FanaticPythoner.better-todo-tree",
+    // "FanaticPythoner.better-todo-tree",
     "gass.git-log-pickaxe",
     "github.vscode-github-actions",
     "iliazeus.vscode-ansi",
     "johnny-zhao.oai-compatible-copilot",
     "jonsmithers.open-in-vim",
     "mechatroner.rainbow-csv",
+    "meta.pyrefly",
     "ms-azuretools.vscode-containers",
     "nexmoe.monitor-pro",
     "Nur.script",
@@ -58,11 +58,12 @@
     "wraith13.sysinfo-vscode",
     "yzhang.markdown-all-in-one",
     "zh9528.file-size"
+    // "astral-sh.ty",
   ],
 
   "remote.SSH.defaultExtensions": [
     "nexmoe.monitor-pro",
-    "FanaticPythoner.better-todo-tree",
+    // "FanaticPythoner.better-todo-tree",
     "fill-labs.dependi"
   ],
 

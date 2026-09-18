@@ -1,12 +1,13 @@
 {
   // refer to "remote.defaultExtensionsIfInstalledLocally" for default remote extensions
   "dev.containers.defaultExtensions": [
-    "astral-sh.ty",
     "charliermarsh.ruff",
     "docker.docker",
-    "FanaticPythoner.better-todo-tree",
+    // "FanaticPythoner.better-todo-tree",
     "MarcinJachmann.vscode-eincolor",
+    "meta.pyrefly",
     "nexmoe.monitor-pro"
+    // "astral-sh.ty",
   ],
   "dev.containers.defaultFeatures": {},
   // Controls whether a credential helper should be registered as the `credStore` in the Docker configuration (`~/.docker/config.json`) of dev containers. This will not overwrite an existing `credStore` entry in the configuration file.
@@ -93,7 +94,7 @@
   "containers.containers.groupByLabel": "",
 
   // The primary property to display for a container: ContainerId, ContainerName, CreatedTime, FullTag, ImageId, Networks, Ports, Registry, RegistryAndPath, Repository, RepositoryName, RepositoryNameShort, RepositoryNameAndTag, State, Status, or Tag
-  "containers.containers.label": "FullTag",
+  "containers.containers.label": "ContainerName",
 
   // The property to use to sort containers in the Containers view: CreatedTime, CreatedTimeReverse, Label, or LabelReverse
   "containers.containers.sortBy": "CreatedTime",

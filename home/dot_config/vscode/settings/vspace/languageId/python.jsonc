@@ -1,5 +1,12 @@
 [
   // uv.searchPackage
+
+  // pyrefly.foldAllDocstrings
+  // pyrefly.infer
+  // pyrefly.restartClient
+  // pyrefly.runMain
+  // pyrefly.runTest
+  // pyrefly.unfoldAllDocstrings
   {
     "key": "languageId:python",
     "name": "Python",
@@ -187,7 +194,8 @@
             "type": "commands",
             // "command": "python.analysis.restartLanguageServer"
             // python.clearCacheAndReload
-            "commands": ["ty.restart", "ruff.restart"]
+            // "commands": ["ty.restart", "ruff.restart"]
+            "commands": ["ruff.restart"]
           },
           // x clear workspace interpreter setting
           {
