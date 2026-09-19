@@ -1,0 +1,7 @@
+{
+  // Global debug launch configuration. Should be used as an alternative to 'launch.json' that is shared across workspaces.
+  "launch": {
+    "configurations": [],
+    "compounds": []
+  }
+}
