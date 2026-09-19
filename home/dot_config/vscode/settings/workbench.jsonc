@@ -4,12 +4,74 @@
   "workbench.activityBar.autoHide": false,
   "workbench.activityBar.compact": true,
   "workbench.activityBar.location": "bottom",
-  "workbench.browser.enableRemoteProxy": false,
+
+  // Controls whether the Integrated Browser automatically reloads by default when displaying local `file://` resources that change on disk.
+  "workbench.browser.autoReloadOnFileChange": true,
+
+  // Controls how browser data (cookies, cache, storage) is shared between browser views.
+  //
+  // **Note**: In untrusted workspaces, this setting is ignored and `ephemeral` storage is always used.
+  //  - default: `global` for local workspaces, `workspace` for remote workspaces.
+  //  - global: All browser views share a single persistent session across all workspaces. Incompatible with remote sessions.
+  //  - workspace: Browser views within the same workspace share a persistent session. If no workspace is opened, `ephemeral` storage is used.
+  //  - ephemeral: Each browser view has its own session that is cleaned up when closed.
+  //  - agent: Browser views share one in-memory session that is cleaned up when the application is closed. This session is shared with agent-opened browser pages, so **all data including local storage and cookies will be accessible by agents.** When agent network filtering is enabled, requests from this session are restricted by the configured network domain policy.
+  "workbench.browser.dataStorage": "default",
+
+  // When enabled, chat agents can use browser tools to open and interact with pages in the Integrated Browser.
+  "workbench.browser.enableChatTools": true,
+
+  // When enabled, browser requests in remote workspaces are proxied through the remote connection. This allows web pages to access resources available on the remote host.
+  "workbench.browser.enableRemoteProxy": true,
+
+  // When enabled, experimental user-facing tools are available in the Integrated Browser's Add to Chat menu.
+  "workbench.browser.experimentalUserTools.enabled": true,
+
+  // Maximum number of history items kept per session scope. Older entries are evicted first.
+  "workbench.browser.maxHistoryEntries": 200,
+
+  // Controls where new Integrated Browser tabs are opened.
+  //  - activeGroup: New browser tabs open in the currently active editor group.
+  //  - sideGroup: New browser tabs open in a dedicated editor group to the side that is reused for subsequent tabs. The group is locked so other editors are not opened into it.
+  //  - window: New browser tabs open in a dedicated window that is reused for subsequent tabs. The window is locked so other editors are not opened into it.
   "workbench.browser.newTabPlacement": "window",
+
+  // When enabled, localhost links (`localhost`, `127.0.0.1`, `[::1]`) and all-interfaces links (`0.0.0.0`, `[0:0:0:0:0:0:0:0]`, `[::]`) from the terminal, chat, and other sources will open in the Integrated Browser instead of the system browser.
   "workbench.browser.openLocalhostLinks": true,
+
+  // Default zoom level for all sites in the Integrated Browser.
+  //  - Match Window: Matches the application's current UI zoom level.
+  //  - 25%
+  //  - 33%
+  //  - 50%
+  //  - 67%
+  //  - 75%
+  //  - 80%
+  //  - 90%
+  //  - 100%
+  //  - 110%
+  //  - 125%
+  //  - 150%
+  //  - 175%
+  //  - 200%
+  //  - 250%
+  //  - 300%
+  //  - 400%
+  //  - 500%
   "workbench.browser.pageZoom": "Match Window",
-  "workbench.browser.searchEngine": "google",
+
+  // Controls the search engine used to search the web from the address bar of the integrated browser. Select 'None' to disable search.
+  "workbench.browser.searchEngine": "bing",
+
+  // Controls whether a screenshot of the selected element will be added to the chat.
+  "workbench.browser.sendElementsToChat.attachImages": true,
+
+  // Controls whether the Integrated Browser button is shown in the title bar.
+  //  - true: The button is always shown in the title bar.
+  //  - false: The button is never shown in the title bar.
+  //  - whenOpen: The button is shown in the title bar when a browser editor is open.
   "workbench.browser.showInTitleBar": true,
+
   "workbench.cloudChanges.autoResume": "onReload",
   "workbench.colorCustomizations": {
     // NOTE: use this command to view current theme color workbench.action.generateColorTheme
