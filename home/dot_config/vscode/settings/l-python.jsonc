@@ -1,4 +1,5 @@
 {
+  "$help": "https://code.visualstudio.com/docs/python/settings-reference",
   "[python]": {
     "editor.codeActionsOnSave": {
       "source.fixAll.ruff": "explicit",
@@ -86,14 +87,54 @@
   "python.testing.unittestEnabled": true,
 
   // Enables the Python Environments extension. Requires window reload on change.
-  // don't use python environment extension
-  "python.useEnvironmentsExtension": false,
+  "python.useEnvironmentsExtension": true,
 
   // Folders in your home directory to look into for virtual environments (supports pyenv, direnv and virtualenvwrapper by default).
   "python.venvFolders": [],
 
   // Path to folder with a list of Virtual Environments (e.g. ~/.pyenv, ~/Envs, ~/.virtualenvs).
   "python.venvPath": "",
+
+  /**************
+   * PYTHON ENV *
+   **************/
+  // When set to true, uv will be used to manage all virtual environments if available. When set to false, uv will only manage virtual environments explicitly created by uv.
+  "python-envs.alwaysUseUv": true,
+
+  // The default environment manager for creating and managing environments.
+  "python-envs.defaultEnvManager": "ms-python.python:venv",
+
+  // The default package manager for installing packages in environments.
+  "python-envs.defaultPackageManager": "ms-python.python:pip",
+
+  // Absolute paths to search for Python environments across all workspaces. Use for shared environment folders like `~/envs`.
+  "python-envs.globalSearchPaths": [],
+
+  // The list of Python projects.
+  "python-envs.pythonProjects": [],
+
+  // Specifies how the extension can activate an environment in a terminal.
+  //
+  // Shell startup activates using [shell integration](https://code.visualstudio.com/docs/terminal/shell-integration) or may require changes to the shell initialization files and is only enabled for the following shells: zsh, fsh, pwsh, bash, cmd. When set to `command`, any shell can be activated.
+  //
+  // **Legacy Setting Support:** This setting takes precedence over the legacy `python.terminal.activateEnvironment` setting. If this setting is not explicitly set and `python.terminal.activateEnvironment` is set to false, this setting will automatically be set to `off` to preserve your preference.
+  //
+  // This setting applies only when terminals are created, so you will need to restart your terminals for it to take effect.
+  //
+  // To revert changes made during shellStartup, run `Python Envs: Revert Shell Startup Script Changes`.
+  //  - command: Activation by executing a command in the terminal.
+  //  - shellStartup: Activation using [shell integration](https://code.visualstudio.com/docs/terminal/shell-integration) or by modifying the terminal shell startup script. Enable `terminal.integrated.shellIntegration.enabled` or we may need to modify your shell startup scripts for the ideal experience.
+  //  - off: No automatic activation of environments.
+  "python-envs.terminal.autoActivationType": "command",
+
+  // Whether to show the 'Activate' button in the terminal menu
+  "python-envs.terminal.showActivateButton": false,
+
+  // Paths to search for environments in this workspace. By default, searches for a `.venv` folder in the workspace root.
+  "python-envs.workspaceSearchPaths": [".venv", "*/.venv"],
+
+  // Controls whether environment variables from .env files and python.envFile setting are injected into terminals.
+  "python.terminal.useEnvFile": true,
 
   /***********
    * PYREFLY *
