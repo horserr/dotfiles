@@ -1,0 +1,10 @@
+---
+vscode:
+  fontSize:
+    major: 17
+    minor: 15
+  extension:
+    local:
+    wsl:
+    remote:
+...

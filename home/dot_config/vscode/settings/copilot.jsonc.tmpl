@@ -7,12 +7,10 @@
   "chat.defaultModel": "Deepseek V4 Flash",
   "chat.disableAIFeatures": false,
   // copilot chat settings
-  "chat.editor.fontSize": 17,
   "chat.editor.lineHeight": 1.4,
   "chat.editor.wordWrap": "on",
   "chat.edits2.enabled": true,
   "chat.fontFamily": "LXGW Wenkai",
-  "chat.fontSize": 17,
   "chat.notifyWindowOnConfirmation": "windowNotFocused",
   "chat.notifyWindowOnResponseReceived": "windowNotFocused",
   "chat.renderRelatedFiles": true,
@@ -24,5 +22,7 @@
     "markdown": false,
     "plaintext": false,
     "scminput": true
-  }
+  },
+  "chat.fontSize": {{ .vscode.fontSize.major }},
+  "chat.editor.fontSize": {{ .vscode.fontSize.major }}
 }

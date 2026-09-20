@@ -31,9 +31,6 @@
   // Controls the font family in the Debug Console.
   "debug.console.fontFamily": "default",
 
-  // Controls the font size in pixels in the Debug Console.
-  "debug.console.fontSize": 18,
-
   // Controls if the Debug Console should suggest previously typed input.
   "debug.console.historySuggestions": true,
 
@@ -125,5 +122,8 @@
   //  - docked: Show debug toolbar only in debug views.
   //  - commandCenter: `(Experimental)` Show debug toolbar in the command center.
   //  - hidden: Do not show debug toolbar.
-  "debug.toolBarLocation": "floating"
+  "debug.toolBarLocation": "floating",
+
+  // Controls the font size in pixels in the Debug Console.
+  "debug.console.fontSize": {{ .vscode.fontSize.major }}
 }

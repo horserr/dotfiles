@@ -6,7 +6,6 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.foldingStrategy": "auto",
     // "editor.fontFamily": "STDongGuanTi, LXGW WenKai, jiangxizhuokai",
-    // "editor.fontSize": 19,
     "editor.indentSize": "tabSize",
     "editor.letterSpacing": 0.8,
     "editor.lineHeight": 1.6,
@@ -100,7 +99,6 @@
   "markdown.preview.breaks": false,
   "markdown.preview.doubleClickToSwitchToEditor": true,
   "markdown.preview.fontFamily": "STDongGuanTi, -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif",
-  "markdown.preview.fontSize": 16,
   "markdown.preview.frontMatter": "codeBlock",
   "markdown.preview.lineHeight": 1.5,
   "markdown.preview.linkify": true,
@@ -121,7 +119,8 @@
     "**/*.{jpg,jpe,jpeg,png,bmp,gif,ico,webp,avif,tiff,svg,mp4}"
   ],
   // use markdown lint instead
-  "markdown.validate.enabled": false
+  "markdown.validate.enabled": false,
+
   // "markdown.validate.fileLinks.markdownFragmentLinks": "inherit",
   // "markdown.validate.fragmentLinks.enabled": "warning",
   // // WORKSPACE
@@ -134,4 +133,5 @@
   // ],
   // "markdown.validate.referenceLinks.enabled": "warning",
   // "markdown.validate.unusedLinkDefinitions.enabled": "hint",
+  "markdown.preview.fontSize": {{ .vscode.fontSize.major }}
 }

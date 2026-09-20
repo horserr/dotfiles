@@ -78,7 +78,6 @@
   "terminal.integrated.fontFamily": "CaskaydiaCove Nerd Font",
   "terminal.integrated.fontLigatures.enabled": true,
   "terminal.integrated.fontLigatures.featureSettings": "\"calt\" on, \"liga\" on, \"ss01\", \"ss02\"",
-  "terminal.integrated.fontSize": 17,
   "terminal.integrated.fontWeight": "normal",
   // UPLIFTING 当没有需要恢复的 terminal 时自动关闭 terminal pane
   "terminal.integrated.hideOnStartup": "whenEmpty",
@@ -184,5 +183,6 @@
   "terminal.integrated.tabs.title": "${sequence}",
   "terminal.integrated.tabStopWidth": 2,
   "terminal.integrated.textBlinking": true,
-  "terminal.sourceControlRepositoriesKind": "integrated"
+  "terminal.sourceControlRepositoriesKind": "integrated",
+  "terminal.integrated.fontSize": {{ .vscode.fontSize.major }}
 }

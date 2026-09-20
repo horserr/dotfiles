@@ -18,16 +18,17 @@
   // "notebook.markup.fontFamily": "LXGW WenKai",
   // "notebook.markup.fontFamily": "Comfortaa",
   "notebook.markup.fontFamily": "Microsoft YaHei",
-  "notebook.markup.fontSize": 16,
   "notebook.outline.showCodeCells": true,
   // "notebook.output.fontFamily": "AI楷",
   "notebook.output.fontFamily": "ProggyClean Nerf Font",
-  "notebook.output.fontSize": 16.5,
   "notebook.output.lineHeight": 1.3,
   "notebook.output.scrolling": true,
   "notebook.output.textLineLimit": 6,
   // jupyter notebook settings
   "notebook.output.wordWrap": true,
   "notebook.showCellStatusBar": "visibleAfterExecute",
-  "notebook.stickyScroll.enabled": true
+  "notebook.stickyScroll.enabled": true,
+
+  "notebook.output.fontSize": {{ .vscode.fontSize.minor }},
+  "notebook.markup.fontSize": {{ .vscode.fontSize.major }}
 }
