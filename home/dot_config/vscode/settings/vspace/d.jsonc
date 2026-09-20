@@ -1,137 +1,213 @@
 [
-  //  "editor.debug.action.showDebugHover"
-  // "command": "callStackWidget.goToFile"
+  // todo
+
+  // debug.openBreakpointToSide
+  // debug.breakWhenValueChanges
+  // debug.breakWhenValueIsAccessed
+  // debug.breakWhenValueIsRead
+
+  // repl.action.filter
+  // repl.action.find
+  // workbench.debug.panel.action.clearReplAction
+
+  // extension.js-debug.network.clear
+  // extension.js-debug.network.copyUri
+  // extension.js-debug.debugLink
+  // extension.js-debug.prettyPrint
+  // extension.js-debug.stopProfile
+  // extension.js-debug.startProfile
+  // extension.js-debug.toggleSkippingFile
+  // extension.js-debug.enableSourceMapStepping
+  // extension.js-debug.callers.goToCaller
+  // extension.js-debug.callers.gotToTarget
+  // extension.js-debug.network.openBody
+  // extension.js-debug.network.openBodyInHex
+  // remove all event listener breakpoints
+  // extension.js-debug.removeAllCustomBreakpoints
+  // extension.js-debug.callers.removeAll
+  // extension.js-debug.callers.remove
+  // extension.js-debug.removeXHRBreakpoint
+  // extension.js-debug.network.replayXHR
+  // extension.js-debug.network.viewRequest
+
+  // extension.node-debug.toggleAutoAttach
+
+  // view:
+  // workbench.debug.viewlet.action.toggleBreakpointsActivatedAction
+  // workbench.debug.viewlet.action.toggleBreakpointsPresentation
+  // extension.js-debug.addCustomBreakpoints
+  // "callStackWidget.goToFile"
+
   {
     "key": "d",
     "name": "+Debug",
     "icon": "bug",
     "type": "bindings",
     "bindings": [
+      // space manage debug
       {
-        "key": "c",
-        "name": "Continue debug",
-        "icon": "debug-continue",
-        "type": "command",
-        "command": "workbench.action.debug.continue"
+        "key": " ",
+        "name": "+Manage debug",
+        "icon": "debug-gripper",
+        "type": "bindings",
+        "bindings": [
+          // space select debug session
+          {
+            "key": " ",
+            "name": "select debug session",
+            "icon": "list-selection",
+            "type": "command",
+            "command": "workbench.action.debug.selectDebugSession"
+          },
+          // . start debug
+          {
+            "key": ".",
+            "name": "Start debug",
+            "icon": "debug-start",
+            "type": "bindings",
+            "bindings": [
+              // space select and start debug
+              {
+                "key": " ",
+                "name": "Start debug with selection",
+                "icon": "debug-breakpoint-log",
+                "type": "command",
+                "command": "workbench.action.debug.selectandstart"
+              },
+              {
+                "key": ".",
+                "name": "Start debug",
+                "icon": "debug-start",
+                "type": "command",
+                "command": "workbench.action.debug.start"
+              },
+              // > run without debugging
+              {
+                "key": ">",
+                "name": "Run without debugging",
+                "icon": "run",
+                "type": "command",
+                "command": "workbench.action.debug.run"
+              }
+            ]
+          },
+          // / stop debug
+          {
+            "key": "/",
+            "name": "Stop debug",
+            "icon": "debug-stop",
+            "type": "command",
+            "command": "workbench.action.debug.stop"
+          },
+          // c continue debug
+          {
+            "key": "c",
+            "name": "Continue debug",
+            "icon": "debug-continue",
+            "type": "command",
+            "command": "workbench.action.debug.continue"
+          },
+          // p pause debug
+          {
+            "key": "p",
+            "name": "Pause debug",
+            "icon": "debug-pause",
+            "type": "command",
+            "command": "workbench.action.debug.pause"
+          },
+          // r restart debug
+          {
+            "key": "r",
+            "name": "Restart debug",
+            "icon": "debug-restart",
+            "type": "command",
+            "command": "workbench.action.debug.restart"
+          },
+          // a attach to node process
+          {
+            "key": "a",
+            "name": "debugging: attach to node process",
+            "icon": "attach",
+            "type": "command",
+            "command": "extension.pwa-node-debug.attachNodeProcess"
+          },
+          // d disconnect debugger
+          {
+            "key": "d",
+            "name": "+Disconnect debugger",
+            "icon": "debug-disconnect",
+            "type": "bindings",
+            "bindings": [
+              // d disconnect
+              {
+                "key": "d",
+                "name": "Disconnect debugger",
+                "icon": "debug-disconnect",
+                "type": "command",
+                // note: the program will continue to run after this command
+                "command": "workbench.action.debug.disconnect"
+              },
+              // s disconnect and suspend
+              {
+                "key": "s",
+                "name": "Disconnect debugger and suspend executation",
+                "icon": "debug-disconnect",
+                "type": "command",
+                // note: the program will suspend after this command
+                "command": "workbench.action.debug.disconnectAndSuspend"
+              }
+            ]
+          },
+          // e stop on entry
+          {
+            "key": "e",
+            "name": "start debugging and stop on entry",
+            "icon": "stop",
+            "type": "command",
+            "command": "extension.node-debug.startWithStopOnEntry"
+          },
+          // T terminate thread
+          {
+            "key": "T",
+            "name": "terminate thread",
+            "icon": "strikethrough",
+            "type": "command",
+            "command": "workbench.action.debug.terminateThread"
+          }
+        ]
       },
+      // d breakpoint
       {
         "key": "d",
-        "name": "Show debug console",
-        "icon": "debug-console",
-        "type": "command",
-        "command": "workbench.debug.action.toggleRepl"
-      },
-      {
-        "key": "d",
-        "name": "Start debug",
-        "icon": "debug-start",
-        "type": "command",
-        "command": "workbench.action.debug.start"
-      },
-      {
-        "key": "i",
-        "name": "Step into",
-        "icon": "debug-step-into",
-        "type": "command",
-        "command": "workbench.action.debug.stepInto"
-      },
-      {
-        "key": "j",
-        "name": "Jump to cursor",
-        "icon": "whole-word",
-        "type": "command",
-        "command": "debug.jumpToCursor"
-      },
-      {
-        "key": "o",
-        "name": "Step out",
-        "icon": "debug-step-out",
-        "type": "command",
-        "command": "workbench.action.debug.stepOut"
-      },
-      {
-        "key": "p",
-        "name": "Pause debug",
-        "icon": "debug-pause",
-        "type": "command",
-        "command": "workbench.action.debug.pause"
-      },
-      {
-        "key": "s",
-        "name": "Step over",
-        "icon": "debug-step-over",
-        "type": "command",
-        "command": "workbench.action.debug.stepOver"
-      },
-      {
-        "key": "v",
-        "name": "REPL",
-        "icon": "debug-console",
-        "type": "command",
-        "command": "workbench.debug.action.toggleRepl"
-      },
-      {
-        "key": "w",
-        "name": "Focus on watch window",
-        "icon": "eye-watch",
-        "type": "command",
-        "command": "workbench.debug.action.focusWatchView"
-      },
-      {
-        "key": "C",
-        "name": "Continue to cursor",
-        "icon": "debug-continue",
-        "type": "command",
-        "command": "editor.debug.action.runToCursor"
-      },
-      {
-        "key": "D",
-        "name": "Run without debugging",
-        "icon": "run",
-        "type": "command",
-        "command": "workbench.action.debug.run"
-      },
-      {
-        "key": "R",
-        "name": "Restart debug",
-        "icon": "debug-restart",
-        "type": "command",
-        "command": "workbench.action.debug.restart"
-      },
-      {
-        "key": "S",
-        "name": "Stop debug",
-        "icon": "debug-stop",
-        "type": "command",
-        "command": "workbench.action.debug.stop"
-      },
-      {
-        "key": "W",
-        "name": "Add to watch",
-        "icon": "watch-expressions-add",
-        "type": "command",
-        "command": "editor.debug.action.selectionToWatch"
-      },
-      {
-        "key": "b",
         "name": "+Breakpoint",
         "icon": "debug-breakpoint",
         "type": "bindings",
         "bindings": [
+          // space toggle breakpoint
           {
-            "key": "b",
+            "key": " ",
             "name": "Toggle breakpoint",
             "icon": "activate-breakpoints",
             "type": "command",
             "command": "editor.debug.action.toggleBreakpoint"
           },
+          // e toggle exception breakpoint
           {
-            "key": "c",
-            "name": "Add conditional breakpoint",
-            "icon": "debug-breakpoint-conditional",
+            "key": "e",
+            "name": "Toggle exception breakpoint",
+            "icon": "debug-breakpoint-unsupported",
             "type": "command",
-            "command": "editor.debug.action.conditionalBreakpoint"
+            "command": "debug.toggleExceptionBreakpoints"
           },
+          // , edit breakpoint
+          {
+            "key": ",",
+            "name": "edit breakpoint",
+            "icon": "edit",
+            "type": "command",
+            "command": "editor.debug.action.editBreakpoint"
+          },
+          // d delete breakpoint
           {
             "key": "d",
             "name": "Delete breakpoint",
@@ -139,13 +215,15 @@
             "type": "command",
             "command": "debug.removeBreakpoint"
           },
+          // c add conditional breakpoint
           {
-            "key": "e",
-            "name": "Enable breakpoint",
-            "icon": "debug-breakpoint",
+            "key": "c",
+            "name": "Add conditional breakpoint",
+            "icon": "debug-breakpoint-conditional",
             "type": "command",
-            "command": "debug.enableOrDisableBreakpoint"
+            "command": "editor.debug.action.conditionalBreakpoint"
           },
+          // f add function breakpoint
           {
             "key": "f",
             "name": "Add function breakpoint",
@@ -153,6 +231,39 @@
             "type": "command",
             "command": "workbench.debug.viewlet.action.addFunctionBreakpointAction"
           },
+          // t trigger breakpoint
+          {
+            "key": "t",
+            "name": "Toggle trigger breakpoint",
+            "icon": "activate-breakpoints",
+            "type": "command",
+            "command": "editor.debug.action.triggerByBreakpoint"
+          },
+          // l add log breakpoing
+          {
+            "key": "l",
+            "name": "add log breakpoint",
+            "icon": "activate-breakpoints",
+            "type": "command",
+            "command": "editor.debug.action.addLogPoint"
+          },
+          // a add address breakpoint
+          {
+            "key": "a",
+            "name": "add address breakpoint",
+            "icon": "activate-breakpoints",
+            "type": "command",
+            "command": "workbench.debug.viewlet.action.addDataBreakpointOnAddress"
+          },
+          // F add fetch/XHR breakpoint
+          {
+            "key": "F",
+            "name": "add fetch/XHR breakpoint",
+            "icon": "activate-breakpoints",
+            "type": "command",
+            "command": "extension.js-debug.addXHRBreakpoints"
+          },
+          // i inline breakpoint
           {
             "key": "i",
             "name": "Toggle inline breakpoint",
@@ -160,59 +271,23 @@
             "type": "command",
             "command": "editor.debug.action.toggleInlineBreakpoint"
           },
+          // k enable breakpoint
           {
-            "key": "n",
-            "name": "Next breakpoint",
-            "icon": "arrow-down",
-            "type": "transient",
-            "command": "editor.debug.action.goToNextBreakpoint",
-            "bindings": [
-              {
-                "key": "n",
-                "name": "Next breakpoint",
-                "icon": "arrow-down",
-                "type": "command",
-                "command": "editor.debug.action.goToNextBreakpoint"
-              },
-              {
-                "key": "p",
-                "name": "Previous breakpoint",
-                "icon": "arrow-up",
-                "type": "command",
-                "command": "editor.debug.action.goToPreviousBreakpoint"
-              }
-            ]
+            "key": "k",
+            "name": "Enable breakpoint",
+            "icon": "debug-breakpoint",
+            "type": "command",
+            "command": "debug.enableOrDisableBreakpoint"
           },
+          // j disable breakpoint
           {
-            "key": "p",
-            "name": "Previous breakpoint",
-            "icon": "arrow-up",
-            "type": "transient",
-            "command": "editor.debug.action.goToPreviousBreakpoint",
-            "bindings": [
-              {
-                "key": "n",
-                "name": "Next breakpoint",
-                "icon": "arrow-down",
-                "type": "command",
-                "command": "editor.debug.action.goToNextBreakpoint"
-              },
-              {
-                "key": "p",
-                "name": "Previous breakpoint",
-                "icon": "arrow-up",
-                "type": "command",
-                "command": "editor.debug.action.goToPreviousBreakpoint"
-              }
-            ]
-          },
-          {
-            "key": "s",
+            "key": "j",
             "name": "Disable breakpoint",
             "icon": "debug-breakpoint-disabled",
             "type": "command",
             "command": "debug.enableOrDisableBreakpoint"
           },
+          // D delete all breakpoints
           {
             "key": "D",
             "name": "Delete all breakpoints",
@@ -220,19 +295,279 @@
             "type": "command",
             "command": "workbench.debug.viewlet.action.removeAllBreakpoints"
           },
+          // K enable all breakpoints
           {
-            "key": "E",
+            "key": "K",
             "name": "Enable all breakpoints",
             "icon": "expand-all",
             "type": "command",
             "command": "workbench.debug.viewlet.action.enableAllBreakpoints"
           },
+          // J disable all breakpoints
           {
-            "key": "S",
+            "key": "J",
             "name": "Disable all breakpoints",
             "icon": "collapse-all",
             "type": "command",
             "command": "workbench.debug.viewlet.action.disableAllBreakpoints"
+          },
+          // r reapply breakpoint
+          {
+            "key": "r",
+            "name": "reapply breakpoint",
+            "icon": "debug-restart",
+            "type": "command",
+            // note: this command is useful after hot fixing the code and making the debugger reapply breakpoints.
+            "command": "workbench.debug.viewlet.action.reapplyBreakpointsAction"
+          }
+        ]
+      },
+      // h run to cursor
+      {
+        "key": "h",
+        "name": "run to cursor",
+        "icon": "debug-continue",
+        "type": "command",
+        "command": "editor.debug.action.runToCursor"
+      },
+      // H jump to cursor
+      {
+        "key": "H",
+        "name": "jump to cursor",
+        "icon": "cursor",
+        "type": "command",
+        // note: this command will ignore the intermediate lines of code
+        // this command can be useful for manually resetting execution location to a previous point
+        "command": "debug.jumpToCursor"
+      },
+      // l step into
+      {
+        "key": "l",
+        "name": "Step into",
+        "icon": "debug-step-into",
+        "type": "command",
+        // "command": "workbench.action.debug.stepInto"
+        // editor.debug.action.stepIntoTargets
+        "command": "workbench.action.debug.stepIntoTarget"
+      },
+      // k step out
+      {
+        "key": "k",
+        "name": "Step out",
+        "icon": "debug-step-out",
+        "type": "command",
+        "command": "workbench.action.debug.stepOut"
+      },
+      // j step over
+      {
+        "key": "j",
+        "name": "Step over",
+        "icon": "debug-step-over",
+        "type": "command",
+        "command": "workbench.action.debug.stepOver"
+      },
+      // s open debug configuration
+      {
+        "key": "s",
+        "name": "add debug configuration",
+        "icon": "extensions-configure-recommended",
+        "type": "command",
+        // "command": "workbench.action.debug.configure"
+        "command": "debug.addConfiguration"
+      },
+      // v +View
+      {
+        "key": "v",
+        "name": "+View",
+        "icon": "debug-console-view-icon",
+        "type": "bindings",
+        "bindings": [
+          // jsBrowserBreakpoints.focus
+          // jsExcludedCallers.focus
+          // jsDebugNetworkTree.focus
+
+          // // v run and debug view
+          // {
+          //   "key": "v",
+          //   "name": "run and debug view",
+          //   "icon": "rerun-task",
+          //   "type": "command",
+          //   // "command": "debug.openView"
+          //   "command": "workbench.view.debug"
+          // },
+          // w focus watch
+          {
+            "key": "w",
+            "name": "Focus on watch",
+            "icon": "eye-watch",
+            "type": "command",
+            "command": "workbench.debug.action.focusWatchView"
+          },
+          // b breakpoint
+          {
+            "key": "b",
+            "name": "Focus on breakpoint",
+            "icon": "breakpoints-activate",
+            "type": "command",
+            "command": "workbench.debug.action.focusBreakpointsView"
+          },
+          // v variable view
+          {
+            "key": "v",
+            "name": "Focus on variable",
+            "icon": "variable",
+            "type": "command",
+            "command": "workbench.debug.action.focusVariablesView"
+          },
+          // a focus disassbmely view
+          {
+            "key": "a",
+            "name": "Focus on disassembly view",
+            "icon": "build",
+            "type": "command",
+            "command": "debug.action.openDisassemblyView"
+          },
+          // c source code
+          {
+            "key": "c",
+            "name": "toggle disassbmely source code",
+            "icon": "code",
+            "type": "bindings",
+            "bindings": [
+              // c source code
+              {
+                "key": "c",
+                "name": "toggle disassbmely source code",
+                "icon": "code",
+                "type": "command",
+                "command": "debug.action.toggleDisassemblyViewSourceCode"
+              },
+              // s loaded script
+              {
+                "key": "s",
+                "name": "Focus on loaded script",
+                "icon": "eye-watch",
+                "type": "command",
+                // workbench.debug.loadedScriptsView.focus
+                "command": "workbench.action.debug.showLoadedScripts"
+              }
+            ]
+          }
+        ]
+      },
+      // s call stack
+      {
+        "key": "s",
+        "name": "+Call Stack",
+        "icon": "callstack-view-icon",
+        "type": "bindings",
+        "bindings": [
+          // j navigate down call stack
+          {
+            "key": "j",
+            "name": "navigate down call stack",
+            "icon": "arrow-small-down",
+            "type": "command",
+            "command": "workbench.action.debug.callStackDown"
+          },
+          // G navigate bottom call stack
+          {
+            "key": "G",
+            "name": "navigate bottom call stack",
+            "icon": "arrow-down",
+            "type": "command",
+            "command": "workbench.action.debug.callStackBottom"
+          },
+          // g navigate top call stack
+          {
+            "key": "g",
+            "name": "navigate top call stack",
+            "icon": "arrow-up",
+            "type": "command",
+            "command": "workbench.action.debug.callStackTop"
+          },
+          // k navigate up call stack
+          {
+            "key": "k",
+            "name": "navigate top call stack",
+            "icon": "arrow-small-up",
+            "type": "command",
+            "command": "workbench.action.debug.callStackUp"
+          }
+        ]
+      },
+      // c console
+      {
+        "key": "c",
+        "name": "+Debug Console",
+        "icon": "debug-console",
+        "type": "bindings",
+        "bindings": [
+          // , select debug console
+          {
+            "key": ",",
+            "name": "select debug console",
+            "icon": "list-selection",
+            "type": "command",
+            "command": "workbench.action.debug.selectDebugConsole"
+          },
+          // c evaluate
+          {
+            "key": "c",
+            "name": "evaluation in debug console",
+            "icon": "console",
+            "type": "command",
+            "command": "editor.debug.action.selectionToRepl"
+          },
+          // v show debug console
+          {
+            "key": "v",
+            "name": "Show debug console",
+            "icon": "debug-console",
+            "type": "command",
+            // workbench.panel.repl.view.focus
+            "command": "workbench.debug.action.toggleRepl"
+          }
+        ]
+      },
+      // w watch
+      {
+        "key": "w",
+        "name": "Add to watch",
+        "icon": "watch-expressions-add",
+        "type": "command",
+        "command": "editor.debug.action.selectionToWatch"
+      },
+      // * misc
+      {
+        "key": "*",
+        "name": "+Misc",
+        "icon": "symbol-misc",
+        "type": "bindings",
+        "bindings": [
+          // r reveal page
+          {
+            "key": "r",
+            "name": "reveal webpage",
+            "icon": "debug-reverse-continue",
+            "type": "command",
+            "command": "extension.js-debug.revealPage"
+          },
+          // c exlude caller
+          {
+            "key": "c",
+            "name": "exclude caller",
+            "icon": "exclude",
+            "type": "command",
+            "command": "extension.js-debug.callers.add"
+          },
+          // o open browser dev tools
+          {
+            "key": "o",
+            "name": "open browser dev tools",
+            "icon": "browser",
+            "type": "command",
+            "command": "extension.js-debug.openEdgeDevTools"
           }
         ]
       }

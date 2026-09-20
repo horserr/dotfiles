@@ -1,4 +1,6 @@
 [
+  // show chat debug
+  // workbench.view.extension.copilot-chat
   {
     "key": "c",
     "name": "+Chat/Copilot",

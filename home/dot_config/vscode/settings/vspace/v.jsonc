@@ -105,6 +105,8 @@
             "icon": "extensions",
             "type": "command",
             "command": "workbench.extensions.action.installedExtensions"
+
+            // "command": "debug.installAdditionalDebuggers"
           }
         ]
       },

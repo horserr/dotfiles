@@ -865,6 +865,52 @@
                 "command": "editor.gotoPreviousFold"
               }
             ]
+          },
+          {
+            "key": "n",
+            "name": "Next breakpoint",
+            "icon": "arrow-down",
+            "type": "transient",
+            "command": "editor.debug.action.goToNextBreakpoint",
+            "bindings": [
+              {
+                "key": "n",
+                "name": "Next breakpoint",
+                "icon": "arrow-down",
+                "type": "command",
+                "command": "editor.debug.action.goToNextBreakpoint"
+              },
+              {
+                "key": "p",
+                "name": "Previous breakpoint",
+                "icon": "arrow-up",
+                "type": "command",
+                "command": "editor.debug.action.goToPreviousBreakpoint"
+              }
+            ]
+          },
+          {
+            "key": "p",
+            "name": "Previous breakpoint",
+            "icon": "arrow-up",
+            "type": "transient",
+            "command": "editor.debug.action.goToPreviousBreakpoint",
+            "bindings": [
+              {
+                "key": "n",
+                "name": "Next breakpoint",
+                "icon": "arrow-down",
+                "type": "command",
+                "command": "editor.debug.action.goToNextBreakpoint"
+              },
+              {
+                "key": "p",
+                "name": "Previous breakpoint",
+                "icon": "arrow-up",
+                "type": "command",
+                "command": "editor.debug.action.goToPreviousBreakpoint"
+              }
+            ]
           }
         ]
       }
