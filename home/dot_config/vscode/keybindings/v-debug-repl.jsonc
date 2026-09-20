@@ -1,7 +1,31 @@
 [
+  {
+    "key": "ctrl+j",
+    "command": "workbench.action.debug.nextConsole",
+    "when": "inDebugRepl"
+  }
   // {
-  //   "key": "f3",
-  //   "command": "list.find.replInputFocus",
-  //   "when": "view == 'workbench.panel.repl.view'"
+  //   "key": "ctrl+pageup",
+  //   "command": "workbench.action.debug.prevConsole",
+  //   "when": "inDebugRepl"
+  // },
+
+  /***********************
+   * DEFAULT KEYBINDINGS *
+   ***********************/
+  // {
+  //   "key": "enter",
+  //   "command": "repl.action.acceptInput",
+  //   "when": "inDebugRepl && textInputFocus"
+  // },
+  // {
+  //   "key": "ctrl+f",
+  //   "command": "repl.action.filter",
+  //   "when": "inDebugRepl && textInputFocus"
+  // },
+  // {
+  //   "key": "ctrl+alt+f",
+  //   "command": "repl.action.find",
+  //   "when": "inDebugRepl || inDebugRepl && focusedView == 'workbench.panel.repl.view'"
   // }
 ]
