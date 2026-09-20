@@ -515,10 +515,11 @@
       // y copy file path
       {
         "key": "y",
-        "name": "+Yank",
+        "name": "+Yank/Copy",
         "icon": "clippy",
         "type": "bindings",
         "bindings": [
+          // y relative path
           {
             "key": "y",
             "name": "Copy relative path of active file",
@@ -526,6 +527,7 @@
             "type": "command",
             "command": "copyRelativeFilePath"
           },
+          // p absolute path
           {
             "key": "p",
             "name": "Copy path of active file",
@@ -533,6 +535,22 @@
             "type": "command",
             // workbench.action.files.copyPathOfActiveFile
             "command": "copyFilePath"
+          },
+          // l github link
+          {
+            "key": "l",
+            "name": "Copy github link of active file",
+            "icon": "link",
+            "type": "command",
+            "command": "openInGitHub.copyFileLink"
+          },
+          // L github permalink
+          {
+            "key": "L",
+            "name": "Copy github permalink of active file",
+            "icon": "link-external",
+            "type": "command",
+            "command": "openInGitHub.copyFilePermalink"
           }
         ]
       },

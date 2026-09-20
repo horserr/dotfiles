@@ -135,6 +135,23 @@
         "icon": "symbol-snippet",
         "type": "bindings",
         "bindings": [
+          // space open repo
+          {
+            "key": " ",
+            "name": "Open repo in github",
+            "icon": "repo",
+            "type": "command",
+            "command": "openInGitHub.openRepository"
+          },
+          // , commits
+          {
+            "key": ",",
+            "name": "Open commits in github",
+            "icon": "git-commit",
+            "type": "command",
+            "command": "openInGitHub.openCommits"
+          },
+          // o search online
           {
             "key": "o",
             "name": "Search online with selection",
@@ -142,12 +159,133 @@
             "type": "command",
             "command": "Search For Selected Text"
           },
+          // l open links
           {
             "key": "l",
             "name": "Open link",
             "icon": "link-external",
             "type": "command",
             "command": "editor.action.openLink"
+          },
+          // f file on github
+          {
+            "key": "f",
+            "name": "Open file in github",
+            "icon": "file",
+            "type": "command",
+            "command": "openInGitHub.openFile"
+          },
+          // b file blame
+          {
+            "key": "b",
+            "name": "Open file blame in github",
+            "icon": "github-alt",
+            "type": "command",
+            "command": "openInGitHub.openFileBlame"
+          },
+          // i issue
+          {
+            "key": "i",
+            "name": "Open issue in github",
+            "icon": "issues",
+            "type": "command",
+            "command": "openInGitHub.openIssues"
+          },
+          // p pull request
+          {
+            "key": "p",
+            "name": "Open pull request in github",
+            "icon": "git-pull-request",
+            "type": "command",
+            "command": "openInGitHub.openPullRequests"
+          },
+          // r release
+          {
+            "key": "r",
+            "name": "Open releases in github",
+            "icon": "extensions-pre-release",
+            "type": "command",
+            "command": "openInGitHub.openReleases"
+          },
+          // t tags
+          {
+            "key": "t",
+            "name": "Open tags in github",
+            "icon": "tag",
+            "type": "command",
+            "command": "openInGitHub.openTags"
+          },
+          // h file history
+          {
+            "key": "h",
+            "name": "Open file history in github",
+            "icon": "history",
+            "type": "command",
+            "command": "openInGitHub.openTags"
+          },
+          // a action
+          {
+            "key": "a",
+            "name": "Open action in github",
+            "icon": "github-action",
+            "type": "command",
+            "command": "openInGitHub.openActions"
+          },
+          // d discussion
+          {
+            "key": "d",
+            "name": "Open discussion in github",
+            "icon": "comment-discussion",
+            "type": "command",
+            "command": "openInGitHub.openDiscussions"
+          },
+          // p project
+          {
+            "key": "p",
+            "name": "Open project in github",
+            "icon": "github-project",
+            "type": "command",
+            "command": "openInGitHub.openProject"
+          },
+          // I insights
+          {
+            "key": "I",
+            "name": "Open insights in github",
+            "icon": "info",
+            "type": "command",
+            "command": "openInGitHub.openInsights"
+          },
+          // w wiki
+          {
+            "key": "w",
+            "name": "Open wiki in github",
+            "icon": "twitter",
+            "type": "command",
+            "command": "openInGitHub.openWiki"
+          },
+          // s settings
+          {
+            "key": "s",
+            "name": "Open settings in github",
+            "icon": "settings",
+            "type": "command",
+            "command": "openInGitHub.openSettings"
+          },
+          // S security
+          {
+            "key": "S",
+            "name": "Open Security in github",
+            "icon": "extension-workspace-trust",
+            "type": "command",
+            "command": "openInGitHub.openSecurity"
+          },
+          // P open file permalink
+          {
+            "key": "P",
+            "name": "Open file permalink in github",
+            "icon": "link-external",
+            "type": "command",
+            "command": "openInGitHub.openFilePermalink"
           }
         ]
       },
