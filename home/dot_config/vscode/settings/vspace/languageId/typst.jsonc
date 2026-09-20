@@ -1,0 +1,16 @@
+[
+  {
+    "key": "languageId:typst",
+    "name": "Typst",
+    "type": "bindings",
+    "bindings": [
+      {
+        "key": " ",
+        "name": "debug current file",
+        "icon": "debug",
+        "type": "command",
+        "command": "tinymist.debugCurrentFile"
+      }
+    ]
+  }
+]

@@ -496,28 +496,28 @@
           }
         ]
       },
-      // c console
+      // , console
       {
-        "key": "c",
+        "key": ",",
         "name": "+Debug Console",
         "icon": "debug-console",
         "type": "bindings",
         "bindings": [
-          // , select debug console
+          // , evaluate
           {
             "key": ",",
-            "name": "select debug console",
-            "icon": "list-selection",
-            "type": "command",
-            "command": "workbench.action.debug.selectDebugConsole"
-          },
-          // c evaluate
-          {
-            "key": "c",
             "name": "evaluation in debug console",
             "icon": "console",
             "type": "command",
             "command": "editor.debug.action.selectionToRepl"
+          },
+          // space select debug console
+          {
+            "key": " ",
+            "name": "select debug console",
+            "icon": "list-selection",
+            "type": "command",
+            "command": "workbench.action.debug.selectDebugConsole"
           },
           // v show debug console
           {

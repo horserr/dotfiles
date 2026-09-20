@@ -7,6 +7,11 @@
   // pyrefly.runMain
   // pyrefly.runTest
   // pyrefly.unfoldAllDocstrings
+
+  // debugpy.clearCacheAndReload
+  // vscode-python-web-wasm.repl.start
+  // vscode-python-web-wasm.debug.runEditorContents
+  // vscode-python-web-wasm.debug.debugEditorContents
   {
     "key": "languageId:python",
     "name": "Python",
