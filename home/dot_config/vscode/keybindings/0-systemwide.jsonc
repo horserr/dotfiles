@@ -1,0 +1,24 @@
+[
+  // ref: https://code.visualstudio.com/docs/configure/keybindings?referrer=vsc-search#_system-wide-keyboard-shortcuts
+
+  // NOTE:
+  // They are available only in the desktop version of VS Code.
+  // They apply only to user-defined keyboard shortcuts, not default or extension-contributed shortcuts.
+  // They support a single key combination, not chords.
+  // For the system-wide trigger, they ignore the when clause and remain active while VS Code is running.
+  // They might fail to register if the operating system or another application uses the same key combination. VS Code shows a notification when registration fails.
+
+  // {
+  //   "key": "ctrl+cmd+p",
+  //   "command": "runCommands",
+  //   "args": {
+  //     "commands": ["workbench.action.focusWindow", "workbench.action.quickOpen"]
+  //   },
+  //   "systemWide": true
+  // },
+  // {
+  //   "key": "cmd+shift+a",
+  //   "command": "workbench.action.openAgentsWindow",
+  //   "systemWide": true
+  // }
+]
