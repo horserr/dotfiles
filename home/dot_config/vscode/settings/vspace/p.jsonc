@@ -67,6 +67,14 @@
           }
         ]
       },
+      // N open new empty workspace
+      {
+        "key": "N",
+        "name": "Open new empty workspace",
+        "icon": "empty-window",
+        "type": "command",
+        "command": "workbench.action.newWindow"
+      },
       // r recent project
       {
         "key": "r",

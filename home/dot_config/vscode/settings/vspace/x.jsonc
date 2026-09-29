@@ -135,6 +135,14 @@
         "icon": "symbol-snippet",
         "type": "bindings",
         "bindings": [
+          // o open in browser
+          {
+            "key": "o",
+            "name": "open file in browser",
+            "icon": "browser",
+            "type": "command",
+            "command": "workbench.action.browser.open"
+          },
           // space open repo
           {
             "key": " ",
@@ -150,14 +158,6 @@
             "icon": "git-commit",
             "type": "command",
             "command": "openInGitHub.openCommits"
-          },
-          // o search online
-          {
-            "key": "o",
-            "name": "Search online with selection",
-            "icon": "clear-all",
-            "type": "command",
-            "command": "Search For Selected Text"
           },
           // l open links
           {

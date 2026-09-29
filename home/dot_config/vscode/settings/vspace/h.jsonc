@@ -94,6 +94,15 @@
             "icon": "search",
             "type": "bindings",
             "bindings": [
+              // o search online
+              {
+                "key": "o",
+                "name": "Search online with selection",
+                "icon": "clear-all",
+                "type": "command",
+                "command": "Search For Selected Text"
+              },
+              // g github search
               {
                 "key": "g",
                 "name": "github search",
@@ -102,7 +111,7 @@
                 "command": "vscode.open",
                 "args": "https://github.com/search"
               },
-              // source graph search
+              // s source graph search
               {
                 "key": "s",
                 "name": "source graph code search",
