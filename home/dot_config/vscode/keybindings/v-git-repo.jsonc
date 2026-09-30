@@ -366,7 +366,7 @@
         ]
       }
     ],
-    "when": "focusedView == 'workbench.scm.repositories'"
+    "when": "focusedView == 'workbench.scm.repositories' && !inputFocus"
   }
   // workbench.scm.action.collapseAllRepositories
   // workbench.scm.action.expandAllRepositories

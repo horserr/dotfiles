@@ -199,7 +199,7 @@
         ]
       }
     ],
-    "when": "focusedView == 'workbench.scm.history'"
+    "when": "focusedView == 'workbench.scm.history' && !inputFocus"
   }
 ]
 

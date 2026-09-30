@@ -139,7 +139,7 @@
         "command": "workbench.scm.action.collapseAll"
       }
     ],
-    "when": "focusedView == 'workbench.scm'"
+    "when": "focusedView == 'workbench.scm' && !inputFocus"
   }
 ]
 
