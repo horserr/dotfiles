@@ -1,4 +1,6 @@
 {
+  "http.useLocalProxyConfiguration": false,
+
   "dev.containers.dockerPath": "docker",
   "containers.containerClient": ""
 }
