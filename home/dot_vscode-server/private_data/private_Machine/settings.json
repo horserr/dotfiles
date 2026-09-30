@@ -1,1 +1,4 @@
-{}
+{
+  "dev.containers.dockerPath": "docker",
+  "containers.containerClient": ""
+}

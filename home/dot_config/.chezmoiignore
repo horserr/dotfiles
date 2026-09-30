@@ -10,6 +10,7 @@ tmux/
 
 {{ if not .isWindows }}
 vscode/
+edge/
 sumatrapdf/
 .docker/
 powershell/

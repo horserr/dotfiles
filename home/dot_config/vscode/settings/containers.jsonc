@@ -77,7 +77,7 @@
 
   // Which container client to use. If not specified, Docker will be used. Changing requires a restart to take effect.
   // can be podman
-  "containers.containerClient": "",
+  "containers.containerClient": "com.microsoft.visualstudio.containers.wslc",
 
   // Any secondary properties to display for a container (an array). Possible elements include: ContainerId, ContainerName, CreatedTime, FullTag, ImageId, Networks, Ports, Registry, RegistryAndPath, Repository, RepositoryName, RepositoryNameShort, RepositoryNameAndTag, State, Status, and Tag
   "containers.containers.description": [
@@ -193,7 +193,7 @@
   "dev.containers.copyGitConfig": false,
 
   // Docker (or Podman or WSLc) executable name or path.
-  "dev.containers.dockerPath": "docker",
+  "dev.containers.dockerPath": "wslc",
 
   // SIGNIFICANT wsl 中与docker desktop (docker daemon) 的 socket 文件路径
   // Docker socket path. Used, e.g., when connecting to a Dev Container with the devcontainer.json in a Docker Volume.
