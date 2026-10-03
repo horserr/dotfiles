@@ -84,6 +84,14 @@
         "icon": "close",
         "type": "command",
         "command": "workbench.action.closeWindow"
+      },
+      // g open github remote
+      {
+        "key": "g",
+        "name": "open github repo without cloning",
+        "icon": "github",
+        "type": "command",
+        "command": "remoteHub.openRepository"
       }
     ],
     "when": "workbenchState == 'empty' && !inputFocus"
