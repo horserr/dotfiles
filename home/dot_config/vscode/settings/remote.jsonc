@@ -1,11 +1,11 @@
 {
   // REALLY SIGNIFICANT
   // Set the 'http_proxy' environment variable.  This will be set for install and launch of the remote VS Code Server. Provide a string to set for all hosts, or an object with per-host configuration. Kill existing server on the remote for this setting to take effect.
-  // "remote.SSH.httpProxy": "",
+  "remote.SSH.httpProxy": "http://localhost:7897",
 
   // REALLY SIGNIFICANT
   // Set the 'https_proxy' environment variable.  This will be set for install and launch of the remote VS Code Server. Provide a string to set for all hosts, or an object with per-host configuration. Kill existing server on the remote for this setting to take effect.
-  // "remote.SSH.httpsProxy": "",
+  "remote.SSH.httpsProxy": "http://localhost:7897",
 
   // SIGNIFICANT
   // note: sshd should allow AllowStreamLocalForwarding

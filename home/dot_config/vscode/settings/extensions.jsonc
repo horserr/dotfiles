@@ -47,6 +47,9 @@
   "extensions.supportUntrustedWorkspaces": {
     "VSpaceCode.whichkey": {
       "supported": true
+    },
+    "Catppuccin.catppuccin-vsc-icons": {
+      "supported": true
     }
   },
 
