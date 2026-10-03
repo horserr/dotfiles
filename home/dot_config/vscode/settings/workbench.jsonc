@@ -205,7 +205,7 @@
   // SIGNIFICANT
   "workbench.hover.delay": 300,
   "workbench.hover.reducedDelay": 300,
-  "workbench.iconTheme": "catppuccin-latte",
+  "workbench.iconTheme": "catppuccin-mocha",
   "workbench.productIconTheme": "viraOutline",
   "workbench.layoutControl.enabled": false,
   "workbench.layoutControl.type": "both",

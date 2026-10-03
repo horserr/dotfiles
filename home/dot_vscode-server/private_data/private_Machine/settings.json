@@ -1,4 +1,8 @@
 {
+  // this setting already sets the proxy for ssh
+  // "remote.SSH.httpProxy": "",
+  //   Set the 'http_proxy' environment variable.  This will be set for install and launch of the remote VS Code Server. Provide a string to set for all hosts, or an object with per-host configuration. Kill existing server on the remote for this setting to take effect.
+  // therefore, no need for local proxy
   "http.useLocalProxyConfiguration": false,
 
   "dev.containers.dockerPath": "docker",
