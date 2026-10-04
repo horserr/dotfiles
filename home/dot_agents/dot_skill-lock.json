@@ -1,0 +1,58 @@
+{
+  "version": 3,
+  "skills": {
+    "deepxiv-cli": {
+      "source": "DeepXiv/deepxiv_sdk",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/DeepXiv/deepxiv_sdk.git",
+      "skillPath": "skills/deepxiv-cli/SKILL.md",
+      "skillFolderHash": "dacab9869866b114941d4e34cdcbb7b9bd1b1202",
+      "installedAt": "2026-10-02T08:49:15.585Z",
+      "updatedAt": "2026-10-02T08:49:15.585Z"
+    },
+    "deepxiv-trending-digest": {
+      "source": "DeepXiv/deepxiv_sdk",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/DeepXiv/deepxiv_sdk.git",
+      "skillPath": "skills/deepxiv-trending-digest/SKILL.md",
+      "skillFolderHash": "d15942ef2519d1832e97e75b55701414f04f71a0",
+      "installedAt": "2026-10-02T08:49:15.585Z",
+      "updatedAt": "2026-10-02T08:49:15.585Z"
+    },
+    "deepxiv-baseline-table": {
+      "source": "DeepXiv/deepxiv_sdk",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/DeepXiv/deepxiv_sdk.git",
+      "skillPath": "skills/deepxiv-baseline-table/SKILL.md",
+      "skillFolderHash": "c2e5d3792abcc5837fe4bef7228c270f687429ad",
+      "installedAt": "2026-10-02T08:49:15.585Z",
+      "updatedAt": "2026-10-02T08:49:15.585Z"
+    },
+    "find-skills": {
+      "source": "vercel-labs/skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/vercel-labs/skills.git",
+      "skillPath": "skills/find-skills/SKILL.md",
+      "skillFolderHash": "76a98a285cb0434f3d39e1a873823556330e398b",
+      "installedAt": "2026-10-02T09:45:59.096Z",
+      "updatedAt": "2026-10-02T09:46:07.773Z"
+    }
+  },
+  "dismissed": {
+    "findSkillsPrompt": true
+  },
+  "lastSelectedAgents": [
+    "amp",
+    "cline",
+    "codex",
+    "cursor",
+    "droid",
+    "gemini-cli",
+    "github-copilot",
+    "kilo",
+    "kimi-code-cli",
+    "opencode",
+    "warp",
+    "zed"
+  ]
+}
