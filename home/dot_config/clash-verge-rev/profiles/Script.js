@@ -4,9 +4,7 @@ const isAbroad = true;
 
 // two types of main entries
 // function main(config) {
-// function main(config, profileName) {
-
-function main(config) {
+function main(config, profileName) {
   const prependRules = [
     // "PROCESS-NAME,ssh.exe,DIRECT",
     "PROCESS-NAME,Code.exe,DIRECT",
@@ -74,6 +72,55 @@ function main(config) {
     config.rules = rules.map((r) =>
       r.replace(new RegExp(`(^|,)${esc(from)}(,|$)`), `$1${to}$2`),
     );
+  }
+
+  if (profileName === "Default") {
+    translateProxies(config);
+  }
+
+  return config;
+}
+
+const NAME_MAP = [
+  [/^🇯🇵日本高速/, "🇯🇵Japan-HS"],
+  [/^🇯🇵日本专线/, "🇯🇵Japan-DL"],
+  [/^🇭🇰香港高速/, "🇭🇰HongKong-HS"],
+  [/^🇸🇬新加坡高速/, "🇸🇬Singapore-HS"],
+  [/^🇸🇬新加坡专线/, "🇸🇬Singapore-DL"],
+  [/^🇺🇸美国高速/, "🇺🇸US-HS"],
+  [/^🇺🇸美国洛杉矶/, "🇺🇸US-LosAngeles"],
+  [/^🇬🇧英国伦敦/, "🇬🇧UK-London"],
+  [/^🇨🇳台湾专线/, "🇨🇳Taiwan-DL"],
+  [/^🇺🇸美国/, "🇺🇸US"],
+];
+
+function translateName(name) {
+  for (const [re, to] of NAME_MAP) {
+    if (re.test(name)) return name.replace(re, to);
+  }
+  return name; // 没匹配（比如「剩余流量」等假节点）→ 原样保留
+}
+
+function translateProxies(config) {
+  // 1) 建立 旧名 → 新名 的映射
+  const rename = {};
+  for (const p of config.proxies ?? []) {
+    const newName = translateName(p.name);
+    if (newName !== p.name) rename[p.name] = newName;
+  }
+
+  // 2) 改节点自己的名字，以及 dialer-proxy 引用
+  for (const p of config.proxies ?? []) {
+    if (rename[p.name]) p.name = rename[p.name];
+    if (rename[p["dialer-proxy"]])
+      p["dialer-proxy"] = rename[p["dialer-proxy"]];
+  }
+
+  // 3) 同步 proxy-groups 里的引用（自动选择/故障转移/假节点不在映射里，自动原样保留）
+  for (const g of config["proxy-groups"] ?? []) {
+    if (Array.isArray(g.proxies)) {
+      g.proxies = g.proxies.map((x) => rename[x] ?? x);
+    }
   }
 
   return config;
