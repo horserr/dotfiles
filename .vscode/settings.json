@@ -77,6 +77,7 @@
     "*.toml.tmpl": "toml",
     "**/git/*config*": "ini",
     "**/private_dot_ssh/**/*config*": "ssh_config",
+    "**/.devcontainer/files/*": "dockerfile",
     "dot_bashrc": "shellscript",
     "dot_gitconfig": "ini",
     "dot_ideavimrc": "Vimscript",
@@ -142,6 +143,9 @@
     ],
     "https://unpkg.com/meta-json-schema/schemas/clash-verge-merge-json-schema.json": [
       "**/clash-verge-rev/profiles/Merge.yaml"
+    ],
+    "https://raw.githubusercontent.com/canonical/cloud-init/main/cloudinit/config/schemas/versions.schema.cloud-config.json": [
+      "**/*.user-data"
     ]
   },
   "workbench.diffEditorAssociations": {
@@ -353,5 +357,13 @@
         }
       ]
     }
+  ],
+  "yaml.disableSchemaDetection": [
+    "**/.github/workflows/*.yml",
+    "**/.github/workflows/*.yaml",
+    "**/.gitea/workflows/*.yml",
+    "**/.gitea/workflows/*.yaml",
+    "**/.forgejo/workflows/*.yml",
+    "**/.forgejo/workflows/*.yaml"
   ]
 }

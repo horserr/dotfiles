@@ -1,0 +1,48 @@
+#cloud-config
+package_update: true
+package_upgrade: true
+
+timezone: Asia/Shanghai
+locale: en_US.UTF-8
+
+users:
+  - name: wsl
+    groups:
+      [docker, adm, dialout, cdrom, floppy, sudo, audio, dip, video, plugdev, netdev]
+    sudo: ALL=(ALL) NOPASSWD:ALL
+    shell: /bin/bash
+
+write_files:
+  - path: /etc/wsl.conf
+    append: true
+    content: |
+      [user]
+      default=wsl
+
+packages:
+  - tldr
+  - git-delta
+  - mosh
+  - aria2c
+  - eza
+  - fzf
+  - git-filter-repo
+  # yazi requirements
+  - 7zip
+  - ffmpeg
+  - jq
+  - poppler
+  - ripgrep
+  - zoxide
+  - resvg
+  - imagemagick
+  - bat
+  - fd-find
+  # - incus
+
+runcmd:
+  - curl -fsSL https://yazi-rs.github.io/builds/yazi-keyring.gpg | sudo tee /usr/share/keyrings/yazi-keyring.gpg >/dev/null
+  - echo 'deb [signed-by=/usr/share/keyrings/yazi-keyring.gpg] https://yazi-rs.github.io/builds/ stable main' | sudo tee /etc/apt/sources.list.d/yazi.list >/dev/null
+  - sudo apt install yazi
+  - sh -c "$(curl -fsLS get.chezmoi.io)" -- -b /usr/local/bin
+  # - chezmoi init --source=~/.config/.dotfiles --apply horserr
