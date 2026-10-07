@@ -18,6 +18,22 @@ alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
 
+# remove all files and folder under current folder
+rm-() {
+    # 如果没有输入路径，默认清空当前目录
+    local target_dir="${1:-.}"
+
+    # 检查目标是否确实是一个文件夹
+    if [ ! -d "$target_dir" ]; then
+        echo "Error: '$target_dir' is not a dir!" >&2
+        return 1
+    fi
+
+    # 使用 find 命令安全地只删除内部内容，不会误伤当前目录
+    echo "removing: $(realpath "$target_dir") "
+    find "$target_dir" -mindepth 1 -delete
+}
+
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
