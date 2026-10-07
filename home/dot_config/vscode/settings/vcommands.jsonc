@@ -46,6 +46,10 @@
   "commands.showKeybindings": true,
 
   "commands.commands": {
+    "Open dotfiles source repo": {
+      "command": "commands.openFolder",
+      "args": "${userHome}/.config/.dotfiles/"
+    },
     "Time": {
       "command": "noop",
       "statusBar": {

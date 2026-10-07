@@ -10,8 +10,7 @@
         "key": " ",
         "name": "(custom)open dotfiles folder in vscode",
         "type": "command",
-        "command": "commands.openFolder",
-        "args": "${userHome}/.config/.dotfiles/"
+        "command": "Open dotfiles source repo"
       },
       // , continue working on
       {
