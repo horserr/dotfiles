@@ -49,12 +49,6 @@
       "detail": "apply dotfiles modifications without online check externals"
     },
     {
-      "label": "init",
-      "type": "shell",
-      "command": "chezmoi init --source .",
-      "detail": "reapply after changing chezmoi configuration"
-    },
-    {
       "label": "doctor",
       "type": "shell",
       "command": "chezmoi doctor",

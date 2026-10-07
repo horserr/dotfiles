@@ -109,15 +109,56 @@
       }
     },
     {
+      "label": "chezmoi install",
+      "type": "shell",
+      "detail": "Install chezmoi",
+      "command": "sh -c \"$(curl -fsLS https://get.chezmoi.io)\" -- -b $HOME/.local/bin",
+      "icon": { "id": "extensions-install-count" },
+      "windows": { "command": "scoop install chezmoi" },
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": true,
+        "panel": "shared",
+        "showReuseMessage": true,
+        "clear": true
+      }
+    },
+    {
+      "label": "chezmoi init",
+      "type": "shell",
+      "command": "chezmoi init --source=~/.config/.dotfiles --apply horserr",
+      "detail": "chezmoi init",
+      "icon": { "id": "call-incoming" },
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": true,
+        "panel": "shared",
+        "showReuseMessage": true,
+        "clear": true
+      }
+    },
+    {
+      "label": "chezmoi udpate",
+      "type": "shell",
+      "command": "chezmoi update",
+      "detail": "chezmoi update",
+      "icon": { "id": "testing-update-profiles" },
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": true,
+        "panel": "shared",
+        "showReuseMessage": true,
+        "clear": true
+      }
+    },
+    {
       "label": "chezmoi apply",
       "type": "shell",
       "command": "chezmoi apply",
       "detail": "apply dotfiles modifications",
-      "runOptions": {
-        "instanceLimit": 1,
-        "instancePolicy": "terminateOldest",
-        "runOn": "folderOpen"
-      },
       "icon": { "id": "ai-customization-plugin" },
       "presentation": {
         "echo": true,
@@ -170,7 +211,7 @@
       "windows": {
         // for ascii character
         // "command": "tree /f /a"
-        "command": "tree /f"
+        "command": "Get-ChildItem -Recurse | clip"
       },
       "detail": "generate project tree",
       "icon": { "id": "key" },
