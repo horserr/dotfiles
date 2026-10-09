@@ -1,0 +1,3 @@
+[submodule "refs/mihomo"]
+	path = refs/mihomo
+	url = https://github.com/HenryChiao/MIHOMO_YAMLS.wiki.git
