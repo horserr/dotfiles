@@ -135,12 +135,6 @@ $mappings = @{
     desc   = "SumatraPDF Settings"
   }
 
-  # clash verge rev
-  "$env:AppData\io.github.clash-verge-rev.clash-verge-rev" = @{
-    target = "$dotConfigPath\clash-verge-rev"
-    desc   = "clash verge rev Settings"
-  }
-
   # auto dark mode
   "$env:AppData\AutoDarkMode" = @{
     target = "$dotConfigPath\auto-dark-mode"

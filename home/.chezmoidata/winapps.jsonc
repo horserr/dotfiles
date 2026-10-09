@@ -24,6 +24,7 @@
         "mise",
         "nmap",
         "nodejs",
+        "pnpm",
         "pandoc",
         "poppler",
         "python",
@@ -52,7 +53,6 @@
         "AutoHotkey.AutoHotkey",
         "Balena.Etcher",
         "calibre.calibre",
-        "ClashVergeRev.ClashVergeRev",
         "Daum.PotPlayer",
         "DigitalScholar.Zotero",
         "dorssel.usbipd-win",
@@ -96,8 +96,8 @@
         // "Molilla.Thunderbird",
       ],
       "store": [
-        "9NZ3KLHXDJP5", // Ubuntu 24.04LTS
-        "9PKR34TNCV07", // Kali Linux
+        // "9NZ3KLHXDJP5", // Ubuntu 24.04LTS
+        // "9PKR34TNCV07", // Kali Linux
         "XP8CBJ40XLBWKX" // docker desktop
       ]
     }

@@ -15,8 +15,8 @@ sumatrapdf/
 .docker/
 powershell/
 mousemaster/
-clash-verge-rev/
 auto-dark-mode/
+mihomo/
 
 windows-terminal.jsonc
 {{ end }}

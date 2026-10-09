@@ -137,13 +137,6 @@
     }
   ],
   "yaml.schemas": {
-    "https://unpkg.com/meta-json-schema/schemas/meta-json-schema.json": [
-      "**/clash-verge-rev/config.yaml",
-      "**/clash-verge-rev/profiles/*.yaml"
-    ],
-    "https://unpkg.com/meta-json-schema/schemas/clash-verge-merge-json-schema.json": [
-      "**/clash-verge-rev/profiles/Merge.yaml"
-    ],
     "https://raw.githubusercontent.com/canonical/cloud-init/main/cloudinit/config/schemas/versions.schema.cloud-config.json": [
       "**/*.user-data"
     ]
