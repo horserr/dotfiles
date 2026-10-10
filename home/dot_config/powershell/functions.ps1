@@ -42,8 +42,8 @@ function Get-BitLockerSummary {
 }
 
 function proxy-on {
-  $env:HTTP_PROXY = "http://localhost:7897"
-  $env:HTTPS_PROXY = "http://localhost:7897"
+  $env:HTTP_PROXY = "http://localhost:7890"
+  $env:HTTPS_PROXY = "http://localhost:7890"
 }
 
 function set-title {

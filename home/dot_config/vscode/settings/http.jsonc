@@ -1,6 +1,6 @@
 {
   // 建议：当本机开发时，并且docker网络模式为host，并且WSL网络模式为mirrored，开启，否则需要手动关闭
-  "http.proxy": "http://localhost:7897",
+  "http.proxy": "http://localhost:7890",
   "http.useLocalProxyConfiguration": true,
   "http.electronFetch": true
 }

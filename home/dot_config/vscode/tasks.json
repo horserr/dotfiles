@@ -232,10 +232,10 @@
         "args": ["-NoProfile", "-c"]
       },
       "env": {
-        "http_proxy": "http://localhost:7897",
-        "https_proxy": "http://localhost:7897",
-        "HTTP_PROXY": "http://localhost:7897",
-        "HTTPS_PROXY": "http://localhost:7897"
+        "http_proxy": "http://localhost:7890",
+        "https_proxy": "http://localhost:7890",
+        "HTTP_PROXY": "http://localhost:7890",
+        "HTTPS_PROXY": "http://localhost:7890"
       }
     }
   },

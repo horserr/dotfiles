@@ -1,7 +1,7 @@
 function proxy
     # 获取 Windows 宿主机 IP
     set -l host_ip (ip route show | grep default | awk '{print $3}')
-    set -l port 7897
+    set -l port 7890
 
     switch $argv[1]
         case on

@@ -50,11 +50,11 @@ Match all
     # use proxy to connect the remote
 {{ if .isWindows }}
     # -S means SOCKS5
-    # ProxyCommand "C:/Program Files/Git/mingw64/bin/connect.exe" -S 127.0.0.1:7897 %h %p
+    # ProxyCommand "C:/Program Files/Git/mingw64/bin/connect.exe" -S 127.0.0.1:7890 %h %p
     # -H means HTTP
-    # ProxyCommand "C:/Program Files/Git/mingw64/bin/connect.exe" -H 127.0.0.1:7897 %h %p
+    # ProxyCommand "C:/Program Files/Git/mingw64/bin/connect.exe" -H 127.0.0.1:7890 %h %p
 {{ else }}
-    # ProxyCommand nc -X 5 -x 127.0.0.1:7897 %h %p
+    # ProxyCommand nc -X 5 -x 127.0.0.1:7890 %h %p
     # ControlMaster auto
     # ControlPath ~/.ssh/sockets/%r@%h-%p
     # ControlPersist 10m
@@ -78,12 +78,12 @@ Host termux
 
 {{ if .isWindows }}
 # match tailscale and test whether clash verge rev is running
-Match host *.*.ts.net exec "powershell -NoProfile -Command 'if (Test-NetConnection 127.0.0.1 -Port 7897 -InformationLevel Quiet) { exit 0 } else { exit 1 }'"
+Match host *.*.ts.net exec "powershell -NoProfile -Command 'if (Test-NetConnection 127.0.0.1 -Port 7890 -InformationLevel Quiet) { exit 0 } else { exit 1 }'"
     # open socks ports on remote
     # remotePort (ip within local machine):localPort
     # map local port to remote. Thus, remote can use localhost:port to send package to this local machine. In this process, local machine acts as the proxy for the server.
     # note: by default, only loopback interface can access this port. To facilitate other interface, and thus allowing remote LAN to have access, change `GatewayPorts` in sshd configuration file
-    RemoteForward 7897 127.0.0.1:7897
+    RemoteForward 7890 127.0.0.1:7890
 
     # open ports on local
     # locaPort (ip within remote machine):remotePort
@@ -111,9 +111,9 @@ Match tagged PLATFORM
     RequestTTY no
     # RemoteCommand
 {{ if .isWindows }}
-    # ProxyCommand "C:/Program Files/Git/mingw64/bin/connect.exe" -S 127.0.0.1:7897 %h %p
+    # ProxyCommand "C:/Program Files/Git/mingw64/bin/connect.exe" -S 127.0.0.1:7890 %h %p
 {{ else }}
-    # ProxyCommand nc -X 5 -x 127.0.0.1:7897 %h %p
+    # ProxyCommand nc -X 5 -x 127.0.0.1:7890 %h %p
 {{ end }}
 
 Match final
