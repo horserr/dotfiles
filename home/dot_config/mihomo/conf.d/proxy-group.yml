@@ -1,0 +1,137 @@
+# 手动选择
+g_select: &g_select
+  type: select
+  url: "https://www.gstatic.com/generate_204"
+  include-all: true # 自动包含所有 proxy-providers 的节点
+
+# 自动测速（延迟最低）
+g_urltest: &g_urltest
+  type: url-test
+  url: "https://www.gstatic.com/generate_204"
+  interval: 300
+  lazy: true
+  tolerance: 50
+  timeout: 2000
+  max-failed-times: 3 # 连续失败 3 次触发重新检查
+  include-all: true
+  hidden: true # 在面板中隐藏（减少界面噪音）
+
+# 自动回退（当前节点失败就切下一个）
+g_fallback: &g_fallback
+  type: fallback
+  url: "https://www.gstatic.com/generate_204"
+  interval: 300
+  lazy: true
+  timeout: 2000
+  max-failed-times: 3
+  include-all: true
+  hidden: true
+
+# 负载均衡（一致性散列）
+g_balance: &g_balance
+  type: load-balance
+  strategy: consistent-hashing # round-robin / consistent-hashing / sticky-sessions
+  url: "https://www.gstatic.com/generate_204"
+  interval: 300
+  lazy: true
+  timeout: 2000
+  include-all: true
+  hidden: true
+
+g_smart: &g_smart
+  type: smart
+  interval: 200
+  lazy: true
+  url: "https://www.google.com/generate_204"
+  hidden: true
+  uselightgbm: true # 启用 LightGBM 模型（需要 mihomo 支持该特性）
+
+# 节点过滤正则
+FilterHK: &FilterHK "^(?=.*(🇭🇰|港|HK|Hong Kong))(?!.*(回国|校园|剩余|到期|官网|客服|订阅|节点|过期)).*$"
+FilterTW: &FilterTW "^(?=.*(🇹🇼|台|TW|Taiwan))(?!.*(回国|校园|剩余|到期|官网|客服|订阅|节点|过期)).*$"
+FilterJP: &FilterJP "^(?=.*(🇯🇵|日|JP|Japan|Tokyo|Osaka))(?!.*(回国|校园|剩余|到期|官网|客服|订阅|节点|过期)).*$"
+FilterSG: &FilterSG "^(?=.*(🇸🇬|新|SG|Singapore))(?!.*(回国|校园|剩余|到期|官网|客服|订阅|节点|过期)).*$"
+FilterUS: &FilterUS "^(?=.*(🇺🇸|美|US|United States))(?!.*(回国|校园|剩余|到期|官网|客服|订阅|节点|过期)).*$"
+FilterKR: &FilterKR "^(?=.*(🇰🇷|韩|KR|Korea))(?!.*(回国|校园|剩余|到期|官网|客服|订阅|节点|过期)).*$"
+
+proxy-groups:
+  - name: "🎯 节点选择"
+    type: select
+    proxies: ["🌐 智能选择", "✋ 手动选择", DIRECT]
+    include-all: true
+
+  - name: "🌐 智能选择"
+    type: select
+    proxies:
+      ["🇭🇰 香港", "🇸🇬 新加坡", "🇯🇵 日本", "🇺🇸 美国", "🇰🇷 韩国", "🇹🇼 台湾"]
+
+  - { name: "✋ 手动选择", <<: *g_select }
+
+  - name: "🤖 AI 服务"
+    type: select
+    proxies: ["🇺🇸 美国", "🇸🇬 新加坡", "🎯 节点选择"]
+
+  - name: "📹 流媒体"
+    type: select
+    proxies: ["🇭🇰 香港", "🇸🇬 新加坡", "🇯🇵 日本", "🇺🇸 美国", "🎯 节点选择"]
+
+  - name: "✈️ 电报消息"
+    type: select
+    proxies: ["🎯 节点选择", "🇸🇬 新加坡", "🇭🇰 香港"]
+
+  - name: "🍎 苹果服务"
+    type: select
+    proxies: [DIRECT, "🎯 节点选择", "🇭🇰 香港"]
+
+  - name: "Ⓜ️ 微软服务"
+    type: select
+    proxies: [DIRECT, "🎯 节点选择", "🇺🇸 美国"]
+
+  - name: "🛡️ 广告拦截"
+    type: select
+    proxies: [REJECT, DIRECT]
+
+  - name: "🐟 漏网之鱼"
+    type: select
+    proxies: ["🎯 节点选择", DIRECT]
+
+  # 地区三合一
+  - name: "🇭🇰 香港"
+    type: select
+    proxies: ["🇭🇰 香港-自动", "🇭🇰 香港-回退", "🇭🇰 香港-均衡"]
+  - name: "🇸🇬 新加坡"
+    type: select
+    proxies: ["🇸🇬 新加坡-自动", "🇸🇬 新加坡-回退", "🇸🇬 新加坡-均衡"]
+  - name: "🇯🇵 日本"
+    type: select
+    proxies: ["🇯🇵 日本-自动", "🇯🇵 日本-回退", "🇯🇵 日本-均衡"]
+  - name: "🇺🇸 美国"
+    type: select
+    proxies: ["🇺🇸 美国-自动", "🇺🇸 美国-回退", "🇺🇸 美国-均衡"]
+  - name: "🇰🇷 韩国"
+    type: select
+    proxies: ["🇰🇷 韩国-自动", "🇰🇷 韩国-回退", "🇰🇷 韩国-均衡"]
+  - name: "🇹🇼 台湾"
+    type: select
+    proxies: ["🇹🇼 台湾-自动", "🇹🇼 台湾-回退", "🇹🇼 台湾-均衡"]
+
+  - { name: "🇭🇰 香港-自动", <<: *g_urltest, filter: *FilterHK }
+  - { name: "🇸🇬 新加坡-自动", <<: *g_urltest, filter: *FilterSG }
+  - { name: "🇯🇵 日本-自动", <<: *g_urltest, filter: *FilterJP }
+  - { name: "🇺🇸 美国-自动", <<: *g_urltest, filter: *FilterUS }
+  - { name: "🇰🇷 韩国-自动", <<: *g_urltest, filter: *FilterKR }
+  - { name: "🇹🇼 台湾-自动", <<: *g_urltest, filter: *FilterTW }
+
+  - { name: "🇭🇰 香港-回退", <<: *g_fallback, filter: *FilterHK }
+  - { name: "🇸🇬 新加坡-回退", <<: *g_fallback, filter: *FilterSG }
+  - { name: "🇯🇵 日本-回退", <<: *g_fallback, filter: *FilterJP }
+  - { name: "🇺🇸 美国-回退", <<: *g_fallback, filter: *FilterUS }
+  - { name: "🇰🇷 韩国-回退", <<: *g_fallback, filter: *FilterKR }
+  - { name: "🇹🇼 台湾-回退", <<: *g_fallback, filter: *FilterTW }
+
+  - { name: "🇭🇰 香港-均衡", <<: *g_balance, filter: *FilterHK }
+  - { name: "🇸🇬 新加坡-均衡", <<: *g_balance, filter: *FilterSG }
+  - { name: "🇯🇵 日本-均衡", <<: *g_balance, filter: *FilterJP }
+  - { name: "🇺🇸 美国-均衡", <<: *g_balance, filter: *FilterUS }
+  - { name: "🇰🇷 韩国-均衡", <<: *g_balance, filter: *FilterKR }
+  - { name: "🇹🇼 台湾-均衡", <<: *g_balance, filter: *FilterTW }

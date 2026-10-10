@@ -1,2 +1,3 @@
-default.yaml
+conf.d/
+*.yml
 note.md

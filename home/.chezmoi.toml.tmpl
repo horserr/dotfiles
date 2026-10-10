@@ -30,12 +30,14 @@
     {{- if or $isCodeSpaces $isDevContainer -}}
         {{- $isPersonal = true -}}
     {{- else -}}
-        {{- $isPersonal = promptBoolOnce . "personal" "Is this a personal computer" false -}}
+        {{- $isPersonal = promptBoolOnce . "isPersonal" "Is this a personal computer" false -}}
     {{- end -}}
 {{- end -}}
 
 {{- /* ipapi ISO (e.g. CN, HK, US, JP) */ -}}
 {{- $country := output "curl" "-s" "--max-time" "2" "https://ipapi.co/country/" | trim -}}
+
+{{ $needProxy := or $isWindows (promptBoolOnce . "needProxy" "should install mihomo?" false) }}
 
 sourceDir = "~/.config/.dotfiles"
 
@@ -49,6 +51,11 @@ sourceDir = "~/.config/.dotfiles"
     isEphemeral = {{ or $isDocker $isCodeSpaces $isDevContainer }}
     isRemote = {{ or $isSSH $isMOSH $isCodeSpaces $isDevContainer }}
     needMirror = {{ eq $country "CN" }}
+
+    needProxy = {{ $needProxy }}
+    {{ if $needProxy }}
+    proxyProviderUrl = {{ promptStringOnce . "proxyProviderUrl" "please paste your proxy provider url here (without q)uote" | quote }}
+    {{ end }}
 
 [interpreters.ps1]
     command = """

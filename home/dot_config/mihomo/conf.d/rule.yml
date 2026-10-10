@@ -1,0 +1,40 @@
+rules:
+  # ════ 非 IP 类规则 ════════════════════════════════════════════
+
+  # 广告拦截（最优先）
+  - RULE-SET,reject_non_ip,🛡️ 广告拦截
+  - RULE-SET,reject_domainset,🛡️ 广告拦截
+  - RULE-SET,reject_non_ip_drop,REJECT-DROP # 静默丢弃，防止某些探测
+
+  # AI 服务
+  - RULE-SET,ai_non_ip,🤖 AI 服务
+
+  # 电报
+  - RULE-SET,telegram_non_ip,✈️ 电报消息
+
+  # 流媒体
+  - RULE-SET,stream_non_ip,📹 流媒体
+
+  # 微软（CDN 直连，服务走微软组）
+  - RULE-SET,microsoft_cdn_non_ip,DIRECT
+  - RULE-SET,microsoft_non_ip,Ⓜ️ 微软服务
+
+  # 国外流量走代理
+  - RULE-SET,global_non_ip,🎯 节点选择
+
+  # 国内 / 直连
+  - RULE-SET,domestic_non_ip,DIRECT
+  - RULE-SET,direct_non_ip,DIRECT
+  - RULE-SET,lan_non_ip,DIRECT
+
+  # ════ IP 类规则（会触发 DNS 解析，务必放在域名规则后面）═════
+
+  - RULE-SET,reject_ip,🛡️ 广告拦截
+  - RULE-SET,telegram_ip,✈️ 电报消息
+  - RULE-SET,stream_ip,📹 流媒体
+  - RULE-SET,lan_ip,DIRECT
+  - RULE-SET,domestic_ip,DIRECT
+  - RULE-SET,china_ip,DIRECT
+
+  # ════ 兜底 ═══════════════════════════════════════════════════
+  - MATCH,🐟 漏网之鱼

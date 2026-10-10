@@ -72,6 +72,8 @@
     ".gitattributes": "plaintext",
     "*.json.tmpl": "json",
     "*.jsonc.tmpl": "jsonc",
+    "*.yml.tmpl": "yaml",
+    "*.yaml.tmpl": "yaml",
     "*.properties.tmpl": "properties",
     "*.ps1.tmpl": "powershell",
     "*.toml.tmpl": "toml",

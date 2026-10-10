@@ -35,10 +35,12 @@
     url = {{ gitHubLatestReleaseAssetURL $repo "noMeiryoUI*" | quote }}
     path = "noMeiryoUI.exe"
 
+{{ if .needProxy }}
 [".local/bin/mihomo.exe"]
     type = "archive-file"
     executable = true
     url = {{ gitHubLatestReleaseAssetURL "MetaCubeX/mihomo" "mihomo-windows-amd64-v3-v*.zip" | quote }}
     path = "mihomo-windows-amd64-v3.exe"
+{{ end }}
 
 {{ end }}

@@ -1,0 +1,70 @@
+# ══ 端口 ══════════════════════════════════════════════════════
+mixed-port: 7890 # HTTP + SOCKS5 混合端口（推荐只用这一个）
+allow-lan:
+  true # 是否允许局域网内其他设备接入代理
+  # 个人电脑设 false；软路由/共享代理设 true
+bind-address: "*" # allow-lan 为 true 时绑定哪些网卡，* 表示全部
+
+# ══ 运行模式 ══════════════════════════════════════════════════
+mode:
+  rule # rule=按规则分流（日常使用）
+  # global=所有流量走代理（调试用）
+  # direct=所有流量直连（调试用）
+
+# ══ 日志 ══════════════════════════════════════════════════════
+log-level:
+  warning # silent / error / warning / info / debug
+  # 日常用 warning；排查问题时改 debug
+
+# ══ 杂项 ══════════════════════════════════════════════════════
+ipv6: false # 不建议新手开启，避免意外问题
+find-process-mode: strict # 是否匹配进程名（路由器/软路由推荐 off）
+unified-delay: true # 统一延迟测试：用实际往返时间，更准确
+tcp-concurrent: true # TCP 并发：同时向所有解析 IP 发起连接，选最快的
+keep-alive-interval: 30 # TCP keepalive 探测间隔（秒）
+keep-alive-idle: 600 # TCP keepalive 空闲等待时间（秒）
+client-fingerprint: chrome # 全局 TLS 指纹伪装
+
+# ══ GeoData 数据库地址 ════════════════════════════════════════
+geodata-mode: true
+geodata-loader:
+  memconservative # 内存节省模式（路由器/内存小的设备推荐）
+  # standard：性能更高，内存占用也更多
+geosite-matcher: succinct # succinct（精简）/ mph（哈希，速度最快）
+
+geox-url:
+  geoip: "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/geoip.dat"
+  geosite: "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/geosite.dat"
+  mmdb: "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/country.mmdb"
+
+# ══ 出口网卡绑定（多网卡环境）════════════════════════════════
+# interface-name: eth0           # 指定出口网卡，防止意外走错网卡
+# routing-mark: 666              # Linux 路由策略标记（配合 ip rule 使用）
+
+# ══ 配置持久化 ════════════════════════════════════════════════
+profile:
+  store-selected: true # 记住你在 Web UI 中的节点选择，重启后不丢失
+  store-fake-ip: true # 持久化 fake-ip 映射表
+
+{{ $configDir := joinPath .chezmoi.sourceDir "dot_config/mihomo/conf.d" }}
+
+{{- $fileContent := dict -}}
+
+{{- range (glob (joinPath $configDir "**/*.yml")) -}}
+  {{- /* file name */ -}}
+  {{- $fileName := base . -}}
+
+  {{- /* relative path */ -}}
+  {{- $relPath := trimPrefix (joinPath $.chezmoi.sourceDir "/") . -}}
+
+  {{- if or (hasSuffix "yaml.tmpl" .) (hasSuffix "yml.tmpl" .) -}}
+    {{- /* merge jsonc template */ -}}
+    {{- $fileContent = includeTemplate $relPath $ -}}
+  {{- else if or (hasSuffix "yaml" .) (hasSuffix "yml" .) -}}
+    {{- /* merge normal jsonc file */ -}}
+    {{- $fileContent = include . -}}
+  {{- else -}}
+    {{- fail (printf "Unknown file type: %s" $fileName) -}}
+  {{- end -}}
+{{ $fileContent }}
+{{- end -}}

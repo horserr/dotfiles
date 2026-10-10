@@ -1,0 +1,15 @@
+proxy-providers:
+  A:
+    type: http
+    url: {{ .proxyProviderUrl }}
+    interval: 86400 # 每天自动更新一次
+    path: ./proxy_providers/airport-a.yaml
+    health-check:
+      enable: true
+      url: "https://www.gstatic.com/generate_204"
+      # 注意：不建议用 google.com 测速，可能触发 Google 对 IP 的风控
+      interval: 300
+      timeout: 5000
+      lazy: true # 懒加载：只在有流量时测速，节省资源
+    # 过滤掉机场的"流量剩余/到期提醒"等信息节点
+    filter: "^(?!.*(剩余|到期|官网|免费|试用|套餐|重置|过期|流量|时间)).*$"

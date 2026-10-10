@@ -1,0 +1,109 @@
+rs_classical: &rs_classical
+  type: http
+  behavior: classical
+  interval: 43200
+  format: text
+
+rs_domain:
+  &rs_domain { type: http, behavior: domain, interval: 43200, format: text }
+rs_ipcidr:
+  &rs_ipcidr { type: http, behavior: ipcidr, interval: 43200, format: text }
+# 如果使用 MetaCubeX 官方的 .mrs 格式（更快更小）：
+rs_mrs: &rs_mrs { type: http, behavior: domain, interval: 86400, format: mrs }
+
+rule-providers:
+  # ── 非 IP 类：广告拦截 ────────────────────────────────────────
+  reject_non_ip:
+    <<: *rs_classical
+    url: "https://ruleset.skk.moe/Clash/non_ip/reject.txt"
+    path: ./rule_set/reject_non_ip.txt
+
+  reject_non_ip_drop:
+    <<: *rs_classical
+    url: "https://ruleset.skk.moe/Clash/non_ip/reject-drop.txt"
+    path: ./rule_set/reject_non_ip_drop.txt
+
+  reject_domainset:
+    <<: *rs_domain
+    url: "https://ruleset.skk.moe/Clash/domainset/reject.txt"
+    path: ./rule_set/reject_domainset.txt
+
+  # ── 非 IP 类：AI 服务 ─────────────────────────────────────────
+  ai_non_ip:
+    <<: *rs_classical
+    url: "https://ruleset.skk.moe/Clash/non_ip/ai.txt"
+    path: ./rule_set/ai_non_ip.txt
+
+  # ── 非 IP 类：电报 ────────────────────────────────────────────
+  telegram_non_ip:
+    <<: *rs_classical
+    url: "https://ruleset.skk.moe/Clash/non_ip/telegram.txt"
+    path: ./rule_set/telegram_non_ip.txt
+
+  # ── 非 IP 类：流媒体 ──────────────────────────────────────────
+  stream_non_ip:
+    <<: *rs_classical
+    url: "https://ruleset.skk.moe/Clash/non_ip/stream.txt"
+    path: ./rule_set/stream_non_ip.txt
+
+  microsoft_cdn_non_ip:
+    <<: *rs_classical
+    url: "https://ruleset.skk.moe/Clash/non_ip/microsoft_cdn.txt"
+    path: ./rule_set/microsoft_cdn_non_ip.txt
+
+  microsoft_non_ip:
+    <<: *rs_classical
+    url: "https://ruleset.skk.moe/Clash/non_ip/microsoft.txt"
+    path: ./rule_set/microsoft_non_ip.txt
+
+  # ── 非 IP 类：国内/国外/直连 ──────────────────────────────────
+  global_non_ip:
+    <<: *rs_classical
+    url: "https://ruleset.skk.moe/Clash/non_ip/global.txt"
+    path: ./rule_set/global_non_ip.txt
+
+  domestic_non_ip:
+    <<: *rs_classical
+    url: "https://ruleset.skk.moe/Clash/non_ip/domestic.txt"
+    path: ./rule_set/domestic_non_ip.txt
+
+  direct_non_ip:
+    <<: *rs_classical
+    url: "https://ruleset.skk.moe/Clash/non_ip/direct.txt"
+    path: ./rule_set/direct_non_ip.txt
+
+  lan_non_ip:
+    <<: *rs_classical
+    url: "https://ruleset.skk.moe/Clash/non_ip/lan.txt"
+    path: ./rule_set/lan_non_ip.txt
+
+  # ── IP 类规则（放在最后匹配）──────────────────────────────────
+  reject_ip:
+    <<: *rs_classical
+    url: "https://ruleset.skk.moe/Clash/ip/reject.txt"
+    path: ./rule_set/reject_ip.txt
+
+  telegram_ip:
+    <<: *rs_classical
+    url: "https://ruleset.skk.moe/Clash/ip/telegram.txt"
+    path: ./rule_set/telegram_ip.txt
+
+  stream_ip:
+    <<: *rs_classical
+    url: "https://ruleset.skk.moe/Clash/ip/stream.txt"
+    path: ./rule_set/stream_ip.txt
+
+  domestic_ip:
+    <<: *rs_classical
+    url: "https://ruleset.skk.moe/Clash/ip/domestic.txt"
+    path: ./rule_set/domestic_ip.txt
+
+  lan_ip:
+    <<: *rs_classical
+    url: "https://ruleset.skk.moe/Clash/ip/lan.txt"
+    path: ./rule_set/lan_ip.txt
+
+  china_ip:
+    <<: *rs_ipcidr
+    url: "https://ruleset.skk.moe/Clash/ip/china_ip.txt"
+    path: ./rule_set/china_ip.txt

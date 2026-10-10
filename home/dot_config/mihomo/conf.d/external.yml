@@ -1,0 +1,4 @@
+external-controller: 127.0.0.1:9090
+# secret: "your_strong_password"   # 如果对外暴露务必设置密码
+external-ui: ui # Web UI 存放目录（相对于配置文件目录）
+external-ui-url: "https://github.com/MetaCubeX/metacubexd/archive/refs/heads/gh-pages.zip"
