@@ -27,7 +27,7 @@
 {{- $isDevContainer := or (ne (env "REMOTE_CONTAINERS") "") (ne (env "DEVCONTAINER") "") -}}
 
 {{- if $interactive -}}
-{{-   writeToStdout "💡 Tip: you can re-enter your name and email with `chezmoi init --data=false`.\n" -}}
+{{- writeToStdout "💡 Tip: you can re-enter your name and email with `chezmoi init --data=false`.\n" -}}
 {{- end -}}
 
 {{- $isPersonal := false -}}

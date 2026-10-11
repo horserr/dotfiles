@@ -112,7 +112,10 @@
       "label": "chezmoi install",
       "type": "shell",
       "detail": "Install chezmoi",
-      "command": "sh -c \"$(curl -fsLS https://get.chezmoi.io)\" -- -b $HOME/.local/bin",
+
+      // detect root user
+      "command": "sh -c 'if [ \"$(id -u)\" -eq 0 ]; then target=\"/usr/local/bin\"; else target=\"$HOME/.local/bin\"; fi; sh -c \"$(curl -fsLS https://get.chezmoi.io)\" -- -b \"$target\"'",
+
       "icon": { "id": "extensions-install-count" },
       "windows": { "command": "scoop install chezmoi" },
       "presentation": {

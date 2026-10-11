@@ -1,0 +1,21 @@
+{{- if .needProxy }}
+
+{{- $suffix := ternary ".exe" "" .isWindows -}}
+
+[{{ printf ".local/bin/mihomo%s" $suffix | quote }}]
+    {{ $appVersion := list "mihomo" .chezmoi.os .chezmoi.arch "v3" | join "-" }}
+
+    {{ $extension := ternary "v*.zip" "v*.gz" .isWindows }}
+    {{ $type := ternary "archive-file" "file" .isWindows }}
+
+    type = {{ $type | quote }}
+    executable = true
+
+    {{ if not .isWindows }}
+    decompress = "gzip"
+    {{ end }}
+
+    url = {{ gitHubLatestReleaseAssetURL "MetaCubeX/mihomo" (printf "%s-%s" $appVersion $extension) | quote }}
+    path = {{ printf "%s%s" $appVersion $suffix | quote }}
+
+{{ end -}}
