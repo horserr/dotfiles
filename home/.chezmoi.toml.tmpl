@@ -37,7 +37,7 @@
 {{- /* ipapi ISO (e.g. CN, HK, US, JP) */ -}}
 {{- $country := output "curl" "-s" "--max-time" "2" "https://ipapi.co/country/" | trim -}}
 
-{{ $needProxy := or $isWindows (promptBoolOnce . "needProxy" "should install mihomo?" false) }}
+{{ $needProxy := and $interactive (or $isWindows (promptBoolOnce . "needProxy" "should install mihomo?" false)) }}
 
 sourceDir = "~/.config/.dotfiles"
 
