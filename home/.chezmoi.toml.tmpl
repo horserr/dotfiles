@@ -4,6 +4,15 @@
 {{- $interactive := stdinIsATTY -}}
 
 {{- $isLinux := eq .chezmoi.os "linux" -}}
+{{- $isRoot := false -}}
+
+{{- if $isLinux -}}
+  {{- $uid := output "id" "-u" | trim | atoi -}}
+  {{- if eq $uid 0 -}}
+    {{- $isRoot = true -}}
+  {{- end -}}
+{{- end -}}
+
 
 {{- $isWindows := eq .chezmoi.os "windows" -}}
 
@@ -43,6 +52,7 @@ sourceDir = "~/.config/.dotfiles"
 
 [data]
     isPersonal = {{ $isPersonal }}
+    isRoot = {{ $isRoot }}
 
     isWSL = {{ $isWSL }}
     isLinux = {{ $isLinux }}
