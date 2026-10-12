@@ -16,10 +16,6 @@
   // git.copyCommitMessage
   // git.copyContentToClipboard
 
-  // git.pull
-  // git.pullFrom
-  // git.pullRebase
-  // git.pullRef
   // git.runGitMerge
   // git.runGitMergeDiff3
   {
@@ -368,6 +364,38 @@
             "icon": "arrow-down",
             "type": "command",
             "command": "git.pushTags"
+          },
+          {
+            "key": ",",
+            "name": "+Pull",
+            "icon": "repo-pull",
+            "type": "bindings",
+            "bindings": [
+              // , pull rebase
+              {
+                "key": ",",
+                "name": "pull(rabase)",
+                "icon": "repo-pull",
+                "type": "command",
+                "command": "git.pullRebase"
+              },
+              // p pull
+              {
+                "key": "p",
+                "name": "pull",
+                "icon": "repo-pull",
+                "type": "command",
+                "command": "git.pull"
+              },
+              // space pull from
+              {
+                "key": " ",
+                "name": "pull from",
+                "icon": "repo-pull",
+                "type": "command",
+                "command": "git.pullFrom"
+              }
+            ]
           }
           // git.pushForce
           // git.pushRef
