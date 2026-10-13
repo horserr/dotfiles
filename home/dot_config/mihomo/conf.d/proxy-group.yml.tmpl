@@ -94,7 +94,7 @@ proxy-groups:
       - "🤪 HYSTERIA"
       - "⬇️ DOWNLOAD"
       - DIRECT
-    default-selected: DIRECT
+    default-selected: {{ ternary "🤪 HYSTERIA" "DIRECT" .needMirror }}
 
   - name: "🤖 AI"
     <<: [*type-select, *XFilterHK]
@@ -130,19 +130,19 @@ proxy-groups:
     default-selected: "0.01"
 
   - name: "1"
-    <<: [*type-urltest, *Filter1]
+    <<: [*type-select, *Filter1]
     include-all: true
     hidden: false
   - name: "0.5"
-    <<: [*type-urltest, *Filter0-5]
+    <<: [*type-select, *Filter0-5]
     include-all: true
     hidden: false
   - name: "0.1"
-    <<: [*type-urltest, *Filter0-1]
+    <<: [*type-select, *Filter0-1]
     include-all: true
     hidden: false
   - name: "0.01"
-    <<: [*type-urltest, *Filter0-01]
+    <<: [*type-select, *Filter0-01]
     include-all: true
     hidden: false
 
@@ -200,7 +200,7 @@ proxy-groups:
   - name: "🐟 MATCH"
     type: select
     proxies: [DIRECT, "🎯 PROXY"]
-    default-selected: DIRECT
+    default-selected: {{ ternary "🎯 PROXY" "DIRECT" .needMirror }}
 
   # - name: "ℹ️ INFO"
   #   # <<: [*type-fallback, *FilterINFO]
