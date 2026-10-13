@@ -12,6 +12,31 @@ rs_ipcidr:
 rs_mrs: &rs_mrs { type: http, behavior: domain, interval: 86400, format: mrs }
 
 rule-providers:
+  download_non_ip:
+    type: inline
+    behavior: classical
+    payload:
+      - # --- Docker 相关下载 ---
+      - DOMAIN-SUFFIX,docker.com
+      - DOMAIN-SUFFIX,docker.io
+      - DOMAIN-SUFFIX,gcr.io            # Google 容器镜像库
+      - DOMAIN-SUFFIX,quay.io            # RedHat 容器镜像库
+      - DOMAIN-SUFFIX,ghcr.io            # GitHub Container Registry (很多开源大模型/Docker存这)
+
+      # --- PyTorch / Hugging Face / AI 权重下载 ---
+      - DOMAIN-SUFFIX,pytorch.org
+      - DOMAIN-SUFFIX,huggingface.co     # 目前最热门的大模型/PyTorch权重下载站
+      - DOMAIN-SUFFIX,cdn-lfs.huggingface.co # HuggingFace 大文件存储分发 CDN
+
+      # --- NVIDIA NGC 相关下载 ---
+      - DOMAIN-SUFFIX,ngc.nvidia.com
+      - DOMAIN-SUFFIX,developer.download.nvidia.com # NVIDIA 驱动与工具包下载
+      - DOMAIN-SUFFIX,sw.download.nvidia.com
+
+      # --- 通用大文件/源码下载分发 CDN ---
+      - DOMAIN-KEYWORD,github-releases   # GitHub Releases 大文件下载
+      - DOMAIN-KEYWORD,githubusercontent # 很多源码包直链
+
   # ── 非 IP 类：广告拦截 ────────────────────────────────────────
   reject_non_ip:
     <<: *rs_classical

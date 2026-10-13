@@ -1,10 +1,10 @@
 tun:
   enable: false
-  stack:
-    mixed # 协议栈：mixed（推荐）/ system / gvisor
-    # system：速度最快，兼容性最好，内存最低
-    # gvisor：用户态网络栈，UDP 支持更好，但性能略低
-    # mixed：TCP 走 system，UDP 走 gvisor，均衡之选
+  stack: mixed
+  # 协议栈：mixed（推荐）/ system / gvisor
+  # system：速度最快，兼容性最好，内存最低
+  # gvisor：用户态网络栈，UDP 支持更好，但性能略低
+  # mixed：TCP 走 system，UDP 走 gvisor，均衡之选
   device: mihomo # 虚拟网卡名称（可自定义，Linux 下常见 tun0）
   dns-hijack:
     - "any:53" # 劫持所有发往 53 端口的 DNS 请求

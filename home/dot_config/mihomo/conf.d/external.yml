@@ -1,4 +1,25 @@
 external-controller: 127.0.0.1:9090
 # secret: "your_strong_password"   # 如果对外暴露务必设置密码
+
+# 配置 WEB UI 目录，使用 http://{{external-controller}}/ui 访问
 external-ui: ui # Web UI 存放目录（相对于配置文件目录）
+external-ui-name: xd
 external-ui-url: "https://github.com/MetaCubeX/metacubexd/archive/refs/heads/gh-pages.zip"
+
+# RESTful API CORS标头配置
+external-controller-cors:
+  allow-origins:
+    - "*"
+  allow-private-network: true
+
+# RESTful API Unix socket 监听地址（ windows版本大于17063也可以使用，即大于等于1803/RS4版本即可使用 ）
+# ！！！注意： 从Unix socket访问api接口不会验证secret， 如果开启请自行保证安全问题 ！！！
+# 测试方法： curl -v --unix-socket "mihomo.sock" http://localhost/
+external-controller-unix: mihomo.sock
+
+# RESTful API Windows namedpipe 监听地址
+# ！！！注意： 从Windows namedpipe访问api接口不会验证secret， 如果开启请自行保证安全问题 ！！！
+external-controller-pipe: \\.\pipe\mihomo
+
+# 为 external-controller 和 external-controller-tls 的监听socket设置routing-mark（仅支持linux）
+external-controller-routing-mark: 0

@@ -1,11 +1,10 @@
 # 手动选择
-g_select: &g_select
+type-select: &type-select
   type: select
   url: "https://www.gstatic.com/generate_204"
-  include-all: true # 自动包含所有 proxy-providers 的节点
 
 # 自动测速（延迟最低）
-g_urltest: &g_urltest
+type-urltest: &type-urltest
   type: url-test
   url: "https://www.gstatic.com/generate_204"
   interval: 300
@@ -13,32 +12,29 @@ g_urltest: &g_urltest
   tolerance: 50
   timeout: 2000
   max-failed-times: 3 # 连续失败 3 次触发重新检查
-  include-all: true
   hidden: true # 在面板中隐藏（减少界面噪音）
 
 # 自动回退（当前节点失败就切下一个）
-g_fallback: &g_fallback
+type-fallback: &type-fallback
   type: fallback
   url: "https://www.gstatic.com/generate_204"
   interval: 300
   lazy: true
   timeout: 2000
   max-failed-times: 3
-  include-all: true
   hidden: true
 
 # 负载均衡（一致性散列）
-g_balance: &g_balance
+type-balance: &type-balance
   type: load-balance
   strategy: consistent-hashing # round-robin / consistent-hashing / sticky-sessions
   url: "https://www.gstatic.com/generate_204"
   interval: 300
   lazy: true
   timeout: 2000
-  include-all: true
   hidden: true
 
-g_smart: &g_smart
+type-smart: &type-smart
   type: smart
   interval: 200
   lazy: true
@@ -46,92 +42,171 @@ g_smart: &g_smart
   hidden: true
   uselightgbm: true # 启用 LightGBM 模型（需要 mihomo 支持该特性）
 
-# 节点过滤正则
-FilterHK: &FilterHK "^(?=.*(🇭🇰|港|HK|Hong Kong))(?!.*(回国|校园|剩余|到期|官网|客服|订阅|节点|过期)).*$"
-FilterTW: &FilterTW "^(?=.*(🇹🇼|台|TW|Taiwan))(?!.*(回国|校园|剩余|到期|官网|客服|订阅|节点|过期)).*$"
-FilterJP: &FilterJP "^(?=.*(🇯🇵|日|JP|Japan|Tokyo|Osaka))(?!.*(回国|校园|剩余|到期|官网|客服|订阅|节点|过期)).*$"
-FilterSG: &FilterSG "^(?=.*(🇸🇬|新|SG|Singapore))(?!.*(回国|校园|剩余|到期|官网|客服|订阅|节点|过期)).*$"
-FilterUS: &FilterUS "^(?=.*(🇺🇸|美|US|United States))(?!.*(回国|校园|剩余|到期|官网|客服|订阅|节点|过期)).*$"
-FilterKR: &FilterKR "^(?=.*(🇰🇷|韩|KR|Korea))(?!.*(回国|校园|剩余|到期|官网|客服|订阅|节点|过期)).*$"
+FilterINFO: &FilterINFO
+  filter: "^.*(回国|校园|剩余|到期|官网|客服|订阅|节点|过期).*$"
+
+FilterHK: &FilterHK
+  filter: "^(?=.*(🇭🇰|港|HK|Hong Kong|香港))(?!.*(回国|校园|剩余|到期|官网|客服|订阅|节点|过期)).*$"
+FilterTW: &FilterTW
+  filter: "^(?=.*(🇹🇼|台|TW|Taiwan|台湾))(?!.*(回国|校园|剩余|到期|官网|客服|订阅|节点|过期)).*$"
+FilterJP: &FilterJP
+  filter: "^(?=.*(🇯🇵|日|JP|Japan|Tokyo|Osaka|日本))(?!.*(回国|校园|剩余|到期|官网|客服|订阅|节点|过期)).*$"
+FilterSG: &FilterSG
+  filter: "^(?=.*(🇸🇬|新|SG|Singapore|新加坡))(?!.*(回国|校园|剩余|到期|官网|客服|订阅|节点|过期)).*$"
+FilterUS: &FilterUS
+  filter: "^(?=.*(🇺🇸|美|US|United States|美国))(?!.*(回国|校园|剩余|到期|官网|客服|订阅|节点|过期)).*$"
+FilterKR: &FilterKR
+  filter: "^(?=.*(🇰🇷|韩|KR|Korea|韩国))(?!.*(回国|校园|剩余|到期|官网|客服|订阅|节点|过期)).*$"
+FilterUK: &FilterUK
+  filter: "^(?=.*(🇬🇧|英|GB|UK|United Kindom|London|英国|伦敦))(?!.*(回国|校园|剩余|到期|官网|客服|订阅|节点|过期)).*$"
+
+Filter1: &Filter1
+  filter: "^.*1x.*$"
+Filter0-5: &Filter0-5
+  filter: "^.*0.5x.*$"
+Filter0-1: &Filter0-1
+  filter: "^.*0.1x.*$"
+Filter0-01: &Filter0-01
+  filter: "^.*0.01x.*$"
+
+FilterStream: &FilterStream
+  filter: "(?i)^.*(stream|流媒体).*$"
+
+FilterHysteria: &FilterHysteria
+  filter: "hysteria2"
+FilterVless: &FilterVless
+  filter: "vless"
+
+XFilterHK: &XFilterHK
+  filter: "^(?!.*(🇭🇰|港|HK|Hong Kong|香港))(?!.*(回国|校园|剩余|到期|官网|客服|订阅|节点|过期)).*$"
 
 proxy-groups:
-  - name: "🎯 节点选择"
-    type: select
-    proxies: ["🌐 智能选择", "✋ 手动选择", DIRECT]
+  - name: "🎯 PROXY"
+    <<: *type-select
+    proxies:
+      - "🇭🇰 HK"
+      - "🇸🇬 SG"
+      - "🇯🇵 JP"
+      - "🇺🇸 US"
+      - "🇰🇷 KR"
+      - "🇹🇼 TW"
+      - "🇬🇧 UK"
+      - "🤪 HYSTERIA"
+      - "⬇️ DOWNLOAD"
+      - DIRECT
+    default-selected: DIRECT
+
+  - name: "🤖 AI"
+    <<: [*type-select, *XFilterHK]
     include-all: true
 
-  - name: "🌐 智能选择"
-    type: select
-    proxies:
-      ["🇭🇰 香港", "🇸🇬 新加坡", "🇯🇵 日本", "🇺🇸 美国", "🇰🇷 韩国", "🇹🇼 台湾"]
-
-  - { name: "✋ 手动选择", <<: *g_select }
-
-  - name: "🤖 AI 服务"
-    type: select
-    proxies: ["🇺🇸 美国", "🇸🇬 新加坡", "🎯 节点选择"]
-
-  - name: "📹 流媒体"
-    type: select
-    proxies: ["🇭🇰 香港", "🇸🇬 新加坡", "🇯🇵 日本", "🇺🇸 美国", "🎯 节点选择"]
-
-  - name: "✈️ 电报消息"
-    type: select
-    proxies: ["🎯 节点选择", "🇸🇬 新加坡", "🇭🇰 香港"]
-
-  - name: "🍎 苹果服务"
-    type: select
-    proxies: [DIRECT, "🎯 节点选择", "🇭🇰 香港"]
-
-  - name: "Ⓜ️ 微软服务"
-    type: select
-    proxies: [DIRECT, "🎯 节点选择", "🇺🇸 美国"]
-
-  - name: "🛡️ 广告拦截"
+  - name: "🛡️ AD"
     type: select
     proxies: [REJECT, DIRECT]
+    default-selected: REJECT
 
-  - name: "🐟 漏网之鱼"
+  - name: "📹 STREAM"
+    <<: [*type-select, *FilterStream]
+    proxies: ["DIRECT"]
+    include-all: true
+    default-selected: DIRECT
+
+  - name: "✈️ TELEGRAM"
     type: select
-    proxies: ["🎯 节点选择", DIRECT]
+    proxies: ["🇸🇬 SG", "🇭🇰 HK", DIRECT]
+    default-selected: DIRECT
+
+  - name: "Ⓜ️ MICROSOFT"
+    type: select
+    proxies: [DIRECT]
+
+  - name: "🤪 HYSTERIA"
+    <<: [*type-select, *FilterHysteria]
+    include-all: true
+
+  - name: "⬇️ DOWNLOAD"
+    <<: *type-select
+    proxies: ["0.01", "🤪 HYSTERIA", DIRECT, "0.1", "0.5", "1"]
+    default-selected: "0.01"
+
+  - name: "1"
+    <<: [*type-urltest, *Filter1]
+    include-all: true
+    hidden: false
+  - name: "0.5"
+    <<: [*type-urltest, *Filter0-5]
+    include-all: true
+    hidden: false
+  - name: "0.1"
+    <<: [*type-urltest, *Filter0-1]
+    include-all: true
+    hidden: false
+  - name: "0.01"
+    <<: [*type-urltest, *Filter0-01]
+    include-all: true
+    hidden: false
 
   # 地区三合一
-  - name: "🇭🇰 香港"
+  - name: "🇭🇰 HK"
     type: select
-    proxies: ["🇭🇰 香港-自动", "🇭🇰 香港-回退", "🇭🇰 香港-均衡"]
-  - name: "🇸🇬 新加坡"
+    proxies: ["🇭🇰 HK-自动", "🇭🇰 HK-回退", "🇭🇰 HK-均衡"]
+  - name: "🇸🇬 SG"
     type: select
-    proxies: ["🇸🇬 新加坡-自动", "🇸🇬 新加坡-回退", "🇸🇬 新加坡-均衡"]
-  - name: "🇯🇵 日本"
+    proxies: ["🇸🇬 SG-自动", "🇸🇬 SG-回退", "🇸🇬 SG-均衡"]
+  - name: "🇯🇵 JP"
     type: select
-    proxies: ["🇯🇵 日本-自动", "🇯🇵 日本-回退", "🇯🇵 日本-均衡"]
-  - name: "🇺🇸 美国"
+    proxies: ["🇯🇵 JP-自动", "🇯🇵 JP-回退", "🇯🇵 JP-均衡"]
+  - name: "🇺🇸 US"
     type: select
-    proxies: ["🇺🇸 美国-自动", "🇺🇸 美国-回退", "🇺🇸 美国-均衡"]
-  - name: "🇰🇷 韩国"
+    proxies: ["🇺🇸 US-自动", "🇺🇸 US-回退", "🇺🇸 US-均衡"]
+  - name: "🇰🇷 KR"
     type: select
-    proxies: ["🇰🇷 韩国-自动", "🇰🇷 韩国-回退", "🇰🇷 韩国-均衡"]
-  - name: "🇹🇼 台湾"
+    proxies: ["🇰🇷 KR-自动", "🇰🇷 KR-回退", "🇰🇷 KR-均衡"]
+  - name: "🇹🇼 TW"
     type: select
-    proxies: ["🇹🇼 台湾-自动", "🇹🇼 台湾-回退", "🇹🇼 台湾-均衡"]
+    proxies: ["🇹🇼 TW-自动", "🇹🇼 TW-回退", "🇹🇼 TW-均衡"]
+  - name: "🇬🇧 UK"
+    type: select
+    proxies: ["🇬🇧 UK-自动", "🇬🇧 UK-回退", "🇬🇧 UK-均衡"]
 
-  - { name: "🇭🇰 香港-自动", <<: *g_urltest, filter: *FilterHK }
-  - { name: "🇸🇬 新加坡-自动", <<: *g_urltest, filter: *FilterSG }
-  - { name: "🇯🇵 日本-自动", <<: *g_urltest, filter: *FilterJP }
-  - { name: "🇺🇸 美国-自动", <<: *g_urltest, filter: *FilterUS }
-  - { name: "🇰🇷 韩国-自动", <<: *g_urltest, filter: *FilterKR }
-  - { name: "🇹🇼 台湾-自动", <<: *g_urltest, filter: *FilterTW }
+  - { name: "🇭🇰 HK-回退", <<: [*type-fallback, *FilterHK], include-all: true }
+  - { name: "🇭🇰 HK-均衡", <<: [*type-balance, *FilterHK], include-all: true }
+  - { name: "🇭🇰 HK-自动", <<: [*type-urltest, *FilterHK], include-all: true }
 
-  - { name: "🇭🇰 香港-回退", <<: *g_fallback, filter: *FilterHK }
-  - { name: "🇸🇬 新加坡-回退", <<: *g_fallback, filter: *FilterSG }
-  - { name: "🇯🇵 日本-回退", <<: *g_fallback, filter: *FilterJP }
-  - { name: "🇺🇸 美国-回退", <<: *g_fallback, filter: *FilterUS }
-  - { name: "🇰🇷 韩国-回退", <<: *g_fallback, filter: *FilterKR }
-  - { name: "🇹🇼 台湾-回退", <<: *g_fallback, filter: *FilterTW }
+  - { name: "🇯🇵 JP-回退", <<: [*type-fallback, *FilterJP], include-all: true }
+  - { name: "🇯🇵 JP-均衡", <<: [*type-balance, *FilterJP], include-all: true }
+  - { name: "🇯🇵 JP-自动", <<: [*type-urltest, *FilterJP], include-all: true }
 
-  - { name: "🇭🇰 香港-均衡", <<: *g_balance, filter: *FilterHK }
-  - { name: "🇸🇬 新加坡-均衡", <<: *g_balance, filter: *FilterSG }
-  - { name: "🇯🇵 日本-均衡", <<: *g_balance, filter: *FilterJP }
-  - { name: "🇺🇸 美国-均衡", <<: *g_balance, filter: *FilterUS }
-  - { name: "🇰🇷 韩国-均衡", <<: *g_balance, filter: *FilterKR }
-  - { name: "🇹🇼 台湾-均衡", <<: *g_balance, filter: *FilterTW }
+  - { name: "🇰🇷 KR-回退", <<: [*type-fallback, *FilterKR], include-all: true }
+  - { name: "🇰🇷 KR-均衡", <<: [*type-balance, *FilterKR], include-all: true }
+  - { name: "🇰🇷 KR-自动", <<: [*type-urltest, *FilterKR], include-all: true }
+
+  - { name: "🇸🇬 SG-回退", <<: [*type-fallback, *FilterSG], include-all: true }
+  - { name: "🇸🇬 SG-均衡", <<: [*type-balance, *FilterSG], include-all: true }
+  - { name: "🇸🇬 SG-自动", <<: [*type-urltest, *FilterSG], include-all: true }
+
+  - { name: "🇹🇼 TW-回退", <<: [*type-fallback, *FilterTW], include-all: true }
+  - { name: "🇹🇼 TW-均衡", <<: [*type-balance, *FilterTW], include-all: true }
+  - { name: "🇹🇼 TW-自动", <<: [*type-urltest, *FilterTW], include-all: true }
+
+  - { name: "🇺🇸 US-回退", <<: [*type-fallback, *FilterUS], include-all: true }
+  - { name: "🇺🇸 US-均衡", <<: [*type-balance, *FilterUS], include-all: true }
+  - { name: "🇺🇸 US-自动", <<: [*type-urltest, *FilterUS], include-all: true }
+
+  - { name: "🇬🇧 UK-回退", <<: [*type-fallback, *FilterUK], include-all: true }
+  - { name: "🇬🇧 UK-均衡", <<: [*type-balance, *FilterUK], include-all: true }
+  - { name: "🇬🇧 UK-自动", <<: [*type-urltest, *FilterUK], include-all: true }
+
+  - name: "🐟 MATCH"
+    type: select
+    proxies: [DIRECT, "🎯 PROXY"]
+    default-selected: DIRECT
+
+  # - name: "ℹ️ INFO"
+  #   # <<: [*type-fallback, *FilterINFO]
+  #   <<: [*type-select, *FilterINFO]
+  #   include-all: true
+
+  - name: "🃏 ALL"
+    <<: *type-select
+    include-all: true
