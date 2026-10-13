@@ -59,7 +59,7 @@ profile:
   {{- $fileName := base . -}}
 
   {{- /* relative path */ -}}
-  {{- $relPath := trimPrefix (joinPath $.chezmoi.sourceDir "/") . -}}
+  {{- $relPath := trimPrefix (printf "%s/" $.chezmoi.sourceDir) . -}}
 
   {{- if or (hasSuffix "yaml.tmpl" .) (hasSuffix "yml.tmpl" .) -}}
     {{- /* merge jsonc template */ -}}

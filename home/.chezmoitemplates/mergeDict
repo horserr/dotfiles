@@ -10,7 +10,7 @@
   {{- $fileName := base . -}}
 
   {{- /* relative path */ -}}
-  {{- $relPath := trimPrefix (joinPath $.GLOBAL.chezmoi.sourceDir "/") . -}}
+  {{- $relPath := trimPrefix (printf "%s/" $.GLOBAL.chezmoi.sourceDir) . -}}
 
   {{- if hasSuffix "jsonc.tmpl" . -}}
     {{- /* merge jsonc template */ -}}
