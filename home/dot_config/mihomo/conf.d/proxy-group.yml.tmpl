@@ -119,6 +119,10 @@ proxy-groups:
   - name: "Ⓜ️ MICROSOFT"
     type: select
     proxies: [DIRECT]
+  - name: "🕸️ GOOGLE"
+    type: select
+    proxies: [DIRECT, "🎯 PROXY"]
+    default-selected: {{ ternary "🎯 PROXY" "DIRECT" .needMirror }}
 
   - name: "🤪 HYSTERIA"
     <<: [*type-select, *FilterHysteria]

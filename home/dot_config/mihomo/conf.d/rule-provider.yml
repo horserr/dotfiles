@@ -12,6 +12,38 @@ rs_ipcidr:
 rs_mrs: &rs_mrs { type: http, behavior: domain, interval: 86400, format: mrs }
 
 rule-providers:
+  google_non_ip:
+    type: inline
+    behavior: classical
+    payload:
+      - DOMAIN-SUFFIX,google.com
+      - DOMAIN-SUFFIX,googleapis.com
+      - DOMAIN-SUFFIX,googleusercontent.com
+      - DOMAIN-SUFFIX,gstatic.com
+      - DOMAIN-SUFFIX,googlecdn.net
+      - DOMAIN-SUFFIX,googlevideo.com
+      - DOMAIN-SUFFIX,gmail.com
+
+      - DOMAIN-SUFFIX,youtube.com
+      - DOMAIN-SUFFIX,youtu.be
+      - DOMAIN-SUFFIX,youtubeimaging.com
+      - DOMAIN-SUFFIX,ytimg.com
+
+      - DOMAIN-SUFFIX,android.com
+      - DOMAIN-SUFFIX,android.com.cn  # 中国大陆版 Android 骨干相关
+      - DOMAIN-SUFFIX,googleplay.com
+      - DOMAIN-SUFFIX,gvt1.com          # 谷歌组件更新/系统OTA常用
+      - DOMAIN-SUFFIX,gvt2.com
+      - DOMAIN-SUFFIX,gvt3.com
+
+      - DOMAIN-SUFFIX,chrome.com         # 浏览器相关
+      - DOMAIN-SUFFIX,chromium.org
+      - DOMAIN-SUFFIX,googleanalytics.com # 分析/统计（部分去广告规则会将其 REJECT）
+      - DOMAIN-SUFFIX,googlesyndication.com # 广告服务
+      - DOMAIN-SUFFIX,doubleclick.net     # 广告服务
+
+      - DOMAIN-KEYWORD,google
+
   download_non_ip:
     type: inline
     behavior: classical
