@@ -39,8 +39,8 @@ rm-() {
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
 
-alias setproxy="export http_proxy=http://127.0.0.1:7890 https_proxy=http://127.0.0.1:7890 HTTP_PROXY=http://127.0.0.1:7890 HTTPS_PROXY=http://127.0.0.1:7890"
-alias unsetproxy="unset http_proxy https_proxy HTTP_PROXY HTTPS_PROXY"
+alias setproxy="P=http://127.0.0.1:7897; export http_proxy=$P https_proxy=$p HTTP_PROXY=$p HTTPS_PROXY=$p all_proxy=$p ALL_PROXY=$p"
+alias unsetproxy="unset http_proxy https_proxy HTTP_PROXY HTTPS_PROXY all_proxy ALL_PROXY"
 
 if command -v "curl" &> /dev/null; then
     alias connection="curl -I google.com"
