@@ -1,11 +1,11 @@
 {
   // REALLY SIGNIFICANT
   // Set the 'http_proxy' environment variable.  This will be set for install and launch of the remote VS Code Server. Provide a string to set for all hosts, or an object with per-host configuration. Kill existing server on the remote for this setting to take effect.
-  "remote.SSH.httpProxy": "http://localhost:7890",
+  // "remote.SSH.httpProxy": { "work": "http://localhost:7890" },
 
   // REALLY SIGNIFICANT
   // Set the 'https_proxy' environment variable.  This will be set for install and launch of the remote VS Code Server. Provide a string to set for all hosts, or an object with per-host configuration. Kill existing server on the remote for this setting to take effect.
-  "remote.SSH.httpsProxy": "http://localhost:7890",
+  // "remote.SSH.httpsProxy": { "work": "http://localhost:7890" },
 
   // SIGNIFICANT
   // note: sshd should allow AllowStreamLocalForwarding
@@ -31,7 +31,7 @@
     "docker.docker",
     "EditorConfig.EditorConfig",
     "esbenp.prettier-vscode",
-    // "FanaticPythoner.better-todo-tree",
+    "fabiospampinato.vscode-open-in-github",
     "gass.git-log-pickaxe",
     "github.vscode-github-actions",
     "iliazeus.vscode-ansi",
@@ -59,6 +59,7 @@
     "yzhang.markdown-all-in-one",
     "zh9528.file-size"
     // "astral-sh.ty",
+    // "FanaticPythoner.better-todo-tree",
   ],
 
   "remote.SSH.defaultExtensions": [
