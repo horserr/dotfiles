@@ -83,7 +83,7 @@ Match host *.*.ts.net exec "powershell -NoProfile -Command 'if (Test-NetConnecti
     # remotePort (ip within local machine):localPort
     # map local port to remote. Thus, remote can use localhost:port to send package to this local machine. In this process, local machine acts as the proxy for the server.
     # note: by default, only loopback interface can access this port. To facilitate other interface, and thus allowing remote LAN to have access, change `GatewayPorts` in sshd configuration file
-    RemoteForward 7890 127.0.0.1:7890
+    # RemoteForward 7890 127.0.0.1:7890
 
     # open ports on local
     # locaPort (ip within remote machine):remotePort

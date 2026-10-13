@@ -1,0 +1,7 @@
+Host autodl
+    Tag WORK
+    User root
+    ForwardAgent yes
+    HostName region-9.autodl.pro
+    Port 48194
+    # RemoteForward 7890 127.0.0.1:7890
