@@ -3,3 +3,8 @@ Host work
     User lyz
     ForwardAgent yes
     HostName user1-system-product-name.tail46c3d6.ts.net
+
+    IdentityFile ~/.ssh/work
+    Compression yes
+    ForwardX11 yes
+    ForwardX11Trusted yes

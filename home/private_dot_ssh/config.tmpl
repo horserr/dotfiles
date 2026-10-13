@@ -98,12 +98,6 @@ Match host *.*.ts.net exec "powershell -NoProfile -Command 'if (Test-NetConnecti
     # RemoteForward
 {{ end }}
 
-Match tagged WORK
-    IdentityFile ~/.ssh/work
-    Compression yes
-    ForwardX11 yes
-    ForwardX11Trusted yes
-
 Match tagged PLATFORM
     User git
     PreferredAuthentications publickey
