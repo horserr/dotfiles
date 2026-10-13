@@ -1,10 +1,18 @@
-external-controller: 127.0.0.1:9090
-# secret: "your_strong_password"   # 如果对外暴露务必设置密码
+# note: need to allow 9090 on firewall
+# `sudo ufw allow 9090/tcp`
+# sudo ufw allow from 100.123.126.33 port 9090 proto tcp
+{{- if .isRemote }}
+external-controller: "0.0.0.0:9090"
+secret: {{ .mihomo.secret }}
+{{- else }}
+external-controller: "127.0.0.1:9090"
+{{- end }}
 
-# 配置 WEB UI 目录，使用 http://{{external-controller}}/ui 访问
-external-ui: ui # Web UI 存放目录（相对于配置文件目录）
-external-ui-name: xd
-external-ui-url: "https://github.com/MetaCubeX/metacubexd/archive/refs/heads/gh-pages.zip"
+# please use online webpage instead
+# # 配置 WEB UI 目录，使用 http://{external-controller}/ui 访问
+# external-ui: ui # Web UI 存放目录（相对于配置文件目录）
+# external-ui-name: xd
+# external-ui-url: "https://github.com/MetaCubeX/metacubexd/archive/refs/heads/gh-pages.zip"
 
 # RESTful API CORS标头配置
 external-controller-cors:

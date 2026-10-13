@@ -16,7 +16,6 @@ sumatrapdf/
 powershell/
 mousemaster/
 auto-dark-mode/
-mihomo/
 
 windows-terminal.jsonc
 {{ end }}

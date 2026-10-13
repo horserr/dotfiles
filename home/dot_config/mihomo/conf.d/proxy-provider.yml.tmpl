@@ -6,7 +6,7 @@ proxy-providers:
   # 组合缩写（如 CTCUCM、CUCM 等）：代表该节点对相应的国内主流运营商做了多网融合或互联优化，减少跨网延迟。
   A:
     type: http
-    url: {{ .proxyProviderUrl }}
+    url: {{ .mihomo.url }}
     interval: 86400 # 每天自动更新一次
     path: ./proxy_providers/airport-a.yaml
     health-check:

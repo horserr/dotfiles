@@ -26,6 +26,8 @@
 {{- $isCodeSpaces := ne (env "CODESPACES") "" -}}
 {{- $isDevContainer := or (ne (env "REMOTE_CONTAINERS") "") (ne (env "DEVCONTAINER") "") -}}
 
+{{- $isRemote := or $isSSH $isMOSH $isCodeSpaces $isDevContainer -}}
+
 {{- if $interactive -}}
 {{- writeToStdout "💡 Tip: you can re-enter your name and email with `chezmoi init --data=false`.\n" -}}
 {{- end -}}
@@ -35,18 +37,14 @@
 {{-   $isPersonal = true -}}
 {{- end -}}
 
-{{- if $interactive -}}
-    {{- if or $isCodeSpaces $isDevContainer -}}
-        {{- $isPersonal = true -}}
-    {{- else -}}
-        {{- $isPersonal = promptBoolOnce . "isPersonal" "Is this a personal computer" false -}}
-    {{- end -}}
+{{- if and $interactive (not $isCodeSpaces) (not $isDevContainer) -}}
+    {{- $isPersonal = promptBoolOnce . "isPersonal" "Is this a personal computer or  a work station" false -}}
 {{- end -}}
 
 {{- /* ipapi ISO (e.g. CN, HK, US, JP) */ -}}
 {{- $country := output "curl" "-s" "--max-time" "2" "https://ipapi.co/country/" | trim -}}
 
-{{ $needProxy := and $interactive (or $isWindows (promptBoolOnce . "needProxy" "should install mihomo?" false)) }}
+{{ $needProxy := and $interactive (or $isWindows (promptBoolOnce . "needProxy" "Should install mihomo" false)) }}
 
 sourceDir = "~/.config/.dotfiles"
 
@@ -59,12 +57,16 @@ sourceDir = "~/.config/.dotfiles"
     isWindows = {{ $isWindows }}
     isDocker = {{ $isDocker }}
     isEphemeral = {{ or $isDocker $isCodeSpaces $isDevContainer }}
-    isRemote = {{ or $isSSH $isMOSH $isCodeSpaces $isDevContainer }}
-    needMirror = {{ eq $country "CN" }}
+    isRemote = {{ $isRemote }}
 
+    needMirror = {{ eq $country "CN" }}
     needProxy = {{ $needProxy }}
+
     {{ if $needProxy }}
-    proxyProviderUrl = {{ promptStringOnce . "proxyProviderUrl" "please paste your proxy provider url here (without q)uote" | quote }}
+        mihomo.url = {{ promptStringOnce . "mihomo.url" "Please paste your proxy provider url here(without quotes)" | quote }}
+        {{ if $isRemote }}
+            mihomo.secret = {{ promptStringOnce . "mihomo.secret" "Please set your external web control secret, empty for default password" | trim | default "mihomo" | quote }}
+        {{ end }}
     {{ end }}
 
 [interpreters.ps1]
