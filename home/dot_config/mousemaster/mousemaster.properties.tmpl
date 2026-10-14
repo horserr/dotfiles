@@ -100,10 +100,9 @@ numpad-mode.mode-after-unhandled-key-press=idle-mode
 numpad-mode.to.backspace-mode=+INPUT_BACKSPACE
 
 numpad-mode.indicator=idle-mode.indicator
-numpad-mode.indicator.idle.inner-outline-color=#00F0F0
-numpad-mode.indicator.idle.edge-count=3
-numpad-mode.indicator.idle.color=#000000
-numpad-mode.indicator.unhandled-key-press.color=#0FFF0F
+numpad-mode.indicator.stroke-color=#00F0F0
+numpad-mode.indicator.shape=triangle
+numpad-mode.indicator.fill-color=#000000 | _{isunhandledkeypressing} -> #0FFF0F
 
 # symbol mode
 # (input mode) this mode is for bringing symbols closer to the main row
@@ -113,7 +112,7 @@ symbol-mode.to.idle-mode=+EXIT
 symbol-mode.to.backspace-mode=+INPUT_BACKSPACE
 
 symbol-mode.indicator=numpad-mode.indicator
-symbol-mode.indicator.idle.inner-outline-color=#F000F0
+symbol-mode.indicator.stroke-color=#F000F0
 
 # backspace mode
 # (input mode) this mode is for remapping INPUT_BACKSPACE to backspace for input
