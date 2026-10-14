@@ -15,7 +15,7 @@
 
   // SIGNIFICANT
   // When enabled extensions are downloaded locally and installed on remote.
-  "remote.downloadExtensionsLocally": true,
+  "remote.downloadExtensionsLocally": false,
 
   // Execute the script at the provided path on **your local machine** before attempting an SSH connection. Provide a single string value to configure for all hosts, or provide an object with per-host configuration.  On Windows provide a **.ps1** script and on macOS/linux provide an executable **.sh** script.
   "remote.SSH.preconnect": "",
@@ -34,9 +34,7 @@
     "fabiospampinato.vscode-open-in-github",
     "gass.git-log-pickaxe",
     "github.vscode-github-actions",
-    "iliazeus.vscode-ansi",
     "johnny-zhao.oai-compatible-copilot",
-    "jonsmithers.open-in-vim",
     "mechatroner.rainbow-csv",
     "meta.pyrefly",
     "ms-azuretools.vscode-containers",
@@ -63,15 +61,17 @@
   ],
 
   "remote.SSH.defaultExtensions": [
-    "nexmoe.monitor-pro",
+    "iliazeus.vscode-ansi",
+    "fill-labs.dependi",
+    "jonsmithers.open-in-vim",
+    "nexmoe.monitor-pro"
     // "FanaticPythoner.better-todo-tree",
-    "fill-labs.dependi"
   ],
 
   // link: https://code.visualstudio.com/docs/remote/wsl#_can-i-force-an-extension-to-run-locally-remotely-
   // Override the kind of an extension. `ui` extensions are installed and run on the local machine while `workspace` extensions are run on the remote. By overriding an extension's default kind using this setting, you specify if that extension should be installed and enabled locally or remotely.
   "remote.extensionKind": {
-    "ms-azuretools.vscode-containers": ["workspace"],
+    "ms-azuretools.vscode-containers": ["ui"],
     "ms-vscode-remote.remote-ssh-edit": ["workspace"]
   },
 

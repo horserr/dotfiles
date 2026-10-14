@@ -19,3 +19,7 @@ auto-dark-mode/
 
 windows-terminal.jsonc
 {{ end }}
+
+{{ if not .needProxy }}
+mihomo/
+{{ end }}

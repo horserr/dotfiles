@@ -33,7 +33,6 @@
   // extension.node-debug.toggleAutoAttach
 
   // view:
-  // workbench.debug.viewlet.action.toggleBreakpointsActivatedAction
   // workbench.debug.viewlet.action.toggleBreakpointsPresentation
   // extension.js-debug.addCustomBreakpoints
   // "callStackWidget.goToFile"
@@ -183,9 +182,9 @@
         "icon": "debug-breakpoint",
         "type": "bindings",
         "bindings": [
-          // space toggle breakpoint
+          // . toggle breakpoint
           {
-            "key": " ",
+            "key": ".",
             "name": "Toggle breakpoint",
             "icon": "activate-breakpoints",
             "type": "command",
@@ -206,14 +205,6 @@
             "icon": "edit",
             "type": "command",
             "command": "editor.debug.action.editBreakpoint"
-          },
-          // d delete breakpoint
-          {
-            "key": "d",
-            "name": "Delete breakpoint",
-            "icon": "trash",
-            "type": "command",
-            "command": "debug.removeBreakpoint"
           },
           // c add conditional breakpoint
           {

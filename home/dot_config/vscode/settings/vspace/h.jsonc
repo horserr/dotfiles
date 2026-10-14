@@ -193,7 +193,7 @@
           // , all settings
           {
             "key": ",",
-            "name": "display all settings",
+            "name": "edit settings",
             "icon": "keyboard",
             "type": "command",
             "command": "blitz.editSetting"

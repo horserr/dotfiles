@@ -24,8 +24,8 @@
         "mise",
         "nmap",
         "nodejs",
-        "pnpm",
         "pandoc",
+        "pnpm",
         "poppler",
         "python",
         "rclone",
@@ -35,6 +35,7 @@
         "tcping",
         "tldr",
         "trippy",
+        "tssh",
         "uv",
         "yazi",
         "zoxide"

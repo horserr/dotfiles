@@ -4,7 +4,7 @@ vscode-local:
   - alefragnani.bookmarks
   - alexandernanberg.horizon-theme-vscode
   - alexnho.a-touch-of-lilac-theme
-  - astral-sh.ty
+  - ascpixi.breakpoint-file-sync
   - bedirt.gpt-token-counter-live
   - bierner.emojisense
   - bierner.markdown-emoji
@@ -13,7 +13,6 @@ vscode-local:
   - catppuccin.catppuccin-vsc-icons
   - charliermarsh.ruff
   - chrislajoie.vscode-modelines
-  - code-nature.nilesoft-shell-file-formatter
   - codezombiech.gitignore
   - ctc.vscode-tree-extension
   - dakara.dakara-foldplus
@@ -25,6 +24,7 @@ vscode-local:
   - editorconfig.editorconfig
   - eliostruyf.vscode-demo-time
   - esbenp.prettier-vscode
+  - fabiospampinato.vscode-open-in-github
   - fanaticpythoner.better-todo-tree
   - fflaten.windowssandbox-configuration
   - fill-labs.dependi
@@ -48,12 +48,12 @@ vscode-local:
   - jq-syntax-highlighting.jq-syntax-highlighting
   - karyfoundation.comment
   - kbysiec.vscode-search-everywhere
-  - kelvin.vscode-sshfs
+  - mads-hartmann.bash-ide-vscode
   - marcinjachmann.vscode-eincolor
   - mark-wiemer.vscode-autohotkey-plus-plus
   - mechatroner.rainbow-csv
   - mehyaa.workspace-storage-cleanup
-  - mikestead.dotenv
+  - meta.pyrefly
   - monokai.theme-monokai-pro-vscode
   - ms-azuretools.azure-dev
   - ms-azuretools.vscode-azurefunctions
@@ -62,9 +62,7 @@ vscode-local:
   - ms-azuretools.vscode-containers
   - ms-python.debugpy
   - ms-python.python
-  - ms-python.vscode-pylance
   - ms-python.vscode-python-envs
-  - ms-toolsai.tensorboard
   - ms-vscode-remote.remote-containers
   - ms-vscode-remote.remote-ssh
   - ms-vscode-remote.remote-ssh-edit
@@ -73,7 +71,9 @@ vscode-local:
   - ms-vscode.powershell
   - ms-vscode.remote-explorer
   - ms-vscode.remote-repositories
+  - ms-vscode.remote-server
   - ms-vscode.vscode-github-issue-notebooks
+  - ms-vscode.vscode-python-web-wasm
   - ms-vscode.vscode-serial-monitor
   - myriad-dreamin.tinymist
   - natizyskunk.sftp
@@ -81,6 +81,7 @@ vscode-local:
   - nexmoe.monitor-pro
   - nur.script
   - octop162.markdown-table-editor
+  - omardulaimi.breakpoint-bookmarks
   - phoenisx.cssvar
   - pishu.epub-editor
   - redhat.vscode-xml
@@ -105,10 +106,10 @@ vscode-local:
   - tailscale.vscode-tailscale
   - takumii.markdowntable
   - tamasfe.even-better-toml
+  - the0807.uv-toolkit
   - thimo.line-history
   - tock.vscode-css-custom-properties
   - tomrijndorp.find-it-faster
-  - typespec.typespec-vscode
   - uctakeoff.vscode-counter
   - usernamehw.commands
   - vira.vsc-vira-theme

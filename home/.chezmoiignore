@@ -19,5 +19,6 @@
 .cloud-init/
 .ideavimrc
 .wslconfig
+.ideavimrc
 {{- end }}
 {{- end -}}
