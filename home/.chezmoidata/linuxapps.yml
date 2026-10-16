@@ -1,0 +1,33 @@
+linuxapps:
+  essential:
+    - git # preinstalled git is often outdated
+    - rsync
+    - tldr
+    - fzf
+    - yazi
+    - carapace
+    - zoxide
+    - tssh
+  shell:
+    - shellcheck
+
+    # original name is shfmt, additional prefix is for pixi installation
+    - canonical: go-shfmt
+      name: shfmt
+  extra:
+    - bat
+    - starship
+    - delta
+    - fd
+    - jq
+    - ripgrep
+    - pnpm
+  extra-extra:
+    - ffmpeg
+    - imagemagick
+    - iperf3
+    - nmap
+    - pandoc
+    - rclone
+    - poppler
+    - tcping

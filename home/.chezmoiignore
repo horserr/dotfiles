@@ -3,7 +3,6 @@
 .chezmoiscripts/linux/**
 .chezmoiexternals/linux.toml.tmpl
 .vscode-server/
-.pixi/
 
 .inputrc
 .profile

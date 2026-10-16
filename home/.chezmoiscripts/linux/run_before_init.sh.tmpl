@@ -1,0 +1,21 @@
+#!/bin/sh
+set -euo pipefail
+
+# pixi global manifest hash: {{ include "home/dot_pixi/manifests/pixi-global.toml.tmpl" | sha256sum }}
+
+if {{ not .init.install }}; then
+    exit 0
+fi
+
+if ! command -v pixi >/dev/null 2>&1; then
+    if command -v curl >/dev/null 2>&1; then
+        curl -fsSL https://pixi.sh/install.sh | sh
+    elif command -v wget >/dev/null 2>&1; then
+        wget -qO- https://pixi.sh/install.sh | sh
+    else
+        echo "please install curl or wget first." >&2
+        exit 1
+    fi
+fi
+
+pixi global sync
