@@ -12,6 +12,14 @@
 
   // state
   "tasks": [
+    // chezmoi edit config
+    {
+      "label": "chezmoi edit config",
+      "type": "shell",
+      "command": "chezmoi edit-config",
+      "detail": "modify chezmoi configuration",
+      "icon": { "id": "debug-configure" }
+    },
     {
       "label": "show-data",
       "type": "shell",
