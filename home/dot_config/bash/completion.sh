@@ -4,6 +4,10 @@ if command -v "carapace" &> /dev/null; then
     source <(carapace _carapace)
 fi
 
+for file in ~/.pixi/completions/bash/*; do
+    [ -e "$file" ] && source "$file"
+done
+
 if [ -d ~/completions ]; then
   for file in ~/completions/*.bash; do
     if [ -f "$file" ]; then
