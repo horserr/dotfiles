@@ -1,0 +1,69 @@
+version = 1
+
+[envs.ruff]
+channels = ["conda-forge"]
+dependencies = { "ruff" = "*" }
+exposed = { ruff = "ruff" }
+
+{{- if .init.install -}}
+  {{- /* 1. 将 essential 和用户勾选的 extras 合并为组列表 */ -}}
+  {{- $groups := list "essential" -}}
+  {{- range .init.extras -}}
+    {{- $groups = append $groups . -}}
+  {{- end -}}
+
+  {{- /* 2. 遍历所有分类 */ -}}
+  {{- range $category, $apps := .linuxapps -}}
+    {{- if has $category $groups -}}
+      {{- range $apps -}}
+
+        {{- /* 归一化条目：$pkgName = conda 包名（canonical 优先），$binaries = 需要暴露到 PATH 的可执行文件列表
+               pixi 的 exposed 语义是 `暴露名 = 环境内的可执行文件名`，例如 git-delta 包的 `delta`、fd-find 包的 `fd` */ -}}
+        {{- $item := . -}}
+        {{- $pkgName := "" -}}
+        {{- $binaries := list -}}
+        {{- $fallback := "" -}}
+
+        {{- if kindIs "map" $item -}}
+          {{- /* 对象形式：canonical = 真实包名（go-shfmt / fd-find），name|pkg = 可执行名（字符串或列表） */ -}}
+          {{- range $key := list "name" "pkg" "canonical" -}}
+            {{- if hasKey $item $key -}}
+              {{- $value := index $item $key -}}
+              {{- if kindIs "slice" $value -}}
+                {{- $binaries = $value -}}
+              {{- else if eq $key "canonical" -}}
+                {{- $pkgName = $value -}}
+              {{- else if $value -}}
+                {{- $binaries = list $value -}}
+                {{- if not $fallback -}}
+                  {{- $fallback = $value -}}
+                {{- end -}}
+              {{- end -}}
+            {{- end -}}
+          {{- end -}}
+          {{- if not $pkgName -}}
+            {{- $pkgName = $fallback -}}
+          {{- end -}}
+        {{- else -}}
+          {{- /* 纯字符串形式：例如 git, rsync */ -}}
+          {{- $pkgName = $item -}}
+          {{- $binaries = list $item -}}
+        {{- end -}}
+
+        {{- /* 兜底：没有包名时用第一个可执行文件名 */ -}}
+        {{- if and (not $pkgName) $binaries -}}
+          {{- $pkgName = index $binaries 0 -}}
+        {{- end -}}
+
+        {{- if $pkgName }}
+
+[envs.{{ $pkgName }}]
+channels = ["conda-forge"]
+dependencies = { "{{ $pkgName }}" = "*" }
+exposed = { {{ range $i, $cmd := $binaries -}}{{ if $i }}, {{ end }}{{ if regexMatch "[^a-zA-Z0-9_-]" $cmd }}"{{ $cmd }}"{{ else }}{{ $cmd }}{{ end }} = "{{ $cmd }}"{{- end }} }
+        {{- end -}}
+
+      {{ end }}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}

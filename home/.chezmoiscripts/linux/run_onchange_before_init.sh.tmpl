@@ -1,0 +1,33 @@
+#!/bin/sh
+set -euo pipefail
+
+{{ $pixiGlobalManifest := includeTemplate "pixi-global.toml.tmpl" . }}
+# pixi global manifest hash: {{ $pixiGlobalManifest | sha256sum }}
+
+{{- /* HACK: when including this template, automatically convert the template to the target file. */ -}}
+{{ if .init.install }}
+    {{ output "sh" "-c" (print "cat << 'EOF' > ~/.pixi/manifests/pixi-global.toml\n" $pixiGlobalManifest "\nEOF") }}
+{{ end }}
+
+{{ .init.install }} || exit 0
+
+export PIXI_HOME=$HOME/.pixi
+export PIXI_NO_PATH_UPDATE=1
+
+if ! command -v pixi >/dev/null 2>&1; then
+    if command -v curl >/dev/null 2>&1; then
+        curl -fsSL https://pixi.sh/install.sh | sh
+    elif command -v wget >/dev/null 2>&1; then
+        wget -qO- https://pixi.sh/install.sh | sh
+    else
+        echo "please install curl or wget first." >&2
+        exit 1
+    fi
+fi
+
+if [ $? -ne 0 ]; then
+    echo "Error when installing pixi using installation script." >&2
+    exit 1
+fi
+
+"$PIXI_HOME/bin/pixi" global sync

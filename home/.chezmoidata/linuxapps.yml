@@ -8,26 +8,51 @@ linuxapps:
     - carapace
     - zoxide
     - tssh
+    - git-filter-repo
+    - tmux
   shell:
     - shellcheck
 
     # original name is shfmt, additional prefix is for pixi installation
     - canonical: go-shfmt
       name: shfmt
+  network:
+    - canonical: iperf
+      name: iperf3
+    # - nmap doesn't exist
+    - rclone
   extra:
     - bat
+    - gh
+    - eza
+    - btop
     - starship
-    - delta
-    - fd
+    - canonical: git-delta
+      name: delta
+    - canonical: fd-find
+      name: fd
     - jq
-    - ripgrep
+    - canonical: ripgrep
+      name: rg
     - pnpm
-  extra-extra:
+  media:
     - ffmpeg
-    - imagemagick
-    - iperf3
-    - nmap
+    - canonical: imagemagick
+      name:
+        - animate
+        - compare
+        - composite
+        - conjure
+        - convert
+        - display
+        - identify
+        - import
+        - magick
+        - magick-script
+        - Magick++-config
+        - MagickCore-config
+        - MagickWand-config
+        - mogrify
+        - montage
+        - stream
     - pandoc
-    - rclone
-    - poppler
-    - tcping

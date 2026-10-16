@@ -228,6 +228,15 @@
       }
     }
   ],
+  "linux": {
+    "options": {
+      "shell": {
+        "executable": "bash",
+        // -i: force reparse .bashrc
+        "args": ["-i", "-c"]
+      }
+    }
+  },
   "windows": {
     "options": {
       "shell": {
