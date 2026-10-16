@@ -69,6 +69,14 @@ rule-providers:
       - DOMAIN-KEYWORD,github-releases   # GitHub Releases 大文件下载
       - DOMAIN-KEYWORD,githubusercontent # 很多源码包直链
 
+  bilibili_non_ip:
+    type: inline
+    behavior: domain
+    payload:
+      - .bilibili.com
+      - .bilivideo.com
+      - .hdslb.com
+
   # ── 非 IP 类：广告拦截 ────────────────────────────────────────
   reject_non_ip:
     <<: *rs_classical
