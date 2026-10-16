@@ -20,24 +20,9 @@ write_files:
       default=wsl
 
 packages:
-  - tldr
-  - git-delta
-  - mosh
+  - openssh-server
   - aria2c
-  - eza
-  - fzf
-  - git-filter-repo
-  # yazi requirements
   - 7zip
-  - ffmpeg
-  - jq
-  - poppler
-  - ripgrep
-  - zoxide
-  - resvg
-  - imagemagick
-  - bat
-  - fd-find
   # - incus
 
 runcmd:

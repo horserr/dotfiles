@@ -1,0 +1,22 @@
+# Syntax=docker/dockerfile:1.4
+# usage:
+#   docker build -t ssh-connection .
+#   docker run -d -p 2222:22 --name my-ssh-test ssh-connection
+#   ssh root@localhost -p 2222
+#   password: 123456
+
+ARG TYPE=base
+ARG VERSION=latest
+FROM mcr.microsoft.com/devcontainers/${TYPE}:${VERSION}
+
+# LABEL version="1.0" \
+#   description="test ssh connection"
+
+ENV DEBIAN_FRONTEND=noninteractive
+
+# install openssh-server
+RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
+  --mount=type=cache,target=/var/lib/apt,sharing=locked <<EOF
+  apt-get update && apt-get install -y --no-install-recommends \
+    vim
+EOF

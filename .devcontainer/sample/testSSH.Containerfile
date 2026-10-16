@@ -5,28 +5,14 @@
 #   ssh root@localhost -p 2222
 #   password: 123456
 
-FROM mcr.microsoft.com/devcontainers/base:resolute
+ARG TYPE=base
+ARG VERSION=latest
+FROM mcr.microsoft.com/devcontainers/${TYPE}:${VERSION}
 
 LABEL version="1.0" \
   description="test ssh connection"
 
-# change apt mirror
-ARG APT_MIRROR="http://mirrors.nju.edu.cn/ubuntu/"
 ENV DEBIAN_FRONTEND=noninteractive
-
-RUN <<EOF
-  set -e
-  if [ -n "${APT_MIRROR}" ]; then
-    if [ -f "/etc/apt/sources.list.d/ubuntu.sources" ]; then
-      echo "Detected DEB822 format (Ubuntu 24.04+)"
-      sed -i "s|URIs: .*|URIs: ${APT_MIRROR}|g" /etc/apt/sources.list.d/ubuntu.sources
-    elif [ -f "/etc/apt/sources.list" ]; then
-      echo "Detected traditional format (Ubuntu 22.04-)"
-      sed -i "s|http://archive.ubuntu.com/ubuntu/|${APT_MIRROR}|g" /etc/apt/sources.list
-      sed -i "s|http://security.ubuntu.com/ubuntu/|${APT_MIRROR}|g" /etc/apt/sources.list
-    fi
-  fi
-EOF
 
 # install openssh-server
 RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \

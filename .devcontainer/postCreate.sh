@@ -1,5 +1,5 @@
 #!/bin/bash
-set -e
+set -euo pipefail
 
 # installation script reference: https://www.chezmoi.io/install/#one-line-binary-install
 
