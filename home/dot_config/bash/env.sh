@@ -1,11 +1,15 @@
 export DOTFILES="$HOME/.config/.dotfiles"
 
-if [ -d "$DOTFILES/scripts/install" ]; then
-    export PATH="$DOTFILES/scripts/install:$PATH"
-fi
-
 if [ -f "$HOME/.local/bin/env" ]; then
     . "$HOME/.local/bin/env"
+fi
+
+if [ -f "$HOME/.config/bash/tokenenv.sh" ]; then
+    source "$HOME/.config/bash/tokenenv.sh"
+fi
+
+if [ -d "$DOTFILES/scripts/install" ]; then
+    export PATH="$DOTFILES/scripts/install:$PATH"
 fi
 
 # export RUSTUP_DIST_SERVER="https://rsproxy.cn"
