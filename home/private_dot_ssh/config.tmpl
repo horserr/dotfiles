@@ -78,7 +78,7 @@ Host termux
 
 {{ if .isWindows }}
 # match tailscale and test whether clash verge rev is running
-Match host *.*.ts.net exec "powershell -NoProfile -Command 'if (Test-NetConnection 127.0.0.1 -Port 7890 -InformationLevel Quiet) { exit 0 } else { exit 1 }'"
+# Match host *.*.ts.net exec "powershell -NoProfile -Command 'if (Test-NetConnection 127.0.0.1 -Port 7890 -InformationLevel Quiet) { exit 0 } else { exit 1 }'"
     # open socks ports on remote
     # remotePort (ip within local machine):localPort
     # map local port to remote. Thus, remote can use localhost:port to send package to this local machine. In this process, local machine acts as the proxy for the server.
