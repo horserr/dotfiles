@@ -54,16 +54,7 @@ handoffs:
       The user should remain the primary actor.
     send: false
 
-tools:
-  - vscode/resolveMemoryFileUri
-  - vscode/runCommand
-  - vscode/toolSearch
-  - read
-  - agent
-  - search
-  - web
-  - vscodeGeneral/toolSearch
-  - todo
+tools: [vscode/memory, vscode/resolveMemoryFileUri, vscode/runCommand, vscode/toolSearch, execute, read, agent, edit, search, web, vscodeGeneral/toolSearch, todo]
 ---
 
 # Identity
