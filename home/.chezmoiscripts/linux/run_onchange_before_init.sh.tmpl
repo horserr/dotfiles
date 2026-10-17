@@ -14,7 +14,9 @@ set -euo pipefail
 export PIXI_HOME=$HOME/.pixi
 export PIXI_NO_PATH_UPDATE=1
 
-if ! command -v pixi >/dev/null 2>&1; then
+pixiBinary="$PIXI_HOME/bin/pixi"
+
+if ! ( command -v pixi >/dev/null 2>&1 || [[ -f "$pixiBinary" ]] ); then
     if command -v curl >/dev/null 2>&1; then
         curl -fsSL https://pixi.sh/install.sh | sh
     elif command -v wget >/dev/null 2>&1; then
@@ -30,4 +32,4 @@ if [ $? -ne 0 ]; then
     exit 1
 fi
 
-"$PIXI_HOME/bin/pixi" global sync
+$pixiBinary global sync
