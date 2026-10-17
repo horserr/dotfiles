@@ -6,7 +6,7 @@ set -euo pipefail
 
 {{- /* HACK: when including this template, automatically convert the template to the target file. */ -}}
 {{ if .init.install }}
-    {{ output "sh" "-c" (print "cat << 'EOF' > ~/.pixi/manifests/pixi-global.toml\n" $pixiGlobalManifest "\nEOF") }}
+    {{ output "sh" "-c" (print "mkdir -p ~/.pixi/manifests && cat << 'EOF' > ~/.pixi/manifests/pixi-global.toml\n" $pixiGlobalManifest "\nEOF") }}
 {{ end }}
 
 {{ .init.install }} || exit 0
