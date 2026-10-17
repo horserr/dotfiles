@@ -10,6 +10,10 @@ linuxapps:
     - tssh
     - git-filter-repo
     - tmux
+    - canonical: less
+      name:
+        - less
+        - lesskey
     # git signing key needs ssh keygen
     - canonical: openssh
       name:
