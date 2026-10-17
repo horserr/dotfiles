@@ -10,6 +10,17 @@ linuxapps:
     - tssh
     - git-filter-repo
     - tmux
+    # git signing key needs ssh keygen
+    - canonical: openssh
+      name:
+        - scp
+        - sftp
+        - ssh
+        - ssh-add
+        - ssh-agent
+        - ssh-keygen
+        - ssh-keyscan
+        - sshd
   shell:
     - shellcheck
 
