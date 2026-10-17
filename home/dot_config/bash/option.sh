@@ -7,7 +7,9 @@ set completion-ignore-case on
 
 # 展开软链接
 set mark-symlinked-directories on
+
 set -o vi
+alias vi=vim
 
 # append to the history file, don't overwrite it
 shopt -s histappend
@@ -25,8 +27,8 @@ shopt -s checkwinsize
 HISTCONTROL=ignoreboth
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-HISTSIZE=1000
-HISTFILESIZE=2000
+HISTSIZE=100000
+HISTFILESIZE=200000
 
 # set a fancy prompt (non-color, unless we know we "want" color)
 case "$TERM" in

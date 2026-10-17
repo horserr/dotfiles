@@ -21,6 +21,16 @@ linuxapps:
         - ssh-keygen
         - ssh-keyscan
         - sshd
+    - canonical: vim
+      name:
+        - ex
+        - rview
+        - rvim
+        - view
+        - vim
+        - vimdiff
+        - vimtutor
+        - xxd
   shell:
     - shellcheck
 
