@@ -8,8 +8,12 @@ if [ -f "$HOME/.config/bash/tokenenv.sh" ]; then
     source "$HOME/.config/bash/tokenenv.sh"
 fi
 
-if [ -d "$DOTFILES/scripts/install" ]; then
-    export PATH="$DOTFILES/scripts/install:$PATH"
+# add scripts dotfiles
+if [ -d "$DOTFILES/scripts" ]; then
+    export PATH="$DOTFILES/scripts:$PATH"
+    if [ -d "$DOTFILES/scripts/install" ]; then
+        export PATH="$DOTFILES/scripts/install:$PATH"
+    fi
 fi
 
 # export RUSTUP_DIST_SERVER="https://rsproxy.cn"
