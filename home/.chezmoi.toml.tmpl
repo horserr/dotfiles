@@ -29,7 +29,7 @@
 {{- $isRemote := or $isSSH $isMOSH $isCodeSpaces $isDevContainer -}}
 
 {{- if $interactive -}}
-{{- writeToStdout "💡 Tip: you can re-enter your name and email with `chezmoi init --data=false`.\n" -}}
+    {{- writeToStdout "💡 Tip: you can re-enter your name and email with `chezmoi init --data=false`.\n" -}}
 {{- end -}}
 
 {{- $isPersonal := false -}}
@@ -66,6 +66,7 @@ sourceDir = "~/.config/.dotfiles"
         mihomo.url = {{ promptStringOnce . "mihomo.url" "Please paste your proxy provider url here(without quotes)" | quote }}
         {{ if $isRemote }}
             mihomo.secret = {{ promptStringOnce . "mihomo.secret" "Please set your external web control secret, empty for default password" | trim | default "mihomo" | quote }}
+            {{- writeToStdout "🎯 Note: you may need to allow tcp 9090 pass firewall using ufw. e.g. `sudo ufw allow from 100.123.126.33 port 9090 proto tcp` or `sudo ufw allow 9090/tcp`.\n" -}}
         {{ end }}
     {{ end }}
 

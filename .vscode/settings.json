@@ -79,7 +79,6 @@
     "*.toml.tmpl": "toml",
     "**/git/*config*": "ini",
     "**/private_dot_ssh/**/*config*": "ssh_config",
-    "**/.devcontainer/files/*": "dockerfile",
     "dot_bashrc": "shellscript",
     "dot_gitconfig": "ini",
     "dot_ideavimrc": "Vimscript",
