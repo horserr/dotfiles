@@ -107,3 +107,6 @@ if command -v "tmux" &> /dev/null; then
     alias tmv="tmux move-window -s -t"
     alias tlsk="tmux list-keys -N"
 fi
+
+# fix user group mismatch when returning from a rooted container
+alias remap-user="sudo chown -R $(id -u):$(id -g) ."
