@@ -44,7 +44,7 @@
   "python.terminal.activateEnvInCurrentTerminal": false,
 
   // Activate Python Environment in all Terminals created.
-  "python.terminal.activateEnvironment": true,
+  "python.terminal.activateEnvironment": false,
 
   // When executing a file in the terminal, whether to use execute in the file's directory, instead of the current open folder.
   "python.terminal.executeInFileDir": false,
