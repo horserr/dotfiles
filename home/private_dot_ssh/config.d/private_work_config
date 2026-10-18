@@ -24,3 +24,7 @@ Host robotwin
     Compression yes
     ForwardX11 yes
     ForwardX11Trusted yes
+
+    # don't display know host warning every time
+    StrictHostKeyChecking no
+    UserKnownHostsFile /dev/null
