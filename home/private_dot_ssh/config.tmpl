@@ -37,9 +37,6 @@ Match all
     # AddKeysToAgent 1d
     AddKeysToAgent yes
 
-    # try (optionally from ssh agent) keys, specified in this configuration file, without the whole set of keys (stored in ssh agent).
-    IdentitiesOnly yes
-
     ServerAliveInterval 60
     ServerAliveCountMax 3
 
@@ -63,11 +60,6 @@ Match all
     ###########################
     Include config.d/*_config
     ###########################
-
-Host container
-    HostName localhost
-    User root
-    Port 2222
 
 # need to turn on tailscale
 Host termux
@@ -111,6 +103,9 @@ Match tagged PLATFORM
 {{ end }}
 
 Match final
+    # try (optionally from ssh agent) keys, specified in this configuration file, without the whole set of keys (stored in ssh agent).
+    IdentitiesOnly yes
+
     IdentityFile ~/.ssh/id_ed25519
     ForwardAgent no
 
