@@ -1,1 +1,5 @@
 note.md
+
+{{ if not .isRemote }}
+authorized_keys
+{{ end }}

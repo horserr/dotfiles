@@ -1,10 +1,26 @@
 Host work
-    Tag WORK
+    # Tag WORK
     User lyz
     ForwardAgent yes
     HostName user1-system-product-name.tail46c3d6.ts.net
 
     IdentityFile ~/.ssh/work
+    Compression yes
+    ForwardX11 yes
+    ForwardX11Trusted yes
+
+Host robotwin
+    # Tag WORK
+    User root
+    ForwardAgent yes
+    HostName localhost
+    Port 2222
+
+    IdentityFile ~/.ssh/work
+    IdentitiesOnly no
+
+    ProxyJump work
+
     Compression yes
     ForwardX11 yes
     ForwardX11Trusted yes
