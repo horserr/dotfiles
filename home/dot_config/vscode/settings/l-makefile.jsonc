@@ -1,0 +1,103 @@
+{
+  "[makefile]": {
+    "editor.insertSpaces": false,
+    "editor.renderWhitespace": "boundary"
+  },
+
+  // Names of compiler tools to be added to the extension known list
+  "makefile.additionalCompilerNames": [],
+
+  // Always run the post-configure script after configure
+  "makefile.alwaysPostConfigure": false,
+
+  // Always run the pre-configure script before configure
+  "makefile.alwaysPreConfigure": false,
+
+  // Build the current target before launch (debug/run)
+  "makefile.buildBeforeLaunch": true,
+
+  // The path to the build log that is read to bypass a dry-run
+  "makefile.buildLog": null,
+
+  // Clear the output channel at the beginning of a build
+  "makefile.clearOutputBeforeBuild": true,
+
+  // The path to the compilation database file
+  "makefile.compileCommandsPath": null,
+
+  // The path to a cache file storing the output of the last dry-run make command. When unset, a file named 'configurationCache.log' is stored at the path specified by the 'makefile.extensionOutputFolder' setting.
+  "makefile.configurationCachePath": "",
+
+  // The user defined makefile configurations
+  "makefile.configurations": [],
+
+  // Automatically configure Makefile project directories after relevant operations, like change build configuration or makefile target
+  "makefile.configureAfterCommand": true,
+
+  // Automatically configure Makefile project directories when any relevant makefiles and/or settings are changed
+  "makefile.configureOnEdit": true,
+
+  // Automatically configure Makefile project directories when they are opened
+  "makefile.configureOnOpen": null,
+
+  // Various global debugger settings
+  "makefile.defaultLaunchConfiguration": null,
+
+  // Arguments to pass to the dry-run make invocation
+  "makefile.dryrunSwitches": [
+    "--always-make",
+    "--keep-going",
+    "--print-directory"
+  ],
+
+  // Names of compiler tools to be excluded from the extension known list
+  "makefile.excludeCompilerNames": [],
+
+  // The path to an output file storing all content from the Makefile output channel. Defaults to the value of the 'makefile.extensionOutputFolder' setting.
+  "makefile.extensionLog": "",
+
+  // The path to various output files produced by the extension. Defaults to the VS Code workspace storage location.
+  "makefile.extensionOutputFolder": "",
+
+  // Don't analyze directory changing commands like cd, push, pop.
+  "makefile.ignoreDirectoryCommands": true,
+
+  // The user defined launch (debug/run) configurations
+  "makefile.launchConfigurations": [],
+
+  // The logging level for the makefile tools extension
+  "makefile.loggingLevel": "Normal",
+
+  // The folder path to be passed to make via the switch -C
+  "makefile.makeDirectory": "",
+
+  // The path to the makefile of the project
+  "makefile.makefilePath": "",
+
+  // The path to the make tool
+  "makefile.makePath": "make",
+
+  // Modify this setting to control the visibility setting in the Makefile Project Outline panel.
+  "makefile.panel.visibility": null,
+
+  // Display only the phony targets
+  "makefile.phonyOnlyTargets": false,
+
+  // Arguments to pass to the post-configure script
+  "makefile.postConfigureArgs": [],
+
+  // The path to the script that needs to be run at least once after configure
+  "makefile.postConfigureScript": null,
+
+  // Arguments to pass to the pre-configure script
+  "makefile.preConfigureArgs": [],
+
+  // The path to the script that needs to be run at least once before configure
+  "makefile.preConfigureScript": null,
+
+  // Commands that are safe to perform command substitution with
+  "makefile.safeCommands": [],
+
+  // Save opened files before building or configuring
+  "makefile.saveBeforeBuildOrConfigure": true
+}
