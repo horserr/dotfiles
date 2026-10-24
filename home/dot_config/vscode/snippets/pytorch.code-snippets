@@ -1,0 +1,135 @@
+{
+  // link: https://github.com/SvenBecker/vscode-pytorch/blob/master/snippets/pytorch.json
+  "torch-device": {
+    "prefix": "torch: device",
+    "scope": "python",
+    "body": [
+      "DEVICE = torch.device(\"cuda\" if torch.cuda.is_available() else \"cpu\")",
+      "$0"
+    ],
+    "description": "snippet of device test"
+  },
+  "torch-jaxtyping": {
+    "prefix": "torch: jaxtyped",
+    "scope": "python",
+    "body": [
+      "@jaxtyped(typechecker=typechecker)"
+    ],
+    "description": "JaxTyping checker annotation"
+  },
+  "torch-freeze": {
+    "prefix": "torch: freeze",
+    "scope": "python",
+    "body": [
+      "vlm.requires_grad_(False)",
+      "vlm.eval()",
+    ],
+    "description": ""
+  },
+  "torch-unfreeze": {
+    "prefix": "torch: unfreeze",
+    "scope": "python",
+    "body": [
+      "vlm.projector.requires_grad_(True)",
+      "vlm.projector.train()",
+    ],
+    "description": ""
+  },
+  "PyTorch Imports": {
+    "prefix": "torch: imports",
+    "scope": "python",
+    "description": "Common pytorch imports",
+    "body": [
+      "import torch",
+      "import torch.nn as nn",
+      "import torch.nn.functional as F",
+      "import torch.optim as optim"
+    ]
+  },
+  "Optimizer": {
+    "prefix": "torch: optimizer",
+    "scope": "python",
+    "description": "Select an optimizer",
+    "body": [
+      "optimizer = torch.optim.${1|Adadelta,Adagrad,Adam,SparseAdam,Adamax,ASGD,LBFGS,RMSprop,Rprop,SGD|}(${2:net}.parameters(), lr=${3:1e-2})"
+    ]
+  },
+  "Scheduler": {
+    "prefix": "torch: scheduler",
+    "scope": "python",
+    "description": "Select a scheduler method to adjust the learning rate",
+    "body": [
+      "scheduler = torch.optim.lr_scheduler.${1|LambdaLR,StepLR,MultiStepLR,ExponentialLR,CosineAnnealingLR,ReduceLROnPlateau,CyclicLR|}(${2:optimizer})"
+    ]
+  },
+  "Dataset": {
+    "prefix": "torch: dataset",
+    "scope": "python",
+    "description": "Template for a custom dataset",
+    "body": [
+      "class ${1:MyDataset}(torch.utils.data.Dataset):",
+      "\t\"\"\"Some Information about ${1:MyDataset}\"\"\"",
+      "\tdef __init__(self):",
+      "\t\tsuper(${1:MyDataset}, self).__init__()",
+      "",
+      "\tdef __getitem__(self, index):",
+      "\t\treturn $2",
+      "",
+      "\tdef __len__(self):",
+      "\t\treturn $3"
+    ]
+  },
+  "PyTorch Module": {
+    "prefix": "torch: module",
+    "scope": "python",
+    "description": "Creates a custom class template which inherits from torch.nn.Module",
+    "body": [
+      "class ${1:MyModule}(nn.Module):",
+      "\t\"\"\"Some Information about ${1:MyModule}\"\"\"",
+      "\tdef __init__(self):",
+      "\t\tsuper(${1:MyModule}, self).__init__()",
+      "",
+      "\tdef forward(self, x):",
+      "",
+      "\t\treturn x"
+    ]
+  },
+  "Container": {
+    "prefix": "torch: container",
+    "scope": "python",
+    "description": "Stores modules or parameters in some kind of container",
+    "body": [
+      "layers = nn.${1|Sequential,ModuleList,ModuleDict,ParameterList,ParameterDict|}($2)"
+    ]
+  },
+  /////////////// file templates ///////////////
+  "torch-test-CUDA": {
+    "prefix": "",
+    "scope": "python",
+    "body": [
+      "import torch",
+      "",
+      "print(f\"PyTorch version: {torch.__version__}\")",
+      "",
+      "print(f\"\\nPyTorch CUDA: {torch.cuda.is_available()}\")",
+      "",
+      "if torch.cuda.is_available():",
+      "    print(f\"PyTorch CUDA version: {torch.version.cuda}\")",
+      "    ",
+      "    gpu_count = torch.cuda.device_count()",
+      "    print(f\"GPU counts: {gpu_count}\")",
+      "    ",
+      "    current_gpu = torch.cuda.current_device()",
+      "    print(f\"{current_gpu = }\")",
+      "    print(f\"{torch.cuda.get_device_name(current_gpu) = }\")",
+      "    ",
+      "    test_tensor = torch.tensor([1.0, 2.0, 3.0]).cuda()",
+      "    print(f\"\\n{test_tensor = }\")",
+      "    print(f\"{test_tensor.device = }\")",
+      "else:",
+      "    print(\"\\nPytorch misconfig...\")"
+    ],
+    "description": "Test CUDA",
+    "isFileTemplate": true
+  },
+}
