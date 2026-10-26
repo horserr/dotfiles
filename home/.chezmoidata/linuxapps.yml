@@ -41,6 +41,13 @@ linuxapps:
     # original name is shfmt, additional prefix is for pixi installation
     - canonical: go-shfmt
       name: shfmt
+  build:
+    - canonical: cmake
+      name:
+        - ccmake
+        - cmake
+        - cpack
+        - ctest
   network:
     - canonical: iperf
       name: iperf3
@@ -52,6 +59,12 @@ linuxapps:
     - eza
     - btop
     - starship
+    - dust # view folder size
+    - act # github action local
+    - canonical: ipython
+      name:
+        - ipython
+        - ipython3
     - canonical: git-delta
       name: delta
     - canonical: fd-find
