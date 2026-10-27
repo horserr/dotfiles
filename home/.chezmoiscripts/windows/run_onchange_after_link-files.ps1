@@ -119,8 +119,8 @@ $mappings = @{
     "Microsoft.WindowsTerminalPreview_8wekyb3d8bbwe\" +
     "LocalState\settings.json"
   ) = @{
-    target = "$dotConfigPath\windows-terminal.jsonc"
-    desc   = "Windows Terminal Preview"
+    target = "$dotConfigPath\terminal\terminal.json"
+    desc   = "Windows Terminal Preview settings json file."
   }
 
   # Microsoft Word Template

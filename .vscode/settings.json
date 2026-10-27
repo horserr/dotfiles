@@ -89,7 +89,7 @@
     "refs/vscode-commands.txt": true,
     "refs/when-clause-sample.json": true
   },
-  "json.validate.enable": true,
+  "json.validate.enable": false,
   "json.schemaDownload.enable": true,
   "json.schemas": [
     // user settings
@@ -135,6 +135,10 @@
     {
       "fileMatch": ["**/dot_vscode-server/**/settings.json"],
       "url": "vscode://schemas/settings/machine"
+    },
+    {
+      "fileMatch": ["**/terminal/*.jsonc"],
+      "url": "https://aka.ms/terminal-profiles-schema-preview"
     }
   ],
   "yaml.schemas": {
@@ -148,10 +152,11 @@
   // workspace tab label customization
   "workbench.editor.customLabels.patterns": {
     "*/.vscode/**": "${filename}(main).${extname}",
-    "**/git/**": "${filename}(git)",
     "**/private_dot_ssh/**": "${filename}(ssh)",
     "**/vscode/*.json*": "${filename}(vsc)",
-    "**/vscode/*/**/*.json*": "${filename}(${dirname})"
+    "**/vscode/*/**/*.json*": "${filename}(${dirname})",
+    "**/dot_config/**/config.d/*": "${filename}(${dirname(1)})",
+    "**/dot_config/**": "${filename}(${dirname})"
   },
   "workbench.editorAssociations": {
     "*.copilotmd": "vscode.markdown.preview.editor"

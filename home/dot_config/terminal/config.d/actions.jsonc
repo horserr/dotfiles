@@ -1,0 +1,116 @@
+{
+  "startupActions": "",
+  "actions": [
+    {
+      "command": { "action": "sendInput", "input": "\u001b[A" },
+      "id": "User.Input"
+    },
+    {
+      "command": { "action": "addMark", "color": "#44dc8d" },
+      "id": "User.AddMark"
+    },
+    {
+      "command": { "action": "scrollToMark", "direction": "previous" },
+      "id": "Terminal.ScrollToMarkPrevious"
+    },
+    {
+      "command": { "action": "scrollToMark", "direction": "first" },
+      "id": "Terminal.ScrollToMarkFirst"
+    },
+    {
+      "command": { "action": "scrollToMark", "direction": "last" },
+      "id": "Terminal.ScrollToMarkLast"
+    },
+    { "command": "clearMark", "id": "Terminal.ClearMark" },
+    { "command": "clearAllMarks", "id": "Terminal.ClearAllMarks" },
+    {
+      "command": { "action": "scrollToMark", "direction": "next" },
+      "id": "Terminal.ScrollToMarkNext"
+    },
+    { "command": "tabSearch", "id": "Terminal.JumpToTab" },
+    { "command": "identifyWindows", "id": "Terminal.Identify" },
+
+    // Summon the most recently used (MRU) window, to the current virtual desktop,
+    // to the monitor the mouse cursor is on, without an animation. If the window is
+    // already in the foreground, then minimize it.
+    { "command": { "action": "globalSummon" }, "id": "User.MyGlobalSummon" },
+
+    // Summon the MRU window, by going to the virtual desktop the window is
+    // currently on. Move the window to the monitor the mouse is on.
+    {
+      "command": { "action": "globalSummon", "desktop": "any" },
+      "id": "User.MyGlobalSummonAnyDesktop"
+    },
+
+    // Summon the MRU window to the current desktop, leaving the position of the window untouched.
+    {
+      "command": { "action": "globalSummon", "monitor": "any" },
+      "id": "User.MyGlobalSummonAnyMonitor"
+    },
+
+    // Summon the MRU window, by going to the virtual desktop the window is
+    // currently on, leaving the position of the window untouched.
+    {
+      "command": {
+        "action": "globalSummon",
+        "desktop": "any",
+        "monitor": "any"
+      },
+      "id": "User.MyGlobalSummonAnywhere"
+    },
+
+    // Summon the MRU window with a dropdown duration of 200ms.
+    {
+      "command": { "action": "globalSummon", "dropdownDuration": 200 },
+      "id": "User.MyGlobalSummonDrop"
+    },
+
+    // Summon the MRU window. If the window is already in the foreground, do nothing.
+    {
+      "command": { "action": "globalSummon", "toggleVisibility": false },
+      "id": "User.MyGlobalSummonIfNotVisible"
+    },
+
+    // Summon the window named "_quake". If no window with that name exists, then create a new window.
+    {
+      "command": { "action": "globalSummon", "name": "_quake" },
+      "id": "User.MyGlobalSummonQuake"
+    },
+
+    {
+      "name": "Create My Layout",
+      "command": {
+        "action": "multipleActions",
+        "actions": [
+          // Create a new tab with 3 panes
+          {
+            "action": "newTab",
+            "tabTitle": "Work",
+            "colorScheme": "One Half Dark"
+          },
+          {
+            "action": "splitPane",
+            "split": "vertical",
+            "profile": "Windows PowerShell",
+            "tabTitle": "Work",
+            "colorScheme": "Campbell Powershell"
+          },
+          {
+            "action": "splitPane",
+            "split": "horizontal",
+            "profile": "Windows PowerShell",
+            "tabTitle": "Work",
+            "colorScheme": "Campbell Powershell"
+          },
+
+          // Create a second tab
+          { "action": "newTab", "tabTitle": "Misc" },
+
+          // Go back to the first tab and zoom the first pane
+          { "action": "prevTab", "tabSwitcherMode": "disabled" },
+          { "action": "moveFocus", "direction": "first" }
+        ]
+      }
+    }
+  ],
+}

@@ -1,0 +1,11 @@
+{
+  "defaultInputScope": "alphanumericHalfWidth",
+
+  "firstWindowPreference": "persistedWindowLayout",
+
+  "language": "en-US",
+  "launchMode": "default",
+
+  "copyFormatting": "all",
+  "copyOnSelect": true
+}

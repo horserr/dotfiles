@@ -1,0 +1,34 @@
+{
+  "alwaysOnTop": false,
+  "alwaysShowNotificationIcon": true,
+  "alwaysShowTabs": false,
+  "autoHideWindow": false,
+
+  "centerOnLaunch": true,
+
+  "compatibility.allowHeadless": false, // disable background process when all windows are closed
+  "compatibility.enableUnfocusedAcrylic": true,
+
+  "warning.confirmCloseAllTabs": false, // don't show close confirm
+  "warning.largePaste": true,
+  "warning.multiLinePaste": true,
+
+  "experimental.detectURLs": true,
+  "experimental.enableColorSelection": true,
+  "experimental.scrollToChangeOpacity": true,
+  "experimental.scrollToZoom": true,
+
+  "focusFollowMouse": false,
+
+  "minimizeToNotificationArea": false,
+
+  "searchWebDefaultQueryUrl": "https://www.duckduckgo.com/search?q=%s",
+
+  "snapToGridOnResize": false,
+
+  "trimBlockSelection": true, // alt-pressed selection
+  "trimPaste": true,
+
+  "windowingBehavior": "useExisting",
+  "wordDelimiters": " .\\()\"'-:,.;<>~!@#$%^&*|+=[]{}~?│，。？（）【】！“”‘’《》"
+}

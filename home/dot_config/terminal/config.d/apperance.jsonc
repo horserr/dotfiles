@@ -1,0 +1,16 @@
+{
+  "initialCols": 100,
+  "initialRows": 23,
+
+  "useAcrylicInTabRow": true,
+
+  "disableAnimations": false,
+
+  "theme": "system"
+
+  ,"showAdminShield": true,
+  "showTabsFullscreen": false,
+  "showTabsInTitlebar": true,
+  "showTerminalTitleInTitlebar": true,
+
+}

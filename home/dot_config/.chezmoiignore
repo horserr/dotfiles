@@ -17,8 +17,8 @@ sumatrapdf/
 powershell/
 mousemaster/
 auto-dark-mode/
+terminal/
 
-windows-terminal.jsonc
 {{ end }}
 
 {{ if not .needProxy }}

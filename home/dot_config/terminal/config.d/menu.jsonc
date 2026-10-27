@@ -1,0 +1,26 @@
+{
+  "newTabPosition": "afterCurrentTab",
+  "tabSwitcherMode": "inOrder",
+  "tabWidthMode": "compact",
+
+  "newTabMenu": [
+    {
+      "type": "remainingProfiles"
+    },
+    {
+      "allowEmpty": false,
+      "entries": [
+        {
+          "commandline": null,
+          "name": null,
+          "source": "Windows.Terminal.SSH",
+          "type": "matchProfiles"
+        }
+      ],
+      "icon": "\ue969",
+      "inline": "auto",
+      "name": "SSH",
+      "type": "folder"
+    }
+  ],
+}
