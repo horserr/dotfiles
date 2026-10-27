@@ -6,6 +6,7 @@ homebrew/
 yazi/
 {{ end }}
 tmux/
+btop/
 {{ end }}
 
 {{ if not .isWindows }}

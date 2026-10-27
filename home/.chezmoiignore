@@ -13,6 +13,7 @@
 .chezmoiscripts/windows/**
 .chezmoiexternals/windows.toml.tmpl
 .docker/
+scoop/
 
 {{ if .isPersonal -}}
 .cloud-init/
