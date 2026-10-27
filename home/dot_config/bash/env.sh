@@ -1,4 +1,6 @@
+export EDITOR="vim"
 export DOTFILES="$HOME/.config/.dotfiles"
+export TOKEN_FILE="$HOME/.config/bash/tokenenv.sh"
 
 if [ -f "$HOME/.local/bin/env" ]; then
     . "$HOME/.local/bin/env"

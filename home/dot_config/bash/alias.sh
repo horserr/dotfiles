@@ -1,3 +1,15 @@
+# fix user group mismatch when returning from a rooted container
+alias remap-user="sudo chown -R $(id -u):$(id -g) ."
+alias edit-token="$EDITOR $TOKEN_FILE"
+alias cd-dotfiles="cd $DOTFILES"
+
+# Add an "alert" alias for long running commands.  Use like so:
+#   sleep 10; alert
+alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
+
+alias setproxy="export http_proxy=http://127.0.0.1:7890 https_proxy=http://127.0.0.1:7890 HTTP_PROXY=http://127.0.0.1:7890 HTTPS_PROXY=http://127.0.0.1:7890 all_proxy=http://127.0.0.1:7890 ALL_PROXY=http://127.0.0.1:7890"
+alias unsetproxy="unset http_proxy https_proxy HTTP_PROXY HTTPS_PROXY all_proxy ALL_PROXY"
+
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
@@ -58,13 +70,6 @@ rm-() {
     find "$target_dir" -mindepth 1 -delete
 }
 
-# Add an "alert" alias for long running commands.  Use like so:
-#   sleep 10; alert
-alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
-
-alias setproxy="P=http://127.0.0.1:7897; export http_proxy=$P https_proxy=$p HTTP_PROXY=$p HTTPS_PROXY=$p all_proxy=$p ALL_PROXY=$p"
-alias unsetproxy="unset http_proxy https_proxy HTTP_PROXY HTTPS_PROXY all_proxy ALL_PROXY"
-
 if command -v "curl" &> /dev/null; then
     alias connection="curl -I google.com"
     alias cipinfo="curl ipinfo.io"
@@ -108,5 +113,61 @@ if command -v "tmux" &> /dev/null; then
     alias tlsk="tmux list-keys -N"
 fi
 
-# fix user group mismatch when returning from a rooted container
-alias remap-user="sudo chown -R $(id -u):$(id -g) ."
+if command -v "copilot" &> /dev/null; then
+    function _ds_ensure_token() {
+        if [ -f "$TOKEN_FILE" ]; then
+            source "$TOKEN_FILE"
+        fi
+
+        if [ -z "$DEEPSEEK_TOKEN" ]; then
+            echo "⚠️ Missing DEEPSEEK_TOKEN, please fill before using copilot."
+            read -rp "Input your DeepSeek API Key: " input_token
+
+            if [ -z "$input_token" ]; then
+                echo "❌ API Key is blank, abort."
+                return 1
+            fi
+
+            mkdir -p "$(dirname "$TOKEN_FILE")"
+            echo "export DEEPSEEK_TOKEN='$input_token'" >> "$TOKEN_FILE"
+            export DEEPSEEK_TOKEN="$input_token"
+            echo "✅ Token is saved in $TOKEN_FILE"
+        fi
+        return 0
+    }
+
+    # deepseek model default is pro, can explicitly pass f/p for flash/pro
+    function _ds_resolve_model() {
+        local arg="$1"
+        case "$arg" in
+            f|flash)
+                echo "deepseek-v4-flash"
+                ;;
+            p|pro)
+                echo "deepseek-v4-pro"
+                ;;
+            ?*)
+                echo "$arg" # 自定义模型名
+                ;;
+            *)
+                echo "deepseek-v4-pro" # 默认模型
+                ;;
+        esac
+    }
+
+    function ds() {
+        _ds_ensure_token || return 1
+
+        local model
+        model="$(_ds_resolve_model "$1")"
+
+        # COPILOT_OFFLINE=true \
+        COPILOT_PROVIDER_TYPE=anthropic \
+        COPILOT_PROVIDER_BASE_URL=https://api.deepseek.com/anthropic \
+        COPILOT_PROVIDER_API_KEY="$DEEPSEEK_TOKEN" \
+        COPILOT_MODEL="$model" \
+        command copilot
+    }
+else
+    echo "please install using `pnpm install -g @github/copilot`"
+fi
