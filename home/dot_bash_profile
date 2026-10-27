@@ -10,6 +10,17 @@ test -f ~/.bashrc && . ~/.bashrc
 #   echo "当前平台是其他系统: $OSTYPE"
 # fi
 
-source "/c/Program files/Git/mingw64/share/git/completion/git-completion.bash"
+# git completion: 路径随 Git 发行版前缀变化（mingw64 / ucrt64 / usr），动态探测
+for _git_completion in \
+  "$(dirname "$(git --exec-path 2>/dev/null)")/../share/git/completion/git-completion.bash" \
+  /mingw64/share/git/completion/git-completion.bash \
+  /usr/share/git/completion/git-completion.bash \
+  /c/Program\ Files/Git/ucrt64/share/git/completion/git-completion.bash; do
+  if [ -f "$_git_completion" ]; then
+    . "$_git_completion"
+    break
+  fi
+done
+unset _git_completion
 
 # source $(docker completion bash)
