@@ -1,15 +1,18 @@
 #!/bin/bash
 set -euo pipefail
 
-{{ $pixiGlobalManifest := includeTemplate "pixi-global.toml.tmpl" . }}
-# pixi global manifest hash: {{ $pixiGlobalManifest | sha256sum }}
 
-{{- /* HACK: when including this template, automatically convert the template to the target file. */ -}}
 {{ if .init.install }}
-    {{ output "sh" "-c" (print "mkdir -p ~/.pixi/manifests && cat << 'EOF' > ~/.pixi/manifests/pixi-global.toml\n" $pixiGlobalManifest "\nEOF") }}
-{{ end }}
 
-{{ .init.install }} || exit 0
+    {{ $pixiGlobalManifest := includeTemplate "pixi-global.toml.tmpl" . }}
+    # pixi global manifest hash: {{ $pixiGlobalManifest | sha256sum }}
+
+    {{- /* HACK: when including this template, automatically convert the template to the target file. */ -}}
+
+    {{ output "sh" "-c" (print "mkdir -p ~/.pixi/manifests && cat << 'EOF' > ~/.pixi/manifests/pixi-global.toml\n" $pixiGlobalManifest "\nEOF") }}
+{{ else }}
+exit 0
+{{ end }}
 
 export PIXI_HOME=$HOME/.pixi
 export PIXI_NO_PATH_UPDATE=1

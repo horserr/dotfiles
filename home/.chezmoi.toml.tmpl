@@ -71,17 +71,24 @@ sourceDir = "~/.config/.dotfiles"
     {{ end }}
 
 {{ $init := dict "install" true "extras" (list) }}
-{{ $_ := set $init "install" (promptBoolOnce . "init.install" "Should use install package manager and essential apps?" true) }}
-init.install = {{ or $isPersonal $init.install }}
+{{ $_ := set $init "install" true }}
 
-{{ if $init.install }}
+{{ if not $isPersonal }}
+    {{ $_ := set $init "install" (promptBoolOnce . "init.install" "Should use install package manager and essential apps?" false) }}
+{{ end }}
+
+{{ $install := $init.install }}
+init.install = {{ $install }}
+
+{{ if $install }}
     {{ if $isWindows }}
         {{$_ := set $init "extras" (concat $init.extras (list "fonts" "extra")) -}}
     {{ else if $isLinux }}
-        {{$_ := set $init "extras" (concat $init.extras (list "network" "extra" "shell" "media")) -}}
+        {{$_ := set $init "extras" (concat $init.extras (list "network" "build" "extra" "shell" "media")) -}}
     {{ end }}
-    init.extras = {{ promptMultichoice "Select extra packages to install" $init.extras (list "extra")| toToml }}
+    {{ $_ := set $init "extras" (promptMultichoice "Select extra packages to install" $init.extras (list "extra")) }}
 {{ end }}
+init.extras = {{ $init.extras | toToml }}
 
 [interpreters.ps1]
     command = """
