@@ -80,6 +80,13 @@
       "command": "code --list-extensions",
       "detail": "show vscode extension list"
     },
+    // git force push
+    {
+      "label": "git-force-push",
+      "type": "shell",
+      "command": "git push -f",
+      "detail": "git force push"
+    },
     {
       "label": "Terminate All Tasks",
       "command": "echo ${input:terminate}",
