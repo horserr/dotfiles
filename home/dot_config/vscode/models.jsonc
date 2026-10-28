@@ -1,31 +1,5 @@
 [
   {
-    "name": "Deep Seek",
-    "vendor": "customendpoint",
-    "apiKey": "${input:chat.lm.secret.ea41823}",
-    "apiType": "chat-completions",
-    "models": [
-      {
-        "id": "deepseek-v4-flash",
-        "name": "ds-v4-flash",
-        "url": "https://api.deepseek.com",
-        "toolCalling": true,
-        "vision": false,
-        "maxInputTokens": 128000,
-        "maxOutputTokens": 16000
-      },
-      {
-        "id": "deepseek-v4-pro",
-        "name": "ds-v4-pro",
-        "url": "https://api.deepseek.com",
-        "toolCalling": true,
-        "vision": false,
-        "maxInputTokens": 128000,
-        "maxOutputTokens": 16000
-      }
-    ]
-  },
-  {
     "name": "Qwen",
     "vendor": "customendpoint",
     "apiKey": "${input:chat.lm.secret.4f761796}",
@@ -59,14 +33,5 @@
         "maxOutputTokens": 16000
       }
     ]
-  },
-  {
-    "name": "DeepSeek",
-    "vendor": "deepseek",
-    "settings": {
-      "deepseek-v4-flash": {
-        "reasoningEffort": "low"
-      }
-    }
   }
 ]

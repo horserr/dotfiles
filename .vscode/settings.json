@@ -89,7 +89,7 @@
     "refs/vscode-commands.txt": true,
     "refs/when-clause-sample.json": true
   },
-  "json.validate.enable": false,
+  "json.validate.enable": true,
   "json.schemaDownload.enable": true,
   "json.schemas": [
     // user settings
@@ -136,9 +136,14 @@
       "fileMatch": ["**/dot_vscode-server/**/settings.json"],
       "url": "vscode://schemas/settings/machine"
     },
+    // windows terminal setting schema
     {
       "fileMatch": ["**/terminal/*.jsonc"],
       "url": "https://aka.ms/terminal-profiles-schema-preview"
+    },
+    {
+      "fileMatch": ["**/dot_claude/settings.json*"],
+      "url": "https://json.schemastore.org/claude-code-settings.json"
     }
   ],
   "yaml.schemas": {
