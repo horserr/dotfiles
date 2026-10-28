@@ -259,6 +259,15 @@
       "name": "+Doc/Manual",
       "type": "bindings",
       "bindings": [
+        // , sprig template functions
+        {
+          "key": ",",
+          "name": "Open sprig template function document",
+          "icon": "book",
+          "type": "command",
+          "command": "vscode.open",
+          "args": "https://masterminds.github.io/sprig"
+        },
         {
           "key": "v",
           "name": "Open VSCode variables for debug and tasks Documentation",
