@@ -53,7 +53,7 @@
   "terminal.integrated.cwd": "",
   // UPLIFTING terminal 默认在 pane 而非 editor
   "terminal.integrated.defaultLocation": "view",
-  "terminal.integrated.defaultProfile.linux": "bash",
+  "terminal.integrated.defaultProfile.linux": "tmux",
   "terminal.integrated.defaultProfile.windows": "Git Bash",
   // UPLIFTING 自动设置 $LANG
   "terminal.integrated.detectLocale": "on",
@@ -120,16 +120,26 @@
     "Git Bash": {
       "source": "Git Bash"
     },
-    "PowerShell": {
+    "pwsh": {
       "icon": "terminal-powershell",
       "source": "PowerShell"
     },
     "WSL default": {
       "path": "wsl"
     },
-    "Native PowerShell": {
+    "PowerShell": {
       "path": "powershell",
       "icon": "terminal-secure"
+    }
+  },
+  "terminal.integrated.profiles.linux": {
+    "bash": {
+      "path": "bash",
+      "icon": "terminal-bash"
+    },
+    "tmux": {
+      "path": "tmux",
+      "icon": "terminal-tmux"
     }
   },
   "terminal.integrated.rightClickBehavior": "default",

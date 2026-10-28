@@ -62,22 +62,11 @@
     },
     "list": [
       {
-        // nushell
-        "closeOnExit": "graceful",
-        "guid": "{47302f9c-1ac4-566c-aa3e-8cf29889d6ab}",
-        "hidden": false,
-        "name": "nushell",
-        "padding": "25",
-        "startingDirectory": "%USERPROFILE%/WorkSpace",
-        "tabColor": "#a1ebe0",
-        "source": "nu"
-      },
-      {
+        "name": "PowerShell Preview",
         "closeOnExit": "graceful",
         // powershell preview
         "guid": "{a3a2e83a-884a-5379-baa8-16f193a13b21}",
         "hidden": false,
-        "name": "PowerShell Preview",
         "padding": "25",
         "source": "Windows.Terminal.PowershellCore",
         "startingDirectory": "%USERPROFILE%/WorkSpace",
@@ -85,18 +74,19 @@
         "tabTitle": "Preview"
       },
       {
+        "name": "PowerShell sudo",
         "closeOnExit": "never",
         // powershell admin mode
         "elevate": true,
         "guid": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
         "hidden": false,
-        "name": "PowerShell sudo",
         "source": "Windows.Terminal.PowershellCore",
         "startingDirectory": "%USERPROFILE%",
         "tabColor": "#ee6e6e",
         "tabTitle": "sudo"
       },
       {
+        "name": "WSL default",
         // wsl default
         "bellSound": "%USERPROFILE%/.config/.dotfiles/assets/bells/Hero.wav",
         "closeOnExit": "graceful",
@@ -107,7 +97,6 @@
         },
         "guid": "{e9f47c7c-d0f3-4b73-bc51-a28ab7b63047}",
         "icon": "%USERPROFILE%/.config/.dotfiles/assets/icons/linux.png",
-        "name": "WSL default",
         "suppressApplicationTitle": true,
         "tabColor": "#dedf92",
         "tabTitle": "WSL",
@@ -118,17 +107,18 @@
       },
       {
         // powershell
+        "name": "Windows PowerShell",
         "commandline": "%SystemRoot%/System32/WindowsPowerShell/v1.0/powershell.exe",
         "compatibility.input.forceVT": false,
         "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
         "hidden": false,
-        "name": "Windows PowerShell",
         "pathTranslationStyle": "wsl",
         "tabColor": "#3593ce",
         "tabTitle": "Native"
       },
       {
         // cmd
+        "name": "Command Prompt",
         "colorScheme": "rose-pine",
         "commandline": "%ComSpec%",
         "compatibility.input.forceVT": false,
@@ -136,16 +126,15 @@
         "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
         "hidden": false,
         "icon": "\ue77c",
-        "name": "Command Prompt",
         "padding": "0",
         "tabColor": "#418164",
         "tabTitle": "CMD"
       },
       {
+        "name": "Git Bash",
         "commandline": "%ProgramFiles%/git/bin/bash.exe",
         "guid": "{130f44eb-5af9-49db-94c5-40319671a76a}",
         "icon": "%USERPROFILE%/.config/.dotfiles/assets/icons/git-bash.ico",
-        "name": "Git Bash",
         "pathTranslationStyle": "mingw",
         "tabTitle": "Git Bash"
       }
