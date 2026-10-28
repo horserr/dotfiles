@@ -73,7 +73,9 @@
   "remote.extensionKind": {
     // vscode container tools default is in workspace
     // "ms-azuretools.vscode-containers": ["workspace"],
-    "ms-vscode-remote.remote-ssh-edit": ["workspace"]
+    "ms-vscode-remote.remote-ssh-edit": "workspace",
+    "wraith13.blitz": "ui",
+    "jackiotyu.browser-bookmark": "ui"
   },
 
   // A map of the remote hostname to the platform for that remote. The hostname may include a star '*' to wildcard match. Valid values: `linux`, `macOS`, `windows`. Note - this setting will soon be required when `remote.SSH.useLocalServer` is disabled, so it is currently being autopopulated for successful connections, but is not currently used.

@@ -11,7 +11,12 @@
     "editor.indentSize": "tabSize",
     "editor.insertSpaces": false, // use tab rather than space
     "editor.tabSize": 4,
-    "editor.wordWrap": "bounded"
+    "editor.wordWrap": "bounded",
+    "editor.stickyScroll.enabled": true
+  },
+
+  "[pyproject-toml]": {
+    "editor.defaultFormatter": "tamasfe.even-better-toml"
   },
 
   // Controls when to display information of selected interpreter in the status bar.

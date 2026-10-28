@@ -193,7 +193,7 @@
   "dev.containers.copyGitConfig": false,
 
   // Docker (or Podman or WSLc) executable name or path.
-  "dev.containers.dockerPath": "wslc",
+  "dev.containers.dockerPath": "docker",
 
   // SIGNIFICANT wsl 中与docker desktop (docker daemon) 的 socket 文件路径
   // Docker socket path. Used, e.g., when connecting to a Dev Container with the devcontainer.json in a Docker Volume.

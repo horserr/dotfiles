@@ -152,6 +152,7 @@
             "command": "editor.action.insertSnippet",
             "args": { "snippet": "`" }
           },
+          // , doulbe
           {
             "key": ",",
             "name": "suggest",
@@ -192,13 +193,23 @@
                 "command": "editor.action.insertSnippet",
                 "args": { "snippet": "||" }
               },
+              // a and
               {
                 "key": "a",
-                "name": " insert sequential and, (AND)",
+                "name": "&& insert sequential and, (AND)",
                 "icon": "symbol-key",
                 "type": "command",
                 "command": "editor.action.insertSnippet",
                 "args": { "snippet": "&&" }
+              },
+              // d underscore
+              {
+                "key": "d",
+                "name": "__ insert sequential underscores",
+                "icon": "symbol-key",
+                "type": "command",
+                "command": "editor.action.insertSnippet",
+                "args": { "snippet": "__" }
               },
               // e equal marks
               {
@@ -249,6 +260,7 @@
                   }
                 ]
               },
+              // n not equal
               {
                 "key": "n",
                 "name": "!= insert not equal marks",
