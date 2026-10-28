@@ -1,5 +1,6 @@
 {
   "themes": [
+    // rose pine
     {
       "name": "rose-pine",
       "tab": {
@@ -20,6 +21,7 @@
         "useMica": false
       }
     },
+    // rose pine dawn
     {
       "name": "rose-pine-dawn",
       "tab": {
@@ -40,6 +42,7 @@
         "useMica": false
       }
     },
+    // rose pine moon
     {
       "name": "rose-pine-moon",
       "tab": {
@@ -54,6 +57,69 @@
       },
       "window": {
         "applicationTheme": "dark",
+        "experimental.rainbowFrame": false,
+        "frame": null,
+        "unfocusedFrame": null,
+        "useMica": false
+      }
+    },
+    // slatewave
+    {
+      // https://github.com/kevinlangleyjr/windows-terminal-slatewave/blob/main/slatewave-full.json
+      "name": "Slatewave",
+
+      "tab": {
+        "background": "terminalBackground",
+        "unfocusedBackground": "#21252b",
+        "showCloseButton": "always"
+      },
+
+      "tabRow": {
+        "background": "#21252b",
+        "unfocusedBackground": "#1e293b"
+      },
+
+      "window": {
+        "applicationTheme": "dark",
+        "useMica": false
+      }
+    },
+    // catppuccin mocha
+    {
+      "name": "Catppuccin Mocha",
+      "tab": {
+        "background": "#1E1E2EFF",
+        "iconStyle": "default",
+        "showCloseButton": "always",
+        "unfocusedBackground": null
+      },
+      "tabRow": {
+        "background": "#181825FF",
+        "unfocusedBackground": "#11111BFF"
+      },
+      "window": {
+        "applicationTheme": "dark",
+        "experimental.rainbowFrame": false,
+        "frame": null,
+        "unfocusedFrame": null,
+        "useMica": false
+      }
+    },
+    // catppuccin latte
+    {
+      "name": "Catppuccin Latte",
+      "tab": {
+        "background": "#EFF1F5FF",
+        "iconStyle": "default",
+        "showCloseButton": "always",
+        "unfocusedBackground": null
+      },
+      "tabRow": {
+        "background": "#E6E9EFFF",
+        "unfocusedBackground": "#DCE0E8FF"
+      },
+      "window": {
+        "applicationTheme": "light",
         "experimental.rainbowFrame": false,
         "frame": null,
         "unfocusedFrame": null,

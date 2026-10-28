@@ -1,0 +1,18 @@
+{
+  "initialCols": 100,
+  "initialRows": 23,
+
+  "useAcrylicInTabRow": false,
+
+  "disableAnimations": false,
+
+  "theme": {
+    "dark": "Slatewave",
+    "light": "rose-pine-dawn"
+  },
+
+  "showAdminShield": true,
+  "showTabsFullscreen": false,
+  "showTabsInTitlebar": true,
+  "showTerminalTitleInTitlebar": true
+}

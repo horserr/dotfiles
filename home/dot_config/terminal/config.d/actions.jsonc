@@ -1,5 +1,4 @@
 {
-  "startupActions": "",
   "actions": [
     {
       "command": { "action": "sendInput", "input": "\u001b[A" },
@@ -29,6 +28,242 @@
     },
     { "command": "tabSearch", "id": "Terminal.JumpToTab" },
     { "command": "identifyWindows", "id": "Terminal.Identify" },
+
+    // ── 复制 / 粘贴 / 选择 ──
+    {
+      "command": { "action": "copy", "singleLine": false },
+      "id": "Terminal.CopyToClipboard"
+    },
+    { "command": "paste", "id": "Terminal.PasteFromClipboard" },
+    { "command": "selectAll", "id": "Terminal.SelectAll" },
+    { "command": "markMode", "id": "Terminal.ToggleMarkMode" },
+    {
+      "command": "switchSelectionEndpoint",
+      "id": "Terminal.SwitchSelectionEndpoint"
+    },
+    {
+      "command": "toggleBlockSelection",
+      "id": "Terminal.ToggleBlockSelection"
+    },
+    {
+      "command": "expandSelectionToWord",
+      "id": "Terminal.ExpandSelectionToWord"
+    },
+    { "command": "showContextMenu", "id": "Terminal.ShowContextMenu" },
+
+    // ── 浏览：滚动 / 查找 ──
+    { "command": "scrollUp", "id": "Terminal.ScrollUp" },
+    { "command": "scrollDown", "id": "Terminal.ScrollDown" },
+    { "command": "scrollUpPage", "id": "Terminal.ScrollUpPage" },
+    { "command": "scrollDownPage", "id": "Terminal.ScrollDownPage" },
+    { "command": "scrollToTop", "id": "Terminal.ScrollToTop" },
+    { "command": "scrollToBottom", "id": "Terminal.ScrollToBottom" },
+    { "command": "find", "id": "Terminal.FindText" },
+    {
+      "command": { "action": "findMatch", "direction": "next" },
+      "id": "Terminal.FindNextMatch"
+    },
+    {
+      "command": { "action": "findMatch", "direction": "prev" },
+      "id": "Terminal.FindPrevMatch"
+    },
+
+    // ── 标签页 ──
+    { "command": "newTab", "id": "Terminal.OpenNewTab" },
+    { "command": "nextTab", "id": "Terminal.NextTab" },
+    { "command": "prevTab", "id": "Terminal.PrevTab" },
+    {
+      "command": { "action": "moveTab", "direction": "backward" },
+      "id": "Terminal.MoveTabBackward"
+    },
+    {
+      "command": { "action": "moveTab", "direction": "forward" },
+      "id": "Terminal.MoveTabForward"
+    },
+    { "command": "closeOtherTabs", "id": "Terminal.CloseOtherTabs" },
+    {
+      "command": { "action": "switchToTab", "index": 4294967295 },
+      "id": "Terminal.SwitchToLastTab"
+    },
+
+    // ── 窗格：焦点 / 分割 / 交换 / 缩放 / 尺寸 ──
+    {
+      "command": { "action": "moveFocus", "direction": "left" },
+      "id": "Terminal.MoveFocusLeft"
+    },
+    {
+      "command": { "action": "moveFocus", "direction": "down" },
+      "id": "Terminal.MoveFocusDown"
+    },
+    {
+      "command": { "action": "moveFocus", "direction": "up" },
+      "id": "Terminal.MoveFocusUp"
+    },
+    {
+      "command": { "action": "moveFocus", "direction": "right" },
+      "id": "Terminal.MoveFocusRight"
+    },
+    {
+      "command": { "action": "moveFocus", "direction": "previous" },
+      "id": "Terminal.MoveFocusPrevious"
+    },
+    {
+      "command": {
+        "action": "splitPane",
+        "splitMode": "duplicate",
+        "split": "auto"
+      },
+      "id": "Terminal.DuplicatePaneAuto"
+    },
+    {
+      "command": {
+        "action": "splitPane",
+        "splitMode": "duplicate",
+        "split": "down"
+      },
+      "id": "Terminal.DuplicatePaneDown"
+    },
+    {
+      "command": {
+        "action": "splitPane",
+        "splitMode": "duplicate",
+        "split": "right"
+      },
+      "id": "Terminal.DuplicatePaneRight"
+    },
+    {
+      "command": { "action": "splitPane", "split": "auto" },
+      "id": "Terminal.SplitPaneAuto"
+    },
+    {
+      "command": { "action": "splitPane", "split": "down" },
+      "id": "Terminal.SplitPaneDown"
+    },
+    {
+      "command": { "action": "splitPane", "split": "up" },
+      "id": "Terminal.SplitPaneUp"
+    },
+    {
+      "command": { "action": "splitPane", "split": "left" },
+      "id": "Terminal.SplitPaneLeft"
+    },
+    {
+      "command": { "action": "splitPane", "split": "right" },
+      "id": "Terminal.SplitPaneRight"
+    },
+    {
+      "command": { "action": "swapPane", "direction": "left" },
+      "id": "Terminal.SwapPaneLeft"
+    },
+    {
+      "command": { "action": "swapPane", "direction": "down" },
+      "id": "Terminal.SwapPaneDown"
+    },
+    {
+      "command": { "action": "swapPane", "direction": "up" },
+      "id": "Terminal.SwapPaneUp"
+    },
+    {
+      "command": { "action": "swapPane", "direction": "right" },
+      "id": "Terminal.SwapPaneRight"
+    },
+    { "command": "togglePaneZoom", "id": "Terminal.TogglePaneZoom" },
+    {
+      "command": "toggleSplitOrientation",
+      "id": "Terminal.ToggleSplitOrientation"
+    },
+    {
+      "command": { "action": "resizePane", "direction": "left" },
+      "id": "Terminal.ResizePaneLeft"
+    },
+    {
+      "command": { "action": "resizePane", "direction": "down" },
+      "id": "Terminal.ResizePaneDown"
+    },
+    {
+      "command": { "action": "resizePane", "direction": "up" },
+      "id": "Terminal.ResizePaneUp"
+    },
+    {
+      "command": { "action": "resizePane", "direction": "right" },
+      "id": "Terminal.ResizePaneRight"
+    },
+    { "command": "closePane", "id": "Terminal.ClosePane" },
+    {
+      "command": "toggleBroadcastInput",
+      "id": "Terminal.ToggleBroadcastInput"
+    },
+    { "command": "toggleReadOnlyMode", "id": "Terminal.ToggleReadOnlyMode" },
+    { "command": "restartConnection", "id": "Terminal.RestartConnection" },
+
+    // ── 窗口 / 其它 ──
+    {
+      "command": "toggleCommandPalette",
+      "id": "Terminal.ToggleCommandPalette"
+    },
+    { "command": "newWindow", "id": "Terminal.OpenNewWindow" },
+    { "command": "toggleFullscreen", "id": "Terminal.ToggleFullscreen" },
+    { "command": "toggleFocusMode", "id": "Terminal.ToggleFocusMode" },
+    { "command": "closeWindow", "id": "Terminal.CloseWindow" },
+    { "command": "quit", "id": "Terminal.Quit" },
+    { "command": "quakeMode", "id": "Terminal.QuakeMode" },
+    { "command": "openTabRenamer", "id": "Terminal.OpenTabRenamer" },
+    { "command": "openWindowRenamer", "id": "Terminal.OpenWindowRenamer" },
+    { "command": "identifyWindow", "id": "Terminal.IdentifyWindow" },
+    { "command": { "action": "searchWeb" }, "id": "Terminal.SearchWeb" },
+    {
+      "command": { "action": "clearBuffer", "clear": "all" },
+      "id": "Terminal.ClearBuffer"
+    },
+    { "command": "openTabColorPicker", "id": "Terminal.OpenTabColorPicker" },
+    { "command": "openNewTabDropdown", "id": "Terminal.OpenNewTabDropdown" },
+    { "command": "toggleShaderEffects", "id": "Terminal.ToggleShaderEffects" },
+
+    // ── 建议菜单（shell 集成历史命令 + sendInput 任务） ──
+    {
+      "command": { "action": "showSuggestions", "source": "all" },
+      "id": "Terminal.Suggestions"
+    },
+    {
+      "name": "cd ..",
+      "command": { "action": "sendInput", "input": "cd ..\n" },
+      "id": "User.Task.CdUp"
+    },
+    {
+      "name": "git status",
+      "command": { "action": "sendInput", "input": "git status\n" },
+      "id": "User.Task.GitStatus"
+    },
+    {
+      "name": "git pull",
+      "command": { "action": "sendInput", "input": "git pull\n" },
+      "id": "User.Task.GitPull"
+    },
+
+    // ── 快速配色（command palette，无需按键） ──
+    {
+      "name": "Scheme: Slatewave",
+      "command": { "action": "setColorScheme", "colorScheme": "Slatewave" },
+      "id": "User.SetSchemeSlatewave"
+    },
+    {
+      "name": "Scheme: rose-pine",
+      "command": { "action": "setColorScheme", "colorScheme": "rose-pine" },
+      "id": "User.SetSchemeRosepine"
+    },
+    {
+      "name": "Scheme: Maple Dark",
+      "command": { "action": "setColorScheme", "colorScheme": "Maple Dark" },
+      "id": "User.SetSchemeMaple"
+    },
+    {
+      "name": "Scheme: Catppuccin Mocha",
+      "command": {
+        "action": "setColorScheme",
+        "colorScheme": "Catppuccin Mocha"
+      },
+      "id": "User.SetSchemeCatppuccinMocha"
+    },
 
     // Summon the most recently used (MRU) window, to the current virtual desktop,
     // to the monitor the mouse cursor is on, without an animation. If the window is
@@ -112,5 +347,5 @@
         ]
       }
     }
-  ],
+  ]
 }

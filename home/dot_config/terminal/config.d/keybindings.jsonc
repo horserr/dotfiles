@@ -1,139 +1,157 @@
 {
   "keybindings": [
-    //#region: unbound default
-    { "id": "unbound", "keys": "f11" },
-    { "id": "unbound", "keys": "ctrl+," },
-    { "id": "unbound", "keys": "ctrl+c" },
-    { "id": "unbound", "keys": "ctrl+v" },
-    { "id": "unbound", "keys": "ctrl+tab" },
-    { "id": "unbound", "keys": "ctrl+insert" },
-    { "id": "unbound", "keys": "alt+space" },
-    { "id": "unbound", "keys": "alt+enter" },
-    { "id": "unbound", "keys": "alt+insert" },
-    { "id": "unbound", "keys": "ctrl+alt+," },
-    { "id": "unbound", "keys": "ctrl+alt+1" },
-    { "id": "unbound", "keys": "ctrl+alt+2" },
-    { "id": "unbound", "keys": "ctrl+alt+3" },
-    { "id": "unbound", "keys": "ctrl+alt+4" },
-    { "id": "unbound", "keys": "ctrl+alt+5" },
-    { "id": "unbound", "keys": "ctrl+alt+6" },
-    { "id": "unbound", "keys": "ctrl+alt+7" },
-    { "id": "unbound", "keys": "ctrl+alt+8" },
-    { "id": "unbound", "keys": "ctrl+alt+9" },
-    { "id": "unbound", "keys": "ctrl+alt+left" },
-    { "id": "unbound", "keys": "ctrl+shift+," },
-    { "id": "unbound", "keys": "ctrl+shift+d" },
-    { "id": "unbound", "keys": "ctrl+shift+c" },
-    { "id": "unbound", "keys": "ctrl+shift+f" },
-    { "id": "unbound", "keys": "ctrl+shift+m" },
-    { "id": "unbound", "keys": "ctrl+shift+n" },
-    { "id": "unbound", "keys": "ctrl+shift+p" },
-    { "id": "unbound", "keys": "ctrl+shift+t" },
-    { "id": "unbound", "keys": "ctrl+shift+w" },
-    { "id": "unbound", "keys": "ctrl+shift+v" },
-    { "id": "unbound", "keys": "ctrl+shift+1" },
-    { "id": "unbound", "keys": "ctrl+shift+2" },
-    { "id": "unbound", "keys": "ctrl+shift+3" },
-    { "id": "unbound", "keys": "ctrl+shift+4" },
-    { "id": "unbound", "keys": "ctrl+shift+5" },
-    { "id": "unbound", "keys": "ctrl+shift+6" },
-    { "id": "unbound", "keys": "ctrl+shift+7" },
-    { "id": "unbound", "keys": "ctrl+shift+8" },
-    { "id": "unbound", "keys": "ctrl+shift+9" },
-    { "id": "unbound", "keys": "alt+shift+-" },
-    { "id": "unbound", "keys": "alt+shift+plus" },
-    { "id": "unbound", "keys": "ctrl+shift+tab" },
-    { "id": "unbound", "keys": "ctrl+shift+period" },
-    // #endregion
-    ////////////////////
-    { "id": "Terminal.ToggleCommandPalette", "keys": "alt+p" },
-    { "id": "Terminal.FindText", "keys": "alt+f" },
-    { "id": "Terminal.JumpToTab", "keys": "alt+o" },
-    { "id": "Terminal.OpenNewWindow", "keys": "alt+n" },
-    //
-    { "id": "Terminal.DuplicatePaneAuto", "keys": "alt+;" },
-    { "id": "Terminal.ToggleSplitOrientation", "keys": "alt+:" },
-    { "id": "Terminal.ToggleFocusMode", "keys": "alt+'" },
-    { "id": "Terminal.ToggleFullscreen", "keys": "alt+enter" },
-    { "id": "Terminal.TogglePaneZoom", "keys": "alt+\\" },
+    // ── 释放默认键（unbound = 交还给 shell，例如 ctrl+c 发送 SIGINT） ──
+    { "keys": "f11", "id": "unbound" },
+    { "keys": "ctrl+,", "id": "unbound" },
+    { "keys": "ctrl+c", "id": "unbound" },
+    { "keys": "ctrl+v", "id": "unbound" },
+    { "keys": "ctrl+tab", "id": "unbound" },
+    { "keys": "ctrl+insert", "id": "unbound" },
+    { "keys": "alt+space", "id": "unbound" },
+    { "keys": "alt+insert", "id": "unbound" },
+    { "keys": "ctrl+alt+,", "id": "unbound" },
+    { "keys": "ctrl+alt+1", "id": "unbound" },
+    { "keys": "ctrl+alt+2", "id": "unbound" },
+    { "keys": "ctrl+alt+3", "id": "unbound" },
+    { "keys": "ctrl+alt+4", "id": "unbound" },
+    { "keys": "ctrl+alt+5", "id": "unbound" },
+    { "keys": "ctrl+alt+6", "id": "unbound" },
+    { "keys": "ctrl+alt+7", "id": "unbound" },
+    { "keys": "ctrl+alt+8", "id": "unbound" },
+    { "keys": "ctrl+alt+9", "id": "unbound" },
+    { "keys": "ctrl+alt+left", "id": "unbound" },
+    { "keys": "ctrl+shift+,", "id": "unbound" },
+    { "keys": "ctrl+shift+d", "id": "unbound" },
+    { "keys": "ctrl+shift+f", "id": "unbound" },
+    { "keys": "ctrl+shift+m", "id": "unbound" },
+    { "keys": "ctrl+shift+n", "id": "unbound" },
+    { "keys": "ctrl+shift+p", "id": "unbound" },
+    { "keys": "ctrl+shift+t", "id": "unbound" },
+    { "keys": "ctrl+shift+w", "id": "unbound" },
+    { "keys": "ctrl+shift+1", "id": "unbound" },
+    { "keys": "ctrl+shift+2", "id": "unbound" },
+    { "keys": "ctrl+shift+3", "id": "unbound" },
+    { "keys": "ctrl+shift+4", "id": "unbound" },
+    { "keys": "ctrl+shift+5", "id": "unbound" },
+    { "keys": "ctrl+shift+6", "id": "unbound" },
+    { "keys": "ctrl+shift+7", "id": "unbound" },
+    { "keys": "ctrl+shift+8", "id": "unbound" },
+    { "keys": "ctrl+shift+9", "id": "unbound" },
+    { "keys": "alt+shift+-", "id": "unbound" },
+    { "keys": "alt+shift+plus", "id": "unbound" },
+    { "keys": "ctrl+shift+tab", "id": "unbound" },
+    { "keys": "ctrl+shift+period", "id": "unbound" },
 
-    //
-    { "id": "Terminal.NextTab", "keys": "alt+>" },
-    { "id": "Terminal.MoveTabBackward", "keys": "alt+ctrl+>" },
-    { "id": "Terminal.PrevTab", "keys": "alt+<" },
-    { "id": "Terminal.MoveTabForward", "keys": "alt+ctrl+<" },
-    { "id": "Terminal.MoveFocusDown", "keys": "alt+ctrl+j" },
-    { "id": "Terminal.MoveFocusLeft", "keys": "alt+ctrl+k" },
-    { "id": "Terminal.MoveFocusRight", "keys": "alt+ctrl+l" },
-    { "id": "Terminal.MoveFocusUp", "keys": "alt+ctrl+h" },
-    { "id": "Terminal.MoveFocusPrevious", "keys": "alt+/" },
-    { "id": "Terminal.SwitchToLastTab", "keys": "alt+shift+/" },
+    { "keys": "alt+p", "id": "Terminal.ToggleCommandPalette" },
 
-    //
-    { "id": "Terminal.ScrollToMarkPrevious", "keys": "alt+k" },
-    { "id": "Terminal.ScrollToMarkNext", "keys": "alt+j" },
-    { "id": "Terminal.ScrollToMarkFirst", "keys": "alt+h" },
-    { "id": "Terminal.ScrollToMarkLast", "keys": "alt+l" },
-    //
-    { "id": "Terminal.ScrollDown", "keys": "alt+shift+j" },
-    { "id": "Terminal.ScrollDownPage", "keys": "alt+ctrl+shift+j" },
-    { "id": "Terminal.ScrollUp", "keys": "alt+shift+k" },
-    { "id": "Terminal.ScrollUpPage", "keys": "alt+ctrl+shift+k" },
-    { "id": "Terminal.ScrollToTop", "keys": "alt+shift+h" },
-    { "id": "Terminal.ScrollToBottom", "keys": "alt+shift+l" },
-    //
-    { "id": "Terminal.CopyToClipboard", "keys": "enter" },
-    { "id": "Terminal.PasteFromClipboard", "keys": "ctrl+enter" },
+    // split and duplicate
+    { "keys": "alt+s", "id": "Terminal.DuplicatePaneDown" },
+    { "keys": "alt+v", "id": "Terminal.DuplicatePaneRight" },
+    { "keys": "alt+,", "id": "Terminal.DuplicatePaneAuto" },
+    { "keys": "alt+d", "id": "Terminal.DuplicatePaneAuto" },
 
-    // advanced
-    { "id": "Terminal.ToggleMarkMode", "keys": "alt+m" },
-    { "id": "Terminal.SwitchSelectionEndpoint", "keys": "alt+shift+m" },
-    { "id": "Terminal.ToggleBlockSelection", "keys": "alt+ctrl+shift+m" },
+    { "keys": "alt+/", "id": "Terminal.ToggleSplitOrientation" },
+    { "keys": "alt+\\", "id": "Terminal.TogglePaneZoom" },
 
-    { "id": "Terminal.ClearBuffer", "keys": "alt+c" },
+    // swap（Vim Ctrl+W H/J/K/L 移动窗口）
+    { "keys": "alt+ctrl+shift+h", "id": "Terminal.SwapPaneLeft" },
+    { "keys": "alt+ctrl+shift+j", "id": "Terminal.SwapPaneDown" },
+    { "keys": "alt+ctrl+shift+k", "id": "Terminal.SwapPaneUp" },
+    { "keys": "alt+ctrl+shift+l", "id": "Terminal.SwapPaneRight" },
 
-    { "id": "Terminal.ClosePane", "keys": "alt+q" },
-    { "id": "Terminal.CloseOtherTabs", "keys": "alt+w" },
-    { "id": "Terminal.CloseWindow", "keys": "alt+ctrl+q" },
-    { "id": "Terminal.Quit", "keys": "alt+ctrl+shift+q" },
+    // close
+    { "keys": "alt+q", "id": "Terminal.ClosePane" },
+    { "keys": "alt+w", "id": "Terminal.CloseOtherTabs" },
 
-    { "id": "Terminal.ExpandSelectionToWord", "keys": "alt+plus" },
+    // ── 复制 / 粘贴 / 选择 ──
+    // copyOnSelect 已开启：鼠标划选即自动复制、右键即粘贴；下面补上键盘路径。
+    // enter 是 Windows Terminal 默认的复制键（无选区时不拦截回车，透传给 shell）。
+    { "keys": "ctrl+shift+c", "id": "Terminal.CopyToClipboard" },
+    { "keys": "ctrl+shift+v", "id": "Terminal.PasteFromClipboard" },
+    { "keys": "ctrl+enter", "id": "Terminal.PasteFromClipboard" },
+    { "keys": "enter", "id": "Terminal.CopyToClipboard" },
 
-    { "id": "Terminal.OpenTabRenamer", "keys": "alt+r" },
-    { "id": "Terminal.OpenWindowRenamer", "keys": "alt+shift+r" },
+    { "keys": "ctrl+shift+a", "id": "Terminal.SelectAll" },
+    { "keys": "alt+m", "id": "Terminal.ToggleMarkMode" },
+    { "keys": "alt+shift+m", "id": "Terminal.SwitchSelectionEndpoint" },
+    { "keys": "alt+ctrl+shift+m", "id": "Terminal.ToggleBlockSelection" },
+    { "keys": "alt+plus", "id": "Terminal.ExpandSelectionToWord" },
+    { "keys": "menu", "id": "Terminal.ShowContextMenu" },
 
-    { "id": "Terminal.IdentifyWindow", "keys": "alt+i" },
-    { "id": "Terminal.Identify", "keys": "alt+shift+i" },
+    // ── 浏览：滚动 / 标记 / 查找 ──
+    // 注意：alt+h/j/k/l 为保留按键，禁止分配（shift 变体仍可用）。
+    // 「命令标记」跳转改到 alt+[/]（Vim [[ / ]] 的段落语义）
+    { "keys": "ctrl+shift+h", "id": "Terminal.ScrollToMarkPrevious" },
+    { "keys": "ctrl+shift+l", "id": "Terminal.ScrollToMarkNext" },
+    { "keys": "ctrl+shift+j", "id": "Terminal.ScrollDown" },
+    { "keys": "ctrl+shift+k", "id": "Terminal.ScrollUp" },
 
-    { "id": "Terminal.OpenTabColorPicker", "keys": "alt+ctrl+shift+p" }, // picker
-    { "id": "Terminal.SearchWeb", "keys": "alt+s" },
-    { "id": "Terminal.ToggleBroadcastInput", "keys": "alt+ctrl+shift+b" }, //broadcast
-    { "id": "Terminal.ToggleReadOnlyMode", "keys": "alt+ctrl+shift+l" }, // lock
-    { "id": "Terminal.RestartConnection", "keys": "alt+ctrl+shift+r" }, // restart
-    ////////////////////////////// default keybindings
-    // { "id": "Terminal.Suggestions", "keys": "ctrl+?" },
-    { "id": "Terminal.ShowContextMenu", "keys": "menu" },
-    {
-      "id": "Terminal.QuakeMode",
-      // the ` (backtick) scan code is 0x029 and 41 in decimal
-      "keys": "win+sc(41)"
-    },
-    { "id": "Terminal.CloseWindow", "keys": "alt+f4" },
-    { "id": "Terminal.SelectAll", "keys": "ctrl+shift+a" },
-    { "id": "Terminal.OpenNewTabDropdown", "keys": "ctrl+shift+space" },
-    { "id": "Terminal.ResizePaneDown", "keys": "alt+shift+down" },
-    { "id": "Terminal.ResizePaneLeft", "keys": "alt+shift+left" },
-    { "id": "Terminal.ResizePaneRight", "keys": "alt+shift+right" },
-    { "id": "Terminal.ResizePaneUp", "keys": "alt+shift+up" },
-    { "id": "Terminal.MoveFocusDown", "keys": "alt+down" },
-    { "id": "Terminal.MoveFocusLeft", "keys": "alt+left" },
-    { "id": "Terminal.MoveFocusRight", "keys": "alt+right" },
-    { "id": "Terminal.MoveFocusUp", "keys": "alt+up" },
+    { "keys": "alt+[", "id": "Terminal.ScrollToMarkFirst" },
+    { "keys": "alt+]", "id": "Terminal.ScrollToMarkLast" },
+    { "keys": "alt+shift+[", "id": "Terminal.ScrollToTop" },
+    { "keys": "alt+shift+]", "id": "Terminal.ScrollToBottom" },
+
+    // 添加 / 清除滚动标记（shell 集成命令标记）
+    { "keys": "alt+a", "id": "User.AddMark" },
+    { "keys": "alt+shift+a", "id": "Terminal.ClearAllMarks" },
+    { "keys": "alt+f", "id": "Terminal.FindText" },
+    { "keys": "f3", "id": "Terminal.FindNextMatch" },
+    { "keys": "shift+f3", "id": "Terminal.FindPrevMatch" },
     { "keys": "ctrl+shift+down", "id": "Terminal.ScrollDown" },
     { "keys": "ctrl+shift+pgdn", "id": "Terminal.ScrollDownPage" },
     { "keys": "ctrl+shift+up", "id": "Terminal.ScrollUp" },
     { "keys": "ctrl+shift+pgup", "id": "Terminal.ScrollUpPage" },
     { "keys": "ctrl+shift+home", "id": "Terminal.ScrollToTop" },
-    { "keys": "ctrl+shift+end", "id": "Terminal.ScrollToBottom" }
-  ],
+    { "keys": "ctrl+shift+end", "id": "Terminal.ScrollToBottom" },
+
+    // ── 标签页 / 窗格 ──
+    { "keys": "alt+>", "id": "Terminal.NextTab" },
+    { "keys": "alt+<", "id": "Terminal.PrevTab" },
+    { "keys": "alt+ctrl+>", "id": "Terminal.MoveTabBackward" },
+    { "keys": "alt+ctrl+<", "id": "Terminal.MoveTabForward" },
+    // 窗格焦点：alt+ctrl+hjkl（Vim 式：h 左 / j 下 / k 上 / l 右）或 alt+方向键
+    { "keys": "alt+ctrl+h", "id": "Terminal.MoveFocusLeft" },
+    { "keys": "alt+ctrl+j", "id": "Terminal.MoveFocusDown" },
+    { "keys": "alt+ctrl+k", "id": "Terminal.MoveFocusUp" },
+    { "keys": "alt+ctrl+l", "id": "Terminal.MoveFocusRight" },
+    { "keys": "alt+/", "id": "Terminal.MoveFocusPrevious" },
+    { "keys": "alt+shift+/", "id": "Terminal.SwitchToLastTab" },
+    { "keys": "alt+down", "id": "Terminal.MoveFocusDown" },
+    { "keys": "alt+left", "id": "Terminal.MoveFocusLeft" },
+    { "keys": "alt+right", "id": "Terminal.MoveFocusRight" },
+    { "keys": "alt+up", "id": "Terminal.MoveFocusUp" },
+    { "keys": "alt+shift+down", "id": "Terminal.ResizePaneDown" },
+    { "keys": "alt+shift+left", "id": "Terminal.ResizePaneLeft" },
+    { "keys": "alt+shift+right", "id": "Terminal.ResizePaneRight" },
+    { "keys": "alt+shift+up", "id": "Terminal.ResizePaneUp" },
+    // 分割窗格（Vim :split / :vsplit；tmux 的 " / %；duplicate = 复制当前 shell）
+
+    { "keys": "alt+ctrl+shift+b", "id": "Terminal.ToggleBroadcastInput" },
+    { "keys": "alt+ctrl+r", "id": "Terminal.ToggleReadOnlyMode" },
+    { "keys": "alt+ctrl+shift+r", "id": "Terminal.RestartConnection" },
+
+    // ── 窗口 / 其它 ──
+    { "keys": "alt+o", "id": "Terminal.JumpToTab" },
+    { "keys": "alt+n", "id": "Terminal.OpenNewWindow" },
+    { "keys": "alt+enter", "id": "Terminal.ToggleFullscreen" },
+    { "keys": "alt+'", "id": "Terminal.ToggleFocusMode" },
+    { "keys": "alt+f4", "id": "Terminal.CloseWindow" },
+    { "keys": "alt+ctrl+q", "id": "Terminal.CloseWindow" },
+    { "keys": "alt+ctrl+shift+q", "id": "Terminal.Quit" },
+    // ` 键（扫描码 0x29 / 41）呼出 Quake 模式
+    { "keys": "win+sc(41)", "id": "Terminal.QuakeMode" },
+    { "keys": "alt+r", "id": "Terminal.OpenTabRenamer" },
+    { "keys": "alt+shift+r", "id": "Terminal.OpenWindowRenamer" },
+    { "keys": "alt+i", "id": "Terminal.IdentifyWindow" },
+    { "keys": "alt+shift+i", "id": "Terminal.Identify" },
+    // 搜索选中文本（无选区时不触发）
+    { "keys": "alt+shift+s", "id": "Terminal.SearchWeb" },
+    { "keys": "alt+c", "id": "Terminal.ClearBuffer" },
+    // 建议菜单（shell 集成历史命令 + sendInput 任务，替代 VSCode 的 whichkey）
+    { "keys": "alt+e", "id": "Terminal.Suggestions" },
+    // 像素着色器开关（assets/pixel-shaders）
+    { "keys": "alt+ctrl+g", "id": "Terminal.ToggleShaderEffects" },
+    { "keys": "alt+ctrl+shift+p", "id": "Terminal.OpenTabColorPicker" },
+    { "keys": "ctrl+shift+space", "id": "Terminal.OpenNewTabDropdown" }
+  ]
 }

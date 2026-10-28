@@ -1,8 +1,4 @@
 {
-  "newTabPosition": "afterCurrentTab",
-  "tabSwitcherMode": "inOrder",
-  "tabWidthMode": "compact",
-
   "newTabMenu": [
     {
       "type": "remainingProfiles"
@@ -22,5 +18,5 @@
       "name": "SSH",
       "type": "folder"
     }
-  ],
+  ]
 }

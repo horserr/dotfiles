@@ -1,13 +1,22 @@
 {
+  "startupActions": "",
+
   "alwaysOnTop": false,
   "alwaysShowNotificationIcon": true,
   "alwaysShowTabs": false,
   "autoHideWindow": false,
 
+  "firstWindowPreference": "persistedWindowLayout",
+
   "centerOnLaunch": true,
 
   "compatibility.allowHeadless": false, // disable background process when all windows are closed
   "compatibility.enableUnfocusedAcrylic": true,
+  "compatibility.allowOSC777": true,
+
+  "newTabPosition": "afterCurrentTab",
+  "tabSwitcherMode": "inOrder",
+  "tabWidthMode": "compact",
 
   "warning.confirmCloseAllTabs": false, // don't show close confirm
   "warning.largePaste": true,

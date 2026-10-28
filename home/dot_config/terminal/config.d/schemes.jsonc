@@ -1,9 +1,34 @@
 {
   "schemes": [
+    // one half dark — overrides the built-in of the same name to add a selection color
+    {
+      "name": "One Half Dark",
+      "foreground": "#DCDFE4",
+      "background": "#282C34",
+      "cursorColor": "#FFFFFF",
+      "selectionBackground": "#3E4451",
+      "black": "#282C34",
+      "red": "#E06C75",
+      "green": "#98C379",
+      "yellow": "#E5C07B",
+      "blue": "#61AFEF",
+      "purple": "#C678DD",
+      "cyan": "#56B6C2",
+      "white": "#DCDFE4",
+      "brightBlack": "#5A6374",
+      "brightRed": "#E06C75",
+      "brightGreen": "#98C379",
+      "brightYellow": "#E5C07B",
+      "brightBlue": "#61AFEF",
+      "brightPurple": "#C678DD",
+      "brightCyan": "#56B6C2",
+      "brightWhite": "#DCDFE4"
+    },
+    // maple
     {
       // link: https://github.com/subframe7536/vscode-theme-maple#windows-terminal
       "name": "Maple Dark",
-      "selectionBackground": "#cbd5e1",
+      "selectionBackground": "#4a4a54",
       "cursorColor": "#cbd5e1",
       "background": "#1e1e1f",
       "foreground": "#cbd5e1",
@@ -24,6 +49,7 @@
       "white": "#f3f2f2",
       "yellow": "#eecfa0"
     },
+    // rose pine
     {
       // rose-pine
       "background": "#191724",
@@ -48,6 +74,7 @@
       "white": "#E0DEF4",
       "yellow": "#F6C177"
     },
+    // rose pine dawn
     {
       // rose-pine-dawn
       "background": "#FAF4ED",
@@ -72,6 +99,7 @@
       "white": "#575279",
       "yellow": "#EA9D34"
     },
+    // rose pine moon
     {
       // rose-pine-moon
       "background": "#232136",
@@ -95,6 +123,83 @@
       "selectionBackground": "#312F44",
       "white": "#E0DEF4",
       "yellow": "#F6C177"
+    },
+    // slatewave
+    {
+      // https://github.com/kevinlangleyjr/windows-terminal-slatewave/blob/main/slatewave-full.json
+      "name": "Slatewave",
+
+      "background": "#282c34",
+      "foreground": "#e2e8f0",
+
+      "cursorColor": "#5eead4",
+      "selectionBackground": "#334155",
+
+      "black": "#1e293b",
+      "red": "#fb7185",
+      "green": "#5eead4",
+      "yellow": "#f59e0b",
+      "blue": "#38bdf8",
+      "purple": "#b388ff",
+      "cyan": "#0e7490",
+      "white": "#e2e8f0",
+
+      "brightBlack": "#475569",
+      "brightRed": "#ef5350",
+      "brightGreen": "#99f6e4",
+      "brightYellow": "#fcd34d",
+      "brightBlue": "#7dd3fc",
+      "brightPurple": "#c4b5fd",
+      "brightCyan": "#67e8f9",
+      "brightWhite": "#f1f5f9"
+    },
+    // catppuccin mocha
+    {
+      "name": "Catppuccin Mocha",
+      "cursorColor": "#F5E0DC",
+      "selectionBackground": "#585B70",
+      "background": "#1E1E2E",
+      "foreground": "#CDD6F4",
+      "black": "#45475A",
+      "red": "#F38BA8",
+      "green": "#A6E3A1",
+      "yellow": "#F9E2AF",
+      "blue": "#89B4FA",
+      "purple": "#F5C2E7",
+      "cyan": "#94E2D5",
+      "white": "#BAC2DE",
+      "brightBlack": "#585B70",
+      "brightRed": "#F38BA8",
+      "brightGreen": "#A6E3A1",
+      "brightYellow": "#F9E2AF",
+      "brightBlue": "#89B4FA",
+      "brightPurple": "#F5C2E7",
+      "brightCyan": "#94E2D5",
+      "brightWhite": "#A6ADC8"
+    },
+    // catppuccin latte
+    {
+      "name": "Catppuccin Latte",
+      "cursorColor": "#DC8A78",
+      "selectionBackground": "#ACB0BE",
+      "background": "#EFF1F5",
+      "foreground": "#4C4F69",
+      "black": "#5C5F77",
+      "red": "#D20F39",
+      "green": "#40A02B",
+      "yellow": "#DF8E1D",
+      "blue": "#1E66F5",
+      "purple": "#EA76CB",
+      "cyan": "#179299",
+      "white": "#ACB0BE",
+      "brightBlack": "#ACB0BE",
+      "brightRed": "#D20F39",
+      "brightGreen": "#40A02B",
+      "brightYellow": "#DF8E1D",
+      "brightBlue": "#1E66F5",
+      "brightPurple": "#EA76CB",
+      "brightCyan": "#179299",
+      "brightWhite": "#BCC0CC"
     }
   ]
 }
