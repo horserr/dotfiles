@@ -44,7 +44,7 @@
         { "command": "whichkey.triggerKey", "args": "," }
       ]
     },
-    "when": "terminalFocus"
+    "when": "terminalFocus && !terminalEditorFocus"
   },
   // use enter to copy selection
   {

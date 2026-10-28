@@ -22,12 +22,102 @@
     "icon": "question",
     "type": "bindings",
     "bindings": [
+      // space return to whichkey
       {
         "key": " ",
         "name": "Return to whichkey",
         "icon": "quick-input-back",
         "type": "command",
         "command": "whichkey.show"
+      },
+      // , new with picker
+      {
+        "key": ",",
+        "name": "Open integrated terminal with profile picker",
+        "icon": "defaultProfile-icon",
+        "type": "command",
+        "command": "workbench.action.terminal.newWithProfile"
+      },
+      // n open/new
+      {
+        "key": "n",
+        "name": "+Open/New",
+        "icon": "terminal",
+        "type": "bindings",
+        // terminal.toggleVisibility
+        "bindings": [
+          // n cwd
+          {
+            "key": "n",
+            "name": "open cwd in integrated terminal",
+            "icon": "terminal",
+            "type": "command",
+            "command": "workbench.action.terminal.newWithCwd",
+            "args": {
+              "cwd": "${fileDirname}"
+            }
+          },
+          // N external cwd
+          {
+            "key": "N",
+            "name": "Open cwd in external terminal",
+            "icon": "terminal-cmd",
+            "type": "command",
+            "command": "openInTerminal"
+          },
+          // i workspace
+          {
+            "key": "i",
+            "name": "Open workspace root in integrated terminal",
+            "icon": "terminal",
+            "type": "command",
+            // "command": "workbench.action.terminal.new"
+            "command": "workbench.action.terminal.newInActiveWorkspace"
+          },
+          // I external workspace
+          {
+            "key": "I",
+            "name": "Open worksapce root in external terminal",
+            "icon": "terminal-cmd",
+            "type": "command",
+            "command": "workbench.action.terminal.openNativeConsole"
+          },
+          // s split
+          {
+            "key": "s",
+            "name": "new integrated terminal(split)",
+            "icon": "split-horizontal",
+            "type": "command",
+            // "command": "workbench.action.terminal.split"
+            // "command": "workbench.action.terminal.splitActiveTab"
+            "command": "workbench.action.terminal.splitInActiveWorkspace"
+          },
+          // e editor terminal
+          {
+            "key": "e",
+            "name": "create terminal in editor area",
+            "icon": "open-editors-view-icon",
+            "type": "command",
+            // workbench.action.createTerminalEditorSameGroup
+            "command": "workbench.action.createTerminalEditor"
+          },
+          // E editor side terminal
+          {
+            "key": "E",
+            "name": "create terminal in editor area by side",
+            "icon": "chevron-right",
+            "type": "command",
+            "command": "workbench.action.createTerminalEditorSide"
+          },
+          // w window terminal
+          {
+            "key": "w",
+            "name": "new integrated terminal window",
+            "icon": "share-window",
+            "type": "command",
+            "command": "workbench.action.terminal.newInNewWindow"
+          }
+        ]
       },
       // , scroll
       {
@@ -94,15 +184,15 @@
           }
         ]
       },
-      // / session
+      // s session
       {
-        "key": "/",
+        "key": "s",
         "name": "+Session",
         "icon": "terminal",
         "type": "bindings",
         "bindings": [
           {
-            "key": "/",
+            "key": "s",
             "name": "switch terminal",
             "icon": "terminal",
             "type": "command",
@@ -125,51 +215,13 @@
           }
         ]
       },
-      // i input
-      {
-        "key": "i",
-        "name": "+Input",
-        "icon": "quickInputAlignmentCenter",
-        "type": "bindings",
-        "bindings": [
-          {
-            "key": "i",
-            "name": "send sequence",
-            "icon": "terminal",
-            "type": "command",
-            "command": "workbench.action.terminal.sendSequence"
-          },
-          {
-            "key": " ",
-            "name": "print to terminal",
-            "icon": "terminal",
-            "type": "command",
-            "command": "workbench.action.terminal.writeDataToTerminal"
-          },
-          {
-            "key": "f",
-            "name": "quick fix",
-            "icon": "terminal",
-            "type": "command",
-            "command": "workbench.action.terminal.showQuickFixes"
-          }
-        ]
-      },
       // g goto/commands
       {
         "key": "g",
-        "name": "+Goto/commands",
+        "name": "goto recent directory",
         "icon": "go-to-file",
-        "type": "bindings",
-        "bindings": [
-          {
-            "key": "r",
-            "name": "goto recent directory",
-            "icon": "terminal",
-            "type": "command",
-            "command": "workbench.action.terminal.goToRecentDirectory"
-          }
-        ]
+        "type": "command",
+        "command": "workbench.action.terminal.goToRecentDirectory"
       },
       // d kill
       {
@@ -236,86 +288,6 @@
           }
         ]
       },
-      // n open/new
-      {
-        "key": "n",
-        "name": "+Open/New",
-        "icon": "terminal",
-        "type": "bindings",
-        // terminal.toggleVisibility
-        "bindings": [
-          {
-            "key": "n",
-            "name": "open cwd in integrated terminal",
-            "icon": "terminal",
-            "type": "command",
-            "command": "workbench.action.terminal.newWithCwd",
-            "args": {
-              "cwd": "${fileDirname}"
-            }
-          },
-          {
-            "key": "N",
-            "name": "Open cwd in external terminal",
-            "icon": "terminal-cmd",
-            "type": "command",
-            "command": "openInTerminal"
-          },
-          {
-            "key": "i",
-            "name": "Open workspace root in integrated terminal",
-            "icon": "terminal",
-            "type": "command",
-            // "command": "workbench.action.terminal.new"
-            "command": "workbench.action.terminal.newInActiveWorkspace"
-          },
-          {
-            "key": "I",
-            "name": "Open worksapce root in external terminal",
-            "icon": "terminal-cmd",
-            "type": "command",
-            "command": "workbench.action.terminal.openNativeConsole"
-          },
-          {
-            "key": "s",
-            "name": "new integrated terminal(split)",
-            "icon": "split-horizontal",
-            "type": "command",
-            // "command": "workbench.action.terminal.split"
-            // "command": "workbench.action.terminal.splitActiveTab"
-            "command": "workbench.action.terminal.splitInActiveWorkspace"
-          },
-          {
-            "key": "a",
-            "name": "Open integrated terminal with profile picker",
-            "icon": "defaultProfile-icon",
-            "type": "command",
-            "command": "workbench.action.terminal.newWithProfile"
-          },
-          {
-            "key": "e",
-            "name": "create terminal in editor area",
-            "icon": "open-editors-view-icon",
-            "type": "command",
-            // workbench.action.createTerminalEditorSameGroup
-            "command": "workbench.action.createTerminalEditor"
-          },
-          {
-            "key": "E",
-            "name": "create terminal in editor area by side",
-            "icon": "chevron-right",
-            "type": "command",
-            "command": "workbench.action.createTerminalEditorSide"
-          },
-          {
-            "key": "w",
-            "name": "new integrated terminal window",
-            "icon": "share-window",
-            "type": "command",
-            "command": "workbench.action.terminal.newInNewWindow"
-          }
-        ]
-      },
       // a customize
       {
         "key": "a",
@@ -323,6 +295,7 @@
         "icon": "ai-customization-view-icon",
         "type": "bindings",
         "bindings": [
+          // a default profile
           {
             "key": "a",
             "name": "select default profile",
@@ -330,6 +303,7 @@
             "type": "command",
             "command": "workbench.action.terminal.selectDefaultShell"
           },
+          // c color
           {
             "key": "c",
             "name": "change color",
@@ -337,6 +311,7 @@
             "type": "command",
             "command": "workbench.action.terminal.changeColor"
           },
+          // i icon
           {
             "key": "i",
             "name": "change icon",
@@ -345,6 +320,7 @@
             // "command": "workbench.action.terminal.changeIconActiveTab"
             "command": "workbench.action.terminal.changeIcon"
           },
+          // n name
           {
             "key": "n",
             "name": "change name",
@@ -362,6 +338,7 @@
         "icon": "run-with-deps",
         "type": "bindings",
         "bindings": [
+          // f run current file
           {
             "key": "f",
             "name": "run current file",
@@ -369,6 +346,7 @@
             "type": "command",
             "command": "workbench.action.terminal.runActiveFile"
           },
+          // s run selected text
           {
             "key": "s",
             "name": "run selected text",
@@ -376,6 +354,7 @@
             "type": "command",
             "command": "workbench.action.terminal.runSelectedText"
           },
+          // r recent command
           {
             "key": "r",
             "name": "run recent commands",
@@ -624,29 +603,6 @@
           }
         ]
       },
-      // s size
-      {
-        "key": "s",
-        "name": "+Size",
-        "icon": "chevron-right",
-        "type": "bindings",
-        "bindings": [
-          {
-            "key": "f",
-            "name": "set fixed size",
-            "icon": "chevron-right",
-            "type": "command",
-            "command": "workbench.action.terminal.setDimensions"
-          },
-          {
-            "key": "s",
-            "name": "set content width",
-            "icon": "chevron-right",
-            "type": "command",
-            "command": "workbench.action.terminal.sizeToContentWidth"
-          }
-        ]
-      },
       // R reload/reset
       {
         "key": "R",
@@ -654,6 +610,7 @@
         "icon": "refresh",
         "type": "bindings",
         "bindings": [
+          // r relaunch terminal
           {
             "key": "r",
             "name": "relaunch terminal",
@@ -661,6 +618,7 @@
             "type": "command",
             "command": "workbench.action.terminal.relaunch"
           },
+          // R restart pty host
           {
             "key": "R",
             "name": "restart pty host",
@@ -717,6 +675,7 @@
               }
             ]
           },
+          // e environment contribution
           {
             "key": "e",
             "name": "show environment contribution",
@@ -724,12 +683,66 @@
             "type": "command",
             "command": "workbench.action.terminal.showEnvironmentContributions"
           },
+          // t texture atlas
           {
             "key": "t",
             "name": "show texture atlas",
             "icon": "map",
             "type": "command",
             "command": "workbench.action.terminal.showTextureAtlas"
+          },
+          // i input
+          {
+            "key": "i",
+            "name": "+Input",
+            "icon": "quickInputAlignmentCenter",
+            "type": "bindings",
+            "bindings": [
+              {
+                "key": "i",
+                "name": "send sequence",
+                "icon": "terminal",
+                "type": "command",
+                "command": "workbench.action.terminal.sendSequence"
+              },
+              {
+                "key": " ",
+                "name": "print to terminal",
+                "icon": "terminal",
+                "type": "command",
+                "command": "workbench.action.terminal.writeDataToTerminal"
+              },
+              {
+                "key": "f",
+                "name": "quick fix",
+                "icon": "terminal",
+                "type": "command",
+                "command": "workbench.action.terminal.showQuickFixes"
+              }
+            ]
+          },
+          // s size
+          {
+            "key": "s",
+            "name": "+Size",
+            "icon": "chevron-right",
+            "type": "bindings",
+            "bindings": [
+              {
+                "key": "f",
+                "name": "set fixed size",
+                "icon": "chevron-right",
+                "type": "command",
+                "command": "workbench.action.terminal.setDimensions"
+              },
+              {
+                "key": "s",
+                "name": "set content width",
+                "icon": "chevron-right",
+                "type": "command",
+                "command": "workbench.action.terminal.sizeToContentWidth"
+              }
+            ]
           }
           /* workbench.action.terminal.changeSelectionModeAlways
             workbench.action.terminal.changeSelectionModeNever
