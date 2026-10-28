@@ -1,78 +1,113 @@
 #!/usr/bin/env bash
-# agent.sh - 安装 Claude 或 GitHub Copilot 命令行工具
+# l-agents.sh - 安装 Claude Code 或 GitHub Copilot CLI
 # 用法:
-#   ./agent.sh            # 默认安装 Claude
-#   ./agent.sh copilot    # 安装 GitHub Copilot
-#   ./agent.sh claude     # 显式安装 Claude
+#   ./l-agents.sh                # 默认用 pnpm 安装 Claude Code
+#   ./l-agents.sh copilot        # 用 pnpm 安装 GitHub Copilot CLI
+#   ./l-agents.sh claude --npm   # 改用 npm 安装
 
 set -euo pipefail
 
-TARGET="${1:-claude}"
+CLAUDE_PKG="@anthropic-ai/claude-code"
+CLAUDE_BIN="claude"
+COPILOT_PKG="@github/copilot"
+COPILOT_BIN="copilot"
 
-# 注意: https://claude.ai 是官网首页(HTML)，安装脚本在 /install.sh
-CLAUDE_INSTALL_URL="https://claude.ai/install.sh"
-COPILOT_INSTALL_URL="https://gh.io/copilot-install"
+TARGET=""
+PM="pnpm"            # 默认包管理器
 
-# 下载远程安装脚本并校验内容，避免把重定向页/HTML 错误页直接喂给 shell
-# 用法: run_remote_installer <url> [bash|sh]
-run_remote_installer() {
-    local url="$1"
-    local shell_bin="${2:-bash}"
-    local tmp rc=0
-    tmp="$(mktemp "${TMPDIR:-/tmp}/install-XXXXXX.sh")" || return 1
+usage() {
+    cat <<EOF
+用法: $0 [claude|copilot] [--pnpm|--npm]
 
-    if ! curl -fsSL --max-time 120 --retry 2 -o "$tmp" "$url"; then
-        rm -f "$tmp"
-        echo "错误: 下载安装脚本失败: $url" >&2
-        return 1
+  claude        安装 Claude Code（默认）
+  copilot       安装 GitHub Copilot CLI
+
+  --pnpm        使用 pnpm 安装（默认）
+  --npm         使用 npm 安装
+  -h, --help    显示此帮助
+
+示例:
+  $0                    # pnpm 安装 claude
+  $0 copilot            # pnpm 安装 copilot
+  $0 claude --npm       # npm 安装 claude
+EOF
+}
+
+# ---- 解析参数 ----
+while [ $# -gt 0 ]; do
+    case "$1" in
+        claude|copilot)
+            TARGET="$1"
+            ;;
+        --pnpm)
+            PM="pnpm"
+            ;;
+        --npm)
+            PM="npm"
+            ;;
+        -h|--help|help)
+            usage
+            exit 0
+            ;;
+        *)
+            echo "错误: 未知参数 '$1'" >&2
+            usage >&2
+            exit 1
+            ;;
+    esac
+    shift
+done
+
+TARGET="${TARGET:-claude}"
+
+require_pm() {
+    if command -v "$PM" >/dev/null 2>&1; then
+        return 0
     fi
-
-    # 正常安装脚本一定以 #! 开头；否则说明拿到的是 HTML(如 302/地区限制页)
-    if [ "$(head -c 2 "$tmp" 2>/dev/null)" != '#!' ]; then
-        echo "错误: $url 返回的不是 shell 脚本（可能是重定向页或地区限制页）。" >&2
-        echo "      返回内容开头: $(head -c 120 "$tmp" 2>/dev/null | tr -d '\r\n')" >&2
-        rm -f "$tmp"
-        echo "      请检查网络/代理后重试。" >&2
-        return 1
+    echo "错误: 未找到 $PM。" >&2
+    if [ "$PM" = "pnpm" ]; then
+        echo "      请先安装 pnpm: corepack enable pnpm  或  npm i -g pnpm" >&2
+        echo "      或改用 npm:  $0 $TARGET --npm" >&2
     fi
-
-    "$shell_bin" "$tmp" && rc=0 || rc=$?
-    rm -f "$tmp"
-    return $rc
+    return 1
 }
 
-install_claude() {
-    echo "==> 正在安装 Claude ..."
-    run_remote_installer "$CLAUDE_INSTALL_URL" bash
-    echo "==> Claude 安装完成。"
+# 全局安装: install_pkg <显示名> <包名> <可执行文件名>
+install_pkg() {
+    local name="$1" pkg="$2" bin="$3"
+
+    echo "==> 使用 $PM 安装 $name ($pkg) ..."
+    case "$PM" in
+        pnpm)
+            pnpm add -g "$pkg"
+            ;;
+        npm)
+            npm install -g "$pkg"
+            ;;
+        *)
+            echo "错误: 不支持的包管理器 $PM" >&2
+            return 1
+            ;;
+    esac
+    echo "==> $name 安装完成。"
+
+    if command -v "$bin" >/dev/null 2>&1; then
+        echo "    已就绪: $bin -> $(command -v "$bin")"
+    else
+        echo "    提示: 未在 PATH 中找到 '$bin'。" >&2
+        if [ "$PM" = "pnpm" ]; then
+            echo "          pnpm 全局 bin 目录可能未加入 PATH，执行一次 'pnpm setup' 后重开终端。" >&2
+        fi
+    fi
 }
 
-install_copilot() {
-    echo "==> 正在安装 GitHub Copilot ..."
-    run_remote_installer "$COPILOT_INSTALL_URL" bash
-    echo "==> GitHub Copilot 安装完成。"
-}
+require_pm
 
 case "$TARGET" in
     claude)
-        install_claude
+        install_pkg "Claude Code" "$CLAUDE_PKG" "$CLAUDE_BIN"
         ;;
     copilot)
-        install_copilot
-        ;;
-    -h|--help|help)
-        cat <<EOF
-用法: $0 [claude|copilot]
-
-  (无参数)     安装 Claude（默认）
-  claude       安装 Claude
-  copilot      安装 GitHub Copilot
-  help         显示此帮助
-EOF
-        ;;
-    *)
-        echo "错误: 未知参数 '$TARGET'" >&2
-        echo "用法: $0 [claude|copilot]" >&2
-        exit 1
+        install_pkg "GitHub Copilot CLI" "$COPILOT_PKG" "$COPILOT_BIN"
         ;;
 esac

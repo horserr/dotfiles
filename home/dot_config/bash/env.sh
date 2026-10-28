@@ -25,6 +25,12 @@ if [ -d "$HOME/.local/bin" ]; then
     export PATH="$PATH:$HOME/.local/bin"
 fi
 
+# pixi global binary
 if [ -d "$HOME/.pixi/bin" ]; then
     export PATH="$HOME/.pixi/bin:$PATH"
+fi
+
+# pnpm global binary
+if [ -d "$HOME/.local/share/pnpm/bin" ]; then
+    export PATH="$HOME/.local/share/pnpm/bin:$PATH"
 fi

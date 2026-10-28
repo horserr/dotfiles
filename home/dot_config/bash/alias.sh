@@ -1,4 +1,5 @@
 # fix user group mismatch when returning from a rooted container
+alias reload="source ~/.bashrc"
 alias remap-user="sudo chown -R $(id -u):$(id -g) ."
 alias edit-token="$EDITOR $TOKEN_FILE"
 alias cd-dotfiles="cd $DOTFILES"
