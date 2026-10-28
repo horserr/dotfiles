@@ -1,0 +1,168 @@
+#!/usr/bin/env python3
+"""Launch Claude or Copilot CLI pre-configured for the DeepSeek API.
+
+Usage:
+    ds            -> deepseek-v4-pro (default)
+    ds f | flash  -> deepseek-v4-flash
+    ds p | pro    -> deepseek-v4-pro
+    ds <name>     -> use <name> verbatim
+"""
+
+import argparse
+import os
+import shutil
+import subprocess
+import sys
+from pathlib import Path
+
+TOKEN_FILE = Path.home() / ".config" / "bash" / "tokenenv.sh"
+DEFAULT_MODEL = "deepseek-v4-pro"
+
+# alias -> concrete model name
+MODEL_ALIASES = {
+    "f": "deepseek-v4-flash",
+    "flash": "deepseek-v4-flash",
+    "p": DEFAULT_MODEL,
+    "pro": DEFAULT_MODEL,
+}
+
+
+# Token handling
+def load_token_from_file() -> str | None:
+    """Read DEEPSEEK_TOKEN from the token file, if present."""
+    if not TOKEN_FILE.exists():
+        return None
+
+    try:
+        content = TOKEN_FILE.read_text(encoding="utf-8")
+    except OSError:
+        return None
+
+    for line in content.splitlines():
+        if "DEEPSEEK_TOKEN=" not in line:
+            continue
+        _, _, value = line.partition("=")
+        value = value.strip().strip("'\"")
+        if value:
+            return value
+    return None
+
+
+def save_token(token: str) -> None:
+    """Append the token to the token file, creating parent dirs as needed."""
+    TOKEN_FILE.parent.mkdir(parents=True, exist_ok=True)
+    with TOKEN_FILE.open("a", encoding="utf-8") as f:
+        f.write(f"export DEEPSEEK_TOKEN='{token}'\n")
+
+
+def prompt_for_token() -> str:
+    """Ask the user interactively for a token, then persist it."""
+    print("⚠️ Missing DEEPSEEK_TOKEN, please fill before using.")
+    try:
+        token = input("Input your DeepSeek API Key: ").strip()
+    except (KeyboardInterrupt, EOFError):
+        print("\n❌ Aborted.")
+        sys.exit(1)
+
+    if not token:
+        print("❌ API Key is blank, abort.")
+        sys.exit(1)
+
+    save_token(token)
+    print(f"✅ Token is saved in {TOKEN_FILE}")
+    return token
+
+
+def ensure_token() -> str:
+    """Return a usable token: env var > token file > interactive prompt."""
+    token = os.environ.get("DEEPSEEK_TOKEN") or load_token_from_file()
+
+    if not token:
+        token = prompt_for_token()
+
+    os.environ["DEEPSEEK_TOKEN"] = token
+    return token
+
+
+# Model / CLI resolution
+def resolve_model(arg: str) -> str:
+    """Map a user-supplied alias to a concrete model name."""
+    if not arg:
+        return DEFAULT_MODEL
+    return MODEL_ALIASES.get(arg.lower(), arg)
+
+
+def detect_cli() -> str | None:
+    """Return 'claude' if available, else 'copilot', else None."""
+    if shutil.which("claude"):
+        return "claude"
+    if shutil.which("copilot"):
+        return "copilot"
+    return None
+
+
+# Launchers
+def run_agent(cmd: list[str], env: dict[str, str]) -> int:
+    """Run the CLI and translate failures into an exit code."""
+    try:
+        subprocess.run(cmd, env=env, check=True)
+    except subprocess.CalledProcessError as e:
+        return e.returncode
+    except FileNotFoundError:
+        print(f"❌ Command not found: {cmd[0]}")
+        return 127
+    return 0
+
+
+def launch_claude(token: str, model: str) -> int:
+    env = os.environ.copy()
+    env["ANTHROPIC_AUTH_TOKEN"] = token
+
+    print(f"🚀 Launching Claude (Model: {model})...")
+    return run_agent(["claude"], env)
+
+
+def launch_copilot(token: str, model: str) -> int:
+    env = os.environ.copy()
+    env["COPILOT_PROVIDER_TYPE"] = "anthropic"
+    env["COPILOT_PROVIDER_BASE_URL"] = "https://api.deepseek.com/anthropic"
+    env["COPILOT_PROVIDER_API_KEY"] = token
+    env["COPILOT_MODEL"] = model
+
+    print(f"🚀 Launching Copilot (Model: {model})...")
+    return run_agent(["copilot"], env)
+
+
+# Entry point
+def parse_args() -> argparse.Namespace:
+    parser = argparse.ArgumentParser(
+        description="Launch Claude (default) or Copilot CLI with DeepSeek configuration."
+    )
+    parser.add_argument(
+        "model",
+        nargs="?",
+        default="pro",
+        help="Model selection: f/flash, p/pro, or custom model name (default: pro)",
+    )
+    return parser.parse_args()
+
+
+def main() -> int:
+    args = parse_args()
+
+    cli = detect_cli()
+    if cli is None:
+        print("❌ Error: Neither 'claude' nor 'copilot' command found.")
+        print("Please install Copilot using: pnpm install -g @github/copilot")
+        return 1
+
+    token = ensure_token()
+    model = resolve_model(args.model)
+
+    if cli == "claude":
+        return launch_claude(token, model)
+    return launch_copilot(token, model)
+
+
+if __name__ == "__main__":
+    sys.exit(main())
