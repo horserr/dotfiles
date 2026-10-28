@@ -1,5 +1,10 @@
 {{/* code: language=toml */}}
 
+{{/* ------------------------------------------------------------------
+     1. Environment & context detection
+     Pure flags + external lookups — no user prompts in this section.
+   ------------------------------------------------------------------ */}}
+
 {{- /* Checks if running interactively, which is not the case for GitHub Codespaces */ -}}
 {{- $interactive := stdinIsATTY -}}
 
@@ -27,24 +32,76 @@
 {{- $isDevContainer := or (ne (env "REMOTE_CONTAINERS") "") (ne (env "DEVCONTAINER") "") -}}
 
 {{- $isRemote := or $isSSH $isMOSH $isCodeSpaces $isDevContainer -}}
+{{- $isEphemeral := or $isDocker $isCodeSpaces $isDevContainer -}}
+
+{{- /* ipapi ISO (e.g. CN, HK, US, JP) */ -}}
+{{- $country := output "curl" "-s" "--max-time" "2" "https://ipapi.co/country/" | trim -}}
+{{- $needMirror := eq $country "CN" -}}
+
+{{/* ------------------------------------------------------------------
+     2. Interactive prompts
+     All side effects (prompt* / writeToStdout) live in this section.
+   ------------------------------------------------------------------ */}}
 
 {{- if $interactive -}}
     {{- writeToStdout "💡 Tip: you can re-enter your name and email with `chezmoi init --data=false`.\n" -}}
 {{- end -}}
 
-{{- $isPersonal := false -}}
-{{- if or $isCodeSpaces $isDevContainer -}}
-{{-   $isPersonal = true -}}
-{{- end -}}
-
+{{- $isPersonal := or $isCodeSpaces $isDevContainer -}}
 {{- if and $interactive (not $isCodeSpaces) (not $isDevContainer) -}}
-    {{- $isPersonal = promptBoolOnce . "isPersonal" "Is this a personal computer or  a work station" false -}}
+    {{- $isPersonal = promptBoolOnce . "isPersonal" "Is this a personal computer or a work station" false -}}
 {{- end -}}
 
-{{- /* ipapi ISO (e.g. CN, HK, US, JP) */ -}}
-{{- $country := output "curl" "-s" "--max-time" "2" "https://ipapi.co/country/" | trim -}}
+{{- $needProxy := false -}}
+{{- if $interactive -}}
+    {{- if $isWindows -}}
+        {{- $needProxy = true -}}
+    {{- else -}}
+        {{- $needProxy = promptBoolOnce . "needProxy" "Should install mihomo" false -}}
+    {{- end -}}
+{{- end -}}
 
-{{ $needProxy := and $interactive (or $isWindows (promptBoolOnce . "needProxy" "Should install mihomo" false)) }}
+{{- $mihomoUrl := "" -}}
+{{- $mihomoSecret := "" -}}
+{{- if $needProxy -}}
+    {{- $mihomoUrl = promptStringOnce . "mihomo.url" "Please paste your proxy provider url here(without quotes)" | quote -}}
+    {{- if $isRemote -}}
+        {{- $mihomoSecret = promptStringOnce . "mihomo.secret" "Please set your external web control secret, empty for default password" | trim | default "mihomo" | quote -}}
+        {{- writeToStdout "🎯 Note: you may need to allow tcp 9090 pass firewall using ufw. e.g. `sudo ufw allow from 100.123.126.33 port 9090 proto tcp` or `sudo ufw allow 9090/tcp`.\n" -}}
+    {{- end -}}
+{{- end -}}
+
+{{- $init := dict "install" true "extras" (list) -}}
+{{- if not $isPersonal -}}
+    {{- $_ := set $init "install" (promptBoolOnce . "init.install" "Should use install package manager and essential apps?" false) -}}
+{{- end -}}
+{{- if $init.install -}}
+    {{- if $isWindows -}}
+        {{- $_ := set $init "extras" (concat $init.extras (list "fonts" "extra")) -}}
+    {{- else if $isLinux -}}
+        {{- $_ := set $init "extras" (concat $init.extras (list "network" "build" "extra" "shell" "media")) -}}
+    {{- end -}}
+    {{- $_ := set $init "extras" (promptMultichoice "Select extra packages to install" $init.extras (list "extra")) -}}
+{{- end -}}
+
+{{- /* token 始终写出，下游模板才能安全依赖 .token.deepseek */ -}}
+{{- $enable := false -}}
+{{- $deepseek := "" -}}
+{{- with index . "token" -}}
+    {{- $enable = index . "enable" | default false -}}
+    {{- $deepseek = index . "deepseek" | default "" -}}
+{{- end -}}
+{{- if $interactive -}}
+    {{- $enable = promptBool "Should add DeepSeek API token" $enable -}}
+    {{- if $enable -}}
+        {{- $deepseek = promptStringOnce . "token.deepseek" "Please paste your deepseek token here" -}}
+    {{- end -}}
+{{- end -}}
+
+{{/* ------------------------------------------------------------------
+     3. TOML output
+     Pure rendering from the values computed above.
+   ------------------------------------------------------------------ */}}
 
 sourceDir = "~/.config/.dotfiles"
 
@@ -56,54 +113,21 @@ sourceDir = "~/.config/.dotfiles"
     isLinux = {{ $isLinux }}
     isWindows = {{ $isWindows }}
     isDocker = {{ $isDocker }}
-    isEphemeral = {{ or $isDocker $isCodeSpaces $isDevContainer }}
+    isEphemeral = {{ $isEphemeral }}
     isRemote = {{ $isRemote }}
 
-    needMirror = {{ eq $country "CN" }}
+    needMirror = {{ $needMirror }}
     needProxy = {{ $needProxy }}
 
     {{ if $needProxy }}
-        mihomo.url = {{ promptStringOnce . "mihomo.url" "Please paste your proxy provider url here(without quotes)" | quote }}
+        mihomo.url = {{ $mihomoUrl }}
         {{ if $isRemote }}
-            mihomo.secret = {{ promptStringOnce . "mihomo.secret" "Please set your external web control secret, empty for default password" | trim | default "mihomo" | quote }}
-            {{- writeToStdout "🎯 Note: you may need to allow tcp 9090 pass firewall using ufw. e.g. `sudo ufw allow from 100.123.126.33 port 9090 proto tcp` or `sudo ufw allow 9090/tcp`.\n" -}}
+            mihomo.secret = {{ $mihomoSecret }}
         {{ end }}
     {{ end }}
 
-{{ $init := dict "install" true "extras" (list) }}
-{{ $_ := set $init "install" true }}
-
-{{ if not $isPersonal }}
-    {{ $_ := set $init "install" (promptBoolOnce . "init.install" "Should use install package manager and essential apps?" false) }}
-{{ end }}
-
-{{ $install := $init.install }}
-init.install = {{ $install }}
-
-{{ if $install }}
-    {{ if $isWindows }}
-        {{$_ := set $init "extras" (concat $init.extras (list "fonts" "extra")) -}}
-    {{ else if $isLinux }}
-        {{$_ := set $init "extras" (concat $init.extras (list "network" "build" "extra" "shell" "media")) -}}
-    {{ end }}
-    {{ $_ := set $init "extras" (promptMultichoice "Select extra packages to install" $init.extras (list "extra")) }}
-{{ end }}
+init.install = {{ $init.install }}
 init.extras = {{ $init.extras | toToml }}
-
-{{- /* token 始终写出，下游模板才能安全依赖 .token.deepseek */ -}}
-{{- $enable := false -}}
-{{- $deepseek := "" -}}
-{{- with index . "token" -}}
-    {{- $enable = index . "enable" | default false -}}
-    {{- $deepseek = index . "deepseek" | default "" -}}
-{{- end -}}
-
-{{ if $interactive }}
-    {{ $enable = promptBool "Should add DeepSeek API token" $enable }}
-    {{ if $enable }}
-        {{ $deepseek = promptStringOnce . "token.deepseek" "Please paste your deepseek token here" }}
-    {{ end }}
-{{ end }}
 
 token.enable = {{ $enable }}
 {{ if $enable }}
