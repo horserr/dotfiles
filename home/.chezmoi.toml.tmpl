@@ -90,6 +90,26 @@ init.install = {{ $install }}
 {{ end }}
 init.extras = {{ $init.extras | toToml }}
 
+{{- /* token 始终写出，下游模板才能安全依赖 .token.deepseek */ -}}
+{{- $enable := false -}}
+{{- $deepseek := "" -}}
+{{- with index . "token" -}}
+    {{- $enable = index . "enable" | default false -}}
+    {{- $deepseek = index . "deepseek" | default "" -}}
+{{- end -}}
+
+{{ if $interactive }}
+    {{ $enable = promptBool "Should add DeepSeek API token" $enable }}
+    {{ if $enable }}
+        {{ $deepseek = promptStringOnce . "token.deepseek" "Please paste your deepseek token here" }}
+    {{ end }}
+{{ end }}
+
+token.enable = {{ $enable }}
+{{ if $enable }}
+token.deepseek = {{ $deepseek | quote }}
+{{ end }}
+
 [interpreters.ps1]
     command = """
     {{- if lookPath "pwsh" -}}pwsh

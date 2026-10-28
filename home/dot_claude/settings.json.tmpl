@@ -1,6 +1,7 @@
 {
   "env": {
     "ANTHROPIC_BASE_URL": "https://api.deepseek.com/anthropic",
+    "ANTHROPIC_AUTH_TOKEN": {{ .token.deepseek | quote }},
     "CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC": "1",
     "CLAUDE_EFFORT": "high",
     "CLAUDE_CODE_SUBAGENT_MODEL": "deepseek-flash",

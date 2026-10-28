@@ -15,10 +15,15 @@
 .docker/
 scoop/
 
-{{ if .isPersonal -}}
-.cloud-init/
-.ideavimrc
-.wslconfig
-.ideavimrc
-{{- end }}
+  {{ if .isPersonal -}}
+  .cloud-init/
+  .ideavimrc
+  .wslconfig
+  .ideavimrc
+  {{- end }}
 {{- end -}}
+
+{{ if not (hasKey . "token") }}
+.copilot/
+.claude
+{{ end }}
