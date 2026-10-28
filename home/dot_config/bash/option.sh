@@ -8,7 +8,6 @@ set completion-ignore-case on
 # 展开软链接
 set mark-symlinked-directories on
 
-set -o vi
 alias vi=vim
 
 # append to the history file, don't overwrite it

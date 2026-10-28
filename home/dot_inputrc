@@ -9,7 +9,12 @@
 
 # # copied from: github.com/mathiasbynens/dotfiles/blob/main/.inputrc
 
-# set editing-mode vi
+# link: https://unix.stackexchange.com/questions/27699/remap-bash-vi-keys
+# https://vim.fandom.com/wiki/Use_vi_shortcuts_in_terminal
+# https://www.reddit.com/r/vim/comments/1emhips/using_vim_keybindings_in_bash_cli/
+# https://github.com/pkrumins/bash-vi-editing-mode-cheat-sheet/tree/master
+set editing-mode vi
+set keymap vi-insert
 
 # # Make Tab autocomplete regardless of filename case
 # set completion-ignore-case on
