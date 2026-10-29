@@ -91,6 +91,10 @@
     {{- $enable = index . "enable" | default false -}}
     {{- $deepseek = index . "deepseek" | default "" -}}
 {{- end -}}
+
+{{- /* 优先读取环境变量 DEEPSEEK_TOKEN，缺失则回退到已保存的值，最终为空 */ -}}
+{{- $deepseek = env "DEEPSEEK_TOKEN" | trim | default $deepseek -}}
+
 {{- if $interactive -}}
     {{- $enable = promptBool "Should add DeepSeek API token" $enable -}}
     {{- if $enable -}}
