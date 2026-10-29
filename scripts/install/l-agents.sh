@@ -79,10 +79,10 @@ install_pkg() {
     echo "==> 使用 $PM 安装 $name ($pkg) ..."
     case "$PM" in
         pnpm)
-            pnpm add -g "$pkg"
+            pnpm add -g "$pkg" --force --no-optional
             ;;
         npm)
-            npm install -g "$pkg"
+            npm install -g "$pkg" --force
             ;;
         *)
             echo "错误: 不支持的包管理器 $PM" >&2

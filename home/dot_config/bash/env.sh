@@ -31,6 +31,6 @@ if [ -d "$HOME/.pixi/bin" ]; then
 fi
 
 # pnpm global binary
-if [ -d "$HOME/.local/share/pnpm/bin" ]; then
+if command -v "pnpm" &> /dev/null; then
     export PATH="$HOME/.local/share/pnpm/bin:$PATH"
 fi
