@@ -2,11 +2,16 @@
 """Launch Claude or Copilot CLI pre-configured for the DeepSeek API.
 
 Usage:
-    ds            -> deepseek-v4-pro (default)
-    ds f | flash  -> deepseek-v4-flash
-    ds p | pro    -> deepseek-v4-pro
-    ds <name>     -> use <name> verbatim
+    ds            -> claude, deepseek-v4-pro (default)
+    ds f | flash  -> copilot, deepseek-v4-flash
+    ds p | pro    -> copilot, deepseek-v4-pro
+    ds <name>     -> copilot, use <name> verbatim
     ds --no-tmux  -> never auto-relaunch inside tmux
+
+CLI selection:
+    Passing a model argument selects copilot; running `ds` with no model
+    argument selects claude. If the preferred CLI is not installed, the other
+    one is used instead.
 
 Notes:
     When an SSH session is detected (and tmux is available), the CLI is
@@ -158,19 +163,24 @@ def relaunch_in_tmux(args: list[str]) -> int | None:
 
 
 # Model / CLI resolution
-def resolve_model(arg: str) -> str:
+def resolve_model(arg: str | None) -> str:
     """Map a user-supplied alias to a concrete model name."""
     if not arg:
         return DEFAULT_MODEL
     return MODEL_ALIASES.get(arg.lower(), arg)
 
 
-def detect_cli() -> str | None:
-    """Return 'claude' if available, else 'copilot', else None."""
-    if shutil.which("claude"):
-        return "claude"
-    if shutil.which("copilot"):
-        return "copilot"
+def detect_cli(prefer_copilot: bool) -> str | None:
+    """Return the CLI to launch, honouring the preference then falling back.
+
+    ``prefer_copilot`` is set when the user passed an explicit model, so
+    ``ds`` alone means claude while ``ds f`` means copilot. If the preferred
+    command is missing the other one is used instead.
+    """
+    order = ("copilot", "claude") if prefer_copilot else ("claude", "copilot")
+    for name in order:
+        if shutil.which(name):
+            return name
     return None
 
 
@@ -191,7 +201,6 @@ def launch_claude(token: str, model: str) -> int:
     env = os.environ.copy()
     env.setdefault("ANTHROPIC_BASE_URL", "https://api.deepseek.com/anthropic")
     env["ANTHROPIC_AUTH_TOKEN"] = token
-    env["ANTHROPIC_MODEL"] = model
 
     print(f"🚀 Launching Claude (Model: {model})...")
     return run_agent(["claude", "--model", model], env)
@@ -225,13 +234,19 @@ def ensure_utf8_stdio() -> None:
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
-        description="Launch Claude (default) or Copilot CLI with DeepSeek configuration."
+        description=(
+            "Launch Copilot CLI (when a model is given) or Claude CLI (no model) "
+            "with DeepSeek configuration."
+        )
     )
     parser.add_argument(
         "model",
         nargs="?",
-        default="pro",
-        help="Model selection: f/flash, p/pro, or custom model name (default: pro)",
+        default=None,
+        help=(
+            "Model selection: f/flash, p/pro, or custom model name "
+            "(omitting it selects claude with deepseek-v4-pro)"
+        ),
     )
     parser.add_argument(
         "--no-tmux",
@@ -248,7 +263,8 @@ def main() -> int:
     # Resolve the CLI and the token *before* hopping into tmux: a failure here is
     # then reported in the current terminal instead of inside a pane that is torn
     # down before the message can be read.
-    cli = detect_cli()
+    # An explicit model argument means copilot; a bare `ds` means claude.
+    cli = detect_cli(prefer_copilot=args.model is not None)
     if cli is None:
         print("❌ Error: Neither 'claude' nor 'copilot' command found.")
         print("Please install Copilot using: pnpm install -g @github/copilot")
