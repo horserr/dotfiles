@@ -6,8 +6,6 @@ Host work
 
     IdentityFile ~/.ssh/work
     Compression yes
-    ForwardX11 yes
-    ForwardX11Trusted yes
 
 Host robotwin
     # Tag WORK
@@ -22,9 +20,7 @@ Host robotwin
     ProxyJump work
 
     Compression yes
-    ForwardX11 yes
-    ForwardX11Trusted yes
 
-    # don't display know host warning every time
+    # don't display know host warning every time the container was rebuilt
     StrictHostKeyChecking no
     UserKnownHostsFile /dev/null
