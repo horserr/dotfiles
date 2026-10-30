@@ -1,0 +1,24 @@
+{
+  "[plaintext]": {
+    "diffEditor.ignoreTrimWhitespace": false,
+    // "editor.fontFamily": "STDongGuanTi, LXGW WenKai, jiangxizhuokai",
+    "editor.letterSpacing": 0.8,
+    "editor.lineHeight": 1.6,
+    "editor.padding.bottom": 30,
+    "editor.padding.top": 30,
+    "editor.renderWhitespace": "all",
+    "editor.tabSize": 4,
+    "editor.unicodeHighlight.allowedCharacters": {},
+    // Unicode characters that are common in allowed locales are not being highlighted.
+    "editor.unicodeHighlight.allowedLocales": {
+      "_os": true,
+      "_vscode": true,
+      "zh-cn": true
+    },
+    "editor.unicodeHighlight.ambiguousCharacters": false,
+    "editor.unicodeHighlight.invisibleCharacters": true,
+    "editor.unicodeHighlight.nonBasicASCII": false,
+    "editor.wordWrap": "on",
+    "editor.wrappingStrategy": "advanced"
+  },
+}
