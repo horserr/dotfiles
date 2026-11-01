@@ -1,14 +1,12 @@
 {
   "name": "DOTFILES",
   // Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
-  "image": "mcr.microsoft.com/devcontainers/base:resolute",
-  // "build": {
-  //   "context": "..",
-  //   "network": "host",
-  //   "args": {
-  //     "APT_MIRROR": "http://mirrors.nju.edu.cn/ubuntu/"
-  //   }
-  // },
+  // "image": "mcr.microsoft.com/devcontainers/base:resolute",
+  "dockerFile": "Containerfile",
+  "build": {
+    "context": ".."
+    // "network": "host",
+  },
 
   "runArgs": [
     // note: cannot use host network for wslc
@@ -16,9 +14,13 @@
     // "--network=host"
   ],
   "containerEnv": {
-    "GITHUB_USERNAME": "horserr",
+    "GITHUB_USERNAME": "horserr"
+  },
+  "remoteEnv": {
     "GH_TOKEN": "${localEnv:GH_TOKEN}",
-    "GITHUB_ACCESS_TOKEN": "${localEnv:GH_TOKEN}"
+    "GITHUB_ACCESS_TOKEN": "${localEnv:GH_TOKEN}",
+
+    "DEEPSEEK_TOKEN": "${localEnv:DEEPSEEK_TOKEN}"
   },
 
   // Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
@@ -48,7 +50,7 @@
         // do not need this setting for host network
         // "http.useLocalProxyConfiguration": false,
       },
-      "extensions": []
+      "extensions": ["mads-hartmann.bash-ide-vscode"]
     }
   },
 
@@ -73,11 +75,11 @@
   // has user information
   // usefule for customizations and clone private repo
   // initialize chezmoi and apply
-  "postCreateCommand": "${containerWorkspaceFolder}/.devcontainer/postCreate.sh"
+  "postCreateCommand": "${containerWorkspaceFolder}/.devcontainer/postCreate.sh",
 
   // A command to run each time the container is successfully started.
   // useful for starting daemon
-  // "postStartCommand": "",
+  "postStartCommand": "service ssh start"
 
   // A command to run each time a tool has successfully attached to the container.
   // useful for session specific settings or dev watcher, such as npm run dev

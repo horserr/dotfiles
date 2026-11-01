@@ -1,0 +1,30 @@
+# syntax=docker/dockerfile:1
+FROM mcr.microsoft.com/devcontainers/base:resolute
+
+# 1. Prevent Ubuntu from deleting downloaded packages automatically
+RUN rm -f /etc/apt/apt.conf.d/docker-clean; \
+  echo 'Binary::apt::APT::Keep-Downloaded-Packages "true";' > /etc/apt/apt.conf.d/keep-cache
+
+# 2. Use BuildKit cache mounts for both the package index and package archives
+RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
+  --mount=type=cache,target=/var/lib/apt/lists,sharing=locked \
+  apt-get update && \
+  apt-get install -y --no-install-recommends \
+  file \
+  python3 \
+  openssh-server \
+  build-essential && \
+  rm -rf /var/lib/apt/lists/*
+
+# 创建 sshd 运行目录及 root 的 .ssh 目录，并赋予正确的权限（700）
+RUN mkdir -p /var/run/sshd /root/.ssh && chmod 700 /root/.ssh
+
+RUN echo 'root:root' | chpasswd
+
+# sshd config
+# due to host network, 22 port cannot bind again
+RUN echo "PermitRootLogin yes" > /etc/ssh/sshd_config.d/root_login.conf && \
+  echo "PasswordAuthentication yes" >> /etc/ssh/sshd_config.d/root_login.conf && \
+  echo "Port 2222" >> /etc/ssh/sshd_config.d/root_login.conf
+
+EXPOSE 2222
