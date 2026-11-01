@@ -9,50 +9,15 @@
   },
   "editorMode": "vim",
   "theme": "auto",
-  "hooks": {
-    "PermissionRequest": [
-      {
-        "hooks": [
-          {
-            "type": "command",
-            "command": "bash \"$HOME/.claude/hooks/claude-notify.sh\"",
-            "timeout": 10
-          }
-        ]
+  "extraKnownMarketplaces": {
+    "dotfiles": {
+      "source": {
+        "source": "directory",
+        "path": {{ printf "%s/claude-plugins" (dir .chezmoi.sourceDir) | quote }}
       }
-    ],
-    "Notification": [
-      {
-        "hooks": [
-          {
-            "type": "command",
-            "command": "bash \"$HOME/.claude/hooks/claude-notify.sh\"",
-            "timeout": 10
-          }
-        ]
-      }
-    ],
-    "StopFailure": [
-      {
-        "hooks": [
-          {
-            "type": "command",
-            "command": "bash \"$HOME/.claude/hooks/claude-notify.sh\"",
-            "timeout": 10
-          }
-        ]
-      }
-    ],
-    "Stop": [
-      {
-        "hooks": [
-          {
-            "type": "command",
-            "command": "bash \"$HOME/.claude/hooks/claude-notify.sh\"",
-            "timeout": 10
-          }
-        ]
-      }
-    ]
+    }
+  },
+  "enabledPlugins": {
+    "ntfy-approvals@dotfiles": true
   }
 }
