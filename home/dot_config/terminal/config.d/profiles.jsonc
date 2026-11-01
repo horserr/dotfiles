@@ -22,7 +22,7 @@
         "%USERPROFILE%/.config/.dotfiles/assets/bells/Temple.wav"
       ],
       // "bellStyle": ["audible", "window"]
-      "bellStyle": ["taskbar", "window"],
+      "bellStyle": ["audible", "taskbar", "window"],
       "closeOnExit": "automatic",
       "colorScheme": {
         "dark": "Slatewave",
