@@ -161,6 +161,7 @@
         "icon": "source-control",
         "type": "bindings",
         "bindings": [
+          // c commit
           {
             "key": "c",
             "name": "commit",
@@ -169,6 +170,7 @@
             // "command": "git.commit"
             "command": "git.commitStaged"
           },
+          // m amend commit
           {
             "key": "m",
             "name": "commit amend",
@@ -176,12 +178,31 @@
             "type": "command",
             "command": "git.commitAmend"
           },
+          // a commit all
           {
             "key": "a",
             "name": "commit all",
             "icon": "arrow-down",
             "type": "command",
             "command": "git.commitAll"
+          },
+          // f fixup
+          {
+            "key": "f",
+            "name": "commit fixup",
+            "icon": "git-commit",
+            "type": "command",
+            "command": "workbench.action.tasks.runTask",
+            "args": "git: Create Fixup Commit"
+          },
+          // s squash
+          {
+            "key": "s",
+            "name": "commit squash",
+            "icon": "git-merge",
+            "type": "command",
+            "command": "workbench.action.tasks.runTask",
+            "args": "git: Create Squash Commit"
           }
           // git.commitAllAmend
           // git.commitAllAmendNoVerify
@@ -677,21 +698,13 @@
         "icon": "arrow-down",
         "type": "bindings",
         "bindings": [
-          // r rebase
+          // i interactive rebase
           {
-            "key": "r",
-            "name": "rebase",
-            "icon": "arrow-down",
-            "type": "command",
-            "command": "git.rebase"
-          },
-          // a abort rebase
-          {
-            "key": "a",
-            "name": "rebase abort",
-            "icon": "arrow-down",
-            "type": "command",
-            "command": "git.rebaseAbort"
+            "key": "i",
+            "name": "interactive rebase",
+            "icon": "git-compare",
+            "command": "workbench.action.tasks.runTask",
+            "args": "git: Interactive Rebase"
           },
           // c undo last commit
           {
@@ -700,6 +713,22 @@
             "icon": "arrow-down",
             "type": "command",
             "command": "git.undoCommit"
+          },
+          // R rebase
+          {
+            "key": "R",
+            "name": "rebase on to branch",
+            "icon": "arrow-down",
+            "type": "command",
+            "command": "git.rebase"
+          },
+          // A abort rebase
+          {
+            "key": "A",
+            "name": "rebase abort",
+            "icon": "arrow-down",
+            "type": "command",
+            "command": "git.rebaseAbort"
           },
           // f rename file
           {
