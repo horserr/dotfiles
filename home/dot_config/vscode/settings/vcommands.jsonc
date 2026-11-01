@@ -50,22 +50,12 @@
       "command": "commands.openFolder",
       "args": "${userHome}/.config/.dotfiles/"
     },
-    "Time": {
-      "command": "noop",
-      "statusBar": {
-        "alignment": "right",
-        "text": "${currentHour}:${currentMinute}:${currentSecond}",
-        "name": "current time",
-        "priority": -999,
-        "color": "var(--vscode-strongForeground)",
-        "updateEvents": [
-          {
-            "kind": "interval",
-            "value": 1000
-          }
-        ]
-      }
+
+    "Search For Selected Text": {
+      "command": "commands.openExternal",
+      "args": "https://www.google.com/search?q=${selectedText}"
     },
+
     "Reveal Line Middle": {
       "command": "revealLine",
       "args": {
@@ -87,9 +77,22 @@
         "at": "bottom"
       }
     },
-    "Search For Selected Text": {
-      "command": "commands.openExternal",
-      "args": "https://www.google.com/search?q=${selectedText}"
+
+    "Time": {
+      "command": "noop",
+      "statusBar": {
+        "alignment": "right",
+        "text": "${currentHour}:${currentMinute}:${currentSecond}",
+        "name": "current time",
+        "priority": -999,
+        "color": "var(--vscode-strongForeground)",
+        "updateEvents": [
+          {
+            "kind": "interval",
+            "value": 1000
+          }
+        ]
+      }
     },
 
     "Toggle line numbers": {
@@ -103,6 +106,51 @@
         "text": "🔢",
         "priority": -9999
       }
+    },
+
+    "Toggle Devcontainer Backend": {
+      "sequence": [
+        {
+          "command": "commands.toggleSetting",
+          "args": {
+            "setting": "dev.containers.dockerPath",
+            "value": ["docker", "wslc"]
+          }
+        },
+        {
+          "command": "commands.showNotification",
+          "args": "Switched to ${config:dev.containers.dockerPath}",
+          "delay": 50
+        }
+      ],
+      "statusBar": {
+        "alignment": "right",
+        "text": "${config:dev.containers.dockerPath}",
+        "activeEditorGlob": "**/.devcontainer/**",
+        "replaceVariableValue": {
+          "config:dev.containers.dockerPath": {
+            "\"docker\"": "🐳 docker",
+            "\"wslc\"": "🪟 wslc",
+            "else": "🐳"
+          }
+        },
+        "updateEvents": [
+          {
+            "kind": "onDidConfigurationChange",
+            "settings": ["dev.containers.dockerPath"]
+          }
+        ],
+        "priority": -2
+      }
+    },
+
+    "演示模式": {
+      "sequence": [
+        { "command": "workbench.action.selectTheme" },
+        { "command": "editor.action.toggleMinimap" },
+        { "command": "workbench.action.toggleActivityBarVisibility" }
+      ]
     }
   }
 }
+// 元素是字符串时等价于 { command: "id" }，也支持简化写法 "commands.runInTerminal?npm run watch"（? 后面当 args）。
