@@ -1,0 +1,14 @@
+{
+  // The base `nektos/act` command to be called. By default, this will be `act` (requires the binary to be on your `PATH`). If the binary is not on your `PATH`, the command should be fully qualified. If `act` is installed as a GitHub CLI extension, this command should be set to `gh act`.
+  "githubLocalActions.actCommand": "act",
+
+  // The path to your Docker Desktop executable (used for Windows and MacOS). To start Docker Engine from the `Components` view, this application will be launched. Refer to the default path based on OS:
+  //
+  // * **Windows**: `C:/Program Files/Docker/Docker/Docker Desktop.exe`
+  //
+  // * **MacOS**: `/Applications/Docker.app`
+  "githubLocalActions.dockerDesktopPath": "wslc",
+
+  // The relative path to the directory containing your workflows. By default, this will be `.github/workflows`.
+  "githubLocalActions.workflowsDirectory": ".github/workflows"
+}
