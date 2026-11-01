@@ -4,11 +4,11 @@
   "version": "2.0.0",
   "tasks": [
     {
-      "label": "git check file attribute",
+      "label": "git: Check File Attributes",
       "type": "shell",
       "command": "git",
       "args": ["check-attr", "-a", "${relativeFile}"],
-      "detail": "git check file attibutes",
+      "detail": "show the git attributes applied to the current file",
       "runOptions": {
         "instanceLimit": 1,
         "instancePolicy": "terminateOldest",
@@ -25,17 +25,17 @@
       }
     },
     {
-      "label": "git turn file executable",
+      "label": "git: Mark File Executable",
       "type": "shell",
       "command": "git",
       "args": ["update-index", "--chmod=+x", "${relativeFile}"],
-      "detail": "git make file attibutes",
+      "detail": "record the executable bit of the current file in the index",
       "runOptions": {
         "instanceLimit": 1,
         "instancePolicy": "terminateOldest",
         "runOn": "folderOpen"
       },
-      "icon": { "id": "notebook-execute-above" },
+      "icon": { "id": "play" },
       "presentation": {
         "echo": true,
         "reveal": "always",
@@ -46,17 +46,17 @@
       }
     },
     {
-      "label": "git test file is executable",
+      "label": "git: Test File Executable",
       "type": "shell",
       "command": "git",
       "args": ["is-x", "${relativeFile}"],
-      "detail": "git test file is executable or not",
+      "detail": "check whether the current file is recorded as executable",
       "runOptions": {
         "instanceLimit": 1,
         "instancePolicy": "terminateOldest",
         "runOn": "folderOpen"
       },
-      "icon": { "id": "test-view-icon" },
+      "icon": { "id": "beaker" },
       "presentation": {
         "echo": true,
         "reveal": "always",
@@ -67,11 +67,59 @@
       }
     },
     {
-      "label": "docker desktop start",
+      "label": "git: Create Fixup Commit",
+      "type": "shell",
+      "command": "git",
+      "args": ["commit", "--fixup=${input:commit}"],
+      "detail": "commit staged changes as a `fixup!` commit for the target commit; apply it later with `git: Interactive Rebase`",
+      "icon": { "id": "git-commit" },
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": true,
+        "panel": "shared",
+        "showReuseMessage": true,
+        "clear": false
+      }
+    },
+    {
+      "label": "git: Create Squash Commit",
+      "type": "shell",
+      "command": "git",
+      "args": ["commit", "--squash=${input:commit}"],
+      "detail": "commit staged changes as a `squash!` commit for the target commit; apply it later with `git: Interactive Rebase` and edit the combined message",
+      "icon": { "id": "git-merge" },
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": true,
+        "panel": "shared",
+        "showReuseMessage": true,
+        "clear": false
+      }
+    },
+    {
+      "label": "git: Interactive Rebase",
+      "type": "shell",
+      "command": "git",
+      "args": ["rebase", "--interactive", "${input:commit}"],
+      "detail": "rebase onto the target commit; `rebase.autosquash` is on, so `fixup!`/`squash!` commits are moved to their targets",
+      "icon": { "id": "git-compare" },
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": true,
+        "panel": "dedicated",
+        "showReuseMessage": true,
+        "clear": false
+      }
+    },
+    {
+      "label": "docker: Start Desktop",
       "type": "shell",
       "command": "docker",
       "args": ["desktop", "start"],
-      "detail": "start docekr desktop",
+      "detail": "start the Docker Desktop engine",
       "runOptions": {
         "instanceLimit": 1,
         "instancePolicy": "terminateOldest",
@@ -88,11 +136,11 @@
       }
     },
     {
-      "label": "docker desktop stop",
+      "label": "docker: Stop Desktop",
       "type": "shell",
       "command": "docker",
       "args": ["desktop", "stop"],
-      "detail": "stop docekr desktop",
+      "detail": "stop the Docker Desktop engine",
       "runOptions": {
         "instanceLimit": 1,
         "instancePolicy": "terminateOldest",
@@ -109,14 +157,14 @@
       }
     },
     {
-      "label": "chezmoi install",
+      "label": "chezmoi: Install",
       "type": "shell",
-      "detail": "Install chezmoi",
+      "detail": "install chezmoi (scoop on Windows, official script elsewhere)",
 
       // detect root user
       "command": "sh -c 'if [ \"$(id -u)\" -eq 0 ]; then target=\"/usr/local/bin\"; else target=\"$HOME/.local/bin\"; fi; sh -c \"$(curl -fsLS https://get.chezmoi.io)\" -- -b \"$target\"'",
 
-      "icon": { "id": "extensions-install-count" },
+      "icon": { "id": "cloud-download" },
       "windows": { "command": "scoop install chezmoi" },
       "presentation": {
         "echo": true,
@@ -128,11 +176,11 @@
       }
     },
     {
-      "label": "chezmoi init",
+      "label": "chezmoi: Init",
       "type": "shell",
       "command": "chezmoi init --source=~/.config/.dotfiles --apply horserr",
-      "detail": "chezmoi init",
-      "icon": { "id": "call-incoming" },
+      "detail": "initialize from horserr/dotfiles using this checkout as the source, then apply",
+      "icon": { "id": "repo-clone" },
       "presentation": {
         "echo": true,
         "reveal": "always",
@@ -143,11 +191,11 @@
       }
     },
     {
-      "label": "chezmoi udpate",
+      "label": "chezmoi: Update",
       "type": "shell",
       "command": "chezmoi update",
-      "detail": "chezmoi update",
-      "icon": { "id": "testing-update-profiles" },
+      "detail": "pull the source state and apply the newest changes",
+      "icon": { "id": "sync" },
       "presentation": {
         "echo": true,
         "reveal": "always",
@@ -158,11 +206,11 @@
       }
     },
     {
-      "label": "chezmoi apply",
+      "label": "chezmoi: Apply",
       "type": "shell",
       "command": "chezmoi apply",
-      "detail": "apply dotfiles modifications",
-      "icon": { "id": "ai-customization-plugin" },
+      "detail": "apply pending source changes to the target files",
+      "icon": { "id": "check" },
       "presentation": {
         "echo": true,
         "reveal": "always",
@@ -173,27 +221,12 @@
       }
     },
     {
-      "label": "update",
-      "type": "shell",
-      "command": "chezmoi update",
-      "detail": "update source state and then apply the newest change",
-      "icon": { "id": "testing-update-profiles" },
-      "presentation": {
-        "echo": true,
-        "reveal": "always",
-        "focus": true,
-        "panel": "shared",
-        "showReuseMessage": true,
-        "clear": true
-      }
-    },
-    {
-      "label": "start mouse master",
+      "label": "mousemaster: Start",
       "type": "shell",
       // "type": "process",
       "command": "start mousemaster.exe",
       // "command": "mousemaster.exe",
-      "detail": "temporarily test mouse master",
+      "detail": "start a throwaway mousemaster instance from ~/.config/mousemaster",
       "options": { "cwd": "${env:USERPROFILE}/.config/mousemaster" },
       "group": "test",
       "icon": { "id": "key" },
@@ -208,7 +241,7 @@
       }
     },
     {
-      "label": "generate project tree",
+      "label": "workspace: Project Tree",
       "type": "shell",
       "command": "tree -a",
       "windows": {
@@ -216,7 +249,7 @@
         // "command": "tree /f /a"
         "command": "Get-ChildItem -Recurse | clip"
       },
-      "detail": "generate project tree",
+      "detail": "print the project tree (Windows: copy it to the clipboard)",
       "icon": { "id": "key" },
       "presentation": {
         "echo": true,
@@ -226,6 +259,13 @@
         "showReuseMessage": true,
         "clear": false
       }
+    }
+  ],
+  "inputs": [
+    {
+      "id": "commit",
+      "type": "promptString",
+      "description": "target commit: fixup/squash target or rebase base (hash, ref or HEAD~n)"
     }
   ],
   "linux": {

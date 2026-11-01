@@ -12,85 +12,84 @@
 
   // state
   "tasks": [
-    // chezmoi edit config
     {
-      "label": "chezmoi edit config",
+      "label": "chezmoi: Edit Config",
       "type": "shell",
       "command": "chezmoi edit-config",
-      "detail": "modify chezmoi configuration",
-      "icon": { "id": "debug-configure" }
+      "detail": "open the chezmoi configuration file in the editor",
+      "icon": { "id": "gear" }
     },
     {
-      "label": "show-data",
+      "label": "chezmoi: Show Data",
       "type": "shell",
       "command": "chezmoi data | less -RFX",
-      "detail": "show chezmoi parsed data",
+      "detail": "print the data available to chezmoi templates",
       "group": "none"
     },
     {
-      "label": "execute template",
+      "label": "chezmoi: Execute Template",
       "type": "shell",
       "command": "chezmoi execute-template -f ${file} | less -RFX",
-      "detail": "execute current tmpl file",
+      "detail": "render the current .tmpl file with the current data",
       "group": "test",
       "icon": {
         "id": "chip"
       }
     },
     {
-      "label": "show-config",
+      "label": "chezmoi: Show Config",
       "type": "shell",
       "command": "chezmoi cat-config",
-      "detail": "show chezmoi parsed config file",
+      "detail": "print the parsed chezmoi configuration file",
       "group": "none"
     },
     {
-      "label": "dump-config",
+      "label": "chezmoi: Dump Config",
       "type": "shell",
       "command": "chezmoi dump-config",
-      "detail": "show all chezmoi configuration"
+      "detail": "print every resolved chezmoi configuration value"
     },
     {
-      "label": "apply without externals",
+      "label": "chezmoi: Apply (Skip Externals)",
       "type": "shell",
       "command": "chezmoi apply --exclude=externals",
-      "detail": "apply dotfiles modifications without online check externals"
+      "detail": "apply pending changes without checking or downloading externals"
     },
     {
-      "label": "doctor",
+      "label": "chezmoi: Doctor",
       "type": "shell",
       "command": "chezmoi doctor",
-      "detail": "chezmoi doctor, check environment health"
+      "detail": "check the environment for common chezmoi problems"
     },
     {
-      "label": "refresh-externals",
+      "label": "chezmoi: Refresh Externals",
       "type": "shell",
       "command": "chezmoi --refresh-externals apply",
-      "detail": "force a refresh download archives"
+      "detail": "force a re-download of external archives, then apply"
     },
     {
-      "label": "test-in-docker",
+      "label": "chezmoi: Test in Docker",
       "type": "shell",
       "command": "chezmoi docker run --rm ${input:docker} ${input:github_user}",
-      "detail": "test chezmoi in an ephemeral docker container, you can also use `docker exec` command.\n reference: https://www.chezmoi.io/reference/commands/docker"
+      "detail": "try chezmoi in a throwaway container (or use `docker exec` inside one)\nhttps://www.chezmoi.io/reference/commands/docker"
     },
     {
-      "label": "extension-list",
+      "label": "code: List Extensions",
       "type": "shell",
       "command": "code --list-extensions",
-      "detail": "show vscode extension list"
+      "detail": "list the installed VS Code extensions"
     },
-    // git force push
     {
-      "label": "git-force-push",
+      "label": "git: Force Push",
       "type": "shell",
       "command": "git push -f",
-      "detail": "git force push"
+      "detail": "force push the current branch"
     },
     {
-      "label": "Terminate All Tasks",
+      "label": "tasks: Terminate All",
       "command": "echo ${input:terminate}",
-      "type": "shell"
+      "type": "shell",
+      "detail": "kill every running task"
     }
   ],
   "presentation": {

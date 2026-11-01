@@ -1065,7 +1065,7 @@
             "icon": "debug-start",
             "type": "command",
             "command": "workbench.action.tasks.runTask",
-            "args": "docker desktop start"
+            "args": "docker: Start Desktop"
           },
           // j stop docker desktop
           {
@@ -1074,7 +1074,7 @@
             "icon": "debug-stop",
             "type": "command",
             "command": "workbench.action.tasks.runTask",
-            "args": "docker desktop stop"
+            "args": "docker: Stop Desktop"
           },
           /* X system prune
           All stopped containers.
