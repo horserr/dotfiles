@@ -1,0 +1,34 @@
+{
+	// How often (in hours) to run automatic cleanup. Set to 0 to disable scheduled cleanup.
+	"bloatCleaner.autoCleanIntervalHours": 24,
+
+	// Run cleanup automatically when VS Code starts
+	"bloatCleaner.autoCleanOnStartup": true,
+
+	// Delete cached extension VSIX downloads
+	"bloatCleaner.cleanCachedVsix": true,
+
+	// Remove older versions when the same extension is installed multiple times
+	"bloatCleaner.cleanDuplicateExtensions": true,
+
+	// Delete stale VS Code temporary entries in `/tmp` older than 1 day. `/tmp` is shared between users, so only entries owned by your own user account, not held open by any running process, and not belonging to the current session are ever removed. Sockets and lock files are never touched. If the extension cannot determine which entries are in use, it skips `/tmp` cleanup entirely. Set to `false` to leave `/tmp` alone completely.
+	"bloatCleaner.cleanTmpFiles": true,
+
+	// Delete workspace storage for workspaces that no longer exist on disk
+	"bloatCleaner.cleanWorkspaceStorage": true,
+
+	// Show a warning notification when VS Code server directory exceeds this size (GB)
+	"bloatCleaner.diskAlertThresholdGB": 3,
+
+	// Log what would be deleted without actually deleting anything
+	"bloatCleaner.dryRun": false,
+
+	// Number of VS Code server versions to keep (always keeps the currently running version)
+	"bloatCleaner.keepServerVersions": 1,
+
+	// Delete log directories older than this many days
+	"bloatCleaner.logRetentionDays": 7,
+
+	// Show VS Code server disk usage in the status bar
+	"bloatCleaner.showStatusBar": false,
+}
