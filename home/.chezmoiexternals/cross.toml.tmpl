@@ -1,6 +1,6 @@
-{{- if .needProxy }}
-
 {{- $suffix := ternary ".exe" "" .isWindows -}}
+
+{{- if .needProxy }}
 
 [{{ printf ".local/bin/mihomo%s" $suffix | quote }}]
     {{ $appVersion := list "mihomo" .chezmoi.os .chezmoi.arch "v3" | join "-" }}
@@ -17,5 +17,28 @@
 
     url = {{ gitHubLatestReleaseAssetURL "MetaCubeX/mihomo" (printf "%s-%s" $appVersion $extension) | quote }}
     path = {{ printf "%s%s" $appVersion $suffix | quote }}
+
+{{ end -}}
+
+{{/* ------------------------------------------------------------------
+     Claude Code native binary
+       claude-win32-x64.zip / claude-win32-arm64.zip
+       claude-linux-x64[-musl].tar.gz / claude-linux-arm64[-musl].tar.gz
+       claude-darwin-x64.tar.gz / claude-darwin-arm64.tar.gz
+     archive layout: claude(.exe) at archive root, so use `archive-file`
+   ------------------------------------------------------------------ */}}
+{{- if .token.enable }}
+
+{{- $extension := ternary "zip" "tar.gz" .isWindows -}}
+{{- $os := ternary "win32" .chezmoi.os .isWindows -}}
+{{- $arch := ternary "arm64" "x64" (eq .chezmoi.arch "arm64") -}}
+{{- /* Alpine 等 musl 发行版必须用 -musl 版本 */ -}}
+{{- $libc := ternary "-musl" "" (and .isLinux (ne (stat "/etc/alpine-release") nil)) -}}
+
+[{{ printf ".local/bin/claude%s" $suffix | quote }}]
+    type = "archive-file"
+    executable = true
+    url = {{ gitHubLatestReleaseAssetURL "anthropics/claude-code" (printf "claude-%s-%s%s.%s" $os $arch $libc $extension) | quote }}
+    path = {{ printf "claude%s" $suffix | quote }}
 
 {{ end -}}

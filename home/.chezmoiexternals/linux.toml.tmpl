@@ -7,13 +7,6 @@
     refreshPeriod = "168h"
 {{ end -}}
 
-{{ if lookPath "fish" -}}
-[".config/fish/functions/fisher.fish"]
-    type = "file"
-    url = "https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish"
-    executable = true
-{{ end -}}
-
 {{ if lookPath "tmux" -}}
 [".tmux/plugins/tpm"]
     type = "git-repo"
