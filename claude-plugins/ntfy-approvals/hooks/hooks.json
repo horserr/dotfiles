@@ -1,0 +1,53 @@
+{
+  "description": "Claude Code phone notifications and remote approvals over ntfy",
+  "hooks": {
+    "PermissionRequest": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "shell": "bash",
+            "command": "p=\"${CLAUDE_PLUGIN_ROOT}/scripts/ntfy_approvals.py\"; if command -v python3 >/dev/null 2>&1; then exec python3 \"$p\" approve; else exec python \"$p\" approve; fi",
+            "timeout": 360
+          }
+        ]
+      }
+    ],
+    "Notification": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "shell": "bash",
+            "command": "p=\"${CLAUDE_PLUGIN_ROOT}/scripts/ntfy_approvals.py\"; if command -v python3 >/dev/null 2>&1; then exec python3 \"$p\" notify; else exec python \"$p\" notify; fi",
+            "timeout": 30
+          }
+        ]
+      }
+    ],
+    "StopFailure": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "shell": "bash",
+            "command": "p=\"${CLAUDE_PLUGIN_ROOT}/scripts/ntfy_approvals.py\"; if command -v python3 >/dev/null 2>&1; then exec python3 \"$p\" notify; else exec python \"$p\" notify; fi",
+            "timeout": 30
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "shell": "bash",
+            "command": "p=\"${CLAUDE_PLUGIN_ROOT}/scripts/ntfy_approvals.py\"; if command -v python3 >/dev/null 2>&1; then exec python3 \"$p\" notify; else exec python \"$p\" notify; fi",
+            "timeout": 30
+          }
+        ]
+      }
+    ]
+  }
+}
