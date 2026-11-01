@@ -11,9 +11,26 @@
   "chat.defaultToCopilotHarness": false,
   "chat.editor.preferCopilotHarness": false,
 
+  // Replaces the command center search box with a unified chat and search widget.
+  "chat.unifiedAgentsBar.enabled": true,
 
   "chat.agent.maxRequests": 200,
   "chat.agent.thinking.collapsedTools": "withThinking",
+
+  // Controls whether the Open in Agents Window button is shown in the title bar.
+  "chat.titleBar.openInAgentsWindow.enabled": false,
+
+  // Controls the default permissions picker mode for new local chat sessions. You can still change the permission mode per session, and each session remembers the permission mode that was used. If enterprise policy disables auto approval, new sessions use Default Permissions.
+  //
+  // autopilot: Start new chat sessions in Autopilot mode.
+  "chat.permissions.default": "autopilot",
+
+  // When enabled, Copilot Agent Host sessions using a supported Claude model can call the provider-native Advisor tool. Changing this setting restarts the Copilot SDK client after active turns finish.
+	"chat.copilot.claudeAdvisor.enabled": false,
+
+	// Controls whether hooks from Claude configuration files can execute. When disabled, only Copilot-format hooks are used. Hooks are loaded from the files configured in `chat.hookFilesLocations`. This setting is only used by the Local agent harness.
+	"chat.useClaudeHooks": false,
+
   // default to use deepseek
   "chat.defaultModel": "Deepseek V4.1 Flash",
   "chat.disableAIFeatures": false,

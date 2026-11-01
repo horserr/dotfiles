@@ -1,0 +1,78 @@
+{
+  // Allow bypass permissions mode. Recommended only for sandboxes with no internet access.
+  "claudeCode.allowDangerouslySkipPermissions": false,
+
+  // Archive a session after this long with no activity. Sessions that are open, running, waiting for input, or unread are never archived automatically.
+  "claudeCode.archiveInactiveSessions": 14,
+
+  // Add the file that is open in the editor to your messages, and show it in the message box. When off, the file is only added along with text you select.
+  "claudeCode.attachOpenFile": true,
+
+  // Add the text you select in the editor to your messages, and show it in the message box. When off, you can still add a selection from the editor as an @-mention.
+  "claudeCode.attachSelection": true,
+
+  // Automatically save files before Claude reads or writes them.
+  "claudeCode.autosave": true,
+
+  // Executable path used to launch the Claude process.
+  "claudeCode.claudeProcessWrapper": "",
+
+  // After the window reloads or the editor restarts its extensions, a restored session continues the step that was interrupted.
+  "claudeCode.continueAfterReload": true,
+
+  // When true, never prompt for login/authentication in the extension. Used when authentication is handled externally.
+  "claudeCode.disableLoginPrompt": false,
+
+  // Use the Cmd/Ctrl+N keyboard shortcut to start a new conversation when Claude is focused.
+  "claudeCode.enableNewConversationShortcut": false,
+
+  // Use Cmd/Ctrl+Shift+T to reopen the most recently closed Claude session tab. Only intercepts the shortcut when a Claude tab was the last thing closed; otherwise falls through to VS Code's normal reopen-closed-editor behavior.
+  "claudeCode.enableReopenClosedSessionShortcut": true,
+
+  // Environment variables to set when launching Claude.
+  //
+  // Prefer setting environment variables in Claude's settings.json.
+  // See documentation: https://code.claude.com/docs/en/settings
+  "claudeCode.environmentVariables": [],
+
+  // Focus view: hide tool calls and other in-progress activity in the chat, showing only your prompts and Claude's responses. Folded activity stays one click away, and a live indicator names the tool currently running. Usually toggled from the chat input's command menu, the Claude Code: Toggle Focus view command, or its ctrl+alt+f keybinding.
+  "claudeCode.focusView": false,
+
+  // Hide the onboarding checklist in Claude Code.
+  "claudeCode.hideOnboarding": false,
+
+  // Initial permission mode for new conversations. Unset defers to the Claude Code CLI's resolved default for the session. 'manual' is an alias for 'default', the mode labeled Manual in the UI; set either to always start in Manual.
+  "claudeCode.initialPermissionMode": "",
+
+  // Lock the editor groups Claude starts for its tabs, so files you open while a Claude tab is focused go to another group instead of next to it. When off, Claude never locks an editor group. Groups that are already locked stay locked until you unlock them.
+  "claudeCode.lockEditorGroups": true,
+
+  // Where Claude opens by default. This setting updates automatically when you open Claude in a new location.
+  //  - sidebar: Sidebar (Right)
+  //  - panel: Panel (New Tab)
+  "claudeCode.preferredLocation": "panel",
+
+  // Respect .gitignore files when performing file searches. Tip: You can still filter by other exclusion patterns in .ignore when this is disabled.
+  "claudeCode.respectGitIgnore": true,
+
+  // Scroll the conversation to the bottom when you send a message. When off, the conversation stays where you left it.
+  "claudeCode.scrollToBottomOnSend": true,
+
+  // Show when each message was sent. A date line marks where the day changes.
+  "claudeCode.showMessageTimestamps": true,
+
+  // Customize the verbs shown while Claude works. Mode "append" adds your verbs to the built-in verbs. Mode "replace" shows only your verbs. With no verbs listed, Claude shows the built-in verbs.
+  "claudeCode.spinnerVerbs": {
+    "mode": "append",
+    "verbs": []
+  },
+
+  // When enabled, use Ctrl/Cmd+Enter to send prompts instead of just Enter. This allows Enter to create new lines.
+  "claudeCode.useCtrlEnterToSend": false,
+
+  // Automatically activate the workspace's Python environment when running Claude. Requires the [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python) extension.
+  "claudeCode.usePythonEnvironment": true,
+
+  // Launch Claude in the terminal instead of the native UI.
+  "claudeCode.useTerminal": false
+}
