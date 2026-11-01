@@ -32,8 +32,14 @@ from contextlib import contextmanager
 from pathlib import Path
 from urllib.parse import urlsplit
 
+_HERE = Path(__file__).resolve().parent
+if str(_HERE) not in sys.path:
+    sys.path.insert(0, str(_HERE))
+
+import qrgen
+
 NAME = "ntfy-approvals"
-VERSION = "0.2.0"
+VERSION = "0.3.0"
 
 TOPIC_RE = re.compile(r"^[A-Za-z0-9_-]{1,64}$")
 REQ_RE = re.compile(r"^[A-Za-z0-9._-]{1,64}$")
@@ -595,12 +601,17 @@ def cmd_listen() -> int:
 def cmd_topic() -> int:
     notify_topic, control_topic, base, _token = load_config()
     host = re.sub(r"^[a-z]+://", "", base)
+    link = f"ntfy://{host}/{notify_topic}"
     print(f"notify  : {base}/{notify_topic}")
     print(f"control : {base}/{control_topic}")
-    print(f"phone   : ntfy://{host}/{notify_topic}")
-    if _which("qrencode"):
-        print()
-        print(run(["qrencode", "-t", "ANSIUTF8", f"ntfy://{host}/{notify_topic}"]))
+    print(f"phone   : {link}")
+    if flag("NTFY_APPROVALS_QR", True):
+        try:
+            color = flag("NTFY_APPROVALS_QR_COLOR", sys.stdout.isatty())
+            print()
+            print(qrgen.as_text(link, color=color))
+        except ValueError as exc:  # payload longer than version 10
+            print(f"(QR skipped: {exc})")
     return 0
 
 
@@ -675,7 +686,7 @@ usage: {NAME}.py <command>
 
   notify              hook entry point (Notification / Stop / StopFailure)
   approve             hook entry point (PermissionRequest)
-  control topic       print topics and the phone link (QR if qrencode)
+  control topic       print topics and the phone link (with a QR code)
   control listen      run the relay daemon
   control send TXT    publish TXT to the control topic
   control status      print state, topics and relay status
@@ -684,6 +695,12 @@ usage: {NAME}.py <command>
 
 
 def main(argv: list[str]) -> int:
+    # Windows consoles default to a legacy code page; the QR uses U+2580.
+    try:
+        sys.stdout.reconfigure(encoding="utf-8", errors="replace")  # type: ignore[attr-defined]
+    except (AttributeError, ValueError, OSError):
+        pass
+
     if len(argv) < 2 or argv[1] in ("-h", "--help", "help"):
         print(USAGE)
         return 0

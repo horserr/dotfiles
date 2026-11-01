@@ -9,7 +9,7 @@
       "name": "ntfy-approvals",
       "source": "./ntfy-approvals",
       "description": "Phone notifications and remote approvals for Claude Code over ntfy",
-      "version": "0.2.0"
+      "version": "0.3.0"
     }
   ]
 }

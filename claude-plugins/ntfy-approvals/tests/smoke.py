@@ -26,6 +26,9 @@ from unittest import mock
 ROOT = Path(__file__).resolve().parent.parent
 SCRIPT = ROOT / "scripts" / "ntfy_approvals.py"
 
+sys.path.insert(0, str(ROOT / "scripts"))
+import qrgen
+
 
 class Recorder(http.server.BaseHTTPRequestHandler):
     payloads: list[dict] = []
@@ -105,6 +108,8 @@ class Base(unittest.TestCase):
             input=json.dumps(payload) if payload is not None else "",
             capture_output=True,
             text=True,
+            encoding="utf-8",
+            errors="replace",
             env=merged,
             timeout=timeout,
         )
@@ -135,6 +140,8 @@ class Base(unittest.TestCase):
             stdout=subprocess.PIPE,
             stderr=subprocess.PIPE,
             text=True,
+            encoding="utf-8",
+            errors="replace",
             env=merged,
         )
 
@@ -245,6 +252,13 @@ class TopicTests(Base):
         result = self.run_cli("control", "status")
         self.assertEqual(result.returncode, 0, result.stderr)
         self.assertIn("relay", result.stdout)
+
+    def test_topic_prints_qr(self):
+        result = self.run_cli("control", "topic")
+        self.assertEqual(result.returncode, 0, result.stderr)
+        self.assertTrue(any(ch in result.stdout for ch in "▀▄█"))
+        off = self.run_cli("control", "topic", env={"NTFY_APPROVALS_QR": "0"})
+        self.assertFalse(any(ch in off.stdout for ch in "▀▄█"))
 
 
 class ApproveTests(Base):
@@ -380,6 +394,53 @@ class RelayTests(Base):
     def test_handle_event_skips_non_message_events(self):
         event = {"event": "keepalive"}
         self.assertEqual(self.module.handle_event(json.dumps(event), "m4"), "m4")
+
+
+class QRTests(unittest.TestCase):
+    """Structural checks; byte-level verification lives in crosscheck_segno.py."""
+
+    def test_version_and_size(self):
+        cases = [("ab", 1), ("a" * 40, 3), ("a" * 200, 10)]
+        for payload, expected_version in cases:
+            version, level = qrgen.choose_version(payload.encode())
+            self.assertEqual(version, expected_version, payload[:8])
+            self.assertIn(level, ("L", "M"))
+            self.assertEqual(len(qrgen.make(payload)), 17 + 4 * version)
+
+    def test_finder_patterns(self):
+        matrix = qrgen.make("ntfy://example")
+        size = len(matrix)
+        for top, left in ((0, 0), (0, size - 7), (size - 7, 0)):
+            dark = sum(matrix[top + r][left + c] for r in range(7) for c in range(7))
+            self.assertEqual(dark, 33)
+
+    def test_deterministic(self):
+        self.assertEqual(
+            qrgen.make("https://ntfy.sh/x"), qrgen.make("https://ntfy.sh/x")
+        )
+
+    def test_oversized_raises(self):
+        with self.assertRaises(ValueError):
+            qrgen.make("a" * 1000)
+
+    def test_render_colored(self):
+        payload = "ntfy://x"
+        size = len(qrgen.make(payload))
+        lines = qrgen.as_text(payload).splitlines()
+        self.assertEqual(len(lines), (size + 5) // 2)
+        for line in lines:
+            self.assertTrue(line.endswith("\x1b[0m"))
+            self.assertIn("\x1b[", line)
+
+    def test_render_plain_is_ansi_free(self):
+        payload = "ntfy://x"
+        size = len(qrgen.make(payload))
+        lines = qrgen.as_text(payload, color=False).splitlines()
+        self.assertEqual(len(lines), (size + 5) // 2)
+        for line in lines:
+            self.assertNotIn("\x1b", line)
+            self.assertLessEqual(set(line), set("▀▄█ "))
+        self.assertTrue(any("█" in line for line in lines))
 
 
 if __name__ == "__main__":

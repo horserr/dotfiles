@@ -7,6 +7,8 @@ No Anthropic account, no extra server: the ntfy topic is the channel.
   through SSH and tmux) and your phone.
 - Permission prompts arrive on the phone with **Allow / Deny** buttons.
 - Topics are generated randomly on first use; nothing to configure.
+- The phone link is drawn as a **scannable QR code** in the terminal — pure
+  Python, no `qrencode`/`Pillow`, and the topic never leaves the machine.
 - Pure Python 3 standard library — no `jq`, no `curl`, nothing to install.
 
 ## Install
@@ -37,7 +39,9 @@ Or from a shell:
 python3 ~/.claude/plugins/*/ntfy-approvals/scripts/ntfy_approvals.py control topic
 ```
 
-Subscribe to the `phone:` link (`ntfy://…`) in the ntfy app.
+That prints the topics plus a QR code for the `phone:` link — scan it with the
+ntfy app and you are subscribed. Set `NTFY_APPROVALS_QR=0` to print only text
+(useful when the output goes into a log or a chat transcript).
 
 ## Run the relay
 
@@ -81,6 +85,8 @@ All optional, read from the environment (put them in `~/.claude/settings.json`
 | `NTFY_APPROVALS_TMUX`            | `0`               | `1` injects free-text replies into tmux          |
 | `NTFY_APPROVALS_TMUX_TARGET`     | current pane      | tmux target for free-text replies                |
 | `NTFY_APPROVALS_DEBUG`           | `0`               | `1` logs to `~/.claude/ntfy-approvals.log`       |
+| `NTFY_APPROVALS_QR`              | `1`               | `0` prints the link without the QR code          |
+| `NTFY_APPROVALS_QR_COLOR`        | `auto`            | Force ANSI colors on/off; `auto` = only on a TTY |
 | `NTFY_APPROVALS_STATE_DIR`       | `~/.claude`       | Where topics/decisions are stored                |
 
 ### Trade-off on blocking
@@ -104,6 +110,17 @@ python3 tests/smoke.py -v
 ```
 
 The suite starts a local HTTP server in place of ntfy, so it needs no network.
+
+Two dev-only checks exercise the QR encoder (`scripts/qrgen.py`); they need
+throwaway dependencies via `uv` and are not part of the plugin runtime:
+
+```bash
+# byte-identical matrices vs. an independent encoder (160 version/level/mask combos)
+uv run --with segno python3 tests/crosscheck_segno.py
+
+# real decoding via OpenCV, i.e. proof the symbols scan
+uv run --with opencv-python-headless --with pillow python3 tests/decode_check.py
+```
 
 ## Requirements
 
