@@ -10,7 +10,11 @@ linuxapps:
     - tssh
     - git-filter-repo
     - tmux
-    - pnpm
+    - canonical: nodejs
+      name:
+        - node
+        - npm
+        - npx
     - canonical: less
       name:
         - less
@@ -59,6 +63,7 @@ linuxapps:
     - gh
     - eza
     - btop
+    - pnpm
     - starship
     - dust # view folder size
     - act # github action local
