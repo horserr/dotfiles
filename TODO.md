@@ -1,50 +1,94 @@
 # TODO
 
-chezmoi age add ssh key settings
+fix windows terminal config reload diff
 
-remote explorer
+add apm and install skill
 
-rebuild wsl and config ssh
-ssh -G to print out everything for the config
-`ssh -G work`
+bookmark, and fix claude code in root
 
-use chezmoi to manage ssh public and private key
+learn claude code
+use spare time to dive deep into cuda and system
 
-try using vscode ssh forwarding without explicitly setting ssh agent forwarding
-try to use reverse tunnel to push git repo
+learn tmux: <https://www.trmn.sh/guides/tmux-persistent-sessions>
+learn intputrc bash keybindings and how to avoid conflict with terminal
 
-try linux gui x forwarding on windows
+learn claude code terminal setting:
+<https://code.claude.com/docs/en/terminal-config>
 
-ssh keygen
-ssh-keygen -R hostname
+also with vscode setting:
+<https://code.claude.com/docs/en/vs-code>
 
-ssh add
+add ntfy to claude code
 
-那怎么通过 ssh 在远程电脑上推送代码到托管平台上，我知道可以通过 agent forward 来实现
+systemd, journalctl
 
-```ini
-Host my-remote-server
-    HostName 192.168.1.50
-    User ubuntu
-    # Forward remote port 2222 to GitHub's SSH port 22 via your laptop
-    RemoteForward 2222 github.com:22
-```
+lastlog
+dmesg
+lastb
+last
 
-```console
-# 1. SSH into your server
-ssh my-remote-server
+understand gpu programming
 
-# 2. Go to your project folder
-cd /path/to/remote/repo
+core dump
+ssh 剪切板
+tssh
 
-# 3. Change the git remote URL to point to the forwarded port
-git remote set-url origin ssh://git@127.0.0.1:2222/username/repo.git
+ssh private keys backup using bitwarden
 
-# 4. Push your code safely
-git push origin main
-```
+fix wsl using ssh agent on windows
+
+learn rsync
+
+free server
+
+mihomo and mousemaster servy control
+
+remote display forwarding
+
+bookmark extension
+
+python debugpy cli
+
+remote explorer view
+
+use overbinding and conditional contribute to the global vspace commands
+
+reference view:
+{
+  "key": "shift+alt+h",
+  "command": "references-view.showCallHierarchy",
+  "when": "editorHasCallHierarchyProvider"
+}
+{
+  "key": "",
+  "command": "references-view.showIncomingCalls"
+}
+{
+  "key": "",
+  "command": "references-view.showOutgoingCalls"
+}
+
+vscode problem panel
 
 windows start ssh agent service
+
+ssh add environment and remote command
+send env and set env
+~/.ssh/environment
+
+git remote set-head
+git remote set-head origin -a
+git branch -u origin/新分支名
+
+git remote set-url
+
+https://gist.github.com/laispace/666dd7b27e9116faece6
+
+vscode http https proxy
+bit warden 如何保存 ssh key?
+try linux gui x forwarding on windows
+
+potplayer 设置
 
 sudo systemctl status ssh or sudo systemctl status sshd
 
@@ -58,9 +102,6 @@ Start-Service ssh-agent
 
 // note: sshd should allow AllowStreamLocalForwarding
 
-ssh settings and sftp, sshfs
-
-fix ssh key error and ssh file permission
 try nix and devbox
 
 了解 ssh server configuration
@@ -71,18 +112,12 @@ remote explorer view commands
 github codespace
 ssh wsl tunnel commands and settings
 
-where is sumatrapdf?
-
-add bookmark extensions
-
 add setting sync and cloud change
 
 fzf, yazi
 
 vscode debug
 
-ports
-add clash verge configuration
 如何区分vscode 创建的 dev container 名称
 
 learn bash
@@ -106,9 +141,7 @@ github actions automatically add star for better search.
 
 learn jq to sort and extract json file
 
-配置latex wsl 搭建
 通过 yazi 来管理文件
-之后删除 wsl。再尝试安装并使用 latex
 使用 git submodule 添加 uia 和 vd 库
 了解：https://github.com/GorvGoyl/Autohotkey-Scripts-Windows，尝试添加几个
 了解 GitHub actions 和 codespace，尝试创建 my awesome list
@@ -298,6 +331,12 @@ dowload: [textClassic Mac OS Sounds](https://alxwntr.com/classic-mac-os-sounds/#
 
 # External download scripts
 
+install mise
+
+```sh
+curl https://mise.run | sh
+```
+
 安装 azure cli
 
 ```sh
@@ -315,3 +354,26 @@ sh <(curl --proto '=https' --tlsv1.2 -L https://nixos.org/nix/install) --daemon
 ```sh
 curl -fsSL https://pixi.sh/install.sh | bash
 ```
+
+# Termux
+
+termux-setup-storage
+termux-change-repo
+
+need to auto start sshd
+
+unset http_proxy https_proxy HTTP_PROXY HTTPS_PROXY
+
+curl -I https://www.google.com
+
+pkg install vim
+pkg install tur-repo code-server
+
+vim .config/code-server/config.yml
+
+sshd
+code-server --bind-addr 127.0.0.1:8080 --auth none
+
+---
+
+ssh -N -L 8080:127.0.0.1:8080

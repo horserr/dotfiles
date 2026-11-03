@@ -1,4 +1,4 @@
-# AGENTS.md
+# CLAUDE.md
 
 Chezmoi-managed cross-platform dotfiles. Chezmoi source dir: `~/.config/.dotfiles`; source state lives in `home/` (e.g. `home/dot_config/...` → `~/.config/...`, `home/dot_foo.tmpl` → `~/.foo`). Setup steps: [README.md](README.md).
 
