@@ -1,5 +1,5 @@
 #!/bin/sh
-# copied from: https://github.com/twpayne/dotfiles/blob/master/install.sh
+# use `chezmoi generate install.sh` to generate this file
 
 set -e # -e: exit on error
 
