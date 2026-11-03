@@ -158,9 +158,6 @@
   // Prevent this computer from sleeping when remote tunnel access is turned on.
   "remote.tunnels.access.preventSleep": true,
 
-  // Enable Microsoft account authentication for agent host tunnels. When disabled, only GitHub authentication is used.
-  "remote.tunnels.access.enableMicrosoftAuth": true,
-
   /*******
    * SSH *
    *******/

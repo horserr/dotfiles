@@ -1,4 +1,5 @@
 {
+  "workbench.settings.applyToAllProfiles": [],
   "settingsSync.ignoredExtensions": ["leetcode.vscode-leetcode"],
   "settingsSync.ignoredSettings": [
     "-files.dialog.defaultPath",

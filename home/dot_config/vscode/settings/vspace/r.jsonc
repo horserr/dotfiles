@@ -5,6 +5,7 @@
     "icon": "run",
     "type": "bindings",
     "bindings": [
+      // . rerun last task
       {
         "key": ".",
         "name": "Rerun last task",
@@ -12,13 +13,31 @@
         "type": "command",
         "command": "workbench.action.tasks.reRunTask"
       },
+      // , configure task
+      {
+        "key": ",",
+        "name": "Configure task",
+        "icon": "gear",
+        "type": "command",
+        "command": "workbench.action.tasks.configureTaskRunner"
+      },
+      // space select task to run
       {
         "key": " ",
-        "name": "Run task",
+        "name": "select task",
         "icon": "play",
         "type": "command",
         "command": "workbench.action.tasks.runTask"
       },
+      // / show running task
+      {
+        "key": "/",
+        "name": "Show running tasks",
+        "icon": "checklist",
+        "type": "command",
+        "command": "workbench.action.tasks.showTasks"
+      },
+      // b run build task
       {
         "key": "b",
         "name": "Run build tasks",
@@ -26,20 +45,7 @@
         "type": "command",
         "command": "workbench.action.tasks.build"
       },
-      {
-        "key": "c",
-        "name": "Configure task runner",
-        "icon": "gear",
-        "type": "command",
-        "command": "workbench.action.tasks.configureTaskRunner"
-      },
-      {
-        "key": "g",
-        "name": "Show running tasks",
-        "icon": "checklist",
-        "type": "command",
-        "command": "workbench.action.tasks.showTasks"
-      },
+      // l show task log
       {
         "key": "l",
         "name": "Show task log",
@@ -47,27 +53,23 @@
         "type": "command",
         "command": "workbench.action.tasks.showLog"
       },
+      // t run test task
       {
-        "key": "c",
-        "name": "Compile project",
-        "icon": "gear",
-        "type": "command",
-        "command": "workbench.action.tasks.build"
-      },
-      {
-        "key": "T",
-        "name": "Test project",
+        "key": "t",
+        "name": "run test task",
         "icon": "beaker",
         "type": "command",
         "command": "workbench.action.tasks.test"
       },
+      // d terminal task
       {
-        "key": "x",
+        "key": "d",
         "name": "Terminate task",
         "icon": "trash",
         "type": "command",
         "command": "workbench.action.tasks.terminate"
       },
+      // R restart running task
       {
         "key": "R",
         "name": "Restart running task",

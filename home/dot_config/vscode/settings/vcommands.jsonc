@@ -126,7 +126,7 @@
       "statusBar": {
         "alignment": "right",
         "text": "${config:dev.containers.dockerPath}",
-        "activeEditorGlob": "**/.devcontainer/**",
+        // "activeEditorGlob": "**/.devcontainer/**",
         "replaceVariableValue": {
           "config:dev.containers.dockerPath": {
             "\"docker\"": "🐳 docker",

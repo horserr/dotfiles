@@ -498,6 +498,14 @@
         "icon": "desktop-download",
         "type": "bindings",
         "bindings": [
+          // , toggle devcontainer backend
+          {
+            "key": ",",
+            "name": "toggle devcontainer backend",
+            "icon": "device-mobile",
+            "type": "command",
+            "command": "Toggle Devcontainer Backend"
+          },
           // a attach
           {
             "key": "a",

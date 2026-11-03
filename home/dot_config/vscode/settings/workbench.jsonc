@@ -256,8 +256,7 @@
   "workbench.secondarySideBar.showLabels": false,
   "workbench.settings.alwaysShowAdvancedSettings": true,
   // SIGNIFICANT
-  "workbench.settings.applyToAllProfiles": [],
-  "workbench.settings.editor": "json",
+  "workbench.settings.editor": "ui",
   "workbench.settings.enableNaturalLanguageSearch": true,
   "workbench.settings.openDefaultKeybindings": false,
   "workbench.settings.openDefaultSettings": false,

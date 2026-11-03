@@ -1,49 +1,36 @@
 {
   "[ahk2]": {
-    "editor.defaultFormatter": "mark-wiemer.vscode-autohotkey-plus-plus"
+    "editor.defaultFormatter": "mark-wiemer.vscode-autohotkey-plus-plus",
   },
   "[html, css, json, js, ts, tsx, jsx, http]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "files.autoSave": "onWindowChange"
+    "files.autoSave": "onWindowChange",
     /* cannot set here     "editor.wordWrapColumn": 80,
     "editor.wordWrap": "bounded" // this setting file cannot display this bounded wrap effect */
   },
   "[ini][toml]": {
-    "editor.defaultFormatter": "tamasfe.even-better-toml"
-  },
-  "[json]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[jsonc]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "prettier.trailingComma": "none"
-  },
-  "[powershell]": {
-    "editor.defaultFormatter": "ms-vscode.powershell"
+    "editor.defaultFormatter": "tamasfe.even-better-toml",
   },
   "[prolog]": {
-    "editor.defaultFormatter": "AmauryRabouan.new-vsc-prolog"
+    "editor.defaultFormatter": "AmauryRabouan.new-vsc-prolog",
   },
   "[dockerfile]": {
-    "editor.defaultFormatter": "ms-azuretools.vscode-containers"
-  },
-  "[shellscript]": {
-    "editor.defaultFormatter": "mads-hartmann.bash-ide-vscode"
+    "editor.defaultFormatter": "ms-azuretools.vscode-containers",
   },
   "[rust]": {
-    "editor.defaultFormatter": "rust-lang.rust-analyzer"
+    "editor.defaultFormatter": "rust-lang.rust-analyzer",
   },
   "[snippets]": {
-    "editor.defaultFormatter": "vscode.json-language-features"
+    "editor.defaultFormatter": "vscode.json-language-features",
   },
   "[sql]": {
-    "editor.defaultFormatter": "dbcode.dbcode"
+    "editor.defaultFormatter": "dbcode.dbcode",
   },
   "[xml, wsb]": {
-    "editor.defaultFormatter": "redhat.vscode-xml"
+    "editor.defaultFormatter": "redhat.vscode-xml",
   },
   "[yaml]": {
-    "editor.defaultFormatter": "redhat.vscode-yaml"
+    "editor.defaultFormatter": "redhat.vscode-yaml",
   },
   "[log]": { "editor.wordWrap": "off" },
   /*******

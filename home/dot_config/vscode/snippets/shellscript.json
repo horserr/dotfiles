@@ -1,0 +1,336 @@
+{
+  "Bash script header": {
+    "prefix": "hdr",
+    "body": ["#!/usr/bin/env bash", "set -euo pipefail", "", "\\$0"],
+    "description": "shebang plus errexit, nounset and pipefail"
+  },
+  "Strict mode": {
+    "prefix": "strict",
+    "body": ["set -euo pipefail"],
+    "description": "enable errexit, nounset and pipefail"
+  },
+  "Shebang": {
+    "prefix": "shebang",
+    "body": ["#!/usr/bin/env ${1|bash,sh|}"],
+    "description": "shebang with interpreter choice"
+  },
+  "Shebang with arguments": {
+    "prefix": "shebangs",
+    "body": [
+      "#!/usr/bin/env ${1|-S,--split-string|} ${2|bash,sh|} ${3:argument ...}"
+    ],
+    "description": "shebang passing arguments via env -S"
+  },
+  "Main function": {
+    "prefix": "main",
+    "body": ["main() {", "  $0", "}", "", "main \"\\$@\""],
+    "description": "main function and its invocation"
+  },
+  "Function definition": {
+    "prefix": "fn",
+    "body": ["${1:name}() {", "  local ${2:arg}=\"\\$1\"", "  $0", "}"],
+    "description": "function with a local parameter"
+  },
+  "Script directory": {
+    "prefix": "dir",
+    "body": [
+      "script_dir=$(cd -- \"$(dirname -- \"\\${BASH_SOURCE[0]}\")\" && pwd)"
+    ],
+    "description": "absolute path of the script directory"
+  },
+  "Logging helpers": {
+    "prefix": "log",
+    "body": [
+      "info() { echo \"info: \\$*\"; }",
+      "warn() { echo \"warn: \\$*\" >&2; }",
+      "die()  { echo \"error: \\$*\" >&2; exit 1; }"
+    ],
+    "description": "info, warn and die helpers"
+  },
+  "Cleanup trap": {
+    "prefix": "trapclean",
+    "body": ["cleanup() {", "  :", "}", "trap cleanup EXIT"],
+    "description": "run cleanup on exit"
+  },
+  "Temporary directory": {
+    "prefix": "tmpdir",
+    "body": ["tmpdir=$(mktemp -d)", "trap 'rm -rf \"\\$tmpdir\"' EXIT"],
+    "description": "temp directory removed on exit"
+  },
+  "And operator": {
+    "prefix": "and",
+    "body": ["${1:first-expression} && ${2:second-expression}"],
+    "description": "run the second command on success"
+  },
+  "Or operator": {
+    "prefix": "or",
+    "body": ["${1:first-expression} || ${2:second-expression}"],
+    "description": "run the second command on failure"
+  },
+  "If": {
+    "prefix": "if",
+    "body": ["if ${1:condition}; then", "  ${2:command ...}", "fi"],
+    "description": "if statement"
+  },
+  "If else": {
+    "prefix": "ifel",
+    "body": [
+      "if ${1:condition}; then",
+      "  ${2:command ...}",
+      "else",
+      "  ${3:command ...}",
+      "fi"
+    ],
+    "description": "if/else statement"
+  },
+  "If numeric comparison": {
+    "prefix": "ifcmp",
+    "body": [
+      "if (( ${1:first} ${2|==,!=,<,<=,>,>=|} ${3:second} )); then",
+      "  ${4:command ...}",
+      "fi"
+    ],
+    "description": "if with an arithmetic comparison"
+  },
+  "If string comparison": {
+    "prefix": "ifstr",
+    "body": [
+      "if [[ \"${1:first}\" ${2|==,!=,=~|} \"${3:second}\" ]]; then",
+      "  ${4:command ...}",
+      "fi"
+    ],
+    "description": "if with string comparison or regex match"
+  },
+  "If empty test": {
+    "prefix": "ifempty",
+    "body": [
+      "if [[ ${1|-z,-n|} \"${2:expression}\" ]]; then",
+      "  ${3:command ...}",
+      "fi"
+    ],
+    "description": "if variable is empty (-z) or non-empty (-n)"
+  },
+  "If variable defined": {
+    "prefix": "ifdef",
+    "body": [
+      "if [[ ${1|-n,-z|} \"\\${${2:variable}+x}\" ]]; then",
+      "  ${3:command ...}",
+      "fi"
+    ],
+    "description": "if variable is defined (-n) or undefined (-z)"
+  },
+  "Command failure guard": {
+    "prefix": "ifnot",
+    "body": [
+      "if ! ${1:command}; then",
+      "  echo \"${1:command} failed\" >&2",
+      "  exit 1",
+      "fi"
+    ],
+    "description": "exit when a command fails"
+  },
+  "Case block": {
+    "prefix": "caseb",
+    "body": [
+      "case \"${1:word}\" in",
+      "  ${2:pattern}) $0 ;;",
+      "  *) echo \"unexpected: \\$1\" >&2; exit 1 ;;",
+      "esac"
+    ],
+    "description": "case statement with a fallback branch"
+  },
+  "Read lines loop": {
+    "prefix": "whileread",
+    "body": [
+      "while IFS= read -r line; do",
+      "  echo \"\\$line\"",
+      "done < \"${1:file}\""
+    ],
+    "description": "read a file line by line"
+  },
+  "While loop": {
+    "prefix": "while",
+    "body": ["while ${1:condition}; do", "  ${2:command ...}", "done"],
+    "description": "while loop"
+  },
+  "While numeric comparison": {
+    "prefix": "whilecmp",
+    "body": [
+      "while (( ${1:first} ${2|==,!=,<,<=,>,>=|} ${3:second} )); do",
+      "  ${4:command ...}",
+      "done"
+    ],
+    "description": "while loop with an arithmetic comparison"
+  },
+  "Until loop": {
+    "prefix": "until",
+    "body": ["until ${1:condition}; do", "  ${2:command ...}", "done"],
+    "description": "until loop"
+  },
+  "For over array": {
+    "prefix": "forarr",
+    "body": ["for item in \"${1:items[@]}\"; do", "  echo \"\\$item\"", "done"],
+    "description": "iterate over array elements"
+  },
+  "For numeric range": {
+    "prefix": "forrange",
+    "body": [
+      "for ${1:i} in \\$(seq ${2:1} ${3:10}); do",
+      "  ${4:command ...}",
+      "done"
+    ],
+    "description": "iterate over a numeric range"
+  },
+  "For matching files": {
+    "prefix": "forfiles",
+    "body": ["for ${1:file} in *.${2:ext}; do", "  ${3:command ...}", "done"],
+    "description": "iterate over files by extension"
+  },
+  "Array literal": {
+    "prefix": "arr",
+    "body": ["${1:arr}=(", "  \"one\"", "  \"two\"", ")"],
+    "description": "indexed array literal"
+  },
+  "Associative array": {
+    "prefix": "assoc",
+    "body": ["declare -A ${1:map}=(", "  [${2:key}]=\"${3:value}\"", ")"],
+    "description": "associative array literal"
+  },
+  "Read command output into array": {
+    "prefix": "mapfile",
+    "body": ["mapfile -t ${1:lines} < <(${2:command})"],
+    "description": "capture command output as an array"
+  },
+  "Option parsing": {
+    "prefix": "getopts",
+    "body": [
+      "while getopts \":${1:ab:}\" opt; do",
+      "  case \"\\$opt\" in",
+      "    ${2:a}) ${3:flag=1} ;;",
+      "    *) echo \"unknown option: -\\$opt\" >&2; exit 1 ;;",
+      "  esac",
+      "done",
+      "shift \\$((OPTIND - 1))"
+    ],
+    "description": "getopts loop with invalid option handling"
+  },
+  "Require command": {
+    "prefix": "has",
+    "body": [
+      "if ! command -v \"${1:command}\" >/dev/null 2>&1; then",
+      "  echo \"missing required command: ${1:command}\" >&2",
+      "  exit 1",
+      "fi"
+    ],
+    "description": "abort when a dependency is missing"
+  },
+  "Confirm prompt": {
+    "prefix": "ask",
+    "body": [
+      "read -rp \"${1:Continue?} [y/N] \" reply",
+      "[[ \\$reply =~ ^[Yy]\\$ ]] || exit 1"
+    ],
+    "description": "yes/no confirmation, exit on decline"
+  },
+  "Require root": {
+    "prefix": "root",
+    "body": [
+      "if (( EUID != 0 )); then",
+      "  echo \"this script must run as root\" >&2",
+      "  exit 1",
+      "fi"
+    ],
+    "description": "abort unless running as root"
+  },
+  "Heredoc": {
+    "prefix": "heredoc",
+    "body": ["cat <<'EOF'", "$0", "EOF"],
+    "description": "literal heredoc block"
+  },
+  "Usage function": {
+    "prefix": "usage",
+    "body": [
+      "usage() {",
+      "  cat <<EOF",
+      "Usage: \\$(basename \"\\$0\") [options]",
+      "",
+      "  -h, --help  show this help",
+      "EOF",
+      "}"
+    ],
+    "description": "usage/help function using a heredoc"
+  },
+  "Function documentation": {
+    "prefix": "doc",
+    "body": [
+      "# ${1:function_name} ${2:parameters}",
+      "# ${3:description}",
+      "#",
+      "# Output:",
+      "#   ${4:output}",
+      "#",
+      "# Return:",
+      "# - ${5:0} when ${6:all parameters are correct}",
+      "# - ${7:1} ${8:otherwise}"
+    ],
+    "description": "function header comment block"
+  },
+  "Command block with redirect": {
+    "prefix": "block",
+    "body": ["{", "  ${1:command ...}", "} ${2|> file,2> file,&> file|}"],
+    "description": "command group with redirect"
+  },
+  "Variable declaration": {
+    "prefix": "var",
+    "body": ["declare ${1:variable}=${2:value}"],
+    "description": "declare a variable"
+  },
+  "Array element assignment": {
+    "prefix": "varidx",
+    "body": ["${1:array}[${2:index}]=${3:value}"],
+    "description": "assign a single array element"
+  },
+  "Variable prepend": {
+    "prefix": "varpre",
+    "body": ["${1:variable}=${2:value}\\$${1:variable}"],
+    "description": "prepend a value to a variable"
+  },
+  "Parameter expansion": {
+    "prefix": "param",
+    "body": [
+      "\"\\${${1:variable}${2|:-,-,:=,=,:?,?,:+,+,#,%,##,%%|}${3:default}}\""
+    ],
+    "description": "default/assign/error/alternative and string trimming operators"
+  },
+  "String trim": {
+    "prefix": "trim",
+    "body": ["\"\\${${1:variable}${2|#,##,%,%%|}${3:pattern}}\""],
+    "description": "remove the shortest/longest match from the head or tail"
+  },
+  "String replace": {
+    "prefix": "strrep",
+    "body": ["sed -E 's/${1:pattern}/${2:replacement}/${3:g}'"],
+    "description": "stream replace, drop the g for the first match only"
+  },
+  "JSON query": {
+    "prefix": "json",
+    "body": ["jq '.${1:path}' ${2:file}"],
+    "description": "query a JSON file with jq"
+  },
+  "Device file": {
+    "prefix": "dev",
+    "body": ["/dev/${1|stdin,stdout,stderr,null|}"],
+    "description": "standard device path"
+  },
+  "Completion function": {
+    "prefix": "compdef",
+    "body": [
+      "_${1:cmd}_completions() {",
+      "  readarray -t COMPREPLY < <(compgen -W \"-h --help -v --version\" \"\\${COMP_WORDS[1]}\")",
+      "}",
+      "",
+      "complete -F _${1:cmd}_completions ${1:cmd}"
+    ],
+    "description": "bash completion function and registration"
+  }
+}

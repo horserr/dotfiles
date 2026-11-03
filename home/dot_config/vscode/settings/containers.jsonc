@@ -216,7 +216,8 @@
   "dev.containers.forwardWSLServices": true,
 
   // Where to write the configuration for the Git credential helper.
-  "dev.containers.gitCredentialHelperConfigLocation": "global",
+  // don't touch user git config
+  "dev.containers.gitCredentialHelperConfigLocation": "system",
 
   // Controls whether GitHub CLI login with a token from the local GitHub CLI should be enabled in the Dev Container.
   "dev.containers.githubCLILoginWithToken": true,
@@ -233,7 +234,7 @@
 
   // SIGNIFICANT
   // Optimistically attempt to start docker if the daemon is not already running.
-  "dev.containers.optimisticallyLaunchDocker": true,
+  "dev.containers.optimisticallyLaunchDocker": false,
 
   // WORKSPACE
   // link: https://code.visualstudio.com/docs/devcontainers/create-dev-container#_alternative-repository-configuration-folders

@@ -1,24 +1,45 @@
 {
   "version": "2.0.0",
-  // cd
-  // dump
-  // list: managed & ignored
-  // source-path, target-path
+  /*  chezmoi Available entry types
+  link: https://www.chezmoi.io/reference/command-line-flags/common/#available-entry-types
 
-  // purge
-  // diff
+  You can provide a list of entry types, separated by commas. Types can be preceded with no to remove them, e.g. scripts,noalways.
+
+  Type	Description
+  all	All entries
+  none	No entries
+  dirs	Directories
+  files	Files
+  remove	Removes
+  scripts	Scripts
+  symlinks	Symbolic links
+  always	Scripts that are always run
+  encrypted	Encrypted entries
+  externals	External entries
+  templates	Templates */
+
+  // secret: https://www.chezmoi.io/reference/commands/secret/
+
+  // purge: Remove chezmoi's configuration, state, and source directory, but leave the target state intact.
+  // link: https://www.chezmoi.io/reference/commands/purge/
+
+  // ssh
+  // chezmoi ssh $HOSTNAME $YOUR_GITHUB_USERNAME
+  // chezmoi ssh $HOSTNAME -- --one-shot $YOUR_GITHUB_USERNAME
+
   // forget: remove from both source and target dir
   // git
 
   // state
   "tasks": [
+    // chezmoi dump config
     {
-      "label": "chezmoi: Edit Config",
+      "label": "chezmoi: Dump Config",
       "type": "shell",
-      "command": "chezmoi edit-config",
-      "detail": "open the chezmoi configuration file in the editor",
-      "icon": { "id": "gear" }
+      "command": "chezmoi dump-config | less -RFX",
+      "detail": "print every resolved chezmoi configuration value"
     },
+    // chezmoi show data
     {
       "label": "chezmoi: Show Data",
       "type": "shell",
@@ -26,47 +47,94 @@
       "detail": "print the data available to chezmoi templates",
       "group": "none"
     },
+    // {
+    //   "label": "chezmoi: Dump",
+    //   "type": "shell",
+    //   "command": "chezmoi dump",
+    //   "detail": "print every resolved chezmoi configuration value, link: https://www.chezmoi.io/reference/commands/dump/"
+    // },
+    // {
+    //   "label": "chezmoi: Dump Vscode Settings",
+    //   "type": "shell",
+    //   "command": "chezmoi dump ~/.config/vscode/settings.json",
+    //   "detail": "print every resolved chezmoi configuration value, link: https://www.chezmoi.io/reference/commands/dump/"
+    // },
     {
       "label": "chezmoi: Execute Template",
       "type": "shell",
-      "command": "chezmoi execute-template -f ${file} | less -RFX",
-      "detail": "render the current .tmpl file with the current data",
+      "command": "chezmoi execute-template --init -f ${file} | less -RFX",
+      "detail": "render the current .tmpl file with the current data and enable init template functions. link: https://www.chezmoi.io/reference/templates/init-functions/",
       "group": "test",
       "icon": {
         "id": "chip"
       }
     },
+    // chezmoi show config
     {
-      "label": "chezmoi: Show Config",
+      "label": "chezmoi: Cat/Show Config",
       "type": "shell",
-      "command": "chezmoi cat-config",
+      "command": "chezmoi cat-config | less -RFX",
       "detail": "print the parsed chezmoi configuration file",
       "group": "none"
     },
+    // chezmoi map to target path
     {
-      "label": "chezmoi: Dump Config",
+      "label": "chezmoi: Map To Target Path",
       "type": "shell",
-      "command": "chezmoi dump-config",
-      "detail": "print every resolved chezmoi configuration value"
+      "command": "chezmoi target-path ${file}",
+      "detail": "print current file's target path",
+      "group": "none"
     },
+    // chezmoi ignore list view
+    {
+      "label": "chezmoi: ignored list view",
+      "type": "shell",
+      "command": "chezmoi ignored | less -RFX",
+      "detail": "Print the list of entries ignored by chezmoi. Option: -0, --nul-path-separator Separate paths with the NUL character instead of a newline."
+    },
+    // chezmoi ignore tree view
+    {
+      "label": "chezmoi: ignored tree view",
+      "type": "shell",
+      "command": "chezmoi ignored --tree | less -RFX",
+      "detail": "Print the tree of entries ignored by chezmoi. Option: -0, --nul-path-separator Separate paths with the NUL character instead of a newline."
+    },
+    // chezmoi managed list view
+    {
+      "label": "chezmoi: managed list view",
+      "type": "shell",
+      "command": "chezmoi managed --format json --path-style relative --include all | less -RFX",
+      "detail": "Print the list of entries managed by chezmoi. link: https://www.chezmoi.io/reference/commands/managed"
+    },
+    // chezmoi managed tree view
+    {
+      "label": "chezmoi: managed tree view",
+      "type": "shell",
+      "command": "chezmoi managed --format json --path-style relative --include all --tree | less -RFX",
+      "detail": "Print the tree of entries managed by chezmoi. link: https://www.chezmoi.io/reference/commands/managed"
+    },
+    // chezmoi apply skip external
     {
       "label": "chezmoi: Apply (Skip Externals)",
       "type": "shell",
       "command": "chezmoi apply --exclude=externals",
       "detail": "apply pending changes without checking or downloading externals"
     },
+    // chezmoi docker
     {
       "label": "chezmoi: Doctor",
       "type": "shell",
       "command": "chezmoi doctor",
       "detail": "check the environment for common chezmoi problems"
     },
+    // chezmoi refresh external
     {
       "label": "chezmoi: Refresh Externals",
       "type": "shell",
       "command": "chezmoi --refresh-externals apply",
       "detail": "force a re-download of external archives, then apply"
     },
+    // chezmoi test in docker
     {
       "label": "chezmoi: Test in Docker",
       "type": "shell",
@@ -137,6 +205,7 @@
   },
   "options": {
     "env": {
+      "VISUAL": "code --wait",
       "GITHUB_ACCESS_TOKEN": "${env:GH_TOKEN}"
     }
   }

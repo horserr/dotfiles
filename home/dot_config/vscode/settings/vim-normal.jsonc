@@ -29,10 +29,14 @@
       "before": ["g", "q"],
       "commands": ["editor.action.formatDocument"]
     },
+    // {
+    //   // goto definition aside
+    //   // original is goto definition
+    //   "before": ["g", "d"],
+    //   "commands": ["editor.action.revealDefinitionAside"]
+    // },
     {
-      // goto definition aside
-      // original is goto definition
-      "before": ["g", "d"],
+      "before": ["g", "f"],
       "commands": ["editor.action.revealDefinitionAside"]
     },
     {
@@ -45,12 +49,6 @@
       // quick fix
       "before": ["g", "."],
       "commands": ["editor.action.quickFix"]
-    },
-    {
-      // find
-      // original is go to file, but it has problem
-      "before": ["g", "f"],
-      "commands": ["actions.find"]
     },
     {
       // goto previous tab
