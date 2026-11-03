@@ -36,6 +36,14 @@
           ]
         }
       },
+      // . open dotfiles
+      {
+        "key": ".",
+        "name": "open dotfiles",
+        "icon": "go-to-file",
+        "type": "command",
+        "command": "Open dotfiles source repo"
+      },
       // r recent workspace
       {
         "key": "r",

@@ -5,7 +5,10 @@
     },
     "editor.suggest.insertMode": "replace",
     "editor.formatOnSave": false,
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+
+  "[jsonc]": {
     "prettier.trailingComma": "none"
   },
 

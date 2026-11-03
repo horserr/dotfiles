@@ -23,4 +23,4 @@ Host robotwin
 
     # don't display know host warning every time the container was rebuilt
     StrictHostKeyChecking no
-    # UserKnownHostsFile /dev/null
+    UserKnownHostsFile /dev/null

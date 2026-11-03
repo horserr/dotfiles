@@ -10,6 +10,7 @@ alias v='less -RFX'
 
 # view path
 alias vpath='printf "%s\n" ${PATH//:/ } | v'
+alias valias='alias | v'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert

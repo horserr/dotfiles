@@ -355,6 +355,14 @@
         "icon": "source-control",
         "type": "bindings",
         "bindings": [
+          // space push to
+          {
+            "key": " ",
+            "name": "push to...",
+            "icon": "arrow-up",
+            "type": "command",
+            "command": "git.pushTo"
+          },
           // p push
           {
             "key": "p",
@@ -364,13 +372,6 @@
             "command": "git.push"
           },
           // u set upstream
-          {
-            "key": "P",
-            "name": "push to",
-            "icon": "arrow-up",
-            "type": "command",
-            "command": "git.pushTo"
-          },
           {
             "key": "u",
             "name": "publish (set upstream)",
@@ -386,6 +387,15 @@
             "type": "command",
             "command": "git.pushTags"
           },
+          // F force push
+          {
+            "key": "F",
+            "name": "force push",
+            "icon": "repo-force-push",
+            "command": "workbench.action.tasks.runTask",
+            "args": "git: Force Push"
+          },
+          // , Pull
           {
             "key": ",",
             "name": "+Pull",

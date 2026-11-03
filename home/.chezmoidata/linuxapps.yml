@@ -15,7 +15,6 @@ linuxapps:
     - croc
     - git-filter-repo
     - tmux
-    - dive
     - lazydocker
     - canonical: nodejs
       name:
