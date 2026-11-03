@@ -1,3 +1,9 @@
+Host aliyun
+    Tag WORK
+    User root
+    ForwardAgent yes
+    HostName 8.134.129.146
+
 Host autodl
     Tag WORK
     User root
