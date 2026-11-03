@@ -1,4 +1,7 @@
 {{- /* ignore rules are relative to home directory(~) */ -}}
+
+.gitkeep
+
 {{ if not .isLinux }}
 .chezmoiscripts/linux/**
 .chezmoiexternals/linux.toml.tmpl

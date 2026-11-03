@@ -154,3 +154,27 @@ token.deepseek = {{ $deepseek | quote }}
     {{- else if lookPath "powershell.exe" -}}powershell.exe
     {{- end -}}
     """
+
+[warnings]
+    configFileTemplateHasChanged = true
+
+[docker]
+    command = {{ ternary "wslc" "docker" $isWindows | quote }}
+
+[diff]
+    reverse = true
+    exclude = []
+    scriptContents = true
+    {{ if $isWindows }}
+        command = "code"
+        args = ["--wait", "--diff"]
+    {{ else }}
+        {{- if lookPath "delta" }}
+            pager = "delta"
+        {{- else if lookPath "less" }}
+            pager = "less"
+            pagerArgs = "-RFX"
+        {{- else }}
+            pager = ""
+        {{- end }}
+    {{ end }}
