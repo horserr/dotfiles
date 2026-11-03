@@ -48,7 +48,6 @@ vscode-local:
   - jq-syntax-highlighting.jq-syntax-highlighting
   - karyfoundation.comment
   - kbysiec.vscode-search-everywhere
-  - mads-hartmann.bash-ide-vscode
   - marcinjachmann.vscode-eincolor
   - mark-wiemer.vscode-autohotkey-plus-plus
   - mechatroner.rainbow-csv

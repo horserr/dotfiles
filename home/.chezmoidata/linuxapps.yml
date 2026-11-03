@@ -1,15 +1,22 @@
+# link: https://terminaltrove.com/
 linuxapps:
   essential:
     - git # preinstalled git is often outdated
     - rsync
     - tldr
+    - navi
     - fzf
     - yazi
+    - broot
     - carapace
     - zoxide
     - tssh
+    # p2p file transfer
+    - croc
     - git-filter-repo
     - tmux
+    - dive
+    - lazydocker
     - canonical: nodejs
       name:
         - node
@@ -19,6 +26,12 @@ linuxapps:
       name:
         - less
         - lesskey
+    - canonical: age
+      name:
+        - age
+        - age-keygen
+    - canonical: aria2
+      name: aria2c
     # git signing key needs ssh keygen
     - canonical: openssh
       name:
@@ -56,26 +69,48 @@ linuxapps:
   network:
     - canonical: iperf
       name: iperf3
+    - canonical: hurl
+      name:
+        - hurl
+        - hurlfmt
     # - nmap doesn't exist
+    # - bandwhich
     - rclone
+    - posting
+    - restic
   extra:
     - bat
     - gh
+    - gh-dash
     - eza
     - btop
+    - nvtop
     - pnpm
+    - fnm
+    # explore docker layer
+    - dive
     - starship
-    - dust # view folder size
+    - dust # better du
+    - duf # better df
     - act # github action local
     - canonical: ipython
       name:
         - ipython
         - ipython3
+    - canonical: fastfetch
+      name:
+        - fastfetch
+        - flashfetch
     - canonical: git-delta
       name: delta
     - canonical: fd-find
       name: fd
     - jq
+    - canonical: yq
+      name:
+        - tomlq
+        - yq
+        - xq
     - canonical: ripgrep
       name: rg
   media:
@@ -99,3 +134,26 @@ linuxapps:
         - montage
         - stream
     - pandoc
+    # terminal recorder
+    - vhs
+
+# hacker:
+#   pipx install sherlock-project
+# pixi global install mitmproxy
+# └── exposed       + mitmdump, + mitmproxy, + mitmweb
+# hashcat
+# radare2
+# rustscan
+# dirsearch
+
+# llm: llmfit
+
+# benchmark: hyperfine
+
+# download
+# - yt-dlp
+# - gallery-dl
+# - monolith
+# - ffuf
+
+# monitor: goaccess
