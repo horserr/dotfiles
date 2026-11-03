@@ -1,0 +1,47 @@
+{
+  "theme": "auto",
+  "editorMode": "vim",
+
+  "max_context_tokens": 1048576,
+  "env": {
+    /* Models starting with claude-opus are mapped to deepseek-v4-pro
+    Models starting with claude-haiku or claude-sonnet are mapped to deepseek-flash
+    link: https://api-docs.deepseek.com/quick_start/agent_integrations/claude_code/#model-mapping-when-using-claude-code-or-claude-desktop-app
+    */
+
+    // deepseek token
+    "ANTHROPIC_AUTH_TOKEN": {{ .token.deepseek | quote }},
+    // deepseek url
+    "ANTHROPIC_BASE_URL": "https://api.deepseek.com/anthropic",
+    // deepseek recommend compact window
+    "CLAUDE_CODE_AUTO_COMPACT_WINDOW": "786432",
+
+    // disable telemetry and crash report
+    "CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC": "1",
+
+    // interactive /init command
+    "CLAUDE_CODE_NEW_INIT ": "1",
+
+    // deepseek thinking effort
+    "CLAUDE_EFFORT": "high",
+
+    // disable claude autoupdate, using chezmoi external to manage it
+    "DISABLE_AUTOUPDATER": "1",
+
+    "NTFY_APPROVALS_APPROVE":"0"
+  },
+  "enabledPlugins": {
+    "ntfy-approvals@dotfiles": true
+  },
+  "extraKnownMarketplaces": {
+    "dotfiles": {
+      "source": {
+        "source": "directory",
+        "path": {{ printf "%s/claude-plugins" (dir .chezmoi.sourceDir) | quote }}
+      }
+    }
+  },
+  "skipWorkflowUsageWarning": true,
+  // disable OAuth check
+  "hasCompletedOnboarding": true
+}

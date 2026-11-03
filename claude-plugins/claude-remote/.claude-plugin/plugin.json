@@ -1,0 +1,8 @@
+{
+  "name": "claude-remote",
+  "version": "0.1.0",
+  "description": "Phone notifications and remote approvals for Claude Code over ntfy: an Allow/Deny button on your lock screen for permission prompts, no Anthropic account required.",
+  "author": {
+    "name": "ASUSCosmos"
+  }
+}
