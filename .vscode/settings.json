@@ -3,6 +3,7 @@
   // "editor.glyphMargin": false,
   // "editor.lineNumbers": "interval",
 
+  "dev.containers.dockerPath": "docker",
   // catppuccin-icons list: https://github.com/catppuccin/vscode-icons/tree/main/icons/mocha
   // Files with the `spec.ts` extension will have the `typescript-test` icon.
   // "chat.disableAIFeatures": false,

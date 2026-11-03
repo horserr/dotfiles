@@ -14,7 +14,9 @@
     // "--network=host"
   ],
   "containerEnv": {
-    "GITHUB_USERNAME": "horserr"
+    "GITHUB_USERNAME": "horserr",
+    // pixi package cache (rattler); mounted as a volume below so it survives rebuilds
+    "PIXI_CACHE_DIR": "/home/vscode/.cache/rattler"
   },
   "remoteEnv": {
     "GH_TOKEN": "${localEnv:GH_TOKEN}",
@@ -26,6 +28,12 @@
   // Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
   // "remoteUser": "root"
   "remoteUser": "vscode",
+
+  // On Linux, remap the container user's UID/GID to the local user's so files created in the
+  // bind-mounted workspace keep the host ownership (no-op on Windows). Requires remoteUser to be
+  // a name (not root), the user to exist in /etc/passwd, and the local UID to be free in the image.
+  "updateRemoteUserUID": true,
+
   // change workspace folder
   "workspaceFolder": "/home/vscode/.config/.dotfiles",
   "workspaceMount": "source=${localWorkspaceFolder},target=/home/vscode/.config/.dotfiles,type=bind,consistency=cached",
@@ -33,7 +41,13 @@
   "mounts": [
     // apt Docker volume
     // "source=apt-cache-archive,target=/var/cache/apt/archives,type=volume",
-    // "source=apt-cache-lists,target=/var/lib/apt/lists,type=volume"
+    // "source=apt-cache-lists,target=/var/lib/apt/lists,type=volume",
+
+    // pixi package cache (rattler). The mount point is pre-created and chowned to vscode
+    // in the Containerfile so the named volume inherits the right ownership.
+    // NOTE: a named volume freezes the ownership it was created with, so after the UID changes
+    // (Linux host user differs) run: docker volume rm pixi-cache
+    "source=pixi-cache,target=/home/vscode/.cache/rattler,type=volume"
   ],
   // Features to add to the dev container. More info: https://containers.dev/features.
   // "features": {},
@@ -50,7 +64,7 @@
         // do not need this setting for host network
         // "http.useLocalProxyConfiguration": false,
       },
-      "extensions": ["mads-hartmann.bash-ide-vscode"]
+      "extensions": []
     }
   },
 
@@ -79,7 +93,9 @@
 
   // A command to run each time the container is successfully started.
   // useful for starting daemon
-  "postStartCommand": "service ssh start"
+  // also re-asserts the owner of ~/.cache: named volumes freeze their first ownership and
+  // updateRemoteUserUID remaps the user at start time, so the build-time chown can be stale
+  "postStartCommand": "${containerWorkspaceFolder}/.devcontainer/postStart.sh"
 
   // A command to run each time a tool has successfully attached to the container.
   // useful for session specific settings or dev watcher, such as npm run dev

@@ -16,8 +16,20 @@ RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
   build-essential && \
   rm -rf /var/lib/apt/lists/*
 
-# 创建 sshd 运行目录及 root 的 .ssh 目录，并赋予正确的权限（700）
-RUN mkdir -p /var/run/sshd /root/.ssh && chmod 700 /root/.ssh
+# 4. Pre-create the user cache dir *and* the pixi cache mount point, both owned by vscode.
+#    `~/.cache` itself must exist with the right owner: chezmoi downloads externals
+#    (e.g. .vim/autoload/plug.vim) via `mkdir ~/.cache/chezmoi`, so a root-owned
+#    ~/.cache (auto-created by Docker for a mount target, or left over from a stale
+#    volume) makes every external fail with "permission denied".
+#    Creating it here also makes a freshly created named volume mounted over
+#    ~/.cache/rattler inherit vscode ownership instead of root.
+RUN install -d -o vscode -g vscode /home/vscode/.cache && \
+  install -d -o vscode -g vscode /home/vscode/.cache/rattler
+
+# .ssh must be writable by vscode too (chezmoi applies private_dot_ssh as that user).
+RUN install -d -m 700 -o vscode -g vscode /home/vscode/.ssh
+
+RUN install -d -m 755 /var/run/sshd
 
 RUN echo 'root:root' | chpasswd
 
