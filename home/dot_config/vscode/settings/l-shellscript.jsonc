@@ -3,7 +3,7 @@
     "editor.defaultColorDecorators": "never",
     "editor.detectIndentation": false,
     "editor.insertSpaces": false,
-    "editor.defaultFormatter": "foxundermoon.shell-format",
+    "editor.defaultFormatter": "mkhl.shfmt"
   },
 
   // Custom arguments to pass to ShellCheck. Always prefer to use a `.shellcheckrc` file instead of this setting. When `shellcheck.runtime` is `wasm`, as it always is in VS Code for the Web, paths on your machine in these arguments do not resolve.
@@ -27,7 +27,7 @@
     "pr",
     "githubpr",
     "gitpr",
-    "githubcommit",
+    "githubcommit"
   ],
 
   // Configure glob patterns for excluding files and folders by ShellCheck. Glob patterns are interpreted relative to the workspace's root folder and use [picomatch](https://github.com/micromatch/picomatch#readme) syntax, which also supports extglob patterns such as `!(*.*)`.
@@ -52,7 +52,7 @@
     "**/zlogout": true,
     "**/*.zshenv": true,
     "**/zshenv": true,
-    "**/*.zsh-theme": true,
+    "**/*.zsh-theme": true
   },
 
   // The trace level the extension logs at, defaults to 'info'.
@@ -110,7 +110,7 @@
     "properties",
     "spring-boot-properties",
     "azcli",
-    "bats",
+    "bats"
   ],
 
   // shfmt -h to see detail usage, example: -p -bn -ci
@@ -130,5 +130,5 @@
   "shfmt.executablePath": "shfmt",
 
   // Format files marked `ignore` with [EditorConfig](https://editorconfig.org/)? (shfmt itself only ignores them when scanning directories.)
-  "shfmt.formatIgnored": true,
+  "shfmt.formatIgnored": true
 }

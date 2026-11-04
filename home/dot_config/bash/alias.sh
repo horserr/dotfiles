@@ -115,6 +115,7 @@ if command -v "chezmoi" &>/dev/null; then
 	alias ch="chezmoi"
 	alias cha="chezmoi apply"
 	alias chc="chezmoi cat"
+	alias chs="chezmoi status"
 
 	# link: https://www.chezmoi.io/reference/commands/diff/
 	alias chdiff="chezmoi diff"
@@ -130,6 +131,7 @@ if command -v "chezmoi" &>/dev/null; then
 
 	# link: https://www.chezmoi.io/reference/commands/merge/
 	alias chmerge="chezmoi merge"
+	alias chverify="chezmoi verify"
 
 	# normalize a path: forward slashes, no duplicate/trailing separator
 	_chstat_norm() {

@@ -11,8 +11,6 @@ linuxapps:
     - carapace
     - zoxide
     - tssh
-    # p2p file transfer
-    - croc
     - git-filter-repo
     - tmux
     - lazydocker
@@ -76,6 +74,8 @@ linuxapps:
     # - bandwhich
     - rclone
     - posting
+    # p2p file transfer
+    - croc
     - restic
   extra:
     - bat

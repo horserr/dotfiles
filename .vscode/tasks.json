@@ -1,6 +1,31 @@
 {
   "version": "2.0.0",
-  /*  chezmoi Available entry types
+  // init options:
+  // --prompt
+  // --promptBool pairs
+  // --promptChoice pairs
+  // --promptDefaults
+  // --promptInt pairs
+  // --promptMultichoice pairs
+  // --promptString pairs
+
+  // secret: https://www.chezmoi.io/reference/commands/secret/
+
+  // purge: Remove chezmoi's configuration, state, and source directory, but leave the target state intact.
+  // link: https://www.chezmoi.io/reference/commands/purge/
+
+  // ssh
+  // chezmoi ssh $HOSTNAME $YOUR_GITHUB_USERNAME
+  // chezmoi ssh $HOSTNAME -- --one-shot $YOUR_GITHUB_USERNAME
+
+  // docker
+  // chezmoi docker exec $CONTAINER_ID $YOUR_GITHUB_USERNAME
+  // chezmoi docker run -p apk alpine:latest $YOUR_GITHUB_USERNAME
+
+  // forget: remove from both source and target dir
+
+  /*
+  chezmoi Available entry types
   link: https://www.chezmoi.io/reference/command-line-flags/common/#available-entry-types
 
   You can provide a list of entry types, separated by commas. Types can be preceded with no to remove them, e.g. scripts,noalways.
@@ -17,18 +42,6 @@
   encrypted	Encrypted entries
   externals	External entries
   templates	Templates */
-
-  // secret: https://www.chezmoi.io/reference/commands/secret/
-
-  // purge: Remove chezmoi's configuration, state, and source directory, but leave the target state intact.
-  // link: https://www.chezmoi.io/reference/commands/purge/
-
-  // ssh
-  // chezmoi ssh $HOSTNAME $YOUR_GITHUB_USERNAME
-  // chezmoi ssh $HOSTNAME -- --one-shot $YOUR_GITHUB_USERNAME
-
-  // forget: remove from both source and target dir
-  // git
 
   // state
   "tasks": [
@@ -120,26 +133,12 @@
       "command": "chezmoi apply --exclude=externals",
       "detail": "apply pending changes without checking or downloading externals"
     },
-    // chezmoi docker
-    {
-      "label": "chezmoi: Doctor",
-      "type": "shell",
-      "command": "chezmoi doctor",
-      "detail": "check the environment for common chezmoi problems"
-    },
     // chezmoi refresh external
     {
       "label": "chezmoi: Refresh Externals",
       "type": "shell",
       "command": "chezmoi --refresh-externals apply",
       "detail": "force a re-download of external archives, then apply"
-    },
-    // chezmoi test in docker
-    {
-      "label": "chezmoi: Test in Docker",
-      "type": "shell",
-      "command": "chezmoi docker run --rm ${input:docker} ${input:github_user}",
-      "detail": "try chezmoi in a throwaway container (or use `docker exec` inside one)\nhttps://www.chezmoi.io/reference/commands/docker"
     },
     {
       "label": "code: List Extensions",
@@ -169,18 +168,6 @@
     "clear": true
   },
   "inputs": [
-    {
-      "id": "docker",
-      "type": "promptString",
-      "description": "please enter docker image or container",
-      "default": "Ubuntu"
-    },
-    {
-      "id": "github_user",
-      "type": "promptString",
-      "description": "please enter GitHub username",
-      "default": "horserr"
-    },
     {
       "id": "terminate",
       "type": "command",
