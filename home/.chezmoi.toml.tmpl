@@ -107,7 +107,52 @@
      Pure rendering from the values computed above.
    ------------------------------------------------------------------ */}}
 
+verbose = false
+umask = 0o22 # default is 0o02
+
+color = "auto"
+encryption = "age" # age, gpg, transparent
 sourceDir = "~/.config/.dotfiles"
+
+format = "json"
+mode = "file"
+
+interactive = {{ $interactive }}
+progress = {{ ternary true false $interactive }}
+
+useBuiltinAge = "auto"
+useBuiltinGit = "auto"
+
+{{ if lookPath "bat" }}
+    pager = "bat"
+    pagerArgs = ["--paging=never", "--style=plain"]
+{{ else if lookPath "batcat" }}
+    pager = "batcat"
+    pagerArgs = ["--paging=never", "--style=plain"]
+{{ else }}
+    pager = "$PAGER"
+{{ end }}
+
+# workingTree
+[add]
+    encrypt = false
+    # Action when secrets are found when adding files.
+    secrets = "error" # error, warning, ignore
+    # Template symlinks to source and home dirs.
+    templateSymlinks = true
+
+[age]
+    command = "age"
+    args = []
+    identities = []
+    identity = ""
+    passphrase = false
+    recipient = ""
+    recipients = []
+    recipientsFile = ""
+    recipientsFiles = []
+    suffix = ".age"
+    symmetric = false
 
 [data]
     isPersonal = {{ $isPersonal }}
@@ -146,6 +191,13 @@ token.deepseek = {{ $deepseek | quote }}
     """
     args = ["-NoProfile", "-NonInteractive", "-ExecutionPolicy", "Bypass", "-File"]
 
+[interpreters.py]
+    command = """
+    {{- if lookPath "python" -}}python
+    {{- else if lookPath "python3" -}}python3
+    {{- end -}}
+    """
+
 [cd]
     command = """
     {{- if lookPath "bash" -}}bash
@@ -154,9 +206,28 @@ token.deepseek = {{ $deepseek | quote }}
     {{- else if lookPath "powershell.exe" -}}powershell.exe
     {{- end -}}
     """
+    args = []
 
-[warnings]
-    configFileTemplateHasChanged = true
+[edit]
+    {{ if $isWindows }}
+    command = "code"
+    args = ["--wait"]
+    {{ end }}
+    # Automatically apply changes when files are saved.
+    watch = false
+    # Apply changes on exit.
+    apply = false
+    # Minimum duration for edit command.
+    minDuration = 1s
+    # 不会直接把源文件路径交给编辑器，而是创建一个指向源文件的硬链接，让编辑器编辑这个硬链接。这样做的目的是在编辑加密文件等场景下，chezmoi 可以在编辑器退出后安全地处理写回逻辑，而不影响源文件的原始路径。
+    hardlink = true
+
+[ejson]
+    key = ""
+    keyDir = ""
+
+[completion]
+    custom = true
 
 [docker]
     command = {{ ternary "wslc" "docker" $isWindows | quote }}
@@ -178,3 +249,34 @@ token.deepseek = {{ $deepseek | quote }}
             pager = ""
         {{- end }}
     {{ end }}
+
+[env]
+    DEEPSEEK_TOKEN = {{ $deepseek | quote }}
+
+[git]
+    autoAdd = false
+    autoCommit = false
+    autoPush = false
+    lfs = false
+
+[gitHub]
+    refreshPeriod = 1d
+
+[template]
+    options = ["missingkey=error"]
+
+[status]
+    exclude = []
+    pathStyle = "relative"
+
+[update]
+    apply = true
+    args = []
+    command = ""
+    recurseSubmodules = true
+
+[verify]
+    exclude = []
+
+[warnings]
+    configFileTemplateHasChanged = true

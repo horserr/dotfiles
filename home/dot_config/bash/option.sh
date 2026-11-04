@@ -1,3 +1,8 @@
+
+# ultimate private
+# umask 077
+umask 027
+
 # set -e          # 遇到任何命令执行失败（返回非0）立即退出
 # set -u          # 使用未定义的变量时报错退出
 set -o pipefail # 管道命令中只要有一个子命令失败，整个管道就视为失败

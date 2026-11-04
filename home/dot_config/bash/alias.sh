@@ -8,6 +8,9 @@ alias cd-dotfiles="cd $DOTFILES"
 # view
 alias v='less -RFX'
 
+# umask symbol
+alias umasks='umask -S'
+
 # view path
 alias vpath='printf "%s\n" ${PATH//:/ } | v'
 alias valias='alias | v'
@@ -113,14 +116,15 @@ fi
 
 if command -v "chezmoi" &>/dev/null; then
 	alias ch="chezmoi"
+	alias chcd="chezmoi cd"
 	alias cha="chezmoi apply"
 	alias chc="chezmoi cat"
+	alias che="chezmoi edit"
 	alias chs="chezmoi status"
 
 	# link: https://www.chezmoi.io/reference/commands/diff/
 	alias chdiff="chezmoi diff"
 
-	alias che="chezmoi edit"
 	alias chx="chezmoi execute-template -f"
 	alias chup="chezmoi update"
 

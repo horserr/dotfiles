@@ -3,34 +3,41 @@ export DOTFILES="$HOME/.config/.dotfiles"
 export TOKEN_FILE="$HOME/.config/bash/tokenenv.sh"
 
 if [ -f "$HOME/.local/bin/env" ]; then
-    . "$HOME/.local/bin/env"
+	. "$HOME/.local/bin/env"
 fi
 
 if [ -f "$HOME/.config/bash/tokenenv.sh" ]; then
-    source "$HOME/.config/bash/tokenenv.sh"
+	source "$HOME/.config/bash/tokenenv.sh"
 fi
 
 # add scripts dotfiles
 if [ -d "$DOTFILES/scripts" ]; then
-    export PATH="$DOTFILES/scripts:$PATH"
-    if [ -d "$DOTFILES/scripts/install" ]; then
-        export PATH="$DOTFILES/scripts/install:$PATH"
-    fi
+	export PATH="$DOTFILES/scripts:$PATH"
+	if [ -d "$DOTFILES/scripts/install" ]; then
+		export PATH="$DOTFILES/scripts/install:$PATH"
+	fi
 fi
 
 # export RUSTUP_DIST_SERVER="https://rsproxy.cn"
 # export RUSTUP_UPDATE_ROOT="https://rsproxy.cn/rustup"
 
 if [ -d "$HOME/.local/bin" ]; then
-    export PATH="$PATH:$HOME/.local/bin"
+	export PATH="$PATH:$HOME/.local/bin"
 fi
 
 # pixi global binary
 if [ -d "$HOME/.pixi/bin" ]; then
-    export PATH="$HOME/.pixi/bin:$PATH"
+	export PATH="$HOME/.pixi/bin:$PATH"
 fi
 
 # pnpm global binary
-if command -v "pnpm" &> /dev/null; then
-    export PATH="$HOME/.local/share/pnpm/bin:$PATH"
+if command -v "pnpm" &>/dev/null; then
+	export PATH="$HOME/.local/share/pnpm/bin:$PATH"
+fi
+
+# set man pager
+if command -v "bat" &>/dev/null; then
+	export MANPAGER="bat --language=man --style=plain --paging=never --strip-ansi=always"
+elif command -v "batcat" &>/dev/null; then
+	export MANPAGER="batcat --language=man --style=plain --paging=never --strip-ansi=always"
 fi
