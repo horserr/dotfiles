@@ -3,6 +3,26 @@
   // for the documentation about the tasks.json format
   "version": "2.0.0",
   "tasks": [
+    // git add current file
+    {
+      // why create this command given existing git.add vscode command
+      // because the native command cannot add unstaged files
+      "label": "git: Add Current File",
+      "type": "shell",
+      "command": "git",
+      "args": ["add", "${relativeFile}"],
+      "detail": "add current file",
+      "icon": { "id": "add" },
+      "presentation": {
+        "echo": true,
+        "reveal": "silent",
+        "focus": false,
+        "panel": "shared",
+        "showReuseMessage": true,
+        "clear": false
+      }
+    },
+    // git check file attributes
     {
       "label": "git: Check File Attributes",
       "type": "shell",
@@ -24,6 +44,7 @@
         "clear": false
       }
     },
+    // git turn file executable
     {
       "label": "git: Mark File Executable",
       "type": "shell",
@@ -45,6 +66,7 @@
         "clear": false
       }
     },
+    // git test file executable
     {
       "label": "git: Test File Executable",
       "type": "shell",
@@ -66,6 +88,7 @@
         "clear": false
       }
     },
+    // git fixup commit
     {
       "label": "git: Create Fixup Commit",
       "type": "shell",
@@ -82,6 +105,7 @@
         "clear": false
       }
     },
+    // git squash commit
     {
       "label": "git: Create Squash Commit",
       "type": "shell",
@@ -98,6 +122,7 @@
         "clear": false
       }
     },
+    // git interactive rebase
     {
       "label": "git: Interactive Rebase",
       "type": "shell",
@@ -114,6 +139,7 @@
         "clear": false
       }
     },
+    // docker desktop start
     {
       "label": "docker: Start Desktop",
       "type": "shell",
@@ -135,6 +161,7 @@
         "clear": false
       }
     },
+    // docker desktop stop
     {
       "label": "docker: Stop Desktop",
       "type": "shell",

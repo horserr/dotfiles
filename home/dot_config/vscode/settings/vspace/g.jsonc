@@ -237,8 +237,8 @@
             "key": "f",
             "name": "stage current file",
             "icon": "arrow-down",
-            "type": "command",
-            "command": "git.stage"
+            "command": "workbench.action.tasks.runTask",
+            "args": "git: Add Current File"
           },
           // space stage selected lines
           {
