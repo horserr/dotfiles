@@ -251,6 +251,26 @@
         "clear": true
       }
     },
+    // chezmoi self upgrade
+    {
+      // link: https://www.chezmoi.io/reference/commands/upgrade/
+      "label": "chezmoi: Self Upgrade",
+      "type": "shell",
+      "command": "chezmoi upgrade",
+      "detail": "downloading and installing the latest released version",
+      "icon": { "id": "arrow-circle-up" },
+      "options": {
+        "env": { "CHEZMOI_GITHUB_ACCESS_TOKEN": "${env:GH_TOKEN}" }
+      },
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": true,
+        "panel": "shared",
+        "showReuseMessage": true,
+        "clear": true
+      }
+    },
     // chezmoi apply
     {
       "label": "chezmoi: Apply",
