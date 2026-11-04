@@ -387,14 +387,14 @@
             "type": "command",
             "command": "git.pushTags"
           },
-          // F force push
-          {
-            "key": "F",
-            "name": "force push",
-            "icon": "repo-force-push",
-            "command": "workbench.action.tasks.runTask",
-            "args": "git: Force Push"
-          },
+          // // F force push
+          // {
+          //   "key": "F",
+          //   "name": "force push",
+          //   "icon": "repo-force-push",
+          //   "command": "workbench.action.tasks.runTask",
+          //   "args": "git: Force Push"
+          // },
           // , Pull
           {
             "key": ",",
