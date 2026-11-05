@@ -218,7 +218,7 @@ token.deepseek = {{ $deepseek | quote }}
     # Apply changes on exit.
     apply = false
     # Minimum duration for edit command.
-    minDuration = 1s
+    minDuration = "1s"
     # 不会直接把源文件路径交给编辑器，而是创建一个指向源文件的硬链接，让编辑器编辑这个硬链接。这样做的目的是在编辑加密文件等场景下，chezmoi 可以在编辑器退出后安全地处理写回逻辑，而不影响源文件的原始路径。
     hardlink = true
 
@@ -260,7 +260,7 @@ token.deepseek = {{ $deepseek | quote }}
     lfs = false
 
 [gitHub]
-    refreshPeriod = 1d
+    refreshPeriod = "24h"
 
 [template]
     options = ["missingkey=error"]

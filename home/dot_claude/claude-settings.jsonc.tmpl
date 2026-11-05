@@ -16,6 +16,9 @@
     // deepseek recommend compact window
     "CLAUDE_CODE_AUTO_COMPACT_WINDOW": "786432",
 
+    // default subagent model is `inherit`, which is same with selected model
+    "CLAUDE_CODE_SUBAGENT_MODEL":"sonnet",
+
     // disable telemetry and crash report
     "CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC": "1",
 
@@ -31,9 +34,28 @@
     "NTFY_APPROVALS_APPROVE":"0"
   },
   "enabledPlugins": {
-    "ntfy-approvals@dotfiles": true
+    "ntfy-approvals@dotfiles": false,
+    "document-skills@anthropic-agent-skills": true,
+    "claude-code-setup@claude-plugins-official": true,
+    "superpowers@claude-plugins-official": true,
+    "astral@astral-sh": true
+  },
+  "skillOverrides": {
+    "reverse-engineer-anything": "off"
   },
   "extraKnownMarketplaces": {
+    "claude-plugins-official": {
+      "source": {
+        "source": "github",
+        "repo": "anthropics/claude-plugins-official"
+      }
+    },
+     "astral-sh": {
+      "source": {
+        "source": "github",
+        "repo": "astral-sh/claude-code-plugins"
+      }
+    },
     "dotfiles": {
       "source": {
         "source": "directory",
