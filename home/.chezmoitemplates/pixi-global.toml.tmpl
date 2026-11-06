@@ -1,10 +1,5 @@
 version = 1
 
-[envs.ruff]
-channels = ["conda-forge"]
-dependencies = { "ruff" = "*" }
-exposed = { ruff = "ruff" }
-
 {{- if .init.install -}}
   {{- /* 1. 将 essential 和用户勾选的 extras 合并为组列表 */ -}}
   {{- $groups := list "essential" -}}
