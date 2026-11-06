@@ -4,25 +4,23 @@
 
 # If not running interactively, don't do anything
 case $- in
-    *i*) ;;
-      *) return;;
+*i*) ;;
+*) return ;;
 esac
 
 BASHROOT=~/.config/bash
 
-source $BASHROOT/option.sh
+# load order: behavior -> environment -> PATH -> completion -> prompt -> aliases/functions
+source "$BASHROOT/options.sh"
+source "$BASHROOT/env.sh"
+source "$BASHROOT/path.sh"
+source "$BASHROOT/completion.sh"
+source "$BASHROOT/prompt.sh"
+source "$BASHROOT/alias.sh"
+source "$BASHROOT/functions.sh"
+source "$BASHROOT/chezmoi.sh"
 
-# set variable identifying the chroot you work in (used in the prompt below)
-if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then
-    debian_chroot=$(cat /etc/debian_chroot)
+# platform-specific snippets
+if [ "$OS" = "Windows_NT" ]; then
+	source "$BASHROOT/windows.sh"
 fi
-
-source $BASHROOT/env.sh
-
-if [[ "$OS" == "Windows_NT" ]]; then
-    source $BASHROOT/windows.sh
-fi
-
-source $BASHROOT/alias.sh
-
-source $BASHROOT/completion.sh

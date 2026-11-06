@@ -1,8 +1,10 @@
-SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+# Load every Windows-specific snippet from windows/.
+# (globstar is enabled in options.sh)
 
-for f in $SCRIPT_DIR/windows/**/*.sh; do
-  # 确保它是一个普通文件（防止匹配到空目录）
-  if [ -f "$f" ]; then
-    source "$f"
-  fi
+_windows_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)/windows"
+
+for _windows_file in "$_windows_dir"/*.sh; do
+	[ -f "$_windows_file" ] && source "$_windows_file"
 done
+
+unset _windows_dir _windows_file
