@@ -2,12 +2,6 @@
 linuxapps:
   essential:
     - git # preinstalled git is often outdated
-    - git-lfs
-    - canonical: huggingface_hub
-      name:
-        - hf
-        - huggingface-cli
-        - tiny-agents
     - rsync
     - tldr
     - navi
@@ -56,6 +50,19 @@ linuxapps:
         - vimdiff
         - vimtutor
         - xxd
+  python:
+    - pyrefly
+    - ruff
+    - git-lfs
+    - canonical: ipython
+      name:
+        - ipython
+        - ipython3
+    - canonical: huggingface_hub
+      name:
+        - hf
+        - huggingface-cli
+        - tiny-agents
   shell:
     - shellcheck
 
@@ -98,10 +105,6 @@ linuxapps:
     - dust # better du
     - duf # better df
     - act # github action local
-    - canonical: ipython
-      name:
-        - ipython
-        - ipython3
     - canonical: fastfetch
       name:
         - fastfetch

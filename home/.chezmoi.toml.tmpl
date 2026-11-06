@@ -76,12 +76,14 @@
     {{- $_ := set $init "install" (promptBoolOnce . "init.install" "Should use install package manager and essential apps?" false) -}}
 {{- end -}}
 {{- if $init.install -}}
+    {{- $default_list := list "extra" -}}
     {{- if $isWindows -}}
         {{- $_ := set $init "extras" (concat $init.extras (list "fonts" "extra")) -}}
     {{- else if $isLinux -}}
-        {{- $_ := set $init "extras" (concat $init.extras (list "network" "build" "extra" "shell" "media")) -}}
+        {{- $_ := set $init "extras" (concat $init.extras (list "extra" "python" "network" "build" "shell" "media")) -}}
+        {{- $default_list = append $default_list "python" -}}
     {{- end -}}
-    {{- $_ := set $init "extras" (promptMultichoice "Select extra packages to install" $init.extras (list "extra")) -}}
+    {{- $_ := set $init "extras" (promptMultichoice "Select extra packages to install" $init.extras $default_list) -}}
 {{- end -}}
 
 {{- /* token 始终写出，下游模板才能安全依赖 .token.deepseek */ -}}
