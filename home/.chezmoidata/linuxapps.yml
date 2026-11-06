@@ -2,6 +2,12 @@
 linuxapps:
   essential:
     - git # preinstalled git is often outdated
+    - git-lfs
+    - canonical: huggingface_hub
+      name:
+        - hf
+        - huggingface-cli
+        - tiny-agents
     - rsync
     - tldr
     - navi
