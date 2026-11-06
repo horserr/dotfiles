@@ -1,13 +1,13 @@
 Host aliyun
-    Tag WORK
+    Tag CLOUD
     User root
-    ForwardAgent yes
     HostName 8.134.129.146
 
+    IdentityFile ~/.ssh/_default.pem
+
 Host autodl
-    Tag WORK
+    Tag CLOUD
     User root
-    ForwardAgent yes
     HostName region-9.autodl.pro
     Port 48194
     # RemoteForward 7890 127.0.0.1:7890

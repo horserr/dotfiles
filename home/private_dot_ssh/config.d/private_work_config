@@ -1,16 +1,20 @@
 Host work
-    # Tag WORK
+    Tag WORK
     User lyz
-    ForwardAgent yes
     HostName user1-system-product-name.tail46c3d6.ts.net
 
     IdentityFile ~/.ssh/work
-    Compression yes
+
+Host swork
+    Tag WORK
+    User lyz
+    HostName user-super-server.tail2513de.ts.net
+
+    IdentityFile ~/.ssh/work
 
 Host robotwin
-    # Tag WORK
+    Tag WORK
     User root
-    ForwardAgent yes
     HostName localhost
     Port 2222
 
@@ -18,8 +22,6 @@ Host robotwin
     IdentitiesOnly no
 
     ProxyJump work
-
-    Compression yes
 
     # don't display know host warning every time the container was rebuilt
     StrictHostKeyChecking no

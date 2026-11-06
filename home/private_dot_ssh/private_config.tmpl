@@ -102,6 +102,14 @@ Match tagged PLATFORM
     # ProxyCommand nc -X 5 -x 127.0.0.1:7890 %h %p
 {{ end }}
 
+Match tagged WORK
+    Compression yes
+    ForwardAgent yes
+
+Match tagged CLOUD
+    Compression yes
+    ForwardAgent yes
+
 Match final
     # try (optionally from ssh agent) keys, specified in this configuration file, without the whole set of keys (stored in ssh agent).
     IdentitiesOnly yes
