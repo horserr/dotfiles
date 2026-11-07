@@ -16,6 +16,7 @@
 .chezmoiscripts/windows/**
 .chezmoiexternals/windows.toml.tmpl
 .docker/
+.vscode/
 scoop/
 
   {{ if .isPersonal -}}
