@@ -2,12 +2,10 @@
   "defaultProfile": "{130f44eb-5af9-49db-94c5-40319671a76a}",
   "disabledProfileSources": [
     "Windows.Terminal.Azure",
-    "Windows.Terminal.Wsl",
-    "Windows.Terminal.VisualStudio",
-    "Windows.Terminal",
-    "Windows.Terminal.SSH",
-    "CanonicalGroupLimited.Ubuntu22.04LTS_79rhkp1fndgsc",
-    "CanonicalGroupLimited.Ubuntu24.04LTS_79rhkp1fndgsc"
+    "Windows.Terminal.VisualStudio"
+    // "Windows.Terminal.Wsl"
+    // "Windows.Terminal"
+    // "Windows.Terminal.SSH"
     // "Windows.Terminal.PowershellCore"
   ],
   "profiles": {
@@ -22,7 +20,7 @@
         "%USERPROFILE%/.config/.dotfiles/assets/bells/Temple.wav"
       ],
       // "bellStyle": ["audible", "window"]
-      "bellStyle": ["audible", "taskbar", "window"],
+      "bellStyle": ["taskbar", "window"],
       "closeOnExit": "automatic",
       "colorScheme": {
         "dark": "Slatewave",

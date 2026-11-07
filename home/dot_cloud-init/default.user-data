@@ -16,18 +16,15 @@ write_files:
   - path: /etc/wsl.conf
     append: true
     content: |
+      [network]
+      generateHosts = true
       [user]
       default=wsl
 
 packages:
   - openssh-server
-  - aria2c
-  - 7zip
   # - incus
 
 runcmd:
-  - curl -fsSL https://yazi-rs.github.io/builds/yazi-keyring.gpg | sudo tee /usr/share/keyrings/yazi-keyring.gpg >/dev/null
-  - echo 'deb [signed-by=/usr/share/keyrings/yazi-keyring.gpg] https://yazi-rs.github.io/builds/ stable main' | sudo tee /etc/apt/sources.list.d/yazi.list >/dev/null
-  - sudo apt install yazi
   - sh -c "$(curl -fsLS get.chezmoi.io)" -- -b /usr/local/bin
   # - chezmoi init --source=~/.config/.dotfiles --apply horserr
