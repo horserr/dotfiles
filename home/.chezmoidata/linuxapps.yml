@@ -3,17 +3,15 @@ linuxapps:
   essential:
     - git # preinstalled git is often outdated
     - rsync
+    - starship
     - tldr
-    - navi
     - fzf
     - yazi
-    - broot
     - carapace
     - zoxide
     - tssh
     - git-filter-repo
     - tmux
-    - lazydocker
     - canonical: nodejs
       name:
         - node
@@ -50,50 +48,16 @@ linuxapps:
         - vimdiff
         - vimtutor
         - xxd
-  python:
-    - pyrefly
-    - ruff
-    - git-lfs
-    - canonical: ipython
-      name:
-        - ipython
-        - ipython3
-    - canonical: huggingface_hub
-      name:
-        - hf
-        - huggingface-cli
-        - tiny-agents
-  shell:
-    - shellcheck
-
-    # original name is shfmt, additional prefix is for pixi installation
-    - canonical: go-shfmt
-      name: shfmt
-  build:
-    - canonical: cmake
-      name:
-        - ccmake
-        - cmake
-        - cpack
-        - ctest
-  network:
-    - canonical: iperf
-      name: iperf3
-    - canonical: hurl
-      name:
-        - hurl
-        - hurlfmt
-    # - nmap doesn't exist
-    # - bandwhich
-    - rclone
-    - posting
-    # p2p file transfer
-    - croc
-    - restic
   extra:
     - bat
     - gh
     - gh-dash
+    # terminal cheatsheet
+    - navi
+    # project template
+    - copier
+    - broot
+    - lazydocker
     - eza
     - btop
     - nvtop
@@ -101,7 +65,6 @@ linuxapps:
     - fnm
     # explore docker layer
     - dive
-    - starship
     - dust # better du
     - duf # better df
     - act # github action local
@@ -121,6 +84,55 @@ linuxapps:
         - xq
     - canonical: ripgrep
       name: rg
+  python:
+    - pyrefly
+    - ruff
+    - git-lfs
+    - canonical: ipython
+      name:
+        - ipython
+        - ipython3
+    - canonical: huggingface_hub
+      name:
+        - hf
+        - huggingface-cli
+        - tiny-agents
+  server:
+    # cannot install openssh server
+    - tsshd
+    - canonical: trzsz
+      name:
+        - trz
+        - trzsz
+        - tsz
+  shell:
+    - shellcheck
+
+    # original name is shfmt, additional prefix is for pixi installation
+    - canonical: go-shfmt
+      name: shfmt
+  build:
+    - canonical: cmake
+      name:
+        - ccmake
+        - cmake
+        - cpack
+        - ctest
+  network:
+    - canonical: iperf
+      name: iperf3
+    # better curl, a tool for testing http
+    - canonical: hurl
+      name:
+        - hurl
+        - hurlfmt
+    # - nmap doesn't exist
+    # - bandwhich
+    - rclone
+    - posting
+    # p2p file transfer
+    - croc
+    - restic
   media:
     - ffmpeg
     - canonical: imagemagick

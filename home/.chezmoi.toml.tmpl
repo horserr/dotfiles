@@ -76,12 +76,13 @@
     {{- $_ := set $init "install" (promptBoolOnce . "init.install" "Should use install package manager and essential apps?" false) -}}
 {{- end -}}
 {{- if $init.install -}}
-    {{- $default_list := list "extra" -}}
+    {{- $default_list := list -}}
     {{- if $isWindows -}}
         {{- $_ := set $init "extras" (concat $init.extras (list "fonts" "extra")) -}}
+        {{- $default_list = append $default_list "extra" -}}
     {{- else if $isLinux -}}
-        {{- $_ := set $init "extras" (concat $init.extras (list "extra" "python" "network" "build" "shell" "media")) -}}
-        {{- $default_list = append $default_list "python" -}}
+        {{- $_ := set $init "extras" (concat $init.extras (list "extra" "python" "server" "network" "build" "shell" "media")) -}}
+        {{- $default_list = concat $default_list (list "python" "server") -}}
     {{- end -}}
     {{- $_ := set $init "extras" (promptMultichoice "Select extra packages to install" $init.extras $default_list) -}}
 {{- end -}}
