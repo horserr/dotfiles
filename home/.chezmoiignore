@@ -21,8 +21,6 @@ scoop/
   {{ if .isPersonal -}}
   .cloud-init/
   .ideavimrc
-  .wslconfig
-  .ideavimrc
   {{- end }}
 {{- end -}}
 

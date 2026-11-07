@@ -141,6 +141,18 @@ $mappings = @{
     desc   = "auto dark mode Settings"
   }
 
+  # wslc
+  "$env:LOCALAPPDATA\wslc\settings.yaml" = @{
+    target = "$dotConfigPath\wsl\wslc.yml"
+    desc   = "wslc settings"
+  }
+
+  # wsl config
+  "$env:HOMEPATH\.wslconfig" = @{
+    target = "$dotConfigPath\wsl\wsl.conf"
+    desc   = "wsl settings"
+  }
+
   # VSCode Settings
   "$env:APPDATA\Code\User\settings.json" = @{
     target = "$dotConfigPath\vscode\settings.json"

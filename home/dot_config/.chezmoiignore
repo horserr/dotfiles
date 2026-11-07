@@ -19,7 +19,7 @@ powershell/
 mousemaster/
 auto-dark-mode/
 terminal/
-
+wsl/
 {{ end }}
 
 {{ if not .needProxy }}
