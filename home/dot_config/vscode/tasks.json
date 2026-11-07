@@ -22,6 +22,56 @@
         "clear": false
       }
     },
+    // git add current folder
+    {
+      "label": "git: Add Current Folder",
+      "type": "shell",
+      "command": "git",
+      "args": ["add", "${relativeFileDirname}"],
+      "detail": "add current folder",
+      "icon": { "id": "add" },
+      "presentation": {
+        "echo": true,
+        "reveal": "silent",
+        "focus": false,
+        "panel": "shared",
+        "showReuseMessage": true,
+        "clear": false
+      }
+    },
+    // git add all deleted files
+    {
+      "label": "git: Add Deleted Files",
+      "type": "shell",
+      "command": "git rm $(git ls-files --deleted)",
+      "detail": "add all deleted files",
+      "icon": { "id": "notebook-delete-cell" },
+      "presentation": {
+        "echo": true,
+        "reveal": "silent",
+        "focus": false,
+        "panel": "shared",
+        "showReuseMessage": true,
+        "clear": false
+      }
+    },
+    // git add all
+    {
+      "label": "git: Add All",
+      "type": "shell",
+      "command": "git",
+      "args": ["add", "-A"],
+      "detail": "add all",
+      "icon": { "id": "add" },
+      "presentation": {
+        "echo": true,
+        "reveal": "silent",
+        "focus": false,
+        "panel": "shared",
+        "showReuseMessage": true,
+        "clear": false
+      }
+    },
     // git check file attributes
     {
       "label": "git: Check File Attributes",

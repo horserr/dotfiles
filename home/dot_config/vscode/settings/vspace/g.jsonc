@@ -240,6 +240,14 @@
             "command": "workbench.action.tasks.runTask",
             "args": "git: Add Current File"
           },
+          // . add current folder
+          {
+            "key": ".",
+            "name": "stage current folder",
+            "icon": "folder-active",
+            "command": "workbench.action.tasks.runTask",
+            "args": "git: Add Current Folder"
+          },
           // space stage selected lines
           {
             "key": " ",
@@ -268,13 +276,14 @@
                 "key": "a",
                 "name": "stage all files, tracked and untracked",
                 "icon": "check-all",
-                "type": "commands",
-                "commands": ["git.stageAllTracked", "git.stageAllUntracked"]
+                "command": "workbench.action.tasks.runTask",
+                "args": "git: Add All"
               },
-              // t space stage all tracked
+              // t stage all tracked
               {
+                // this command is equivalent to `git add -u` udpate
                 "key": "t",
-                "name": "stage all tracked files",
+                "name": "stage all tracked files (update)",
                 "icon": "arrow-down",
                 "type": "command",
                 "command": "git.stageAllTracked"
@@ -286,6 +295,15 @@
                 "icon": "arrow-down",
                 "type": "command",
                 "command": "git.stageAllUntracked"
+              },
+              // d stage deleted
+              {
+                "key": "d",
+                "name": "stage all deleted files",
+                "icon": "notebook-delete-cell",
+                "type": "command",
+                "command": "workbench.action.tasks.runTask",
+                "args": "git: Add Deleted Files"
               },
               // stage all merged-conflicting files
               {
