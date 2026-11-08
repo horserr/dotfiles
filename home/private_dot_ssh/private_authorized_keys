@@ -1,1 +1,4 @@
+ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKbDgXZvXd3FVAE9412NW4NeMzZzGnx0CDEAg9aYejg5 this is the default key for general purpose
+{{ if .isRemote -}}
 ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDuq+E0T32wVSjOLy1whVx7bVylUssRkpEbr/JzBxmWv work: for connecting HKU remote workstation
+{{ end -}}
