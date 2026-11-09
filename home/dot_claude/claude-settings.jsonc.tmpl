@@ -3,7 +3,9 @@
   "editorMode": "vim",
 
   "max_context_tokens": 1048576,
+
   "env": {
+    "CLAUDE_CODE_AUTO_MODE_SERVER": "0",
     /* Models starting with claude-opus are mapped to deepseek-v4-pro
     Models starting with claude-haiku or claude-sonnet are mapped to deepseek-flash
     link: https://api-docs.deepseek.com/quick_start/agent_integrations/claude_code/#model-mapping-when-using-claude-code-or-claude-desktop-app
@@ -34,12 +36,19 @@
     "NTFY_APPROVALS_APPROVE":"0"
   },
   "enabledPlugins": {
-    "ntfy-approvals@dotfiles": false,
-    "document-skills@anthropic-agent-skills": true,
-    "claude-code-setup@claude-plugins-official": true,
-    "superpowers@claude-plugins-official": true,
+    "agent-sdk-dev@claude-plugins-official": true,
     "astral@astral-sh": true,
-    "agents-research@buildwithclaude": true
+    "claude-code-setup@claude-plugins-official": true,
+    "claude-md-management@claude-plugins-official": true,
+    "code-review@claude-plugins-official": true,
+    "context7@claude-plugins-official": true,
+    "document-skills@anthropic-agent-skills": true,
+    "frontend-design@claude-plugins-official": true,
+    "github@claude-plugins-official": true,
+    "ntfy-approvals@dotfiles": false,
+    "plugin-dev@claude-plugins-official": true,
+    "skill-creator@claude-plugins-official": true,
+    "superpowers@claude-plugins-official": true
   },
   "skillOverrides": {
     "reverse-engineer-anything": "off"
@@ -61,6 +70,12 @@
       "source": {
         "source": "github",
         "repo": "davepoon/buildwithclaude"
+      }
+    },
+     "voltagent-subagents": {
+      "source": {
+        "source": "github",
+        "repo": "VoltAgent/awesome-claude-code-subagents"
       }
     },
     "dotfiles": {
