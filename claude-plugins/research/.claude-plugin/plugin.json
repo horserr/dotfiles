@@ -1,0 +1,17 @@
+{
+  "name": "research",
+  "version": "0.1.0",
+  "description": "Research partner for Claude Code, aimed at machine learning, robotics, and embodied-AI research: a five-agent research team, evidence-first literature workflows, paper fetching with real BibTeX and per-claim locators, research-gap discovery, planning, structured research memory, and session hooks.",
+  "author": {
+    "name": "Horserr"
+  },
+  "license": "MIT",
+  "keywords": [
+    "research",
+    "literature-review",
+    "paper-reading",
+    "citations",
+    "research-planning",
+    "multi-agent"
+  ]
+}

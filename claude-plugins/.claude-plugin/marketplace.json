@@ -10,6 +10,12 @@
       "source": "./ntfy-approvals",
       "description": "Phone notifications and remote approvals for Claude Code over ntfy",
       "version": "0.3.0"
+    },
+    {
+      "name": "research",
+      "source": "./research",
+      "description": "Research partner: five-agent research team, evidence-first literature workflows, paper fetching with real BibTeX and per-claim locators, research-gap discovery, planning, and structured research memory",
+      "version": "0.1.0"
     }
   ]
 }
