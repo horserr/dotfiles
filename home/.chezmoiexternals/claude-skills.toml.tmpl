@@ -1,0 +1,29 @@
+{{/* code: language=toml */}}
+
+{{/* ------------------------------------------------------------------
+     Typst agent skills — https://github.com/apcamargo/typst-skills
+       - typst-author   : general-purpose Typst authoring (docs mirror)
+       - touying-author : Touying slide decks (docs + examples)
+     The repo has no tagged releases, so track `main` and refresh monthly.
+     Archive layout is `typst-skills-main/<skill>/...`, hence stripComponents = 2,
+     and `include` patterns are matched against the *unstripped* member names.
+   ------------------------------------------------------------------ */}}
+
+{{- $repo := "https://github.com/apcamargo/typst-skills" -}}
+{{- $url := printf "%s/archive/refs/heads/main.tar.gz" $repo -}}
+{{- $top := "typst-skills-main" -}}
+{{- $skills := list "typst-author" "touying-author" -}}
+
+{{ range $skill := $skills -}}
+[{{ printf ".claude/skills/%s" $skill | quote }}]
+  type = "archive"
+  url = {{ $url | quote }}
+  exact = true
+  stripComponents = 2
+  refreshPeriod = "672h"
+  include = [
+    {{ printf "%s/%s" $top $skill | quote }},
+    {{ printf "%s/%s/**" $top $skill | quote }},
+  ]
+
+{{ end -}}
