@@ -1,4 +1,30 @@
 {
+  // relative setting: search.exclude
+  "files.exclude": {
+    "**/__pycache__": true,
+    "**/.DS_Store": true,
+    "**/.git": true,
+    "**/.hg": true,
+    "**/.idea": true,
+    "**/.svn": true,
+    "**/Thumbs.db": true
+  },
+
+  // SIGNIFICANT WORKSPACE
+  "files.watcherExclude": {
+    "**/.git/objects/**": true,
+    "**/.git/subtree-cache/**": true,
+    "**/.pixi/envs/**": true,
+    "**/.venv/**": true,
+    "**/node_modules/*/**": true,
+    "**/venv/**": true
+  },
+  // WORKSPACE
+  "files.readonlyExclude": {},
+  "files.readonlyInclude": {},
+  // WORKSPACE Configure extra paths to watch for changes inside the workspace. By default, all workspace folders will be watched recursively, except for folders that are symbolic links. You can explicitly add absolute or relative paths to support watching folders that are symbolic links. Relative paths will be resolved to an absolute path using the currently opened workspace.
+  "files.watcherInclude": [],
+
   // WORKSPACE
   "files.associations": {
     ".chezmoiignore": "gitignore",
@@ -21,42 +47,17 @@
   "files.enableTrash": true,
   "files.encoding": "utf8",
   "files.eol": "\n",
-  // WORKSPACE SIGNIFICANT
-  "files.exclude": {
-    "**/__pycache__": true,
-    "**/.DS_Store": true,
-    "**/.git": true,
-    "**/.hg": true,
-    "**/.idea": true,
-    "**/.svn": true,
-    "**/.venv": true,
-    "**/Thumbs.db": true
-  },
   // SIGNIFICANT
   "files.hotExit": "onExitAndWindowClose",
   // formatting
   "files.insertFinalNewline": true,
   // SIGNIFICANT Timeout in milliseconds after which file participants for create, rename, and delete are cancelled. Use `0` to disable participants.
   "files.participants.timeout": 60000,
-  "files.readonlyExclude": {},
   "files.readonlyFromPermissions": true,
-  // WORKSPACE
-  "files.readonlyInclude": {},
   "files.saveConflictResolution": "askUser",
   "files.simpleDialog.enable": true,
   "files.trimFinalNewlines": true,
   // formatting
   "files.trimTrailingWhitespace": true,
   "files.trimTrailingWhitespaceInRegexAndStrings": true,
-  // SIGNIFICANT WORKSPACE
-  "files.watcherExclude": {
-    "**/.git/objects/**": true,
-    "**/.git/subtree-cache/**": true,
-    "**/.pixi/envs/**": true,
-    "**/.venv/**": true,
-    "**/node_modules/*/**": true,
-    "**/venv/**": true
-  },
-  // WORKSPACE Configure extra paths to watch for changes inside the workspace. By default, all workspace folders will be watched recursively, except for folders that are symbolic links. You can explicitly add absolute or relative paths to support watching folders that are symbolic links. Relative paths will be resolved to an absolute path using the currently opened workspace.
-  "files.watcherInclude": []
 }

@@ -2,16 +2,22 @@
   "search.actionsPosition": "auto",
   "search.collapseResults": "auto",
   "search.defaultViewMode": "tree",
+
+  // WORKSAPCE setting
+  "search.useIgnoreFiles": true,
+  // relative settings: files.exclude
   "search.exclude": {
     "**/.git": true,
     "**/.idea": true,
     "**/.pixi/envs": true,
+    "**/.venv": true,
     "**/.svn": true,
     "**/*.code-search": true,
     "**/bower_components": true,
     "**/build": true,
     "**/tmp": true
   },
+
   "search.experimental.closedNotebookRichContentResults": true,
   "search.followSymlinks": false,
   "search.mode": "view",
@@ -35,8 +41,6 @@
   "search.smartCase": true,
   "search.sortOrder": "modified",
   "search.useGlobalIgnoreFiles": true,
-  // WORKSAPCE setting
-  "search.useIgnoreFiles": true,
   "search.useParentIgnoreFiles": true,
   "search.useReplacePreview": true
 }
