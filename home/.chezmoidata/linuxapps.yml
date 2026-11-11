@@ -17,6 +17,11 @@ linuxapps:
         - node
         - npm
         - npx
+    - canonical: codex
+      name:
+        - codex
+        - codex-code-mode-host
+        - codex-exec-server
     - canonical: less
       name:
         - less
@@ -38,16 +43,17 @@ linuxapps:
         - ssh-keygen
         - ssh-keyscan
         - sshd
-    - canonical: vim
-      name:
-        - ex
-        - rview
-        - rvim
-        - view
-        - vim
-        - vimdiff
-        - vimtutor
-        - xxd
+    - neovim
+    # - canonical: vim
+    #   name:
+    #     - ex
+    #     - rview
+    #     - rvim
+    #     - view
+    #     - vim
+    #     - vimdiff
+    #     - vimtutor
+    #     - xxd
   extra:
     - bat
     - gh

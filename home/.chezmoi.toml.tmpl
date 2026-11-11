@@ -82,7 +82,7 @@
         {{- $default_list = append $default_list "extra" -}}
     {{- else if $isLinux -}}
         {{- $_ := set $init "extras" (concat $init.extras (list "extra" "python" "server" "network" "build" "shell" "media")) -}}
-        {{- $default_list = concat $default_list (list "python" "server") -}}
+        {{- $default_list = concat $default_list (list "extra" "python" "server") -}}
     {{- end -}}
     {{- $_ := set $init "extras" (promptMultichoice "Select extra packages to install" $init.extras $default_list) -}}
 {{- end -}}

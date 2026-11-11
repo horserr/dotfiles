@@ -12,6 +12,7 @@
         "bt",
         "carapace",
         "chezmoi",
+        "codex",
         "croc",
         "delta",
         "edit",
@@ -39,6 +40,7 @@
         "tldr",
         "trippy",
         "tssh",
+        "typst",
         "uv",
         "yazi",
         "zoxide"
@@ -101,7 +103,7 @@
       "store": [
         // "9NZ3KLHXDJP5", // Ubuntu 24.04LTS
         // "9PKR34TNCV07", // Kali Linux
-        "XP8CBJ40XLBWKX" // docker desktop
+        // "XP8CBJ40XLBWKX" // docker desktop
       ]
     }
   }
