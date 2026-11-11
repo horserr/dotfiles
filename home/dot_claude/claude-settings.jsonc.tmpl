@@ -98,5 +98,16 @@
   },
   "skipWorkflowUsageWarning": true,
   // disable OAuth check
-  "hasCompletedOnboarding": true
+  "hasCompletedOnboarding": true,
+
+  "permissions": {
+    "allow": [
+      "Bash",
+      "WebFetch"
+    ],
+    "deny": [
+      "Bash(rm -rf:*)",
+      "Bash(sudo:*)"
+    ]
+  }
 }
