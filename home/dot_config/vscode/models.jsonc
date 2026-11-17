@@ -33,14 +33,5 @@
         "maxOutputTokens": 16000
       }
     ]
-  },
-  {
-    "name": "Claude",
-    "vendor": "agent-host-claude",
-    "settings": {
-      "@provider=anthropic:fable": {
-        "thinkingLevel": "low"
-      }
-    }
   }
 ]

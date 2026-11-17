@@ -27,5 +27,5 @@ scoop/
 
 {{ if not (.token.enable) }}
 .copilot/
-.claude
 {{ end }}
+.claude
