@@ -145,13 +145,12 @@
     {
       "fileMatch": ["**/dot_claude/settings.json*"],
       "url": "https://json.schemastore.org/claude-code-settings.json"
+    },
+    {
+      "fileMatch": ["**/dot_codex/**/*.json*"],
+      "url": "https://developers.openai.com/codex/config-schema.json"
     }
   ],
-  "yaml.schemas": {
-    "https://raw.githubusercontent.com/canonical/cloud-init/main/cloudinit/config/schemas/versions.schema.cloud-config.json": [
-      "**/*.user-data"
-    ]
-  },
   "workbench.diffEditorAssociations": {
     "*.md": "vscode.markdown.preview.editor"
   },

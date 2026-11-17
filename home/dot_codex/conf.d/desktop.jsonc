@@ -1,0 +1,33 @@
+{
+  "desktop": {
+    "external-agent-import-sync-item-types": "all",
+    "external-agent-import-sync-enabled": false,
+    "conversationDetailMode": "STEPS_PROSE",
+    "sansFontSize": 16,
+    "codeFontSize": 15,
+    "ambient-suggestions-enabled": true,
+    "sidebar-show-projects-in-recents": false,
+    "avatar-overlay-pet-visible": false,
+    "toys-confetti-enabled": true,
+    "show-context-window-usage": true,
+    "composerEnterBehavior": "cmdAlways",
+    "notifications-sound": "default",
+    "appshotSoundEnabled": true,
+    "appearanceLightChromeTheme": {
+      "accent": "#3a83f7",
+      "accentSource": "chatgpt",
+      "contrast": 45,
+      "ink": "#1a1c1f",
+      "opaqueWindows": false,
+      "surface": "#ffffff",
+      "fonts": {
+        "ui": "\"AI楷\""
+      },
+      "semanticColors": {
+        "diffAdded": "#00a240",
+        "diffRemoved": "#ba2623",
+        "skill": "#924ff7"
+      }
+    }
+  }
+}

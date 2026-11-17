@@ -1,0 +1,13 @@
+{
+  "tui": {
+    "screen_reader_detection_done": true,
+    "theme": "coldark-cold",
+    "animations": true,
+    "vim_mode_default": true,
+    "copy_on_select": "auto",
+    "pet": "disabled",
+    "model_availability_nux": {
+      "gpt-6.1-sol": 4
+    }
+  }
+}

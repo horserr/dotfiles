@@ -1,0 +1,7 @@
+{
+  "sandbox_mode": "workspace-write",
+  "windows": {
+    "allow_mxc": true,
+    "sandbox": "mxc"
+  }
+}

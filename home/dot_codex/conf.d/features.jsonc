@@ -1,0 +1,9 @@
+{
+  "features": {
+    "memories": true,
+    "prevent_idle_sleep": true,
+    "network_proxy": true,
+    "prefer_mxc": true,
+    "respect_system_proxy": true
+  }
+}

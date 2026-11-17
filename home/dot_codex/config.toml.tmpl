@@ -1,0 +1,13 @@
+#:schema https://developers.openai.com/codex/config-schema.json
+
+# https://learn.chatgpt.com/docs/config-file/config-reference#configtoml
+
+model = "gpt-6.1-sol"
+approval_policy = "on-request"
+model_reasoning_effort = "medium"
+notify = []
+
+{{ includeTemplate "mergeDict" (dict "GLOBAL" $ "relativePath" "dot_codex/conf.d") | fromJson | toToml }}
+
+[feedback]
+enabled = false

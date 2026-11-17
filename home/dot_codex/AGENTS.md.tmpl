@@ -1,0 +1,13 @@
+# ~/.codex/AGENTS.md
+
+{{ if .isWindows }}
+current system is Windows, execute commands using powershell
+{{ else if .isLinux }}
+current system is Linux, use bash to execute commands
+{{ end }}
+
+python project toolset:
+- manage venv with `uv`
+- language server is `pyrefly`
+- formatter and linter is `ruff`
+prefer managing python environment with `uv`

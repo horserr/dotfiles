@@ -1,0 +1,16 @@
+{
+  "marketplaces": {
+    "anthropic-agent-skills": {
+      "source_type": "git",
+      "source": "https://github.com/anthropics/skills.git"
+    },
+    "astral-sh": {
+      "source_type": "git",
+      "source": "https://github.com/astral-sh/claude-code-plugins.git"
+    },
+    "humanizer": {
+      "source_type": "git",
+      "source": "https://github.com/blader/humanizer.git"
+    }
+  }
+}
