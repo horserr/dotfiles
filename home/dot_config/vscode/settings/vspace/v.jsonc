@@ -1,6 +1,4 @@
 [
-  // targetsContainers.focus
-  // targetsContainers.resetViewLocation
   {
     "key": "v",
     "name": "+view",
@@ -14,19 +12,13 @@
         "icon": "comment",
         "type": "command",
         "bindings": [
+          // space open view
           {
             "key": " ",
             "name": "view",
             "icon": "preview",
             "type": "command",
             "command": "workbench.action.openView"
-          },
-          {
-            "key": "e",
-            "name": "view explorer",
-            "icon": "source-control",
-            "type": "command",
-            "command": "workbench.view.explorer"
           },
           // , refresh view
           {
@@ -43,54 +35,80 @@
               "vscode-containers.volumes.refresh"
             ]
           },
-          // v focus volume view
-          {
-            "key": "v",
-            "name": "focus volume view",
-            "icon": "remote-explorer-documentation",
-            "type": "command",
-            "command": "vscode-containers.views.volumes.focus"
-          },
-          // X docker context view
-          {
-            "key": "X",
-            "name": "focus docker context view",
-            "icon": "remote-explorer-documentation",
-            "type": "command",
-            "command": "vscode-containers.views.dockerContexts.focus"
-          },
-          // c container view
-          {
-            "key": "c",
-            "name": "focus container view",
-            "icon": "inspect",
-            "type": "command",
-            "command": "vscode-containers.views.containers.focus"
-          },
-          // n focus network view
-          {
-            "key": "n",
-            "name": "focus network view",
-            "icon": "remote-explorer-documentation",
-            "type": "command",
-            "command": "vscode-containers.views.networks.focus"
-          },
-          // i focus image view
-          {
-            "key": "i",
-            "name": "focus image view",
-            "icon": "remote-explorer-documentation",
-            "type": "command",
-            "command": "vscode-containers.views.images.focus"
-          },
-          // r focus registry view
+          // r focus remote and container views
           {
             "key": "r",
-            "name": "focus registry view",
-            "icon": "remote-explorer-documentation",
-            "type": "command",
-            "command": "vscode-containers.views.registries.focus"
+            "name": "+Focus remote explorer",
+            "icon": "debug-stackframe-focused",
+            "type": "bindings",
+            "bindings": [
+              // s focus remote targets
+              {
+                "key": "s",
+                "name": "focus remote ssh",
+                "icon": "remote-explorer",
+                "type": "command",
+                "command": "remoteTargets.focus"
+              },
+              // w focus WSL targets
+              {
+                "key": "w",
+                "name": "focus WSL targets",
+                "icon": "remote-explorer",
+                "type": "command",
+                "command": "targetsWsl.focus"
+              },
+              // k focus container view
+              {
+                "key": "k",
+                "name": "focus dev container",
+                "icon": "target",
+                "type": "command",
+                "command": "targetsContainers.focus"
+              },
+              // v focus development volumes view
+              {
+                "key": "v",
+                "name": "focus dev volumes",
+                "icon": "database",
+                "type": "command",
+                "command": "devVolumes.focus"
+              },
+              // e focus Codespaces explorer
+              {
+                "key": "e",
+                "name": "focus Codespaces explorer",
+                "icon": "github",
+                "type": "command",
+                "command": "github.codespaces.explorer.focus"
+              },
+              // r focus workspace repositories
+              {
+                "key": "r",
+                "name": "focus workspace repositories",
+                "icon": "repo",
+                "type": "command",
+                "command": "remoteHub.views.workspaceRepositories.focus"
+              },
+              // c focus Codespaces performance explorer
+              {
+                "key": "c",
+                "name": "focus Codespaces performance explorer",
+                "icon": "dashboard",
+                "type": "command",
+                "command": "github.codespaces.performanceExplorer.focus"
+              },
+              // d focus details view
+              {
+                "key": "d",
+                "name": "focus details",
+                "icon": "list-unordered",
+                "type": "command",
+                "command": "detailsContainers.focus"
+              }
+            ]
           },
+          // p problem
           {
             "key": "p",
             "name": "Show problem",
@@ -99,6 +117,7 @@
             "command": "workbench.actions.view.problems"
             // workbench.action.problems.focus
           },
+          // x installed extensions
           {
             "key": "x",
             "name": "Show installed extensions",
