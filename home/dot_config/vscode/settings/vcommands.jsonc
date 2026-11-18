@@ -51,6 +51,23 @@
       "args": "${userHome}/.config/.dotfiles/"
     },
 
+    "Open workspace storage": {
+      "command": "commands.revealFileInOS",
+      "args": "${env:APPDATA}/Code/User/workspaceStorage/"
+    },
+    "Open global storage": {
+      "command": "commands.revealFileInOS",
+      "args": "${env:APPDATA}/Code/User/globalStorage"
+    },
+
+    "Search for to-do": {
+      "command": "workbench.action.findInFiles",
+      "args": {
+        "query": "TODO|FIXME",
+        "isRegex": true,
+        "triggerSearch": true
+      }
+    },
     "Search For Selected Text": {
       "command": "commands.openExternal",
       "args": "https://www.google.com/search?q=${selectedText}"

@@ -24,6 +24,8 @@
       // workbench.action.pauseSocketWriting
       // workbench.action.generateColorTheme
       // developer.showCurrentFileAsReleaseNotes
+
+      // space show all developer commands
       {
         "key": " ",
         "name": "show all developer commands",
@@ -32,12 +34,66 @@
         "command": "workbench.action.quickOpen",
         "args": "> Developer: "
       },
+      // . open developer tool
       {
         "key": ".",
         "name": "Open developer tools",
         "icon": "keyboard",
         "type": "command",
         "command": "workbench.action.toggleDevTools"
+      },
+      // , extensions
+      {
+        "key": ",",
+        "name": "+Extensions",
+        "type": "bindings",
+        "bindings": [
+          {
+            "key": "r",
+            "name": "show running extensions",
+            "icon": "keyboard",
+            "type": "command",
+            "command": "workbench.action.showRuntimeExtensions"
+          },
+          {
+            "key": "R",
+            "name": "Restart extension",
+            "icon": "keyboard",
+            "type": "command",
+            "command": "workbench.action.restartExtensionHost"
+          },
+          {
+            "key": "v",
+            "name": "show extensions",
+            "icon": "keyboard",
+            "type": "command",
+            "bindings": [
+              {
+                "key": "u",
+                "name": "show workspace unsupport or limited extensions",
+                "icon": "keyboard",
+                "type": "command",
+                "command": "workbench.extensions.action.listWorkspaceUnsupportedExtensions"
+                // "command": "workbench.extensions.search",
+                // "args": "@workspaceUnsupported"
+              },
+              {
+                "key": "e",
+                "name": "show enabled extensions",
+                "icon": "keyboard",
+                "type": "command",
+                "command": "workbench.extensions.action.showEnabledExtensions"
+              },
+              {
+                "key": "d",
+                "name": "show disabled extensions",
+                "icon": "keyboard",
+                "type": "command",
+                "command": "workbench.extensions.action.showDisabledExtensions"
+              }
+            ]
+          }
+        ]
       },
       // r reload
       {
@@ -266,6 +322,7 @@
         "icon": "open-preview",
         "type": "bindings",
         "bindings": [
+          // o open user data folder
           {
             "key": "u",
             "name": "Open User folder",
@@ -273,31 +330,36 @@
             "type": "command",
             "command": "workbench.action.revealUserDataFolder"
           },
+          // w workspace folder
           {
-            "key": "p",
-            "name": "Open profile folder",
-            "icon": "keyboard",
+            "key": "w",
+            "name": "Open workspace storage folder",
+            "icon": "star-half",
             "type": "command",
-            "command": "workbench.action.revealUserDataFolder"
+            "command": "Open workspace storage"
           },
+          // W global workspace folder
           {
-            "key": "f",
+            "key": "W",
+            "name": "Open global workspace storage folder",
+            "icon": "star-half",
+            "type": "command",
+            "command": "Open global storage"
+          },
+          // x open extensions folder
+          {
+            "key": "x",
             "name": "Open extensions folders",
             "icon": "keyboard",
             "type": "command",
             "command": "workbench.extensions.action.openExtensionsFolder"
           },
+          // s open setting sync folder
           {
             "key": "s",
             "name": "open setting sync folder",
             "type": "command",
             "command": "workbench.userData.actions.openSyncBackupsFolder"
-          },
-          {
-            "key": "c",
-            "name": "open chat storage folder",
-            "type": "command",
-            "command": "workbench.action.chat.openStorageFolder"
           }
         ]
       },
@@ -317,59 +379,7 @@
           }
         ]
       },
-      // extensions
-      {
-        "key": "x",
-        "name": "+Extensions",
-        "type": "bindings",
-        "bindings": [
-          {
-            "key": "r",
-            "name": "show running extensions",
-            "icon": "keyboard",
-            "type": "command",
-            "command": "workbench.action.showRuntimeExtensions"
-          },
-          {
-            "key": "R",
-            "name": "Restart extension",
-            "icon": "keyboard",
-            "type": "command",
-            "command": "workbench.action.restartExtensionHost"
-          },
-          {
-            "key": "v",
-            "name": "show extensions",
-            "icon": "keyboard",
-            "type": "command",
-            "bindings": [
-              {
-                "key": "u",
-                "name": "show workspace unsupport or limited extensions",
-                "icon": "keyboard",
-                "type": "command",
-                "command": "workbench.extensions.action.listWorkspaceUnsupportedExtensions"
-                // "command": "workbench.extensions.search",
-                // "args": "@workspaceUnsupported"
-              },
-              {
-                "key": "e",
-                "name": "show enabled extensions",
-                "icon": "keyboard",
-                "type": "command",
-                "command": "workbench.extensions.action.showEnabledExtensions"
-              },
-              {
-                "key": "d",
-                "name": "show disabled extensions",
-                "icon": "keyboard",
-                "type": "command",
-                "command": "workbench.extensions.action.showDisabledExtensions"
-              }
-            ]
-          }
-        ]
-      },
+      // n network
       {
         "key": "n",
         "name": "+Network",
@@ -382,12 +392,6 @@
             "command": "workbench.action.configureMeteredConnection"
           }
         ]
-      },
-      {
-        "key": "R",
-        "name": "vscode runtime args setting",
-        "type": "command",
-        "command": "workbench.action.configureRuntimeArguments"
       }
     ]
   }

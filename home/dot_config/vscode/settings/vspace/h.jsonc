@@ -244,6 +244,13 @@
             "icon": "keyboard",
             "type": "command",
             "command": "workbench.action.openWorkspaceSettingsFile"
+          },
+          // r run time args
+          {
+            "key": "r",
+            "name": "vscode runtime args setting",
+            "type": "command",
+            "command": "workbench.action.configureRuntimeArguments"
           }
         ]
       },
