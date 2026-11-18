@@ -189,6 +189,40 @@
         "clear": false
       }
     },
+    // git reset last commit (mixed: unstage changes, keep working tree)
+    {
+      "label": "git: Reset Mixed",
+      "type": "shell",
+      "command": "git",
+      "args": ["reset", "--mixed", "${input:commit}"],
+      "detail": "Reset HEAD to the target commit (mixed). Keeps your working tree changes but unstages them.",
+      "icon": { "id": "git-branch-checkout" },
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": true,
+        "panel": "dedicated",
+        "showReuseMessage": true,
+        "clear": false
+      }
+    },
+    // git reset soft (keep changes staged)
+    {
+      "label": "git: Reset Soft",
+      "type": "shell",
+      "command": "git",
+      "args": ["reset", "--soft", "${input:commit}"],
+      "detail": "Reset HEAD to the target commit (soft). Keeps your changes staged, ready to re-commit.",
+      "icon": { "id": "git-branch-checkout" },
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": true,
+        "panel": "dedicated",
+        "showReuseMessage": true,
+        "clear": false
+      }
+    },
     // docker desktop start
     {
       "label": "docker: Start Desktop",

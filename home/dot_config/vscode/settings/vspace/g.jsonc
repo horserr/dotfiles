@@ -726,6 +726,25 @@
         "icon": "arrow-down",
         "type": "bindings",
         "bindings": [
+          // r soft reset
+          {
+            "key": "r",
+            "name": "soft reset",
+            "icon": "git-branch-checkout",
+            "type": "command",
+            // "command": "git.undoCommit" this command cache the last commit message and git commit template, which is quite inconvenient.
+            "command": "workbench.action.tasks.runTask",
+            "args": "git: Reset Soft"
+          },
+          // R
+          {
+            "key": "R",
+            "name": "mixed reset",
+            "icon": "git-branch-checkout",
+            "type": "command",
+            "command": "workbench.action.tasks.runTask",
+            "args": "git: Reset Mixed"
+          },
           // i interactive rebase
           {
             "key": "i",
@@ -734,17 +753,9 @@
             "command": "workbench.action.tasks.runTask",
             "args": "git: Interactive Rebase"
           },
-          // c undo last commit
+          // b rebase to branch
           {
-            "key": "c",
-            "name": "reset/undo last commit with mixed mode",
-            "icon": "arrow-down",
-            "type": "command",
-            "command": "git.undoCommit"
-          },
-          // R rebase
-          {
-            "key": "R",
+            "key": "b",
             "name": "rebase on to branch",
             "icon": "arrow-down",
             "type": "command",
@@ -766,10 +777,10 @@
             "type": "command",
             "command": "git.rename"
           },
-          // b rename branch
+          // m rename branch
           {
-            "key": "b",
-            "name": "rename branch",
+            "key": "m",
+            "name": "rename branch, equal to -m option",
             "icon": "arrow-down",
             "type": "command",
             "command": "git.renameBranch"
