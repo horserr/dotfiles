@@ -36,8 +36,7 @@
 
   // Override the Agents window support of an extension. Extensions using `true` will be enabled in the Agents window even when they would otherwise be disabled.
   "extensions.supportAgentsWindow": {
-    "VSpaceCode.whichkey": true,
-    "Vizards.deepseek-v4-for-copilot": true
+    "VSpaceCode.whichkey": true
   },
 
   // When enabled, Node.js navigator object is exposed on the global scope.
