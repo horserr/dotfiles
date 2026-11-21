@@ -1,15 +1,66 @@
 {
-  /*   terminal.integrated.suggest.quickSuggestions : show automatically depending on the content of the command line, as opposed to manually via Ctrl+Space.
-  terminal.integrated.suggest.suggestOnTriggerCharacters : show automatically after a "trigger character" such as - or /.
-  terminal.integrated.suggest.runOnEnter : optionally run the command when Enter is used (not Tab).
-  terminal.integrated.suggest.windowsExecutableExtensions : the list of extensions that are treated as executables on Windows.
-  terminal.integrated.suggest.providers : provides the ability to disable specific providers, for example extensions may contribute completions you don't want.
-  terminal.integrated.suggest.showStatusBar : show the status bar at the bottom of the IntelliSense popup.
-  terminal.integrated.suggest.cdPath : enable $CDPATH integration.
-  terminal.integrated.suggest.inlineSuggestion : integrate with shell "ghost text" and how to present it.
-  terminal.integrated.suggest.upArrowNavigatesHistory : send up arrow to the shell instead of browsing completions, this is particularly useful on zsh where you can filter and then press up to do a history search with that prefix.
-  terminal.integrated.suggest.selectionMode : how the Intellisense popup is focused which determines what Enter and Tab do.
-  terminal.integrated.suggest.insertTrailingSpace : insert a trailing space and re-trigger completions after accepting. */
+  // don't display wsl profile
+  "terminal.integrated.useWslProfiles": false,
+
+  {{ if .isWindows }}
+  "terminal.integrated.automationProfile.windows": {
+    "path": {{ lookPath "pwsh" | quote }},
+    "icon": "terminal-powershell",
+    // vscode will auto append `-c` option
+    "args": ["-NoProfile"]
+  },
+  {{ end }}
+
+  {{ if .isLinux }}
+  "terminal.integrated.automationProfile.linux": {
+    "path": {{ lookPath "bash" | quote }},
+    "icon": "terminal-bash",
+    // vscode will auto append `-c` option
+    "args": ["-i"]
+  },
+  {{ end }}
+
+  "terminal.integrated.env.linux": {
+    "VISUAL": "code --wait",
+  },
+  "terminal.integrated.env.windows": {
+    "VISUAL": "code --wait",
+  },
+
+  "terminal.integrated.profiles.windows": {
+    "Command Prompt": {
+      "icon": "terminal-cmd",
+      "path": "cmd"
+    },
+    "Git Bash": {
+      "source": "Git Bash"
+    },
+    "pwsh": {
+      "icon": "terminal-powershell",
+      "source": "PowerShell"
+    },
+    "WSL default": {
+      "path": "wsl"
+    },
+    "PowerShell": {
+      "path": "powershell",
+      "icon": "terminal-secure"
+    }
+  },
+  "terminal.integrated.profiles.linux": {
+    "bash": {
+      "path": "bash",
+      "icon": "terminal-bash"
+    },
+    "tmux": {
+      "path": "tmux",
+      "icon": "terminal-tmux"
+    },
+    "ds": {
+      "path": "ds",
+      "icon": "claude"
+    }
+  },
 
   "terminal.external.windowsExec": "wt",
   // UPLIFTING 自动识别 scheme 并允许点击
@@ -66,9 +117,6 @@
   "terminal.integrated.enableNotifications": true,
   "terminal.integrated.enableVisualBell": true,
   "terminal.integrated.enableWin32InputMode": true,
-  // UPLIFTING
-  "terminal.integrated.env.linux": {},
-  "terminal.integrated.env.windows": {},
   // SIGNIFICANT
   "terminal.integrated.environmentChangesRelaunch": true,
   // UPLIFTING alt 并 scroll 可以快速翻页
@@ -110,42 +158,6 @@
   // 恢复 terminal 的时机
   "terminal.integrated.persistentSessionReviveProcess": "onExitAndWindowClose",
   "terminal.integrated.persistentSessionScrollback": 50,
-  // don't display wsl profile
-  "terminal.integrated.useWslProfiles": false,
-  "terminal.integrated.profiles.windows": {
-    "Command Prompt": {
-      "icon": "terminal-cmd",
-      "path": "cmd"
-    },
-    "Git Bash": {
-      "source": "Git Bash"
-    },
-    "pwsh": {
-      "icon": "terminal-powershell",
-      "source": "PowerShell"
-    },
-    "WSL default": {
-      "path": "wsl"
-    },
-    "PowerShell": {
-      "path": "powershell",
-      "icon": "terminal-secure"
-    }
-  },
-  "terminal.integrated.profiles.linux": {
-    "bash": {
-      "path": "bash",
-      "icon": "terminal-bash"
-    },
-    "tmux": {
-      "path": "tmux",
-      "icon": "terminal-tmux"
-    },
-    "ds": {
-      "path": "ds",
-      "icon": "claude"
-    }
-  },
   "terminal.integrated.rightClickBehavior": "default",
   "terminal.integrated.scrollback": 1000,
   "terminal.integrated.shellIntegration.decorationsEnabled": "both",

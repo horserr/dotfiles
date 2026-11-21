@@ -175,24 +175,12 @@
       "args": "terminateAll"
     }
   ],
-
-  "windows": {
-    "options": {
-      "shell": {
-        "executable": "pwsh",
-        "args": ["-NoProfile", "-c"]
-      },
-      "env": {
-        "http_proxy": "http://localhost:7890",
-        "https_proxy": "http://localhost:7890",
-        "HTTP_PROXY": "http://localhost:7890",
-        "HTTPS_PROXY": "http://localhost:7890"
-      }
-    }
-  },
   "options": {
     "env": {
-      "VISUAL": "code --wait",
+      // "http_proxy": "http://localhost:7890",
+      // "https_proxy": "http://localhost:7890",
+      // "HTTP_PROXY": "http://localhost:7890",
+      // "HTTPS_PROXY": "http://localhost:7890"
       "GITHUB_ACCESS_TOKEN": "${env:GH_TOKEN}"
     }
   }
