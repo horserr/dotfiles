@@ -1,0 +1,17 @@
+{{- /* code: language=toml */ -}}
+
+{{- /* ------------------------------------------------------------------
+     Humanizer agent skill — https://github.com/blader/humanizer
+       Track the latest GitHub release and install its root SKILL.md into
+       .agents/skills/humanizer.
+       The release asset has a stable archive layout rooted at humanizer/.
+   ------------------------------------------------------------------ */ -}}
+
+[".agents/skills/humanizer/SKILL.md"]
+  type = "archive-file"
+
+  {{- $repo := "blader/humanizer" }}
+  {{- $v := gitHubLatestRelease $repo }}
+  url = "https://github.com/{{ $repo }}/archive/refs/tags/{{ $v.TagName }}.zip"
+  stripComponents = 1
+  path = "SKILL.md"
