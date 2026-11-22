@@ -22,10 +22,7 @@ linuxapps:
         - codex
         - codex-code-mode-host
         - codex-exec-server
-    - canonical: less
-      name:
-        - less
-        - lesskey
+    - less
     - canonical: age
       name:
         - age
@@ -43,7 +40,7 @@ linuxapps:
         - ssh-keygen
         - ssh-keyscan
         - sshd
-    - neovim
+    - nvim
     # - canonical: vim
     #   name:
     #     - ex
