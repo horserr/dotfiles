@@ -122,12 +122,8 @@
 	sours = "!f() { git show --color :2:$1; }; f"
 	# show theirs
 	stheirs = "!f() { git show --color :3:$1; }; f"
-	sb = branch --verbose
-	sbb = branch --verbose --all
 	# show upstream
 	supstream = rev-parse --abbrev-ref @{upstream}
-	# show merged branches
-	sbmerge = branch --merged
 
 	a = add --update
 	# update those files that already staged
@@ -135,8 +131,6 @@
   au = add --intent-to-add .
 	aa = add .
 	aaa = add --all
-
-	b = blame -C -L
 
 	c = commit
 	cc = commit -m
@@ -160,52 +154,6 @@
 	dtheirs = diff --theirs
 	# 在还没开始改代码前，搞清楚对方的分支到底动了哪些文件
 	dfork = diff HEAD...MERGE_HEAD
-
-	# clean untracked files
-	x = clean --dry-run
-	xx = clean --force
-	# clean ignored files or folders
-	xi = clean -X --dry-run
-	xxi = clean -X --force
-	# clean untracked directories
-	xd = clean -d --dry-run
-	xxd = clean -d --force
-
-	# interactive add/stage
-  ia = add --interactive
-	iaa = add --patch
-  # Interactive rebase with the given number of latest commits.
-	ir = rebase --interactive
-	# useful for orphan branch
-	irroot = rebase --interactive --root
-	# 1. 剪断侧枝， 2. 快速删除中间某些提交， 3.
-	ironto = rebase --interactive --onto
-	# interactive unstage
-	iu = reset --patch
-	# interactive stash
-	is = stash --patch
-	ik = stash --patch
-	# Note: do not use: checkout --patch
-	# interactivly clean ignored files or folders
-	ix = clean -X --interactive
-
-	# jump = switch
-	j = switch
-	jc = switch --create
-	jd = switch --detach
-	jorphan = switch --orphan
-
-  # k for keep, the sysnonym of stash
-	k = stash
-	# only keep staged files
-	ks = stash --staged
-	# create a new branch from stash
-	kb = stash branch
-	# keep index, equivalent to stash(all untracked files, including staged files) and leave staged files in staged
-	ki = stash --keep-index
-	kk = stash --include-untracked # shortfor -u
-	# all files, including ignored files, such as those files in dist/ node_modules. not recommend to use
-	kkk = stash --all
 
   # filter
 	# show conflict files
@@ -234,6 +182,127 @@
 	# use deduplicate to remove conflict files with same name but different numbering, such as 1 2 3
 	ffconflict = ls-file --unmerged --deduplicate
 
+	# clean untracked files
+	x = clean --dry-run
+	xx = clean --force
+	# clean ignored files or folders
+	xi = clean -X --dry-run
+	xxi = clean -X --force
+	# clean untracked directories
+	xd = clean -d --dry-run
+	xxd = clean -d --force
+
+	# interactive add/stage
+  ia = add --interactive
+	iaa = add --patch
+  # Interactive rebase with the given number of latest commits.
+	ir = rebase --interactive
+	# useful for orphan branch
+	irroot = rebase --interactive --root
+	# 1. 剪断侧枝， 2. 快速删除中间某些提交， 3. 将 feature 从基于 C 调整为基于 B: `git ironto B C feature`
+	# A---B---C---D  main
+  #          \
+  #           E---F---G  feature
+	ironto = rebase --interactive --onto
+	# interactive unstage
+	iu = reset --patch
+	# interactive stash
+	is = stash --patch
+	ik = stash --patch
+	# Note: do not use: checkout --patch
+	# interactivly clean ignored files or folders
+	ix = clean -X --interactive
+
+	# jump = switch
+	j = switch
+	jc = switch --create
+	jd = switch --detach
+	jorphan = switch --orphan
+
+	b- = blame -C -L
+
+	# b = branch
+	b = branch
+	bd = branch --delete # -d
+	bu = branch --set-upstream-to # -u
+	# copy
+	bc = branch --copy # -c
+	# copy force
+	bcf = branch -C # -c -f
+	# move
+	bm = branch --move # -m
+	# move force
+	bmf = branch -M # -m -f
+	# force current branch repoint
+	# e.g. bff origin @~
+	# note: this command is different from hard reset. this command will not change worktree and staged files but solely change branch reference.
+	bff = branch -f
+	bu- = branch --unset-upstream
+
+	# branch verbose
+	bv = branch -vv
+	# branch verbose remote
+	bvr = branch --verbose -r
+	# branch verbose all
+	bva = branch --verbose --all
+	# given upstream branch, show all local branches that point to it
+	bvfork = branch --forked
+	# show merged branches
+	bvmerge = branch --merged
+
+	bvcontain = branch -a --contains
+	# --no-contains
+
+	# assume tracking remote is `origin`
+	# deleting remote branch
+	rm-remote = "!f() { echo \"deleting origin: $*\"; read -p \"proceeding?(y/N) \" ans; [ \"$ans\" = \"y\" ] && git push origin --delete \"$@\"; }; f"
+
+	# remote
+	r = remote
+	# add
+	ra = remote add
+	# move rename
+	# note: 1. change .git/config setting 2. update local tracking branch name 3. **update upstream tracking**
+	rmv = remote rename
+	# delete remove
+	rrm = remote remove
+	# add then fetch
+	raf = remote add -f
+	# add then set master head (the default remote branch) which can be set using `remote set-head`
+	ram = remote add -m
+	# note: use `remote show` to display the default remote head
+	rhead = remote set-head
+	# auto detect from remote
+	rheadauto = remote set-head -a
+	# set branches to fetch. default is +refs/heads/*:refs/remotes/origin/*
+	# e.g. `rb origin main`
+	rb = remote set-branches
+	# add
+	rba = remote set-branches --add
+	# delete
+	rbd = remote set-branches --delete
+  # remove stale(locally exist but remote extinct) local branches
+	# note: one substep of `fetch --prune`
+	rprune = remote prune
+	# todo .git/config [remotes] group all-main
+	# e.g. `rupdate` fetch all upstream
+	# e.g. `rupdate origin` fetch only origin
+	# e.g. `rupdate all-main` fetch only all-main defined in .git/config
+	; rupdate = remote update
+	# get-url/set-url
+
+  # k for keep, the sysnonym of stash
+	k = stash
+	# only keep staged files
+	ks = stash --staged
+	# create a new branch from stash
+	kb = stash branch
+	# keep index, equivalent to stash(all untracked files, including staged files) and leave staged files in staged
+	ki = stash --keep-index
+	kk = stash --include-untracked # shortfor -u
+	# all files, including ignored files, such as those files in dist/ node_modules. not recommend to use
+	kkk = stash --all
+
 	m = merge -Xignore-space-change
 	# use ours
 	mours = merge -Xours
@@ -252,8 +321,35 @@
 	# todo
 	# git rebase (--continue|--skip|--abort|--quit|--edit-todo|--show-current-patch)
 	#  git rebase --show-current-patch, or its equivalent git show REBASE_HEAD
-	# continue = rebase --continue
-	# abort = rebase --abort
+	abort = "!f() { \
+		d=$(git rev-parse --git-dir 2>/dev/null) || { echo \"not a git repo\"; exit 1; }; \
+		if [ -f \"$d/MERGE_HEAD\" ]; then \
+			git merge --abort; \
+		elif [ -d \"$d/rebase-merge\" ] || [ -d \"$d/rebase-apply\" ]; then \
+			git rebase --abort; \
+		elif [ -f \"$d/CHERRY_PICK_HEAD\" ]; then \
+			git cherry-pick --abort; \
+		elif [ -f \"$d/REVERT_HEAD\" ]; then \
+			git revert --abort; \
+		else \
+			echo \"nothing to abort\"; \
+		fi; \
+	}; f"
+
+	continue = "!f() { \
+		d=$(git rev-parse --git-dir 2>/dev/null) || { echo \"not a git repo\"; exit 1; }; \
+		if [ -f \"$d/MERGE_HEAD\" ]; then \
+			git merge --continue; \
+		elif [ -d \"$d/rebase-merge\" ] || [ -d \"$d/rebase-apply\" ]; then \
+			git rebase --continue; \
+		elif [ -f \"$d/CHERRY_PICK_HEAD\" ]; then \
+			git cherry-pick --continue; \
+		elif [ -f \"$d/REVERT_HEAD\" ]; then \
+			git revert --continue; \
+		else \
+			echo \"nothing to continue\"; \
+		fi; \
+	}; f"
 
 	pick = cherry-pick
 
@@ -263,9 +359,13 @@
 	unshallow = fetch --unshallow
 
 	conf = config --global --edit
+	# config local
+	confl = config --local --edit
+	# get all config with given key
+	# e.g. `confget remote.origin.fetch`
+	confget = config --get-all
 	# list all config
 	confls = config --list --show-origin --show-scope
-	confl = config --local --edit
 	confsub = "!f() { \
 			MODFILE=\"$(git rev-parse --show-toplevel)/.gitmodules\"; \
 			if [ -f \"$MODFILE\" ]; then \
@@ -285,7 +385,7 @@
 			fi; \
 	}; f"
 
- # test whether the given files is deemed as executable in git
+	# test whether the given files is deemed as executable in git
 	is-x = "!f() { \
 		if [ -z \"$1\" ]; then echo \"Usage: git is-x <file_path>\"; return 1; fi; \
 		res=$(git ls-files -s \"$1\"); \
