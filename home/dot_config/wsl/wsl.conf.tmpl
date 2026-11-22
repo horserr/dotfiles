@@ -1,43 +1,50 @@
 # link: https://learn.microsoft.com/en-us/windows/wsl/wsl-config#configuration-settings-for-wslconfig
 
+{{ $mirrored := false }}
+{{ $gui := false }}
+{{ $dnstunnel := true }}
+
 [wsl2]
-# networkingMode=mirrored
+  {{ if $mirrored }}
+    networkingMode=mirrored
+    autoProxy=true
+  {{ else }}
+    networkingMode=nat
+    autoProxy=false
+    localhostForwarding=true
+    dnsProxy=true
+  {{ end }}
 
-memory=9GB
-processors=9
-swap=12GB
+  memory=9GB
+  processors=9
+  swap=12GB
 
-defaultVhdSize=128GB
+  defaultVhdSize=128GB
 
-#**********************
-#* DEFAULT SETTINGS *
-#**********************
-guiApplications=true
+  #**********************
+  #* DEFAULT SETTINGS *
+  #**********************
+  guiApplications={{$gui}}
 
-# this setting has no effect when using mirrored networking mode
-# localhostForwarding=true
+  safeMode=false
 
-safeMode=false
+  debugConsole=false
 
-debugConsole=false
+  nestedVirtualization=true
 
-nestedVirtualization=true
+  firewall=true
 
-firewall=true
-
-dnsTunneling=true
-
-autoProxy=true
-
-# default when networkingmode is NAT
-dnsProxy=true
+  dnsTunneling={{ $dnstunnel }}
 
 [experimental]
-autoMemoryReclaim=gradual
-sparseVhd=true
+  {{ if $mirrored }}
+  # when networkingMode is mirrored
+  hostAddressLoopback=true
+  {{ end }}
 
-# when networkingMode is mirrored
-hostAddressLoopback=true
+  autoMemoryReclaim=gradual
+  sparseVhd=true
 
-# when dnsTunneling is true
-bestEffortDnsParsing=true
+  {{ if $dnstunnel }}
+  bestEffortDnsParsing=true
+  {{ end }}
