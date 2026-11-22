@@ -1,7 +1,7 @@
 {{- /* code: language=toml */ -}}
 {{- /* one day (24h), one week (168h), or four weeks (672h) */ -}}
 
-{{- if and .isWindows .isPersonal -}}
+{{- if .isWindows -}}
 [".config/mousemaster/mousemaster.exe"]
     type = "file"
     executable = true

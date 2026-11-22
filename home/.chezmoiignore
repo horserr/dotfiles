@@ -19,10 +19,8 @@
 .vscode/
 scoop/
 
-  {{ if .isPersonal -}}
-  .cloud-init/
-  .ideavimrc
-  {{- end }}
+.cloud-init/
+.ideavimrc
 {{- end -}}
 
 {{ if not (.token.enable) }}

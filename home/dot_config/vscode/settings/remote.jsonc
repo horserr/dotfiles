@@ -61,7 +61,6 @@
   "remote.SSH.defaultExtensions": [
     "iliazeus.vscode-ansi",
     "fill-labs.dependi",
-    "jonsmithers.open-in-vim",
     "nexmoe.monitor-pro"
     // "FanaticPythoner.better-todo-tree",
   ],

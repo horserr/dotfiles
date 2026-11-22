@@ -2,6 +2,8 @@
 
 if command -v "chezmoi" &>/dev/null; then
 	alias ch="chezmoi"
+	alias chi="chezmoi init"
+	alias chii="chezmoi init --data=false"
 	alias chcd="chezmoi cd"
 	alias cha="chezmoi apply"
 	alias chc="chezmoi cat"

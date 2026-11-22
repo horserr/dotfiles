@@ -160,7 +160,8 @@
     "**/private_dot_ssh/**": "${filename}(ssh)",
     "**/vscode/*.json*": "${filename}(vsc)",
     "**/vscode/*/**/*.json*": "${filename}(${dirname})",
-    "**/dot_config/**/config.d/*": "${filename}(${dirname(1)})",
+    "**/config.d/*": "${filename}(${dirname(1)})",
+    "**/conf.d/*": "${filename}(${dirname(1)})",
     "**/dot_config/**": "${filename}(${dirname})"
   },
   "workbench.editorAssociations": {

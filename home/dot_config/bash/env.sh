@@ -1,7 +1,8 @@
 # Environment variables shared by every interactive shell.
 # PATH is managed separately in path.sh.
 
-export EDITOR="vim"
+export EDITOR=$(command -v nvim || command -v vim || echo "nano")
+
 export DOTFILES="$HOME/.config/.dotfiles"
 export TOKEN_FILE="$HOME/.config/bash/tokenenv.sh"
 
