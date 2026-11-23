@@ -27,7 +27,7 @@
        claude-darwin-x64.tar.gz / claude-darwin-arm64.tar.gz
      archive layout: claude(.exe) at archive root, so use `archive-file`
    ------------------------------------------------------------------ */}}
-{{- if and false .token.enable }}
+{{- if .token.enable }}
 
 {{- $extension := ternary "zip" "tar.gz" .isWindows -}}
 {{- $os := ternary "win32" .chezmoi.os .isWindows -}}

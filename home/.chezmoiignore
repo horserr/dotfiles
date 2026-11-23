@@ -26,4 +26,3 @@ scoop/
 {{ if not (.token.enable) }}
 .copilot/
 {{ end }}
-.claude

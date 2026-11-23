@@ -15,3 +15,5 @@
   url = "https://github.com/{{ $repo }}/archive/refs/tags/{{ $v.TagName }}.zip"
   stripComponents = 1
   path = "SKILL.md"
+
+{{ includeTemplate "claude-skills.toml.tmpl" }}
