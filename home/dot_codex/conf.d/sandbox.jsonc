@@ -1,5 +1,6 @@
 {
-  "sandbox_mode": "workspace-write",
+  // "sandbox_mode": "workspace-write",
+  "sandbox_mode": "danger-full-access",
   "windows": {
     "allow_mxc": true,
     "sandbox": "mxc"
