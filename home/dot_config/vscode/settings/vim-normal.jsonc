@@ -7,22 +7,26 @@
   end of word <leader><leader><leader> bde
   start of line <leader><leader><leader> bdjk */
   "vim.normalModeKeyBindingsNonRecursive": [
+    // ?
     {
       // discard content to be pasted
       // use before x, d, c
       "before": ["?"],
       "after": ["\"", "_"]
     },
+    // gy
     {
       // clipboard yank
       "before": ["g", "y"],
       "commands": ["editor.action.clipboardCopyAction"]
     },
+    // gp
     {
       // clipboard paste
       "before": ["g", "p"],
       "commands": ["editor.action.clipboardPasteAction"]
     },
+    // gq
     {
       // format
       // original is hardwrap at the given length
@@ -35,127 +39,157 @@
     //   "before": ["g", "d"],
     //   "commands": ["editor.action.revealDefinitionAside"]
     // },
+    // gf
     {
       "before": ["g", "f"],
       "commands": ["editor.action.revealDefinitionAside"]
     },
+    // gQ
     {
       // hard wrap
       // textWidth limit is set by "vim.textwidth": 80,
       "before": ["g", "Q"],
       "after": ["g", "q"]
     },
+    // g.
     {
       // quick fix
       "before": ["g", "."],
       "commands": ["editor.action.quickFix"]
     },
+    // g,
+    {
+      // refactor
+      "before": ["g", ","],
+      "commands": ["editor.action.refactor"]
+    },
+    // gJ
     {
       // goto previous tab
       "before": ["g", "J"],
       "after": ["g", "T"]
     },
+    // gK
     {
       // goto next tab
       "before": ["g", "K"],
       "after": ["g", "t"]
     },
+    // gH
     {
       // goto first tab in editor group
       "before": ["g", "H"],
       "after": ["1", "g", "t"]
     },
+    // gL
     {
       // goto last tab in editor group
       "before": ["g", "L"],
       "commands": ["workbench.action.lastEditorInGroup"]
     },
+    // gk
     {
       // goto previous git change
       "before": ["g", "k"],
       "commands": ["workbench.action.editor.previousChange"]
     },
+    // gj
     {
       // goto next git change
       "before": ["g", "j"],
       "commands": ["workbench.action.editor.nextChange"]
     },
+    // j
     {
       // softwrap visual line move down
       "before": ["j"],
       "after": ["g", "j"]
     },
+    // k
     {
       // softwrap visual line move down
       "before": ["k"],
       "after": ["g", "k"]
     },
+    // H
     {
       // softwrap visual line jump to line start
       // original H is for jump to screen top, which is barely used
       "before": ["H"],
       "after": ["g", "^"]
     },
+    // gm
     {
       // goto next (merge) conflict
       "before": ["g", "m"],
       "commands": ["merge-conflict.next"]
     },
+    // gM
     {
       // goto previous (merge)conflict
       "before": ["g", "M"],
       "commands": ["merge-conflict.previous"]
     },
+    // M
     {
       // softwrap visual line jump to line middle
       // original M is for jump to screen middle, which is barely used
       "before": ["M"],
       "after": ["g", "m"]
     },
+    // L
     {
       // softwrap visual line jump to line end
       // original L is for jump to screen low, which is barely used
       "before": ["L"],
       "after": ["g", "$"]
     },
+    // w
     {
       // camelCaseMotion
       "before": ["w"],
       // "after": ["<leader>", "w"]
       "commands": ["cursorWordPartRight"]
     },
+    // b
     {
       // camelCaseMotion
       "before": ["b"],
       // "after": ["<leader>", "b"]
       "commands": ["cursorWordPartLeft"]
     },
+    // gb
     {
       // use vscode native jump to bracket
       "before": ["g", "b"],
       "commands": ["editor.action.jumpToBracket"]
     },
+    // %
     {
       // use vscode native jump to bracket
       "before": ["%"],
       "commands": ["editor.action.jumpToBracket"]
     },
+    // U
     {
       // cursor undo
       // original U is undo the entire line, which is rarely used and can be easily replaced by gU_
       "before": ["U"],
       "commands": ["cursorUndo"]
     },
+    // ge
     {
       // goto next error
       "before": ["g", "e"],
       "commands": ["editor.action.marker.nextInFiles"]
     },
+    // gE
     {
       // goto previous error
       "before": ["g", "E"],
       "commands": ["editor.action.marker.prevInFiles"]
     },
+    // ff
     {
       // shortcuts for easymotion
       // jump to any char
@@ -163,6 +197,7 @@
       // "after": ["<leader>", "<leader>", "s"]
       "after": ["<leader>", "<leader>", "<leader>", "b", "d", "w"]
     },
+    // fj
     {
       // shortcuts for easymotion
       // jump to start of line
@@ -192,24 +227,30 @@
       "before": ["<C-i>"],
       "commands": ["workbench.action.navigateForwardInNavigationLocations"]
     }, */
+    // gi
     {
       // goto backward edit place
       // override default behavior
+      // note: g; command
       "before": ["g", "i"],
       "commands": ["workbench.action.navigateBackInEditLocations"]
     },
+    // go
     {
       // go forward edit place
       // override default behavior
+      // note: g, command
       "before": ["g", "o"],
       "commands": ["workbench.action.navigateForwardInEditLocations"]
     },
+    // gI
     {
       // goto last edit place
       // override default behavior
       "before": ["g", "I"],
       "commands": ["workbench.action.navigateToLastEditLocation"]
     },
+    // ghh
     {
       // focus hover
       // enhance the default behavior
@@ -217,16 +258,19 @@
       "before": ["g", "h", "h"],
       "commands": ["editor.action.showDefinitionPreviewHover"]
     },
+    // ghk
     {
       // parameter hint
       "before": ["g", "h", "k"],
       "commands": ["editor.action.triggerParameterHints"]
     },
+    // ghk
     {
       // debug hover
       "before": ["g", "h", "j"],
       "commands": ["editor.debug.action.showDebugHover"]
     },
+    // z
     {
       // fold -> whichkey
       "before": ["z"],

@@ -1,5 +1,11 @@
 {
   "vim.visualModeKeyBindingsNonRecursive": [
+    // g,
+    {
+      // refactor
+      "before": ["g", ","],
+      "commands": ["editor.action.refactor"]
+    },
     {
       // use vscode native select in bracket
       "before": ["O"],
