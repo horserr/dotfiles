@@ -248,6 +248,15 @@
             "command": "workbench.action.tasks.runTask",
             "args": "git: Add Current Folder"
           },
+          // , add filtered files
+          {
+            "key": ",",
+            "name": "stage all glob files",
+            "icon": "filter",
+            "type": "command",
+            "command": "workbench.action.tasks.runTask",
+            "args": "git: Add Filtered Files"
+          },
           // space stage selected lines
           {
             "key": " ",
@@ -256,9 +265,9 @@
             "type": "command",
             "command": "git.stageSelectedRanges"
           },
-          // , stage hunk
+          // h stage hunk
           {
-            "key": ",",
+            "key": "h",
             "name": "stage the hunk(contiguous block)",
             "icon": "file",
             "type": "command",
@@ -330,7 +339,9 @@
             "name": "unstage current file",
             "icon": "arrow-down",
             "type": "command",
-            "command": "git.unstage"
+            // "command": "git.unstage" no effect
+            "command": "workbench.action.tasks.runTask",
+            "args": "git: Unstage Current File"
           },
           // space unstage selected line
           {

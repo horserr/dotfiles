@@ -22,6 +22,42 @@
         "clear": false
       }
     },
+    // git unstage file
+    {
+      "label": "git: Unstage Current File",
+      "type": "shell",
+      "command": "git",
+      "args": ["restore", "--staged", "${relativeFile}"],
+      "detail": "unstage current file",
+      "icon": { "id": "git-stash" },
+      "presentation": {
+        "echo": true,
+        "reveal": "silent",
+        "focus": false,
+        "panel": "shared",
+        "showReuseMessage": true,
+        "clear": false
+      }
+    },
+    // git add glob file
+    {
+      // why create this command given existing git.add vscode command
+      // because the native command cannot add unstaged files
+      "label": "git: Add Filtered Files",
+      "type": "shell",
+      "command": "git",
+      "args": ["add", "${input:glob}"],
+      "detail": "add filtered files",
+      "icon": { "id": "add" },
+      "presentation": {
+        "echo": true,
+        "reveal": "silent",
+        "focus": false,
+        "panel": "shared",
+        "showReuseMessage": true,
+        "clear": false
+      }
+    },
     // git add current folder
     {
       "label": "git: Add Current Folder",
@@ -434,6 +470,11 @@
       "id": "commit",
       "type": "promptString",
       "description": "target commit: fixup/squash target or rebase base (hash, ref or HEAD~n)"
+    },
+    {
+      "id": "glob",
+      "type": "promptString",
+      "description": "file glob"
     }
   ],
   "options": {
