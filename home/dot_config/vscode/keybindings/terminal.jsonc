@@ -37,13 +37,29 @@
   // terminal native whichkey
   {
     "key": "shift+space",
-    "command": "runCommands",
-    "args": {
-      "commands": [
-        "whichkey.show",
-        { "command": "whichkey.triggerKey", "args": "," }
-      ]
-    },
+    "command": "whichkey.show",
+    "args": [
+      {
+        "key": ".",
+        "name": "toggle panel view maximize",
+        "icon": "auxiliarybar-maximize",
+        "type": "command",
+        "command": "workbench.action.toggleMaximizedPanel"
+      },
+      {
+        "key": " ",
+        "name": "normal terminal commands",
+        "icon": "x",
+        "type": "command",
+        "command": "runCommands",
+        "args": {
+          "commands": [
+            "whichkey.show",
+            { "command": "whichkey.triggerKey", "args": "," }
+          ]
+        }
+      }
+    ],
     "when": "terminalFocus && !terminalEditorFocus"
   },
   // use enter to copy selection

@@ -2,7 +2,7 @@
 """Launch Claude or Copilot CLI pre-configured for the DeepSeek API.
 
 Usage:
-    ds                 -> claude, deepseek-v4-pro (default)
+    ds                 -> claude, deepseek-v4-flash (default)
     ds f | flash       -> claude, deepseek-v4-flash
     ds p | pro         -> claude, deepseek-v4-pro
     ds <name>          -> claude, use <name> verbatim
@@ -32,7 +32,7 @@ import sys
 from pathlib import Path
 
 TOKEN_FILE = Path.home() / ".config" / "bash" / "tokenenv.sh"
-DEFAULT_MODEL = "deepseek-v4-pro"
+DEFAULT_MODEL = "deepseek-v4-flash"
 DEFAULT_TMUX_SESSION = "ds"
 TMUX_MARKER_ENV = "DS_IN_TMUX"
 REMOTE_ENV_VARS = ("SSH_CONNECTION", "SSH_CLIENT", "SSH_TTY")
