@@ -1,7 +1,20 @@
 # Environment variables shared by every interactive shell.
 # PATH is managed separately in path.sh.
 
+# 快速启动纯净版 nvim 编辑命令（保留基础高亮和语法）
+if command -v nvim >/dev/null 2>&1; then
+	export FCEDIT="nvim -u NORC"
+elif command -v vim >/dev/null 2>&1; then
+	export FCEDIT="vim -u NORC"
+else
+	export FCEDIT="nano"
+fi
+
 export EDITOR=$(command -v nvim || command -v vim || echo "nano")
+export VISUAL=$EDITOR
+# if [ "$TERM_PROGRAM" = "vscode" ] && command -v "code" &>/dev/null; then
+# 	export VISUAL="code --wait"
+# fi
 
 export DOTFILES="$HOME/.config/.dotfiles"
 export TOKEN_FILE="$HOME/.config/bash/tokenenv.sh"

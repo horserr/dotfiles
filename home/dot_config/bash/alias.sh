@@ -4,6 +4,10 @@
 
 # --- shell ------------------------------------------------------------------
 alias reload="source ~/.bashrc"
+
+# unset remove the envvironment variable, while reset degrade its scope to local variable
+alias env-reset='export -n'
+
 # fix user group mismatch when returning from a rooted container
 alias remap-user='sudo chown -R $(id -u):$(id -g) .'
 alias edit-token='$EDITOR $TOKEN_FILE'
@@ -14,6 +18,7 @@ alias v='less -RFX'
 alias umasks='umask -S'
 alias vpath='printf "%s\n" ${PATH//:/ } | v'
 alias valias='alias | v'
+alias vbind='bind -p | v'
 
 # Add an "alert" alias for long running commands. Use like so:
 #   sleep 10; alert

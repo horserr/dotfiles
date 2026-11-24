@@ -1,6 +1,6 @@
 # code: language=ini
 [alias]
-	repo = clone --depth 1 --filter=blob:none --sparse
+	c- = clone --depth 1 --filter=blob:none --sparse
 	mirror = clone --mirror
 	shallow = clone --depth
 	partial = clone --filter=blob:none --no-checkout

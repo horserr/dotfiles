@@ -1,3 +1,5 @@
+# copied from: github.com/mathiasbynens/dotfiles/blob/main/.inputrc
+
 # set menu-complete-display-prefix on
 # # tab key for menu completion
 
@@ -7,14 +9,6 @@
 # TAB: menu-complete
 # "\e[Z": menu-complete-backward
 
-# # copied from: github.com/mathiasbynens/dotfiles/blob/main/.inputrc
-
-# link: https://unix.stackexchange.com/questions/27699/remap-bash-vi-keys
-# https://vim.fandom.com/wiki/Use_vi_shortcuts_in_terminal
-# https://www.reddit.com/r/vim/comments/1emhips/using_vim_keybindings_in_bash_cli/
-# https://github.com/pkrumins/bash-vi-editing-mode-cheat-sheet/tree/master
-set editing-mode vi
-set keymap vi-insert
 
 # Make Tab autocomplete regardless of filename case
 set completion-ignore-case on
@@ -25,10 +19,47 @@ set completion-ignore-case on
 # Immediately add a trailing slash when autocompleting symlinks to directories
 set mark-symlinked-directories on
 
-# # Use the text that has already been typed as the prefix for searching through
-# # commands (i.e. more intelligent Up/Down behavior)
-# "\e[B": history-search-forward
-# "\e[A": history-search-backward
+# link: https://unix.stackexchange.com/questions/27699/remap-bash-vi-keys
+# https://vim.fandom.com/wiki/Use_vi_shortcuts_in_terminal
+# https://www.reddit.com/r/vim/comments/1emhips/using_vim_keybindings_in_bash_cli/
+# https://github.com/pkrumins/bash-vi-editing-mode-cheat-sheet/tree/master
+set editing-mode vi
+# NOTE:
+#   - `bind -P` check all builtin commands（e.g. clear-screen）
+#   -  `bind -m vi-command -p` 查看当前命令模式下已生效的所有快捷键。
+
+# 显示当前处于哪种模式（在提示符前显示 (ins) 或 (cmd)）
+set show-mode-in-prompt on
+
+# 更改光标形状区分模式（输入模式为竖线 |，命令模式为方块 █）
+set vi-ins-mode-string \1\e[6 q\2
+set vi-cmd-mode-string \1\e[2 q\2
+
+# 缩短 Esc 键延迟（默认 500ms 会有卡顿感，设为 50ms 瞬间响应）
+set keyseq-timeout 50
+
+$if mode=vi
+	# 切换到 vi 命令模式（按 Esc 后的状态）进行绑定
+	set keymap vi-command
+	"k": history-search-backward
+	"j": history-search-forward
+	# "\C-a": beginning-of-line
+	"H": beginning-of-line
+	"L": end-of-line
+
+	# 【一键在当前命令前加 sudo】按两下 s 自动在行首插入 "sudo " 并回到行尾
+	"ss": "Isudo \eA"
+
+	# 【用默认编辑器（如 vim）编辑超长命令】其实默认绑定了 v，这里可绑定大写 V 或其他顺手键
+	# "V": edit-and-execute-command
+
+	set keymap vi-insert
+	# 在打字状态下按上箭头生效
+	# "\e[A": history-search-backward
+	# "\e[B": history-search-forward
+	# 快速退出输入模式: 连按两次 jj 或 jk 代替按 Esc
+	# "jj": vi-movement-mode
+$endif
 
 # # Do not autocomplete hidden files unless the pattern explicitly begins with a dot
 # set match-hidden-files off
