@@ -16,6 +16,12 @@
       "source": "./research",
       "description": "Research partner: five-agent research team, evidence-first literature workflows, paper fetching with real BibTeX and per-claim locators, research-gap discovery, planning, and structured research memory",
       "version": "0.1.0"
+    },
+    {
+      "name": "pyrefly",
+      "source": "./pyrefly",
+      "description": "Pyrefly type checking for Python: LSP diagnostics after edits, a Stop gate for a clean project check, CLI workflow guidance, and tensor shape annotations",
+      "version": "0.1.2"
     }
   ]
 }

@@ -9,8 +9,16 @@ current system is Linux, use bash to execute commands
 # python project toolset:
 - manage venv with `uv`
 - language server is `pyrefly`
+  - when `pyrefly.toml/[tool.pyrefly]` is missing, use `pyrefly init` to generate
 - formatter and linter is `ruff`
 prefer managing python environment with `uv`
+
+# Python type checking
+
+When a task creates or modifies Python files and `pyrefly` is available, run
+`pyrefly check` before finishing. Fix the underlying type errors rather than
+suppressing them. Do not expand the task to fix unrelated pre-existing errors
+unless the user asks.
 
 # Codex Delegation Policy
 

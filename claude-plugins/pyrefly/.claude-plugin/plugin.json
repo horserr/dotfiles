@@ -1,0 +1,16 @@
+{
+  "name": "pyrefly",
+  "version": "0.1.2",
+  "description": "Pyrefly type checking for Python: LSP diagnostics after edits, a Stop gate for a clean project check, and a CLI workflow skill.",
+  "author": {
+    "name": "Horserr"
+  },
+  "license": "MIT",
+  "keywords": [
+    "python",
+    "pyrefly",
+    "type-checker",
+    "type-checking",
+    "lsp"
+  ]
+}
