@@ -1,0 +1,17 @@
+{
+  "name": "python-toolchain",
+  "version": "0.1.1",
+  "description": "Python toolchain guidance: uv for environments, dependencies, scripts, and tools; ruff for linting and formatting. Type checking lives in the pyrefly plugin.",
+  "author": {
+    "name": "Horserr"
+  },
+  "license": "MIT",
+  "keywords": [
+    "python",
+    "uv",
+    "ruff",
+    "packaging",
+    "linting",
+    "formatting"
+  ]
+}

@@ -1,0 +1,9 @@
+The `uv` and `ruff` skills in this plugin are adapted from
+astral-sh/agent-plugins:
+
+    https://github.com/astral-sh/agent-plugins
+
+Copyright (c) 2025 Astral Software Inc. The upstream repository is dual
+licensed under Apache-2.0 and MIT; these skills are used under the MIT terms
+reproduced in LICENSE. The local modifications are noted at the bottom of each
+SKILL.md.
