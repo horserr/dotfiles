@@ -19,8 +19,19 @@ shopt -s globstar
 shopt -s checkwinsize
 
 # don't put duplicate lines or lines starting with space in the history
-HISTCONTROL=ignoreboth
+# 忽略重复命令和以空格开头的命令
+HISTCONTROL=ignoreboth:erasedups
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
 HISTSIZE=100000
 HISTFILESIZE=200000
+
+# 关闭终端软件流控，释放 Ctrl+s / Ctrl+q
+[[ -t 0 ]] && stty -ixon
+
+# 历史展开后先显示命令，而不是直接执行
+shopt -s histverify
+
+# 多行命令历史记录
+shopt -s cmdhist
+shopt -s lithist

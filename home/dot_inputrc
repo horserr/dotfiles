@@ -12,11 +12,19 @@
 
 # Make Tab autocomplete regardless of filename case
 set completion-ignore-case on
+set completion-map-case on
 
-# # List all matches in case multiple possible completions are possible
-# set show-all-if-ambiguous on
+# List all matches in case multiple possible completions are possible
+set show-all-if-unmodified on
+set show-all-if-ambiguous on
+
+set visible-stats on
+set colored-stats on
+set colored-completion-prefix on
+set completion-prefix-display-length 3
 
 # Immediately add a trailing slash when autocompleting symlinks to directories
+set mark-directories on
 set mark-symlinked-directories on
 
 # link: https://unix.stackexchange.com/questions/27699/remap-bash-vi-keys
@@ -38,27 +46,109 @@ set vi-cmd-mode-string \1\e[2 q\2
 # 缩短 Esc 键延迟（默认 500ms 会有卡顿感，设为 50ms 瞬间响应）
 set keyseq-timeout 50
 
+set bell-style none
+
+# --------------------------------------------------
+# Vi Keybindings
+# --------------------------------------------------
+
 $if mode=vi
-	# 切换到 vi 命令模式（按 Esc 后的状态）进行绑定
+
+	# ==============================================
+	# Normal / Command Mode
+	# ==============================================
+
 	set keymap vi-command
+
+	# History
 	"k": history-search-backward
 	"j": history-search-forward
-	# "\C-a": beginning-of-line
+	"K": history-substring-search-backward
+	"J": history-substring-search-forward
+
+	"\C-r": reverse-search-history
+	"\C-s": forward-search-history
+
+	# Movement
 	"H": beginning-of-line
 	"L": end-of-line
 
-	# 【一键在当前命令前加 sudo】按两下 s 自动在行首插入 "sudo " 并回到行尾
+	# Screen
+	"\C-l": clear-screen
+
+	# Quick sudo
 	"ss": "Isudo \eA"
 
-	# 【用默认编辑器（如 vim）编辑超长命令】其实默认绑定了 v，这里可绑定大写 V 或其他顺手键
-	# "V": edit-and-execute-command
+	# Shell macros
+	",p": "A | "
+	",g": "A | grep "
+	",l": "A | less\e"
+	",r": "A > "
+	",b": "A &\e"
+	",c": "I# \e"
+
+	# Expansion (Bash only)
+	$if Bash
+		",h": history-expand-line
+		",a": alias-expand-line
+		",e": history-and-alias-expand-line
+		",x": shell-expand-line
+
+		# 默认 v 已绑定外部编辑器
+		# "V": edit-and-execute-command
+	$endif
+
+	# Reload inputrc
+	",R": re-read-init-file
+
+	# ==============================================
+	# Insert Mode
+	# ==============================================
 
 	set keymap vi-insert
-	# 在打字状态下按上箭头生效
-	# "\e[A": history-search-backward
-	# "\e[B": history-search-forward
-	# 快速退出输入模式: 连按两次 jj 或 jk 代替按 Esc
-	# "jj": vi-movement-mode
+
+	# Exit insert mode (optional)
+	# "jk": vi-movement-mode
+
+	# Emacs-style movement
+	"\C-a": beginning-of-line
+	"\C-e": end-of-line
+	"\C-b": backward-char
+	"\C-f": forward-char
+
+	# Word movement
+	"\eb": backward-word
+	"\ef": forward-word
+
+	# Editing
+	"\C-w": unix-word-rubout
+	"\C-u": unix-line-discard
+	"\C-k": kill-line
+	"\C-y": yank
+	"\C-_": undo
+
+	# History
+	"\C-r": reverse-search-history
+	"\C-s": forward-search-history
+
+	"\e[A": history-search-backward
+	"\e[B": history-search-forward
+
+	# Completion
+	"\C-n": menu-complete
+	"\C-p": menu-complete-backward
+
+	# Reuse previous command arguments
+	"\e.": yank-last-arg
+
+	# Screen
+	"\C-l": clear-screen
+
+	# External editor
+	$if Bash
+		"\C-x\C-e": edit-and-execute-command
+	$endif
+
 $endif
 
 # # Do not autocomplete hidden files unless the pattern explicitly begins with a dot
