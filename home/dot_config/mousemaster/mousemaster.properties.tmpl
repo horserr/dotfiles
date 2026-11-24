@@ -55,7 +55,9 @@ idle-mode.macro.toUppercase=_{isUppercase} ALPHABET-0-200 -> +leftshift +ALPHABE
 
 idle-mode.to.numpad-mode=+NUMPADKEY-200
 idle-mode.to.symbol-mode=+SYMBOLKEY-200
-idle-mode.to.manage-mode={leftshift leftalt}-0-200
+# VS Code needs the Alt press immediately for Ctrl+Alt inlay hints.
+app-alias.vscode=Code.exe
+idle-mode.to.manage-mode=^{vscode} {leftshift leftalt}-0-200 | _{vscode} {leftshift #leftalt -leftalt}-0-200
 
 # normal mode
 # from:

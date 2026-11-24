@@ -3,8 +3,10 @@
   "[python]": {
     "editor.codeActionsOnSave": {
       "source.fixAll.ruff": "explicit",
-      "source.organizeImports.ruff": "explicit"
+      "source.organizeImports.ruff": "explicit",
+      "source.fixAll.pyrefly": "always"
     },
+    "editor.inlayHints.enabled": "offUnlessPressed",
     "editor.defaultFormatter": "charliermarsh.ruff",
     "editor.foldingStrategy": "indentation",
     "editor.formatOnSave": true,
@@ -344,7 +346,7 @@
   //  - Pylance: Use Pylance for diagnostics. (default)
   //  - Pylance + Pyright: Use Pyright for diagnostics. Allows running a different Pyright than the one shipped with the Pylance extension.
   //  - Pylance + Pyrefly: Use Pyrefly for diagnostics. Pylance will search for a pyrefly installation in your virtual environments or download it automatically. [Learn more](https://aka.ms/pyrefly-help).
-  "python.analysis.diagnosticsSource": "Pylance",
+  "python.analysis.diagnosticsSource": "Pylance + Pyrefly",
 
   // Disable hint diagnostics with special hints for grayed-out or strike-through text.
   "python.analysis.disableTaggedHints": false,
