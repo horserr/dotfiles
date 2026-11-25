@@ -1,0 +1,49 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+# Minimal prompt for VSCode integrated terminals: a single compact line with
+# just the essentials. Colors are ANSI named colors so they follow the active
+# VSCode theme (including light/dark).
+#
+# Loaded via `terminal.integrated.env.linux` -> STARSHIP_CONFIG in VSCode.
+#
+# Note: if you use the Claude Code statusline (`starship statusline claude-code`),
+# that command also reads this file while STARSHIP_CONFIG is set. Copy the
+# `[profiles]` / `claude_model` / `claude_context` / `claude_cost` blocks from
+# the main config here if you enable it.
+format = '$directory$git_branch$git_status$character'
+continuation_prompt = '[∙](bright-black) '
+
+[directory]
+style = 'bold blue'
+truncation_length = 2
+truncate_to_repo = true
+truncation_symbol = '…/'
+
+[git_branch]
+symbol = ' '
+style = 'bold purple'
+truncation_length = 30
+truncation_symbol = '…'
+format = '[$symbol$branch]($style) '
+
+[git_status]
+style = 'bold red'
+format = '([$all_status$ahead_behind]($style) )'
+conflicted = '=${count}'
+ahead = '⇡${count}'
+behind = '⇣${count}'
+diverged = '⇡${ahead_count}⇣${behind_count}'
+untracked = '?${count}'
+stashed = '*${count}'
+modified = '!${count}'
+staged = '+${count}'
+renamed = '»${count}'
+deleted = '✘${count}'
+
+[character]
+success_symbol = '[❯](bold green)'
+error_symbol = '[❯](bold red)'
+vimcmd_symbol = '[❮](bold blue)'
+vimcmd_visual_symbol = '[❮](bold purple)'
+vimcmd_replace_symbol = '[❮](bold red)'
+vimcmd_replace_one_symbol = '[❮](bold red)'

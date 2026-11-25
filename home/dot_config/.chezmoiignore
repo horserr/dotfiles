@@ -25,3 +25,5 @@ wsl/
 {{ if not .needProxy }}
 mihomo/
 {{ end }}
+
+starship.toml

@@ -20,9 +20,12 @@
   },
   {{ end }}
 
-  // "terminal.integrated.env.linux": {
-  //   "VISUAL": "code --wait",
-  // },
+  {{ if .isLinux }}
+  "terminal.integrated.env.linux": {
+    // Use the minimal prompt config inside VSCode terminals.
+    "STARSHIP_CONFIG": {{ joinPath .chezmoi.homeDir ".config" "starship" "vscode.toml" | quote }}
+  },
+  {{ end }}
   // "terminal.integrated.env.windows": {
   //   "VISUAL": "code --wait",
   // },
