@@ -32,17 +32,21 @@ import sys
 from pathlib import Path
 
 TOKEN_FILE = Path.home() / ".config" / "bash" / "tokenenv.sh"
-DEFAULT_MODEL = "deepseek-v4-flash"
 DEFAULT_TMUX_SESSION = "ds"
 TMUX_MARKER_ENV = "DS_IN_TMUX"
 REMOTE_ENV_VARS = ("SSH_CONNECTION", "SSH_CLIENT", "SSH_TTY")
 
+FLASH_MODEL = "deepseek-v4-flash"
+PRO_MODEL = "deepseek-v4-pro"
+
+DEFAULT_MODEL = FLASH_MODEL
+
 # alias -> concrete model name
 MODEL_ALIASES = {
-    "f": "deepseek-v4-flash",
-    "flash": "deepseek-v4-flash",
-    "p": DEFAULT_MODEL,
-    "pro": DEFAULT_MODEL,
+    "f": FLASH_MODEL,
+    "flash": FLASH_MODEL,
+    "p": PRO_MODEL,
+    "pro": PRO_MODEL,
 }
 
 
