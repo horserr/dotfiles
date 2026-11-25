@@ -4,6 +4,24 @@
 
   "max_context_tokens": 1048576,
 
+  "preferredNotifChannel": "auto",
+
+  "skipWebFetchPreflight": true,
+  "permissions": {
+    "defaultMode": {{ ternary "bypassPermissions" "auto" .isEphemeral | quote }},
+    "allow": [
+      "Bash",
+      "WebFetch"
+    ],
+    "deny": [
+      "Bash(rm -rf:*)",
+      "Read(./.env)",
+      "Bash(sudo:*)"
+    ]
+  },
+  "skipDangerousModePermissionPrompt": {{ .isEphemeral }},
+  // 准确变量名为 CLAUDE_CODE_EVEN_MORE_DANGEROUSLY_SKIP_PERMISSIONS=1）可连带解除对根目录或主目录 rm 命令的二次拦截
+
   "env": {
     "CLAUDE_CODE_AUTO_MODE_SERVER": "0",
     /* Models starting with claude-opus are mapped to deepseek-v4-pro
@@ -94,15 +112,4 @@
   "skipWorkflowUsageWarning": true,
   // disable OAuth check
   "hasCompletedOnboarding": true,
-
-  "permissions": {
-    "allow": [
-      "Bash",
-      "WebFetch"
-    ],
-    "deny": [
-      "Bash(rm -rf:*)",
-      "Bash(sudo:*)"
-    ]
-  }
 }

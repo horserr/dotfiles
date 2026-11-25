@@ -6,7 +6,7 @@ Chezmoi-managed cross-platform dotfiles. Chezmoi source dir: `~/.config/.dotfile
 
 | Task | Command |
 | --- | --- |
-| Apply changes | `chezmoi apply` (non-interactive: `chezmoi apply --force`) |
+| Apply changes | `chezmoi apply` (non-interactive: `chezmoi apply  --interactive=false`) |
 | Apply without externals | `chezmoi apply --exclude=externals` |
 | Render a template | `chezmoi execute-template -f <file.tmpl>` |
 | Inspect | `chezmoi status`, `chezmoi diff`, `chezmoi doctor` |
@@ -23,4 +23,4 @@ Prefer the matching VS Code tasks (`chezmoi: ...`) — see `.vscode/tasks.json` 
 
 ## Pitfalls
 
-- **`chezmoi apply` usually waits for terminal input** (scripts, external refreshes, overwrite/confirm prompts). Non-interactive or automated runs will hang — pass `--force` when it must run unattended, e.g. `chezmoi apply --force`. Combine with `--exclude=externals` to skip network downloads.
+- **`chezmoi apply` usually waits for terminal input** (scripts, external refreshes, overwrite/confirm prompts). Non-interactive or automated runs will hang — pass ` --interactive=false` when it must run unattended. Combine with `--exclude=externals` to skip network downloads.
