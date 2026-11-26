@@ -42,3 +42,22 @@
     path = {{ printf "claude%s" $suffix | quote }}
 
 {{ end -}}
+
+{{/* ------------------------------------------------------------------
+     cc-switch-cli — https://github.com/SaladDay/cc-switch-cli
+       cc-switch-cli-windows-x64.zip
+       cc-switch-cli-linux-x64[-musl].tar.gz / cc-switch-cli-linux-arm64[-musl].tar.gz
+       cc-switch-cli-darwin-x64.tar.gz / cc-switch-cli-darwin-arm64.tar.gz
+     archive layout: cc-switch(.exe) at archive root, so use `archive-file`
+   ------------------------------------------------------------------ */}}
+
+{{- $extension := ternary "zip" "tar.gz" .isWindows -}}
+{{- $arch := ternary "arm64" "x64" (eq .chezmoi.arch "arm64") -}}
+{{- /* Alpine 等 musl 发行版必须用 -musl 版本 */ -}}
+{{- $libc := ternary "-musl" "" (and .isLinux (ne (stat "/etc/alpine-release") nil)) -}}
+
+[{{ printf ".local/bin/cc-switch%s" $suffix | quote }}]
+    type = "archive-file"
+    executable = true
+    url = {{ gitHubLatestReleaseAssetURL "SaladDay/cc-switch-cli" (printf "cc-switch-cli-%s-%s%s.%s" .chezmoi.os $arch $libc $extension) | quote }}
+    path = {{ printf "cc-switch%s" $suffix | quote }}
