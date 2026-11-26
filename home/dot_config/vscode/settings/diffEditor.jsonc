@@ -2,6 +2,7 @@
   "[diff]": {
     "editor.lineNumbers": "off"
   },
+  "diffEditor.diffAlgorithm": "advanced-wasm",
   // TOGGLE on to show codeLens
   "diffEditor.codeLens": false,
   "diffEditor.experimental.showEmptyDecorations": true,

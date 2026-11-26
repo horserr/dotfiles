@@ -1,30 +1,67 @@
-#cloud-config
+# $schema: https://raw.githubusercontent.com/canonical/cloud-init/main/cloudinit/config/schemas/schema-cloud-config-v1.json
+
 package_update: true
 package_upgrade: true
+package_reboot_if_required: true
 
+hostname: devbox
+fqdn: devbox.local
+manage_etc_hosts: true
 timezone: Asia/Shanghai
 locale: en_US.UTF-8
+locale_configfile: /etc/default/locale
 
 users:
   - name: wsl
     groups:
-      [docker, adm, dialout, cdrom, floppy, sudo, audio, dip, video, plugdev, netdev]
+      - docker
+      - adm
+      - dialout
+      - cdrom
+      - floppy
+      - sudo
+      - audio
+      - dip
+      - video
+      - plugdev
+      - netdev
     sudo: ALL=(ALL) NOPASSWD:ALL
+    no_create_home: false
     shell: /bin/bash
+    plain_text_passwd: wsl
+    lock_passwd: false
+
+    ssh_authorized_keys:
+      - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKbDgXZvXd3FVAE9412NW4NeMzZzGnx0CDEAg9aYejg5 this is the default key for general purpose
+
+groups:
+  - docker
+  - mygroup: [wsl]
 
 write_files:
   - path: /etc/wsl.conf
-    append: true
+    defer: true
+    append: false
     content: |
+      [boot]
+      systemd=true
       [network]
-      generateHosts = true
+      generateHosts=true
       [user]
       default=wsl
+
+apt:
+  preserve_sources_list: false
+  add_apt_repo_match: "^[\w-]+:\w"
 
 packages:
   - openssh-server
   # - incus
 
+# bootcmd:
+
 runcmd:
   - sh -c "$(curl -fsLS get.chezmoi.io)" -- -b /usr/local/bin
+  # auto start sshd
+  - systemctl enable --now ssh || true
   # - chezmoi init --source=~/.config/.dotfiles --apply horserr

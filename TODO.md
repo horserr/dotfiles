@@ -1,26 +1,22 @@
 # TODO
 
-fix windows terminal config reload diff
+systemd mihomo
 
-add apm and install skill
+vscode refactor with pyrefly https://pyrefly.org/en/docs/IDE-features/
+pyrefly call showCallHierarchy typehierarchy
 
-bookmark, and fix claude code in root
+vscode terminal command separate from terminal
 
-learn claude code
-use spare time to dive deep into cuda and system
+codex remote and mihomo server
 
 learn tmux: <https://www.trmn.sh/guides/tmux-persistent-sessions>
-learn intputrc bash keybindings and how to avoid conflict with terminal
 
-learn claude code terminal setting:
-<https://code.claude.com/docs/en/terminal-config>
+use spare time to dive deep into cuda and system
 
 also with vscode setting:
 <https://code.claude.com/docs/en/vs-code>
 
-add ntfy to claude code
-
-systemd, journalctl
+journalctl
 
 lastlog
 dmesg
@@ -30,7 +26,6 @@ last
 understand gpu programming
 
 core dump
-ssh 剪切板
 tssh
 
 ssh private keys backup using bitwarden
@@ -49,7 +44,6 @@ bookmark extension
 
 python debugpy cli
 
-remote explorer view
 
 use overbinding and conditional contribute to the global vspace commands
 
