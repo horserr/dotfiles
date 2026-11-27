@@ -3,20 +3,20 @@
 {{- if .needProxy }}
 
 [{{ printf ".local/bin/mihomo%s" $suffix | quote }}]
-    {{ $appVersion := list "mihomo" .chezmoi.os .chezmoi.arch "v3" | join "-" }}
+  {{ $appVersion := list "mihomo" .chezmoi.os .chezmoi.arch "v3" | join "-" }}
 
-    {{ $extension := ternary "v*.zip" "v*.gz" .isWindows }}
-    {{ $type := ternary "archive-file" "file" .isWindows }}
+  {{ $extension := ternary "v*.zip" "v*.gz" .isWindows }}
+  {{ $type := ternary "archive-file" "file" .isWindows }}
 
-    type = {{ $type | quote }}
-    executable = true
+  type = {{ $type | quote }}
+  executable = true
 
-    {{ if not .isWindows }}
-    decompress = "gzip"
-    {{ end }}
+  {{ if not .isWindows }}
+  decompress = "gzip"
+  {{ end }}
 
-    url = {{ gitHubLatestReleaseAssetURL "MetaCubeX/mihomo" (printf "%s-%s" $appVersion $extension) | quote }}
-    path = {{ printf "%s%s" $appVersion $suffix | quote }}
+  url = {{ gitHubLatestReleaseAssetURL "MetaCubeX/mihomo" (printf "%s-%s" $appVersion $extension) | quote }}
+  path = {{ printf "%s%s" $appVersion $suffix | quote }}
 
 {{ end -}}
 
@@ -36,28 +36,27 @@
 {{- $libc := ternary "-musl" "" (and .isLinux (ne (stat "/etc/alpine-release") nil)) -}}
 
 [{{ printf ".local/bin/claude%s" $suffix | quote }}]
-    type = "archive-file"
-    executable = true
-    url = {{ gitHubLatestReleaseAssetURL "anthropics/claude-code" (printf "claude-%s-%s%s.%s" $os $arch $libc $extension) | quote }}
-    path = {{ printf "claude%s" $suffix | quote }}
+  type = "archive-file"
+  executable = true
+  url = {{ gitHubLatestReleaseAssetURL "anthropics/claude-code" (printf "claude-%s-%s%s.%s" $os $arch $libc $extension) | quote }}
+  path = {{ printf "claude%s" $suffix | quote }}
 
 {{ end -}}
 
 {{/* ------------------------------------------------------------------
-     cc-switch-cli — https://github.com/SaladDay/cc-switch-cli
-       cc-switch-cli-windows-x64.zip
-       cc-switch-cli-linux-x64[-musl].tar.gz / cc-switch-cli-linux-arm64[-musl].tar.gz
-       cc-switch-cli-darwin-x64.tar.gz / cc-switch-cli-darwin-arm64.tar.gz
-     archive layout: cc-switch(.exe) at archive root, so use `archive-file`
+     claude-code-proxy — https://github.com/raine/claude-code-proxy
+       claude-code-proxy-windows-amd64.zip / claude-code-proxy-windows-arm64.zip
+       claude-code-proxy-linux-amd64.tar.gz / claude-code-proxy-linux-arm64.tar.gz
+       claude-code-proxy-darwin-amd64.tar.gz / claude-code-proxy-darwin-arm64.tar.gz
+     archive layout: claude-code-proxy(.exe) at archive root, so use `archive-file`
    ------------------------------------------------------------------ */}}
 
 {{- $extension := ternary "zip" "tar.gz" .isWindows -}}
-{{- $arch := ternary "arm64" "x64" (eq .chezmoi.arch "arm64") -}}
-{{- /* Alpine 等 musl 发行版必须用 -musl 版本 */ -}}
-{{- $libc := ternary "-musl" "" (and .isLinux (ne (stat "/etc/alpine-release") nil)) -}}
+{{- /* 资产名用的是 amd64/arm64，没有 -musl 变体 */ -}}
+{{- $arch := ternary "arm64" "amd64" (eq .chezmoi.arch "arm64") -}}
 
-[{{ printf ".local/bin/cc-switch%s" $suffix | quote }}]
-    type = "archive-file"
-    executable = true
-    url = {{ gitHubLatestReleaseAssetURL "SaladDay/cc-switch-cli" (printf "cc-switch-cli-%s-%s%s.%s" .chezmoi.os $arch $libc $extension) | quote }}
-    path = {{ printf "cc-switch%s" $suffix | quote }}
+[{{ printf ".local/bin/cc-proxy%s" $suffix | quote }}]
+  type = "archive-file"
+  executable = true
+  url = {{ gitHubLatestReleaseAssetURL "raine/claude-code-proxy" (printf "claude-code-proxy-%s-%s.%s" .chezmoi.os $arch $extension) | quote }}
+  path = {{ printf "claude-code-proxy%s" $suffix | quote }}
