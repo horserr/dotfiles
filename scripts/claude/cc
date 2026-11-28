@@ -1,0 +1,17 @@
+#!/usr/bin/env python3
+"""
+Usage:
+    cc                 -> claude, deepseek-flash (default)
+    cc f | flash       -> claude, deepseek-flash
+    cc p | pro         -> claude, deepseek-pro
+    cc x | codex         -> claude, using codex setting file ~/.claude/settings/codex.json
+    cc <name>          -> claude, use <name> verbatim
+    cc --no-tmux       -> never auto-relaunch inside tmux
+"""
+
+"""
+    what you should do:
+    1. migrate from ds
+    2. auto detect whether cc-proxy is on or not
+    3. when cc proxy is off
+"""
