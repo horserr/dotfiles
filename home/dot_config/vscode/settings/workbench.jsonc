@@ -152,7 +152,7 @@
   // "workbench.editor.limit.perEditorGroup": true,
   // "workbench.editor.limit.value": 6,
   "workbench.editor.limit.enabled": false,
-  "workbench.editor.markdownDefaultEditorInAgentsWindow": true,
+  "workbench.editor.markdownDefaultEditorInAgentsWindow": "auto",
   // Enables the use of mouse buttons four and five for commands 'Go Back' and 'Go Forward'.
   "workbench.editor.mouseBackForwardToNavigate": true,
   "workbench.editor.navigationScope": "editorGroup",

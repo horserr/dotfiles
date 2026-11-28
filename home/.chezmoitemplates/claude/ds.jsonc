@@ -1,0 +1,15 @@
+{
+  "env":{
+    // deepseek token
+    "ANTHROPIC_AUTH_TOKEN": {{ .token.deepseek | quote }},
+    // deepseek url
+    "ANTHROPIC_BASE_URL": "https://api.deepseek.com/anthropic",
+    // deepseek recommend compact window
+    "CLAUDE_CODE_AUTO_COMPACT_WINDOW": "786432",
+
+    "ANTHROPIC_DEFAULT_FABLE_MODEL": "deepseek-pro[1m]",
+    "ANTHROPIC_DEFAULT_OPUS_MODEL": "deepseek-pro[1m]",
+    "ANTHROPIC_DEFAULT_SONNET_MODEL": "deepseek-flash[1m]",
+    "ANTHROPIC_DEFAULT_HAIKU_MODEL": "deepseek-flash",
+  }
+}

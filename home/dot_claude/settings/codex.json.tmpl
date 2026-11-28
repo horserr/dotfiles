@@ -1,0 +1,3 @@
+{{- $common := includeTemplate "claude/common.jsonc" . | fromJsonc -}}
+{{- $codex := includeTemplate "claude/codex.jsonc" . | fromJsonc -}}
+{{- mustMergeOverwrite $common $codex | toPrettyJson "  " }}

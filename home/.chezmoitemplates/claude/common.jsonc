@@ -52,12 +52,7 @@
     link: https://api-docs.deepseek.com/quick_start/agent_integrations/claude_code/#model-mapping-when-using-claude-code-or-claude-desktop-app
     */
 
-    // deepseek token
-    "ANTHROPIC_AUTH_TOKEN": {{ .token.deepseek | quote }},
-    // deepseek url
-    "ANTHROPIC_BASE_URL": "https://api.deepseek.com/anthropic",
-    // deepseek recommend compact window
-    "CLAUDE_CODE_AUTO_COMPACT_WINDOW": "786432",
+    "ANTHROPIC_MODEL": "opus",
 
     // default subagent model is `inherit`, which is same with selected model
     "CLAUDE_CODE_SUBAGENT_MODEL":"sonnet", // perfer sonnet/haiku
@@ -66,6 +61,8 @@
      * PRIVACY SETTING *
      *******************/
     // link: https://www.getvoibe.com/resources/claude-code-privacy-settings/
+
+    "CLAUDE_CODE_DISABLE_NONSTREAMING_FALLBACK": "1",
 
     // Turns off auto-updates, telemetry, error reporting, /feedback, Claude-drafted feedback, release notes, PR status badge checks, availability checks and feature-flag fetching
     "CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC": "1",
@@ -111,7 +108,7 @@
     "USE_BUILTIN_RIPGREP": "1",
 
     "CLAUDE_CODE_IDE_AUTO_CONNECT": "1",
-    "CLAUDE_CODE_IDE_SKIP_AUTO_INSTALL" :"0",
+    "CLAUDE_CODE_IDE_SKIP_AUTO_INSTALL": "0",
 
     // claude using powershell on Windows
     "CLAUDE_CODE_USE_POWERSHELL_TOOL": {{ ternary "1" "0" .isWindows | quote }},

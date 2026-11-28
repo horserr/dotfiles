@@ -1,1 +1,2 @@
-{{ includeTemplate "dot_claude/claude-settings.jsonc.tmpl" . | fromJsonc | toPrettyJson "  " }}
+{{- /* this is the default setting */ -}}
+{{ includeTemplate "dot_claude/settings/ds.json.tmpl" . }}
